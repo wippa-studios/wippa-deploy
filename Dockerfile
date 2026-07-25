@@ -55,12 +55,12 @@ FROM base AS build
 WORKDIR /usr/src/app
 
 # Copy dependency files and workspace package.json files for resolution
-COPY .npmrc package.json bun.lock bunfig.toml ./
+COPY .npmrc package.json bunfig.toml ./
 COPY packages/ ./packages/
 
-# Install all dependencies with frozen lockfile
+# Install all dependencies (lockfile regenerated during namespace migration)
 RUN --mount=type=cache,target=/root/.bun/install/cache \
-    bun install --frozen-lockfile
+    bun install
 
 # Copy remaining source code (turbo config, etc.)
 COPY . .
@@ -110,7 +110,6 @@ COPY docker-entrypoint.sh .
 # Copy root config files needed for dependency resolution
 COPY --from=build /usr/src/app/package.json ./
 COPY --from=build /usr/src/app/.npmrc ./
-COPY --from=build /usr/src/app/bun.lock ./
 COPY --from=build /usr/src/app/bunfig.toml ./
 COPY --from=build /usr/src/app/LICENSE .
 

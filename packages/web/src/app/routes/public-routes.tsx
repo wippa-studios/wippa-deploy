@@ -28,6 +28,10 @@ const TemplatesPage = lazyWithRetry(
   () => import('./templates').then((m) => ({ default: m.TemplatesPage })),
   'public-templates',
 );
+const PricingPage = lazyWithRetry(
+  () => import('./pricing').then((m) => ({ default: m.PricingPage })),
+  'pricing',
+);
 
 function SuspenseWrapper({ children }: { children: React.ReactNode }) {
   return <Suspense fallback={<RouteLoadingBar />}>{children}</Suspense>;
@@ -101,6 +105,10 @@ export const publicRoutes = [
   {
     path: '/redirect',
     element: <RedirectPage></RedirectPage>,
+  },
+  {
+    path: '/pricing',
+    element: <PricingPage />,
   },
   {
     path: '/404',
