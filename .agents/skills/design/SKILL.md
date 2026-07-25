@@ -1,11 +1,11 @@
 ---
-name: activepieces-design-system
-description: Design system for Activepieces (open-source AI automation platform, "open source replacement for Zapier"). Use whenever designing, mocking, or building UI for Activepieces — the web app (flow builder, runs, connections, dashboard), docs, or marketing surfaces. Provides brand purple `#8142E3`, Inter type ramp with `sm` (14px) as body default, Tailwind neutrals, Lucide icons, Shadcn/Radix primitive conventions, the signature dotted-canvas builder background, and a recreated web UI kit.
+name: wippa-design-system
+description: Design system for Wippa (open-source AI automation platform, "open source replacement for Zapier"). Use whenever designing, mocking, or building UI for Wippa — the web app (flow builder, runs, connections, dashboard), docs, or marketing surfaces. Provides brand purple `#8142E3`, Inter type ramp with `sm` (14px) as body default, Tailwind neutrals, Lucide icons, Shadcn/Radix primitive conventions, the signature dotted-canvas builder background, and a recreated web UI kit.
 ---
 
-# Activepieces Design System
+# Wippa Design System
 
-You are designing for **Activepieces** — an open-source AI automation platform where users assemble triggers + actions from 280+ "pieces" into automated flows. Every piece doubles as an MCP server.
+You are designing for **Wippa** — an open-source AI automation platform where users assemble triggers + actions from 280+ "pieces" into automated flows. Every piece doubles as an MCP server.
 
 Read `README.md` in this folder **first** — it is the canonical reference. This file is a fast-loading summary for agent use.
 
@@ -17,7 +17,7 @@ Read `README.md` in this folder **first** — it is the canonical reference. Thi
 - `assets/logo.svg` — brand mark. Purple `#8142E3`.
 - `assets/` — piece-tile SVGs (Shopify, Airtable, Google, OpenAI, Slack, Gmail) + MCP/code glyphs.
 - `preview/` — ~700px-wide design-system cards (type, color, spacing, components).
-- `ui_kits/web/` — high-fidelity recreation of the Activepieces web app. Entry `ui_kits/web/index.html`. Form-controls showcase at `ui_kits/web/forms.html`. Modular JSX via Babel standalone. Screens: Flows dashboard, Builder (dotted canvas + step panel), Runs table, Connections list, **Ask AI chat overlay** (Lottie-animated "thinking" loader at `assets/ai-loader.lottie.json`). Supports **light + dark mode** via `.dark` class on `<html>` — toggle lives in the sidebar footer.
+- `ui_kits/web/` — high-fidelity recreation of the Wippa web app. Entry `ui_kits/web/index.html`. Form-controls showcase at `ui_kits/web/forms.html`. Modular JSX via Babel standalone. Screens: Flows dashboard, Builder (dotted canvas + step panel), Runs table, Connections list, **Ask AI chat overlay** (Lottie-animated "thinking" loader at `assets/ai-loader.lottie.json`). Supports **light + dark mode** via `.dark` class on `<html>` — toggle lives in the sidebar footer.
 - `insights/` — Interactive **Insights** page. Entry `insights/Insights.html`. Composes the `ui_kits/web/` shell (Sidebar, TopBar, Primitives, Overlays) and adds chart primitives in `InsightsCharts.jsx`: `Sparkline`, `LineChart` (multi-series + hover crosshair + tooltip), `BarChart` (stacked/grouped), `Donut`, `Heatmap` (days × hours). Page-scoped styles in `insights.css` define the `ins-*` class vocabulary (stat cards, AI summary card, quota meter, flow/error/team rows, piece grid, narrative hero). Two layout variations — **Classic dashboard** (hero stats + chart + donut + quota + top flows/errors + heatmap + team + live feed) and **Editorial** (dark narrative hero that tells the week's story + 3 highlight cards + heatmap/feed). Time range picker (24h/7d/30d/90d), compare-to-previous toggle, scope tabs (Workspace/Flow/Piece/Teammate), clickable stat cards, hover tooltips. **Tweaks**: layout (Classic ↔ Editorial), chart style (line/bar), AI summary on/off, density. Respects light/dark toggle.
 
 ### Component inventory (`ui_kits/web/`)
@@ -50,7 +50,7 @@ Read `README.md` in this folder **first** — it is the canonical reference. Thi
 ## Hard rules (never violate)
 
 1. **Primary is purple `hsl(257 74% 57%)` / `#8142E3`** — the shipping value from `packages/web/src/styles.css`. Not the `#9747FF` swatch some Figma files show. **Primary stays purple in dark mode** too (brand continuity) — use `.dark.blue-primary` to opt back into the repo's blue-in-dark behaviour.
-2. **Body text is 14px (`text-sm`), not 16**. Activepieces feels dense and tool-like. Headings use `-0.01em` to `-0.02em` tracking.
+2. **Body text is 14px (`text-sm`), not 16**. Wippa feels dense and tool-like. Headings use `-0.01em` to `-0.02em` tracking.
 3. **Sentence case everywhere**: headings, buttons, menu items, page titles. Proper nouns only for feature names (Flows, Runs, Pieces, MCP, Agents, Connections).
 4. **Lucide icons only**, 1.5–2px stroke, rounded caps. Default size `16` (`size-4`). Icon + text → `gap-2` (8px). No emoji in the product UI. No Unicode glyphs (✓ × ←) — always a Lucide component.
 5. **Borders are 1px**, color `neutral-200` (light) / `white/14` (dark). Never thicker. (Note: repo ships `white/10` in dark — we bump to `14%` so dividers stay readable against `neutral-900` surfaces.)
@@ -168,7 +168,7 @@ Or inline SVGs from https://lucide.dev. Piece/integration icons: copy the real S
 - Figma file shows primary as `#9747FF`. **Ignore it.** Shipping primary is `#8142E3` (from `packages/web/src/styles.css` and the logo).
 - The repo's dark mode shifts primary to **blue**. This system keeps primary **purple** in both modes for brand consistency; document the blue variant only if the user explicitly asks for dark-mode fidelity.
 - `Sentient-Variable.woff2` is an *optional* display/marketing font — **not used in shipping product UI**. Only use if explicitly doing branding/marketing exploration.
-- The Pro-Blocks Figma pages (Landing, Application, etc.) are Shadcn stock templates, not Activepieces marketing. Use as Shadcn pattern reference only.
+- The Pro-Blocks Figma pages (Landing, Application, etc.) are Shadcn stock templates, not Wippa marketing. Use as Shadcn pattern reference only.
 - `packages/web` is the only shipping UI surface in the repo. There is no marketing-site code to reference.
 
 ## Starting a new design

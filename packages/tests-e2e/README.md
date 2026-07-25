@@ -1,6 +1,6 @@
-# Activepieces E2E Tests
+# Wippa E2E Tests
 
-This package holds the monorepo's full-stack end-to-end tests. Under the canonical 4-layer testing taxonomy (unit / integration / e2e / smoke), this is the only package that owns the E2E layer: Playwright-driven browser flows that exercise the entire Activepieces stack through the public UI. Per-package unit and integration tests live in their respective packages (`packages/server/api/test/`, `packages/server/engine/test/`, `packages/server/worker/test/`).
+This package holds the monorepo's full-stack end-to-end tests. Under the canonical 4-layer testing taxonomy (unit / integration / e2e / smoke), this is the only package that owns the E2E layer: Playwright-driven browser flows that exercise the entire Wippa stack through the public UI. Per-package unit and integration tests live in their respective packages (`packages/server/api/test/`, `packages/server/engine/test/`, `packages/server/worker/test/`).
 
 ## Layout
 
@@ -32,7 +32,7 @@ npx turbo run deploy-checkly --filter=tests-e2e
 
 Required environment variables:
 
-- `E2E_INSTANCE_URL` — target Activepieces URL (defaults to a local `localhost` value when unset)
+- `E2E_INSTANCE_URL` — target Wippa URL (defaults to a local `localhost` value when unset)
 - `E2E_EMAIL` — test user email
 - `E2E_PASSWORD` — test user password
 

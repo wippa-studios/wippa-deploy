@@ -1,7 +1,7 @@
 # Secret Managers (External Secret Storage)
 
 ## Summary
-Secret Managers let platform admins connect Activepieces to an external secret management system (HashiCorp Vault, AWS Secrets Manager, CyberArk Conjur, or 1Password) so that sensitive values referenced in flow steps and connections are resolved from the vault at runtime rather than stored directly in the database. A secret reference uses the syntax `{{<connectionId><separator><path>}}`. The service resolves string and object values transparently before execution. Provider authentication config is encrypted at rest. Gated by `platform.plan.secretManagersEnabled`.
+Secret Managers let platform admins connect Wippa to an external secret management system (HashiCorp Vault, AWS Secrets Manager, CyberArk Conjur, or 1Password) so that sensitive values referenced in flow steps and connections are resolved from the vault at runtime rather than stored directly in the database. A secret reference uses the syntax `{{<connectionId><separator><path>}}`. The service resolves string and object values transparently before execution. Provider authentication config is encrypted at rest. Gated by `platform.plan.secretManagersEnabled`.
 
 ## Key Files
 - `packages/server/api/src/app/ee/secret-managers/secret-managers.module.ts` — module registration with `platformMustHaveFeatureEnabled` guard

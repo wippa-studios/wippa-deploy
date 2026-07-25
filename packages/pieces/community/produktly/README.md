@@ -1,13 +1,13 @@
 # @wippa/piece-produktly
 
-Activepieces piece for [Produktly](https://produktly.com) — the onboarding and announcement tool for SaaS products.
+Wippa piece for [Produktly](https://produktly.com) — the onboarding and announcement tool for SaaS products.
 
 ## Authentication
 
 1. Sign in to your Produktly account
 2. Open **Settings → API keys**: https://produktly.com/app/settings/private-keys
 3. Click **Generate API Key**, give it a name, and copy the key
-4. Paste the key in the Activepieces connection setup
+4. Paste the key in the Wippa connection setup
 
 ## API Reference
 

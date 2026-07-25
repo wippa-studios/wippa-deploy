@@ -1,5 +1,5 @@
-# pieces-activepieces
+# pieces-wippa
 
 ## Building
 
-Run `turbo run build --filter=@wippa/piece-activepieces` to build the library.
+Run `turbo run build --filter=@wippa/piece-wippa` to build the library.

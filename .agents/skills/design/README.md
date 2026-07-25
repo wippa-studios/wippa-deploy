@@ -1,8 +1,8 @@
-# Activepieces Design System
+# Wippa Design System
 
-A design system for **Activepieces** — an open-source AI automation platform ("an open source replacement for Zapier"). The product lets both technical and non-technical users build automated workflows with 280+ integrations ("pieces") and exposes every piece as an MCP server for use with Claude, Cursor, Windsurf, etc.
+A design system for **Wippa** — an open-source AI automation platform ("an open source replacement for Zapier"). The product lets both technical and non-technical users build automated workflows with 280+ integrations ("pieces") and exposes every piece as an MCP server for use with Claude, Cursor, Windsurf, etc.
 
-This folder contains the brand/visual foundations, CSS tokens, fonts, icon conventions, HTML preview cards for the Design System tab, and a UI kit that recreates core Activepieces product surfaces.
+This folder contains the brand/visual foundations, CSS tokens, fonts, icon conventions, HTML preview cards for the Design System tab, and a UI kit that recreates core Wippa product surfaces.
 
 ---
 
@@ -11,13 +11,13 @@ This folder contains the brand/visual foundations, CSS tokens, fonts, icon conve
 | Source | Location |
 | --- | --- |
 | Shadcn UI Kit for Figma + Pro Blocks (Oct 2025) | mounted `.fig` VFS — browse via `fig_ls /`, screenshot via `fig_screenshot` |
-| Activepieces codebase | `github.com/yazeed-prog/activepieces` (`packages/web` is the React UI) |
+| Wippa codebase | `github.com/yazeed-prog/wippa` (`packages/web` is the React UI) |
 | Canonical brand stylesheet | `packages/web/src/styles.css` (Tailwind v4 + Shadcn "new-york" style) |
 | Brand logo | `packages/web/public/logo.svg` — purple mark `#8142E3` |
 | Brand fonts | Inter (400/500/600/700/800) — provided in `uploads/` and `fonts/` |
 | `Sentient-Variable.woff2` | provided as a display/display-alt exploration font (not used in shipping UI) |
 
-Activepieces uses **Shadcn/Radix UI** primitives on top of Tailwind, with **Lucide** as its icon library (confirmed in `packages/web/components.json` → `"iconLibrary": "lucide"`). Shadcn base color is `"neutral"`.
+Wippa uses **Shadcn/Radix UI** primitives on top of Tailwind, with **Lucide** as its icon library (confirmed in `packages/web/components.json` → `"iconLibrary": "lucide"`). Shadcn base color is `"neutral"`.
 
 ---
 
@@ -29,7 +29,7 @@ Activepieces uses **Shadcn/Radix UI** primitives on top of Tailwind, with **Luci
 - `fonts/` — Inter family (.woff2/.ttf) + Sentient variable
 - `assets/` — `logo.svg` (brand mark), piece-tile SVGs
 - `preview/` — ~700px-wide HTML cards that populate the Design System tab
-- `ui_kits/web/` — UI kit for the Activepieces web app (builder, dashboard, sidebar, forms showcase)
+- `ui_kits/web/` — UI kit for the Wippa web app (builder, dashboard, sidebar, forms showcase)
 - `insights/` — Interactive Insights page (`Insights.html`) with reusable chart primitives (`InsightsCharts.jsx`) and page-scoped styles (`insights.css`). Composes the `ui_kits/web/` shell + primitives; adds Sparkline / LineChart / BarChart / Donut / Heatmap. Two layout variations (Classic dashboard + Editorial narrative) switchable via Tweaks. Respects light/dark toggle.
 
 ### `ui_kits/web/` component inventory
@@ -75,7 +75,7 @@ The kit is plain React via Babel standalone — no build step. Single `app.css` 
 
 ## Brand & product context
 
-**Product**: Activepieces is an all-in-one AI automation platform. The core surface is a visual **flow builder** (React + XYFlow) where users assemble triggers + actions from 280+ open-source **pieces** into runnable flows. Every piece doubles as an MCP server, so LLM agents can call them directly.
+**Product**: Wippa is an all-in-one AI automation platform. The core surface is a visual **flow builder** (React + XYFlow) where users assemble triggers + actions from 280+ open-source **pieces** into runnable flows. Every piece doubles as an MCP server, so LLM agents can call them directly.
 
 **Audience**: mixed — "developers set up the tools, and anyone in the organization can use the no-code builder" (from README). Non-technical users live in the builder; developers contribute new pieces as typed npm packages.
 
@@ -86,7 +86,7 @@ The kit is plain React via Babel standalone — no build step. Single `app.css` 
 
 ## CONTENT FUNDAMENTALS
 
-Activepieces copy is **functional, direct, and product-led**. It talks about workflows, pieces, and runs in concrete terms — no marketing puffery inside the app.
+Wippa copy is **functional, direct, and product-led**. It talks about workflows, pieces, and runs in concrete terms — no marketing puffery inside the app.
 
 - **Voice**: second-person ("**you** can build", "**your** flows"). Feature names and verbs lead; adjectives are rare.
 - **Casing**: **Sentence case** for every UI string — headings, buttons, menu items, page titles. Proper nouns are the feature itself: "Pieces", "Flows", "Runs", "MCP", "Agents", "Connections".
@@ -177,7 +177,7 @@ Activepieces copy is **functional, direct, and product-led**. It talks about wor
 
 ## Tailwind + `cn()` conventions
 
-Activepieces is a Tailwind v4 codebase. When generating production-style code off this system:
+Wippa is a Tailwind v4 codebase. When generating production-style code off this system:
 - Always `cn(...classes)` from `@/lib/utils` — never template literals for `className`.
 - Use design-token class names (`bg-primary`, `text-muted-foreground`, `border-border`, `rounded-md`) not raw hex / raw radii.
 - Ban negative margins. Use `gap-*`, `p-*`, `space-*`.
@@ -187,6 +187,6 @@ Activepieces is a Tailwind v4 codebase. When generating production-style code of
 
 ## Caveats
 
-- The **Pro-Blocks** Figma pages (Landing, Application, etc.) are Shadcn's stock templates and do NOT reflect the real Activepieces marketing site (which isn't in the repo). We use them as secondary reference for Shadcn patterns only.
+- The **Pro-Blocks** Figma pages (Landing, Application, etc.) are Shadcn's stock templates and do NOT reflect the real Wippa marketing site (which isn't in the repo). We use them as secondary reference for Shadcn patterns only.
 - Figma file says primary purple is `rgb(151,71,255)` (`#9747FF`). The **actual shipping** primary per `styles.css` is `hsl(257 74% 57%)` ≈ `#8142E3` (matches the logo). We use the shipping value — the Figma swatch is a slightly lighter preview variant.
-- **Sentient** (uploaded) is included as a display option but **is not used in shipping Activepieces UI**. Treat as optional branding exploration only.
+- **Sentient** (uploaded) is included as a display option but **is not used in shipping Wippa UI**. Treat as optional branding exploration only.

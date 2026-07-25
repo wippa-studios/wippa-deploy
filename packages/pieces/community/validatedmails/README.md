@@ -1,6 +1,6 @@
 # @wippa/piece-validatedmails
 
-ValidatedMails is an email validation API integration for Activepieces that validates a single email address and returns a consistent, flat response contract suitable for routing, scoring, and downstream decision steps.
+ValidatedMails is an email validation API integration for Wippa that validates a single email address and returns a consistent, flat response contract suitable for routing, scoring, and downstream decision steps.
 
 ## Example workflow
 
@@ -37,7 +37,7 @@ ValidatedMails is an email validation API integration for Activepieces that vali
 
 ## Authentication
 
-Create a ValidatedMails API key in your ValidatedMails dashboard and connect it as `API Key` in Activepieces. Connection validation calls `GET /api-keys/me`.
+Create a ValidatedMails API key in your ValidatedMails dashboard and connect it as `API Key` in Wippa. Connection validation calls `GET /api-keys/me`.
 
 ## Support
 

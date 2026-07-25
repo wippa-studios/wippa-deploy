@@ -1,6 +1,6 @@
 # @wippa/piece-vercel
 
-Bounded MVP Vercel piece for Activepieces community pieces.
+Bounded MVP Vercel piece for Wippa community pieces.
 
 ## Included actions
 

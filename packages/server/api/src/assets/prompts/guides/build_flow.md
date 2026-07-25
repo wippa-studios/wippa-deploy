@@ -36,11 +36,11 @@ The majority are 2–5 linear steps: a schedule or form/webhook trigger and a co
 ## Recurring flows must not reprocess
 **Before you build, answer one question: does this run more than once, and does it read data that persists between runs?** If a scheduled/recurring flow reads a source that keeps its data (a sheet, a Table, an inbox, any record set), that source holds the SAME rows again on the next run. A flow shaped `read-all → act → done` will redo run N's work on run N+1 — re-sending, re-paying, re-notifying. This is the #1 silent logic bug: it validates fine, a single test run looks perfect, and the damage only appears on the second run.
 
-Worked failure: "summarize each employee's hours from my sheet and tell me what to pay them", on a weekly schedule. `read sheet → summarize → email` is correct for ONE week — but nothing marks anyone paid, so every week it re-pays everyone for hours already paid. Correct flow for the wrong problem. The fix below (Activepieces Tables ledger): read the sheet → drop rows whose key is already in a `Paid Log` table → pay only the new ones → record their keys in `Paid Log`.
+Worked failure: "summarize each employee's hours from my sheet and tell me what to pay them", on a weekly schedule. `read sheet → summarize → email` is correct for ONE week — but nothing marks anyone paid, so every week it re-pays everyone for hours already paid. Correct flow for the wrong problem. The fix below (Wippa Tables ledger): read the sheet → drop rows whose key is already in a `Paid Log` table → pay only the new ones → record their keys in `Paid Log`.
 
 If the flow is recurring AND reads persistent data, commit to exactly ONE of these (each maps to a primitive the platform already has — don't hand-roll):
 - **A "new item" trigger that dedups for you** — prefer this when the source HAS such a trigger. Use its *New Record / New Row / New Email* trigger (Tables **New Record** is a real webhook; app polling triggers dedup via `lastPoll`/`lastItem`) instead of a schedule + a stateless "get all rows" read. The trigger fires once per new item and never re-sees old ones. (`ap_load_guide('tables')` / the app's triggers.)
-- **An Activepieces Tables ledger (dedup against a table you own)** — the default when the source is external or read-only (a Google Sheet, an inbox) and you should NOT mutate it, or when there's no new-item trigger. Create an AP Table (e.g. `Paid Log`, `Processed Orders`) that records the keys you've already handled. Each run: (1) read the source; (2) build a **stable dedup key** per item (e.g. `worker + shift date`, `order_id`, `message_id`); (3) `find-records` the ledger and keep only items whose key is NOT already there; (4) act on just those new items; (5) `create-records` their keys into the ledger so the next run skips them. This syncs "what's been done" into Activepieces and makes the flow idempotent without touching the user's source. `ap_load_guide('tables')`.
+- **An Wippa Tables ledger (dedup against a table you own)** — the default when the source is external or read-only (a Google Sheet, an inbox) and you should NOT mutate it, or when there's no new-item trigger. Create an AP Table (e.g. `Paid Log`, `Processed Orders`) that records the keys you've already handled. Each run: (1) read the source; (2) build a **stable dedup key** per item (e.g. `worker + shift date`, `order_id`, `message_id`); (3) `find-records` the ledger and keep only items whose key is NOT already there; (4) act on just those new items; (5) `create-records` their keys into the ledger so the next run skips them. This syncs "what's been done" into Wippa and makes the flow idempotent without touching the user's source. `ap_load_guide('tables')`.
 - **A processed-flag filter + write-back** — when you DO own the source: read only unprocessed rows (`find-records`/"get rows" filtered on e.g. `status = pending` or `paid = false`), then after acting flip that field with `update-record`/update-row. Without the write-back the filter is meaningless.
 - **Delete or archive after processing** — remove/move the row once handled so the next read can't see it.
 - **A stored high-water mark** — persist the last-processed id/timestamp in **Store** (`ap_load_guide('state')`) and filter the read to items newer than it.
@@ -50,19 +50,19 @@ Also reason through the rest of the cleanup surface, not just the happy path: a 
 Skipping this on a recurring-over-persistent-data flow is not allowed. If you genuinely can't determine a safe mechanism, that's one of the rare cases to ask the user via `ap_show_questions`.
 
 ## Prefer the built-in pieces (no connection needed)
-Activepieces ships pieces that need no external app or connection; registry search often misses them (the form piece is literally named **Human Input**). For a generic ask, map the user's words → piece directly instead of asking them to name a third-party tool:
+Wippa ships pieces that need no external app or connection; registry search often misses them (the form piece is literally named **Human Input**). For a generic ask, map the user's words → piece directly instead of asking them to name a third-party tool:
 
 | User says | Piece | What it is |
 |---|---|---|
-| "a form" | `@activepieces/piece-forms` (**Human Input**) | hosted web form trigger w/ shareable link |
-| "every day/hour", "cron" | `@activepieces/piece-schedule` | schedule triggers |
-| "webhook", "receive events" | `@activepieces/piece-webhook` | inbound webhook trigger |
-| "save/track data here" | `@activepieces/piece-tables` | built-in database — `ap_load_guide('tables')` |
-| "remember/count/dedup" | `@activepieces/piece-store` | key-value store — `ap_load_guide('state')` |
-| "ask AI/classify/extract" | `@activepieces/piece-ai` | native AI — use this, never the OpenAI/vendor piece — `ap_load_guide('ai')` |
-| "human sign-off" | `@activepieces/piece-approval` | pause for approve/reject |
-| "wait/pause" | `@activepieces/piece-delay` | delay step |
-| "split big work" | `@activepieces/piece-subflows` | call another flow |
+| "a form" | `@wippa/piece-forms` (**Human Input**) | hosted web form trigger w/ shareable link |
+| "every day/hour", "cron" | `@wippa/piece-schedule` | schedule triggers |
+| "webhook", "receive events" | `@wippa/piece-webhook` | inbound webhook trigger |
+| "save/track data here" | `@wippa/piece-tables` | built-in database — `ap_load_guide('tables')` |
+| "remember/count/dedup" | `@wippa/piece-store` | key-value store — `ap_load_guide('state')` |
+| "ask AI/classify/extract" | `@wippa/piece-ai` | native AI — use this, never the OpenAI/vendor piece — `ap_load_guide('ai')` |
+| "human sign-off" | `@wippa/piece-approval` | pause for approve/reject |
+| "wait/pause" | `@wippa/piece-delay` | delay step |
+| "split big work" | `@wippa/piece-subflows` | call another flow |
 
 ## CODE is the last resort — use inline expressions & conditions first
 Dropping a **CODE step** into a flow to filter, reshape, calculate, or format data is almost always the wrong first move — it's slower to build, opaque to a non-coder, and harder to debug. Walk this ladder and stop at the first rung that fits; only the last rung is code:

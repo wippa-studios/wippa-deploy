@@ -1,7 +1,7 @@
 # App Connections
 
 ## Summary
-App Connections store encrypted authentication credentials (OAuth2 tokens, API keys, basic auth, custom piece-defined fields, or OIDC props) that flow steps use to call external services. They support automatic OAuth2 token refresh with distributed locking, a dual-scope model (project-level or platform-wide), and a project-scoped "replace" operation that rewires flow references from one connection to another. Platform/global connections can be selected as the replace source, but only project-scoped sources can be deleted afterwards — deleting platform connections stays exclusive to the platform admin page. The module handles all OAuth2 variants: user-supplied credentials, platform-managed OAuth apps, and Activepieces-hosted cloud OAuth. Users can optionally select a subset of a piece's declared OAuth2 scopes when creating a connection. OIDC connections enable pieces to obtain short-lived credentials from cloud providers (e.g. AWS via IRSA/Web Identity) using the Activepieces platform as an OIDC identity provider.
+App Connections store encrypted authentication credentials (OAuth2 tokens, API keys, basic auth, custom piece-defined fields, or OIDC props) that flow steps use to call external services. They support automatic OAuth2 token refresh with distributed locking, a dual-scope model (project-level or platform-wide), and a project-scoped "replace" operation that rewires flow references from one connection to another. Platform/global connections can be selected as the replace source, but only project-scoped sources can be deleted afterwards — deleting platform connections stays exclusive to the platform admin page. The module handles all OAuth2 variants: user-supplied credentials, platform-managed OAuth apps, and Wippa-hosted cloud OAuth. Users can optionally select a subset of a piece's declared OAuth2 scopes when creating a connection. OIDC connections enable pieces to obtain short-lived credentials from cloud providers (e.g. AWS via IRSA/Web Identity) using the Wippa platform as an OIDC identity provider.
 
 ## Key Files
 - `packages/server/api/src/app/app-connection/` — backend module (controller, service, entity)
@@ -31,7 +31,7 @@ App Connections store encrypted authentication credentials (OAuth2 tokens, API k
 ## Edition Availability
 - **Community (CE)**: Available — project-scoped connections fully supported.
 - **Enterprise (EE)**: Available — platform-scoped (global) connections require `globalConnectionsEnabled` plan flag.
-- **Cloud**: Available — same as EE; cloud OAuth2 uses `secrets.activepieces.com` for token exchange.
+- **Cloud**: Available — same as EE; cloud OAuth2 uses `secrets.wippa.com` for token exchange.
 
 ## Domain Terms
 
@@ -41,7 +41,7 @@ App Connections store encrypted authentication credentials (OAuth2 tokens, API k
 - **AppConnectionScope**: `PROJECT` (restricted to projects in `projectIds[]`) or `PLATFORM` (available to all projects).
 - **AppConnectionType**: One of `OAUTH2`, `CLOUD_OAUTH2`, `PLATFORM_OAUTH2`, `SECRET_TEXT`, `BASIC_AUTH`, `CUSTOM_AUTH`, `NO_AUTH`, `OIDC`.
 - **OIDCConnectionValue**: `{ type: OIDC, props: T }` — piece-defined OIDC props (role ARN, audience, etc.) stored encrypted; the actual token is fetched at runtime from the `POST /api/v1/worker/oidc-token` endpoint.
-- **OIDC provider**: The Activepieces server acts as an OpenID Connect identity provider, exposing `/.well-known/openid-configuration` and `/.well-known/jwks.json` so cloud providers (e.g. AWS STS) can verify issued tokens.
+- **OIDC provider**: The Wippa server acts as an OpenID Connect identity provider, exposing `/.well-known/openid-configuration` and `/.well-known/jwks.json` so cloud providers (e.g. AWS STS) can verify issued tokens.
 - **OIDC kid**: Derived via RFC 7638 SHA-256 thumbprint of the RSA public key — rotates automatically when the key material changes, preventing JWKS cache poisoning.
 - **externalId**: The stable identifier for a connection within a project; referenced in flow step settings (survives rename).
 - **preSelectForNewProjects**: Boolean flag on platform-scope connections; when true, auto-added to `projectIds` for every new project.
@@ -57,7 +57,7 @@ App Connections store encrypted authentication credentials (OAuth2 tokens, API k
 | Type | Value Fields | Refresh |
 |------|-------------|---------|
 | OAUTH2 | access_token, refresh_token, client_id, client_secret, token_url, expires_in, claimed_at | Auto-refresh |
-| CLOUD_OAUTH2 | Same but tokens exchanged via `secrets.activepieces.com` | Auto-refresh via cloud |
+| CLOUD_OAUTH2 | Same but tokens exchanged via `secrets.wippa.com` | Auto-refresh via cloud |
 | PLATFORM_OAUTH2 | Same but uses platform-managed OAuth app credentials | Auto-refresh |
 | SECRET_TEXT | token | None |
 | BASIC_AUTH | username, password | None |
@@ -67,7 +67,7 @@ App Connections store encrypted authentication credentials (OAuth2 tokens, API k
 
 ## OIDC Provider
 
-Activepieces acts as an OIDC identity provider to enable pieces to assume cloud roles without long-lived credentials (e.g. AWS IRSA / Web Identity Federation).
+Wippa acts as an OIDC identity provider to enable pieces to assume cloud roles without long-lived credentials (e.g. AWS IRSA / Web Identity Federation).
 
 **Runtime flow:**
 1. Engine calls `POST /api/v1/worker/oidc-token` with `{ audience, expiresInSeconds? }` (engine-only endpoint, guarded by `securityAccess.engine()`)

@@ -1,4 +1,4 @@
-# Comet API Piece for Activepieces
+# Comet API Piece for Wippa
 
 ## Building
 

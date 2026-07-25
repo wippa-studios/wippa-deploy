@@ -1,12 +1,12 @@
 # Jungle Grid
 
-Jungle Grid runs and monitors AI workloads on managed GPU capacity. Use this piece to estimate a workload, submit it for async execution, poll status/runtime/logs, retrieve artifacts, and cancel non-terminal jobs from an Activepieces workflow.
+Jungle Grid runs and monitors AI workloads on managed GPU capacity. Use this piece to estimate a workload, submit it for async execution, poll status/runtime/logs, retrieve artifacts, and cancel non-terminal jobs from an Wippa workflow.
 
 ## Setup
 
 1. Create or sign in to a Jungle Grid account at https://junglegrid.dev.
 2. Generate a scoped API key in the Jungle Grid portal.
-3. Add a Jungle Grid connection in Activepieces.
+3. Add a Jungle Grid connection in Wippa.
 4. Paste the API key into the **API Key** field.
 5. Keep **API Base URL** as `https://api.junglegrid.dev` unless Jungle Grid gives your workspace a different endpoint.
 
@@ -73,7 +73,7 @@ Retrieve logs and artifacts:
 
 Trigger Jungle Grid from an automation:
 
-1. Start with any Activepieces trigger, such as a webhook, schedule, form submission, or new database row.
+1. Start with any Wippa trigger, such as a webhook, schedule, form submission, or new database row.
 2. Use **Estimate Job** when the workflow needs a cost or capacity preview.
 3. Use **Submit Job** to queue work.
 4. Persist `job_id` in the downstream system or poll with Delay + **Get Job Status**.

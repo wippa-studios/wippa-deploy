@@ -9,7 +9,7 @@ scan (Grype, `.github/actions/sbom/`).
 
 ## What it does
 
-1. Signs in to `https://stg.activepieces.com` with a dedicated throwaway account and obtains a
+1. Signs in to `https://stg.wippa.com` with a dedicated throwaway account and obtains a
    USER JWT.
 2. Runs ZAP via the official `ghcr.io/zaproxy/zaproxy:stable` image, injecting
    `Authorization: Bearer <jwt>` on every request through a global `replacer` rule.

@@ -1,11 +1,11 @@
 ---
 name: db-migration
-description: Creates TypeORM database migrations for the Activepieces server. Use when the user asks to add a column, create a table, add an index, or make any schema change to the database.
+description: Creates TypeORM database migrations for the Wippa server. Use when the user asks to add a column, create a table, add an index, or make any schema change to the database.
 ---
 
-# Activepieces DB Migration
+# Wippa DB Migration
 
-Create TypeORM database migrations for schema changes in the Activepieces server API.
+Create TypeORM database migrations for schema changes in the Wippa server API.
 
 ## Workflow
 

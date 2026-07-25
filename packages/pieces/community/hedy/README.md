@@ -28,4 +28,4 @@ The Hedy piece provides descriptive errors for common issues such as:
 ## Support
 - Hedy API documentation: https://api.hedy.bot/docs
 - Hedy support: support@hedy.bot
-- ActivePieces community: https://www.activepieces.com/discord
+- ActivePieces community: https://www.wippa.com/discord

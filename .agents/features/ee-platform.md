@@ -1,7 +1,7 @@
 # EE Platform Module
 
 ## Summary
-The EE Platform module manages billing, quota enforcement, AI credits, license keys, and cloud admin operations for the Activepieces platform. It provides the `PlatformPlan` entity that gates every enterprise feature flag, enforces active-flow limits, and integrates with Stripe for cloud subscriptions and OpenRouter for AI credit accounting. Self-hosted Enterprise installs use license keys instead of Stripe to unlock features.
+The EE Platform module manages billing, quota enforcement, AI credits, license keys, and cloud admin operations for the Wippa platform. It provides the `PlatformPlan` entity that gates every enterprise feature flag, enforces active-flow limits, and integrates with Stripe for cloud subscriptions and OpenRouter for AI credit accounting. Self-hosted Enterprise installs use license keys instead of Stripe to unlock features.
 
 ## Key Files
 - `packages/server/api/src/app/ee/platform/` — backend service and controller

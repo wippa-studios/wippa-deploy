@@ -41,7 +41,7 @@ Email templates live in `src/assets/emails/`. When creating or modifying email t
 
 - **F-pattern layout** — All content (logo, heading, body, notes, fallback link, footer) must be **left-aligned**. The CTA button is auto-width, left-aligned.
 - **Design system consistency** — Use the same font scale as the web app: Inter font family, 32px/500 headings, 16px body, 14px closing, 11px muted text. Colors: `#0a0a0a` headings, `#2f2e2e` body, `#a3a3a3` muted.
-- **White-label ready** — Use `{{fullLogoUrl}}`, `{{primaryColor}}`, `{{primaryColorLight}}`, and `{{platformName}}` Mustache variables. Never hardcode "Activepieces" or brand colors.
+- **White-label ready** — Use `{{fullLogoUrl}}`, `{{primaryColor}}`, `{{primaryColorLight}}`, and `{{platformName}}` Mustache variables. Never hardcode "Wippa" or brand colors.
 - **Card-on-background layout** — White card (`560px`, `border-radius: 12px`) on `{{primaryColorLight}}` tinted background.
 - **CTA button** — Auto-width, left-aligned, `{{primaryColor}}` background, 16px/500 white text, `12px 18px` padding, `8px` border-radius.
 - **Fallback link** — Below the CTA: "If the button doesn't work, click here." at 11px `#a3a3a3`, with `click here` underlined in `{{primaryColor}}`.

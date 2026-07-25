@@ -30,10 +30,10 @@ Bot resource → **Channels** → add **Microsoft Teams** → accept the terms �
 Bot resource → **Configuration** → **Messaging endpoint**:
 
 ```
-https://<your-activepieces-url>/api/v1/teams-bot/webhook
+https://<your-wippa-url>/api/v1/teams-bot/webhook
 ```
 
-e.g. `https://cloud.activepieces.com/api/v1/teams-bot/webhook`, or your tunnel URL when developing locally. This is how the bot reports where it's installed so Activepieces can post to it.
+e.g. `https://cloud.wippa.com/api/v1/teams-bot/webhook`, or your tunnel URL when developing locally. This is how the bot reports where it's installed so Wippa can post to it.
 
 ## 4. Create a client secret
 
@@ -62,7 +62,7 @@ In `manifest.json`, replace the **`<TEAMS_BOT_APP_ID>`** placeholder (it appears
 
 ```bash
 cd teams-app
-zip activepieces-teams-bot.zip manifest.json color.png outline.png
+zip wippa-teams-bot.zip manifest.json color.png outline.png
 ```
 
 ## 7. Install the app in your team
@@ -70,9 +70,9 @@ zip activepieces-teams-bot.zip manifest.json color.png outline.png
 - **Sideload (dev):** Teams → **Apps** → **Manage your apps** → **Upload an app** → **Upload a custom app** → pick the zip → add it to the target **team/channel**.
 - **Org-wide / production:** Teams Admin Center → **Teams apps** → **Manage apps** → **Upload new app**, or submit to the Teams Store via Partner Center.
 
-On install, the bot receives an `installationUpdate` event and Activepieces stores where to reach it. **The bot must be installed in a team before you can post to its channels.**
+On install, the bot receives an `installationUpdate` event and Wippa stores where to reach it. **The bot must be installed in a team before you can post to its channels.**
 
-## 8. Connect in Activepieces
+## 8. Connect in Wippa
 
 Create a connection on the **Microsoft Teams Bot** piece with:
 
@@ -92,4 +92,4 @@ Create a connection on the **Microsoft Teams Bot** piece with:
 | Send fails: `Authorization has been denied for this request` | The **Tenant ID** (or the bot) is a *different* tenant than your Teams. Bot and Teams must be the same tenant. |
 | Install fails: `BulkMembershipRequest` | The **Microsoft Teams channel** isn't enabled on the bot (step 2). |
 | Send fails: `Incorrect conversation creation parameters` | The bot isn't installed in that team, or the channel id is wrong — reinstall the app (step 7). |
-| `Activepieces Bot is not installed in this team` | Install the app into the team (step 7) so the bot's endpoint gets registered. |
+| `Wippa Bot is not installed in this team` | Install the app into the team (step 7) so the bot's endpoint gets registered. |

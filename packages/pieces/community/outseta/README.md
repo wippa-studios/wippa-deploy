@@ -1,4 +1,4 @@
-# Outseta (Activepieces)
+# Outseta (Wippa)
 
 This piece provides webhook triggers and lookup actions for Outseta CRM and Billing.
 

@@ -5,7 +5,7 @@ The LLM-backed capabilities: provider configuration, the metered credit currency
 ## Language
 
 **AI Provider**:
-A configured LLM backend (OpenAI, Anthropic, Google, Azure, OpenRouter, Cloudflare, Custom, Activepieces) with encrypted credentials.
+A configured LLM backend (OpenAI, Anthropic, Google, Azure, OpenRouter, Cloudflare, Custom, Wippa) with encrypted credentials.
 _Avoid_: model provider, LLM config
 
 **AI Credits**:

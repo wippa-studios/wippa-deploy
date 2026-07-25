@@ -1,4 +1,4 @@
-# @activepieces/shared
+# @wippa/shared
 
 Types, DTOs, Zod schemas, utilities. Version bump required on ANY change (patch for fixes, minor for new exports).
 
@@ -8,12 +8,12 @@ Zod schema + `z.infer` dual export. Use `BaseModelSchema` (id, created, updated)
 
 ## Key Utilities (`src/lib/core/common/`)
 
-`apId()`, `isNil()`, `isEmpty()`, `tryCatch()`, `tryCatchSync()`, `spreadIfDefined()`, `spreadIfNotUndefined()`, `ActivepiecesError({ code, params })`, `SeekPage<T>`, `formErrors`, `chunk()`, `partition()`, `unique()`, `omit()`, `deepMergeAndCast()`, `sanitizeObjectForPostgresql()`, `kebabCase()`, `camelCase()`, `debounce()`, `applyFunctionToValues()`
+`apId()`, `isNil()`, `isEmpty()`, `tryCatch()`, `tryCatchSync()`, `spreadIfDefined()`, `spreadIfNotUndefined()`, `WippaError({ code, params })`, `SeekPage<T>`, `formErrors`, `chunk()`, `partition()`, `unique()`, `omit()`, `deepMergeAndCast()`, `sanitizeObjectForPostgresql()`, `kebabCase()`, `camelCase()`, `debounce()`, `applyFunctionToValues()`
 
 ## Key Enums (where to ADD new entries)
 
 - `Permission` (`src/lib/core/common/security/`) — 26 permissions. Add READ/WRITE pairs for new features.
-- `ErrorCode` (`src/lib/core/common/activepieces-error.ts`) — 66 codes. Also add HTTP mapping in server's `error-handler.ts`.
+- `ErrorCode` (`src/lib/core/common/wippa-error.ts`) — 66 codes. Also add HTTP mapping in server's `error-handler.ts`.
 - `ApFlagId` (`src/lib/core/flag/flag.ts`) — 42 feature flags.
 - `FlowOperationType` — 26 flow modification ops. Add new op types here + handler in flow service.
 - `FlowActionType` — CODE, PIECE, LOOP_ON_ITEMS, ROUTER.

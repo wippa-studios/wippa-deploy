@@ -1,6 +1,6 @@
-# Activepieces API Tests
+# Wippa API Tests
 
-This directory contains all tests for the `@activepieces/server-api` package, organised into a unit layer and an integration layer under the monorepo's canonical 4-layer testing taxonomy (unit / integration / e2e / smoke).
+This directory contains all tests for the `@wippa/server-api` package, organised into a unit layer and an integration layer under the monorepo's canonical 4-layer testing taxonomy (unit / integration / e2e / smoke).
 
 ## Taxonomy mapping
 

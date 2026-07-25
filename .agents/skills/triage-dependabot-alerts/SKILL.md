@@ -1,11 +1,11 @@
 ---
 name: triage-dependabot-alerts
-description: Triage Dependabot dependency vulnerability alerts for the Activepieces repo — pull open alerts, dedupe to distinct (package, advisory), confirm the vulnerable package + API is actually used, and propose version-bump fixes proven non-breaking (build + tests) before any PR. Use when the user asks to triage Dependabot alerts, work the dependency-vulnerability backlog, or bump vulnerable dependencies. For human-reported vulnerabilities, use the triage-security-advisories skill instead.
+description: Triage Dependabot dependency vulnerability alerts for the Wippa repo — pull open alerts, dedupe to distinct (package, advisory), confirm the vulnerable package + API is actually used, and propose version-bump fixes proven non-breaking (build + tests) before any PR. Use when the user asks to triage Dependabot alerts, work the dependency-vulnerability backlog, or bump vulnerable dependencies. For human-reported vulnerabilities, use the triage-security-advisories skill instead.
 ---
 
 # Triage Dependabot Alerts (dependency vulnerabilities)
 
-On-demand triage of Dependabot dependency alerts for `activepieces/activepieces`. Produces a
+On-demand triage of Dependabot dependency alerts for `wippa/wippa`. Produces a
 **review-ready** report per affected package, and proposes version-bump fixes that are **proven
 non-breaking** before any PR. The user reviews and decides per package: approve the bump /
 dismiss / escalate.
@@ -24,7 +24,7 @@ private reports, but keep the workspace consistent and never commit triage artif
 
 ```
 mkdir -p .security-triage
-gh api -H "Accept: application/vnd.github+json" "/repos/activepieces/activepieces/dependabot/alerts?state=open" --paginate > .security-triage/dependabot.json
+gh api -H "Accept: application/vnd.github+json" "/repos/wippa/wippa/dependabot/alerts?state=open" --paginate > .security-triage/dependabot.json
 ```
 
 `gh api --paginate` emits one concatenated array per page — **always** merge:

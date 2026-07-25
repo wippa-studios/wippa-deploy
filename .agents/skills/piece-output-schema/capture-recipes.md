@@ -15,7 +15,7 @@ OAuth caveat: some Google pieces construct a client that doesn't auto-refresh, s
 
 Ask the user for credentials, then create the connection:
 
-- **OAuth2 pieces** (Gmail, the Google pieces, most social/CRM apps): connect through the **builder UI sign-in** (Connections → New → authorize) — the browser MCP can drive it. Do **not** create these over the API: you won't have a valid access token. And do **not** capture against a cloud backend (`--mode=cloud`) — the OAuth redirect returns to `cloud.activepieces.com`, not your localhost; use a fully-local instance.
+- **OAuth2 pieces** (Gmail, the Google pieces, most social/CRM apps): connect through the **builder UI sign-in** (Connections → New → authorize) — the browser MCP can drive it. Do **not** create these over the API: you won't have a valid access token. And do **not** capture against a cloud backend (`--mode=cloud`) — the OAuth redirect returns to `cloud.wippa.com`, not your localhost; use a fully-local instance.
 - **API-key / token / basic-auth pieces:** create via the UI or `POST /v1/app-connections` (body includes `externalId`, `pieceName`, `type`, `value`).
 
 Note the connection's **external id** — step input references it as `{{connections['<externalId>']}}`.

@@ -1,7 +1,7 @@
 # SCIM 2.0 Provisioning
 
 ## Summary
-SCIM (System for Cross-domain Identity Management) 2.0 integration allows enterprise Identity Providers (IdPs) such as Okta, Azure AD, and Google Workspace to automatically provision, update, and deprovision users and groups in Activepieces. Users map directly to Activepieces platform users; Groups map to Activepieces projects (only `ProjectType.TEAM` projects). Authentication uses an API key passed as a Bearer token (`platformAdminOnly SERVICE` principal). The module also exposes the SCIM discovery endpoints (`ServiceProviderConfig`, `ResourceTypes`, `Schemas`) for IdP auto-configuration. Gated by `platform.plan.scimEnabled`.
+SCIM (System for Cross-domain Identity Management) 2.0 integration allows enterprise Identity Providers (IdPs) such as Okta, Azure AD, and Google Workspace to automatically provision, update, and deprovision users and groups in Wippa. Users map directly to Wippa platform users; Groups map to Wippa projects (only `ProjectType.TEAM` projects). Authentication uses an API key passed as a Bearer token (`platformAdminOnly SERVICE` principal). The module also exposes the SCIM discovery endpoints (`ServiceProviderConfig`, `ResourceTypes`, `Schemas`) for IdP auto-configuration. Gated by `platform.plan.scimEnabled`.
 
 ## Key Files
 - `packages/server/api/src/app/ee/scim/scim-module.ts` — module registration, `scimEnabled` guard, `application/scim+json` content type parser
@@ -19,11 +19,11 @@ Enterprise and Cloud. Gated by `platform.plan.scimEnabled`. Module hook: `platfo
 
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
-- **SCIM User** → Activepieces `User` + `UserIdentity` on the platform.
-- **SCIM Group** → Activepieces `Project` with `type = TEAM`.
-- **externalId**: Vendor-side stable identifier for users and groups, stored on the Activepieces entity.
+- **SCIM User** → Wippa `User` + `UserIdentity` on the platform.
+- **SCIM Group** → Wippa `Project` with `type = TEAM`.
+- **externalId**: Vendor-side stable identifier for users and groups, stored on the Wippa entity.
 - **active**: Boolean SCIM field; maps to `UserStatus.ACTIVE` / `UserStatus.INACTIVE`.
-- **SCIM_CUSTOM_USER_ATTRIBUTES_SCHEMA**: Custom extension schema `urn:ietf:params:scim:schemas:activepieces:1.0:CustomUserAttributes` — carries `platformRole` for assigning admin vs. member roles during provisioning.
+- **SCIM_CUSTOM_USER_ATTRIBUTES_SCHEMA**: Custom extension schema `urn:ietf:params:scim:schemas:wippa:1.0:CustomUserAttributes` — carries `platformRole` for assigning admin vs. member roles during provisioning.
 - **SCIM_DEFAULT_PROJECT_ROLE**: System env var (`AppSystemProp.SCIM_DEFAULT_PROJECT_ROLE`) controlling the role assigned when adding a user to a group (project). Defaults to `EDITOR`.
 
 ## Content Type
@@ -77,7 +77,7 @@ DELETE maps to deactivation, not hard deletion: `status` is set to `INACTIVE`.
 
 ## Group / Project Mapping
 
-SCIM Groups map to Activepieces projects with `type = TEAM`:
+SCIM Groups map to Wippa projects with `type = TEAM`:
 - Creating a group creates a new project with `displayName` and optional `externalId`.
 - Adding members to a group upserts project membership with `SCIM_DEFAULT_PROJECT_ROLE`.
 - Deleting a group calls `platformProjectService.markForDeletion`.

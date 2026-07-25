@@ -23,7 +23,7 @@ To use this piece, you'll need:
 1. Sign up for a free account at https://www.browserless.io/
 2. Get your API token from your dashboard
 3. Use your API endpoint URL in the format: `https://your-api-key.browserless.io`
-4. Configure the authentication in Activepieces with your token and base URL
+4. Configure the authentication in Wippa with your token and base URL
 
 ## Documentation
 

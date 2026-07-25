@@ -6,18 +6,18 @@ Monitor your websites, APIs, and servers with UptimeRobot. Get alerted when thin
 
 [UptimeRobot](https://uptimerobot.com/) is a website monitoring service used by over 3 million users. It checks your websites every 5 minutes (or as frequently as every 30 seconds on Pro plans) and alerts you when they go down.
 
-This piece lets you manage your monitors and react to downtime events directly from Activepieces.
+This piece lets you manage your monitors and react to downtime events directly from Wippa.
 
 ## Setup
 
-To connect UptimeRobot to Activepieces, you need an API key:
+To connect UptimeRobot to Wippa, you need an API key:
 
 1. Log in to your [UptimeRobot Dashboard](https://dashboard.uptimerobot.com/)
 2. Click **Integrations & API** in the left sidebar
 3. Scroll to the **API** section
 4. Click **Show** next to your Main API Key
 5. Copy the key (it starts with `u` followed by numbers and letters)
-6. Paste it into the API Key field in Activepieces
+6. Paste it into the API Key field in Wippa
 
 ## Rate limits
 
@@ -37,7 +37,7 @@ UptimeRobot's Free plan limits you to **10 API requests per minute**. Paid plans
 
 | Trigger | Description |
 |---------|-------------|
-| **Monitor Status Change** | Polling trigger. Fires when a monitor goes up or down. Poll cadence (~5 min) is controlled by the Activepieces platform admin. |
+| **Monitor Status Change** | Polling trigger. Fires when a monitor goes up or down. Poll cadence (~5 min) is controlled by the Wippa platform admin. |
 
 ## Example Workflow
 

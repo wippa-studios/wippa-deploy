@@ -1,9 +1,9 @@
 ---
 name: piece-builder
-description: Builds Activepieces pieces (integrations) with actions and triggers. Use when the user asks to create a new piece, add actions to a piece, add triggers to a piece, or build an integration for a third-party app. Also use when the user mentions Activepieces pieces, connectors, or integration development.
+description: Builds Wippa pieces (integrations) with actions and triggers. Use when the user asks to create a new piece, add actions to a piece, add triggers to a piece, or build an integration for a third-party app. Also use when the user mentions Wippa pieces, connectors, or integration development.
 ---
 
-# Activepieces Piece Builder
+# Wippa Piece Builder
 
 ## Pick your task mode first
 
@@ -198,7 +198,7 @@ Full reference: [piece-types.md](piece-types.md) — includes all `PieceCategory
 
 In actions and triggers, `context.auth` is the resolved connection object — not a flat string:
 
-| API Auth Method | Activepieces Type | Access Pattern |
+| API Auth Method | Wippa Type | Access Pattern |
 |---|---|---|
 | API key / Bearer token | `PieceAuth.SecretText()` | `context.auth.secret_text` |
 | OAuth2 | `PieceAuth.OAuth2()` | `context.auth.access_token`; extra props via `context.auth.props?.['<key>']` |
@@ -238,7 +238,7 @@ export const myApp = createPiece({
     displayName: 'My App',
     description: 'What the app does in one sentence.',
     minimumSupportedRelease: '0.36.1',
-    logoUrl: 'https://cdn.activepieces.com/pieces/my-app.png',
+    logoUrl: 'https://cdn.wippa.com/pieces/my-app.png',
     categories: [PieceCategory.PRODUCTIVITY],
     auth: myAppAuth,
     authors: ['your-github-username'],
@@ -276,7 +276,7 @@ Full patterns and examples: read `ux-guidelines.md`
 
 ## Output Quality: Table-Ready Data
 
-Users pipe piece outputs into Google Sheets and Activepieces Tables constantly — nested or inconsistent output breaks their flows.
+Users pipe piece outputs into Google Sheets and Wippa Tables constantly — nested or inconsistent output breaks their flows.
 
 1. **Flatten nested objects** — `{ user: { name: "Jo" } }` → `{ user_name: "Jo" }`.
 2. **Arrays of records must have consistent flat keys** — same keys on every object so each maps to a column.

@@ -1,7 +1,7 @@
 # OAuth Apps (Custom OAuth App Credentials)
 
 ## Summary
-OAuth Apps allow platform owners to register their own OAuth 2.0 application credentials (client ID and client secret) for pieces that support OAuth. When a platform has a custom OAuth app registered for a piece, the connection dialog uses those credentials instead of Activepieces' shared credentials. This gives vendors full control over OAuth consent screens, rate limits, and branding. The client secret is encrypted at rest using the platform's encryption key. There is no plan flag gate — the module is available to all authenticated platform users.
+OAuth Apps allow platform owners to register their own OAuth 2.0 application credentials (client ID and client secret) for pieces that support OAuth. When a platform has a custom OAuth app registered for a piece, the connection dialog uses those credentials instead of Wippa' shared credentials. This gives vendors full control over OAuth consent screens, rate limits, and branding. The client secret is encrypted at rest using the platform's encryption key. There is no plan flag gate — the module is available to all authenticated platform users.
 
 ## Key Files
 - `packages/server/api/src/app/ee/oauth-apps/oauth-app.module.ts` — module registration + controller (both in one file)

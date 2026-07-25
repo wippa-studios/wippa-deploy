@@ -1,6 +1,6 @@
 # Plunk
 
-Activepieces piece for [Plunk](https://useplunk.com), an open-source email platform for transactional and marketing email built on AWS SES.
+Wippa piece for [Plunk](https://useplunk.com), an open-source email platform for transactional and marketing email built on AWS SES.
 
 ## Authentication
 

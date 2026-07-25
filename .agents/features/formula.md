@@ -110,7 +110,7 @@ Documented in `.claude/plans/glimmering-percolating-unicorn.md`. Summary:
 - **Format change `v1` → `v2`** — `containsWrapper` already matches `v\d+`; add `evaluateV2` and dispatch on the captured version.
 
 ## Frontend Hooks
-- `useEmbedding()` (`@/components/providers/embed-provider`) — provides `embedState.isEmbedded`. Only used to hide the "See All" docs link in the search popover (the docs site is `activepieces.com` and shouldn't be surfaced from a white-labeled embed).
+- `useEmbedding()` (`@/components/providers/embed-provider`) — provides `embedState.isEmbedded`. Only used to hide the "See All" docs link in the search popover (the docs site is `wippa.com` and shouldn't be surfaced from a white-labeled embed).
 - `variablesQueries.useVariables(...)` — fetches the project's variables (see `variables.md`); used by the editor to render variable mention labels inside formula args.
 
 ## What's NOT in this feature

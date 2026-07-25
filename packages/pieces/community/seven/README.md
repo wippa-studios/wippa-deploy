@@ -1,13 +1,13 @@
 <img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
 
-Official seven piece for [Activepieces](https://www.activepieces.com/)
+Official seven piece for [Wippa](https://www.wippa.com/)
 
 ## Installation
 ### Dashboard
 Settings -> My Pieces -> Install Piece -> type in `seven`
 
 ### Package Manager
-`npm i @seven.io/activepieces`
+`npm i @seven.io/wippa`
 
 ## Actions
 - Send SMS

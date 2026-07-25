@@ -1,6 +1,6 @@
 ---
 name: debug-failed-run
-description: "Debug a failed Activepieces flow run end-to-end: given a flow run id (or BullMQ job id), find why it failed, cross-referencing the live BullMQ job + Postgres rows (SSH script on the DevOps box), the centralized ClickHouse logs (ClickStack MCP), and the code in this repo, then categorize the failed-job backlog on request."
+description: "Debug a failed Wippa flow run end-to-end: given a flow run id (or BullMQ job id), find why it failed, cross-referencing the live BullMQ job + Postgres rows (SSH script on the DevOps box), the centralized ClickHouse logs (ClickStack MCP), and the code in this repo, then categorize the failed-job backlog on request."
 ---
 
 # Debug a Failed Flow Run
@@ -48,9 +48,9 @@ Scope the time window to the job's `processedAt`/`finishedAt` from Step 1 (± a 
 
 ## Step 3 — Trace the failure into this repo
 
-Steps 1–2 tell you *what* failed at runtime; this step finds *where* in the code and decides **product bug vs. user/config issue**. Work from this repo (the Activepieces source you're already in):
+Steps 1–2 tell you *what* failed at runtime; this step finds *where* in the code and decides **product bug vs. user/config issue**. Work from this repo (the Wippa source you're already in):
 
-- Take the distinctive part of the stacktrace / `failedReason` / log `Body` — the exact thrown message, an `ActivepiecesError` `code` (e.g. `ENTITY_NOT_FOUND`, `PIECE_NOT_FOUND`), or a function name — and `Grep` for it across `packages/`. Quoted error strings and error `code` enums are the fastest anchors.
+- Take the distinctive part of the stacktrace / `failedReason` / log `Body` — the exact thrown message, an `WippaError` `code` (e.g. `ENTITY_NOT_FOUND`, `PIECE_NOT_FOUND`), or a function name — and `Grep` for it across `packages/`. Quoted error strings and error `code` enums are the fastest anchors.
 - For a piece failure, the failing step's `settings.pieceName`/`pieceVersion` (from Step 1) points at `packages/pieces/**/<piece>`; open the failing action/trigger.
 - For engine/worker failures, look under `packages/server/{api,worker}` and `packages/engine`. Read the throwing code path and the surrounding error handling to see whether the input that triggered it (from `triggerPayload` / step `input`) is being mishandled.
 - Classify the outcome:

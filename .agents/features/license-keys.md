@@ -1,7 +1,7 @@
 # License Keys (License Activation)
 
 ## Summary
-License Keys are the mechanism by which self-hosted Enterprise customers activate and maintain their subscription. A license key is a string that encodes which EE features are enabled (SSO, SCIM, audit logs, custom domains, etc.) and an expiry date. The key is validated against Activepieces' remote secrets service (`https://secrets.activepieces.com/license-keys`). When valid, the key's feature flags are written to the platform's `plan` object, enabling gated features. A background job runs daily to re-validate every platform's license key and downgrade to a free plan if the key has expired. The endpoints are public (no auth required) since they are used during self-hosted setup before authentication is configured.
+License Keys are the mechanism by which self-hosted Enterprise customers activate and maintain their subscription. A license key is a string that encodes which EE features are enabled (SSO, SCIM, audit logs, custom domains, etc.) and an expiry date. The key is validated against Wippa' remote secrets service (`https://secrets.wippa.com/license-keys`). When valid, the key's feature flags are written to the platform's `plan` object, enabling gated features. A background job runs daily to re-validate every platform's license key and downgrade to a free plan if the key has expired. The endpoints are public (no auth required) since they are used during self-hosted setup before authentication is configured.
 
 ## Key Files
 - `packages/server/api/src/app/ee/license-keys/license-keys-module.ts` — module registration, schedules daily `TRIAL_TRACKER` job
@@ -39,10 +39,10 @@ Returns `LicenseKeyEntity` on success, or `INVALID_LICENSE_KEY` error if expired
 
 ## Service Methods
 
-- `getKey(license)` — fetches key metadata from `https://secrets.activepieces.com/license-keys/<license>`. Returns `null` if not found or `license` is nil.
+- `getKey(license)` — fetches key metadata from `https://secrets.wippa.com/license-keys/<license>`. Returns `null` if not found or `license` is nil.
 - `verifyKeyOrReturnNull({ platformId, license })` — marks key as activated, fetches metadata, checks expiry. Returns `null` if nil or expired.
 - `applyLimits(platformId, key)` — maps all `LicenseKeyEntity` boolean flags to `platformService.update` and `platformPlanService.update`. Determines `PlanName.ENTERPRISE` vs `internal` plan based on flags.
-- `requestTrial(request)` — calls `POST https://secrets.activepieces.com/license-keys` to create a trial key. Throws `EMAIL_ALREADY_HAS_ACTIVATION_KEY` on 409 conflict.
+- `requestTrial(request)` — calls `POST https://secrets.wippa.com/license-keys` to create a trial key. Throws `EMAIL_ALREADY_HAS_ACTIVATION_KEY` on 409 conflict.
 - `markAsActiviated({ key, platformId? })` — calls the remote `activate` endpoint; fires `KEY_ACTIVATED` telemetry event.
 - `extendTrial({ email, days })` — admin-only method calling the remote service with `SECRET_MANAGER_API_KEY` header.
 - `downgradeToFreePlan(platformId)` — sets all feature flags to `false` in the platform plan.
@@ -59,7 +59,7 @@ The remote secrets service returns an object with these feature flags:
 | `ssoEnabled` | boolean | SSO/SAML |
 | `scimEnabled` | boolean | SCIM provisioning |
 | `environmentsEnabled` | boolean | Multiple environments |
-| `showPoweredBy` | boolean | "Powered by Activepieces" branding |
+| `showPoweredBy` | boolean | "Powered by Wippa" branding |
 | `embeddingEnabled` | boolean | Managed auth / embed SDK |
 | `auditLogEnabled` | boolean | Audit logs |
 | `customAppearanceEnabled` | boolean | White-label branding |
@@ -87,4 +87,4 @@ The `TRIAL_TRACKER` system job runs at `*/59 23 * * *` (approximately daily at 2
 3. If valid, calls `applyLimits` to refresh the platform plan with current key flags.
 
 ## Remote Service
-All interactions go to `https://secrets.activepieces.com/license-keys`. This is Activepieces' central licensing service. The `SECRET_MANAGER_API_KEY` system env var is required for admin operations like `extendTrial`.
+All interactions go to `https://secrets.wippa.com/license-keys`. This is Wippa' central licensing service. The `SECRET_MANAGER_API_KEY` system env var is required for admin operations like `extendTrial`.

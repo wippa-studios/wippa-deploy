@@ -28,7 +28,7 @@ This piece uses **Service Account Authentication** for secure access to Google V
 3. **Create a Service Account**
    - Go to "APIs & Services" > "Credentials"
    - Click "Create Credentials" > "Service Account"
-   - Give it a name (e.g., "activepieces-vertexai")
+   - Give it a name (e.g., "wippa-vertexai")
    - Click "Create and Continue"
    - Grant the following role:
      - **Vertex AI User** - to use Vertex AI models
@@ -41,8 +41,8 @@ This piece uses **Service Account Authentication** for secure access to Google V
    - Choose **JSON** format
    - Click "Create" - this will download a JSON file
 
-5. **Add the Key to Activepieces**
-   - In Activepieces, paste the entire JSON content from the downloaded file into the "Service Account JSON Key" field
+5. **Add the Key to Wippa**
+   - In Wippa, paste the entire JSON content from the downloaded file into the "Service Account JSON Key" field
    - The piece will validate the credentials automatically
 
 ## Actions

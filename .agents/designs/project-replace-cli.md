@@ -5,7 +5,7 @@ Driver: Nedap. Replaces a Git-based GHA release pipeline with direct cross-insta
 
 ## Problem
 
-Move a project's content from one Activepieces instance to another (e.g. staging → prod) without using Git as a storage mechanism, and fail GitHub Actions cleanly on validation errors before any destructive write occurs.
+Move a project's content from one Wippa instance to another (e.g. staging → prod) without using Git as a storage mechanism, and fail GitHub Actions cleanly on validation errors before any destructive write occurs.
 
 ## Non-goals
 
@@ -29,7 +29,7 @@ Mirrored: **flows + table schemas + folders + piece validation**.
 
 ## Topology assumption
 
-Source and destination are **separate Activepieces deployments**, each with its own DB, platform, and API keys. There is no shared `projectId`/`platformId` namespace. Cross-instance is the design constraint; same-instance multi-project happens to work as a special case.
+Source and destination are **separate Wippa deployments**, each with its own DB, platform, and API keys. There is no shared `projectId`/`platformId` namespace. Cross-instance is the design constraint; same-instance multi-project happens to work as a special case.
 
 ## Identity / matching
 
@@ -57,7 +57,7 @@ Source and destination are **separate Activepieces deployments**, each with its 
 ```jsonc
 {
   "schemaVersion": 1,
-  "sourceActivepiecesVersion": "0.45.0",
+  "sourceWippaVersion": "0.45.0",
   "flows":   [ /* full flow states with externalId */ ],
   "tables":  [ /* schema only — name, externalId, fields[], status, trigger */ ],
   "folders": [ /* externalId, displayName, displayOrder */ ],
@@ -67,7 +67,7 @@ Source and destination are **separate Activepieces deployments**, each with its 
 
 ### Server-side preflight (hard fails before any write)
 
-1. **AP version**: `dest >= source` on same major. No override flag. Source version comes from `sourceActivepiecesVersion`.
+1. **AP version**: `dest >= source` on same major. No override flag. Source version comes from `sourceWippaVersion`.
 2. **Piece versions**: every entry in `requiredPieces` must match a piece on dest's registry **exactly**. No flag.
 3. **Custom-piece presence**: any `requiredPieces` entry with `pieceType: 'CUSTOM'` missing on dest → hard fail.
 4. **Connection externalIds**: for every connection externalId referenced inside any source flow's content, dest must have a connection with the same externalId + same `pieceName`. If missing → hard fail.
@@ -119,10 +119,10 @@ Single command. No config file. No env-var auto-resolution. No dry-run. Per-call
 
 ```bash
 ap project replace \
-  --source-url   https://staging.activepieces.com \
+  --source-url   https://staging.wippa.com \
   --source-token "$STAGING_TOKEN" \
   --source-project "$STAGING_PROJECT_ID" \
-  --dest-url     https://prod.activepieces.com \
+  --dest-url     https://prod.wippa.com \
   --dest-token   "$PROD_TOKEN" \
   --dest-project "$PROD_PROJECT_ID"
 ```

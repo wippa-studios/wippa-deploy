@@ -63,7 +63,7 @@ Australian automation platform. Self-hosted or cloud. 700+ integrations. MCP sup
 
 ## Key Utilities (`@wippa/shared`)
 
-`apId()`, `tryCatch()`, `tryCatchSync()`, `isNil()`, `spreadIfDefined()`, `spreadIfNotUndefined()`, `ActivepiecesError({ code, params })`, `SeekPage<T>`, `formErrors`, `BaseModelSchema`, `chunk()`, `partition()`, `unique()`, `omit()`, `sanitizeObjectForPostgresql()`
+`apId()`, `tryCatch()`, `tryCatchSync()`, `isNil()`, `spreadIfDefined()`, `spreadIfNotUndefined()`, `WippaError({ code, params })`, `SeekPage<T>`, `formErrors`, `BaseModelSchema`, `chunk()`, `partition()`, `unique()`, `omit()`, `sanitizeObjectForPostgresql()`
 
 ## Testing
 
@@ -85,7 +85,7 @@ npx turbo run lint --filter=<package>           # Lint a single package, e.g. --
 npx turbo run serve --filter=web -- --mode=cloud # Run local frontend against the cloud backend
 ```
 
-When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth provider will redirect back to `cloud.activepieces.com` after sign-in instead of your local frontend, breaking the flow. Use API-key / basic-auth connections, or test OAuth2 against a fully local backend.
+When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth provider will redirect back to `cloud.wippa.com` after sign-in instead of your local frontend, breaking the flow. Use API-key / basic-auth connections, or test OAuth2 against a fully local backend.
 
 ## Pull Requests
 
@@ -103,7 +103,7 @@ When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth prov
 
 ## Database Migrations
 
-- Before creating or modifying a database migration, **always read the [Database Migrations Playbook](https://www.activepieces.com/docs/handbook/engineering/playbooks/database-migration#database-migrations)** first. Follow its instructions for generating and structuring migrations.
+- Before creating or modifying a database migration, **always read the [Database Migrations Playbook](https://www.wippa.com/docs/handbook/engineering/playbooks/database-migration#database-migrations)** first. Follow its instructions for generating and structuring migrations.
 
 ## Verification
 
@@ -111,7 +111,7 @@ When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth prov
 
 ## White-Labeling & Edition Paths
 
-- **All customer-facing UI must be white-labeled.** Sign-in/signup pages, email templates, logos, and any user-visible branding must use the platform's configured appearance (name, colors, logos) — never hardcode "Activepieces" in user-facing surfaces.
+- **All customer-facing UI must be white-labeled.** Sign-in/signup pages, email templates, logos, and any user-visible branding must use the platform's configured appearance (name, colors, logos) — never hardcode "Wippa" in user-facing surfaces.
 - **Test across all edition paths.** Every customer-facing feature must be verified on:
   - **Community Edition** (self-hosted, `AP_EDITION=ce`) — no custom branding, open-source plan
   - **Enterprise Edition** (self-hosted, `AP_EDITION=ee`) — custom branding behind `customAppearanceEnabled` flag
@@ -123,5 +123,5 @@ When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth prov
 
 ## Useful Links
 
-- [Database Migrations Playbook](https://www.activepieces.com/docs/handbook/engineering/playbooks/database-migration)
+- [Database Migrations Playbook](https://www.wippa.com/docs/handbook/engineering/playbooks/database-migration)
 - [TypeORM Migrations Docs](https://orkhan.gitbook.io/typeorm/docs/migrations)

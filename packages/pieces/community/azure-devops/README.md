@@ -6,11 +6,11 @@ Track work, code, and ship software with Azure DevOps. Automate your work item m
 
 [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) is a suite of development tools from Microsoft for planning, collaborating, and shipping software. Azure Boards provides work item tracking with Kanban boards, backlogs, team dashboards, and custom reporting.
 
-This piece lets you create, update, and track work items directly from Activepieces.
+This piece lets you create, update, and track work items directly from Wippa.
 
 ## Setup
 
-To connect Azure DevOps to Activepieces, you need a Personal Access Token (PAT):
+To connect Azure DevOps to Wippa, you need a Personal Access Token (PAT):
 
 1. Go to [Azure DevOps](https://dev.azure.com/) and sign in
 2. Click your profile icon (top-right) and select **Personal access tokens**
@@ -38,12 +38,12 @@ You'll also need your **Organization URL**, which looks like `https://dev.azure.
 
 | Trigger | Description |
 |---------|-------------|
-| **New or Updated Work Item (Instant)** | Fires instantly via Azure DevOps Service Hooks when a work item is created, updated, or commented on. Requires a public Activepieces webhook URL. |
-| **New or Updated Work Item** | Polling fallback that checks every few minutes. Use when your Activepieces instance is not reachable from the public internet. |
+| **New or Updated Work Item (Instant)** | Fires instantly via Azure DevOps Service Hooks when a work item is created, updated, or commented on. Requires a public Wippa webhook URL. |
+| **New or Updated Work Item** | Polling fallback that checks every few minutes. Use when your Wippa instance is not reachable from the public internet. |
 
 ### Instant trigger setup
 
-The instant trigger registers a Service Hooks subscription in Azure DevOps automatically and removes it when the flow is disabled. Service Hooks deliver events to the webhook URL shown in the trigger's "Test" step — this URL must be reachable from Azure DevOps over HTTPS. If your Activepieces instance runs behind a private network, use the polling trigger instead.
+The instant trigger registers a Service Hooks subscription in Azure DevOps automatically and removes it when the flow is disabled. Service Hooks deliver events to the webhook URL shown in the trigger's "Test" step — this URL must be reachable from Azure DevOps over HTTPS. If your Wippa instance runs behind a private network, use the polling trigger instead.
 
 ## Example Workflow
 

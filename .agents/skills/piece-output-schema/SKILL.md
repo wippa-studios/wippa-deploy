@@ -1,13 +1,13 @@
 ---
 name: piece-output-schema
-description: Generate and wire `outputSchema` for an Activepieces piece's actions and triggers. Use when the user asks to add output schemas to a piece, curate a step's output for the data selector / output viewer, or improve how a piece's step output appears in the builder. Captures each step's REAL output against a live connection, curates the useful fields, and writes typed, labelled schemas.
+description: Generate and wire `outputSchema` for an Wippa piece's actions and triggers. Use when the user asks to add output schemas to a piece, curate a step's output for the data selector / output viewer, or improve how a piece's step output appears in the builder. Captures each step's REAL output against a live connection, curates the useful fields, and writes typed, labelled schemas.
 ---
 
 # Piece Output Schema Generator
 
 An `outputSchema` turns a step's raw JSON output into a **friendly, typed, labelled tree** in the flow builder's data selector and output viewer — and a **path map** that LLM/MCP consumers use to find the fields that matter. This skill takes a piece from "raw JSON dump" to curated schemas across all its actions and triggers.
 
-Reference: the merged 15-piece PR is [activepieces#13757](https://github.com/activepieces/activepieces/pull/13757). Look at any of those pieces' `src/lib/output-schemas.ts` for a finished example (ClickUp is the richest; `google-docs` and `google-calendar` are readable smaller ones).
+Reference: the merged 15-piece PR is [wippa#13757](https://github.com/wippa/wippa/pull/13757). Look at any of those pieces' `src/lib/output-schemas.ts` for a finished example (ClickUp is the richest; `google-docs` and `google-calendar` are readable smaller ones).
 
 ## The mental model (read this first)
 

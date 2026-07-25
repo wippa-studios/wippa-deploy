@@ -9,7 +9,7 @@ An email notification sent when a flow fails, with Redis-based deduplication (24
 _Avoid_: notification
 
 **MCP Server**:
-A per-project Model Context Protocol endpoint that exposes Activepieces tools to AI clients (Claude Desktop, Cursor, etc.).
+A per-project Model Context Protocol endpoint that exposes Wippa tools to AI clients (Claude Desktop, Cursor, etc.).
 
 **Template**:
 A reusable flow blueprint (official, custom, or shared) that can be imported to create new flows with pre-configured steps.

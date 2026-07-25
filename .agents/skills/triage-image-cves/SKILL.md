@@ -1,12 +1,12 @@
 ---
 name: triage-image-cves
-description: Scan an Activepieces Docker image with grype for OS/base-image (deb) and application (npm) CVEs of High/Critical severity. Lists the 3 most-recent published tags and lets the user pick which to scan, validates each finding is real and reachable, and proves candidate fixes in an isolated git worktree (rebuild image + re-scan + tests + container smoke-run + codebase diff) before proposing anything — fixes are NEVER auto-applied; the user decides per finding. Use when the user asks to grype-scan the image, triage container/image vulnerabilities, or check a shipped Docker image for CVEs.
+description: Scan an Wippa Docker image with grype for OS/base-image (deb) and application (npm) CVEs of High/Critical severity. Lists the 3 most-recent published tags and lets the user pick which to scan, validates each finding is real and reachable, and proves candidate fixes in an isolated git worktree (rebuild image + re-scan + tests + container smoke-run + codebase diff) before proposing anything — fixes are NEVER auto-applied; the user decides per finding. Use when the user asks to grype-scan the image, triage container/image vulnerabilities, or check a shipped Docker image for CVEs.
 ---
 
 # Triage Image CVEs (grype container scan)
 
-On-demand triage of vulnerabilities in a **published Activepieces Docker image** on Docker Hub
-(`activepieces/activepieces`) using [grype](https://github.com/anchore/grype). The skill lists the
+On-demand triage of vulnerabilities in a **published Wippa Docker image** on Docker Hub
+(`wippa/wippa`) using [grype](https://github.com/anchore/grype). The skill lists the
 **3 most-recent tags** and lets the user pick which to scan. Produces a **review-ready** report
 per affected package and proposes fixes that are **proven non-breaking in an isolated worktree** —
 image rebuilds, the target CVE clears with no new High/Critical introduced, tests pass, the
@@ -14,7 +14,7 @@ container boots, and the codebase diff is scoped. **Nothing is ever applied to t
 committed.** The user decides per finding: approve / dismiss / escalate.
 
 Scope (decided with the user; defaults below — re-confirm if they want different):
-- **Image source:** Docker Hub `activepieces/activepieces`, one of the **3 most-recent tags**,
+- **Image source:** Docker Hub `wippa/wippa`, one of the **3 most-recent tags**,
   chosen by the user at the start of the run.
 - **Findings:** both OS/base-image packages (`deb`, fix = Dockerfile base/apt change) **and** app
   npm deps (fix = lockfile bump).
@@ -47,7 +47,7 @@ List the **3 most-recent tags** from Docker Hub and let the user choose which to
 
 ```
 mkdir -p .security-triage
-curl -s "https://hub.docker.com/v2/repositories/activepieces/activepieces/tags?page_size=50&ordering=last_updated" \
+curl -s "https://hub.docker.com/v2/repositories/wippa/wippa/tags?page_size=50&ordering=last_updated" \
   | jq -r '[.results[] | select(.name|test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))][0:3][]
            | "\(.name)\t\(.last_updated)"'
 ```
@@ -57,10 +57,10 @@ The `select(... test ...)` keeps only semver release tags and drops the floating
 `docker search` / ask the user for a tag explicitly. Set `TAG` to the user's choice, then scan:
 
 ```
-docker pull activepieces/activepieces:$TAG
+docker pull wippa/wippa:$TAG
 # scan EVERYTHING (do not pass --only-fixed here — we still want to surface no-fix CVEs for a
 # risk writeup). Pin the platform so the result is reproducible.
-grype activepieces/activepieces:$TAG --platform linux/amd64 -o json \
+grype wippa/wippa:$TAG --platform linux/amd64 -o json \
   > .security-triage/grype.json
 ```
 

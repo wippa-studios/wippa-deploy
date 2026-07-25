@@ -20,7 +20,7 @@ Authentication via external identity providers (Google, GitHub) using OAuth2 cod
 _Avoid_: social login, SSO
 
 **Managed Auth**:
-JWT-based authentication for embedded Activepieces — exchanges an external token for an AP session with auto-provisioned user/project.
+JWT-based authentication for embedded Wippa — exchanges an external token for an AP session with auto-provisioned user/project.
 _Avoid_: embedded auth, external token
 
 **SAML**:
@@ -39,5 +39,5 @@ A persisted record of a security-relevant action (19 event types) for compliance
 _Avoid_: audit log entry
 
 **Secret Manager**:
-An external vault integration (AWS Secrets Manager, HashiCorp Vault, CyberArk Conjur, 1Password) for storing connection secrets outside Activepieces.
+An external vault integration (AWS Secrets Manager, HashiCorp Vault, CyberArk Conjur, 1Password) for storing connection secrets outside Wippa.
 _Avoid_: vault, credential store

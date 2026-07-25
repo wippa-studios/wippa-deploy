@@ -1,6 +1,6 @@
 ---
 name: server
-description: Backend agent for the Activepieces server API (packages/server/api). Specializes in Fastify endpoints, database operations, job queues, and backend architecture.
+description: Backend agent for the Wippa server API (packages/server/api). Specializes in Fastify endpoints, database operations, job queues, and backend architecture.
 model: sonnet
 tools:
   - Read

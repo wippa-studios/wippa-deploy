@@ -1,3 +1,3 @@
 # Buttondown Piece
 
-Automate your Buttondown newsletter workflows with Activepieces.
+Automate your Buttondown newsletter workflows with Wippa.

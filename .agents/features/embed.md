@@ -5,7 +5,7 @@ Embed Onboarding lets a platform admin configure embedded workflows. The admin U
 - **Cloud edition**: 4 steps — register a Cloudflare custom hostname (`embed_subdomain`), verify DNS, set `allowedEmbedDomains` (frame-ancestors), create signing keys.
 - **CE/EE editions**: 2 steps — set `allowedEmbedDomains`, create signing keys (no hostname/DNS — self-hosted uses `FRONTEND_URL`).
 
-The cryptographic core is **Signing Keys**: RSA-4096 key pairs generated server-side for the Managed Auth flow. The platform admin creates a signing key — the private key is returned exactly once and must be saved by the admin; only the public key is stored. The vendor's backend uses the private key to sign JWTs that Activepieces verifies using the stored public key when `POST /v1/managed-authn/external-token` is called. Whole feature gated by `platform.plan.embeddingEnabled`.
+The cryptographic core is **Signing Keys**: RSA-4096 key pairs generated server-side for the Managed Auth flow. The platform admin creates a signing key — the private key is returned exactly once and must be saved by the admin; only the public key is stored. The vendor's backend uses the private key to sign JWTs that Wippa verifies using the stored public key when `POST /v1/managed-authn/external-token` is called. Whole feature gated by `platform.plan.embeddingEnabled`.
 
 `allowedEmbedDomains` lives on the `platform` table (alongside `allowedAuthDomains`) and is updated via `POST /v1/platforms/:id` (`UpdatePlatformRequestBody.allowedEmbedDomains`). The `embed-security` Fastify hook (`packages/server/api/src/app/helper/embed-security.ts`) reads this list per request to set the `Content-Security-Policy: frame-ancestors` header. See `managed-auth.md` for the JWT verification flow.
 
@@ -32,7 +32,7 @@ Enterprise and Cloud. Gated by `platform.plan.embeddingEnabled`. Module hook: `p
 
 - **Signing Key**: An RSA key pair; only the public key is persisted; the private key is returned once on creation.
 - **KeyAlgorithm**: Enum with value `RSA` (the only supported algorithm, using RS256 for JWT signing).
-- **kid (Key ID)**: The `id` of the signing key, embedded in the JWT header by the vendor so Activepieces knows which public key to use for verification.
+- **kid (Key ID)**: The `id` of the signing key, embedded in the JWT header by the vendor so Wippa knows which public key to use for verification.
 
 ## Entity
 

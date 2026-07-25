@@ -1,9 +1,9 @@
 <!-- omit in toc -->
-# Contributing to Activepieces
+# Contributing to Wippa
 
 First off, thanks for taking the time to contribute! ❤️
 
-All types of contributions are encouraged and valued. See the [Contributing Guide](https://www.activepieces.com/docs/build-pieces/building-pieces/start-building) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+All types of contributions are encouraged and valued. See the [Contributing Guide](https://www.wippa.com/docs/build-pieces/building-pieces/start-building) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
 
 > And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
 > - Star the project
@@ -13,7 +13,7 @@ All types of contributions are encouraged and valued. See the [Contributing Guid
 
 ## Pull requests
 
-**We've temporarily paused unsolicited pull requests from outside the core team.** PRs from contributors who aren't organization members or collaborators are automatically closed with a friendly note. You can still build and publish your own [piece](https://www.activepieces.com/docs/build-pieces/building-pieces/start-building) — as your own package outside this repo, rather than a PR here.
+**We've temporarily paused unsolicited pull requests from outside the core team.** PRs from contributors who aren't organization members or collaborators are automatically closed with a friendly note. You can still build and publish your own [piece](https://www.wippa.com/docs/build-pieces/building-pieces/start-building) — as your own package outside this repo, rather than a PR here.
 
 **Why:** An open PR is a commitment from maintainers to review it carefully and consider it seriously. Agentic coding tools have removed the natural friction that used to keep contribution volume manageable, and a large share of incoming PRs are now AI-generated changes that are plausible on the surface but miss the context, conventions, and trade-offs of the codebase. Reviewing all of them thoroughly is no longer sustainable — and leaving them open for weeks is worse for contributors than a quick, honest close. Pausing lets us keep the review promise for the changes we do take.
 

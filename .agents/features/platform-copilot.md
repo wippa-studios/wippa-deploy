@@ -1,7 +1,7 @@
 # Platform Copilot (AI Flow Building Assistant)
 
 ## Summary
-Platform Copilot is a backend-only RAG (Retrieval-Augmented Generation) chat assistant that answers questions about the Activepieces platform — codebase, documentation, and configuration. It is designed to help developers building on Activepieces rather than end users of flows. The assistant enhances user queries with semantic expansion, retrieves relevant code and docs snippets from a pre-indexed vector+full-text store (`copilot_code_chunks`), and streams responses via the Vercel AI SDK UI message stream protocol. It has two tools the model can call: `read_file` (fetch raw file from GitHub) and `list_directory` (browse repo via GitHub API). The index is rebuilt on a weekly cron or on demand.
+Platform Copilot is a backend-only RAG (Retrieval-Augmented Generation) chat assistant that answers questions about the Wippa platform — codebase, documentation, and configuration. It is designed to help developers building on Wippa rather than end users of flows. The assistant enhances user queries with semantic expansion, retrieves relevant code and docs snippets from a pre-indexed vector+full-text store (`copilot_code_chunks`), and streams responses via the Vercel AI SDK UI message stream protocol. It has two tools the model can call: `read_file` (fetch raw file from GitHub) and `list_directory` (browse repo via GitHub API). The index is rebuilt on a weekly cron or on demand.
 
 Note: The source TypeScript files were compiled to `dist/` — the source is only available as compiled JS in `packages/server/api/dist/src/app/platform-copilot/`.
 
@@ -23,7 +23,7 @@ All editions (no plan flag guard on the controller). Both endpoints require `pub
 
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
-- **copilot_code_chunks** — the vector index table holding parsed segments of the Activepieces codebase and docs
+- **copilot_code_chunks** — the vector index table holding parsed segments of the Wippa codebase and docs
 - **chunkType** — classification of the segment: `function`, `class`, `module`, `block`, `section`, etc.
 - **searchVector** — PostgreSQL `tsvector` column (populated by a background UPDATE after indexing) for full-text search
 - **embeddingModel** — the model ID used to generate the embedding; used as a filter in vector queries to avoid mixing embeddings from different models
@@ -88,8 +88,8 @@ The controller uses `@vercel/ai` (`streamText`, `createUIMessageStream`, `pipeUI
 
 ## Copilot Tools
 Both tools execute at chat time (not indexed):
-- **`read_file`** — fetches `https://raw.githubusercontent.com/activepieces/activepieces/main/{filePath}` and returns full content
-- **`list_directory`** — calls `https://api.github.com/repos/activepieces/activepieces/contents/{dirPath}?ref=main`; uses `GITHUB_TOKEN` env var if available
+- **`read_file`** — fetches `https://raw.githubusercontent.com/wippa/wippa/main/{filePath}` and returns full content
+- **`list_directory`** — calls `https://api.github.com/repos/wippa/wippa/contents/{dirPath}?ref=main`; uses `GITHUB_TOKEN` env var if available
 
 ## Indexing Schedule
 The `COPILOT_INDEX_REFRESH` system job runs weekly at `0 3 * * 0` (Sunday 03:00 UTC). It can also be triggered manually via the `/index` endpoint or at startup if `hasChunks()` returns false (this startup trigger is done by the module registration).

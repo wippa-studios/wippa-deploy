@@ -1,7 +1,7 @@
 # Flow Templates
 
 ## Summary
-The Templates feature provides a library of reusable flow (and table) blueprints that users can browse, import, and build on. Templates are typed into three categories: OFFICIAL (curated by Activepieces, stored on Cloud or proxied from cloud.activepieces.com for self-hosted), CUSTOM (created by a platform owner to share within their platform), and SHARED (one-off sharing URLs, not listable). On Cloud, official templates are stored in the database with a null platformId. On Community/Enterprise self-hosted, official templates are fetched at request time from the Activepieces Cloud API (`https://cloud.activepieces.com/api/v1/templates`). Custom templates require the `manageTemplatesEnabled` plan flag. Before saving, flows inside a template are validated and piece names extracted into a searchable `pieces` array.
+The Templates feature provides a library of reusable flow (and table) blueprints that users can browse, import, and build on. Templates are typed into three categories: OFFICIAL (curated by Wippa, stored on Cloud or proxied from cloud.wippa.com for self-hosted), CUSTOM (created by a platform owner to share within their platform), and SHARED (one-off sharing URLs, not listable). On Cloud, official templates are stored in the database with a null platformId. On Community/Enterprise self-hosted, official templates are fetched at request time from the Wippa Cloud API (`https://cloud.wippa.com/api/v1/templates`). Custom templates require the `manageTemplatesEnabled` plan flag. Before saving, flows inside a template are validated and piece names extracted into a searchable `pieces` array.
 
 ## Key Files
 - `packages/server/api/src/app/template/template.controller.ts` — REST controller (CRUD + listing + categories)
@@ -27,14 +27,14 @@ The Templates feature provides a library of reusable flow (and table) blueprints
 
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
-- **TemplateType**: `OFFICIAL` (Activepieces-curated, platformId = null), `CUSTOM` (platform-owned, requires `manageTemplatesEnabled`), `SHARED` (ad-hoc share, not listable).
+- **TemplateType**: `OFFICIAL` (Wippa-curated, platformId = null), `CUSTOM` (platform-owned, requires `manageTemplatesEnabled`), `SHARED` (ad-hoc share, not listable).
 - **TemplateStatus**: `PUBLISHED` (visible in listing) or `ARCHIVED` (hidden).
 - **FlowVersionTemplate**: A flow version stripped of runtime-only fields (id, flowId, state, etc.) for embedding in a template.
 - **TableTemplate**: A table schema (fields, options) embedded in a template for table-related automation blueprints.
 - **TemplateTag**: A tag with a `title`, hex `color`, and optional `icon`.
 - **pieces**: Denormalized array of piece names extracted from all steps in the template flows; indexed for fast filtering.
 - **categories**: Array of string category names; indexed for fast filtering.
-- **communityTemplates**: Service that proxies GET requests to `https://cloud.activepieces.com/api/v1/templates` for official templates in non-cloud editions.
+- **communityTemplates**: Service that proxies GET requests to `https://cloud.wippa.com/api/v1/templates` for official templates in non-cloud editions.
 
 ## Entity
 

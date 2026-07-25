@@ -14,7 +14,7 @@ Steps already pass data forward via `{{stepN['output'].field}}` — that's per-r
 
 Rule of thumb: **Store** = "one value per key"; **Tables** = "many rows of the same shape".
 
-## Store (`@activepieces/piece-store`)
+## Store (`@wippa/piece-store`)
 
 Actions (`name` slugs): `get`, `put`, `append`, `add_to_list`, `remove_from_list`, `remove_value`.
 

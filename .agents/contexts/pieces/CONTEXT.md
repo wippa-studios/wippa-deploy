@@ -1,6 +1,6 @@
 # Pieces & Integrations
 
-How Activepieces talks to external services: the packaged integrations (pieces) and the stored credentials that authenticate them.
+How Wippa talks to external services: the packaged integrations (pieces) and the stored credentials that authenticate them.
 
 ## Language
 
@@ -24,7 +24,7 @@ A platform-scoped App Connection shared across all projects (scope = PLATFORM).
 _Avoid_: shared connection
 
 **OAuth App**:
-Custom OAuth2 client credentials registered per piece to override Activepieces defaults.
+Custom OAuth2 client credentials registered per piece to override Wippa defaults.
 
 **externalId**:
 A stable UUID used to cross-reference flows or connections across imports, templates, and environments.

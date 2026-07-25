@@ -1,6 +1,6 @@
-# Context Map — Activepieces
+# Context Map — Wippa
 
-Activepieces is split into bounded contexts. Product/domain contexts live under `.agents/contexts/`; the execution-runtime contexts live next to the code they describe. Each `CONTEXT.md` is a glossary only — no implementation details. Decisions live in `docs/adr/`.
+Wippa is split into bounded contexts. Product/domain contexts live under `.agents/contexts/`; the execution-runtime contexts live next to the code they describe. Each `CONTEXT.md` is a glossary only — no implementation details. Decisions live in `docs/adr/`.
 
 ## Contexts
 

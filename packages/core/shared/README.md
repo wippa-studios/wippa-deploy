@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/shared` to build the library.
+Run `turbo run build --filter=@wippa/shared` to build the library.

@@ -60,7 +60,7 @@ Manages the full lifecycle of flow triggers — registration, event capture, tes
 ## Trigger Strategies
 
 - **POLLING**: Periodic checks on a schedule — either a cron expression or a rolling fixed interval (`ScheduleOptions`, discriminated on `type`: `CRON_EXPRESSION` | `INTERVAL`). BullMQ repeating job. Deduplication via Redis.
-- **WEBHOOK**: External service pushes events to Activepieces webhook URL.
+- **WEBHOOK**: External service pushes events to Wippa webhook URL.
 - **APP_WEBHOOK**: App-native webhooks routed via AppEventRouting (e.g., Slack, GitHub).
 - **MANUAL**: User-triggered only, no automation.
 

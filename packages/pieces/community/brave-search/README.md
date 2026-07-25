@@ -1,4 +1,4 @@
-# Activepieces Brave Search Piece (MCP)
+# Wippa Brave Search Piece (MCP)
 
 ## Building
 

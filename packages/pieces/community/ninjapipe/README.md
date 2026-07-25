@@ -1,6 +1,6 @@
-# NinjaPipe Activepieces Piece
+# NinjaPipe Wippa Piece
 
-Activepieces piece for the NinjaPipe CRM.
+Wippa piece for the NinjaPipe CRM.
 
 ## Piece contents
 

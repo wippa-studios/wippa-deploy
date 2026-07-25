@@ -1,3 +1,3 @@
 # ProvenExpert Piece
 
-ProvenExpert review and survey management integration for Activepieces.
+ProvenExpert review and survey management integration for Wippa.

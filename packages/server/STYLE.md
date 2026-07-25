@@ -61,7 +61,7 @@ Think of the const as a namespace — it groups the public API. A reader sees wh
 // packages/server/api/src/app/flows/flow/flow.service.ts (shape)
 
 // 1. imports
-import { ActivepiecesError, apId, /* ... */ } from '@activepieces/shared'
+import { WippaError, apId, /* ... */ } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 // ...
 
@@ -129,17 +129,17 @@ Rules of thumb:
 
 ---
 
-## 4. Error handling: throw `ActivepiecesError` at boundaries, use `tryCatch` for recoverable failures
+## 4. Error handling: throw `WippaError` at boundaries, use `tryCatch` for recoverable failures
 
-`@activepieces/shared` exports `tryCatch` / `tryCatchSync` (see [`try-catch.ts`](../core/shared/src/lib/core/common/try-catch.ts)) that turn throws into a discriminated `{ data, error }` result. Two distinct patterns, each with its place.
+`@wippa/shared` exports `tryCatch` / `tryCatchSync` (see [`try-catch.ts`](../core/shared/src/lib/core/common/try-catch.ts)) that turn throws into a discriminated `{ data, error }` result. Two distinct patterns, each with its place.
 
-### 4a) Unrecoverable / contract violations — throw `ActivepiecesError`
+### 4a) Unrecoverable / contract violations — throw `WippaError`
 
-For "this should not have happened" conditions — missing entities, validation failures, authorization failures — throw `ActivepiecesError` with an `ErrorCode`. Let it bubble up to the Fastify error handler.
+For "this should not have happened" conditions — missing entities, validation failures, authorization failures — throw `WippaError` with an `ErrorCode`. Let it bubble up to the Fastify error handler.
 
 ```ts
 if (isNil(flow)) {
-    throw new ActivepiecesError({
+    throw new WippaError({
         code: ErrorCode.ENTITY_NOT_FOUND,
         params: { entityType: 'Flow', entityId: id, message: 'Flow not found' },
     })

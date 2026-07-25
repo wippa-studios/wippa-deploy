@@ -1,7 +1,7 @@
 # AI Providers
 
 ## Summary
-The AI Providers module lets platform admins configure one or more LLM backends (OpenAI, Anthropic, Google, Azure, OpenRouter, Cloudflare, or a custom OpenAI-compatible endpoint) for use by AI pieces inside flows. It also supports an auto-provisioned "Activepieces" provider backed by OpenRouter when the platform's `aiCreditsEnabled` plan flag is set, complete with a Stripe-integrated credit top-up system and monthly reset via a system job.
+The AI Providers module lets platform admins configure one or more LLM backends (OpenAI, Anthropic, Google, Azure, OpenRouter, Cloudflare, or a custom OpenAI-compatible endpoint) for use by AI pieces inside flows. It also supports an auto-provisioned "Wippa" provider backed by OpenRouter when the platform's `aiCreditsEnabled` plan flag is set, complete with a Stripe-integrated credit top-up system and monthly reset via a system job.
 
 ## Key Files
 - `packages/server/api/src/app/ai/` — backend module (controller, service, entity)
@@ -26,7 +26,7 @@ The AI Providers module lets platform admins configure one or more LLM backends 
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
 - **AIProvider**: A platform-scoped entity linking an LLM vendor's credentials to the platform.
-- **AIProviderName**: Enum of supported vendors (`openai`, `anthropic`, `google`, `azure`, `openrouter`, `cloudflare-gateway`, `custom`, `activepieces`).
+- **AIProviderName**: Enum of supported vendors (`openai`, `anthropic`, `google`, `azure`, `openrouter`, `cloudflare-gateway`, `custom`, `wippa`).
 - **EncryptedObject**: The `auth` field is AES-256-encrypted at rest; decrypted only for engine access.
 - **AI Credits**: Platform-level usage budget (1000 credits = $1 USD) metered through OpenRouter; drives the ACTIVEPIECES auto-provision flow.
 - **aiCreditsEnabled**: Platform plan flag that triggers auto-provisioning of the ACTIVEPIECES provider.
@@ -53,9 +53,9 @@ The AI Providers module lets platform admins configure one or more LLM backends 
 
 `azureProvider.listModels` calls the legacy data-plane `GET {resource}.openai.azure.com/openai/deployments`, pinned to api-version `2023-03-15-preview`. Microsoft retired that endpoint — only `2022-12-01` and `2023-03-15-preview` still serve it; newer versions (e.g. `2024-10-21`) return 404, which also breaks `validateConnection` (it just calls `listModels`). The response carries the deployment name in `id`; there is no `name` property. The configured `AzureProviderConfig.apiVersion` must therefore never be used for the deployments listing — it only affects inference calls made by AI pieces through `@ai-sdk/azure`, which target Azure's GA v1 endpoint (`/openai/v1/`). (GIT-1310)
 
-## Activepieces Provider (OpenRouter)
+## Wippa Provider (OpenRouter)
 
-Available only when `flagService.aiCreditsEnabled()` is true (`OPENROUTER_PROVISION_KEY` env var set). When the flag is false (typical self-hosted install), the provider is treated as absent everywhere: `listProviders()` omits any existing `activepieces` row and `getChatProvider()`/`getChatProviderName()` return null for it (shared rule in `findAvailableChatProviderRow`). This keeps a stale `enabledForChat` flag (e.g. set by the 0.82.1 migration `ReplacesSandboxWithVercelAiSdk` on upgraded platforms) from pinning chat to a managed provider that cannot work without the provision key — previously that state made every chat message fail with 402 `AI_CREDIT_LIMIT_EXCEEDED` (usage 0 / limit 0) with no top-up or reset path off cloud (GIT-1620).
+Available only when `flagService.aiCreditsEnabled()` is true (`OPENROUTER_PROVISION_KEY` env var set). When the flag is false (typical self-hosted install), the provider is treated as absent everywhere: `listProviders()` omits any existing `wippa` row and `getChatProvider()`/`getChatProviderName()` return null for it (shared rule in `findAvailableChatProviderRow`). This keeps a stale `enabledForChat` flag (e.g. set by the 0.82.1 migration `ReplacesSandboxWithVercelAiSdk` on upgraded platforms) from pinning chat to a managed provider that cannot work without the provision key — previously that state made every chat message fail with 402 `AI_CREDIT_LIMIT_EXCEEDED` (usage 0 / limit 0) with no top-up or reset path off cloud (GIT-1620).
 
 Auto-created when `aiCreditsEnabled` flag is true (`OPENROUTER_PROVISION_KEY` env var set):
 1. `getOrCreateActivePiecesProviderAuthConfig()` auto-creates provider

@@ -1,7 +1,7 @@
 # MCP Module
 
 ## Summary
-Exposes an Activepieces project as a Model Context Protocol (MCP) server so that AI clients (Claude Desktop, Cursor, Windsurf) can read and manipulate flows, connections, tables, and other project resources through a typed tool interface. Each project gets exactly one MCP server record with a bearer token for authentication; the server is built per-request from a combination of static locked/controllable tools and dynamic flow-as-tool entries.
+Exposes an Wippa project as a Model Context Protocol (MCP) server so that AI clients (Claude Desktop, Cursor, Windsurf) can read and manipulate flows, connections, tables, and other project resources through a typed tool interface. Each project gets exactly one MCP server record with a bearer token for authentication; the server is built per-request from a combination of static locked/controllable tools and dynamic flow-as-tool entries.
 
 ## Key Files
 - `packages/server/api/src/app/mcp/mcp-service.ts` — server build logic, tool registration, token auth
@@ -43,7 +43,7 @@ Exposes an Activepieces project as a Model Context Protocol (MCP) server so that
 - **MCP trigger piece** — `@wippa/piece-mcp`; a flow with this trigger is exposed as a callable tool via MCP
 - **disabledTools** — JSONB array of controllable tool names currently disabled; `null` or `[]` means all controllable tools are enabled
 - **Flow attribution** — `ap_create_flow`, `ap_build_flow`, and `ap_duplicate_flow` stamp `ownerId` (the OAuth-authenticated user who connected the client) and `createdBy: { type: 'MCP', id: <mcpServerId> }` on every flow they create. `ProjectScopedMcpServer` carries `userId?` so the tools can attribute ownership.
-- **Embedded MCP OAuth** — in-embed consent flow where a managed-auth (embedded) user approves an MCP OAuth request inside the host app via the SDK's `authorizeMcp()`, instead of being redirected to a standalone Activepieces login they don't have. Backed by the `/embed/mcp-authorize` route and the existing `POST /v1/mcp-oauth/approve` (which accepts the embed USER session). `mcpSettings()` similarly renders the MCP settings page inside the embed.
+- **Embedded MCP OAuth** — in-embed consent flow where a managed-auth (embedded) user approves an MCP OAuth request inside the host app via the SDK's `authorizeMcp()`, instead of being redirected to a standalone Wippa login they don't have. Backed by the `/embed/mcp-authorize` route and the existing `POST /v1/mcp-oauth/approve` (which accepts the embed USER session). `mcpSettings()` similarly renders the MCP settings page inside the embed.
 
 ## Entity
 
@@ -95,7 +95,7 @@ Exposes an Activepieces project as a Model Context Protocol (MCP) server so that
 - `POST /v1/projects/:projectId/mcp-server/token` — mint a short-lived (15-min, `scopes: ['mcp']`), project-scoped MCP OAuth access token and return `{ mcpServerUrl, mcpToken }`. Secured with `securityAccess.project([USER], READ_MCP, { PARAM })`; reuses `mcpOAuthTokenService.issueInternalAccessToken` (the same path the chat assistant uses internally). Powers the embed SDK's `generateMcpToken()` — a no-OAuth alternative to the `authorizeMcp()` consent flow for hosts that already have an embed session.
 - `POST /v1/mcp/:projectId/http` — StreamableHTTP MCP protocol endpoint (main protocol handler)
 
-External MCP server validation for the **agent piece** lives under `packages/server/api/src/app/agents/` (endpoint: `POST /v1/projects/:projectId/agent-tools/mcp/validate`), not here — it's a probe for URLs the agent will later connect to, not part of the Activepieces-as-MCP-server feature.
+External MCP server validation for the **agent piece** lives under `packages/server/api/src/app/agents/` (endpoint: `POST /v1/projects/:projectId/agent-tools/mcp/validate`), not here — it's a probe for URLs the agent will later connect to, not part of the Wippa-as-MCP-server feature.
 
 ## Authentication
 

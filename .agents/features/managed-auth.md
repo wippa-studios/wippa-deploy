@@ -1,7 +1,7 @@
 # Managed Auth (Embedded Authentication)
 
 ## Summary
-Managed Auth (also called "Embedding" or "Managed Authentication") enables SaaS vendors to embed the Activepieces workflow builder inside their own product. The vendor's backend signs a short-lived JWT using an RSA private key (from a Signing Key), then passes it to the Activepieces embed SDK. The SDK calls `POST /v1/managed-authn/external-token` with that JWT. The backend verifies the JWT against the stored public key, then auto-provisions or retrieves the user, project, and project limits defined in the token claims, and returns a full Activepieces `AuthenticationResponse` (including an access token). This feature is gated by `platform.plan.embeddingEnabled`.
+Managed Auth (also called "Embedding" or "Managed Authentication") enables SaaS vendors to embed the Wippa workflow builder inside their own product. The vendor's backend signs a short-lived JWT using an RSA private key (from a Signing Key), then passes it to the Wippa embed SDK. The SDK calls `POST /v1/managed-authn/external-token` with that JWT. The backend verifies the JWT against the stored public key, then auto-provisions or retrieves the user, project, and project limits defined in the token claims, and returns a full Wippa `AuthenticationResponse` (including an access token). This feature is gated by `platform.plan.embeddingEnabled`.
 
 ## Key Files
 - `packages/server/api/src/app/ee/managed-authn/managed-authn-module.ts` — module registration (no plan gate at module level; gate is on signing-key module)
@@ -19,17 +19,17 @@ Enterprise and Cloud. The endpoint itself is public (`securityAccess.public()`),
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
 - **External Access Token**: A signed JWT issued by the vendor's backend, containing user and project information.
-- **Signing Key**: An RSA key pair registered on the platform; the public key is stored in Activepieces, the private key is kept by the vendor.
+- **Signing Key**: An RSA key pair registered on the platform; the public key is stored in Wippa, the private key is kept by the vendor.
 - **External Principal**: The parsed, verified identity extracted from the JWT (platformId, externalUserId, externalProjectId, etc.).
-- **externalUserId**: Vendor-assigned stable user identifier; hashed with platformId to create an Activepieces identity email (`managed_<platformId>_<externalUserId>`).
-- **externalProjectId**: Vendor-assigned stable project identifier; maps to an Activepieces project via `externalId`.
+- **externalUserId**: Vendor-assigned stable user identifier; hashed with platformId to create an Wippa identity email (`managed_<platformId>_<externalUserId>`).
+- **externalProjectId**: Vendor-assigned stable project identifier; maps to an Wippa project via `externalId`.
 - **Concurrency Pool**: Optional concurrency limit that can be assigned to a project via JWT claims.
 
 ## Endpoint
 
 | Method | Path | Auth | Description |
 |---|---|---|---|
-| POST | `/v1/managed-authn/external-token` | Public | Exchange external JWT for Activepieces session token |
+| POST | `/v1/managed-authn/external-token` | Public | Exchange external JWT for Wippa session token |
 
 Request body: `{ externalAccessToken: string }`.  
 Response: `AuthenticationResponse` (same shape as standard sign-in response, includes `token` and `projectId`).
@@ -68,7 +68,7 @@ See [piece-sets.md](./piece-sets.md).
 5. Call `applyProjectPieceAccess` — assigns the project's named piece set (`pieceSet` key → first legacy tag matched against set `key` → Default set). Runs unconditionally on every token exchange, so claim/tag changes take effect at the next embed sign-in.
 6. Call `getOrCreateUser` — finds user by `(platformId, externalUserId)`; if absent, creates a user identity using a deterministic hashed email (`managed_<platformId>_<externalUserId>` SHA-256), then creates the platform user.
 7. Upsert project membership with the specified role (defaults to `EDITOR`).
-8. Generate a 7-day Activepieces access token and return the full `AuthenticationResponse`.
+8. Generate a 7-day Wippa access token and return the full `AuthenticationResponse`.
 
 ## Identity Hashing
 User emails for managed users are never real emails. The identity email is derived as:

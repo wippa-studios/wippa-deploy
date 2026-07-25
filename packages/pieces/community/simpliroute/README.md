@@ -1,4 +1,4 @@
-# SimpliRoute Piece for Activepieces
+# SimpliRoute Piece for Wippa
 
 ## Building
 

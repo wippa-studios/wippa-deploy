@@ -1,6 +1,6 @@
-# Activepieces Tables
+# Wippa Tables
 
-Activepieces **Tables** are a lightweight database built into every project — no external database or connection needed. Use them to store and look up structured data across flow runs.
+Wippa **Tables** are a lightweight database built into every project — no external database or connection needed. Use them to store and look up structured data across flow runs.
 
 ## When to use a Table
 
@@ -11,7 +11,7 @@ Reach for a Table whenever a flow needs to **remember or look up data**:
 - Small datasets the flow reads from (lookup/mapping tables, allow-lists)
 - Collecting submissions to review later
 
-**Prefer Tables over Google Sheets** when the data lives inside Activepieces and doesn't need a spreadsheet UI — Tables are faster, typed, and need no connection/auth. Use **Google Sheets** only when the user already works in that sheet or needs to share/edit it as a spreadsheet. Use an **external database piece** (Postgres, MySQL, …) only for large or relational data.
+**Prefer Tables over Google Sheets** when the data lives inside Wippa and doesn't need a spreadsheet UI — Tables are faster, typed, and need no connection/auth. Use **Google Sheets** only when the user already works in that sheet or needs to share/edit it as a spreadsheet. Use an **external database piece** (Postgres, MySQL, …) only for large or relational data.
 
 ## Model
 

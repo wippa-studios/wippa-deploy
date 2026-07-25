@@ -1,6 +1,6 @@
 # @wippa/piece-pubrio
 
-Activepieces piece for [Pubrio](https://pubrio.com) — the glocalized business data layer for AI agents and revenue teams. Search the whole market, not just the 30% in mainstream datasets.
+Wippa piece for [Pubrio](https://pubrio.com) — the glocalized business data layer for AI agents and revenue teams. Search the whole market, not just the 30% in mainstream datasets.
 
 ## Actions (51)
 

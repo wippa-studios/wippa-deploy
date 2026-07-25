@@ -1,12 +1,12 @@
 ---
 name: triage-security-advisories
-description: Triage the GitHub privately-reported vulnerability backlog for Activepieces — pull repository security advisories from the Security tab, scope-check against SECURITY.md, deeply validate each, compute SLA status, and propose fix plans for review. Use when the user asks to triage security advisories, work the reported-vulnerability backlog, or check SLA on reported vulns. For Dependabot dependency alerts, use the triage-dependabot-alerts skill instead.
+description: Triage the GitHub privately-reported vulnerability backlog for Wippa — pull repository security advisories from the Security tab, scope-check against SECURITY.md, deeply validate each, compute SLA status, and propose fix plans for review. Use when the user asks to triage security advisories, work the reported-vulnerability backlog, or check SLA on reported vulns. For Dependabot dependency alerts, use the triage-dependabot-alerts skill instead.
 ---
 
 # Triage Security Advisories (reported vulnerabilities)
 
-On-demand triage of privately-reported vulnerabilities in the Activepieces GitHub repo
-(`activepieces/activepieces`) — the **repository security advisories** from the Security tab.
+On-demand triage of privately-reported vulnerabilities in the Wippa GitHub repo
+(`wippa/wippa`) — the **repository security advisories** from the Security tab.
 Produces a **review-ready** report per advisory + an SLA dashboard, and proposes fix plans.
 The user reviews and decides per advisory: approve the fix / dismiss as out-of-scope / escalate.
 
@@ -37,7 +37,7 @@ gh auth refresh -s security_events,repo
 
 ```
 mkdir -p .security-triage
-gh api /repos/activepieces/activepieces/security-advisories --paginate > .security-triage/advisories.json
+gh api /repos/wippa/wippa/security-advisories --paginate > .security-triage/advisories.json
 ```
 
 `gh api --paginate` may emit concatenated arrays (you'll see `jq` parse multiple top-level
@@ -148,7 +148,7 @@ Fan-out tips that paid off:
   `until [ "$(ls .security-triage/reports/*.md | wc -l)" -ge N ]; do sleep 3; done` and let it
   notify on completion; collect the streamed verdict notifications meanwhile.
 
-## Activepieces sink patterns — "looks guarded but isn't" (grep these first)
+## Wippa sink patterns — "looks guarded but isn't" (grep these first)
 
 High-yield recurring footguns in this codebase. Each surfaced as a confirmed advisory; a repo-wide
 grep for them catches the systemic cluster, not just the reported instance:
@@ -242,7 +242,7 @@ After the user picks which advisories to fix, follow the playbook's private flow
 ## Closing / responding to a reporter
 
 The repository-security-advisory REST API exposes `state` (closeable via
-`PATCH /repos/activepieces/activepieces/security-advisories/<ghsa-id> -f state=closed`) but
+`PATCH /repos/wippa/wippa/security-advisories/<ghsa-id> -f state=closed`) but
 **no comments endpoint** — the conversation thread is UI-only. To respond with a reason, draft
 the message, have the user paste it into the advisory page, THEN close (so the reporter sees
 the reason, not a bare close notification).

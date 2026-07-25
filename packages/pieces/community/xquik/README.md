@@ -1,4 +1,4 @@
-# Activepieces Xquik Piece
+# Wippa Xquik Piece
 
 ## Building
 

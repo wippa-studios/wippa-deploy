@@ -1,6 +1,6 @@
 ---
 name: web
-description: Frontend agent for the Activepieces web application (packages/web). Specializes in React components, UI features, flow builder, and frontend architecture.
+description: Frontend agent for the Wippa web application (packages/web). Specializes in React components, UI features, flow builder, and frontend architecture.
 model: sonnet
 tools:
   - Read

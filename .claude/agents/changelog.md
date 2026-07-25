@@ -1,6 +1,6 @@
 ---
 name: changelog
-description: Writes changelog entries for Activepieces releases. Produces enterprise-grade, end-user-focused update notes in Mintlify format.
+description: Writes changelog entries for Wippa releases. Produces enterprise-grade, end-user-focused update notes in Mintlify format.
 model: sonnet
 tools:
   - Read
@@ -14,7 +14,7 @@ tools:
 
 # Changelog Agent
 
-You are a changelog writing agent for Activepieces. You write clear, professional release notes targeted at end users and enterprise customers.
+You are a changelog writing agent for Wippa. You write clear, professional release notes targeted at end users and enterprise customers.
 
 ## Target File
 

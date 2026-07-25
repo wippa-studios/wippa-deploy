@@ -1,10 +1,10 @@
 # pieces-medullar
 
-Library of [Activepieces](https://www.activepieces.com/) for [Medullar Solutions](https://www.medullar.com)
+Library of [Wippa](https://www.wippa.com/) for [Medullar Solutions](https://www.medullar.com)
 
 ## Overview
 
-`pieces-medullar` is a library designed to integrate Medullar Solutions with the Activepieces framework, enabling seamless automation and extensibility.
+`pieces-medullar` is a library designed to integrate Medullar Solutions with the Wippa framework, enabling seamless automation and extensibility.
 
 ## Features
 
@@ -14,7 +14,7 @@ Library of [Activepieces](https://www.activepieces.com/) for [Medullar Solutions
 
 ## Contributing
 
-We welcome contributions! Please refer to the [Contributing Guide](https://www.activepieces.com/docs/contributing/overview) for more details.
+We welcome contributions! Please refer to the [Contributing Guide](https://www.wippa.com/docs/contributing/overview) for more details.
 
 ## License
 

@@ -1,7 +1,7 @@
 # CE Platform Configuration
 
 ## Summary
-A Platform is the top-level tenant namespace in Activepieces. Every installation has at least one platform. It owns branding (logo, colors, favicon), authentication settings (email auth toggle, allowed auth domains, federated SSO providers), and a `PlatformPlan` that governs feature flags and resource limits. On Cloud a user can own multiple platforms; on CE/EE there is typically one. Platform admins can update branding, auth settings, and piece pinning. Per-project piece/action/trigger visibility is controlled via **piece sets** (see [piece-sets.md](./piece-sets.md)), not the platform. Platform deletion is Cloud-only and triggers async cleanup.
+A Platform is the top-level tenant namespace in Wippa. Every installation has at least one platform. It owns branding (logo, colors, favicon), authentication settings (email auth toggle, allowed auth domains, federated SSO providers), and a `PlatformPlan` that governs feature flags and resource limits. On Cloud a user can own multiple platforms; on CE/EE there is typically one. Platform admins can update branding, auth settings, and piece pinning. Per-project piece/action/trigger visibility is controlled via **piece sets** (see [piece-sets.md](./piece-sets.md)), not the platform. Platform deletion is Cloud-only and triggers async cleanup.
 
 ## Key Files
 - `packages/server/api/src/app/platform/platform.controller.ts` — POST `/:id` (update), GET `/:id` (read), DELETE `/:id` (Cloud only), GET `/assets/:id` (logo/favicon download)
@@ -25,7 +25,7 @@ All editions. The `PlatformPlan` feature flags (e.g. `customAppearanceEnabled`, 
 - **PlatformPlan** — separate record (in EE module) storing feature flags, limits, Stripe subscription state
 - **federatedAuthProviders** — JSONB column storing OAuth2 / SAML config; sensitive fields (secrets, certs) are stripped before returning `PlatformWithoutSensitiveData`
 - **pinnedPieces** — ordered list of piece names shown at the top of the piece selector
-- **cloudAuthEnabled** — whether platform-managed OAuth (Activepieces-hosted app credentials) is active
+- **cloudAuthEnabled** — whether platform-managed OAuth (Wippa-hosted app credentials) is active
 - **PieceSelectorConfig** — JSONB config controlling the order, visibility, names, and icons of the piece-selector tab strip in the flow builder; `null` means use the default built-in layout
 - **PieceSelectorTabConfig** — a single tab entry: either `BUILTIN` (referencing one of the five built-in tabs) or `CUSTOM` (a user-created tab with its own ordered piece list and optional sections)
 - **PieceSelectorTabSection** — a named sub-group inside a `CUSTOM` tab; holds a title and an ordered list of piece names

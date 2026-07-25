@@ -1,6 +1,6 @@
-# Emailit Piece for Activepieces
+# Emailit Piece for Wippa
 
-This piece integrates Emailit's transactional email service (API v2) with Activepieces.
+This piece integrates Emailit's transactional email service (API v2) with Wippa.
 
 ## Features
 
