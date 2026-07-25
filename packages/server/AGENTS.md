@@ -1,4 +1,4 @@
-# Server Backend
+# Wippa Server Backend
 
 Fastify 5 + TypeORM (PostgreSQL) + BullMQ (Redis) + `fastify-type-provider-zod`.
 

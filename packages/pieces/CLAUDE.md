@@ -1,4 +1,4 @@
-# Piece SDK
+# Wippa Piece SDK
 
 ## Quick Start
 

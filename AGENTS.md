@@ -1,6 +1,6 @@
-# Activepieces
+# Wippa
 
-Open-source AI-first workflow automation platform. Self-hosted or cloud. 400+ pieces. MCP support.
+Australian automation platform. Self-hosted or cloud. 700+ integrations. MCP support.
 
 ## Architecture (Non-Obvious Rules)
 

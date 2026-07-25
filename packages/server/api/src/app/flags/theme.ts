@@ -75,7 +75,7 @@ export function generateTheme({
 export const defaultTheme = generateTheme({
     primaryColor: '#f5e6a3',
     websiteName: 'Wippa',
-    fullLogoUrl: 'https://wippa.com.au/logo-full.png',
-    favIconUrl: 'https://wippa.com.au/favicon.ico',
-    logoIconUrl: 'https://wippa.com.au/logo-icon.svg',
+    fullLogoUrl: '/wippa-logo.svg',
+    favIconUrl: '/wippa-icon.svg',
+    logoIconUrl: '/wippa-icon.svg',
 })
