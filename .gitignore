@@ -1,0 +1,110 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Claude Code worktrees
+.claude/worktrees/
+
+# ZAP DAST scan output (generated at runtime, see .zap/README.md)
+.zap/reports/
+
+pieces-cache-db-*.sqlite
+
+# local debug logs (evlog filesystem drain)
+.evlog/
+
+# local dev/session artifacts (research dumps, IDE config, captured eval output)
+.firecrawl/
+.claude/launch.json
+CONTEXT.md
+!.agents/contexts/**/CONTEXT.md
+packages/server/worker/test/lib/chat-eval/live/results/
+
+# compiled output
+dist
+tmp
+.turbo/
+/out-tsc
+firebase-admin-sdk.json
+dev
+/cache
+/logs/
+
+# SDK Build
+builds
+
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+/cache
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.turbo/
+# System Files
+.DS_Store
+Thumbs.db
+
+
+.angular
+activepieces-engine.js
+.history/
+
+# produced by unsandboxed engine execution
+.pnpm-store
+
+# produced by backend tests
+.npm-cache
+
+# scratch pad
+scratch.md
+
+# environment variables
+.env*
+
+# chat-eval CLI cache + decision log
+.chat-eval/
+
+# security advisory triage artifacts (PRIVATE/embargoed advisory content — never commit)
+.security-triage/
+
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+
+# Turborepo
+.turbo
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/redis-binaries/
+
+# Terraform
+deploy/terraform/**/.terraform/
+deploy/terraform/**/*.tfstate
+deploy/terraform/**/*.tfstate.backup
+deploy/terraform/**/.terraform.lock.hcl
+deploy/terraform/**/terraform.tfvars
+deploy/terraform/**/terraform-*.tfvars
+cache/

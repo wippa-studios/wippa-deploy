@@ -1,0 +1,57 @@
+services:
+  app:
+    image: ghcr.io/activepieces/activepieces:0.86.3
+    container_name: wippa-app
+    restart: unless-stopped
+    ports:
+      - '8081:80'
+    depends_on:
+      - postgres
+      - redis
+    env_file: .env
+    environment:
+      - AP_CONTAINER_TYPE=APP
+    volumes:
+      - ./cache:/usr/src/app/cache
+    networks:
+      - wippa
+  worker:
+    image: ghcr.io/activepieces/activepieces:0.86.3
+    restart: unless-stopped
+    depends_on:
+      - app
+    env_file: .env
+    environment:
+      - AP_CONTAINER_TYPE=WORKER
+    deploy:
+      replicas: 1
+    volumes:
+      - ./cache:/usr/src/app/cache
+    networks:
+      - wippa
+  postgres:
+    image: 'pgvector/pgvector:0.8.0-pg14'
+    container_name: wippa-db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - 'POSTGRES_DB=${AP_POSTGRES_DATABASE}'
+      - 'POSTGRES_PASSWORD=${AP_POSTGRES_PASSWORD}'
+      - 'POSTGRES_USER=${AP_POSTGRES_USERNAME}'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - wippa
+  redis:
+    image: 'redis:7.0.7'
+    container_name: wippa-redis
+    restart: unless-stopped
+    volumes:
+      - 'redis_data:/data'
+    networks:
+      - wippa
+volumes:
+  postgres_data:
+  redis_data:
+networks:
+  wippa:

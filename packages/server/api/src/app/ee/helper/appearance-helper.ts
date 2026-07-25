@@ -1,0 +1,50 @@
+import { isNil } from '@activepieces/core-utils'
+import { ApEdition, PlatformWithoutSensitiveData } from '@activepieces/shared'
+import { FastifyBaseLogger } from 'fastify'
+import { defaultTheme, generateTheme } from '../../flags/theme'
+import { system } from '../../helper/system/system'
+import { platformService } from '../../platform/platform.service'
+
+const getPlatformByIdOrFallback = async (platformId: string | null, log: FastifyBaseLogger) => {
+    if (isNil(platformId)) {
+        return defaultTheme
+    }
+    const platform = await platformService(log).getOneWithPlanOrThrow(platformId)
+
+    return enterpriseThemeChecker(platform)
+}
+
+export const appearanceHelper = {
+    async getTheme({ platformId, log }: { platformId: string | null, log: FastifyBaseLogger }) {
+        return getPlatformByIdOrFallback(platformId, log)
+    },
+}
+
+const enterpriseThemeChecker = async (platform: PlatformWithoutSensitiveData) => {
+    const edition = system.getEdition()
+    switch (edition) {
+        case ApEdition.COMMUNITY:
+            return defaultTheme
+        case ApEdition.CLOUD:
+            return generateTheme({
+                websiteName: platform.name,
+                fullLogoUrl: platform.fullLogoUrl,
+                favIconUrl: platform.favIconUrl,
+                logoIconUrl: platform.logoIconUrl,
+                primaryColor: platform.primaryColor,
+                themeColors: platform.themeColors ?? undefined,
+            })
+        case ApEdition.ENTERPRISE:
+            if (platform.plan.customAppearanceEnabled) {
+                return generateTheme({
+                    websiteName: platform.name,
+                    fullLogoUrl: platform.fullLogoUrl,
+                    favIconUrl: platform.favIconUrl,
+                    logoIconUrl: platform.logoIconUrl,
+                    primaryColor: platform.primaryColor,
+                    themeColors: platform.themeColors ?? undefined,
+                })
+            }
+            return defaultTheme
+    }
+}

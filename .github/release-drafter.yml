@@ -1,0 +1,39 @@
+include-pre-releases: false
+exclude-labels:
+  - 'skip-changelog'
+  - 'release'
+  - 'pre-release'
+categories:
+  - title: "🔌 Pieces"
+    labels:
+      - "🧩 area/third-party-pieces"
+      - "🧩 area/core-pieces"
+  - title: "⛓️‍💥 Breaking Changes"
+    labels:
+      - "⛓️‍💥 breaking-change"
+  - title: "✨ Exciting New Features"
+    labels:
+      - "🌟 feature"
+      - "feature"
+  - title: "🐞 Bug Fixes"
+    labels:
+      - "🐛 bug"
+      - "bug"
+  - title: "🎨 Enhancements & Polish"
+    labels:
+      - "✨ polishing"
+  - title: "📚 Documentation"
+    labels:
+      - "📚 documentation"
+  - title: "🧹 Maintenance"
+    labels:
+      - "🧹 clean up"
+
+template: |
+
+  $CHANGES
+
+  > 📌 **Upgrading a self-hosted instance?** Review the [Breaking Changes](https://www.activepieces.com/docs/install/reference/breaking-changes) page for any actions required before you upgrade.
+
+  ## Thanks ❤️
+  $CONTRIBUTORS
