@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   PopulatedFlow,
   Template,
   TemplateTelemetryEventType,
   TemplateType,
   UncategorizedFolderId,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useState, useEffect } from 'react';

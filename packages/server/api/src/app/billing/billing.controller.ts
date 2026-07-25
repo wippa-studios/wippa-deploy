@@ -2,7 +2,7 @@ import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { billingService } from './billing.service'
 import { StatusCodes } from 'http-status-codes'
 import { securityAccess } from '../core/security/authorization/fastify-security'
-import { PrincipalType } from '@activepieces/shared'
+import { PrincipalType } from '@wippa/shared'
 
 export const billingController: FastifyPluginAsyncZod = async (app) => {
     app.post('/create-checkout-session', async (request, reply) => {

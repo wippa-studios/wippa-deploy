@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { googleSheetsAuth } from '../common/common';
 import { commonProps } from '../common/props';
 import { areSheetIdsValid, getAccessToken } from '../common/common';

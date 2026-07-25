@@ -3,9 +3,9 @@ import {
   HttpRequest,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createCard } from './lib/actions/card/create-card';
 import { getCard } from './lib/actions/card/get-card';
 import { updateCard } from './lib/actions/card/update-card';

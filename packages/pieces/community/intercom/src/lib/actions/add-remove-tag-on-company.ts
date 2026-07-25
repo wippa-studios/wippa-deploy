@@ -1,5 +1,5 @@
 import { intercomAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { companyIdProp } from '../common/props';
 import { intercomClient } from '../common';
 

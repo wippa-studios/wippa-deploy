@@ -1,10 +1,10 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import {
 	createTrigger,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { airparserAuth } from '../auth';
 import { airparserApiCall, GetDocumentResponse } from '../common';
 import { inboxIdDropdown } from '../common/props';

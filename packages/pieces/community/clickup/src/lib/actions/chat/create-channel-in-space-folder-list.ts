@@ -1,8 +1,8 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
 import { callClickUpApi3, clickupCommon } from '../../common';
 import { clickupAuth } from '../../auth';
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { channelOutputSchema } from '../../output-schemas';
 
 export const createClickupChannelInSpaceFolderOrList = createAction({

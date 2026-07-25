@@ -1,8 +1,8 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   ConnectSecretManagerRequest,
   SecretManagerConnectionWithStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

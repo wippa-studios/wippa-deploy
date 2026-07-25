@@ -1,12 +1,12 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { vadooAiAuth } from '../auth';
 import {
   httpClient,
   HttpMethod,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { generatePodcastSchema } from '../schemas';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { isEmpty } from '@wippa/pieces-framework';
 
 export const generatePodcast = createAction({
   auth: vadooAiAuth,

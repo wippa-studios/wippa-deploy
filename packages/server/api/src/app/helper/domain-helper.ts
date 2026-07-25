@@ -1,4 +1,4 @@
-import { tryCatchSync } from '@activepieces/core-utils'
+import { tryCatchSync } from '@wippa/core-utils'
 import { FastifyRequest } from 'fastify'
 import { networkUtils } from './network-utils'
 import { system } from './system/system'

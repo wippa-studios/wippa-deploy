@@ -4,14 +4,14 @@ import {
   HttpHeaders,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   createAction,
   DynamicPropsValue,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
 import { httpMethodDropdown } from '../common/props';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import axios from 'axios';

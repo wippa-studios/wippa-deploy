@@ -3,9 +3,9 @@ import {
   DynamicPropsValue,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { ExecutionType, FAIL_PARENT_ON_FAILURE_HEADER, FlowStatus, isNil, PARENT_RUN_ID_HEADER } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { ExecutionType, FAIL_PARENT_ON_FAILURE_HEADER, FlowStatus, isNil, PARENT_RUN_ID_HEADER } from '@wippa/pieces-framework';
 import { CallableFlowRequest, CallableFlowResponse, findFlowByExternalIdOrThrow, listFlowsWithSubflowTrigger } from '../common';
 
 export const callFlow = createAction({

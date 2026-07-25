@@ -5,7 +5,7 @@ import {
   McpAuthType,
   McpProtocol,
   ValidateAgentMcpToolResponse,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';

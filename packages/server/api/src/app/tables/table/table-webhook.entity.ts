@@ -1,4 +1,4 @@
-import { Flow, Project, Table, TableWebhook } from '@activepieces/shared'
+import { Flow, Project, Table, TableWebhook } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../../database/database-common'
 

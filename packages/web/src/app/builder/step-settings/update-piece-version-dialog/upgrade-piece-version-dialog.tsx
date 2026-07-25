@@ -1,4 +1,4 @@
-import { PieceAction, PieceTrigger } from '@activepieces/shared';
+import { PieceAction, PieceTrigger } from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import React, { useState } from 'react';

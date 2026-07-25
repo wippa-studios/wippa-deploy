@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { fireberryAuth } from '../auth';
 
 const FIREBERRY_API_BASE_URL = 'https://api.fireberry.com';

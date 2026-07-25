@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-flow-helper` to build the library.
+Run `turbo run build --filter=@wippa/piece-flow-helper` to build the library.

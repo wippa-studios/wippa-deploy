@@ -1,9 +1,9 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { fellowAuth, getBaseUrl } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { getNoteAction } from './lib/actions/get-note';
 import { newRecordingTrigger } from './lib/triggers/new-recording';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const fellow = createPiece({
   displayName: 'Fellow.ai',

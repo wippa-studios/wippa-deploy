@@ -3,8 +3,8 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { createConversation } from './lib/actions/create-conversation';
 import { replyToConversation } from './lib/actions/reply-to-conversation';
 import { upsertDocument } from './lib/actions/upsert-document';

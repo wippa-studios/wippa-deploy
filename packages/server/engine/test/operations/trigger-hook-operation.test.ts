@@ -2,8 +2,8 @@ import {
     FlowTriggerType,
     FlowVersionState,
     TriggerHookType,
-} from '@activepieces/shared'
-import type { ExecuteTriggerOperation, FlowVersion } from '@activepieces/shared'
+} from '@wippa/shared'
+import type { ExecuteTriggerOperation, FlowVersion } from '@wippa/shared'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const { mockDownload } = vi.hoisted(() => ({

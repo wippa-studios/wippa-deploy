@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode, isNil } from '@activepieces/core-utils'
-import { ALL_PRINCIPAL_TYPES, ApEdition, ApFlagId, CreateTemplateRequestBody, ListTemplatesRequestQuery, Principal, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI, Template, TemplateType, UpdateTemplateRequestBody } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
+import { ALL_PRINCIPAL_TYPES, ApEdition, ApFlagId, CreateTemplateRequestBody, ListTemplatesRequestQuery, Principal, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI, Template, TemplateType, UpdateTemplateRequestBody } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'

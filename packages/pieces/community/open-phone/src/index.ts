@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';

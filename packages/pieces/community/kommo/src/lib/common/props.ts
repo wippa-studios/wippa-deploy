@@ -1,5 +1,5 @@
-import { Property, DropdownOption } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, DropdownOption } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from './index';
 import { kommoAuth } from '../auth';
 

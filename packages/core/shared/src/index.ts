@@ -20,7 +20,7 @@ export * from './lib/core/health'
 // Foundation utilities/types live in @activepieces/core-utils; shared re-exports the whole
 // surface here once (instead of via per-file `export *` shim files under lib/core/common).
 // The local ./lib/form-errors file remains for internal relative imports only.
-export * from '@activepieces/core-utils'
+export * from '@wippa/core-utils'
 
 // management
 export * from './lib/management/platform'
@@ -34,7 +34,7 @@ export * from './lib/management/template'
 
 // automation — flows / flow-run / engine / agents / workers were extracted to
 // @activepieces/core-execution (SRE-163); shared re-exports them for backward compat.
-export * from '@activepieces/core-execution'
+export * from '@wippa/core-execution'
 export * from './lib/automation/app-connection/app-connection'
 export * from './lib/automation/app-connection/dto/read-app-connection-request'
 export * from './lib/automation/app-connection/dto/upsert-app-connection-request'

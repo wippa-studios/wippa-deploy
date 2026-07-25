@@ -2,7 +2,7 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { textToImage } from './lib/actions/text-to-image';
 import { stableDiffusionAuth } from './lib/auth';
 

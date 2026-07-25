@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
 import { stripHtml } from 'string-strip-html';
 import { intercomAuth } from '../auth';
 import { intercomClient } from '../common';

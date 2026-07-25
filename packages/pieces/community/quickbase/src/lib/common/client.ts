@@ -2,7 +2,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { QuickbaseApiError } from './types';
 
 export class QuickbaseClient {

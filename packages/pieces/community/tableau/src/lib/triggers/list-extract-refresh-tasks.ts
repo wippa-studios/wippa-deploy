@@ -1,8 +1,8 @@
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 import { tableauAuth } from '../auth';
 import { getAuthToken, buildTableauUrl, getTableauHeaders } from '../common';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 function ensureString(body: any): string {
   if (typeof body === 'string') return body;

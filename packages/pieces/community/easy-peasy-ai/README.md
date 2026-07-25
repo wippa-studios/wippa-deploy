@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-easy-peasy-ai` to build the library.
+Run `turbo run build --filter=@wippa/piece-easy-peasy-ai` to build the library.

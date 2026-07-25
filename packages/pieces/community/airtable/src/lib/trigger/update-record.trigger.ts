@@ -2,14 +2,14 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   Property,
   StaticPropsValue,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import Airtable from 'airtable';
 import dayjs from 'dayjs';
 import { airtableAuth } from '../auth';

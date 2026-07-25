@@ -1,4 +1,4 @@
-import { ApId, BaseModelSchema, DateOrString, Metadata, Nullable } from '@activepieces/core-utils'
+import { ApId, BaseModelSchema, DateOrString, Metadata, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export enum ColorName {

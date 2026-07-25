@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { graphqlCommon } from './lib/common/common';
 import { graphqlSubscriptionTrigger } from './lib/triggers/graphql-subscription-trigger';
 

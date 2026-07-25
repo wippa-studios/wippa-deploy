@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { sendItAuth } from './lib/auth';
 import { publishPost } from './lib/actions/publish-post';
 import { schedulePost } from './lib/actions/schedule-post';

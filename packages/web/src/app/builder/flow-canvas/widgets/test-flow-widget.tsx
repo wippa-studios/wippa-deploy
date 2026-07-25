@@ -1,9 +1,9 @@
-import { isNil, assertNotNullOrUndefined } from '@activepieces/core-utils';
+import { isNil, assertNotNullOrUndefined } from '@wippa/core-utils';
 import {
   FlowTriggerType,
   Permission,
   UpdateRunProgressRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { useRef } from 'react';
 

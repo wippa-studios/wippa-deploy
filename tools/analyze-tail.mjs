@@ -8,11 +8,11 @@ const REPO = path.resolve(__dirname, '..')
 const COMMUNITY = path.join(REPO, 'packages', 'pieces', 'community')
 
 const WORKSPACE_ALIASES = {
-    '@activepieces/shared': path.join(REPO, 'packages', 'shared', 'src'),
-    '@activepieces/pieces-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
-    '@activepieces/pieces-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
-    '@activepieces/core-utils': path.join(REPO, 'packages', 'core', 'utils', 'src'),
-    '@activepieces/core-piece-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
+    '@wippa/shared': path.join(REPO, 'packages', 'shared', 'src'),
+    '@wippa/pieces-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
+    '@wippa/pieces-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
+    '@wippa/core-utils': path.join(REPO, 'packages', 'core', 'utils', 'src'),
+    '@wippa/core-piece-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
 }
 const NATIVE_EXTERNALS = new Set(['oracledb', 'duckdb', 'better-sqlite3', 'sqlite3', 'pg-native', 'mongodb-client-encryption', 'kerberos', 'snappy', 'aws4', 'bson-ext', '@mongodb-js/zstd', 'playwright', 'playwright-core', 'puppeteer', 'puppeteer-core'])
 
@@ -22,7 +22,7 @@ function groupKey(file) {
     let m = file.match(/\.bun\/((@[^/]+\/)?[^@/]+)@/)
     if (m) return m[1]
     m = file.match(/packages\/(shared)\//)
-    if (m) return '@activepieces/shared'
+    if (m) return '@wippa/shared'
     return null
 }
 
@@ -51,7 +51,7 @@ async function topContribForPiece(pieceName) {
     for (const [file, v] of Object.entries(out.inputs)) {
         const k = groupKey(file) || 'piece-src'
         grp[k] = (grp[k] || 0) + v.bytesInOutput
-        if (k === '@activepieces/shared') sharedBytes += v.bytesInOutput
+        if (k === '@wippa/shared') sharedBytes += v.bytesInOutput
         if (/\.bun\/zod@/.test(file) && !/\/mini\//.test(file)) fullZod = true
     }
     const top = Object.entries(grp).sort((a, b) => b[1] - a[1]).slice(0, 3)

@@ -3,7 +3,7 @@ import {
   createAction,
   InputPropertyMap,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { tagsDropdown, usersDropdown } from '../common/props';
 import { biginApiService } from '../common/request';
 import { handleDropdownError } from '../common/helpers';

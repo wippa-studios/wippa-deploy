@@ -4,7 +4,7 @@ import {
   pollingHelper,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   createTrigger,
@@ -12,9 +12,9 @@ import {
   PieceAuth,
   Store,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { channelIdentifier } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 import { load as cheerioLoad } from 'cheerio';
 import FeedParser from 'feedparser';

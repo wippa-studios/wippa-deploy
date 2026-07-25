@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { discordCommon } from '../common';
 import { discordAuth } from '../auth';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const discordDeleteGuildRole = createAction({
   auth: discordAuth,

@@ -1,5 +1,5 @@
-import { isNil, tryCatch } from '@activepieces/core-utils'
-import { ConsumeJobRequest } from '@activepieces/shared'
+import { isNil, tryCatch } from '@wippa/core-utils'
+import { ConsumeJobRequest } from '@wippa/shared'
 import { Worker as BullMQWorker } from 'bullmq'
 import { FastifyBaseLogger } from 'fastify'
 

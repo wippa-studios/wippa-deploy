@@ -4,7 +4,7 @@ import {
     GetOrDeleteConnectionFromTokenRequest,
     ListConnectionKeysRequest,
     PrincipalType,
-    UpsertConnectionFromToken, UpsertSigningKeyConnection } from '@activepieces/shared'
+    UpsertConnectionFromToken, UpsertSigningKeyConnection } from '@wippa/shared'
 import { FastifyRequest } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'

@@ -5,7 +5,7 @@ import {
     RunEnvironment,
     StreamStepProgress,
     WorkerGroupScope,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { z } from 'zod'
 
 export const parseWorkerGroupValue = ({ value, projectWorker }: { value: string | undefined, projectWorker: boolean }): WorkerGroupAssignment | null => {

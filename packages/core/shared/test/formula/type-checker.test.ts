@@ -1,4 +1,4 @@
-import { typeCheckTiptapDoc } from '@activepieces/core-formula'
+import { typeCheckTiptapDoc } from '@wippa/core-formula'
 import { describe, expect, it } from 'vitest'
 
 type Node = {

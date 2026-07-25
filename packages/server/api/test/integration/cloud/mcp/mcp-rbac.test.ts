@@ -1,5 +1,5 @@
-import { apId, Permission } from '@activepieces/core-utils'
-import { DefaultProjectRole, McpServerType, ProjectScopedMcpServer } from '@activepieces/shared'
+import { apId, Permission } from '@wippa/core-utils'
+import { DefaultProjectRole, McpServerType, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { resolvePermissionChecker } from '../../../../src/app/mcp/mcp-permissions'

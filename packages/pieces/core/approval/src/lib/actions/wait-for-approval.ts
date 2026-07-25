@@ -1,5 +1,5 @@
-import { createAction, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { ExecutionType, MarkdownVariant } from '@activepieces/pieces-framework';
+import { createAction, PieceAuth, Property } from '@wippa/pieces-framework';
+import { ExecutionType, MarkdownVariant } from '@wippa/pieces-framework';
 
 export const waitForApprovalLink = createAction({
   audience: 'human',

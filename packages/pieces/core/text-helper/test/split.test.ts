@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { split } from '../src/lib/actions/split';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('split action', () => {
   test('splits text by comma', async () => {

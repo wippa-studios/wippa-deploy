@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { endpoint, kizeoFormsCommon } from '../common';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { kizeoFormsAuth } from '../..';
 
 export const downloadCustomExportInItsOriginalFormat = createAction({

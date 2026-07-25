@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
 
 // Actions
 import { createContact } from './lib/actions/create-contact';

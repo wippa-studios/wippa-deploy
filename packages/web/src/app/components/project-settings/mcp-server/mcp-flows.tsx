@@ -1,4 +1,4 @@
-import { FlowStatus, PopulatedMcpServer } from '@activepieces/shared';
+import { FlowStatus, PopulatedMcpServer } from '@wippa/shared';
 import { t } from 'i18next';
 
 import { Alert, AlertDescription } from '@/components/ui/alert';

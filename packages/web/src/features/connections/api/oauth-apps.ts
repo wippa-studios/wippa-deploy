@@ -1,10 +1,10 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   ListOAuth2AppRequest,
   OAuthApp,
   UpsertOAuth2AppRequest,
   ApEdition,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

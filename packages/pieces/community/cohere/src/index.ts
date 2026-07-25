@@ -1,7 +1,7 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { generateText } from './lib/actions/generate-text';
 import { cohereAuth } from './lib/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const cohere = createPiece({
   displayName: 'Cohere',

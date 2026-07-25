@@ -5,7 +5,7 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const TYPEFULLY_API_URL = 'https://api.typefully.com/v2';
 

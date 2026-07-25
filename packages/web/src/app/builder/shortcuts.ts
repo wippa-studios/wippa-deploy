@@ -1,7 +1,7 @@
 import {
   flowStructureUtil,
   StepLocationRelativeToParent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useCallback, useEffect } from 'react';
 
 import { useBuilderStateContext } from './builder-hooks';

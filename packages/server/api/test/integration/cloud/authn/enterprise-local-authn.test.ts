@@ -1,4 +1,4 @@
-import { OtpState, OtpType, UserStatus } from '@activepieces/shared'
+import { OtpState, OtpType, UserStatus } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

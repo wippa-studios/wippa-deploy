@@ -1,4 +1,4 @@
-import { SAFE_STRING_PATTERN } from '@activepieces/core-utils';
+import { SAFE_STRING_PATTERN } from '@wippa/core-utils';
 import { useMutation } from '@tanstack/react-query';
 import { HttpStatusCode } from 'axios';
 import { t } from 'i18next';

@@ -1,4 +1,4 @@
-import { PlatformAnalyticsReport } from '@activepieces/shared';
+import { PlatformAnalyticsReport } from '@wippa/shared';
 import { useContext, useMemo } from 'react';
 
 import { RefreshAnalyticsContext } from '@/features/platform-admin';

@@ -4,10 +4,10 @@ import {
   Property,
   AppConnectionValueForAuthProperty,
   StaticPropsValue
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { billplzApi } from '../common/api';
 import { billplzAuth } from '../common/auth';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 
 type BillplzAuth = AppConnectionValueForAuthProperty<typeof billplzAuth>;
 

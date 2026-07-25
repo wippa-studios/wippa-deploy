@@ -1,4 +1,4 @@
-import { PlatformAnalyticsReport } from '@activepieces/shared';
+import { PlatformAnalyticsReport } from '@wippa/shared';
 
 import { RunsChart } from './runs-chart';
 import { TimeSavedChart } from './time-saved-chart';

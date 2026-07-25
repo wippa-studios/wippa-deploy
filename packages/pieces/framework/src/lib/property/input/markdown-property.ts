@@ -1,7 +1,7 @@
 import * as z from "zod/mini";
 import { BasePropertySchema, TPropertyValue } from './common';
 import { PropertyType } from './property-type';
-import { MarkdownVariant } from '@activepieces/core-piece-types';
+import { MarkdownVariant } from '@wippa/core-piece-types';
 
 export const MarkDownProperty = z.object({
   ...BasePropertySchema.shape,

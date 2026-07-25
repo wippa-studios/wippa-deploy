@@ -4,7 +4,7 @@ import {
   ProjectReleaseType,
   ProjectSyncPlan,
   TableOperationType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { PencilIcon, Plus, TrashIcon } from 'lucide-react';

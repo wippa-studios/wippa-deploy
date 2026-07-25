@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { PieceType, PlatformRole, PrincipalType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { PieceType, PlatformRole, PrincipalType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
@@ -35,7 +35,7 @@ describe('Piece Metadata API', () => {
         it('Should return metadata when authenticated', async () => {
             // arrange
             const mockPieceMetadata = createMockPieceMetadata({
-                name: '@activepieces/a',
+                name: '@wippa/a',
                 pieceType: PieceType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPieceMetadata)
@@ -46,7 +46,7 @@ describe('Piece Metadata API', () => {
             })
 
             // act
-            const response = await ctx.get(`/v1/pieces/@activepieces/a?projectId=${ctx.project.id}`)
+            const response = await ctx.get(`/v1/pieces/@wippa/a?projectId=${ctx.project.id}`)
 
             // assert
             const responseBody = response?.json()
@@ -58,7 +58,7 @@ describe('Piece Metadata API', () => {
         it('Should return metadata when not authenticated', async () => {
             // arrange
             const mockPieceMetadata = createMockPieceMetadata({
-                name: '@activepieces/a',
+                name: '@wippa/a',
                 pieceType: PieceType.OFFICIAL,
                 displayName: 'a',
             })
@@ -73,7 +73,7 @@ describe('Piece Metadata API', () => {
             // act
             const response = await app?.inject({
                 method: 'GET',
-                url: '/api/v1/pieces/@activepieces/a',
+                url: '/api/v1/pieces/@wippa/a',
                 headers: {
                     authorization: `Bearer ${testToken}`,
                 },

@@ -2,13 +2,13 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   TriggerStrategy,
   createTrigger,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { lettaAuth } from '../common/auth';
 import { getLettaClient } from '../common/client';
 import { agentIdDropdown } from '../common/props';

@@ -1,4 +1,4 @@
-import { McpToolDefinition, ProjectScopedMcpServer } from '@activepieces/shared'
+import { McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { isToolSearchEnabled } from '../../tool-search/tool-search-flag'
 import { apAddBranchTool } from './ap-add-branch'

@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { fathomAuth, FATHOM_API_BASE } from './lib/auth';
 import { listSites } from './lib/actions/list-sites';
 import { getSite } from './lib/actions/get-site';

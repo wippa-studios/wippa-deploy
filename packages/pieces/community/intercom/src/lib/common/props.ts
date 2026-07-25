@@ -1,10 +1,10 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { getIntercomRegion, getIntercomToken, intercomClient, IntercomAuthValue } from '.';
 import {
 	DropdownOption,
 	DynamicPropsValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { intercomAuth } from '../auth';
 
 export const conversationIdProp = (displayName: string, required = true) =>

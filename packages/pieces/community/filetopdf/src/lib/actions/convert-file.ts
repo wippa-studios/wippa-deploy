@@ -2,8 +2,8 @@ import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import FormData from 'form-data';
 import { filetopdfAuth } from '../common/auth';
 import { filetopdfApiCall } from '../common/client';

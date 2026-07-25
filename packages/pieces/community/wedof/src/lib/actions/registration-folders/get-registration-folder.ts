@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { wedofAuth } from '../../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const getRegistrationFolder = createAction({

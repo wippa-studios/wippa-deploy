@@ -2,10 +2,10 @@ import {
     createTrigger,
     Property,
     TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { organizationIdDropdown, videoaskIdDropdown } from '../common/props';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { videoaskAuth } from '../common/auth';
 export const formContactMessage = createTrigger({
     auth: videoaskAuth,

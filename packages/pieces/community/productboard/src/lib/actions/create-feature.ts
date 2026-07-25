@@ -1,5 +1,5 @@
-import { createAction, Property, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { HttpMethod, HttpResponse } from '@activepieces/pieces-common';
+import { createAction, Property, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { HttpMethod, HttpResponse } from '@wippa/pieces-common';
 import { productboardAuth } from '../common/auth';
 import { productboardCommon } from '../common/client';
 import { productboardProps } from '../common/props';

@@ -1,5 +1,5 @@
-import { Permission } from '@activepieces/core-utils';
-import { ProjectRelease, ProjectReleaseType } from '@activepieces/shared';
+import { Permission } from '@wippa/core-utils';
+import { ProjectRelease, ProjectReleaseType } from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {

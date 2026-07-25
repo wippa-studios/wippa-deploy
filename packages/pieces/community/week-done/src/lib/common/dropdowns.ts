@@ -2,8 +2,8 @@ import {
   DropdownOption,
   DropdownState,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { weekdoneApiCall } from './client';
 
 type WeekdoneListResponse<T> = {

@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { discordAuth } from '../auth';
-import { ExecutionType } from '@activepieces/pieces-framework';
+import { ExecutionType } from '@wippa/pieces-framework';
 import { discordCommon } from '../common';
 
 export const discordSendApprovalMessage = createAction({

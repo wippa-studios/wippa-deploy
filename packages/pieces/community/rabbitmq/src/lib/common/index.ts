@@ -1,4 +1,4 @@
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema } from '@wippa/pieces-framework';
 import { rabbitmqAuth } from '../auth';
 import amqp, { ChannelModel, Connection } from 'amqplib';
 

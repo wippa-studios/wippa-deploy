@@ -145,7 +145,7 @@ export const API_ENDPOINTS = {
   COMPLETIONS: '/texts/completions',
 };
 
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 
 export const createCommonProperties = () => ({
   model: Property.StaticDropdown({

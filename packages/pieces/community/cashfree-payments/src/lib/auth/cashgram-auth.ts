@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export interface CashgramAuthCredentials {
   clientId: string;

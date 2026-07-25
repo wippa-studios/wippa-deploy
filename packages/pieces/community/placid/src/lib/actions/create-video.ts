@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { placidAuth } from '../auth';
 import { PlacidClient } from '../common/client';
 import {
@@ -8,7 +8,7 @@ import {
 	passthroughProperty,
 	templateLayersProperty,
 } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { PlacidCreateVideoRequest } from '../common';
 
 export const createVideo = createAction({

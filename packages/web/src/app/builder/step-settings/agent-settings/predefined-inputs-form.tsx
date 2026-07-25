@@ -1,6 +1,6 @@
-import { isNil } from '@activepieces/core-utils';
-import { PieceProperty, PropertyType } from '@activepieces/pieces-framework';
-import { FieldControlMode, PredefinedInputField } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { PieceProperty, PropertyType } from '@wippa/pieces-framework';
+import { FieldControlMode, PredefinedInputField } from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { useEffect, useMemo } from 'react';

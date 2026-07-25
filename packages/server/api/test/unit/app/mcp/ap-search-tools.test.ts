@@ -1,4 +1,4 @@
-import { McpToolResult, ProjectScopedMcpServer } from '@activepieces/shared'
+import { McpToolResult, ProjectScopedMcpServer } from '@wippa/shared'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const mockSearchActions = vi.fn()
@@ -57,7 +57,7 @@ describe('ap_search_actions / ap_search_triggers — empty-query validation (no 
 
 describe('ap_search_actions — the keyword-degrade note names the real cause', () => {
     const row = {
-        pieceName: '@activepieces/piece-slack',
+        pieceName: '@wippa/piece-slack',
         actionName: 'send_channel_message',
         displayName: 'Send Channel Message',
         oneLineDescription: 'Send a message to a Slack channel',

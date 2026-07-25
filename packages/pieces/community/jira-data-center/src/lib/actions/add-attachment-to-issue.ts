@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { jiraDataCenterAuth } from '../../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { sendJiraRequest } from '../common';
 import FormData from 'form-data';
 import { getProjectIdDropdown, getIssueIdDropdown } from '../common/props';

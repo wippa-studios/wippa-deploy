@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 const PRODUCTION_BASE_URL = 'https://api.aiprise.com/api/v1';
 const SANDBOX_BASE_URL = 'https://api-sandbox.aiprise.com/api/v1';

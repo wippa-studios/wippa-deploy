@@ -1,5 +1,5 @@
-import { Permission } from '@activepieces/core-utils'
-import { McpToolDefinition, ProjectScopedMcpServer } from '@activepieces/shared'
+import { Permission } from '@wippa/core-utils'
+import { McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { tableService } from '../../tables/table/table.service'

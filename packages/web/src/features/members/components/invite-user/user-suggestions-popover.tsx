@@ -1,4 +1,4 @@
-import { InvitationType } from '@activepieces/shared';
+import { InvitationType } from '@wippa/shared';
 import { t } from 'i18next';
 import { Globe, UserCheck } from 'lucide-react';
 import React, { useCallback, useRef, useState } from 'react';

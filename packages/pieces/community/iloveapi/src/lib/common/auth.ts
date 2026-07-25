@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { iLoveApi } from './client';
 
 export const iloveapiAuth = PieceAuth.SecretText({

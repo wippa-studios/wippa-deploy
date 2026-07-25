@@ -3,7 +3,7 @@ import {
   HttpMethod,
   HttpMessageBody,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 const BASE_URL = 'https://harvest.greenhouse.io/v3';
 

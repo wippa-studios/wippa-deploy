@@ -3,7 +3,7 @@ import {
   createAction,
   ApFile,
   PieceAuth,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   ZipWriter,
   BlobWriter,

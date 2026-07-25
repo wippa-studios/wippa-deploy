@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { createSubscriptionAction } from './lib/actions/create-subscription.action';
 import { updateSubscriptionAction } from './lib/actions/update-subscription.action';
 import { deleteSubscriptionAction } from './lib/actions/delete-subscription.action';
@@ -10,8 +10,8 @@ import { newPostSentTrigger } from './lib/triggers/new-post-sent.trigger';
 import { userUnsubscribesTrigger } from './lib/triggers/user-unsubscribes.trigger';
 import { newSubscriptionConfirmedTrigger } from './lib/triggers/new-subscription-confirmed.trigger';
 import { newSubscriberCreatedTrigger } from './lib/triggers/new-subscriber-created.trigger';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { beehiivAuth } from './lib/common/auth';
 import { BEEHIIV_API_URL } from './lib/common/client';
 

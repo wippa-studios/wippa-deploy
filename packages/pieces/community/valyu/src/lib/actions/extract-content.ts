@@ -1,5 +1,5 @@
-import { createAction, Property, InputPropertyMap } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property, InputPropertyMap } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from '../common';
 import { valyuAuth } from '../auth';
 

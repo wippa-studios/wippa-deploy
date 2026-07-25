@@ -1,10 +1,10 @@
-import { ApFile, createAction, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { ApFile, createAction, PieceAuth, Property } from '@wippa/pieces-framework';
 import { createAIModel } from '../../common/ai-sdk';
 import { generateText, tool, jsonSchema, ModelMessage, UserModelMessage } from 'ai';
 import mime from 'mime-types';
 import Ajv from 'ajv';
 import { aiProps } from '../../common/props';
-import { AIProviderName } from '@activepieces/pieces-framework';
+import { AIProviderName } from '@wippa/pieces-framework';
 
 export const extractStructuredData = createAction({
   audience: 'human',

@@ -1,4 +1,4 @@
-import { GetSampleDataRequest } from '@activepieces/shared';
+import { GetSampleDataRequest } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

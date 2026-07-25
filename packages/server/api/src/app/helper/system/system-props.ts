@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined } from '@activepieces/core-utils'
-import { environmentMigrations } from '@activepieces/server-utils'
+import { assertNotNullOrUndefined } from '@wippa/core-utils'
+import { environmentMigrations } from '@wippa/server-utils'
 
 export type SystemProp = AppSystemProp
 

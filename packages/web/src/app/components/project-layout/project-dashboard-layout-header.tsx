@@ -1,4 +1,4 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import { t } from 'i18next';
 import { useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';

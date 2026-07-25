@@ -1,5 +1,5 @@
-import { deepMergeAndCast } from '@activepieces/core-utils';
-import { ApFlagId, SourceCode } from '@activepieces/shared';
+import { deepMergeAndCast } from '@wippa/core-utils';
+import { ApFlagId, SourceCode } from '@wippa/shared';
 import { javascript } from '@codemirror/lang-javascript';
 import { json } from '@codemirror/lang-json';
 import { githubDark, githubLight } from '@uiw/codemirror-theme-github';

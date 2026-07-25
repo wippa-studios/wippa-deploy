@@ -1,4 +1,4 @@
-import { apId } from '@activepieces/core-utils'
+import { apId } from '@wippa/core-utils'
 import { gt } from 'semver'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'

@@ -1,7 +1,7 @@
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { TeableCommon, makeClient } from '../common';
 import { TeableAuth, TeableAuthValue } from '../auth';
 import { prepareQuery } from '../common/client';

@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const READWISE_BASE_URL = 'https://readwise.io/api/v2';
 

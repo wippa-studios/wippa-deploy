@@ -2,7 +2,7 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { askGpt } from './lib/actions/ask-gpt';
 import { azureOpenaiAuth } from './lib/auth';
 

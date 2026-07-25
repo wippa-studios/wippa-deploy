@@ -1,4 +1,4 @@
-import { createAction} from '@activepieces/pieces-framework';
+import { createAction} from '@wippa/pieces-framework';
 
 export const stopFlow = createAction({
   audience: 'human',

@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-surveytale` to build the library.
+Run `turbo run build --filter=@wippa/piece-surveytale` to build the library.

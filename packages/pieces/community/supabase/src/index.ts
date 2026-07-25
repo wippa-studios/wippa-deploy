@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { createClient } from '@supabase/supabase-js';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { uploadFile } from './lib/actions/upload-file';
 import { createRow } from './lib/actions/create-row';
 import { deleteRows } from './lib/actions/delete-rows';

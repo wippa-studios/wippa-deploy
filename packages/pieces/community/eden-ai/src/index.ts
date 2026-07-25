@@ -13,8 +13,8 @@
     import { ocrImageAction } from './lib/actions/ocr-image';
     import { imageGenerationAction } from './lib/actions/image-generation';
     import { textToSpeechAction } from './lib/actions/text-to-speech';
-    import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+    import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 
     export const edenAiAuth = PieceAuth.SecretText({
       displayName: 'Eden AI API Key',

@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { newBooking } from './lib/triggers/new-booking';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createprofile } from './lib/actions/create-profile';
 import { retrieveBookingById } from './lib/actions/retrieve-booking-by-id';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { youcanbookmeAuth } from './lib/common/auth';
 
 export const youcanbookme = createPiece({

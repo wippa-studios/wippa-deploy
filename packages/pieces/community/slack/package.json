@@ -1,16 +1,16 @@
 {
-  "name": "@activepieces/piece-slack",
+  "name": "@wippa/piece-slack",
   "version": "0.17.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@slack/web-api": "7.9.0",
     "slackify-markdown": "4.4.0",
     "zod": "4.3.6",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { AuthenticationType, HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
 import { resendAuth } from '../..';
 
 const BASE_URL = 'https://api.resend.com';

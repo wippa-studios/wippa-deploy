@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import { OutsetaClient } from './common/client';
 
 export const outsetaAuth = PieceAuth.CustomAuth({

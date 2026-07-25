@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 import { cannyAuth } from './lib/auth';
 import { createPostAction } from './lib/actions/create-post';

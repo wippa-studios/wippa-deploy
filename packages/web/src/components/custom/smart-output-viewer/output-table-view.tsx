@@ -1,4 +1,4 @@
-import { isNil, isObject } from '@activepieces/core-utils';
+import { isNil, isObject } from '@wippa/core-utils';
 import { t } from 'i18next';
 
 import { StepFileDownloadButton } from '@/components/custom/step-file-download-button';

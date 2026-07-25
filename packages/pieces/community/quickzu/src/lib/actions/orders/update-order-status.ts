@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { quickzuAuth } from '../../auth';
 import { makeClient, quickzuCommon } from '../../common';
 import { OrderStatus } from '../../common/constants';

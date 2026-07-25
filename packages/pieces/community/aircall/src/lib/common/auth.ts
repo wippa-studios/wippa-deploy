@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const aircallAuth = PieceAuth.BasicAuth({
   description: `You can create API key by naviagting to **Integrations & API** menu.`,

@@ -1,5 +1,5 @@
-import { Permission } from '@activepieces/core-utils';
-import { ApFlagId } from '@activepieces/shared';
+import { Permission } from '@wippa/core-utils';
+import { ApFlagId } from '@wippa/shared';
 import { nanoid } from 'nanoid';
 import { useRef, useEffect } from 'react';
 import DataGrid, { DataGridHandle } from 'react-data-grid';

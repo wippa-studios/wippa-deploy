@@ -1,10 +1,10 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { generatePresentations } from './lib/actions/generate-presentations';
 
 import { presentonAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { newPresentation } from './lib/triggers/new-presentation';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const presentation = createPiece({
   displayName: 'Presenton',

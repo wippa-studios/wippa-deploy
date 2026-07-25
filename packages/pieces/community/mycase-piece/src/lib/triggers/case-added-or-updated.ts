@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
 import { mycaseAuth } from '../auth';
 import { createMyCaseApi } from '../common/mycase-api';
 

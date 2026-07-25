@@ -10,9 +10,9 @@ import {
   DelayPauseMetadata,
   PauseMetadata,
   WebhookPauseMetadata,
-} from '@activepieces/core-piece-types';
-import type { SeekPage } from '@activepieces/core-utils';
-import type { FlowRunId, ProjectId } from '@activepieces/core-utils';
+} from '@wippa/core-piece-types';
+import type { SeekPage } from '@wippa/core-utils';
+import type { FlowRunId, ProjectId } from '@wippa/core-utils';
 import { LanguageModel, Tool } from 'ai'
 import type { Readable } from 'node:stream'
 
@@ -26,7 +26,7 @@ import {
   StaticPropsValue,
 } from '../property';
 import { PieceAuthProperty } from '../property/authentication';
-import type { PopulatedFlowSummary } from '@activepieces/core-piece-types';
+import type { PopulatedFlowSummary } from '@wippa/core-piece-types';
 
 export type BaseContext<
   PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined,

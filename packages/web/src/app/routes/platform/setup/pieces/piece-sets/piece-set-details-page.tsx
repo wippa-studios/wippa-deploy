@@ -1,4 +1,4 @@
-import { PieceSelection, PieceSelectionMode } from '@activepieces/shared';
+import { PieceSelection, PieceSelectionMode } from '@wippa/shared';
 import { t } from 'i18next';
 import { ArrowLeft, Layers, Loader2 } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';

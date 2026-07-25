@@ -1,4 +1,4 @@
-import { Principal, PrincipalType } from '@activepieces/shared'
+import { Principal, PrincipalType } from '@wippa/shared'
 import { AuditActor, defineAuditAction } from 'evlog'
 
 const connectionListed = defineAuditAction('connection.listed', { target: 'project' })

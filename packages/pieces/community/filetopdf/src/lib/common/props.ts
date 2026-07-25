@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 
 /**
  * PDF/A archival conformance levels. Empty selection = no PDF/A (the default).

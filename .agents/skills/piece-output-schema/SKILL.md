@@ -67,7 +67,7 @@ For each field, confirm its path (`value ?? key`) resolves against the captured 
 - Add `outputSchema: <name>` to each action/trigger object (or populate the trigger registration map — see [schema-reference.md](./schema-reference.md#wiring)).
 - **Bump the piece's patch version** in its `package.json` (every touched piece).
 - Rebuild the piece and reload the dev instance ([capture-recipes.md](./capture-recipes.md#dev-piece-reload)); confirm the friendly tree renders in the builder.
-- Run `npm run lint-dev` (or `npx turbo run lint --filter=@activepieces/piece-<name>`). Typecheck must be clean.
+- Run `npm run lint-dev` (or `npx turbo run lint --filter=@wippa/piece-<name>`). Typecheck must be clean.
 
 ## Verification checklist
 - [ ] Every non-empty, non-generic action and every stable trigger has a schema (skips are deliberate per the table).

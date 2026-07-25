@@ -1,5 +1,5 @@
-import { apId, isEmpty, isNil } from '@activepieces/core-utils'
-import { PackageType, PieceType } from '@activepieces/shared'
+import { apId, isEmpty, isNil } from '@wippa/core-utils'
+import { PackageType, PieceType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import semVer from 'semver'
 import { system } from '../../../helper/system/system'

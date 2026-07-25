@@ -1,7 +1,7 @@
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { baserowAuth } from '../auth';
 import { baserowCommon, makeClient } from '../common';
 

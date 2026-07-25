@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 // Each value is a SPACE-separated scope string (the format the OAuth2 `scope`
 // query param expects). Every preset includes:

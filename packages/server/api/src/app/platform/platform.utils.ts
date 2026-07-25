@@ -1,5 +1,5 @@
-import { isNil, PlatformId, tryCatch } from '@activepieces/core-utils'
-import { ApEdition, PrincipalType } from '@activepieces/shared'
+import { isNil, PlatformId, tryCatch } from '@wippa/core-utils'
+import { ApEdition, PrincipalType } from '@wippa/shared'
 import { FastifyRequest } from 'fastify'
 import { databaseConnection } from '../database/database-connection'
 import { networkUtils } from '../helper/network-utils'

@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowActionType,
   StepOutput,
   StepOutputStatus,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';

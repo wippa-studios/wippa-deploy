@@ -1,9 +1,9 @@
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const generatePassword = createAction({
   audience: 'human',

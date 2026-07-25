@@ -1,4 +1,4 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import React, { Suspense } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 

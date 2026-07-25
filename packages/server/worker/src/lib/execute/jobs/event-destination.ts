@@ -1,6 +1,6 @@
-import { tryCatch } from '@activepieces/core-utils'
-import { safeHttp } from '@activepieces/server-utils'
-import { EngineResponseStatus, EventDestinationJobData, WorkerJobType } from '@activepieces/shared'
+import { tryCatch } from '@wippa/core-utils'
+import { safeHttp } from '@wippa/server-utils'
+import { EngineResponseStatus, EventDestinationJobData, WorkerJobType } from '@wippa/shared'
 import { workerSettings } from '../../config/worker-settings'
 import { FireAndForgetJobResult, JobContext, JobHandler, JobResultKind } from '../types'
 

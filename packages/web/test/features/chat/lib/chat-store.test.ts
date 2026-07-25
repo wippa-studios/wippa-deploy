@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { BuildPlanEvent } from '@activepieces/shared';
+import { BuildPlanEvent } from '@wippa/shared';
 import { describe, expect, it } from 'vitest';
 
 import {

@@ -1,8 +1,8 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { fragmentAuth } from '../common/auth';
 import { fragmentClient, FragmentTask } from '../common/client';
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams } from '@wippa/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof fragmentAuth>, Record<string, never>> = {

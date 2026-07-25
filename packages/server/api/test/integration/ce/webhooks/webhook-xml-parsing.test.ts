@@ -1,4 +1,4 @@
-import { FlowStatus } from '@activepieces/shared'
+import { FlowStatus } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { db } from '../../../helpers/db'

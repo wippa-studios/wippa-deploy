@@ -2,7 +2,7 @@ import {
   createAction,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 export const subtraction = createAction({
   audience: 'human',

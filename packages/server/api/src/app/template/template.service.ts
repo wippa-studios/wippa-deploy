@@ -1,5 +1,5 @@
-import { ActivepiecesError, apId, ErrorCode, isNil, SeekPage, spreadIfDefined } from '@activepieces/core-utils'
-import { CreateTemplateRequestBody, FlowVersionTemplate, ListTemplatesRequestQuery, Template, TemplateStatus, TemplateType, UpdateTemplateRequestBody } from '@activepieces/shared'
+import { ActivepiecesError, apId, ErrorCode, isNil, SeekPage, spreadIfDefined } from '@wippa/core-utils'
+import { CreateTemplateRequestBody, FlowVersionTemplate, ListTemplatesRequestQuery, Template, TemplateStatus, TemplateType, UpdateTemplateRequestBody } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { ArrayContains, ArrayOverlap, Equal, IsNull } from 'typeorm'
 import { repoFactory } from '../core/db/repo-factory'

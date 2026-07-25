@@ -1,4 +1,4 @@
-import { Property, DynamicPropsValue } from '@activepieces/pieces-framework';
+import { Property, DynamicPropsValue } from '@wippa/pieces-framework';
 import { CustomField } from '../types';
 import { fetchCustomFields } from '../service';
 import { convertkitAuth } from '../../..';

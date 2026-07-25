@@ -1,5 +1,5 @@
 
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { CopperAuth } from '../common/constants';
 import { CopperApiService } from '../common/requests';
 

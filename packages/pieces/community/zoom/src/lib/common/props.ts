@@ -1,9 +1,9 @@
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { zoomAuth } from '../..';
 
 export const zoomMeetingDropdown = Property.Dropdown({

@@ -1,4 +1,4 @@
-import { BaseModelSchema } from '@activepieces/core-utils'
+import { BaseModelSchema } from '@wippa/core-utils'
 import { z } from 'zod'
 
 const MAX_EMBED_HOSTNAME_LENGTH = 253

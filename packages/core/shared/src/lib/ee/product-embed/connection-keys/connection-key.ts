@@ -1,4 +1,4 @@
-import { ProjectId } from '@activepieces/core-utils'
+import { ProjectId } from '@wippa/core-utils'
 
 export type ConnectionKeyId = string
 

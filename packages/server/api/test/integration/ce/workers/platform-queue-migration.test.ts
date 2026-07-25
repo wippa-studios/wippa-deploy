@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { FlowTriggerType, LATEST_JOB_DATA_SCHEMA_VERSION, WorkerJobType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { FlowTriggerType, LATEST_JOB_DATA_SCHEMA_VERSION, WorkerJobType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { getPlatformGroupQueueName } from '../../../../src/app/workers/job'
 import { jobQueue } from '../../../../src/app/workers/job-queue/job-queue'

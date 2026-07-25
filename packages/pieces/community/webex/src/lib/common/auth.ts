@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const webexAuth = PieceAuth.OAuth2({
   description: 'Connect your Webex account',

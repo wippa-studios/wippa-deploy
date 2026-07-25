@@ -1,6 +1,6 @@
-import { AIProviderName, isNil } from '@activepieces/core-utils'
-import { PropertyType } from '@activepieces/pieces-framework'
-import { McpToolDefinition, ProjectScopedMcpServer } from '@activepieces/shared'
+import { AIProviderName, isNil } from '@wippa/core-utils'
+import { PropertyType } from '@wippa/pieces-framework'
+import { McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { aiProviderService } from '../../ai/ai-provider-service'
@@ -10,7 +10,7 @@ import { mcpUtils } from './mcp-utils'
 
 const setupGuideInput = z.object({
     topic: z.enum(['connection', 'ai_provider']).describe('What to get setup instructions for'),
-    pieceName: z.string().optional().describe('For connections: the piece that needs auth (e.g., "@activepieces/piece-gmail"). Omit for general instructions.'),
+    pieceName: z.string().optional().describe('For connections: the piece that needs auth (e.g., "@wippa/piece-gmail"). Omit for general instructions.'),
 })
 
 export const apSetupGuideTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogger): McpToolDefinition => {
@@ -53,7 +53,7 @@ async function connectionGuide(mcp: ProjectScopedMcpServer, log: FastifyBaseLogg
                     '',
                     'Then use ap_list_connections to find the connection\'s externalId for use in flow steps.',
                     '',
-                    'Tip: Pass pieceName to this tool for specific instructions (e.g., pieceName: "@activepieces/piece-gmail").',
+                    'Tip: Pass pieceName to this tool for specific instructions (e.g., pieceName: "@wippa/piece-gmail").',
                 ].join('\n'),
             }],
         }

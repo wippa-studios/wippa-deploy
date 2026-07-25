@@ -3,8 +3,8 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/pieces-common';
 import { uxsniffAuth } from '../../';
 import { uxsniffCommon, UxsniffSurveyResponse } from '../common';
 

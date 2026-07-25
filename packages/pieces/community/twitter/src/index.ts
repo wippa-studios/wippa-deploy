@@ -2,8 +2,8 @@ import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { TwitterApi } from 'twitter-api-v2';
 import { createTweet } from './lib/actions/create-tweet';
 import { createReply } from './lib/actions/create-reply';

@@ -1,4 +1,4 @@
-import { FlowVersionState } from '@activepieces/shared';
+import { FlowVersionState } from '@wippa/shared';
 import { t } from 'i18next';
 import React from 'react';
 

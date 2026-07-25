@@ -1,8 +1,8 @@
 
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
-import { OAuth2AuthorizationMethod } from '@activepieces/pieces-framework'
-import { safeHttp } from '@activepieces/server-utils'
-import { AppConnectionType, CloudOAuth2ConnectionValue } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
+import { OAuth2AuthorizationMethod } from '@wippa/pieces-framework'
+import { safeHttp } from '@wippa/server-utils'
+import { AppConnectionType, CloudOAuth2ConnectionValue } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../../helper/system/system'
 import {

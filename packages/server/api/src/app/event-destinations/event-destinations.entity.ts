@@ -1,4 +1,4 @@
-import { EventDestination, EventDestinationScope, Platform, Project } from '@activepieces/shared'
+import { EventDestination, EventDestinationScope, Platform, Project } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../database/database-common'
 

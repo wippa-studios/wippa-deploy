@@ -1,4 +1,4 @@
-import { tryCatch } from '@activepieces/core-utils'
+import { tryCatch } from '@wippa/core-utils'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../helper/system/system'
 import { AppSystemProp } from '../../../helper/system/system-props'

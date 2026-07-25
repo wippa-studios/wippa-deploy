@@ -1,8 +1,8 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { helpScoutAuth } from '../common/auth';
 import crypto from 'crypto';
 import { helpScoutApiRequest, verifyWebhookSignature } from '../common/api';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 const WEBHOOK_KEY = 'helpscout_new_customer';
 

@@ -1,10 +1,10 @@
-import { ProjectRole, SeekPage } from '@activepieces/core-utils';
+import { ProjectRole, SeekPage } from '@wippa/core-utils';
 import {
   ProjectMemberWithUser,
   CreateProjectRoleRequestBody,
   UpdateProjectRoleRequestBody,
   ListProjectMembersForProjectRoleRequestQuery,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

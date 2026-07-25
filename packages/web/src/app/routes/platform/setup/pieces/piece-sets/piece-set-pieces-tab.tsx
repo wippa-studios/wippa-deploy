@@ -1,11 +1,11 @@
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
 import {
   isPieceVisible,
   PieceSelection,
   PieceSelectionMode,
   PieceSet,
   UpdatePieceSetRequestBody,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {

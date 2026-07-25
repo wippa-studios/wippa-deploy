@@ -1,5 +1,5 @@
-import { FlowStatus } from '@activepieces/core-execution'
-import { BaseModelSchema, DateOrString, Nullable } from '@activepieces/core-utils'
+import { FlowStatus } from '@wippa/core-execution'
+import { BaseModelSchema, DateOrString, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 import { UserWithMetaInformation } from '../../core/user'
 

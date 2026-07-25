@@ -1,7 +1,7 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { makeRequest } from './client';
 import { klaviyoAuth, KlaviyoAuthValue } from './auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 interface KlaviyoProfile {
   id: string;

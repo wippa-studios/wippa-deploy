@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { closeAuth } from '../auth';
 import { CloseCRMSearchQuery } from '../common/types';
 import { closeApiCall } from '../common/client';

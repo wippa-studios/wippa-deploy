@@ -10,13 +10,13 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@activepieces/core-utils": [
+      "@wippa/core-utils": [
         "packages/core/utils/dist/src/index.d.ts"
       ],
-      "@activepieces/core-formula": [
+      "@wippa/core-formula": [
         "packages/core/formula/dist/src/index.d.ts"
       ],
-      "@activepieces/core-execution": [
+      "@wippa/core-execution": [
         "packages/core/execution/dist/src/index.d.ts"
       ]
     }

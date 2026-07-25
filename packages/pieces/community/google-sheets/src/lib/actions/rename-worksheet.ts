@@ -1,5 +1,5 @@
 import { googleSheetsAuth } from '../common/common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { includeTeamDrivesProp, sheetIdProp, spreadsheetIdProp } from '../common/props';
 import { sheets as googleSheets } from '@googleapis/sheets';
 import { createGoogleClient } from '../common/common';

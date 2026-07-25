@@ -561,22 +561,22 @@ const GREETING_HEADLINES: GreetingHeadline[] = [
 ];
 
 const FEATURED_APP_NAMES = [
-  '@activepieces/piece-gmail',
-  '@activepieces/piece-slack',
-  '@activepieces/piece-microsoft-outlook',
-  '@activepieces/piece-notion',
-  '@activepieces/piece-hubspot',
-  '@activepieces/piece-salesforce',
-  '@activepieces/piece-google-sheets',
-  '@activepieces/piece-stripe',
-  '@activepieces/piece-microsoft-teams',
-  '@activepieces/piece-google-drive',
-  '@activepieces/piece-shopify',
-  '@activepieces/piece-zendesk',
-  '@activepieces/piece-github',
-  '@activepieces/piece-jira-cloud',
-  '@activepieces/piece-airtable',
-  '@activepieces/piece-openai',
+  '@wippa/piece-gmail',
+  '@wippa/piece-slack',
+  '@wippa/piece-microsoft-outlook',
+  '@wippa/piece-notion',
+  '@wippa/piece-hubspot',
+  '@wippa/piece-salesforce',
+  '@wippa/piece-google-sheets',
+  '@wippa/piece-stripe',
+  '@wippa/piece-microsoft-teams',
+  '@wippa/piece-google-drive',
+  '@wippa/piece-shopify',
+  '@wippa/piece-zendesk',
+  '@wippa/piece-github',
+  '@wippa/piece-jira-cloud',
+  '@wippa/piece-airtable',
+  '@wippa/piece-openai',
 ];
 
 const EXAMPLE_CARDS: ExampleCardData[] = [

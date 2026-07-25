@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-brilliant-directories` to build the library.
+Run `turbo run build --filter=@wippa/piece-brilliant-directories` to build the library.

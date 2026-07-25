@@ -1,4 +1,4 @@
-import { Permission, PrincipalType, TestFlowRunRequestBody, WebsocketClientEvent, WebsocketServerEvent } from '@activepieces/shared'
+import { Permission, PrincipalType, TestFlowRunRequestBody, WebsocketClientEvent, WebsocketServerEvent } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { websocketService } from '../core/websockets.service'
 import { flowVersionController } from './flow/flow-version.controller'

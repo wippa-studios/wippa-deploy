@@ -1,4 +1,4 @@
-import { Property, createAction, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { Property, createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { getNotebooksDropdown, getSectionsByNotebookDropdown } from '../common';
 import { oneNoteAuth } from '../auth';

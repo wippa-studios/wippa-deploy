@@ -3,7 +3,7 @@ import {
   AiToolProvider,
   CreateAiToolConfigRequest,
   formErrors,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { ExternalLink } from 'lucide-react';

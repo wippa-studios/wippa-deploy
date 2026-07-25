@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const stableDiffusionAuth = PieceAuth.CustomAuth({
   required: true,

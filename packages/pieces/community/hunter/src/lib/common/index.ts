@@ -3,8 +3,8 @@ import {
     QueryParams,
     httpClient,
     HttpRequest,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { hunterAuth } from '../auth';
 
 export async function hunterApiCall({

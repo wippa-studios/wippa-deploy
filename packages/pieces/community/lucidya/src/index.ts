@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from './lib/common';
 import { newAlertTrigger } from './lib/triggers';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { lucidyaAuth } from './lib/auth';
 
 export const lucidya = createPiece({

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { webflowCreateCollectionItemAction } from './lib/actions/create-collection-item';
 import { webflowDeleteCollectionItem } from './lib/actions/delete-collection-item';
 import { webflowFindCollectionItem } from './lib/actions/find-collection-item';

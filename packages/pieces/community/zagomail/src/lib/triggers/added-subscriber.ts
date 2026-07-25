@@ -1,8 +1,8 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { zagomailAuth } from '../auth';
 import { zagoMailApiService, } from '../common/request';
 import { StoredWebhookId, WebhookResponse } from '../common/constants';

@@ -3,9 +3,9 @@ import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { askGroq } from './lib/actions/ask-groq';
 import { transcribeAudio } from './lib/actions/transcribe-audio';
 import { translateAudio } from './lib/actions/translate-audio';

@@ -1,6 +1,6 @@
 import { EnvelopesApi } from 'docusign-esign';
 
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 
 import { docusignAuth } from '../auth';
 import { createApiClient } from '../common';

@@ -1,5 +1,5 @@
-import { Flow, FlowOperationRequest, FlowOperationType, FlowVersion, Folder } from '@activepieces/core-execution'
-import { BaseModelSchema, DateOrString, Nullable, OptionalArrayFromQuery, ProjectRole } from '@activepieces/core-utils'
+import { Flow, FlowOperationRequest, FlowOperationType, FlowVersion, Folder } from '@wippa/core-execution'
+import { BaseModelSchema, DateOrString, Nullable, OptionalArrayFromQuery, ProjectRole } from '@wippa/core-utils'
 import { z } from 'zod'
 import * as zMini from 'zod/mini'
 import { UserWithMetaInformation } from '../../core/user/user'

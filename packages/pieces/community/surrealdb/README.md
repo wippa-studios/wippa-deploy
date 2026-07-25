@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-surrealdb` to build the library.
+Run `turbo run build --filter=@wippa/piece-surrealdb` to build the library.

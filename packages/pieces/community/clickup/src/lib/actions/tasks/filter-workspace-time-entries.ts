@@ -1,5 +1,5 @@
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 import qs from 'qs';
 import { clickupAuth } from '../../auth';

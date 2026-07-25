@@ -1,8 +1,8 @@
 import {
   AppConnectionValueForAuthProperty,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { goodmemAuth } from '../../index';
 
 export interface GoodMemAuthConfig {

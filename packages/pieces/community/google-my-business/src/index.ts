@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createReply } from './lib/actions/create-reply';
 import { newReview } from './lib/triggers/new-review';
 

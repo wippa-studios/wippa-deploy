@@ -1,9 +1,9 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 import { bubbleAuth } from '../auth';
 import { bubbleCommon } from '../common';

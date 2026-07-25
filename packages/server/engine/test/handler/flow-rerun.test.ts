@@ -1,11 +1,11 @@
-import { FlowRunStatus } from '@activepieces/shared'
+import { FlowRunStatus } from '@wippa/shared'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { flowExecutor } from '../../src/lib/handler/flow-executor'
 import { buildPieceAction, generateMockEngineConstants } from './test-helper'
 
 const failedHttpAction = buildPieceAction({
     name: 'send_http',
-    pieceName: '@activepieces/piece-http',
+    pieceName: '@wippa/piece-http',
     actionName: 'send_request',
     input: {
         'url': 'https://cloud.activepieces.com/api/v1/asd',
@@ -19,7 +19,7 @@ const failedHttpAction = buildPieceAction({
 
 const successHttpAction =  buildPieceAction({
     name: 'send_http',
-    pieceName: '@activepieces/piece-http',
+    pieceName: '@wippa/piece-http',
     actionName: 'send_request',
     input: {
         'url': 'https://cloud.activepieces.com/api/v1/pieces',

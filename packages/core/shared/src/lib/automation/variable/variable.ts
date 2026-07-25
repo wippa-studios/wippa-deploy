@@ -1,4 +1,4 @@
-import { BaseModel, BaseModelSchema, Metadata, Nullable } from '@activepieces/core-utils'
+import { BaseModel, BaseModelSchema, Metadata, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 import { UserWithMetaInformation } from '../../core/user'
 

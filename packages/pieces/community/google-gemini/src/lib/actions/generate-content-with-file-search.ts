@@ -1,5 +1,5 @@
 import { googleGeminiAuth } from '../auth';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { defaultLLM, getGeminiModelOptions } from '../common/common';
 import { GoogleGenAI } from '@google/genai';
 import mime from 'mime-types';

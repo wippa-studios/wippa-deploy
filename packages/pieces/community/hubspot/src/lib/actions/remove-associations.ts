@@ -1,5 +1,5 @@
 import { hubspotAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
     fromObjectTypeAssociationDropdown,
     associationTypeDropdown,
@@ -8,7 +8,7 @@ import {
 import { OBJECT_TYPE } from '../common/constants';
 import { Client } from '@hubspot/api-client';
 import { AssociationSpecAssociationCategoryEnum } from '../common/types';
-import { chunk } from '@activepieces/pieces-framework';
+import { chunk } from '@wippa/pieces-framework';
 
 export const removeAssociationsAction = createAction({
     auth: hubspotAuth,

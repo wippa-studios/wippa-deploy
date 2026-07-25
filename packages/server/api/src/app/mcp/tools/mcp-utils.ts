@@ -1,7 +1,7 @@
-import { isNil, isObject, tryCatch } from '@activepieces/core-utils'
-import { AiMetadata, OutputSchema, OutputSchemaField, PieceMetadataModel, PiecePropertyMap, PropertyType } from '@activepieces/pieces-framework'
-import { BranchOperator, EngineResponse, EngineResponseStatus, FlowActionType, flowStructureUtil, McpServerType, McpToolResult, ProjectScopedMcpServer, singleValueConditions, WorkerJobType } from '@activepieces/shared'
-import type { RouterAction, Step } from '@activepieces/shared'
+import { isNil, isObject, tryCatch } from '@wippa/core-utils'
+import { AiMetadata, OutputSchema, OutputSchemaField, PieceMetadataModel, PiecePropertyMap, PropertyType } from '@wippa/pieces-framework'
+import { BranchOperator, EngineResponse, EngineResponseStatus, FlowActionType, flowStructureUtil, McpServerType, McpToolResult, ProjectScopedMcpServer, singleValueConditions, WorkerJobType } from '@wippa/shared'
+import type { RouterAction, Step } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { expressionRewriter } from '../../flows/flow-version/migrations/expression-rewriter'
@@ -373,7 +373,7 @@ function normalizePieceName(pieceName: string | undefined): string | undefined {
     }
     const stripped = pieceName.startsWith('piece-') ? pieceName.slice('piece-'.length) : pieceName
     const normalized = stripped.replace(/_/g, '-')
-    return `@activepieces/piece-${normalized}`
+    return `@wippa/piece-${normalized}`
 }
 
 async function lookupPieceComponent({ pieceName, componentName, componentType, projectId, platformId, log }: LookupPieceComponentParams): Promise<LookupPieceComponentResult> {

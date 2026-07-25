@@ -1,9 +1,9 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { Sequence } from '../common/types';
 import { convertkitAuth } from '../..';
 import { sequenceIdDropdown } from '../common/sequences';

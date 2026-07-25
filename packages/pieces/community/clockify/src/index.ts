@@ -1,5 +1,5 @@
-import { createCustomApiCallAction, HttpMethod } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { createTaskAction } from './lib/actions/create-task';
 import { createTimeEntryAction } from './lib/actions/create-time-entry';
 import { findRunningTimerAction } from './lib/actions/find-running-timer';

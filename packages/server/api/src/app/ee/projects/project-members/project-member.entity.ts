@@ -1,5 +1,5 @@
-import { ProjectRole } from '@activepieces/core-utils'
-import { Project, ProjectMember, User } from '@activepieces/shared'
+import { ProjectRole } from '@wippa/core-utils'
+import { Project, ProjectMember, User } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

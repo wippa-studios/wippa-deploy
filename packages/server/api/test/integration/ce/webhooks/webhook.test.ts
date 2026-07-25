@@ -1,4 +1,4 @@
-import { apId, EngineResponseStatus, FlowStatus, PieceType, PrincipalType, TriggerStrategy, WebhookHandshakeStrategy } from '@activepieces/shared'
+import { apId, EngineResponseStatus, FlowStatus, PieceType, PrincipalType, TriggerStrategy, WebhookHandshakeStrategy } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../helpers/auth'

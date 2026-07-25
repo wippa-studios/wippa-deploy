@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createMemAction } from './lib/actions/create-mem';
 import { createNoteAction } from './lib/actions/create-note';
 import { deleteNoteAction } from './lib/actions/delete-note';

@@ -1,6 +1,6 @@
 
     import { createPiece, PieceAuth, OAuth2PropertyValue } from "@activepieces/pieces-framework";
-    import { OAuth2GrantType, PieceCategory } from '@activepieces/pieces-framework';
+    import { OAuth2GrantType, PieceCategory } from '@wippa/pieces-framework';
     import { getInvoices } from './lib/actions/get-invoices';
     import { getProjects } from './lib/actions/get-projects';
     import { getTasks } from './lib/actions/get-tasks';
@@ -11,7 +11,7 @@
     import { getRoles } from './lib/actions/get-roles';
     import { getUsers } from './lib/actions/get-users';
     import { reportsUninvoiced } from './lib/actions/reports-uninvoiced';
-    import { createCustomApiCallAction } from '@activepieces/pieces-common';
+    import { createCustomApiCallAction } from '@wippa/pieces-common';
 
     export const harvestAuth = PieceAuth.OAuth2({
       required: true,

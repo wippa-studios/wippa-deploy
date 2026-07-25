@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-frill` to build the library.
+Run `turbo run build --filter=@wippa/piece-frill` to build the library.

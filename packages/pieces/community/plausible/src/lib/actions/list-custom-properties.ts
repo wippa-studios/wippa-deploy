@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { plausibleAuth } from '../..';
 import { getCustomProperties, siteIdDropdown } from '../common';
 

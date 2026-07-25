@@ -2,9 +2,9 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { livesessionAuth } from '../common/auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const sessionEvent = createTrigger({
   auth: livesessionAuth,

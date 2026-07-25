@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { callMethod } from './lib/actions/call-method';
 import { soapAuth } from './lib/shared/auth';
 

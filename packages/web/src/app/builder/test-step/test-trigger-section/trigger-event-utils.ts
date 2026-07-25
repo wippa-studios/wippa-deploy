@@ -1,5 +1,5 @@
-import { TriggerBase, TriggerStrategy } from '@activepieces/pieces-framework';
-import { TriggerTestStrategy } from '@activepieces/shared';
+import { TriggerBase, TriggerStrategy } from '@wippa/pieces-framework';
+import { TriggerTestStrategy } from '@wippa/shared';
 
 import { pieceSelectorUtils } from '@/features/pieces';
 
@@ -27,7 +27,7 @@ export const triggerEventUtils = {
       return 'chat-trigger';
     }
     if (
-      pieceName === '@activepieces/piece-webhook' &&
+      pieceName === '@wippa/piece-webhook' &&
       triggerName === 'catch_webhook'
     ) {
       return 'webhook';

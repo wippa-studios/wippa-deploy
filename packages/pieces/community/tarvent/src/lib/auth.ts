@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 import { makeClient } from './common';
 
 const authGuide = `

@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { askAvian } from './lib/actions/ask-avian';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { avianAuth } from './lib/auth';
 
 export const avian = createPiece({

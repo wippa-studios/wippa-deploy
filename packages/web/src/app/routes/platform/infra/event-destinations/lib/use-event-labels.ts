@@ -1,4 +1,4 @@
-import { ApplicationEventName } from '@activepieces/shared';
+import { ApplicationEventName } from '@wippa/shared';
 import { t } from 'i18next';
 
 export const useEventLabels = (): EventLabelsMap => {

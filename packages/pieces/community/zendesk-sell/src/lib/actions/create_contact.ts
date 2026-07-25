@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { zendeskSellAuth, ZendeskSellAuth } from '../common/auth';
 import { callZendeskApi } from '../common/client';
 import { zendeskSellCommon } from '../common/props'; 

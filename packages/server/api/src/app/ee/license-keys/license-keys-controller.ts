@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode, isNil } from '@activepieces/core-utils'
-import { VerifyLicenseKeyRequestBody } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
+import { VerifyLicenseKeyRequestBody } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 import { securityAccess } from '../../core/security/authorization/fastify-security'

@@ -2,13 +2,13 @@ import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { twentyAuth } from '../auth';
 import { twentyRequest, parseRecords } from '../common';

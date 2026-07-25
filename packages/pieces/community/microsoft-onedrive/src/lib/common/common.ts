@@ -2,10 +2,10 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { getGraphBaseUrl } from './microsoft-cloud';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 import { oneDriveAuth } from '../auth';
 

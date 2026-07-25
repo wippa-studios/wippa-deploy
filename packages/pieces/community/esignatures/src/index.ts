@@ -1,8 +1,8 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { esignaturesAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createContract } from './lib/actions/create-contract';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const esignatures = createPiece({
   displayName: 'eSignatures',

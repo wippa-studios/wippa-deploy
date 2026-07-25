@@ -4,8 +4,8 @@ import {
   HttpMessageBody,
   HttpMethod,
   HttpResponse,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { feedhiveAuth } from './auth';
 
 const BASE_URL = 'https://api.feedhive.com';

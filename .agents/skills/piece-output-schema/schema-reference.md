@@ -1,6 +1,6 @@
 # Schema Reference
 
-The authoritative type lives in `packages/pieces/framework/src/lib/output-schema.ts` and is re-exported from `@activepieces/pieces-framework`.
+The authoritative type lives in `packages/pieces/framework/src/lib/output-schema.ts` and is re-exported from `@wippa/pieces-framework`.
 
 ```ts
 export type OutputSchema = {

@@ -1,4 +1,4 @@
-import { Alert } from '@activepieces/shared'
+import { Alert } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

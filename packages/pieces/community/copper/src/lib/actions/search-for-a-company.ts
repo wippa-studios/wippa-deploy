@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { CopperAuth, toUnix } from '../common/constants';
 import { CopperApiService } from '../common/requests';
 import { MultiContactTypesDropdown, multiUsersDropdown } from '../common/props';

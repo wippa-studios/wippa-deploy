@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
-} from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { analyzeSentiment } from './lib/actions/analyze-sentiment';
 import { askAssistant } from './lib/actions/ask-assistant';
 import { askOpenAI } from './lib/actions/send-prompt';

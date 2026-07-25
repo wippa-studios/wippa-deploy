@@ -3,7 +3,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   CreateOpportunityParams,
   CreatePartyParams,

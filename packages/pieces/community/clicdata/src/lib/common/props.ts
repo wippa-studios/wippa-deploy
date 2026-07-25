@@ -1,7 +1,7 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { clicdataApiCall } from './client';
 import { clicdataAuth } from './auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const clicdataCommonProps = {
   apiVersion: Property.ShortText({

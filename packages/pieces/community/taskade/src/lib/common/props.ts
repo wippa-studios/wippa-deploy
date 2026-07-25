@@ -1,4 +1,4 @@
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, Property } from '@wippa/pieces-framework';
 import { TaskadeAPIClient } from './client';
 import { taskadeAuth } from '../auth';
 

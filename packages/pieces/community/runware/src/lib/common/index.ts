@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { Runware } from '@runware/sdk-js';
 import * as properties from './properties';
 import * as schemas from './schemas';

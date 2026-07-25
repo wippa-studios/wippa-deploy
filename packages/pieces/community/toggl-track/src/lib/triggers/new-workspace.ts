@@ -2,7 +2,7 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { togglTrackAuth } from '../..';
 import {
   HttpMethod,
@@ -10,7 +10,7 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof togglTrackAuth>, Record<string, never>> = {
   strategy: DedupeStrategy.TIMEBASED,

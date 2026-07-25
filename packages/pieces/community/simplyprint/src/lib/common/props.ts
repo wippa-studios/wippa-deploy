@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
 
 import { simplyprintAuth } from '../auth';
 import { simplyprintClient } from './client';

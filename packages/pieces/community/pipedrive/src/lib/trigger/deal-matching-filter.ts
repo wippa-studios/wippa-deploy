@@ -1,6 +1,6 @@
 import { pipedriveAuth } from '../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
 import { filterIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -9,7 +9,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, LeadListResponse } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 
 export const dealMatchingFilterTrigger = createTrigger({

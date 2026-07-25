@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { cloudinaryAuth } from '../common/auth';
 import { resourceTypeDropdown, publicIdsDropdown, tagsDropdown } from '../common/props';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from '../common/client';
 
 export const deleteResource = createAction({

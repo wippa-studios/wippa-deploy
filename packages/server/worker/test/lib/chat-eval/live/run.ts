@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import { tryCatch } from '@activepieces/core-utils'
+import { tryCatch } from '@wippa/core-utils'
 import chalk from 'chalk'
 import { repoRoot } from '../core/repo-root'
 import { evalClient, RunMode } from './client'

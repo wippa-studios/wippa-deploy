@@ -1,13 +1,13 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { openmicAiAuth } from './lib/common/auth';
 import { createPhoneCall } from './lib/actions/create-phone-call';
 import { findBot } from './lib/actions/find-bot';
 import { findCall } from './lib/actions/find-call';
 import { getBots } from './lib/actions/get-bots';
 import { getCalls } from './lib/actions/get-calls';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { newPostCallSummary } from './lib/triggers/new-post-call-summary';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { BASE_URL } from './lib/common/client';
 
 export const openmicAi = createPiece({

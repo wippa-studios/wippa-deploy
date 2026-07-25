@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import { DEFAULT_BASE_URL, SCREENSHOT_CONVERT_PATH } from './constants';
 
 const AUTH_GUIDE = `Get an API key from the PolyDoc dashboard (dashboard.polydoc.tech, API Keys). It is sent as Authorization: Bearer <key>.

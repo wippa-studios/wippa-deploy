@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-chargekeep` to build the library.
+Run `turbo run build --filter=@wippa/piece-chargekeep` to build the library.

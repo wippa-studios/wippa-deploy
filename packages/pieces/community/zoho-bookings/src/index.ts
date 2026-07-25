@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { cancelAppointment } from './lib/actions/cancel-appointment';
 import { fetchAvailability } from './lib/actions/fetch-availability';
 import { rescheduleAppointment } from './lib/actions/reschedule-appointment';
 import { bookAppointment } from './lib/actions/book-appointment';
 import { getAppointmentDetails } from './lib/actions/get-appointment-details';
 import { zohoBookingsAuth } from './lib/common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const zohoBookings = createPiece({
   displayName: 'Zoho Bookings',

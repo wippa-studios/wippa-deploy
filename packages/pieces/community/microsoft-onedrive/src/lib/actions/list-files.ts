@@ -1,4 +1,4 @@
-import { createAction, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { oneDriveAuth } from '../auth';
 import { oneDriveCommon } from '../common/common';

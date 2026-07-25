@@ -1,5 +1,5 @@
-import { createAction, Property, PieceAuth } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property, PieceAuth } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { ibmCognoseAuth } from '../auth';
 import { CognosClient } from '../common/cognos-client';
 

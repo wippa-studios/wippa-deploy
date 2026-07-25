@@ -1,4 +1,4 @@
-import { ImageGeneratedEvent } from '@activepieces/shared';
+import { ImageGeneratedEvent } from '@wippa/shared';
 import { t } from 'i18next';
 import { Download } from 'lucide-react';
 import { motion } from 'motion/react';

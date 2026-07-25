@@ -1,6 +1,6 @@
-import { isNil } from '@activepieces/core-utils'
-import { PropertyType } from '@activepieces/pieces-framework'
-import { McpToolDefinition, ProjectScopedMcpServer } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { PropertyType } from '@wippa/pieces-framework'
+import { McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { mcpUtils } from './mcp-utils'
@@ -86,7 +86,7 @@ export const apResolvePropertyOptionsTool = (mcp: ProjectScopedMcpServer, log: F
 }
 
 const resolvePropertyOptionsInput = z.object({
-    pieceName: z.string().describe('The piece name (e.g. "@activepieces/piece-slack").'),
+    pieceName: z.string().describe('The piece name (e.g. "@wippa/piece-slack").'),
     actionOrTriggerName: z.string().describe('The action or trigger name (e.g. "send_channel_message").'),
     type: z.enum(['action', 'trigger']).describe('Whether this is an action or trigger.'),
     propertyName: z.string().describe('The exact property name to resolve options for (e.g. "channel").'),

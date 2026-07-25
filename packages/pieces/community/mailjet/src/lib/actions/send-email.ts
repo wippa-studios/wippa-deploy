@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
 import { mailjetAuth } from '../auth';
 
 export const sendEmail = createAction({

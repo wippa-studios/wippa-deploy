@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { hedyAuth } from '../../auth';
 import { createClient } from '../../common/client';
 import { commonProps } from '../../common/props';

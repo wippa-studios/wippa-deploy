@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { githubApiCall, githubCommon } from '../common';
 import { githubAuth } from '../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const githubRegisterTrigger = ({
   name,

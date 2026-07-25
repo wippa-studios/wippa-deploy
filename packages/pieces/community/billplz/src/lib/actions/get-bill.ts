@@ -1,7 +1,7 @@
 import { 
   createAction, 
   Property, 
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { billplzApi } from '../common/api';
 import { billplzAuth } from '../common/auth';
 

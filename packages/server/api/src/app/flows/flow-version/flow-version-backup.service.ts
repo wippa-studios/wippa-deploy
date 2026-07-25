@@ -1,5 +1,5 @@
-import { spreadIfDefined } from '@activepieces/core-utils'
-import { FileCompression, FileType, FlowVersion } from '@activepieces/shared'
+import { spreadIfDefined } from '@wippa/core-utils'
+import { FileCompression, FileType, FlowVersion } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { fileService } from '../../file/file.service'
 

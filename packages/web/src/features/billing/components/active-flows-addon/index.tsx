@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   PRICE_PER_EXTRA_ACTIVE_FLOWS,
   ApEdition,
   ApFlagId,
   PlanName,
   PlatformBillingInformation,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { CircleHelp, Zap } from 'lucide-react';
 

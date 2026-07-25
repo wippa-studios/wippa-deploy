@@ -5,7 +5,7 @@ import { addLead } from "./lib/actions/add-lead";
 import { sendSms } from "./lib/actions/send-sms";
 import { inboundCall } from "./lib/triggers/inbound-call";
 import { getAssistants } from "./lib/triggers/get-assistants";
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { campaignControl } from "./lib/actions/campaign-control";
 import { deleteLead } from "./lib/actions/delete-lead";
 

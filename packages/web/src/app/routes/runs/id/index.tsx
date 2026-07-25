@@ -1,4 +1,4 @@
-import { FlowRun, PopulatedFlow } from '@activepieces/shared';
+import { FlowRun, PopulatedFlow } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 import { ReactFlowProvider } from '@xyflow/react';
 import { useParams } from 'react-router-dom';

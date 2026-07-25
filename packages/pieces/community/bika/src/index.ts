@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   createPiece,
   PieceAuth,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createRecordAction } from './lib/actions/create-record';
 import { findRecordsAction } from './lib/actions/find-records';
 import { findRecordAction} from './lib/actions/find-record';

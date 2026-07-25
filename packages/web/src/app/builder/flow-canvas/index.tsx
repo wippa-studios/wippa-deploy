@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   flowCanvasUtils as sharedFlowCanvasUtils,
   FlowActionType,
@@ -7,7 +7,7 @@ import {
   FlowVersion,
   Note,
   Step,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import {
   ReactFlow,
   Background,

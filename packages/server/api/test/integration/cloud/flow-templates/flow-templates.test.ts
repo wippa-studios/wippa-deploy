@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { CreateTemplateRequestBody, PlatformPlan, PlatformRole, PrincipalType, TemplateType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { CreateTemplateRequestBody, PlatformPlan, PlatformRole, PrincipalType, TemplateType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../helpers/auth'

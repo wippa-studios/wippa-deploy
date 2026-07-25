@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { getContentsAction } from './lib/actions/get-contents';
 import { generateAnswerAction } from './lib/actions/generate-answer';
 import { performSearchAction } from './lib/actions/perform-search';
 import { findSimilarLinksAction } from './lib/actions/find-similar-links';
-import { createCustomApiCallAction, HttpMethod } from '@activepieces/pieces-common';
+import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from './lib/common';
 import { exaAuth } from './lib/auth';
 

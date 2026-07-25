@@ -1,5 +1,5 @@
 import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { instaChartsGenerateChartImageAction } from "./lib/actions/generate-chart-image";
 import { instaChartsAuth } from './lib/auth';
 

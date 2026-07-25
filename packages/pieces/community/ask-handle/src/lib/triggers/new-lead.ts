@@ -1,8 +1,8 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { askHandleAuth } from '../common/auth';
 
 const BASE_URL = 'https://dashboard.askhandle.com/api/v1';

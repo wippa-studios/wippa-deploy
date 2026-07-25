@@ -1,4 +1,4 @@
-import { AIProviderName } from '@activepieces/core-utils';
+import { AIProviderName } from '@wippa/core-utils';
 import { t } from 'i18next';
 
 export const SUPPORTED_AI_PROVIDERS: AiProviderInfo[] = [

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { respondIoApiCall } from '../common/client';
 import { respondIoAuth } from '../common/auth';
 import { contactIdentifierDropdown } from '../common/props';

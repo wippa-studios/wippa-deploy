@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { vtigerAuth } from '../..';
 import { instanceLogin, recordIdProperty } from '../common';
 import { elementTypeProperty } from '../common';

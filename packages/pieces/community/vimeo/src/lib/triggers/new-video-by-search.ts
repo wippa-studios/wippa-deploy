@@ -1,7 +1,7 @@
-import { PiecePropValueSchema, Property, createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema, Property, createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { vimeoAuth } from '../auth';
 import { apiRequest } from '../common';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 
 type Props = {

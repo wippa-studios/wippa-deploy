@@ -1,6 +1,6 @@
 import { Readable } from 'stream'
-import { apId, isNil, ProjectId, tryCatch } from '@activepieces/core-utils'
-import { FileType } from '@activepieces/shared'
+import { apId, isNil, ProjectId, tryCatch } from '@wippa/core-utils'
+import { FileType } from '@wippa/shared'
 import { DeleteObjectsCommand, GetObjectCommand, HeadObjectCommand, PutObjectCommand, S3, S3ClientConfig } from '@aws-sdk/client-s3'
 import { Upload } from '@aws-sdk/lib-storage'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
@@ -164,7 +164,7 @@ export const s3Helper = (log: FastifyBaseLogger) => ({
         await client.putObject({
             Bucket: bucketName,
             Key: testKey,
-            Body: 'activepieces-test',
+            Body: 'wippa-test',
         })
 
         await client.headObject({

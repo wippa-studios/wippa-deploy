@@ -1,5 +1,5 @@
 import { activeCampaignAuth } from '../auth';
-import { AppConnectionValueForAuthProperty, DynamicPropsValue, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, DynamicPropsValue, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
 import { ActiveCampaignClient } from './client';
 import { CUSTOM_FIELD_TYPE } from './constants';
 

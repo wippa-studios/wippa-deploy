@@ -3,7 +3,7 @@ import {
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 import { todoistProjectIdDropdown } from '../common/props';
 import { todoistAuth } from '../..';
@@ -11,7 +11,7 @@ import {
 	DedupeStrategy,
 	Polling,
 	pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { todoistRestClient } from '../common/client/rest-client';
 import { TodoistCompletedTask } from '../common/models';
 

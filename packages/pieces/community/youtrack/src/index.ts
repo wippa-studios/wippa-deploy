@@ -2,9 +2,9 @@
 // YouTrack Piece - Main Entry Point
 // =============================================================================
 
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 import { createIssueAction } from './lib/actions/create-issue';
 import { getIssueAction } from './lib/actions/get-issue';

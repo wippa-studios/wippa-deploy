@@ -1,4 +1,4 @@
-import { Property, DropdownOption } from '@activepieces/pieces-framework';
+import { Property, DropdownOption } from '@wippa/pieces-framework';
 import Anthropic from '@anthropic-ai/sdk';
 import { ModelInfo } from '@anthropic-ai/sdk/resources';
 import { claudeAuth } from '../auth';

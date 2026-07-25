@@ -92,4 +92,4 @@ Cache is invalidated when a connection is created, updated, or deleted, or via t
 {{<connectionId><SecretManagerFieldsSeparator><path>}}
 ```
 
-Where `SecretManagerFieldsSeparator` is a constant string defined in `@activepieces/shared`. A value that does not start with `{{` or does not contain the separator is treated as a plain literal (error code `SECRET_MANAGER_KEY_NOT_SECRET`), not an error condition.
+Where `SecretManagerFieldsSeparator` is a constant string defined in `@wippa/shared`. A value that does not start with `{{` or does not contain the separator is treated as a plain literal (error code `SECRET_MANAGER_KEY_NOT_SECRET`), not an error condition.

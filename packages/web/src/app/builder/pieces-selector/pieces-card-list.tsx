@@ -2,7 +2,7 @@ import {
   FlowActionType,
   FlowOperationType,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import React, { useState } from 'react';
 
 import { CardListItemSkeleton } from '@/components/custom/card-list';

@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import { ProcessorFn } from './types'
 
 export const numberProcessor: ProcessorFn = (_property, value) => {

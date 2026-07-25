@@ -1,4 +1,4 @@
-import { WebhookRenewStrategy } from '@activepieces/pieces-framework'
+import { WebhookRenewStrategy } from '@wippa/pieces-framework'
 import {
     FlowOperationType,
     FlowStatus,
@@ -12,7 +12,7 @@ import {
     TriggerStrategy,
     TriggerTestStrategy,
     WebhookHandshakeStrategy,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../../helpers/auth'
@@ -85,7 +85,7 @@ describe('Flow API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@activepieces/piece-schedule',
+                name: '@wippa/piece-schedule',
                 version: '0.1.5',
                 triggers: {
                     every_hour: {
@@ -116,7 +116,7 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@activepieces/piece-schedule',
+                        pieceName: '@wippa/piece-schedule',
                         pieceVersion: '0.1.5',
                         input: { run_on_weekends: false },
                         triggerName: 'every_hour',
@@ -197,7 +197,7 @@ describe('Flow API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@activepieces/piece-schedule',
+                name: '@wippa/piece-schedule',
                 version: '0.1.5',
                 triggers: {
                     every_hour: {
@@ -231,7 +231,7 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@activepieces/piece-schedule',
+                        pieceName: '@wippa/piece-schedule',
                         pieceVersion: '0.1.5',
                         input: { run_on_weekends: false },
                         triggerName: 'every_hour',

@@ -4,7 +4,7 @@ import {
     flowStructureUtil,
     FlowVersion,
     Step,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { In } from 'typeorm'
 import { repoFactory } from '../../../core/db/repo-factory'
 import { FieldEntity } from '../../../tables/field/field.entity'
@@ -12,7 +12,7 @@ import { Migration } from '.'
 
 const fieldRepo = repoFactory<Field>(FieldEntity)
 
-const TABLES_PIECE_NAME = '@activepieces/piece-tables'
+const TABLES_PIECE_NAME = '@wippa/piece-tables'
 const TABLES_PIECE_VERSION = '0.3.0'
 const FIND_RECORDS_ACTION = 'tables-find-records'
 

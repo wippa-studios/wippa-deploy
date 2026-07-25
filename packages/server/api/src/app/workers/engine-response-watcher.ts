@@ -1,4 +1,4 @@
-import { apId } from '@activepieces/core-utils'
+import { apId } from '@wippa/core-utils'
 import { FastifyBaseLogger } from 'fastify'
 import { pubsub } from '../helper/pubsub'
 

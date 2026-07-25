@@ -3,12 +3,12 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpRequest,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { formBricksAuth } from '../..';
 
 export const formBricksRegisterTrigger = ({

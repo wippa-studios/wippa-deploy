@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { runWorkflow } from './lib/actions/run-workflow';
 import { burstyAiAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const burstyAi = createPiece({
   displayName: 'BurstyAI',

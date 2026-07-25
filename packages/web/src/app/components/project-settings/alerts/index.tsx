@@ -1,4 +1,4 @@
-import { ProjectType } from '@activepieces/shared';
+import { ProjectType } from '@wippa/shared';
 
 import { projectCollectionUtils } from '@/features/projects';
 

@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 const markdownDescription = `
 Follow these instructions to get your re:tune chat ID and API Key:

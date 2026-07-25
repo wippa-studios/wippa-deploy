@@ -4,9 +4,9 @@
       createCustomApiCallAction,
       httpClient,
       HttpMethod,
-    } from '@activepieces/pieces-common';
+    } from '@wippa/pieces-common';
     import { PieceAuth, createPiece } from "@activepieces/pieces-framework";
-    import { PieceCategory } from '@activepieces/pieces-framework';
+    import { PieceCategory } from '@wippa/pieces-framework';
     import { listApps } from './lib/actions/list-apps';
     import { runApp } from './lib/actions/run-app';
     import { getJobStatus } from './lib/actions/get-job-status';

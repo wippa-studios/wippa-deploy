@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
 import { smartsheetAuth } from '../auth';
 import {
 	smartsheetCommon,
@@ -8,7 +8,7 @@ import {
 	verifyWebhookSignature,
 	getCommentFullDetails,
 } from '../common';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 
 const TRIGGER_KEY = 'smartsheet_new_comment_trigger';
 

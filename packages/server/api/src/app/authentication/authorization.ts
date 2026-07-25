@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode, isNil, isObject } from '@activepieces/core-utils'
-import { PrincipalType } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, isNil, isObject } from '@wippa/core-utils'
+import { PrincipalType } from '@wippa/shared'
 import { preSerializationHookHandler } from 'fastify'
 
 export function extractResourceName(url: string): string | undefined {

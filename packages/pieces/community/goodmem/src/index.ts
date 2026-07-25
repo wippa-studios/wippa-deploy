@@ -2,14 +2,14 @@ import {
   PieceAuth,
   createPiece,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createMemory } from './lib/actions/create-memory';
 import { retrieveMemories } from './lib/actions/retrieve-memories';
 import { deleteMemory } from './lib/actions/delete-memory';
 import { getMemory } from './lib/actions/get-memory';
 import { createSpace } from './lib/actions/create-space';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const goodmemAuth = PieceAuth.CustomAuth({
   displayName: 'GoodMem Authentication',

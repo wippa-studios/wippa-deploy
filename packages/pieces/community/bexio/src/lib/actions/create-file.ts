@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { bexioAuth } from '../auth';
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
 import { bexioCommon } from '../common/index';
 import FormData from 'form-data';
 

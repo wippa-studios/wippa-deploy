@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { codaAuth } from '../auth';
 import { codaClient } from '../common/types';
 import {

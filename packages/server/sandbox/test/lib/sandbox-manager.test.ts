@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { ApEnvironment, ExecutionMode, NetworkMode } from '@activepieces/shared'
+import { ApEnvironment, ExecutionMode, NetworkMode } from '@wippa/shared'
 
 vi.mock('../../src/lib/create-sandbox-for-job', () => ({
     createSandboxForJob: vi.fn().mockReturnValue({

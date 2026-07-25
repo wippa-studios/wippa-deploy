@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
-import { ActionBase } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/core-utils';
+import { ActionBase } from '@wippa/pieces-framework';
 import {
   AgentPieceTool,
   AgentToolType,
   PredefinedInputsStructure,
   mcpToolNameUtils,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { create } from 'zustand';
 
 import { PieceStepMetadataWithSuggestions } from '@/features/pieces/types';

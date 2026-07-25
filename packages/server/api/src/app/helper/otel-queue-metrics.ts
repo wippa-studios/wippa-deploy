@@ -1,6 +1,6 @@
 import os from 'os'
-import { tryCatch } from '@activepieces/core-utils'
-import { safeHttp } from '@activepieces/server-utils'
+import { tryCatch } from '@wippa/core-utils'
+import { safeHttp } from '@wippa/server-utils'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from './system/system'
 import { AppSystemProp } from './system/system-props'
@@ -38,7 +38,7 @@ function buildGaugePayload({ queueCounts, timeUnixNano, hostName }: BuildGaugePa
         resourceMetrics: [{
             resource: {
                 attributes: [
-                    { key: 'service.name', value: { stringValue: 'activepieces-api' } },
+                    { key: 'service.name', value: { stringValue: "wippa-api' } },
                     { key: 'host.name', value: { stringValue: hostName } },
                 ],
             },

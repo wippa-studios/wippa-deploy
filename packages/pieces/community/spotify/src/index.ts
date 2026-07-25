@@ -1,8 +1,8 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   OAuth2PropertyValue,
   createPiece,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import actions from './lib/actions';
 import { spotifyCommon } from './lib/common';
 import triggers from './lib/triggers';

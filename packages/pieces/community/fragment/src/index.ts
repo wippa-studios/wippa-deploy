@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { fragmentAuth } from './lib/common';
 import { createTask } from './lib/actions/create-task';
 import { updateTask } from './lib/actions/update-task';

@@ -1,10 +1,10 @@
 import {
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { common, OnfleetWebhookTriggers } from '../common';
 import { onfleetAuth } from '../..';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 export const workerCreated = createTrigger({
   auth: onfleetAuth,
   name: 'worker_created',

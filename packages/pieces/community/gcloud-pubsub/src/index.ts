@@ -2,8 +2,8 @@ import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { publishToTopic } from './lib/action/publish-to-topic';
 import { common } from './lib/common';
 import { newMessageInTopic } from './lib/trigger/new-message-in-topic';

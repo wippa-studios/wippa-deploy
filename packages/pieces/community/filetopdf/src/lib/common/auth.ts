@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { filetopdfApiCall } from './client';
 
 const AUTH_DESCRIPTION = `Your FileToPDF API key (format \`sk_live_...\`).

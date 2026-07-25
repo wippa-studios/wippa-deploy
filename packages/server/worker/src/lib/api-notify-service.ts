@@ -1,6 +1,6 @@
-import { Runtime } from '@activepieces/sandbox'
-import { ApLogger } from '@activepieces/server-utils'
-import { ApiToWorkerContract, WorkerToApiContract } from '@activepieces/shared'
+import { Runtime } from '@wippa/sandbox'
+import { ApLogger } from '@wippa/server-utils'
+import { ApiToWorkerContract, WorkerToApiContract } from '@wippa/shared'
 
 export function createApiToWorkerHandlers({ getRuntime, apiClient, getPublicApiUrl, log }: CreateApiToWorkerHandlersParams): ApiToWorkerContract {
     return {

@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { DiffReleaseRequest, ProjectReleaseType } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { DiffReleaseRequest, ProjectReleaseType } from '@wippa/shared';
 import { useState, ReactNode } from 'react';
 
 import { Button, ButtonProps } from '@/components/ui/button';

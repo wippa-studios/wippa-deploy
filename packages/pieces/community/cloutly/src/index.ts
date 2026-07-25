@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { sendReviewInvite } from './lib/actions/send-review-invite';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { cloutlyAuth } from './lib/auth';
 
 export const cloutly = createPiece({

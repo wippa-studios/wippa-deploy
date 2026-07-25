@@ -8,13 +8,13 @@ import {
     WorkerJobType,
     EngineResponseStatus,
     WebsocketServerEvent,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { JobResultKind } from '../../src/lib/execute/types'
 import type {
     WorkerToApiContract,
     ExecuteExtractPieceMetadataJobData,
     ConsumeJobRequest,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 
 const mockGetHandler = vi.fn()
 
@@ -25,7 +25,7 @@ vi.mock('../../src/lib/execute/job-registry', () => ({
 // APP_VERSION must match the worker's own AP_VERSION (apVersionUtil.getCurrentRelease, read from the
 // same cwd package.json) or the worker↔app version gate fail-closes and pauses polling forever.
 vi.mock('../../src/lib/config/worker-settings', async () => {
-    const { apVersionUtil } = await vi.importActual<typeof import('@activepieces/server-utils')>('@activepieces/server-utils')
+    const { apVersionUtil } = await vi.importActual<typeof import('@wippa/server-utils')>('@wippa/server-utils')
     const appVersion = apVersionUtil.getCurrentRelease()
     return {
         workerSettings: {
@@ -60,7 +60,7 @@ type StubRuntime = {
 
 const createdRuntimes: StubRuntime[] = []
 
-vi.mock('@activepieces/sandbox', () => ({
+vi.mock('@wippa/sandbox', () => ({
     createResolver: vi.fn(() => ({})),
     createSandboxRuntime: vi.fn(() => {
         const rt: StubRuntime = {
@@ -83,7 +83,7 @@ function buildExtractPieceJob(): ExecuteExtractPieceMetadataJobData {
         projectId: undefined,
         platformId: 'plat-1',
         piece: {
-            pieceName: '@activepieces/piece-test',
+            pieceName: '@wippa/piece-test',
             pieceVersion: '0.1.0',
             packageType: PackageType.REGISTRY,
             pieceType: PieceType.OFFICIAL,
@@ -311,7 +311,7 @@ describe('worker integration', () => {
             execute: vi.fn().mockResolvedValue({
                 kind: JobResultKind.FIRE_AND_FORGET,
                 status: EngineResponseStatus.INTERNAL_ERROR,
-                logs: 'MODULE_NOT_FOUND: @activepieces/shared',
+                logs: 'MODULE_NOT_FOUND: @wippa/shared',
             }),
         })
 
@@ -321,7 +321,7 @@ describe('worker integration', () => {
         expect(completeJobCalls.length).toBe(1)
         expect(completeJobCalls[0].jobId).toBe('job-internal-error')
         expect(completeJobCalls[0].status).toBe(EngineResponseStatus.INTERNAL_ERROR)
-        expect(completeJobCalls[0].logs).toBe('MODULE_NOT_FOUND: @activepieces/shared')
+        expect(completeJobCalls[0].logs).toBe('MODULE_NOT_FOUND: @wippa/shared')
     }, 15_000)
 
     it('propagates TIMEOUT status from fire-and-forget result to completeJob', async () => {

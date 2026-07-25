@@ -1,4 +1,4 @@
-import { FieldType, StaticDropdownEmptyOption } from '@activepieces/shared';
+import { FieldType, StaticDropdownEmptyOption } from '@wippa/shared';
 import { useRef } from 'react';
 
 import { SearchableSelect } from '@/components/custom/searchable-select';

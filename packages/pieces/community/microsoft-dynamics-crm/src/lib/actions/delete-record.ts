@@ -1,7 +1,7 @@
 import {
   PiecePropValueSchema,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { dynamicsCRMAuth } from '../auth';
 import { DynamicsCRMCommon, makeClient } from '../common';
 

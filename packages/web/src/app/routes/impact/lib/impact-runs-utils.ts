@@ -1,4 +1,4 @@
-import { PlatformAnalyticsReport } from '@activepieces/shared';
+import { PlatformAnalyticsReport } from '@wippa/shared';
 
 function sumRunsByFlow(
   runs: PlatformAnalyticsReport['runs'],

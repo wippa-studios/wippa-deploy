@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   HttpMethod,
   getAccessTokenOrThrow,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { callClickUpApi3, clickupCommon } from '../../common';
 import { clickupAuth } from '../../auth';
 import * as z from 'zod/mini'

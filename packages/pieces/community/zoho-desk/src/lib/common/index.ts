@@ -5,8 +5,8 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PiecePropValueSchema } from '@wippa/pieces-framework';
 import { zohoDeskAuth } from './auth';
 
 export type ZohoDeskApiCallParams = {

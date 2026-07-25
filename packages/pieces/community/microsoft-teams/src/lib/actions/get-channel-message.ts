@@ -1,5 +1,5 @@
 import { microsoftTeamsAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { microsoftTeamsCommon } from '../common';
 import { createGraphClient, withGraphRetry } from '../common/graph';
 

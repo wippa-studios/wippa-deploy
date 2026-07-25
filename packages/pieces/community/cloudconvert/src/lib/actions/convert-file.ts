@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { propsValidation, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { propsValidation, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { cloudconvertAuth, CloudConvertClient, convertFileProps, convertFileSchema } from '../common';
 
 // Get the props function result

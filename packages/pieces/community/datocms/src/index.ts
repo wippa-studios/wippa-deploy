@@ -2,11 +2,11 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   createCustomApiCallAction,
   HttpHeaders,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const DATO_BASE_URL = 'https://site-api.datocms.com';
 

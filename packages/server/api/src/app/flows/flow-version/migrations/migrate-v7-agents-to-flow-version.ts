@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { AgentPieceProps, FlowActionType, flowStructureUtil, FlowVersion, PopulatedFlow } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { AgentPieceProps, FlowActionType, flowStructureUtil, FlowVersion, PopulatedFlow } from '@wippa/shared'
 import { databaseConnection } from '../../../database/database-connection'
 import { Migration } from '.'
 
@@ -10,7 +10,7 @@ export const moveAgentsToFlowVerion: Migration = {
 
         const agentsAndMcpPromises = await Promise.all(
             flowStructureUtil.getAllSteps(flowVersion.trigger).map(async (step): Promise<{ agent: Record<string, unknown>, tools: { type: string, toolName: string, pieceMetadata: { pieceName: string, pieceVersion: string, actionName: string, connectionExternalId: string }, flowId: string }[] } | null> => {
-                if (step.type === FlowActionType.PIECE && step.settings.pieceName === '@activepieces/piece-agent') {
+                if (step.type === FlowActionType.PIECE && step.settings.pieceName === '@wippa/piece-agent') {
                     const agentResults = await db.query('SELECT * FROM agent WHERE "externalId" = $1', [step.settings.input['agentId']])
                     if (isNil(agentResults) || agentResults.length === 0) {
                         return null
@@ -63,7 +63,7 @@ export const moveAgentsToFlowVerion: Migration = {
         )
 
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
-            if (step.type === FlowActionType.PIECE && step.settings.pieceName === '@activepieces/piece-agent') {
+            if (step.type === FlowActionType.PIECE && step.settings.pieceName === '@wippa/piece-agent') {
                 const prompt = step.settings.input['prompt']
                 const agentAndTools = agentsAndMcpPromises.find((agentAndMcp) => agentAndMcp?.agent?.externalId === step.settings.input['agentId'])
 

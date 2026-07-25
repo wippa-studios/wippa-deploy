@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
 import { promptmateAuth } from '../..';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { getAppDropdownOptions } from '../common';
 
 interface WebhookInfo {

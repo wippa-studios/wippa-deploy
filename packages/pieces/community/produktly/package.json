@@ -1,12 +1,12 @@
 {
-  "name": "@activepieces/piece-produktly",
+  "name": "@wippa/piece-produktly",
   "version": "0.0.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
-    "@activepieces/shared": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/shared": "workspace:*",
     "tslib": "2.6.2"
   },
   "scripts": {

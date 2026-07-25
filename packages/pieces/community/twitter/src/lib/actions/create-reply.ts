@@ -2,12 +2,12 @@ import {
     ApFile,
     Property,
     createAction,
-  } from '@activepieces/pieces-framework';
+  } from '@wippa/pieces-framework';
 import { TwitterApi } from 'twitter-api-v2';
 import { twitterAuth } from '../..';
 import { twitterCommon } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const createReply = createAction({
     auth: twitterAuth,

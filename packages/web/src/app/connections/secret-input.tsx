@@ -1,7 +1,7 @@
 import {
   SECRET_MANAGER_PROVIDERS_METADATA,
   SecretManagerFieldsSeparator,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { KeyRound } from 'lucide-react';
 import * as React from 'react';

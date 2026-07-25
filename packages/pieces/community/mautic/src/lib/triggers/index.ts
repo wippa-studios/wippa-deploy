@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequest, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, HttpRequest, httpClient } from '@wippa/pieces-common';
 import { mauticAuth } from '../auth';
 import { Property, TriggerStrategy, createTrigger } from "@activepieces/pieces-framework";
 

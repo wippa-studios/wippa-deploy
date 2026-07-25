@@ -1,5 +1,5 @@
 import { intercomAuth } from '../auth';
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
 import { intercomClient, TriggerPayload } from '../common';
 
 export const contactUpdatedTrigger = createTrigger({

@@ -1,9 +1,9 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { activityTypeIdProp, filterIdProp, ownerIdProp } from '../common/props';
 import { pipedrivePaginatedV2ApiCall } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { isNil } from '@wippa/pieces-framework';
 
 export const findActivityAction = createAction({
 	auth: pipedriveAuth,

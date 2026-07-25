@@ -1,8 +1,8 @@
-import { AppConnectionValueForAuthProperty, createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { fountainAuth } from '../auth';
 import { getAuthHeaders, getApiUrl } from '../common/auth';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema } from '@wippa/pieces-framework';
 
 async function getApplicantsDropdown(auth: AppConnectionValueForAuthProperty<typeof fountainAuth>): Promise<{ label: string; value: string }[]> {
   try {

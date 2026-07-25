@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { generateImagesFromExistingImage } from './lib/actions/generate-images-from-existing-image';
 import { generateImagesFromText } from './lib/actions/generate-images-from-text';
 import { generateVideoFromText } from './lib/actions/generate-video-from-text';

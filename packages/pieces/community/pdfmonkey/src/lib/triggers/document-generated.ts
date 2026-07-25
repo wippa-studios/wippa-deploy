@@ -3,14 +3,14 @@ import {
 	TriggerStrategy,
 	PiecePropValueSchema,
 	AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
 	DedupeStrategy,
 	HttpMethod,
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { pdfmonkeyAuth } from '../common/auth';
 import { makeRequest } from '../common/client';

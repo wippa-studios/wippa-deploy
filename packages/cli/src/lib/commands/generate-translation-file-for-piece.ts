@@ -5,8 +5,8 @@ import { buildPackage, findPiece, findPieces } from '../utils/piece-utils';
 import { makeFolderRecursive, readPackageJson } from '../utils/files';
 import { join } from 'node:path';
 import { exec } from '../utils/exec';
-import { pieceTranslation } from '@activepieces/pieces-framework';
-import { MAX_KEY_LENGTH_FOR_CORWDIN } from '@activepieces/shared';
+import { pieceTranslation } from '@wippa/pieces-framework';
+import { MAX_KEY_LENGTH_FOR_CORWDIN } from '@wippa/shared';
 
 const findPieceInModule= async (pieceOutputFile: string) => {
     const module = await import(pieceOutputFile);

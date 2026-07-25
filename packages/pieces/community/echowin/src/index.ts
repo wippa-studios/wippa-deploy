@@ -1,10 +1,10 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { echowinAuth } from './lib/common/auth';
 import { createContact } from './lib/actions/create-contact';
 import { findContactByName } from './lib/actions/find-contact-by-name';
 import { deleteContact } from './lib/actions/delete-contact';
 import { newContact } from './lib/triggers/new-contact';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const echowin = createPiece({
   displayName: 'Echowin',

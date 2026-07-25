@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   createAction,
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 const flowiseAuth = PieceAuth.CustomAuth({
   description: 'Enter your Flowise URL and API Key',

@@ -1,10 +1,10 @@
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { googleTasksAuth } from '../auth';
 
 export enum TaskStatus {

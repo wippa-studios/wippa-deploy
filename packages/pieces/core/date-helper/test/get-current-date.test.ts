@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { getCurrentDate } from '../src/lib/actions/get-current-date';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('getCurrentDate', () => {
   beforeEach(() => {

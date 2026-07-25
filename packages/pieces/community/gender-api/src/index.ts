@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { genderApiAuth } from './lib/common/auth';
 import { getStatistics } from './lib/actions/get-statistics';
 import { getGenderByFullName } from './lib/actions/get-gender-by-full-name';
 import { getGenderByFirstName } from './lib/actions/get-gender-by-first-name';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const genderApi = createPiece({
   displayName: 'Gender API',

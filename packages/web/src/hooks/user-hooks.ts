@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { UserWithMetaInformation } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { UserWithMetaInformation } from '@wippa/shared';
 import {
   QueryClient,
   useMutation,

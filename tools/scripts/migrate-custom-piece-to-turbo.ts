@@ -72,8 +72,8 @@ function migratePiece(pieceDir: string): void {
 
     // Ensure workspace dependencies are present
     const requiredDeps: Record<string, string> = {
-      '@activepieces/pieces-framework': 'workspace:*',
-      '@activepieces/shared': 'workspace:*',
+      '@wippa/pieces-framework': 'workspace:*',
+      '@wippa/shared': 'workspace:*',
       'tslib': '2.6.2',
     };
 

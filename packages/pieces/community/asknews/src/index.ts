@@ -1,12 +1,12 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { asknewsAuth } from './lib/common/auth';
 import { searchNews } from './lib/actions/search-news';
 import { generateNewsKnowledgeGraph } from './lib/actions/generate-news-knowledge-graph';
 import { getArticleById } from './lib/actions/get-article-by-id';
 import { asknewsChatCompletion } from './lib/actions/asknews-chat-completion';
 import { searchStories } from './lib/actions/search-stories';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { createANewsletter } from './lib/actions/create-a-newsletter';
 import { updateANewsletter } from './lib/actions/update-a-newsletter';
 import { alertForQuery } from './lib/triggers/alert-for-query';

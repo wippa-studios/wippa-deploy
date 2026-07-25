@@ -1,4 +1,4 @@
-import { AIProviderWithoutSensitiveData } from '@activepieces/shared';
+import { AIProviderWithoutSensitiveData } from '@wippa/shared';
 import { t } from 'i18next';
 import { Pencil, Trash } from 'lucide-react';
 

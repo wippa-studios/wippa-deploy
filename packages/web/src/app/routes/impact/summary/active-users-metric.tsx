@@ -1,4 +1,4 @@
-import { PlatformAnalyticsReport, UserStatus } from '@activepieces/shared';
+import { PlatformAnalyticsReport, UserStatus } from '@wippa/shared';
 import { t } from 'i18next';
 import { Users } from 'lucide-react';
 

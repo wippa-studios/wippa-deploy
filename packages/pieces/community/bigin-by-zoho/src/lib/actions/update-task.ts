@@ -1,5 +1,5 @@
 import { biginAuth } from '../auth';
-import { createAction, InputPropertyMap, Property } from '@activepieces/pieces-framework';
+import { createAction, InputPropertyMap, Property } from '@wippa/pieces-framework';
 import { tagsDropdown, usersDropdown } from '../common/props';
 import { API_ENDPOINTS } from '../common/constants';
 import { getSafeLabel, handleDropdownError } from '../common/helpers';

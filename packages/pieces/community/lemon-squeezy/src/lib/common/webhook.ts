@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { lemonSqueezyAuth } from './auth';
 import { LEMON_SQUEEZY_API_BASE } from './api';
 

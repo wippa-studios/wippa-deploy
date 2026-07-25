@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { xquikCommon } from './common';
 
 export const xquikAuth = PieceAuth.SecretText({

@@ -1,4 +1,4 @@
-import { AIProviderName } from '@activepieces/core-utils'
+import { AIProviderName } from '@wippa/core-utils'
 import * as z from 'zod/mini'
 
 export enum AIProviderModelType {

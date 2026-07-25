@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { chatbaseAuth } from '../auth';
 import { makeRequest } from '../common';
 

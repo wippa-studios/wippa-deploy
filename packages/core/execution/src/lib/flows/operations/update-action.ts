@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import { FlowAction, FlowActionType, SingleActionSchema } from '../actions/action'
 import { FlowVersion } from '../flow-version'
 import { flowStructureUtil } from '../util/flow-structure-util'

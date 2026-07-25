@@ -2,7 +2,7 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { getQuestion } from './lib/actions/get-question';
 import { getQuestionPngPreview } from './lib/actions/get-png-rendering';
 import { getDashboardQuestions } from './lib/actions/get-dashboard';
@@ -11,10 +11,10 @@ import {
   createCustomApiCallAction,
   HttpMethod,
   is_chromium_installed,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { getGraphQuestion } from './lib/actions/get-graph-question';
 import { embedQuestion } from './lib/actions/embed-question';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 const baseProps = {
   baseUrl: Property.ShortText({

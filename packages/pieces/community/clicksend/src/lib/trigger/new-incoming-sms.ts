@@ -1,8 +1,8 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { callClickSendApi } from '../common';
 import { clicksendAuth } from '../..';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 const TRIGGER_KEY = 'new_incoming_sms_trigger';
 

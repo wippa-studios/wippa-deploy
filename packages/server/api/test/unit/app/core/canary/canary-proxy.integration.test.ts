@@ -15,7 +15,7 @@
  * localhost TCP, so the full proxy path is exercised.
  */
 
-import { PrincipalType } from '@activepieces/shared'
+import { PrincipalType } from '@wippa/shared'
 import replyFrom from '@fastify/reply-from'
 import fastify, { FastifyInstance, FastifyRequest } from 'fastify'
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'

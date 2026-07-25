@@ -3,7 +3,7 @@ import {
   PersistedChatMessage,
   PersistedChatPartType,
   PersistedChatRole,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { describe, expect, it } from 'vitest';
 
 import { AnyToolPart } from '@/features/chat/lib/chat-types';

@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 
 export const webhookInstructions = (eventLabel: string): string => `
 **How to connect**

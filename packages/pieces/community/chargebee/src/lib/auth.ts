@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 import { chargebeeRequest } from './common/client';
 

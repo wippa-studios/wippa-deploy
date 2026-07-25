@@ -1,4 +1,4 @@
-import { ActionPreviewEvent, ActionReceiptEvent, SendChatEmailResponse, ToolProgressEvent } from '@activepieces/shared'
+import { ActionPreviewEvent, ActionReceiptEvent, SendChatEmailResponse, ToolProgressEvent } from '@wippa/shared'
 import { describe, expect, it, vi } from 'vitest'
 import { ChatEventEmitter, chatWorkerTools } from '../../../../../../src/lib/execute/jobs/ee/chat/chat-worker-tools'
 
@@ -451,7 +451,7 @@ describe('chatWorkerTools', () => {
             const executeTool = vi.fn().mockResolvedValue(mcpFailure('The request body contains invalid JSON. (400)'))
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
 
-            const input = { pieceName: '@activepieces/piece-http', actionName: 'send_request', input: { url: 'https://x', body: { type: 'json_raw' } } }
+            const input = { pieceName: '@wippa/piece-http', actionName: 'send_request', input: { url: 'https://x', body: { type: 'json_raw' } } }
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g1' })
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g2' })
             const third = await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g3' })
@@ -467,7 +467,7 @@ describe('chatWorkerTools', () => {
             const executeTool = vi.fn().mockResolvedValue(mcpSuccess('Sent (204)'))
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
 
-            const input = { pieceName: '@activepieces/piece-http', actionName: 'send_request', input: { url: 'https://x', body_type: 'json', body: { data: { content: 'hi' } } } }
+            const input = { pieceName: '@wippa/piece-http', actionName: 'send_request', input: { url: 'https://x', body_type: 'json', body: { data: { content: 'hi' } } } }
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 's1' })
             const second = await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 's2' })
 
@@ -523,7 +523,7 @@ describe('chatWorkerTools', () => {
         })
 
         it('preserves a top-level _meta after truncation', () => {
-            const input = { _meta: { pieceName: '@activepieces/piece-attio', connectionLabel: 'Attio0' }, content: [{ type: 'text', text: 'x'.repeat(1200 * 1024) }] }
+            const input = { _meta: { pieceName: '@wippa/piece-attio', connectionLabel: 'Attio0' }, content: [{ type: 'text', text: 'x'.repeat(1200 * 1024) }] }
             const out = chatWorkerTools.truncateLargeResult(input)
             expect(serializedBytes(out)).toBeLessThanOrEqual(MAX_RESULT_SIZE_BYTES)
             expect(out).toHaveProperty('_meta', input._meta)

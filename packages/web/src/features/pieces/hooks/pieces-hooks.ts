@@ -1,10 +1,10 @@
-import { LocalesEnum } from '@activepieces/core-utils';
+import { LocalesEnum } from '@wippa/core-utils';
 import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
   PropertyType,
   ExecutePropsResult,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AddPieceRequestBody,
   ApEdition,
@@ -16,7 +16,7 @@ import {
   ApFlagId,
   ApEnvironment,
   TelemetryEventName,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import {
   QueryClient,
   useMutation,

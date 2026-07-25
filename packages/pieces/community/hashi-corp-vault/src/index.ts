@@ -2,9 +2,9 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, createCustomApiCallAction } from '@wippa/pieces-common';
 import { readSecret } from './lib/actions/read-secret';
 import { writeSecret } from './lib/actions/write-secret';
 import { deleteSecret } from './lib/actions/delete-secret';

@@ -3,12 +3,12 @@ import {
   Trigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpRequest,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { calcomAuth } from '../..';
 
 export const registerWebhooks = ({

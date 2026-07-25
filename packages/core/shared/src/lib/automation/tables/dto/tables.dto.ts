@@ -1,4 +1,4 @@
-import { Nullable, OptionalArrayFromQuery } from '@activepieces/core-utils'
+import { Nullable, OptionalArrayFromQuery } from '@wippa/core-utils'
 import { z } from 'zod'
 import { formErrors } from '../../../form-errors'
 import { FieldState } from '../../project-release/project-state'

@@ -1,5 +1,5 @@
 import { biginAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { biginApiService } from '../common/request';
 
 export const searchUser = createAction({

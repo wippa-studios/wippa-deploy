@@ -1,4 +1,4 @@
-import { isNil, Permission } from '@activepieces/core-utils';
+import { isNil, Permission } from '@wippa/core-utils';
 import { t } from 'i18next';
 import { Info } from 'lucide-react';
 

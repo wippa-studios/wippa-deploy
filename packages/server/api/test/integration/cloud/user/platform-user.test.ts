@@ -1,6 +1,6 @@
 
-import { Permission, RoleType } from '@activepieces/core-utils'
-import { PlatformRole, PrincipalType, UserIdentityProvider, UserStatus } from '@activepieces/shared'
+import { Permission, RoleType } from '@wippa/core-utils'
+import { PlatformRole, PrincipalType, UserIdentityProvider, UserStatus } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'

@@ -1,8 +1,8 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { signrequestAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { sendSignrequest } from './lib/actions/send-signrequest';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const signrequest = createPiece({
   displayName: 'Signrequest',

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { capsuleCrmAuth } from '../common/auth';
 import { capsuleCrmClient } from '../common/client';
 import { Filter } from '../common/types';

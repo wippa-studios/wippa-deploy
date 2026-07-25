@@ -1,7 +1,7 @@
-import { createAction, Property, DynamicPropsValue } from '@activepieces/pieces-framework';
+import { createAction, Property, DynamicPropsValue } from '@wippa/pieces-framework';
 import {
     HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { insightlyAuth, makeInsightlyRequest } from '../common/common';
 import { 
   contactFields, 

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const roeAiAuth = PieceAuth.CustomAuth({
   displayName: 'Roe AI Auth',

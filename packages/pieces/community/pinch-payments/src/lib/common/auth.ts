@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export interface PinchPaymentsAuthCredentials {
   username: string;

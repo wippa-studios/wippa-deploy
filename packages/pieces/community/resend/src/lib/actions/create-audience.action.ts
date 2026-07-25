@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { AuthenticationType, HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
 import { resendAuth } from '../..';
 
 export const createAudience = createAction({

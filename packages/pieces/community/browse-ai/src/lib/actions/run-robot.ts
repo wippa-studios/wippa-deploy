@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { browseAiApiCall } from '../common/client';
 import { browseAiAuth } from '../common/auth';
 import { robotIdDropdown, robotParameters } from '../common/props';

@@ -1,9 +1,9 @@
-import { ApErrorParams, ErrorCode, isNil } from '@activepieces/core-utils';
+import { ApErrorParams, ErrorCode, isNil } from '@wippa/core-utils';
 import {
   PieceMetadataModelSummary,
   PropertyType,
-} from '@activepieces/pieces-framework';
-import { OAuth2GrantType, PieceScope, PieceType } from '@activepieces/shared';
+} from '@wippa/pieces-framework';
+import { OAuth2GrantType, PieceScope, PieceType } from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {

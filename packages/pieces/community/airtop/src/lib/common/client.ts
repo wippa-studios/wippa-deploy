@@ -4,7 +4,7 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const BASE_URL = 'https://api.airtop.ai/api/v1';
 

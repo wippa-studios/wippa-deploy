@@ -4,7 +4,7 @@ import {
   AuthenticationType,
   HttpMessageBody,
   HttpResponse,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 const BASE_URL = 'https://api.usetrust.app/v1';
 

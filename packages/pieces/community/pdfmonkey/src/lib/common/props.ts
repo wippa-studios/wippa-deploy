@@ -1,6 +1,6 @@
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, Property } from '@wippa/pieces-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { pdfmonkeyAuth } from './auth';
 
 export const templateIdDropdown = Property.Dropdown({

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { personalAiAuth } from '../../auth';
 import { BASE_URL } from '../../../index';
 

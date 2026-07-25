@@ -2,7 +2,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from '../common/microsoft-cloud';
 import { microsoft365CopilotAuth } from '../common/auth';
 import { Client } from '@microsoft/microsoft-graph-client';

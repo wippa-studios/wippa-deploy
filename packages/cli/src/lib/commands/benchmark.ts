@@ -3,7 +3,7 @@ import autocannon from 'autocannon';
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import chalk from 'chalk';
 import { Command } from 'commander';
-import { Project } from '@activepieces/shared';
+import { Project } from '@wippa/shared';
 
 const BENCHMARK_DOC = 'Load-test a deployment\'s sync-webhook path, auto-discover its shape, and attribute latency (queue-wait vs service-time) against the recommended setup.';
 
@@ -905,8 +905,8 @@ function log(config: BenchmarkConfig, message: string): void {
     if (!config.json) console.error(chalk.gray(message));
 }
 
-const WEBHOOK_PIECE = '@activepieces/piece-webhook';
-const DATA_MAPPER_PIECE = '@activepieces/piece-data-mapper';
+const WEBHOOK_PIECE = '@wippa/piece-webhook';
+const DATA_MAPPER_PIECE = '@wippa/piece-data-mapper';
 const DEFAULT_CONCURRENCY = 10;
 const EPHEMERAL_PROJECT_MAX_CONCURRENCY = 1000;
 const NETWORK_PROBES = 20;

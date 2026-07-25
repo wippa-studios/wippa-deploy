@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { JobData, PollingJobData, RenewWebhookJobData, WorkerJobType } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { JobData, PollingJobData, RenewWebhookJobData, WorkerJobType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { triggerSourceRepo } from '../../../trigger/trigger-source/trigger-source-service'
 import { InterceptorResult, InterceptorVerdict, JobInterceptor } from '../job-interceptor'

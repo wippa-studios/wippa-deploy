@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType, QueryParams } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient, AuthenticationType, QueryParams } from '@wippa/pieces-common';
 import { twilioAuth } from '../..';
 
 export const twilioDownloadRecordingMedia = createAction({

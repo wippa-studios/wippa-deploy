@@ -2,10 +2,10 @@ import {
   createAction,
   Property,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
 import {
   adAccountIdDropdown,
   boardIdDropdown,

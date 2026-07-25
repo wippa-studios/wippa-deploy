@@ -3,12 +3,12 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { seekTableAuth } from '../../lib/common/auth';
 import { seekTableApiCall } from '../../lib/common/client';
 

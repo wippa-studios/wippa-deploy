@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined } from '@activepieces/core-utils';
-import { ProjectMemberWithUser, ApFlagId } from '@activepieces/shared';
+import { assertNotNullOrUndefined } from '@wippa/core-utils';
+import { ProjectMemberWithUser, ApFlagId } from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { flagsHooks } from '@/hooks/flags-hooks';

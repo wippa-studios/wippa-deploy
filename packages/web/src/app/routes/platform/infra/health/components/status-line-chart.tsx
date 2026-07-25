@@ -1,7 +1,7 @@
 import {
   FlowRunStatus,
   PlatformMetricsStatusPoint,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { LineChart as LineChartIcon } from 'lucide-react';
 import { useMemo, useState } from 'react';

@@ -2,9 +2,9 @@ import {
     httpClient,
     HttpMethod,
     QueryParams,
-} from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { pickBy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { pickBy } from '@wippa/pieces-framework';
 
 const baseRequestProperties = {
   url: Property.ShortText({

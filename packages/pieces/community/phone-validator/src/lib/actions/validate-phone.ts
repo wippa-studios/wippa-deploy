@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { phoneValidatorAuth } from '../../lib/common/auth';
 import { PhoneValidatorClient } from '../../lib/common/client';
 

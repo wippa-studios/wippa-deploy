@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from '../common';
 import { cognitoFormsAuth } from '../auth';
 import { formFields, formIdDropdown } from '../common/props';

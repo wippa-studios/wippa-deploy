@@ -1,11 +1,11 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   FlowStatus,
   FolderDto,
   PopulatedFlow,
   Table,
   UncategorizedFolderId,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';

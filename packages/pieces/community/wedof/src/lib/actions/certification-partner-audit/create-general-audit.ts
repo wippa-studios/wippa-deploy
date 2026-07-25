@@ -1,6 +1,6 @@
 import { wedofAuth } from '../../auth';
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { wedofCommon } from '../../common/wedof';
 
 export const createGeneralAudit = createAction({

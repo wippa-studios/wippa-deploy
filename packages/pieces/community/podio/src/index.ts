@@ -1,5 +1,5 @@
     import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-    import { createCustomApiCallAction, HttpMethod } from '@activepieces/pieces-common';
+    import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
     import { createItemAction } from './lib/actions/create-item';
     import { updateItemAction } from './lib/actions/update-item';
     import { createTaskAction } from './lib/actions/create-task';

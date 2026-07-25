@@ -1,4 +1,4 @@
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 import { hubspotAuth } from '../auth';
 import {
 	createTrigger,
@@ -6,9 +6,9 @@ import {
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { Client } from '@hubspot/api-client';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import { getDefaultPropertiesForObject, standardObjectPropertiesDropdown } from '../common/props';
 import { OBJECT_TYPE } from '../common/constants';
 import dayjs from 'dayjs';
@@ -18,7 +18,7 @@ type Props = {
 	additionalPropertiesToRetrieve?: string | string[];
 };
 
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 const polling: Polling<AppConnectionValueForAuthProperty<typeof hubspotAuth>, Props> = {
 	strategy: DedupeStrategy.TIMEBASED,
 	async items({ auth, propsValue, lastFetchEpochMS }) {

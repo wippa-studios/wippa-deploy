@@ -3,7 +3,7 @@ import {
   isNil,
   ErrorCode,
   SeekPage,
-} from '@activepieces/core-utils';
+} from '@wippa/core-utils';
 import {
   ApFlagId,
   FlowOperationType,
@@ -19,7 +19,7 @@ import {
   TelemetryEventName,
   UncategorizedFolderId,
   UpdateRunProgressRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useNavigate } from 'react-router-dom';
@@ -242,7 +242,7 @@ export const flowHooks = {
           displayName: t('Untitled'),
         });
         const mcpPiece = await piecesApi.get({
-          name: '@activepieces/piece-mcp',
+          name: '@wippa/piece-mcp',
         });
         const trigger = mcpPiece.triggers['mcp_tool'];
         if (!trigger) {

@@ -1,5 +1,5 @@
-import { BasicAuthProperty } from '@activepieces/pieces-framework';
-import { UpsertBasicAuthRequest } from '@activepieces/shared';
+import { BasicAuthProperty } from '@wippa/pieces-framework';
+import { UpsertBasicAuthRequest } from '@wippa/shared';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { z } from 'zod';

@@ -4,7 +4,7 @@ import {
   FlowOperationType,
   flowStructureUtil,
   StepLocationRelativeToParent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   ArrowLeftRight,

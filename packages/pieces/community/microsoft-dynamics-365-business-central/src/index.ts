@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createRecordAction } from './lib/actions/create-record.action';
 import { deleteRecordAction } from './lib/actions/delete-record.action';
 import { getRecordAction } from './lib/actions/get-record.action';

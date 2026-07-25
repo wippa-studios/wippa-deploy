@@ -1,5 +1,5 @@
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { BASE_URL, subscriberId } from '../common/props';
 import { manychatAuth } from '../auth';
 

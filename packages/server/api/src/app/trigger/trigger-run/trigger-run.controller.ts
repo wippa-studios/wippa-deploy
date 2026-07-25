@@ -1,4 +1,4 @@
-import { PrincipalType } from '@activepieces/shared'
+import { PrincipalType } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { securityAccess } from '../../core/security/authorization/fastify-security'
 import { redisConnections } from '../../database/redis-connections'

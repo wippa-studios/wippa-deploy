@@ -1,9 +1,9 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { deepgramAuth } from '../common/auth';
 import { BASE_URL, LANG_OPTIONS } from '../common/constants';
 import { deepgramModels } from '../common/models';
 import mime from 'mime-types';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const createTranscriptionCallbackAction = createAction({
   auth: deepgramAuth,

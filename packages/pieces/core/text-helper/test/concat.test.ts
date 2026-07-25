@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { concat } from '../src/lib/actions/concat';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('concat action', () => {
   test('concatenates texts without separator', async () => {

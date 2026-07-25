@@ -1,5 +1,5 @@
-import { ErrorCode } from '@activepieces/core-utils';
-import { ApFlagId, FlowRunWithRetryError } from '@activepieces/shared';
+import { ErrorCode } from '@wippa/core-utils';
+import { ApFlagId, FlowRunWithRetryError } from '@wippa/shared';
 import { t } from 'i18next';
 import { ExternalLink } from 'lucide-react';
 

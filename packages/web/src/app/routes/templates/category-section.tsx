@@ -1,4 +1,4 @@
-import { Template } from '@activepieces/shared';
+import { Template } from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React from 'react';

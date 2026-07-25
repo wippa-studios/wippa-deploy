@@ -1,10 +1,10 @@
-import { AIProviderName } from '@activepieces/core-utils';
-import { AgentToolType } from '@activepieces/shared';
+import { AIProviderName } from '@wippa/core-utils';
+import { AgentToolType } from '@wippa/shared';
 import type {
   AgentKnowledgeBaseTool,
   AgentPieceTool,
   AgentTool,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Plus } from 'lucide-react';
 import { ControllerRenderProps } from 'react-hook-form';

@@ -1,4 +1,4 @@
-import { FileResponseInterface } from '@activepieces/shared';
+import { FileResponseInterface } from '@wippa/shared';
 import { javascript } from '@codemirror/lang-javascript';
 import { githubDark, githubLight } from '@uiw/codemirror-theme-github';
 import ReactCodeMirror, {

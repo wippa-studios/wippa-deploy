@@ -1,9 +1,9 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import {
   AppConnectionWithoutSensitiveData,
   UpdateProjectPlatformRequest,
   PlatformRole,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';

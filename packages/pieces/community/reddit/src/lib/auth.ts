@@ -1,5 +1,5 @@
-import { PieceAuth, OAuth2AuthorizationMethod } from '@activepieces/pieces-framework';
-import { OAuth2GrantType } from '@activepieces/pieces-framework';
+import { PieceAuth, OAuth2AuthorizationMethod } from '@wippa/pieces-framework';
+import { OAuth2GrantType } from '@wippa/pieces-framework';
 
 const markdown = `
 To obtain your Reddit API credentials:

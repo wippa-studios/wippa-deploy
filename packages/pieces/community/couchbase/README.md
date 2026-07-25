@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-couchbase` to build the library.
+Run `turbo run build --filter=@wippa/piece-couchbase` to build the library.

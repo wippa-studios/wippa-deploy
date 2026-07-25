@@ -1,4 +1,4 @@
-import { apVersionUtil, evlogSetup } from '@activepieces/server-utils'
+import { apVersionUtil, evlogSetup } from '@wippa/server-utils'
 import { FastifyBaseLogger } from 'fastify'
 import { AppSystemProp, environmentVariables } from '../system/system-props'
 
@@ -14,14 +14,14 @@ function buildFacade(): FastifyBaseLogger {
 
     return evlogSetup.init({
         params: {
-            serviceName: 'activepieces-api',
+            serviceName: "wippa-api"',
             version: apVersionUtil.getCurrentRelease(),
             logLevel,
             logPretty,
             sampleRateInfo,
             keepSlowMs,
             drainConfig: {
-                serviceName: 'activepieces-api',
+                serviceName: "wippa-api"',
                 hyperdxToken: environmentVariables.getEnvironment(AppSystemProp.HYPERDX_TOKEN),
                 axiomToken: environmentVariables.getEnvironment(AppSystemProp.AXIOM_TOKEN),
                 axiomDataset: environmentVariables.getEnvironment(AppSystemProp.AXIOM_DATASET),

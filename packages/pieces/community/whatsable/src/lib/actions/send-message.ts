@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   httpClient, HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { whatsableAuth } from '../..';
 
 export const sendMessage = createAction({

@@ -1,4 +1,4 @@
-import { ProjectRole, RoleType, SeekPage } from '@activepieces/core-utils';
+import { ProjectRole, RoleType, SeekPage } from '@wippa/core-utils';
 import { t } from 'i18next';
 import {
   Eye,

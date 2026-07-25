@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { ScrapelessValidator } from './lib/utils/validator';
 import { googleSearchApi } from './lib/actions/google-search-api';
 import { crawlScrapeApi } from './lib/actions/crawl-scrape';
 import { crawlCrawlApi } from './lib/actions/crawl-crawl';
 import { googleTrendsApi } from './lib/actions/google-trends-api';
 import { universalScrapingApi } from './lib/actions/universal-scraping-api';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { scrapelessApiAuth } from './lib/auth';
 
 export const scrapeless = createPiece({

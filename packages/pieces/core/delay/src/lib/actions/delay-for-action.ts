@@ -1,11 +1,11 @@
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
-import { ExecutionType } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { ExecutionType } from '@wippa/pieces-framework';
 import { markdownDescription } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 enum TimeUnit {
   SECONDS = 'seconds',

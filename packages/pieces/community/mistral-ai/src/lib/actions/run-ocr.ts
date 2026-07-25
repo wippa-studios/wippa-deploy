@@ -1,5 +1,5 @@
-import { createAction, InputPropertyMap, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, InputPropertyMap, PieceAuth, Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { mistralAuth } from '../common/auth';
 import { parseMistralError } from '../common/props';
 import { mistralRequest, MistralRequestConfig } from '../common/request';

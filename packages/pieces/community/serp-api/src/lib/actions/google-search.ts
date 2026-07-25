@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { serpApiAuth } from '../auth';
 import { COUNTRY_OPTIONS } from '../constants/countries';
 import { GOOGLE_DOMAIN_OPTIONS } from '../constants/google-domains';

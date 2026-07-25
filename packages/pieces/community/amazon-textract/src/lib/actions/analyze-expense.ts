@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property, createAction } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, Property, createAction } from '@wippa/pieces-framework';
 import { AnalyzeExpenseCommand } from '@aws-sdk/client-textract';
 import { amazonTextractAuth } from '../auth';
 import {

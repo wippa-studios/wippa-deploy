@@ -1,9 +1,9 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import {
   ProjectMemberWithUser,
   UserInvitation,
   UserWithMetaInformation,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { Info, Trash2, User, Shield, ChevronDown } from 'lucide-react';

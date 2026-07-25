@@ -1,5 +1,5 @@
-import { apId, isNil } from '@activepieces/core-utils'
-import { ChatConversationStatus, ChatPromptOverride, LATEST_JOB_DATA_SCHEMA_VERSION, PersistedChatRole, SimulateChatRequest, WorkerJobType } from '@activepieces/shared'
+import { apId, isNil } from '@wippa/core-utils'
+import { ChatConversationStatus, ChatPromptOverride, LATEST_JOB_DATA_SCHEMA_VERSION, PersistedChatRole, SimulateChatRequest, WorkerJobType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyReply, FastifyRequest } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'

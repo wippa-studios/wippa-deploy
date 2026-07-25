@@ -1,9 +1,9 @@
-import { ActivepiecesError, assertNotNullOrUndefined, ErrorCode } from '@activepieces/core-utils'
+import { ActivepiecesError, assertNotNullOrUndefined, ErrorCode } from '@wippa/core-utils'
 
 /**
- * @param {string} pieceName - starts with `@activepieces/piece-`
+ * @param {string} pieceName - starts with `@wippa/piece-`
  * @param {string} pieceVersion - the version of the piece
- * @returns {string} the package alias for the piece, e.g. `@activepieces/piece-activepieces-0.0.1`
+ * @returns {string} the package alias for the piece, e.g. `@wippa/piece-activepieces-0.0.1`
  */
 export const getPackageAliasForPiece = (params: GetPackageAliasForPieceParams): string => {
     const { pieceName, pieceVersion } = params
@@ -24,8 +24,8 @@ export const getPieceNameFromAlias = (alias: string): string => {
 }
 
 /**
- * @param {string} alias - e.g. `@activepieces/piece-activepieces-0.0.1`
- * @returns {string} the piece name, e.g. `@activepieces/piece-activepieces`
+ * @param {string} alias - e.g. `@wippa/piece-activepieces-0.0.1`
+ * @returns {string} the piece name, e.g. `@wippa/piece-activepieces`
  */
 export const trimVersionFromAlias = (alias: string): string => {
     return alias.split('-').slice(0, -1).join('-')

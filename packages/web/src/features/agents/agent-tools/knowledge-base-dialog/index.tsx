@@ -3,7 +3,7 @@ import {
   AgentTool,
   AgentToolType,
   KnowledgeBaseSourceType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Upload } from 'lucide-react';

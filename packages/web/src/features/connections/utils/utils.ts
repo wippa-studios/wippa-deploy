@@ -2,7 +2,7 @@ import {
   assertNotNullOrUndefined,
   isNil,
   apId,
-} from '@activepieces/core-utils';
+} from '@wippa/core-utils';
 import {
   CustomAuthProps,
   OIDCAuthProps,
@@ -11,14 +11,14 @@ import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AppConnectionType,
   AppConnectionWithoutSensitiveData,
   UpsertAppConnectionRequestBody,
   AppConnectionStatus,
   OAuth2GrantType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { CheckIcon, UnplugIcon, XIcon } from 'lucide-react';
 

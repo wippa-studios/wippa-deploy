@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { FlowTriggerType } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { FlowTriggerType } from '@wippa/shared';
 import { StoreApi } from 'zustand';
 
 import { RightSideBarType } from '@/app/builder/types';

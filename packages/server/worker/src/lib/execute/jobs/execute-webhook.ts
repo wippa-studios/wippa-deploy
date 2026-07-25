@@ -1,5 +1,5 @@
-import { isNil, parseToJsonIfPossible, tryCatch } from '@activepieces/core-utils'
-import { EngineOperationType, EngineResponseStatus, ExecuteTriggerResponse, FlowVersion, PieceTrigger, StreamStepProgress, TriggerHookType, WebhookJobData, WorkerJobType } from '@activepieces/shared'
+import { isNil, parseToJsonIfPossible, tryCatch } from '@wippa/core-utils'
+import { EngineOperationType, EngineResponseStatus, ExecuteTriggerResponse, FlowVersion, PieceTrigger, StreamStepProgress, TriggerHookType, WebhookJobData, WorkerJobType } from '@wippa/shared'
 import { workerSettings } from '../../config/worker-settings'
 import { FireAndForgetJobResult, JobContext, JobHandler, JobResultKind } from '../types'
 import { isSandboxTimeout } from '../utils/sandbox-helpers'
@@ -14,7 +14,7 @@ function getAppWebhookDetails(flowVersion: FlowVersion, publicApiUrl: string, ap
     }
     const secrets = parseToJsonIfPossible(appWebhookSecretsJson) as Record<string, { webhookSecret: string | Record<string, string> }> | undefined
     const webhookSecret = secrets?.[pieceName]?.webhookSecret
-    const pieceUrlName = pieceName.replace('@activepieces/piece-', '')
+    const pieceUrlName = pieceName.replace('@wippa/piece-', '')
     return {
         appWebhookUrl: getAppWebhookUrl(publicApiUrl, pieceUrlName),
         webhookSecret,

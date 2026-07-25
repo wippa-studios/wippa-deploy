@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import { FlowActionType } from '../../flows/actions/action'
 import { BaseStepOutput, LoopStepOutput, StepOutput, StepOutputStatus } from './step-output'
 

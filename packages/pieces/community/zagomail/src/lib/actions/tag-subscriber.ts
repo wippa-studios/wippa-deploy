@@ -1,5 +1,5 @@
 import { zagomailAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { zagoMailApiService } from '../common/request';
 import { Tag } from '../common/constants';
 import { listUId } from '../common/props';

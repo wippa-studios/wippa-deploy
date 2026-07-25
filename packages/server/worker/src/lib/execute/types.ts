@@ -1,6 +1,6 @@
-import { Resolver, Runtime } from '@activepieces/sandbox'
-import { type ApLogger } from '@activepieces/server-utils'
-import { EngineResponseStatus, JobData, WorkerJobType, WorkerToApiContract } from '@activepieces/shared'
+import { Resolver, Runtime } from '@wippa/sandbox'
+import { type ApLogger } from '@wippa/server-utils'
+import { EngineResponseStatus, JobData, WorkerJobType, WorkerToApiContract } from '@wippa/shared'
 
 export enum JobResultKind {
     FIRE_AND_FORGET = 'FIRE_AND_FORGET',

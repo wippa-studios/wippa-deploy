@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
 import { promotekitAuth } from '../..';
 import { promotekitApiCall, promotekitCommon } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 const REFERRAL_EVENT_OPTIONS = [
   { label: 'Referral Created', value: 'referral.created' },

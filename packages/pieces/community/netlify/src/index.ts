@@ -9,7 +9,7 @@
     import { newDeploySucceeded } from "./lib/triggers/new-deploy-succeeded";
     import { newDeployFailed } from "./lib/triggers/new-deploy-failed";
     import { newFormSubmission } from "./lib/triggers/new-form-submission";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
     export const netlify = createPiece({
       displayName: "Netlify",

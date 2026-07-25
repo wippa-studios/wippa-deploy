@@ -6,7 +6,7 @@ import {
   FlowVersion,
   StepLocationRelativeToParent,
   PasteLocation,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { toast } from 'sonner';
 

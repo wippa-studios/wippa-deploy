@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { GmailRequests } from '../common/data';
 import { GmailMessageFormat } from '../common/models';
 import { gmailAuth, getAccessToken } from '../auth';

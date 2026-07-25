@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { flipandoAuth } from './lib/common/auth';
 import { runApp } from './lib/actions/run-app';
 import { getTask } from './lib/actions/get-task';
 import { runAppGenerator } from './lib/actions/run-app-generator';
 import { getAllApps } from './lib/actions/get-all-apps';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const flipando = createPiece({
   displayName: 'Flipando AI',

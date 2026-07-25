@@ -1,4 +1,4 @@
-import { KnowledgeBaseFile } from '@activepieces/shared';
+import { KnowledgeBaseFile } from '@wippa/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { authenticationSession } from '@/lib/authentication-session';

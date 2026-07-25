@@ -7,13 +7,13 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { formDropdown } from '../common/props';
 
 type Props = {
@@ -41,7 +41,7 @@ type FormField = {
 	fieldType: string;
 };
 
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 const polling: Polling<AppConnectionValueForAuthProperty<typeof hubspotAuth>, Props> = {
 	strategy: DedupeStrategy.TIMEBASED,
 	async items({ auth, propsValue, lastFetchEpochMS }) {

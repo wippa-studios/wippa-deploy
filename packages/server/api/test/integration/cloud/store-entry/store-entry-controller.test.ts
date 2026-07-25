@@ -1,5 +1,5 @@
-import { apId, ProjectRole } from '@activepieces/core-utils'
-import { DefaultProjectRole, PlatformRole, PrincipalType } from '@activepieces/shared'
+import { apId, ProjectRole } from '@wippa/core-utils'
+import { DefaultProjectRole, PlatformRole, PrincipalType } from '@wippa/shared'
 import { FastifyInstance, LightMyRequestResponse } from 'fastify'
 import { generateMockToken } from '../../../helpers/auth'
 import { db } from '../../../helpers/db'

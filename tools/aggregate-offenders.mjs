@@ -7,11 +7,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO = path.resolve(__dirname, '..')
 const COMMUNITY = path.join(REPO, 'packages', 'pieces', 'community')
 const WORKSPACE_ALIASES = {
-    '@activepieces/shared': path.join(REPO, 'packages', 'shared', 'src'),
-    '@activepieces/pieces-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
-    '@activepieces/pieces-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
-    '@activepieces/core-utils': path.join(REPO, 'packages', 'core', 'utils', 'src'),
-    '@activepieces/core-piece-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
+    '@wippa/shared': path.join(REPO, 'packages', 'shared', 'src'),
+    '@wippa/pieces-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
+    '@wippa/pieces-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
+    '@wippa/core-utils': path.join(REPO, 'packages', 'core', 'utils', 'src'),
+    '@wippa/core-piece-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
 }
 const NATIVE_EXTERNALS = new Set(['oracledb', 'duckdb', 'better-sqlite3', 'sqlite3', 'pg-native', 'mongodb-client-encryption', 'kerberos', 'snappy', 'aws4', 'bson-ext', '@mongodb-js/zstd', 'playwright', 'playwright-core', 'puppeteer', 'puppeteer-core'])
 
@@ -22,9 +22,9 @@ function pkgOf(file) {
         if (m[1] === 'zod') return /\/mini\//.test(file) || /\/v4\/mini\//.test(file) ? 'zod/mini' : 'zod(full)'
         return m[1]
     }
-    if (/packages\/shared\//.test(file)) return '@activepieces/shared'
-    if (/packages\/pieces\/common\//.test(file)) return '@activepieces/pieces-common'
-    if (/packages\/pieces\/framework\//.test(file)) return '@activepieces/pieces-framework'
+    if (/packages\/shared\//.test(file)) return '@wippa/shared'
+    if (/packages\/pieces\/common\//.test(file)) return '@wippa/pieces-common'
+    if (/packages\/pieces\/framework\//.test(file)) return '@wippa/pieces-framework'
     return 'piece-src/other-ws'
 }
 

@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { ContentfulAuth } from './auth';
 import * as Contentful from 'contentful-management';
 

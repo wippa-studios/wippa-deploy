@@ -1,6 +1,6 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { zohoBookingsAuth, zohoBookingsCommon } from '../common';
 
 export const fetchAvailability = createAction({

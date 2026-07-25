@@ -1,4 +1,4 @@
-import { FriendlyPieceError } from '@activepieces/core-utils';
+import { FriendlyPieceError } from '@wippa/core-utils';
 import { t } from 'i18next';
 import { Check, Sparkles } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';

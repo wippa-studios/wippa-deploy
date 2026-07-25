@@ -1,12 +1,12 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { CopperActivity, CopperAuth, CopperAuthType } from '../common/constants';
 import { CopperApiService } from '../common/requests';
 

@@ -1,4 +1,4 @@
-import { ApErrorParams, ErrorCode } from '@activepieces/core-utils';
+import { ApErrorParams, ErrorCode } from '@wippa/core-utils';
 import {
   ConnectSecretManagerRequest,
   ConnectSecretManagerRequestSchema,
@@ -6,7 +6,7 @@ import {
   SecretManagerConnectionScope,
   SecretManagerConnectionWithStatus,
   SecretManagerProviderMetaData,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { useState } from 'react';

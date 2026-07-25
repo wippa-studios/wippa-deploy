@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined, SeekPage } from '@activepieces/core-utils'
-import { ListOAuth2AppRequest, OAuthApp, PrincipalType, UpsertOAuth2AppRequest } from '@activepieces/shared'
+import { assertNotNullOrUndefined, SeekPage } from '@wippa/core-utils'
+import { ListOAuth2AppRequest, OAuthApp, PrincipalType, UpsertOAuth2AppRequest } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'

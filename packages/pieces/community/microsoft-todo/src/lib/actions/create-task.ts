@@ -1,4 +1,4 @@
-import { Property, createAction, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { Property, createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { getTaskListsDropdown, createTodoClient } from '../common';
 import { microsoftToDoAuth } from '../auth';
 import { Importance, TaskStatus, TodoTask } from '@microsoft/microsoft-graph-types';

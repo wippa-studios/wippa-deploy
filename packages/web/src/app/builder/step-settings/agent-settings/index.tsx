@@ -1,10 +1,10 @@
-import { AIProviderName, isNil } from '@activepieces/core-utils';
+import { AIProviderName, isNil } from '@wippa/core-utils';
 import {
   AgentPieceProps,
   AgentProviderModel,
   PieceAction,
   PieceActionSettings,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useFormContext } from 'react-hook-form';
 
 import { AgentTools } from '@/app/builder/step-settings/agent-settings/agent-tools';

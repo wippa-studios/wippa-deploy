@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const acumbamailAuth = PieceAuth.SecretText({
   displayName: 'Auth Token',

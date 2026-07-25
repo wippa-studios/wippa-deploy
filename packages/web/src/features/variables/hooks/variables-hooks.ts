@@ -1,4 +1,4 @@
-import { ListVariablesRequestQuery } from '@activepieces/shared';
+import { ListVariablesRequestQuery } from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useMemo } from 'react';

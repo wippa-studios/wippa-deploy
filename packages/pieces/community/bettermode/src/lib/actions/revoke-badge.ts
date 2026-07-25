@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { revokeBadgeFromMember } from '../api';
 import { buildBadgesDropdown } from '../props';
 import { bettermodeAuth } from '../auth';

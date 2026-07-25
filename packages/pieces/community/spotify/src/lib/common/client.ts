@@ -4,7 +4,7 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { SearchRequest, SearchResult } from './models/search';
 import {
   DeviceListResponse,

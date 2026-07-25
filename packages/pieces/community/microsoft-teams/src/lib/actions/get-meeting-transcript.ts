@@ -1,5 +1,5 @@
 import { microsoftTeamsAuth } from '../auth';
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { ResponseType } from '@microsoft/microsoft-graph-client';
 import { microsoftTeamsCommon } from '../common';
 import { createGraphClient, resolveMeetingId, withGraphRetry } from '../common/graph';

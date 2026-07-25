@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   ApEdition,
   ApFlagId,
   pickTelemetryPii,
   TelemetryEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import posthog from 'posthog-js';
 import React, { useEffect, useRef } from 'react';
 import { useDeepCompareEffect } from 'react-use';

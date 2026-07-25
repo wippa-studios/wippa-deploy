@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { pubrioAuth } from '../../index';
 
 export const pubrioWebhookTrigger = createTrigger({

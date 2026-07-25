@@ -1,8 +1,8 @@
-import { validateIndexBound } from '@activepieces/core-utils';
+import { validateIndexBound } from '@wippa/core-utils';
 import {
   AppConnectionOwners,
   UserWithMetaInformation,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { User } from 'lucide-react';

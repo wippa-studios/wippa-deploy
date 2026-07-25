@@ -10,7 +10,7 @@ import {
   AppConnectionValueForAuthProperty,
   ExtractPieceAuthPropertyTypeForMethods,
   ApFile,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   HttpError,
   HttpHeaders,
@@ -19,7 +19,7 @@ import {
   QueryParams,
   httpClient,
 } from '../http';
-import { assertNotNullOrUndefined, isEmpty, isNil } from '@activepieces/core-utils';
+import { assertNotNullOrUndefined, isEmpty, isNil } from '@wippa/core-utils';
 import fs from 'fs';
 // Self-contained content-type → file-extension lookup, replacing the heavy
 // `mime-types`/`mime-db` dependency (~134 KB inlined into every piece bundle).

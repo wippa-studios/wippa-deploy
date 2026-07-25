@@ -6,7 +6,7 @@ import {
   FLOW_CANVAS_STEP_WIDTH,
   FLOW_CANVAS_VSPACE,
   NoteColorVariant,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { ApLoopReturnLineCanvasEdge as ApLoopReturnCanvasEdge } from '../edges/loop-return-edge';
 import { ApLoopStartLineCanvasEdge as ApLoopStartCanvasEdge } from '../edges/loop-start-edge';

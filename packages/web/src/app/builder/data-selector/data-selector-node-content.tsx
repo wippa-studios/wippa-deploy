@@ -2,7 +2,7 @@ import {
   FlowAction,
   FlowTrigger,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 

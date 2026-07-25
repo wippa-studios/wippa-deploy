@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export { RedisType } from '@activepieces/server-utils'
+export { RedisType } from '@wippa/server-utils'
 
 export const RedisConnectionSettings = z.object({
     REDIS_TYPE: z.string(),

@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { addContactToMailingList } from './lib/actions/add-contact-to-mailing-list';
 import { addTagToContact } from './lib/actions/add-tag-to-contact';
 import { addUpdateContact } from './lib/actions/add-update-contact';
@@ -13,7 +13,7 @@ import { zohoCampaignsAuth, zohoCampaignsCommon } from './lib/common';
 import { newCampaign } from './lib/triggers/new-campaign';
 import { newContact } from './lib/triggers/new-contact';
 import { unsubscribe } from './lib/triggers/unsubscribe';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const zohoCampaigns = createPiece({
   displayName: 'Zoho Campaigns',

@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-guidelite` to build the library.
+Run `turbo run build --filter=@wippa/piece-guidelite` to build the library.

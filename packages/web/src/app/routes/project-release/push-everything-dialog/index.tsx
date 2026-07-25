@@ -1,9 +1,9 @@
-import { assertNotNullOrUndefined } from '@activepieces/core-utils';
+import { assertNotNullOrUndefined } from '@wippa/core-utils';
 import {
   GitBranchType,
   GitPushOperationType,
   PushEverythingGitRepoRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';

@@ -1,4 +1,4 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   AppConnectionOwners,
   AppConnectionWithoutSensitiveData,
@@ -9,7 +9,7 @@ import {
   ReplaceAppConnectionsRequestBody,
   UpdateConnectionValueRequestBody,
   UpsertAppConnectionRequestBody,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';

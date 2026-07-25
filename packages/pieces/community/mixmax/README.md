@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-mixmax` to build the library.
+Run `turbo run build --filter=@wippa/piece-mixmax` to build the library.

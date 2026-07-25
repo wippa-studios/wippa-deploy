@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { telnyxAuth } from '../auth';
 
 export const messageReceivedTrigger = createTrigger({

@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { ProjectReleaseType } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { ProjectReleaseType } from '@wippa/shared';
 import { formatDistance } from 'date-fns';
 import { t } from 'i18next';
 import {

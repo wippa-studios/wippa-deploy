@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const meetgeekaiAuth = PieceAuth.SecretText({
   displayName: 'API Key',

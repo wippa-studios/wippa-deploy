@@ -2,12 +2,12 @@ import {
   deepMergeAndCast,
   isNil,
   isManualPieceTrigger,
-} from '@activepieces/core-utils';
+} from '@wippa/core-utils';
 import {
   PieceAuthProperty,
   PiecePropertyMap,
   piecePropertiesUtils,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   FlowAction,
   FlowActionType,
@@ -27,7 +27,7 @@ import {
   FlowVersion,
   FlowOperationType,
   AUTHENTICATION_PROPERTY_NAME,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useRef } from 'react';
 
 import {
@@ -346,12 +346,12 @@ export const PIECE_SELECTOR_ELEMENTS_HEIGHTS = {
 };
 
 const isMcpToolTrigger = (pieceName: string, triggerName: string) => {
-  return pieceName === '@activepieces/piece-mcp' && triggerName === 'mcp_tool';
+  return pieceName === '@wippa/piece-mcp' && triggerName === 'mcp_tool';
 };
 
 const isChatTrigger = (pieceName: string, triggerName: string) => {
   return (
-    pieceName === '@activepieces/piece-forms' &&
+    pieceName === '@wippa/piece-forms' &&
     triggerName === 'chat_submission'
   );
 };

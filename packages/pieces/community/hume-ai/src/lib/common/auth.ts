@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { HumeClient } from 'hume';
 
 export const humeAiAuth = PieceAuth.SecretText({

@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { find } from '../src/lib/actions/find';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('find action', () => {
   test('finds plain text match', async () => {

@@ -1,11 +1,11 @@
 import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { deleteContact } from './lib/actions/delete-contact';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';
 import { createEvent } from "./lib/actions/create-event";
 import { BASE_URL } from "./lib/common/constants";
 import { InstasentAuthType } from './lib/common/types';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { instasentAuth } from './lib/auth';
 
 export const getBaseUrl = (auth: { projectId: string, datasourceId: string }) => {

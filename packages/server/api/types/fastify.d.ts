@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AuthorizationType } from '../src/app/core/security/authorization/common'
 import { FastifyRouteSecurity } from '../src/app/core/security/authorization/fastify-security'
-import { ApId, Permission } from '@activepieces/core-utils';
-import { EndpointScope, MaybeProjectExtra, Principal, Principal, PrincipalForTypes, PrincipalForTypes, PrincipalType } from '@activepieces/shared';
+import { ApId, Permission } from '@wippa/core-utils';
+import { EndpointScope, MaybeProjectExtra, Principal, Principal, PrincipalForTypes, PrincipalForTypes, PrincipalType } from '@wippa/shared';
 import fastify, {
     RouteShorthandOptions as BaseRouteShorthandOptions,
     FastifyBaseLogger,

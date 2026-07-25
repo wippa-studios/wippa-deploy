@@ -1,6 +1,6 @@
 'use client';
 
-import { apId, isNil, SeekPage } from '@activepieces/core-utils';
+import { apId, isNil, SeekPage } from '@wippa/core-utils';
 import {
   ColumnDef as TanstackColumnDef,
   flexRender,

@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { leapAiAuth } from './lib/common/auth';
 import { getAWorkflowRun } from './lib/actions/get-a-workflow-run';
 import { runAWorkflow } from './lib/actions/run-a-workflow';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const leapAi = createPiece({
   displayName: 'Leap AI',

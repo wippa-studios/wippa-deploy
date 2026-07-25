@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { voipstudioAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createContact } from './lib/actions/create-contact';
 import { makeACallToLead } from './lib/actions/make-a-call-to-lead';
 import { makeACall } from './lib/actions/make-a-call';
@@ -13,7 +13,7 @@ import { dtmfReceived } from './lib/triggers/dtmf-received';
 import { missedCall } from './lib/triggers/missed-call';
 import { newCallRecording } from './lib/triggers/new-call-recording';
 import { smsReceived } from './lib/triggers/sms-received';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/client';
 
 export const voipstudio = createPiece({

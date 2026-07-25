@@ -3,7 +3,7 @@ import {
   TriggerStrategy,
   Property,
   FilesService,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { GmailProps } from '../common/props';
 import { gmailAuth, createGoogleClient, GmailAuthValue } from '../auth';
 import { gmail as googleGmail } from '@googleapis/gmail';

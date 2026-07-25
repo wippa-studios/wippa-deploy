@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { fliqrConfig } from '../common/models';
 import { fliqrAuth } from '../auth';
 

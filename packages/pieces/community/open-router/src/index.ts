@@ -4,9 +4,9 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { askOpenRouterAction } from './lib/actions/ask-open-router';
 import { openRouterAuth } from './lib/auth';
 

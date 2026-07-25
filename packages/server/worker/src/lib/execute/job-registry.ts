@@ -1,4 +1,4 @@
-import { JobData, WorkerJobType } from '@activepieces/shared'
+import { JobData, WorkerJobType } from '@wippa/shared'
 import { eventDestinationJob } from './jobs/event-destination'
 import { executeFlowJob } from './jobs/execute-flow'
 import { executePollingJob } from './jobs/execute-polling'

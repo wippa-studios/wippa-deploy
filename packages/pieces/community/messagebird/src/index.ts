@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { sendSMSAction } from './lib/actions/send-sms.action';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { listMessages } from './lib/actions/list-messages';
 import { birdAuth, BirdAuthValue } from './lib/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const messagebird = createPiece({
   displayName: 'Bird',

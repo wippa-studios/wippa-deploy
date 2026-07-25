@@ -1,4 +1,4 @@
-import { ApFlagId } from '@activepieces/shared';
+import { ApFlagId } from '@wippa/shared';
 import { t } from 'i18next';
 
 import { CopyButton } from '@/components/custom/clipboard/copy-button';

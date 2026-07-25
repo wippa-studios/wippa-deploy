@@ -1,5 +1,5 @@
-import { safeHttp } from '@activepieces/server-utils'
-import { SecretManagerProviderId } from '@activepieces/shared'
+import { safeHttp } from '@wippa/server-utils'
+import { SecretManagerProviderId } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { SecretManagerProvider, throwConnectionError, throwGetSecretError } from './secret-manager-providers'
 

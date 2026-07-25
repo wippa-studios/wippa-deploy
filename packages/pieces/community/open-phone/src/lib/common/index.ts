@@ -2,8 +2,8 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { openPhoneAuth } from '../auth';
 
 export interface OpenPhoneMessage {

@@ -2,8 +2,8 @@ import {
 	DropdownOption,
 	Property,
 	createAction,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { smartsuiteAuth } from '../auth';
 import { smartsuiteCommon, transformRecordFields } from '../common/props';
 import { smartSuiteApiCall, TableStucture } from '../common';

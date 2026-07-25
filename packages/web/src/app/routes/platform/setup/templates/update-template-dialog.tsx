@@ -2,7 +2,7 @@ import {
   FlowVersionTemplate,
   TemplateTag as TemplateTagType,
   Template,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';

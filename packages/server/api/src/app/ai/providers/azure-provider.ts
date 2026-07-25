@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common'
-import { AIProviderModel, AIProviderModelType, AzureProviderAuthConfig, AzureProviderConfig } from '@activepieces/shared'
+import { httpClient, HttpMethod } from '@wippa/pieces-common'
+import { AIProviderModel, AIProviderModelType, AzureProviderAuthConfig, AzureProviderConfig } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { AIProviderStrategy } from './ai-provider'
 

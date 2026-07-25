@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { BaseModel } from '@activepieces/core-utils'
+import { BaseModel } from '@wippa/core-utils'
 
 export type TriggerEventId = string
 

@@ -1,7 +1,7 @@
 import {
   AgentKnowledgeBaseTool,
   KnowledgeBaseSourceType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { create } from 'zustand';
 
 interface KnowledgeBaseToolDialogState {

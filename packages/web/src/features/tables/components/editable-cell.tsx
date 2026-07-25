@@ -1,4 +1,4 @@
-import { FieldType } from '@activepieces/shared';
+import { FieldType } from '@wippa/shared';
 import { useEffect, useRef, useState } from 'react';
 import { CalculatedColumn } from 'react-data-grid';
 import { ErrorBoundary } from 'react-error-boundary';

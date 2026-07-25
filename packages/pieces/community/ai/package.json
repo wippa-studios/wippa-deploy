@@ -1,12 +1,12 @@
 {
-  "name": "@activepieces/piece-ai",
+  "name": "@wippa/piece-ai",
   "version": "0.4.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@ai-sdk/amazon-bedrock": "3.0.97",
     "@ai-sdk/anthropic": "3.0.72",
     "@ai-sdk/azure": "3.0.55",
@@ -22,8 +22,8 @@
     "ajv": "8.18.0",
     "mime-types": "2.1.35",
     "zod": "4.3.6",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "scripts": {
     "build": "tsc -p tsconfig.lib.json && cp package.json dist/",

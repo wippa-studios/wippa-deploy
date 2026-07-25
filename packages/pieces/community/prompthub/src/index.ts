@@ -3,8 +3,8 @@ import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import { listProjects } from './lib/actions/list-projects';
 import { getProjectHead } from './lib/actions/get-project-head';
 import { runPrompt } from './lib/actions/run-prompt';

@@ -1,11 +1,11 @@
-import { LocalesEnum, isNil } from '@activepieces/core-utils';
+import { LocalesEnum, isNil } from '@wippa/core-utils';
 import {
   FlowAction,
   FlowActionType,
   FlowTriggerType,
   SuggestionType,
   FlowTrigger,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQueries, useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 

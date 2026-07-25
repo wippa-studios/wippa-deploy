@@ -2,13 +2,13 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { dropboxAuth } from '../auth';
 
 type DropboxListFolderEntry = {

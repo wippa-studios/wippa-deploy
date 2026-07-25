@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, PieceAuth, Property } from '@wippa/pieces-framework';
 import { microsoftCloudProperty, microsoftScopeProperty } from './microsoft-cloud';
 import { outlookCommon } from './client';
 

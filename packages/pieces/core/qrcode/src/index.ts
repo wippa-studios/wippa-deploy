@@ -1,6 +1,6 @@
 
     import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-    import { PieceCategory } from '@activepieces/pieces-framework';
+    import { PieceCategory } from '@wippa/pieces-framework';
     import { outputQrcodeAction } from './lib/actions/output-qrcode-action'
     
     export const qrcode = createPiece({

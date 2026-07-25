@@ -1,7 +1,7 @@
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { helpScoutAuth } from './lib/common/auth';
 import { createConversation } from './lib/actions/create-conversation';
 import { sendReply } from './lib/actions/send-reply';
@@ -13,11 +13,11 @@ import { findUser } from './lib/actions/find-user';
 import { conversationCreated } from './lib/triggers/conversation-created';
 import { conversationAssigned } from './lib/triggers/conversation-assigned';
 import { newCustomer } from './lib/triggers/new-customer';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/api';
 import { updateCustomerProperties } from './lib/actions/update-customer-properties';
 import { tagsUpdated } from './lib/triggers/tags-updated';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const helpScout = createPiece({
   displayName: 'Help Scout',

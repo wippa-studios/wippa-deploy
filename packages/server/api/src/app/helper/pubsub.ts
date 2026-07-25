@@ -1,4 +1,4 @@
-import { isNil, tryCatch } from '@activepieces/core-utils'
+import { isNil, tryCatch } from '@wippa/core-utils'
 import { Mutex } from 'async-mutex'
 import Redis from 'ioredis'
 import { redisConnections } from '../database/redis-connections'

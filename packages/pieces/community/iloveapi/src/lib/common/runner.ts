@@ -1,4 +1,4 @@
-import { FilesService } from '@activepieces/pieces-framework';
+import { FilesService } from '@wippa/pieces-framework';
 import { ILoveApiTool, ProcessResponse } from './types';
 import { RunTaskInput, UploadInput, iLoveApi } from './client';
 

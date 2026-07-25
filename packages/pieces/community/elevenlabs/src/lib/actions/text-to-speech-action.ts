@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { createClient, ExtendedReadableStream } from '../common';
 import { elevenlabsAuth } from '../..';
 

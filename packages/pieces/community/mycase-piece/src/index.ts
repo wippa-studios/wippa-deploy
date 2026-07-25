@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { createCase } from './lib/actions/create-case';
 import { createCaseStage } from './lib/actions/create-case-stage';
 import { createCompany } from './lib/actions/create-company';

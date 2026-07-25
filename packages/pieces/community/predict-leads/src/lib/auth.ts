@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 import { makeClient } from './common';
 
 export const PredictLeadsAuth = PieceAuth.CustomAuth({

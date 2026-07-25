@@ -1,4 +1,4 @@
-import { isNil, debounce } from '@activepieces/core-utils';
+import { isNil, debounce } from '@wippa/core-utils';
 import {
   FlowOperationRequest,
   FlowOperationType,
@@ -9,7 +9,7 @@ import {
   flowStructureUtil,
   StepSettings,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { QueryClient } from '@tanstack/react-query';
 import { StoreApi } from 'zustand';
 

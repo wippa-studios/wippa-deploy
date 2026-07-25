@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import convert from 'heic-convert';
 import sharp from 'sharp';
 import jimp from 'jimp';

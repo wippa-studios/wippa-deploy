@@ -1,4 +1,4 @@
-import { PresenceUser } from '@activepieces/shared'
+import { PresenceUser } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { redisConnections } from '../../../database/redis-connections'
 

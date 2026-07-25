@@ -1,4 +1,4 @@
-import { AIProviderName } from '@activepieces/core-utils'
+import { AIProviderName } from '@wippa/core-utils'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { vi } from 'vitest'
@@ -8,8 +8,8 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 
 const { mockSendRequest } = vi.hoisted(() => ({ mockSendRequest: vi.fn() }))
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-    const original = await importOriginal<typeof import('@activepieces/pieces-common')>()
+vi.mock('@wippa/pieces-common', async (importOriginal) => {
+    const original = await importOriginal<typeof import('@wippa/pieces-common')>()
     return {
         ...original,
         httpClient: { ...original.httpClient, sendRequest: mockSendRequest },

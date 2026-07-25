@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { copyFile } from './lib/actions/copy-file';
 import { downloadFile } from './lib/actions/download-file';
 import { listFiles } from './lib/actions/list-files';

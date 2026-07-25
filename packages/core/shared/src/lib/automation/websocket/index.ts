@@ -1,4 +1,4 @@
-import { StepRunResponse, UpdateStepProgressRequest } from '@activepieces/core-execution'
+import { StepRunResponse, UpdateStepProgressRequest } from '@wippa/core-execution'
 import { z } from 'zod'
 
 export enum WebsocketClientEvent {

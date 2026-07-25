@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { signNowAuth } from './lib/common/auth';
 import { cancelInviteAction } from './lib/actions/cancel-invite';
 import { createDocumentFromTemplateAndSendInviteAction } from './lib/actions/create-document-from-template-and-send-invite';

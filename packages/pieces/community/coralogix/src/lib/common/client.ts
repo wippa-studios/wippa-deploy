@@ -2,9 +2,9 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { coralogixAuth } from './auth';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 
 type CoralogixApiType = 'management' | 'ingestion';
 

@@ -2,12 +2,12 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { createEvent } from './lib/actions/create_event';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { customerIOCommon } from './lib/common';
 import { Buffer } from 'buffer';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { customerIOAuth } from './lib/auth';
 
 const markdown = `

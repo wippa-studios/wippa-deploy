@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { stripeAuth } from '../..';
 import { getClient } from '../common';
 import { Stripe } from 'stripe';

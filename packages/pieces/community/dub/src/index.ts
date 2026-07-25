@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { dubAuth, DUB_API_BASE } from './lib/auth';
 import { createLink } from './lib/actions/create-link';
 import { getLink } from './lib/actions/get-link';
@@ -8,7 +8,7 @@ import { updateLink } from './lib/actions/update-link';
 import { deleteLink } from './lib/actions/delete-link';
 import { linkClicked } from './lib/triggers/link-clicked';
 import { linkCreated } from './lib/triggers/link-created';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const dub = createPiece({
   displayName: 'Dub',

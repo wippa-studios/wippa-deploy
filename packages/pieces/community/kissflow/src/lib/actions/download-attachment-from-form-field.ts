@@ -2,8 +2,8 @@ import {
   HttpMethod,
   httpClient,
   HttpHeaders,
-} from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
 
 import contentDisposition from 'content-disposition';
 

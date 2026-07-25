@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { Readable } from 'stream';
 import mime from 'mime-types';
 import { drive as googleDrive } from '@googleapis/drive';

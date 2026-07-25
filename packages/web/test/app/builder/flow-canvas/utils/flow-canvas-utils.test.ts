@@ -6,7 +6,7 @@ import {
   FlowTriggerType,
   FlowVersion,
   FlowVersionState,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { describe, expect, it, vi } from 'vitest';
 
 import { flowCanvasUtils } from '@/app/builder/flow-canvas/utils/flow-canvas-utils';

@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { sendrAuth } from '../auth';
 import {  flattenObject } from '../common';
 

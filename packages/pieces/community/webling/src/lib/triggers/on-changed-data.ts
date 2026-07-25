@@ -3,12 +3,12 @@ import {
   TriggerStrategy,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { weblingAuth } from '../auth';
 import { WeblingChanges } from '../common/types';
 import { getChanges } from '../common/helpers';

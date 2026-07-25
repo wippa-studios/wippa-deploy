@@ -1,8 +1,8 @@
 import { asanaCommon, callAsanaApi, getTags } from '../common';
-import { getAccessTokenOrThrow, HttpMethod } from '@activepieces/pieces-common';
+import { getAccessTokenOrThrow, HttpMethod } from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { asanaAuth } from '../auth';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 
 export const asanaCreateTaskAction = createAction({
   auth: asanaAuth,

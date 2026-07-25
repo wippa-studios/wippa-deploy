@@ -2,8 +2,8 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { mailgunAuth } from '../..';
 import {
   mailgunCommon,

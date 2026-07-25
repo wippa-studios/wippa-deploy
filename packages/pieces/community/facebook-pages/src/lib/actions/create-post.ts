@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { facebookPagesCommon, FacebookPageDropdown } from '../common/common';
 import { facebookPagesAuth } from '../..';
 

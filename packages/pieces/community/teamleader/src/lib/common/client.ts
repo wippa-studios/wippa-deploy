@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { OAuth2PropertyValue } from '@wippa/pieces-framework';
 
 const TEAMLEADER_API_BASE_URL = 'https://api.focus.teamleader.eu';
 

@@ -1,11 +1,11 @@
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 import {
   AppConnectionValueForAuthProperty,
   OAuth2PropertyValue,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { JWT } from 'google-auth-library';
 
 export const BASE_URL = 'https://bigquery.googleapis.com/bigquery/v2';

@@ -1,11 +1,11 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { HttpError } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { HttpError } from '@wippa/pieces-common';
 import { dimoAuth } from '../../auth';
 import { DimoClient, getNumberExpression } from '../../common/helpers';
 import { CreateWebhookParams, WebhookInfo, WebhookPayload } from '../../common/types';
 import { TriggerField } from '../../common/constants';
 import { operatorStaticDropdown, verificationTokenInput } from '../../common/props';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 
 const TRIGGER_KEY = 'dimo-battery-power-trigger';
 

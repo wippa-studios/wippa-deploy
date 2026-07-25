@@ -1,4 +1,4 @@
-import { apId } from '@activepieces/shared'
+import { apId } from '@wippa/shared'
 import { repoFactory } from '../core/db/repo-factory'
 import { TeamsBotInstallationEntity } from './teams-bot-installation.entity'
 

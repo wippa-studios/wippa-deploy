@@ -1,7 +1,7 @@
 # Human Input (Forms & Chat)
 
 ## Summary
-The Human Input feature exposes public-facing endpoints that allow external users to interact with flows via two interaction modes: **Forms** (structured input fields that trigger a flow and optionally wait for a response) and **Chat** (a conversational UI backed by a flow). Both modes use flows whose trigger is the `@activepieces/piece-forms` piece. The backend endpoints are read-only and fully public — they return metadata about the form or chat UI (title, input schema, platform branding) that the frontend uses to render the interaction. Flows must be published (or the `useDraft` flag must be set) for the endpoints to return data. The frontend renders the form at `/forms/<flowId>` and the chat at `/chat/<flowId>`.
+The Human Input feature exposes public-facing endpoints that allow external users to interact with flows via two interaction modes: **Forms** (structured input fields that trigger a flow and optionally wait for a response) and **Chat** (a conversational UI backed by a flow). Both modes use flows whose trigger is the `@wippa/piece-forms` piece. The backend endpoints are read-only and fully public — they return metadata about the form or chat UI (title, input schema, platform branding) that the frontend uses to render the interaction. Flows must be published (or the `useDraft` flag must be set) for the endpoints to return data. The frontend renders the form at `/forms/<flowId>` and the chat at `/chat/<flowId>`.
 
 ## Key Files
 - `packages/server/api/src/app/flows/flow/human-input/form-controller.ts` — GET `/form/:flowId` endpoint
@@ -25,7 +25,7 @@ The Human Input feature exposes public-facing endpoints that allow external user
 
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
-- **Forms piece** (`@activepieces/piece-forms`): The Activepieces piece that provides three triggers: `form_submission`, `file_submission`, and `chat_submission`.
+- **Forms piece** (`@wippa/piece-forms`): The Activepieces piece that provides three triggers: `form_submission`, `file_submission`, and `chat_submission`.
 - **form_submission trigger**: Accepts structured text/toggle/textarea fields defined by the flow author. `waitForResponse` controls whether the flow pauses to return a value to the form submitter.
 - **file_submission trigger**: Simplified single-file upload form. The field schema is hardcoded server-side (one required FILE input with `waitForResponse: true`).
 - **chat_submission trigger**: Enables a chat-style UI. Props contain `botName` for display.
@@ -51,14 +51,14 @@ Both accept query parameter: `useDraft: boolean` (optional, defaults to false).
 - `getFormByFlowIdOrThrow(flowId, useDraft)`:
   1. Loads the flow from the repository.
   2. If no published version and `useDraft` is false, returns null → throws ENTITY_NOT_FOUND.
-  3. Asserts the trigger is from `@activepieces/piece-forms` with name `form_submission` or `file_submission`.
+  3. Asserts the trigger is from `@wippa/piece-forms` with name `form_submission` or `file_submission`.
   4. Resolves the exact piece version via `pieceMetadataService.resolveExactVersion`.
   5. For `file_submission`, returns a hardcoded single-file-input schema (`SIMPLE_FILE_PROPS`).
   6. For `form_submission`, returns `trigger.settings.input` as the props.
 
 - `getChatUIByFlowIdOrThrow(flowId, useDraft)`:
   1. Loads the flow and resolves its version.
-  2. Asserts trigger is `chat_submission` from `@activepieces/piece-forms`.
+  2. Asserts trigger is `chat_submission` from `@wippa/piece-forms`.
   3. Fetches platform to include `logoIconUrl` and `name` for branding.
   4. Returns `ChatUIResponse` with platform branding embedded.
 

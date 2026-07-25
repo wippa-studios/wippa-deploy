@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { villageAuth, VILLAGE_API_BASE_URL } from '../../common/auth';
 
 export const getAppInfo = createAction({

@@ -1,4 +1,4 @@
-import { AppConnectionStatus } from '@activepieces/shared';
+import { AppConnectionStatus } from '@wippa/shared';
 
 import { ChatUIMessage } from '@/features/chat/lib/chat-types';
 
@@ -6,7 +6,7 @@ export function normalizePieceName(piece: string): string {
   const shortName = piece.replace(/[^a-z0-9-]/gi, '');
   return piece.startsWith('@activepieces/')
     ? piece
-    : `@activepieces/piece-${shortName}`;
+    : `@wippa/piece-${shortName}`;
 }
 
 export function isConnectionHealthy(status: string): boolean {

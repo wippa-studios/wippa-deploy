@@ -1,4 +1,4 @@
-import { isObject } from '@activepieces/core-utils';
+import { isObject } from '@wippa/core-utils';
 
 const TRUNCATED_INPUT_PLACEHOLDER_REGEX =
   /^\(truncated(, original size \d+(\.\d+)? (KB|MB))?\)$/;

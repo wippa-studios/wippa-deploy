@@ -1,11 +1,11 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import {
   FlowRetryStrategy,
   FlowRun,
   FlowRunStatus,
   isFailedState,
   isFlowRunStateTerminal,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Eye, Repeat, Timer } from 'lucide-react';
 import React, { useState } from 'react';

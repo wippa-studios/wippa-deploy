@@ -1,6 +1,6 @@
-import { SeekPage } from '@activepieces/core-utils'
-import { FlowsContext, ListFlowsContextParams } from '@activepieces/pieces-framework'
-import { FetchError, PopulatedFlow } from '@activepieces/shared'
+import { SeekPage } from '@wippa/core-utils'
+import { FlowsContext, ListFlowsContextParams } from '@wippa/pieces-framework'
+import { FetchError, PopulatedFlow } from '@wippa/shared'
 
 export const createFlowsContext = ({ engineToken, internalApiUrl, flowId, flowVersionId }: CreateFlowsServiceParams): FlowsContext => {
     return {

@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { BASE_URL, makeRequest } from './lib/common';
 import { runWorkflow } from './lib/actions/run-workflow';
 import { runWorkflowAsync } from './lib/actions/run-workflow-async';

@@ -2,7 +2,7 @@ import {
     createTrigger,
     Property,
     TriggerStrategy
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { insightlyAuth } from '../common/common';
 
 export const newRecord = createTrigger({

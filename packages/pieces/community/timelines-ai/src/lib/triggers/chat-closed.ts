@@ -2,12 +2,12 @@ import {
     DedupeStrategy,
     Polling,
     pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
     createTrigger,
     AppConnectionValueForAuthProperty,
     TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 import { timelinesAiAuth, timelinesAiCommon } from '../common';
 

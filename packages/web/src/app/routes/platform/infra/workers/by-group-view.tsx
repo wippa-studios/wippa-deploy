@@ -2,7 +2,7 @@ import {
   ProjectWithLimits,
   WorkerGroupScope,
   WorkerMachineWithStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Layers, Plus } from 'lucide-react';
 import { useState } from 'react';

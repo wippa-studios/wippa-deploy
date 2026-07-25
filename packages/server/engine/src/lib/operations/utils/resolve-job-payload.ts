@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { JobPayload } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { JobPayload } from '@wippa/shared'
 import { engineFileApi } from '../../api/engine-file-api'
 
 export async function resolveJobPayload({ payload, apiUrl, engineToken }: ResolveJobPayloadParams): Promise<unknown> {

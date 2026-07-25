@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import { flowRunProgressReporter } from './lib/helper/flow-run-progress-reporter'
 import { ssrfGuard } from './lib/network/ssrf-guard'
 import { workerSocket } from './lib/worker-socket'

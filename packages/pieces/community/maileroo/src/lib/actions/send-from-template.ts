@@ -1,6 +1,6 @@
-import { ApFile, createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { spreadIfDefined } from '@activepieces/pieces-framework';
+import { ApFile, createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { spreadIfDefined } from '@wippa/pieces-framework';
 
 import { mailerooAuth } from '../auth';
 import { buildAttachmentList, toEmailObjects } from '../common';

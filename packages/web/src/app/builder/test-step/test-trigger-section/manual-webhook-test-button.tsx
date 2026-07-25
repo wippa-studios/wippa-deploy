@@ -1,4 +1,4 @@
-import { FlowTrigger } from '@activepieces/shared';
+import { FlowTrigger } from '@wippa/shared';
 import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';

@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import {
     IRemoveImageBackground,
     IRequestImage,

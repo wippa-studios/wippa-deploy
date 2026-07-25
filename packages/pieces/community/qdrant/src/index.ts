@@ -2,8 +2,8 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { addPointsToCollection } from './lib/actions/add-points';
 import { deleteCollection } from './lib/actions/delete-collection';
 import { deletePoints } from './lib/actions/delete-points';

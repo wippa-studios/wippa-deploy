@@ -2,9 +2,9 @@ import {
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { BASE_URL } from './constants';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export async function enrichlayerApiCall(
   auth: string,

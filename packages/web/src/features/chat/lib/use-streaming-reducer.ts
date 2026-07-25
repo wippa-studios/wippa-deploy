@@ -7,7 +7,7 @@ import {
   ImageGeneratedEvent,
   ToolProgressEvent,
   WebsocketClientEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { UIMessageChunk } from 'ai';
 import { useCallback, useEffect, useRef, useState } from 'react';
 

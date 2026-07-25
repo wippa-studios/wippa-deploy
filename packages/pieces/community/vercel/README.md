@@ -1,4 +1,4 @@
-# @activepieces/piece-vercel
+# @wippa/piece-vercel
 
 Bounded MVP Vercel piece for Activepieces community pieces.
 
@@ -12,4 +12,4 @@ Bounded MVP Vercel piece for Activepieces community pieces.
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-vercel` to build the library.
+Run `turbo run build --filter=@wippa/piece-vercel` to build the library.

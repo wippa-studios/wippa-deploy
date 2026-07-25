@@ -1,5 +1,5 @@
 import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod, createCustomApiCallAction } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL, extractApiKey } from './lib/common/props';
 import { getLeads } from "./lib/actions/get-leads";
 import { createLead } from "./lib/actions/create-lead";
@@ -7,7 +7,7 @@ import { getLead } from "./lib/actions/get-lead";
 import { deleteLead } from "./lib/actions/delete-lead";
 import { getLeadStats } from "./lib/actions/get-lead-stats";
 import { updateLead } from "./lib/actions/update-lead";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { bookedinAuth } from './lib/auth';
 
 // --- Authentication ---

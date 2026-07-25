@@ -1,4 +1,4 @@
-import { AIProviderName } from '@activepieces/core-utils';
+import { AIProviderName } from '@wippa/core-utils';
 import dayjs from 'dayjs';
 import { useCallback, useState } from 'react';
 

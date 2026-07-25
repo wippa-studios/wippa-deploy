@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 export const CANNY_API_BASE = 'https://canny.io/api/v1';
 

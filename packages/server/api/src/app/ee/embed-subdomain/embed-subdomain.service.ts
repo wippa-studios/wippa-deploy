@@ -1,5 +1,5 @@
-import { ActivepiecesError, apId, ErrorCode, isNil, tryCatch } from '@activepieces/core-utils'
-import { EmbedSubdomain, EmbedSubdomainStatus } from '@activepieces/shared'
+import { ActivepiecesError, apId, ErrorCode, isNil, tryCatch } from '@wippa/core-utils'
+import { EmbedSubdomain, EmbedSubdomainStatus } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../../core/db/repo-factory'
 import { cloudflareService } from './cloudflare.service'

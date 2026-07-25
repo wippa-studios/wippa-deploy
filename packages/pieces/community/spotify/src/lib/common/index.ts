@@ -1,9 +1,9 @@
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { getAccessTokenOrThrow } from '@wippa/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { SpotifyWebApi } from './client';
 
 const markdownDescription = `

@@ -1,13 +1,13 @@
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { bushbulletAuth } from './lib/common/auth';
 import { sendALink } from './lib/actions/send-a-link';
 import { sendANote } from './lib/actions/send-a-note';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const pushbullet = createPiece({
   displayName: 'Pushbullet',

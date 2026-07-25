@@ -3,10 +3,10 @@ import {
   Property,
   PieceAuth,
   ArraySubProps,
-} from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
-import { AgentToolType } from '@activepieces/pieces-framework';
-import { AgentOutputField, AgentPieceProps, AgentTaskStatus, AgentTool, TASK_COMPLETION_TOOL_NAME, AIProviderName, AgentProviderModel, ExecutionToolStatus, AgentKnowledgeBaseTool, KnowledgeBaseSourceType, normalizeToolOutputToExecuteResponse, spreadIfDefined, getEffectiveProviderAndModel } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
+import { AgentToolType } from '@wippa/pieces-framework';
+import { AgentOutputField, AgentPieceProps, AgentTaskStatus, AgentTool, TASK_COMPLETION_TOOL_NAME, AIProviderName, AgentProviderModel, ExecutionToolStatus, AgentKnowledgeBaseTool, KnowledgeBaseSourceType, normalizeToolOutputToExecuteResponse, spreadIfDefined, getEffectiveProviderAndModel } from '@wippa/pieces-framework';
 import { hasToolCall, stepCountIs, streamText } from 'ai';
 import { agentOutputBuilder } from './agent-output-builder';
 import { createAIModel, createEmbeddingModel } from '../../common/ai-sdk';

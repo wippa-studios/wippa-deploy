@@ -1,5 +1,5 @@
-import { apId, isNil, Permission } from '@activepieces/core-utils'
-import { FlowOperationRequest, FlowOperationType, McpToolDefinition, NoteColorVariant, ProjectScopedMcpServer } from '@activepieces/shared'
+import { apId, isNil, Permission } from '@wippa/core-utils'
+import { FlowOperationRequest, FlowOperationType, McpToolDefinition, NoteColorVariant, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { flowService } from '../../flows/flow/flow.service'

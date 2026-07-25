@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { capsuleCrmAuth, CapsuleCrmAuthType } from './auth';
 import { capsuleCrmClient } from './client';
 

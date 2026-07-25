@@ -5,13 +5,13 @@ import {
   Property,
   StaticPropsValue,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { appfollowAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 const props = {

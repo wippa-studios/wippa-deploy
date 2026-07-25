@@ -1,4 +1,4 @@
-import { ApMultipartFile, OptionalArrayFromQuery, OptionalBooleanFromQuery } from '@activepieces/core-utils'
+import { ApMultipartFile, OptionalArrayFromQuery, OptionalBooleanFromQuery } from '@wippa/core-utils'
 import { z } from 'zod'
 import { ApEdition } from '../../../core/flag/flag'
 import { PackageType, PieceCategory } from '../piece'

@@ -1,4 +1,4 @@
-import { FileType } from '@activepieces/shared'
+import { FileType } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { entitiesMustBeOwnedByCurrentProject } from '../authentication/authorization'
 import { SystemJobName } from '../helper/system-jobs/common'

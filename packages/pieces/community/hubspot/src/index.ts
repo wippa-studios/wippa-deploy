@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { hubSpotListsAddContactAction } from './lib/actions/add-contact-to-list-action';
 import { newCompanyTrigger } from './lib/triggers/new-company';
 import { newContactTrigger } from './lib/triggers/new-contact';

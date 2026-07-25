@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-eden-ai",
+  "name": "@wippa/piece-eden-ai",
   "version": "0.2.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -9,12 +9,12 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "form-data": "4.0.6",
     "zod": "4.3.6",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

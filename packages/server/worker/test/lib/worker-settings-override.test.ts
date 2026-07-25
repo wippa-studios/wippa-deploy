@@ -6,8 +6,8 @@ import {
     ExecutionMode,
     NetworkMode,
     WebsocketServerEvent,
-} from '@activepieces/shared'
-import type { WorkerToApiContract, WorkerSettingsResponse } from '@activepieces/shared'
+} from '@wippa/shared'
+import type { WorkerToApiContract, WorkerSettingsResponse } from '@wippa/shared'
 
 const mockWorkerSettingsSet = vi.fn()
 

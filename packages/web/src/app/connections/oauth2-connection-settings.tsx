@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   OAuth2Property,
   OAuth2Props,
   PieceMetadataModel,
   PieceMetadataModelSummary,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   ApFlagId,
   AppConnectionType,
@@ -12,7 +12,7 @@ import {
   UpsertCloudOAuth2Request,
   UpsertOAuth2Request,
   UpsertPlatformOAuth2Request,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown } from 'lucide-react';
 import { Dispatch, SetStateAction, useState } from 'react';

@@ -2,7 +2,7 @@ import {
 	OAuth2PropertyValue,
 	Property,
 	createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { workdayAuth } from '../auth';
 import { workdaySoapRequest } from '../common';
 

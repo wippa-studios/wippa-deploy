@@ -1,5 +1,5 @@
-import { AIProviderName, spreadIfDefined } from '@activepieces/core-utils';
-import { AzureProviderConfig, BaseAIProviderAuthConfig, BedrockProviderAuthConfig, BedrockProviderConfig, chatPersistenceUtils, chatToolClassification, CloudflareGatewayProviderConfig, OpenAICompatibleProviderConfig, PersistedChatPart, PersistedChatPartType, PersistedToolCallStatus, splitCloudflareGatewayModelId } from '@activepieces/shared';
+import { AIProviderName, spreadIfDefined } from '@wippa/core-utils';
+import { AzureProviderConfig, BaseAIProviderAuthConfig, BedrockProviderAuthConfig, BedrockProviderConfig, chatPersistenceUtils, chatToolClassification, CloudflareGatewayProviderConfig, OpenAICompatibleProviderConfig, PersistedChatPart, PersistedChatPartType, PersistedToolCallStatus, splitCloudflareGatewayModelId } from '@wippa/shared';
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock'
 import { createAnthropic } from '@ai-sdk/anthropic'
 import { createAzure } from '@ai-sdk/azure'

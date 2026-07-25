@@ -1,4 +1,4 @@
-import { SigningKey } from '@activepieces/shared';
+import { SigningKey } from '@wippa/shared';
 import { t } from 'i18next';
 import { Key, MoreHorizontal, Trash } from 'lucide-react';
 

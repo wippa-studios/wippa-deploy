@@ -1,5 +1,5 @@
-import { AIProviderName, apId } from '@activepieces/core-utils'
-import { DefaultProjectRole, PrincipalType } from '@activepieces/shared'
+import { AIProviderName, apId } from '@wippa/core-utils'
+import { DefaultProjectRole, PrincipalType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../helpers/auth'

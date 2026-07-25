@@ -1,4 +1,4 @@
-import { WebhookHandshakeStrategy } from '@activepieces/shared'
+import { WebhookHandshakeStrategy } from '@wippa/shared'
 import { isHandshakeRequest } from '../../../../src/app/webhooks/webhook-handshake'
 
 const makePayload = (overrides: { headers?: Record<string, string>, queryParams?: Record<string, string>, body?: unknown } = {}) => ({

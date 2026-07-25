@@ -2,7 +2,7 @@ import {
   PROJECT_COLOR_PALETTE,
   ProjectType,
   ProjectWithLimits,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Check, ChevronDown, LayoutGrid } from 'lucide-react';
 import { useState } from 'react';

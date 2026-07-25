@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { moonclerkAuth } from '../common/auth';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 export const retrivePlan = createAction({
   auth: moonclerkAuth,
   name: 'retrivePlan',

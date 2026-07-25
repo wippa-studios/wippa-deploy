@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
 	createPiece,
 	OAuth2PropertyValue,
 	PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { getEmailDetailsAction } from './lib/actions/get-email-details';
 import { markEmailAsReadAction } from './lib/actions/mark-email-as-read';
 import { markEmailAsUnreadAction } from './lib/actions/mark-email-as-unread';

@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
 import { famulorAuth } from '../..';
 import { famulorCommon } from '../common';
 import type { ConversationEndedWebhookPayload } from '../common/types';

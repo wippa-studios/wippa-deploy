@@ -1,4 +1,4 @@
-import { ApEdition, ApFlagId, TeamProjectsLimit } from '@activepieces/shared';
+import { ApEdition, ApFlagId, TeamProjectsLimit } from '@wippa/shared';
 import { t } from 'i18next';
 import { ComponentType, useRef } from 'react';
 import { Link } from 'react-router-dom';

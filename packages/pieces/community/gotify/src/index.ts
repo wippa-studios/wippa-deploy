@@ -2,8 +2,8 @@ import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { sendNotification } from './lib/actions/send-notification';
 import { gotifyAuth } from './lib/auth';
 

@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
 import { TeableAuth, TeableAuthValue, getTeableToken, getTeableBaseUrl } from '../auth';
 import { TeableClient } from './client';
 import { TeableComputedFieldTypes, TeableFieldType } from './constants';

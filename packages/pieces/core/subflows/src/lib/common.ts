@@ -26,7 +26,7 @@ export async function listFlowsWithSubflowTrigger({
         (flow) =>
             flow.version.trigger.type === FlowTriggerType.PIECE &&
             flow.version.trigger.settings.pieceName ==
-            '@activepieces/piece-subflows'
+            '@wippa/piece-subflows'
     );
     return flows;
 }

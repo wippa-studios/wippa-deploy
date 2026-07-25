@@ -1,7 +1,7 @@
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { drupalAuth } from '../auth';
 import { drupal } from '../common/jsonapi';
 import { fetchEntityTypesForReading } from '../common/drupal-entities';

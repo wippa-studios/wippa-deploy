@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   getAuthPropertyForValue,
   PieceAuthProperty,
   PieceMetadataModel,
   PieceMetadataModelSummary,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   ApFlagId,
   AppConnectionScope,
@@ -13,7 +13,7 @@ import {
   AppConnectionWithoutSensitiveData,
   BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE,
   UpsertAppConnectionRequestBody,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { useState } from 'react';

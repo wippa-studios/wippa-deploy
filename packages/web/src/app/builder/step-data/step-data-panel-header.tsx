@@ -1,4 +1,4 @@
-import { StepOutputStatus } from '@activepieces/shared';
+import { StepOutputStatus } from '@wippa/shared';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';
 

@@ -1,4 +1,4 @@
-import { FAIL_PARENT_ON_FAILURE_HEADER, PARENT_RUN_ID_HEADER } from '@activepieces/shared'
+import { FAIL_PARENT_ON_FAILURE_HEADER, PARENT_RUN_ID_HEADER } from '@wippa/shared'
 import { convertRequest, extractHeaderFromRequest, isBinaryContentType } from '../../../../src/app/webhooks/webhook-request-converter'
 
 describe('isBinaryContentType', () => {

@@ -1,4 +1,4 @@
-import { WebhookRenewStrategy } from '@activepieces/pieces-framework'
+import { WebhookRenewStrategy } from '@wippa/pieces-framework'
 import {
     ApplicationEventName,
     Flow,
@@ -14,7 +14,7 @@ import {
     TriggerStrategy,
     TriggerTestStrategy,
     WebhookHandshakeStrategy,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import * as applicationEventsModule from '../../../../../src/app/helper/application-events'
@@ -271,7 +271,7 @@ async function seedPublishableFlow({
     publishCurrentVersion,
 }: SeedPublishableFlowParams): Promise<{ flow: Flow, flowVersion: FlowVersion }> {
     const pieceMetadata = createMockPieceMetadata({
-        name: '@activepieces/piece-schedule',
+        name: '@wippa/piece-schedule',
         version: '0.1.5',
         triggers: {
             every_hour: {
@@ -333,7 +333,7 @@ function scheduleTrigger(): FlowTrigger {
     return {
         type: FlowTriggerType.PIECE,
         settings: {
-            pieceName: '@activepieces/piece-schedule',
+            pieceName: '@wippa/piece-schedule',
             pieceVersion: '0.1.5',
             input: { run_on_weekends: false },
             triggerName: 'every_hour',

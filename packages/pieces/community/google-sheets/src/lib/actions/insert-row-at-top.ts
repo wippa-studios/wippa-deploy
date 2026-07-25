@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { sheets as googleSheets } from '@googleapis/sheets';
 import {
 	areSheetIdsValid,

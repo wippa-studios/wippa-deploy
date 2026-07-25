@@ -1,5 +1,5 @@
 import { amazonSqsAuth } from '../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { SQS } from '@aws-sdk/client-sqs';
 
 export const sendMessage = createAction({

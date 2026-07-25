@@ -1,4 +1,4 @@
-import { FolderDto, PopulatedFlow, Table } from '@activepieces/shared';
+import { FolderDto, PopulatedFlow, Table } from '@wippa/shared';
 
 import { AutomationsFilters, FolderContent, TreeItem } from './types';
 

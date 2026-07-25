@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { oracleFusionCloudErpAuth } from '../../auth';
 import { makeClient } from '../../common/client';
 

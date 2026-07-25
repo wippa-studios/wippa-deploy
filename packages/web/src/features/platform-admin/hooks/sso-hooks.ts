@@ -1,4 +1,4 @@
-import { UpdatePlatformRequestBody } from '@activepieces/shared';
+import { UpdatePlatformRequestBody } from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 
 import { platformApi } from '@/api/platforms-api';

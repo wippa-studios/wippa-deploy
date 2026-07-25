@@ -1,4 +1,4 @@
-import { camelCase, startCase } from '@activepieces/pieces-framework';
+import { camelCase, startCase } from '@wippa/pieces-framework';
 import { ContentFields } from 'contentful-management';
 
 export const getLinkHelperText = (

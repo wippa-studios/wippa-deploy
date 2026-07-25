@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { cancelBooking } from './lib/actions/cancel-booking';
 import { createBooking } from './lib/actions/create-booking';
 import { createBookingComment } from './lib/actions/create-booking-comment';

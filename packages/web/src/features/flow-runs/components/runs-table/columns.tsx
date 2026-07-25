@@ -1,5 +1,5 @@
-import { isNil, SeekPage } from '@activepieces/core-utils';
-import { FlowRun, FlowRunStatus } from '@activepieces/shared';
+import { isNil, SeekPage } from '@wippa/core-utils';
+import { FlowRun, FlowRunStatus } from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {

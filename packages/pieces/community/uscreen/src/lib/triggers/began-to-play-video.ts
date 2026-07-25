@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { uscreenAuth } from '../common/auth';
 import { uscreenProps } from '../common/props';
 

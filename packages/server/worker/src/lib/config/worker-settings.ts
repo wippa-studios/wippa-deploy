@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined } from '@activepieces/core-utils'
-import { WorkerSettingsResponse } from '@activepieces/shared'
+import { assertNotNullOrUndefined } from '@wippa/core-utils'
+import { WorkerSettingsResponse } from '@wippa/shared'
 
 let settings: WorkerSettingsResponse | undefined
 let settingsResolver: (() => void) | null = null

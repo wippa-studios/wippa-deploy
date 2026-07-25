@@ -2,7 +2,7 @@ import {
   AiToolCapability,
   AiToolConfigWithoutSensitiveData,
   PlatformRole,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Globe, Image, LucideIcon, Pencil, Search, Trash } from 'lucide-react';
 

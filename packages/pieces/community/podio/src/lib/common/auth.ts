@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue } from '@wippa/pieces-framework';
 
 export function getAccessToken(auth: OAuth2PropertyValue): string {
   return auth.access_token;

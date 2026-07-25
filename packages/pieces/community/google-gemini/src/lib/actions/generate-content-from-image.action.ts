@@ -3,7 +3,7 @@ import mime from 'mime-types';
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { googleGeminiAuth } from '../auth';
 import { defaultLLM, getGeminiModelOptions } from '../common/common';
 import { generateContentFromImageActionOutputSchema } from '../output-schemas';

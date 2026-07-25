@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 export const BASE_URL = `https://www.mooninvoice.com/api_mi/public`;
 

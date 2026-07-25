@@ -1,6 +1,6 @@
-import { isNil, partition } from '@activepieces/core-utils'
-import { apVersionUtil } from '@activepieces/server-utils'
-import { ExecutionMode, NetworkMode, WorkerGroupScope, WorkerMachineHealthcheckRequest, WorkerMachineStatus, WorkerMachineType, WorkerMachineWithStatus, WorkerSettingsResponse } from '@activepieces/shared'
+import { isNil, partition } from '@wippa/core-utils'
+import { apVersionUtil } from '@wippa/server-utils'
+import { ExecutionMode, NetworkMode, WorkerGroupScope, WorkerMachineHealthcheckRequest, WorkerMachineStatus, WorkerMachineType, WorkerMachineWithStatus, WorkerSettingsResponse } from '@wippa/shared'
 
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'

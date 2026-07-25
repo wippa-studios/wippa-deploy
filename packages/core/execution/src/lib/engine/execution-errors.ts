@@ -1,4 +1,4 @@
-import { STORE_KEY_MAX_LENGTH } from '@activepieces/core-piece-types'
+import { STORE_KEY_MAX_LENGTH } from '@wippa/core-piece-types'
 
 export enum ExecutionErrorType {
     ENGINE = 'ENGINE',

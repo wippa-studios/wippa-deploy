@@ -1,10 +1,10 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { captureCarbon } from './lib/actions/capture-carbon';
 import { cleanOcean } from './lib/actions/clean-ocean';
 import { donateMoney } from './lib/actions/donate-money';
 import { plantTrees } from './lib/actions/plant-trees';
 import { oneclickimpactAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const oneclickimpact = createPiece({
   displayName: '1ClickImpact',

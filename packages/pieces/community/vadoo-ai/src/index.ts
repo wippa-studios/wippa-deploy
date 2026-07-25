@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { generateVideo } from './lib/actions/generate-video';
 import { generatePodcast } from './lib/actions/generate-podcast';
 import { generateAiImage } from './lib/actions/generate-ai-image';
 import { generateAiCaptions } from './lib/actions/generate-ai-captions';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { vadooAiAuth } from './lib/auth';
 
 export const vadooAi = createPiece({

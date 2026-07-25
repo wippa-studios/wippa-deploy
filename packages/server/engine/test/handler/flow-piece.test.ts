@@ -1,5 +1,5 @@
-import { tryParseFriendlyPieceError } from '@activepieces/core-utils'
-import { FlowAction, FlowRunStatus } from '@activepieces/shared'
+import { tryParseFriendlyPieceError } from '@wippa/core-utils'
+import { FlowAction, FlowRunStatus } from '@wippa/shared'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { flowExecutor } from '../../src/lib/handler/flow-executor'
 import { pieceExecutor } from '../../src/lib/handler/piece-executor'
@@ -11,7 +11,7 @@ describe('pieceExecutor', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'data_mapper',
-                pieceName: '@activepieces/piece-data-mapper',
+                pieceName: '@wippa/piece-data-mapper',
                 actionName: 'advanced_mapping',
                 input: {
                     mapping: {
@@ -30,7 +30,7 @@ describe('pieceExecutor', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'send_http',
-                pieceName: '@activepieces/piece-http',
+                pieceName: '@wippa/piece-http',
                 actionName: 'send_request',
                 input: {
                     'url': 'https://cloud.activepieces.com/api/v1/asd',
@@ -73,7 +73,7 @@ describe('pieceExecutor', () => {
                 name: 'data_mapper',
                 input: {},
                 skip: true,
-                pieceName: '@activepieces/piece-data-mapper',
+                pieceName: '@wippa/piece-data-mapper',
                 actionName: 'advanced_mapping',
             }), executionState: FlowExecutorContext.empty(), constants: generateMockEngineConstants(),
         })
@@ -92,13 +92,13 @@ describe('pieceExecutor', () => {
                     },
                 },
                 skip: false,
-                pieceName: '@activepieces/piece-data-mapper',
+                pieceName: '@wippa/piece-data-mapper',
                 actionName: 'advanced_mapping',
             }),
             nextAction: {
                 ...buildPieceAction({
                     name: 'send_http',
-                    pieceName: '@activepieces/piece-http',
+                    pieceName: '@wippa/piece-http',
                     actionName: 'send_request',
                     input: {},
                     skip: true,

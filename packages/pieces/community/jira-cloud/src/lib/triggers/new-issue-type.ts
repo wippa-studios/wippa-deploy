@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger, isNil } from '@activepieces/pieces-framework';
+import { TriggerStrategy, createTrigger, isNil } from '@wippa/pieces-framework';
 import { jiraCloudAuth } from '../../auth';
 import { getIssueTypes } from '../common';
 import { getProjectIdDropdown } from '../common/props';

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { skyprepAuth } from './lib/common/auth';
 import { enrollAUserIntoACource } from './lib/actions/enroll-a-user-into-a-cource';
 import { enrollAUserIntoAUserGroup } from './lib/actions/enroll-a-user-into-a-user-group';

@@ -1,4 +1,4 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import { t } from 'i18next';
 import { Plus, SearchXIcon, Variable } from 'lucide-react';
 import { useState } from 'react';

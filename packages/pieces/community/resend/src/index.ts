@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   createCustomApiCallAction,
   HttpError,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { sendBatchEmails } from './lib/actions/send-batch-emails.action';
 import { createContact } from './lib/actions/create-contact.action';

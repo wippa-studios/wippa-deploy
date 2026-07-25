@@ -1,6 +1,6 @@
 import { randomBytes } from 'crypto'
 import { promisify } from 'util'
-import { ActivepiecesError, ErrorCode, isNil, spreadIfDefined } from '@activepieces/core-utils'
+import { ActivepiecesError, ErrorCode, isNil, spreadIfDefined } from '@wippa/core-utils'
 import { Mutex } from 'async-mutex'
 import jwtLibrary, {
     DecodeOptions,

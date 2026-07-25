@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, QueryParams } from '@wippa/pieces-common';
 
 export const LINKUPAPI_BASE_URL = 'https://api.linkupapi.com/v2';
 

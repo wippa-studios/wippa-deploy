@@ -1,4 +1,4 @@
-import { AnalyticsTimePeriod } from '@activepieces/shared';
+import { AnalyticsTimePeriod } from '@wippa/shared';
 import dayjs from 'dayjs';
 import { t } from 'i18next';
 import { Calendar, Info, LineChart, List, RefreshCcw } from 'lucide-react';

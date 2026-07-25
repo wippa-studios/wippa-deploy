@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { typefullyApiCall } from './common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 function isHttpError(e: unknown): e is { response: { status: number } } {
   return (

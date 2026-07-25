@@ -1,11 +1,11 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { grokAuth } from './lib/common/auth';
 import { askGrok } from './lib/actions/ask-grok';
 import { extractDataFromText } from './lib/actions/extract-data';
 import { categorizeText } from './lib/actions/categorize-text';
 import { generateImage } from './lib/actions/generate-image';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { XAI_BASE_URL } from './lib/common/constants';
 
 export const grokXai = createPiece({

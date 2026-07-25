@@ -4,7 +4,7 @@ import {
 	DropdownOption,
 	DynamicPropsValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
 	Dimension,
 	googleSheetsCommon,
@@ -17,7 +17,7 @@ import {
 } from '../common/common';
 import { getWorkSheetName, getWorkSheetGridSize } from '../triggers/helpers';
 import { sheets as googleSheets, sheets_v4 } from '@googleapis/sheets';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import { parse } from 'csv-parse/sync';
 import { commonProps } from '../common/props';
 import { googleSheetsInsertMultipleRowsActionOutputSchema } from '../output-schemas';

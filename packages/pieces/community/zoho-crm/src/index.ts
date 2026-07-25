@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { newContact } from './lib/triggers/new-contact';
 import { readFile } from './lib/actions/read-file';
 import { zohoCrmAuth } from './lib/auth';

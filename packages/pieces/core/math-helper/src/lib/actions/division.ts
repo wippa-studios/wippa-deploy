@@ -2,8 +2,8 @@ import {
   createAction,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
 import * as z from 'zod/mini';
 
 export const division = createAction({

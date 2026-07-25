@@ -1,5 +1,5 @@
-import { isNil, Permission, tryCatch } from '@activepieces/core-utils';
-import { ApFlagId, PlatformRole, ProjectType } from '@activepieces/shared';
+import { isNil, Permission, tryCatch } from '@wippa/core-utils';
+import { ApFlagId, PlatformRole, ProjectType } from '@wippa/shared';
 import { t } from 'i18next';
 import { Bell, GitBranch, Puzzle, Settings, Users } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';

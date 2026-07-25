@@ -1,4 +1,4 @@
-import { PieceSelectionMode, PieceSet, Platform } from '@activepieces/shared'
+import { PieceSelectionMode, PieceSet, Platform } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

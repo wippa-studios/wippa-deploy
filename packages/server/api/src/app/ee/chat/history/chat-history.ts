@@ -1,4 +1,4 @@
-import { ChatHistoryMessage, ChatHistoryToolCall, chatPersistenceUtils } from '@activepieces/shared'
+import { ChatHistoryMessage, ChatHistoryToolCall, chatPersistenceUtils } from '@wippa/shared'
 import { ModelMessage } from 'ai'
 
 function reconstructChatHistory(messages: ModelMessage[]): ChatHistoryMessage[] {

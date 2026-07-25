@@ -2,7 +2,7 @@ import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { capsuleCrmAuth, CapsuleCrmAuthType } from '../common/auth';
 import { capsuleCrmClient } from '../common/client';
 import {

@@ -3,7 +3,7 @@ import {
   DynamicPropsValue,
   Property,
   StoreScope,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   ContentBlock,
   ConverseCommand,

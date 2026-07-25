@@ -3,9 +3,9 @@ import { harvestAuth } from '../..';
 import {
   getAccessTokenOrThrow,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { callHarvestApi, filterDynamicFields } from '../common';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 import * as z from 'zod/mini'
 
 export const getTime_entries = createAction({

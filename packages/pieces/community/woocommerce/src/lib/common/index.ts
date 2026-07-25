@@ -2,8 +2,8 @@ import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PiecePropValueSchema } from '@wippa/pieces-framework';
 import { wooAuth } from '../auth';
 
 export const wooCommon = {

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { createChatbot } from './lib/actions/createChatbot';
 import { deleteChatbot } from './lib/actions/deleteChatbot';
 import { sendMessage } from './lib/actions/sendMessage';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 
 import { simplyprintAuth, simplyprintSession } from '../auth';
 import { BASE_URL } from '../common/base-url';

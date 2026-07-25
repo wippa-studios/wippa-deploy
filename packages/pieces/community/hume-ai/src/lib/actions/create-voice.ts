@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { HumeClient } from 'hume';
 import { humeAiAuth } from '../common/auth';
 

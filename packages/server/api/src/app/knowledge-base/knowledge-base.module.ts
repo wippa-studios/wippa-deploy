@@ -1,4 +1,4 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { knowledgeBaseSchema } from './knowledge-base-schema'
 import { knowledgeBaseController } from './knowledge-base.controller'

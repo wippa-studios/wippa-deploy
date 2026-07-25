@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { googleDriveAuth, getAccessToken } from '../auth';
 import { Property, createAction } from "@activepieces/pieces-framework";
 import querystring from 'querystring';

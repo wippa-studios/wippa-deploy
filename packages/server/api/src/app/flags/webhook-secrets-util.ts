@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined, isNil, parseToJsonIfPossible } from '@activepieces/core-utils'
-import { FlowVersion } from '@activepieces/shared'
+import { assertNotNullOrUndefined, isNil, parseToJsonIfPossible } from '@wippa/core-utils'
+import { FlowVersion } from '@wippa/shared'
 
 let webhookSecrets:
 | Record<string, { webhookSecret: string | Record<string, string> }>

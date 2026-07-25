@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/pieces-framework';
 
 export const cursorAuth = PieceAuth.SecretText({
   displayName: 'API Key',

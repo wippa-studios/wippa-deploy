@@ -3,7 +3,7 @@ import {
   PresenceUser,
   WebsocketClientEvent,
   WebsocketServerEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useEffect, useState } from 'react';
 
 import { useSocket } from '@/components/providers/socket-provider';

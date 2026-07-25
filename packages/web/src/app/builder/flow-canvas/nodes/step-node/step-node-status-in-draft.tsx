@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowTriggerType,
   FlowVersionState,
   StepOutputStatus,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { TriangleAlert } from 'lucide-react';
 import React, { useMemo } from 'react';

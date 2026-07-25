@@ -1,4 +1,4 @@
-import { ActionPreviewEvent } from '@activepieces/shared';
+import { ActionPreviewEvent } from '@wippa/shared';
 import { t } from 'i18next';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';

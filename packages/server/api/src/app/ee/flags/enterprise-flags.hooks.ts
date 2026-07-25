@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { ApEdition, ApFlagId, PrincipalType, ThirdPartyAuthnProviderEnum } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { ApEdition, ApFlagId, PrincipalType, ThirdPartyAuthnProviderEnum } from '@wippa/shared'
 import { FlagsServiceHooks } from '../../flags/flags.hooks'
 import { domainHelper } from '../../helper/domain-helper'
 import { system } from '../../helper/system/system'

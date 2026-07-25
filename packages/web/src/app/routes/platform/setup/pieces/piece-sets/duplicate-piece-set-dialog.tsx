@@ -1,4 +1,4 @@
-import { DuplicatePieceSetRequestBody } from '@activepieces/shared';
+import { DuplicatePieceSetRequestBody } from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';

@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-matrix` to build the library.
+Run `turbo run build --filter=@wippa/piece-matrix` to build the library.

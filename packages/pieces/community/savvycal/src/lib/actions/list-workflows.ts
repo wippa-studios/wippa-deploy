@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { savvyCalPaginatedCall } from '../common';
 import { savvyCalAuth, getToken } from '../auth';
 

@@ -8,14 +8,14 @@ import {
   HttpRequest,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { httpOauth2Auth } from '../..';
 import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
 import FormData from 'form-data';
 import { ProxyAgent } from 'undici';
 

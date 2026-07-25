@@ -1,5 +1,5 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import {
   KizeoFormsDataUsers,
   KizeoFormsExports,

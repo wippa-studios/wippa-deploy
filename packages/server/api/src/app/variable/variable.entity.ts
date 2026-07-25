@@ -2,7 +2,7 @@ import {
     User,
     UserIdentity,
     Variable,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { BaseColumnSchemaPart } from '../database/database-common'
 import { EncryptedObject } from '../helper/encryption'

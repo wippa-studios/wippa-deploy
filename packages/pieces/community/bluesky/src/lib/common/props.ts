@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { blueskyAuth } from './auth';
 
 export const languageOptions = [

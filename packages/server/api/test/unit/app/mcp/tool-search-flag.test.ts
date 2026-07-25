@@ -1,4 +1,4 @@
-import { ProjectScopedMcpServer } from '@activepieces/shared'
+import { ProjectScopedMcpServer } from '@wippa/shared'
 import { afterEach, describe, expect, it } from 'vitest'
 import { system } from '../../../../src/app/helper/system/system'
 import { activepiecesTools, LOCKED_TOOL_NAMES, PLATFORM_LEVEL_TOOL_NAMES } from '../../../../src/app/mcp/tools'

@@ -17,7 +17,7 @@ const SCENARIOS: LiveScenario[] = [
     },
     {
         id: 'gmail-send',
-        prompt: 'Email ash@activepieces.com with the subject "Q4 numbers" and a one-line body saying the report is ready.',
+        prompt: 'Email ash@wippa.com.au with the subject "Q4 numbers" and a one-line body saying the report is ready.',
         targetPiece: 'gmail',
         shape: 'well-specified',
         expectsExecution: true,

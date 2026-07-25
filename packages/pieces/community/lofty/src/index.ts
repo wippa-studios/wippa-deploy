@@ -1,11 +1,11 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { loftyAuth } from './lib/common/auth';
 import { createLead } from './lib/actions/create-lead';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createTransaction } from './lib/actions/create-transaction';
 import { updateLead } from './lib/actions/update-lead';
 import { updateTransaction } from './lib/actions/update-transaction';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const lofty = createPiece({
   displayName: 'Lofty',

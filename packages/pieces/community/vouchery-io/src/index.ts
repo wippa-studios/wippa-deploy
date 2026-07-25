@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { voucheryIoAuth } from './lib/common/auth';
 import { findVoucher } from './lib/actions/find-voucher';
 import { createCustomer } from './lib/actions/create-customer';
 import { createAVoucher } from './lib/actions/create-a-voucher';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const voucheryIo = createPiece({
   displayName: 'Vouchery',

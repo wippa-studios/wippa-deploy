@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { ApEnvironment, WorkerGroupScope } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { ApEnvironment, WorkerGroupScope } from '@wippa/shared'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { pubsub } from '../../helper/pubsub'

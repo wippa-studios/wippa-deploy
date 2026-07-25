@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 
 import { cloneTask } from './lib/actions/clone-task';
 import { completeTask } from './lib/actions/complete-task';
@@ -33,8 +33,8 @@ import { updateTask } from './lib/actions/update-task';
 import { updateTeam } from './lib/actions/update-team';
 import { updateWorker } from './lib/actions/update-worker';
 
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { autoDispatchCompleted } from './lib/triggers/auto-dispatch-completed';
 import { smsRecipientOptOut } from './lib/triggers/sms-recipient-opt-out';
 import { smsRecipientResponseMissed } from './lib/triggers/sms-recipient-response-missed';

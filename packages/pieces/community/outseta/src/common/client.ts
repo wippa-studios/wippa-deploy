@@ -2,7 +2,7 @@ import {
   HttpMessageBody,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export class OutsetaClient {
   private readonly baseUrl: string;

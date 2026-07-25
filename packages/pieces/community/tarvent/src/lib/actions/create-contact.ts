@@ -1,7 +1,7 @@
 import { tarventAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { makeClient, tarventCommon } from '../common';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 import * as z from 'zod/mini'
 
 export const createContact = createAction({

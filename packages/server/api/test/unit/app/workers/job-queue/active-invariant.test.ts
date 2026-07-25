@@ -1,4 +1,4 @@
-import { ConsumeJobRequest } from '@activepieces/shared'
+import { ConsumeJobRequest } from '@wippa/shared'
 import { Worker as BullMQWorker, Job, Queue } from 'bullmq'
 import { FastifyBaseLogger } from 'fastify'
 import IORedis from 'ioredis'

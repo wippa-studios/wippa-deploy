@@ -103,7 +103,7 @@ The pre-pass:
 ## Exit Strategies
 
 Documented in `.claude/plans/glimmering-percolating-unicorn.md`. Summary:
-- **Function impl change** — versioning policy: bump `@activepieces/shared` minor + changelog entry.
+- **Function impl change** — versioning policy: bump `@wippa/shared` minor + changelog entry.
 - **Arg added/removed** — use `argCompatibility.defaultArgs` so old flows fill the missing arg from a default; mark old shape `deprecated` if behavior diverges.
 - **Function removed** — never hard-remove; mark `deprecated: { replacement, removeAfter }` for at least one minor cycle; editor shows strikethrough badge with replacement suggestion.
 - **Feature dropped** — hard removal needs a one-shot migration that unwraps every `ap-formula-v1::{...}` in stored flows.
@@ -114,6 +114,6 @@ Documented in `.claude/plans/glimmering-percolating-unicorn.md`. Summary:
 - `variablesQueries.useVariables(...)` — fetches the project's variables (see `variables.md`); used by the editor to render variable mention labels inside formula args.
 
 ## What's NOT in this feature
-- No new HTTP endpoints. Function metadata is bundled in `@activepieces/shared` and read directly by the frontend; no `/v1/formulas/*` route exists.
+- No new HTTP endpoints. Function metadata is bundled in `@wippa/shared` and read directly by the frontend; no `/v1/formulas/*` route exists.
 - No DB tables for the formula content itself — formulas are inline in the step's existing input fields, persisted with the rest of the flow version JSON.
 - No worker job — evaluation is synchronous inside the engine's `resolveInputAsync`.

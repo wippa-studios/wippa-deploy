@@ -1,9 +1,9 @@
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { googleAuth } from '../..';
-import { HttpMethod, httpClient, propsValidation } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient, propsValidation } from '@wippa/pieces-common';
 import * as z from 'zod/mini'
 
 export const createReply = createAction({

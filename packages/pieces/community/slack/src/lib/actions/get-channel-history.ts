@@ -1,5 +1,5 @@
 import { ConversationsHistoryResponse, WebClient } from '@slack/web-api';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { slackAuth } from '../auth';
 import { singleSelectChannelInfo, slackChannel } from '../common/props';
 import { getBotToken, SlackAuthValue } from '../common/auth-helpers';

@@ -1,4 +1,4 @@
-import { ErrorCode, isNil } from '@activepieces/core-utils';
+import { ErrorCode, isNil } from '@wippa/core-utils';
 import { t } from 'i18next';
 import React, { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';

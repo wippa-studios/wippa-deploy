@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import { ErrorCode } from '@activepieces/core-utils'
-import { BaseModelSchema, Nullable } from '@activepieces/core-utils'
-import { isNil, truncateString } from '@activepieces/core-utils'
+import { ErrorCode } from '@wippa/core-utils'
+import { BaseModelSchema, Nullable } from '@wippa/core-utils'
+import { isNil, truncateString } from '@wippa/core-utils'
 import { ExecutionState, RunInternalError } from './execution/execution-output'
 import { FlowRunStatus } from './execution/flow-execution'
 

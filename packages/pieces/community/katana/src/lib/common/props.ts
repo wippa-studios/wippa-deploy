@@ -1,9 +1,9 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { katanaAuth } from './auth';
 import { BASE_URL } from './constants';
 

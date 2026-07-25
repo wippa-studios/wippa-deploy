@@ -1,4 +1,4 @@
-import { chatToolPhases, PersistedChatPart, PersistedChatPartType } from '@activepieces/shared'
+import { chatToolPhases, PersistedChatPart, PersistedChatPartType } from '@wippa/shared'
 import { ChatEvalAssertion } from './fixture'
 import { ChatTurnResult } from '../../../../src/lib/execute/jobs/ee/chat/run-chat-turn'
 

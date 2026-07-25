@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
 import { buttondownAuth } from './auth';
 import { buttondownRequest } from './client';
 import { ButtondownWebhook, ButtondownWebhookEvent } from './types';

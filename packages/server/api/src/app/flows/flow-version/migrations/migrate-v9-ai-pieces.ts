@@ -1,5 +1,5 @@
-import { AIProviderName, isNil } from '@activepieces/core-utils'
-import { ApEdition, FlowAction, FlowActionType, flowStructureUtil, FlowVersion, PieceAction } from '@activepieces/shared'
+import { AIProviderName, isNil } from '@wippa/core-utils'
+import { ApEdition, FlowAction, FlowActionType, flowStructureUtil, FlowVersion, PieceAction } from '@wippa/shared'
 import { system } from '../../../helper/system/system'
 import { Migration } from '.'
 
@@ -11,13 +11,13 @@ export const migrateV9AiPieces: Migration = {
             if (step.type !== FlowActionType.PIECE) {
                 return step
             }
-            if (step.settings.pieceName === '@activepieces/piece-text-ai') {
+            if (step.settings.pieceName === '@wippa/piece-text-ai') {
                 return migrateTextai(step)
             }
-            if (step.settings.pieceName === '@activepieces/piece-utility-ai') {
+            if (step.settings.pieceName === '@wippa/piece-utility-ai') {
                 return migrateUtilityAction(step)
             }
-            if (step.settings.pieceName === '@activepieces/piece-image-ai') {
+            if (step.settings.pieceName === '@wippa/piece-image-ai') {
                 return migrateImageai(step)
             }
             return step
@@ -36,7 +36,7 @@ function migrateUtilityAction(step: PieceAction): FlowAction {
         ...step,
         settings: {
             ...step.settings,
-            pieceName: '@activepieces/piece-ai',
+            pieceName: '@wippa/piece-ai',
             pieceVersion: '0.0.2',
             input: {
                 ...input,
@@ -63,7 +63,7 @@ function migrateTextai(step: PieceAction): FlowAction {
             ...step,
             settings: {
                 ...step.settings,
-                pieceName: '@activepieces/piece-ai',
+                pieceName: '@wippa/piece-ai',
                 actionName: 'askAi',
                 pieceVersion: '0.0.2',
                 input: {
@@ -84,7 +84,7 @@ function migrateTextai(step: PieceAction): FlowAction {
         ...step,
         settings: {
             ...step.settings,
-            pieceName: '@activepieces/piece-ai',
+            pieceName: '@wippa/piece-ai',
             pieceVersion: '0.0.2',
             input: {
                 ...step.settings.input,
@@ -103,7 +103,7 @@ function migrateImageai(step: PieceAction): FlowAction {
         ...step,
         settings: {
             ...step.settings,
-            pieceName: '@activepieces/piece-ai',
+            pieceName: '@wippa/piece-ai',
             pieceVersion: '0.0.2',
             input: {
                 ...input,

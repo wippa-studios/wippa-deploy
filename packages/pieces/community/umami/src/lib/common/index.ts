@@ -4,8 +4,8 @@ import {
   HttpMessageBody,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import {
   umamiAuth,
   getAuthHeaders,

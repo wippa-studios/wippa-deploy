@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { katanaAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/constants';
 import { createCustomer } from './lib/actions/create-customer';

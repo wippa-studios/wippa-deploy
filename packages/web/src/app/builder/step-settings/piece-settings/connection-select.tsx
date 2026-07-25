@@ -1,8 +1,8 @@
-import { Permission, isNil } from '@activepieces/core-utils';
+import { Permission, isNil } from '@wippa/core-utils';
 import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AppConnectionScope,
   AppConnectionStatus,
@@ -10,7 +10,7 @@ import {
   PieceAction,
   PieceTrigger,
   PropertyExecutionType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   Plus,

@@ -1,8 +1,8 @@
 import { hubspotAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { getDefaultPropertiesForObject, standardObjectPropertiesDropdown } from '../common/props';
 import { OBJECT_TYPE, MAX_SEARCH_PAGE_SIZE } from '../common/constants';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import { FilterOperatorEnum } from '../common/types';
 import { Client } from '@hubspot/api-client';
 

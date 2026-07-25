@@ -1,6 +1,6 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { isNil } from '@wippa/pieces-framework';
 import { jiraCloudAuth } from '../../auth';
 import { jiraApiCall } from '../common';
 import {

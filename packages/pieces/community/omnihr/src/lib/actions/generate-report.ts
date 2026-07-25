@@ -2,13 +2,13 @@ import {
   createAction,
   InputPropertyMap,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   QueryParams,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import * as z from 'zod/mini';
 import { omnihrAuth } from '../auth';
 

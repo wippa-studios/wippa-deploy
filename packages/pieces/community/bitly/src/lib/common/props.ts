@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { bitlyApiCall } from './client';
 import { BitlyAuthProps } from './client';
 import { bitlyAuth } from './auth';

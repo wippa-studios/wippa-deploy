@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@wippa/pieces-common';
 
 export const REPLY_IO_API_ROOT = 'https://api.reply.io';
 

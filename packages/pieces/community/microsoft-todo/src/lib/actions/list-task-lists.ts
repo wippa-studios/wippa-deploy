@@ -1,4 +1,4 @@
-import { createAction, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { microsoftToDoAuth } from '../auth';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';

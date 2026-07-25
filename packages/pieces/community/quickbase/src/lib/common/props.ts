@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { QuickbaseClient } from './client';
 import { QuickbaseApp, QuickbaseTable, QuickbaseField } from './types';
 import { quickbaseAuth } from '../auth';

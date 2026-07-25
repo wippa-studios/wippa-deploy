@@ -4,7 +4,7 @@ import {
   LockResourceResponse,
   WebsocketClientEvent,
   WebsocketServerEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useSocket } from '@/components/providers/socket-provider';

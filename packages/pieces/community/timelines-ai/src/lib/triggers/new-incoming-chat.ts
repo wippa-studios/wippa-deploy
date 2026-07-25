@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { timelinesAiAuth, timelinesAiCommon } from '../common';
 import { WebhookInformation } from '../common/types';
 

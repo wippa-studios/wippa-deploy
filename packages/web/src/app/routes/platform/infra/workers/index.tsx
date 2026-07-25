@@ -5,7 +5,7 @@ import {
   WorkerMachineStatus,
   WorkerMachineType,
   WorkerMachineWithStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   Server,

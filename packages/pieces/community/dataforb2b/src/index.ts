@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { DATAFORB2B_API_BASE_URL, dataforb2bAuth } from './lib/common';
 import { searchPeople } from './lib/actions/search-people';
 import { searchCompanies } from './lib/actions/search-companies';

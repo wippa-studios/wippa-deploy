@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { PLACID_BASE_URL } from './common';
 
 export const placidAuth = PieceAuth.SecretText({

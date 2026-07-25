@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { luxuryPresenceAuth } from '../common/auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 const LUXURY_PRESENCE_API_BASE = 'https://api.luxurypresence.com/crm/v1';
 
 export const newLead = createTrigger({

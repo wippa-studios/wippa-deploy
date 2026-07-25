@@ -1,4 +1,4 @@
-import { ApId, BaseModelSchema, isNil, Nullable } from '@activepieces/core-utils'
+import { ApId, BaseModelSchema, isNil, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 import { formErrors } from '../../form-errors'
 

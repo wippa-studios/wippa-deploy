@@ -1,4 +1,4 @@
-import { Template } from '@activepieces/shared';
+import { Template } from '@wippa/shared';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { CategorySection } from './category-section';

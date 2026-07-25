@@ -1,8 +1,8 @@
-import { Property, DynamicPropsValue, PiecePropValueSchema } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, DynamicPropsValue, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { smartSuiteApiCall, smartSuitePaginatedApiCall, TableStucture } from '.';
 import { smartsuiteAuth } from '../auth';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export const smartsuiteCommon = {
 	solutionId: Property.Dropdown({

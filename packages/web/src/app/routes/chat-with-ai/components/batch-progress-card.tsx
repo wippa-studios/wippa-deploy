@@ -1,4 +1,4 @@
-import { BatchProgressData } from '@activepieces/shared';
+import { BatchProgressData } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   AlertCircle,

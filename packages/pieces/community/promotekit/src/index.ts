@@ -2,9 +2,9 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { listAffiliates } from './lib/actions/list-affiliates';
 import { findAffiliate } from './lib/actions/find-affiliate';
 import { createAffiliate } from './lib/actions/create-affiliate';

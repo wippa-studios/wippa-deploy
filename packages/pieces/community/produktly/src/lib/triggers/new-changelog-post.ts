@@ -3,13 +3,13 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { produktlyApiCall } from '../common/client';
 import { produktlyAuth } from '../common/auth';
 import { produktlyProps } from '../common/props';

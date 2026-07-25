@@ -1,7 +1,7 @@
 import {
 	createTrigger,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { intercomAuth } from '../auth';
 import { intercomClient } from '../common';
 import { tagIdProp } from '../common/props';

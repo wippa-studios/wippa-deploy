@@ -4,7 +4,7 @@ import {
   QueryParams,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { BikaFieldType } from './constants';
 
 function emptyValueFilter(

@@ -2,14 +2,14 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   httpClient,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { drupalAuth } from '../auth';
 import { DrupalAuthType } from '../common/jsonapi';
 

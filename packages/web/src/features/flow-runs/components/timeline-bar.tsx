@@ -1,4 +1,4 @@
-import { RunTimeline, TimelinePhase } from '@activepieces/shared';
+import { RunTimeline, TimelinePhase } from '@wippa/shared';
 import { t } from 'i18next';
 
 import {

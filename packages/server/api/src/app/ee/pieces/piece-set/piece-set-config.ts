@@ -1,5 +1,5 @@
-import { apId, isNil, unique } from '@activepieces/core-utils'
-import { ComponentIntent, PieceSelectionMode, PieceSetConfig, UpdatePieceSetRequestBody } from '@activepieces/shared'
+import { apId, isNil, unique } from '@wippa/core-utils'
+import { ComponentIntent, PieceSelectionMode, PieceSetConfig, UpdatePieceSetRequestBody } from '@wippa/shared'
 
 export const pieceSetConfig = {
     buildDefaultSet(platformId: string) {

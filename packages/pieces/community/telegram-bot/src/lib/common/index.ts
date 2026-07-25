@@ -2,12 +2,12 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { telegramBotAuth } from '../..';
 import {
   AppConnectionValueForAuthProperty,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 const chatIdInstructions = `
 **How to obtain Chat ID:**

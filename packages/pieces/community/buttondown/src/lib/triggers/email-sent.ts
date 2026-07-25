@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { buttondownRequest } from '../common/client';
 import { createButtondownWebhookTrigger } from '../common/webhook';
 import { ButtondownEmail } from '../common/types';

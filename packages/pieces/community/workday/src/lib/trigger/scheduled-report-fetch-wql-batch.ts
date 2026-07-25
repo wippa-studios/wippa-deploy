@@ -1,10 +1,10 @@
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 import {
 	AppConnectionValueForAuthProperty,
 	StaticPropsValue,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 import { workdayAuth } from '../auth';
 import { workdayWqlRequestAll } from '../common';

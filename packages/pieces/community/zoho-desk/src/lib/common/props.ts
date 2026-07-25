@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { PiecePropValueSchema, Property } from '@wippa/pieces-framework';
 import { zohoDeskApiCall } from '.';
 import { zohoDeskAuth } from './auth';
 

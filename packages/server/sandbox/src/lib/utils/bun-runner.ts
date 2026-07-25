@@ -1,6 +1,6 @@
-import { tryCatch } from '@activepieces/core-utils'
-import { apDayjsDuration, fileSystemUtils } from '@activepieces/server-utils'
-import { type ApLogger } from '@activepieces/server-utils'
+import { tryCatch } from '@wippa/core-utils'
+import { apDayjsDuration, fileSystemUtils } from '@wippa/server-utils'
+import { type ApLogger } from '@wippa/server-utils'
 import { CommandOutput, spawnWithKill } from './exec'
 
 export const bunRunner = (log: ApLogger) => ({

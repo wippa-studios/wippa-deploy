@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth, PieceCategory } from '@wippa/pieces-framework';
 import { addition } from './lib/actions/addition';
 import { division } from './lib/actions/division';
 import { generateRandom } from './lib/actions/generateRandom';

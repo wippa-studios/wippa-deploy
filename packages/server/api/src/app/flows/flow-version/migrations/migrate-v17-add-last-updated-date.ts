@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { flowStructureUtil, FlowVersion, Step } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { flowStructureUtil, FlowVersion, Step } from '@wippa/shared'
 import { Migration } from '.'
 
 export const migrateV17AddLastUpdatedDate: Migration = {

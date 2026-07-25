@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { HttpError, HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { HttpError, HttpMethod, httpClient } from '@wippa/pieces-common';
 
 const markdownDescription = `
 Follow these steps to get your Alai API Key:

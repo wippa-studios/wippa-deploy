@@ -17,1556 +17,1556 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@activepieces/core-utils": ["packages/core/utils/src/index.ts"],
-      "@activepieces/core-formula": ["packages/core/formula/src/index.ts"],
-      "@activepieces/core-piece-types": ["packages/core/piece-types/src/index.ts"],
-      "@activepieces/core-execution": ["packages/core/execution/src/index.ts"],
-      "@activepieces/ee-auth": ["packages/ee/auth/src/index.ts"],
-      "@activepieces/ee/billing/ui": ["packages/ee/billing/ui/src/index.ts"],
-      "@activepieces/engine": ["packages/server/engine/src/main.ts"],
-      "@activepieces/piece-activecampaign": [
+      "@wippa/core-utils": ["packages/core/utils/src/index.ts"],
+      "@wippa/core-formula": ["packages/core/formula/src/index.ts"],
+      "@wippa/core-piece-types": ["packages/core/piece-types/src/index.ts"],
+      "@wippa/core-execution": ["packages/core/execution/src/index.ts"],
+      "@wippa/ee-auth": ["packages/ee/auth/src/index.ts"],
+      "@wippa/ee/billing/ui": ["packages/ee/billing/ui/src/index.ts"],
+      "@wippa/engine": ["packages/server/engine/src/main.ts"],
+      "@wippa/piece-activecampaign": [
         "packages/pieces/community/activecampaign/src/index.ts"
       ],
-      "@activepieces/piece-activepieces": [
+      "@wippa/piece-activepieces": [
         "packages/pieces/community/activepieces/src/index.ts"
       ],
-      "@activepieces/piece-actualbudget": [
+      "@wippa/piece-actualbudget": [
         "packages/pieces/community/actualbudget/src/index.ts"
       ],
-      "@activepieces/piece-acuity-scheduling": [
+      "@wippa/piece-acuity-scheduling": [
         "packages/pieces/community/acuity-scheduling/src/index.ts"
       ],
-      "@activepieces/piece-acumbamail": [
+      "@wippa/piece-acumbamail": [
         "packages/pieces/community/acumbamail/src/index.ts"
       ],
-      "@activepieces/piece-add-event": [
+      "@wippa/piece-add-event": [
         "packages/pieces/community/add-event/src/index.ts"
       ],
-      "@activepieces/piece-afforai": [
+      "@wippa/piece-afforai": [
         "packages/pieces/community/afforai/src/index.ts"
       ],
-      "@activepieces/piece-agent": [
+      "@wippa/piece-agent": [
         "packages/pieces/community/agent/src/index.ts"
       ],
-      "@activepieces/piece-agentx": [
+      "@wippa/piece-agentx": [
         "packages/pieces/community/agentx/src/index.ts"
       ],
-      "@activepieces/piece-aianswer": [
+      "@wippa/piece-aianswer": [
         "packages/pieces/community/aianswer/src/index.ts"
       ],
-      "@activepieces/piece-aidbase": [
+      "@wippa/piece-aidbase": [
         "packages/pieces/community/aidbase/src/index.ts"
       ],
-      "@activepieces/piece-aiprise": [
+      "@wippa/piece-aiprise": [
         "packages/pieces/community/aiprise/src/index.ts"
       ],
-      "@activepieces/piece-aircall": [
+      "@wippa/piece-aircall": [
         "packages/pieces/community/aircall/src/index.ts"
       ],
-      "@activepieces/piece-airparser": [
+      "@wippa/piece-airparser": [
         "packages/pieces/community/airparser/src/index.ts"
       ],
-      "@activepieces/piece-airtable": [
+      "@wippa/piece-airtable": [
         "packages/pieces/community/airtable/src/index.ts"
       ],
-      "@activepieces/piece-airtop": [
+      "@wippa/piece-airtop": [
         "packages/pieces/community/airtop/src/index.ts"
       ],
-      "@activepieces/piece-amazon-s3": [
+      "@wippa/piece-amazon-s3": [
         "packages/pieces/community/amazon-s3/src/index.ts"
       ],
-      "@activepieces/piece-amazon-sns": [
+      "@wippa/piece-amazon-sns": [
         "packages/pieces/community/amazon-sns/src/index.ts"
       ],
-      "@activepieces/piece-amazon-sqs": [
+      "@wippa/piece-amazon-sqs": [
         "packages/pieces/community/amazon-sqs/src/index.ts"
       ],
-      "@activepieces/piece-amazon-textract": [
+      "@wippa/piece-amazon-textract": [
         "packages/pieces/community/amazon-textract/src/index.ts"
       ],
-      "@activepieces/piece-aminos": [
+      "@wippa/piece-aminos": [
         "packages/pieces/community/aminos/src/index.ts"
       ],
-      "@activepieces/piece-anyhook-graphql": [
+      "@wippa/piece-anyhook-graphql": [
         "packages/pieces/community/anyhook-graphql/src/index.ts"
       ],
-      "@activepieces/piece-anyhook-websocket": [
+      "@wippa/piece-anyhook-websocket": [
         "packages/pieces/community/anyhook-websocket/src/index.ts"
       ],
-      "@activepieces/piece-apify": [
+      "@wippa/piece-apify": [
         "packages/pieces/community/apify/src/index.ts"
       ],
-      "@activepieces/piece-apitable": [
+      "@wippa/piece-apitable": [
         "packages/pieces/community/apitable/src/index.ts"
       ],
-      "@activepieces/piece-apitemplate-io": [
+      "@wippa/piece-apitemplate-io": [
         "packages/pieces/community/apitemplate-io/src/index.ts"
       ],
-      "@activepieces/piece-apollo": [
+      "@wippa/piece-apollo": [
         "packages/pieces/community/apollo/src/index.ts"
       ],
-      "@activepieces/piece-approval": [
+      "@wippa/piece-approval": [
         "packages/pieces/core/approval/src/index.ts"
       ],
-      "@activepieces/piece-asana": [
+      "@wippa/piece-asana": [
         "packages/pieces/community/asana/src/index.ts"
       ],
-      "@activepieces/piece-ashby": [
+      "@wippa/piece-ashby": [
         "packages/pieces/community/ashby/src/index.ts"
       ],
-      "@activepieces/piece-assembled": [
+      "@wippa/piece-assembled": [
         "packages/pieces/community/assembled/src/index.ts"
       ],
-      "@activepieces/piece-assemblyai": [
+      "@wippa/piece-assemblyai": [
         "packages/pieces/community/assemblyai/src/index.ts"
       ],
-      "@activepieces/piece-attio": [
+      "@wippa/piece-attio": [
         "packages/pieces/community/attio/src/index.ts"
       ],
-      "@activepieces/piece-autocalls": [
+      "@wippa/piece-autocalls": [
         "packages/pieces/community/autocalls/src/index.ts"
       ],
-      "@activepieces/piece-avian": [
+      "@wippa/piece-avian": [
         "packages/pieces/community/avian/src/index.ts"
       ],
-      "@activepieces/piece-avoma": [
+      "@wippa/piece-avoma": [
         "packages/pieces/community/avoma/src/index.ts"
       ],
-      "@activepieces/piece-azure-ad": [
+      "@wippa/piece-azure-ad": [
         "packages/pieces/community/azure-ad/src/index.ts"
       ],
-      "@activepieces/piece-azure-communication-services": [
+      "@wippa/piece-azure-communication-services": [
         "packages/pieces/community/azure-communication-services/src/index.ts"
       ],
-      "@activepieces/piece-azure-devops": [
+      "@wippa/piece-azure-devops": [
         "packages/pieces/community/azure-devops/src/index.ts"
       ],
-      "@activepieces/piece-azure-openai": [
+      "@wippa/piece-azure-openai": [
         "packages/pieces/community/azure-openai/src/index.ts"
       ],
-      "@activepieces/piece-backblaze": [
+      "@wippa/piece-backblaze": [
         "packages/pieces/community/backblaze/src/index.ts"
       ],
-      "@activepieces/piece-bamboohr": [
+      "@wippa/piece-bamboohr": [
         "packages/pieces/community/bamboohr/src/index.ts"
       ],
-      "@activepieces/piece-bannerbear": [
+      "@wippa/piece-bannerbear": [
         "packages/pieces/community/bannerbear/src/index.ts"
       ],
-      "@activepieces/piece-baserow": [
+      "@wippa/piece-baserow": [
         "packages/pieces/community/baserow/src/index.ts"
       ],
-      "@activepieces/piece-beamer": [
+      "@wippa/piece-beamer": [
         "packages/pieces/community/beamer/src/index.ts"
       ],
-      "@activepieces/piece-beebole": [
+      "@wippa/piece-beebole": [
         "packages/pieces/community/beebole/src/index.ts"
       ],
-      "@activepieces/piece-beehiiv": [
+      "@wippa/piece-beehiiv": [
         "packages/pieces/community/beehiiv/src/index.ts"
       ],
-      "@activepieces/piece-bettermode": [
+      "@wippa/piece-bettermode": [
         "packages/pieces/community/bettermode/src/index.ts"
       ],
-      "@activepieces/piece-bocha-search": [
+      "@wippa/piece-bocha-search": [
         "packages/pieces/community/bocha-search/src/index.ts"
       ],
-      "@activepieces/piece-bigcommerce": [
+      "@wippa/piece-bigcommerce": [
         "packages/pieces/community/bigcommerce/src/index.ts"
       ],
-      "@activepieces/piece-bigin-by-zoho": [
+      "@wippa/piece-bigin-by-zoho": [
         "packages/pieces/community/bigin-by-zoho/src/index.ts"
       ],
-      "@activepieces/piece-bika": [
+      "@wippa/piece-bika": [
         "packages/pieces/community/bika/src/index.ts"
       ],
-      "@activepieces/piece-binance": [
+      "@wippa/piece-binance": [
         "packages/pieces/community/binance/src/index.ts"
       ],
-      "@activepieces/piece-bitly": [
+      "@wippa/piece-bitly": [
         "packages/pieces/community/bitly/src/index.ts"
       ],
-      "@activepieces/piece-blockscout": [
+      "@wippa/piece-blockscout": [
         "packages/pieces/community/blockscout/src/index.ts"
       ],
-      "@activepieces/piece-bluesky": [
+      "@wippa/piece-bluesky": [
         "packages/pieces/community/bluesky/src/index.ts"
       ],
-      "@activepieces/piece-bonjoro": [
+      "@wippa/piece-bonjoro": [
         "packages/pieces/community/bonjoro/src/index.ts"
       ],
-      "@activepieces/piece-box": ["packages/pieces/community/box/src/index.ts"],
-      "@activepieces/piece-brilliant-directories": [
+      "@wippa/piece-box": ["packages/pieces/community/box/src/index.ts"],
+      "@wippa/piece-brilliant-directories": [
         "packages/pieces/community/brilliant-directories/src/index.ts"
       ],
-      "@activepieces/piece-browse-ai": [
+      "@wippa/piece-browse-ai": [
         "packages/pieces/community/browse-ai/src/index.ts"
       ],
-      "@activepieces/piece-browserless": [
+      "@wippa/piece-browserless": [
         "packages/pieces/community/browserless/src/index.ts"
       ],
-      "@activepieces/piece-bubble": [
+      "@wippa/piece-bubble": [
         "packages/pieces/community/bubble/src/index.ts"
       ],
-      "@activepieces/piece-buffer": [
+      "@wippa/piece-buffer": [
         "packages/pieces/community/buffer/src/index.ts"
       ],
-      "@activepieces/piece-bumpups": [
+      "@wippa/piece-bumpups": [
         "packages/pieces/community/bumpups/src/index.ts"
       ],
-      "@activepieces/piece-cal-com": [
+      "@wippa/piece-cal-com": [
         "packages/pieces/community/cal-com/src/index.ts"
       ],
-      "@activepieces/piece-calendly": [
+      "@wippa/piece-calendly": [
         "packages/pieces/community/calendly/src/index.ts"
       ],
-      "@activepieces/piece-call-rounded": [
+      "@wippa/piece-call-rounded": [
         "packages/pieces/community/call-rounded/src/index.ts"
       ],
-      "@activepieces/piece-camb-ai": [
+      "@wippa/piece-camb-ai": [
         "packages/pieces/community/camb-ai/src/index.ts"
       ],
-      "@activepieces/piece-campaign-monitor": [
+      "@wippa/piece-campaign-monitor": [
         "packages/pieces/community/campaign-monitor/src/index.ts"
       ],
-      "@activepieces/piece-canva": [
+      "@wippa/piece-canva": [
         "packages/pieces/community/canva/src/index.ts"
       ],
-      "@activepieces/piece-capsule-crm": [
+      "@wippa/piece-capsule-crm": [
         "packages/pieces/community/capsule-crm/src/index.ts"
       ],
-      "@activepieces/piece-captain-data": [
+      "@wippa/piece-captain-data": [
         "packages/pieces/community/captain-data/src/index.ts"
       ],
-      "@activepieces/piece-cartloom": [
+      "@wippa/piece-cartloom": [
         "packages/pieces/community/cartloom/src/index.ts"
       ],
-      "@activepieces/piece-certopus": [
+      "@wippa/piece-certopus": [
         "packages/pieces/community/certopus/src/index.ts"
       ],
-      "@activepieces/piece-chainalysis-api": [
+      "@wippa/piece-chainalysis-api": [
         "packages/pieces/community/chainalysis-api/src/index.ts"
       ],
-      "@activepieces/piece-chargebee": [
+      "@wippa/piece-chargebee": [
         "packages/pieces/community/chargebee/src/index.ts"
       ],
-      "@activepieces/piece-chargekeep": [
+      "@wippa/piece-chargekeep": [
         "packages/pieces/community/chargekeep/src/index.ts"
       ],
-      "@activepieces/piece-chat-data": [
+      "@wippa/piece-chat-data": [
         "packages/pieces/community/chat-data/src/index.ts"
       ],
-      "@activepieces/piece-chatbase": [
+      "@wippa/piece-chatbase": [
         "packages/pieces/community/chatbase/src/index.ts"
       ],
-      "@activepieces/piece-chatwoot": [
+      "@wippa/piece-chatwoot": [
         "packages/pieces/community/chatwoot/src/index.ts"
       ],
-      "@activepieces/piece-checkout": [
+      "@wippa/piece-checkout": [
         "packages/pieces/community/checkout/src/index.ts"
       ],
-      "@activepieces/piece-chess-com": [
+      "@wippa/piece-chess-com": [
         "packages/pieces/community/chess-com/src/index.ts"
       ],
-      "@activepieces/piece-circle": [
+      "@wippa/piece-circle": [
         "packages/pieces/community/circle/src/index.ts"
       ],
-      "@activepieces/piece-clarifai": [
+      "@wippa/piece-clarifai": [
         "packages/pieces/community/clarifai/src/index.ts"
       ],
-      "@activepieces/piece-claude": [
+      "@wippa/piece-claude": [
         "packages/pieces/community/claude/src/index.ts"
       ],
-      "@activepieces/piece-clearout": [
+      "@wippa/piece-clearout": [
         "packages/pieces/community/clearout/src/index.ts"
       ],
-      "@activepieces/piece-clickfunnels": [
+      "@wippa/piece-clickfunnels": [
         "packages/pieces/community/clickfunnels/src/index.ts"
       ],
-      "@activepieces/piece-clicksend": [
+      "@wippa/piece-clicksend": [
         "packages/pieces/community/clicksend/src/index.ts"
       ],
-      "@activepieces/piece-clickup": [
+      "@wippa/piece-clickup": [
         "packages/pieces/community/clickup/src/index.ts"
       ],
-      "@activepieces/piece-clockify": [
+      "@wippa/piece-clockify": [
         "packages/pieces/community/clockify/src/index.ts"
       ],
-      "@activepieces/piece-everhour": [
+      "@wippa/piece-everhour": [
         "packages/pieces/community/everhour/src/index.ts"
       ],
-      "@activepieces/piece-clockodo": [
+      "@wippa/piece-clockodo": [
         "packages/pieces/community/clockodo/src/index.ts"
       ],
-      "@activepieces/piece-close": [
+      "@wippa/piece-close": [
         "packages/pieces/community/close/src/index.ts"
       ],
-      "@activepieces/piece-cohere": [
+      "@wippa/piece-cohere": [
         "packages/pieces/community/cohere/src/index.ts"
       ],
-      "@activepieces/piece-cloudconvert": [
+      "@wippa/piece-cloudconvert": [
         "packages/pieces/community/cloudconvert/src/index.ts"
       ],
-      "@activepieces/piece-cloudinary": [
+      "@wippa/piece-cloudinary": [
         "packages/pieces/community/cloudinary/src/index.ts"
       ],
-      "@activepieces/piece-cloutly": [
+      "@wippa/piece-cloutly": [
         "packages/pieces/community/cloutly/src/index.ts"
       ],
-      "@activepieces/piece-coda": [
+      "@wippa/piece-coda": [
         "packages/pieces/community/coda/src/index.ts"
       ],
-      "@activepieces/piece-cody": [
+      "@wippa/piece-cody": [
         "packages/pieces/community/cody/src/index.ts"
       ],
-      "@activepieces/piece-cognito-forms": [
+      "@wippa/piece-cognito-forms": [
         "packages/pieces/community/cognito-forms/src/index.ts"
       ],
-      "@activepieces/piece-cometapi": [
+      "@wippa/piece-cometapi": [
         "packages/pieces/community/cometapi/src/index.ts"
       ],
-      "@activepieces/piece-comfyicu": [
+      "@wippa/piece-comfyicu": [
         "packages/pieces/community/comfyicu/src/index.ts"
       ],
-      "@activepieces/piece-confluence": [
+      "@wippa/piece-confluence": [
         "packages/pieces/community/confluence/src/index.ts"
       ],
-      "@activepieces/piece-connections": [
+      "@wippa/piece-connections": [
         "packages/pieces/core/connections/src/index.ts"
       ],
-      "@activepieces/piece-constant-contact": [
+      "@wippa/piece-constant-contact": [
         "packages/pieces/community/constant-contact/src/index.ts"
       ],
-      "@activepieces/piece-contentful": [
+      "@wippa/piece-contentful": [
         "packages/pieces/community/contentful/src/index.ts"
       ],
-      "@activepieces/piece-contiguity": [
+      "@wippa/piece-contiguity": [
         "packages/pieces/community/contiguity/src/index.ts"
       ],
-      "@activepieces/piece-convertkit": [
+      "@wippa/piece-convertkit": [
         "packages/pieces/community/convertkit/src/index.ts"
       ],
-      "@activepieces/piece-copper": [
+      "@wippa/piece-copper": [
         "packages/pieces/community/copper/src/index.ts"
       ],
-      "@activepieces/piece-copy-ai": [
+      "@wippa/piece-copy-ai": [
         "packages/pieces/community/copy-ai/src/index.ts"
       ],
-      "@activepieces/piece-coupa": [
+      "@wippa/piece-coupa": [
         "packages/pieces/community/coupa/src/index.ts"
       ],
-      "@activepieces/piece-crisp": [
+      "@wippa/piece-crisp": [
         "packages/pieces/community/crisp/src/index.ts"
       ],
-      "@activepieces/piece-crypto": [
+      "@wippa/piece-crypto": [
         "packages/pieces/core/crypto/src/index.ts"
       ],
-      "@activepieces/piece-csv": ["packages/pieces/core/csv/src/index.ts"],
-      "@activepieces/piece-dappier": [
+      "@wippa/piece-csv": ["packages/pieces/core/csv/src/index.ts"],
+      "@wippa/piece-dappier": [
         "packages/pieces/community/dappier/src/index.ts"
       ],
-      "@activepieces/piece-data-mapper": [
+      "@wippa/piece-data-mapper": [
         "packages/pieces/core/data-mapper/src/index.ts"
       ],
-      "@activepieces/piece-data-summarizer": [
+      "@wippa/piece-data-summarizer": [
         "packages/pieces/core/data-summarizer/src/index.ts"
       ],
-      "@activepieces/piece-datadog": [
+      "@wippa/piece-datadog": [
         "packages/pieces/community/datadog/src/index.ts"
       ],
-      "@activepieces/piece-dataforb2b": [
+      "@wippa/piece-dataforb2b": [
         "packages/pieces/community/dataforb2b/src/index.ts"
       ],
-      "@activepieces/piece-date-helper": [
+      "@wippa/piece-date-helper": [
         "packages/pieces/core/date-helper/src/index.ts"
       ],
-      "@activepieces/piece-datocms": [
+      "@wippa/piece-datocms": [
         "packages/pieces/community/datocms/src/index.ts"
       ],
-      "@activepieces/piece-deepgram": [
+      "@wippa/piece-deepgram": [
         "packages/pieces/community/deepgram/src/index.ts"
       ],
-      "@activepieces/piece-deepl": [
+      "@wippa/piece-deepl": [
         "packages/pieces/community/deepl/src/index.ts"
       ],
-      "@activepieces/piece-deepseek": [
+      "@wippa/piece-deepseek": [
         "packages/pieces/community/deepseek/src/index.ts"
       ],
-      "@activepieces/piece-deftform": [
+      "@wippa/piece-deftform": [
         "packages/pieces/community/deftform/src/index.ts"
       ],
-      "@activepieces/piece-delay": ["packages/pieces/core/delay/src/index.ts"],
-      "@activepieces/piece-descript": [
+      "@wippa/piece-delay": ["packages/pieces/core/delay/src/index.ts"],
+      "@wippa/piece-descript": [
         "packages/pieces/community/descript/src/index.ts"
       ],
-      "@activepieces/piece-devin": [
+      "@wippa/piece-devin": [
         "packages/pieces/community/devin/src/index.ts"
       ],
-      "@activepieces/piece-dimo": [
+      "@wippa/piece-dimo": [
         "packages/pieces/community/dimo/src/index.ts"
       ],
-      "@activepieces/piece-discord": [
+      "@wippa/piece-discord": [
         "packages/pieces/community/discord/src/index.ts"
       ],
-      "@activepieces/piece-discourse": [
+      "@wippa/piece-discourse": [
         "packages/pieces/community/discourse/src/index.ts"
       ],
-      "@activepieces/piece-dittofeed": [
+      "@wippa/piece-dittofeed": [
         "packages/pieces/community/dittofeed/src/index.ts"
       ],
-      "@activepieces/piece-docsbot": [
+      "@wippa/piece-docsbot": [
         "packages/pieces/community/docsbot/src/index.ts"
       ],
-      "@activepieces/piece-docusign": [
+      "@wippa/piece-docusign": [
         "packages/pieces/community/docusign/src/index.ts"
       ],
-      "@activepieces/piece-drip": [
+      "@wippa/piece-drip": [
         "packages/pieces/community/drip/src/index.ts"
       ],
-      "@activepieces/piece-dropbox": [
+      "@wippa/piece-dropbox": [
         "packages/pieces/community/dropbox/src/index.ts"
       ],
-      "@activepieces/piece-drupal": [
+      "@wippa/piece-drupal": [
         "packages/pieces/community/drupal/src/index.ts"
       ],
-      "@activepieces/piece-dub": ["packages/pieces/community/dub/src/index.ts"],
-      "@activepieces/piece-dumpling-ai": [
+      "@wippa/piece-dub": ["packages/pieces/community/dub/src/index.ts"],
+      "@wippa/piece-dumpling-ai": [
         "packages/pieces/community/dumpling-ai/src/index.ts"
       ],
-      "@activepieces/piece-eden-ai": [
+      "@wippa/piece-eden-ai": [
         "packages/pieces/community/eden-ai/src/index.ts"
       ],
-      "@activepieces/piece-editionguard": [
+      "@wippa/piece-editionguard": [
         "packages/pieces/community/editionguard/src/index.ts"
       ],
-      "@activepieces/piece-elastic-email": [
+      "@wippa/piece-elastic-email": [
         "packages/pieces/community/elastic-email/src/index.ts"
       ],
-      "@activepieces/piece-elevenlabs": [
+      "@wippa/piece-elevenlabs": [
         "packages/pieces/community/elevenlabs/src/index.ts"
       ],
-      "@activepieces/piece-emailoctopus": [
+      "@wippa/piece-emailoctopus": [
         "packages/pieces/community/emailoctopus/src/index.ts"
       ],
-      "@activepieces/piece-eth-name-service": [
+      "@wippa/piece-eth-name-service": [
         "packages/pieces/community/eth-name-service/src/index.ts"
       ],
-      "@activepieces/piece-exa": ["packages/pieces/community/exa/src/index.ts"],
-      "@activepieces/piece-facebook-leads": [
+      "@wippa/piece-exa": ["packages/pieces/community/exa/src/index.ts"],
+      "@wippa/piece-facebook-leads": [
         "packages/pieces/community/facebook-leads/src/index.ts"
       ],
-      "@activepieces/piece-facebook-pages": [
+      "@wippa/piece-facebook-pages": [
         "packages/pieces/community/facebook-pages/src/index.ts"
       ],
-      "@activepieces/piece-fathom-analytics": [
+      "@wippa/piece-fathom-analytics": [
         "packages/pieces/community/fathom-analytics/src/index.ts"
       ],
-      "@activepieces/piece-feedhive": [
+      "@wippa/piece-feedhive": [
         "packages/pieces/community/feedhive/src/index.ts"
       ],
-      "@activepieces/piece-figma": [
+      "@wippa/piece-figma": [
         "packages/pieces/community/figma/src/index.ts"
       ],
-      "@activepieces/piece-file-helper": [
+      "@wippa/piece-file-helper": [
         "packages/pieces/core/file-helper/src/index.ts"
       ],
-      "@activepieces/piece-filetopdf": [
+      "@wippa/piece-filetopdf": [
         "packages/pieces/community/filetopdf/src/index.ts"
       ],
-      "@activepieces/piece-fillout-forms": [
+      "@wippa/piece-fillout-forms": [
         "packages/pieces/community/fillout-forms/src/index.ts"
       ],
-      "@activepieces/piece-fireberry": [
+      "@wippa/piece-fireberry": [
         "packages/pieces/community/fireberry/src/index.ts"
       ],
-      "@activepieces/piece-firecrawl": [
+      "@wippa/piece-firecrawl": [
         "packages/pieces/community/firecrawl/src/index.ts"
       ],
-      "@activepieces/piece-fireflies-ai": [
+      "@wippa/piece-fireflies-ai": [
         "packages/pieces/community/fireflies-ai/src/index.ts"
       ],
-      "@activepieces/piece-fliqr-ai": [
+      "@wippa/piece-fliqr-ai": [
         "packages/pieces/community/fliqr-ai/src/index.ts"
       ],
-      "@activepieces/piece-frill": [
+      "@wippa/piece-frill": [
         "packages/pieces/community/frill/src/index.ts"
       ],
-      "@activepieces/piece-flow-helper": [
+      "@wippa/piece-flow-helper": [
         "packages/pieces/community/flow-helper/src/index.ts"
       ],
-      "@activepieces/piece-flowise": [
+      "@wippa/piece-flowise": [
         "packages/pieces/community/flowise/src/index.ts"
       ],
-      "@activepieces/piece-flowlu": [
+      "@wippa/piece-flowlu": [
         "packages/pieces/community/flowlu/src/index.ts"
       ],
-      "@activepieces/piece-foreplay-co": [
+      "@wippa/piece-foreplay-co": [
         "packages/pieces/community/foreplay-co/src/index.ts"
       ],
-      "@activepieces/piece-formbricks": [
+      "@wippa/piece-formbricks": [
         "packages/pieces/community/formbricks/src/index.ts"
       ],
-      "@activepieces/piece-forms": ["packages/pieces/core/forms/src/index.ts"],
-      "@activepieces/piece-formstack": [
+      "@wippa/piece-forms": ["packages/pieces/core/forms/src/index.ts"],
+      "@wippa/piece-formstack": [
         "packages/pieces/community/formstack/src/index.ts"
       ],
-      "@activepieces/piece-frame": [
+      "@wippa/piece-frame": [
         "packages/pieces/community/frame/src/index.ts"
       ],
-      "@activepieces/piece-freshdesk": [
+      "@wippa/piece-freshdesk": [
         "packages/pieces/community/freshdesk/src/index.ts"
       ],
-      "@activepieces/piece-freshservice": [
+      "@wippa/piece-freshservice": [
         "packages/pieces/community/freshservice/src/index.ts"
       ],
-      "@activepieces/piece-freshsales": [
+      "@wippa/piece-freshsales": [
         "packages/pieces/community/freshsales/src/index.ts"
       ],
-      "@activepieces/piece-front": [
+      "@wippa/piece-front": [
         "packages/pieces/community/front/src/index.ts"
       ],
-      "@activepieces/piece-gameball": [
+      "@wippa/piece-gameball": [
         "packages/pieces/community/gameball/src/index.ts"
       ],
-      "@activepieces/piece-gamma": [
+      "@wippa/piece-gamma": [
         "packages/pieces/community/gamma/src/index.ts"
       ],
-      "@activepieces/piece-gcloud-pubsub": [
+      "@wippa/piece-gcloud-pubsub": [
         "packages/pieces/community/gcloud-pubsub/src/index.ts"
       ],
-      "@activepieces/piece-generatebanners": [
+      "@wippa/piece-generatebanners": [
         "packages/pieces/community/generatebanners/src/index.ts"
       ],
-      "@activepieces/piece-getresponse": [
+      "@wippa/piece-getresponse": [
         "packages/pieces/community/getresponse/src/index.ts"
       ],
-      "@activepieces/piece-ghostcms": [
+      "@wippa/piece-ghostcms": [
         "packages/pieces/community/ghostcms/src/index.ts"
       ],
-      "@activepieces/piece-github": [
+      "@wippa/piece-github": [
         "packages/pieces/community/github/src/index.ts"
       ],
-      "@activepieces/piece-gitlab": [
+      "@wippa/piece-gitlab": [
         "packages/pieces/community/gitlab/src/index.ts"
       ],
-      "@activepieces/piece-gmail": [
+      "@wippa/piece-gmail": [
         "packages/pieces/community/gmail/src/index.ts"
       ],
-      "@activepieces/piece-google-bigquery": [
+      "@wippa/piece-google-bigquery": [
         "packages/pieces/community/google-bigquery/src/index.ts"
       ],
-      "@activepieces/piece-google-calendar": [
+      "@wippa/piece-google-calendar": [
         "packages/pieces/community/google-calendar/src/index.ts"
       ],
-      "@activepieces/piece-google-contacts": [
+      "@wippa/piece-google-contacts": [
         "packages/pieces/community/google-contacts/src/index.ts"
       ],
-      "@activepieces/piece-google-docs": [
+      "@wippa/piece-google-docs": [
         "packages/pieces/community/google-docs/src/index.ts"
       ],
-      "@activepieces/piece-google-drive": [
+      "@wippa/piece-google-drive": [
         "packages/pieces/community/google-drive/src/index.ts"
       ],
-      "@activepieces/piece-google-forms": [
+      "@wippa/piece-google-forms": [
         "packages/pieces/community/google-forms/src/index.ts"
       ],
-      "@activepieces/piece-google-gemini": [
+      "@wippa/piece-google-gemini": [
         "packages/pieces/community/google-gemini/src/index.ts"
       ],
-      "@activepieces/piece-google-my-business": [
+      "@wippa/piece-google-my-business": [
         "packages/pieces/community/google-my-business/src/index.ts"
       ],
-      "@activepieces/piece-google-search-console": [
+      "@wippa/piece-google-search-console": [
         "packages/pieces/community/google-search-console/src/index.ts"
       ],
-      "@activepieces/piece-google-sheets": [
+      "@wippa/piece-google-sheets": [
         "packages/pieces/community/google-sheets/src/index.ts"
       ],
-      "@activepieces/piece-google-slides": [
+      "@wippa/piece-google-slides": [
         "packages/pieces/community/google-slides/src/index.ts"
       ],
-      "@activepieces/piece-google-tasks": [
+      "@wippa/piece-google-tasks": [
         "packages/pieces/community/google-tasks/src/index.ts"
       ],
-      "@activepieces/piece-googlechat": [
+      "@wippa/piece-googlechat": [
         "packages/pieces/community/googlechat/src/index.ts"
       ],
-      "@activepieces/piece-gotify": [
+      "@wippa/piece-gotify": [
         "packages/pieces/community/gotify/src/index.ts"
       ],
-      "@activepieces/piece-gorgias": [
+      "@wippa/piece-gorgias": [
         "packages/pieces/community/gorgias/src/index.ts"
       ],
-      "@activepieces/piece-granola": [
+      "@wippa/piece-granola": [
         "packages/pieces/community/granola/src/index.ts"
       ],
-      "@activepieces/piece-graphql": [
+      "@wippa/piece-graphql": [
         "packages/pieces/core/graphql/src/index.ts"
       ],
-      "@activepieces/piece-gravityforms": [
+      "@wippa/piece-gravityforms": [
         "packages/pieces/community/gravityforms/src/index.ts"
       ],
-      "@activepieces/piece-greenhouse": [
+      "@wippa/piece-greenhouse": [
         "packages/pieces/community/greenhouse/src/index.ts"
       ],
-      "@activepieces/piece-grist": [
+      "@wippa/piece-grist": [
         "packages/pieces/community/grist/src/index.ts"
       ],
-      "@activepieces/piece-grok-xai": [
+      "@wippa/piece-grok-xai": [
         "packages/pieces/community/grok-xai/src/index.ts"
       ],
-      "@activepieces/piece-groq": [
+      "@wippa/piece-groq": [
         "packages/pieces/community/groq/src/index.ts"
       ],
-      "@activepieces/piece-hackernews": [
+      "@wippa/piece-hackernews": [
         "packages/pieces/community/hackernews/src/index.ts"
       ],
-      "@activepieces/piece-harvest": [
+      "@wippa/piece-harvest": [
         "packages/pieces/community/harvest/src/index.ts"
       ],
-      "@activepieces/piece-heartbeat": [
+      "@wippa/piece-heartbeat": [
         "packages/pieces/community/heartbeat/src/index.ts"
       ],
-      "@activepieces/piece-hedy": [
+      "@wippa/piece-hedy": [
         "packages/pieces/community/hedy/src/index.ts"
       ],
-      "@activepieces/piece-help-scout": [
+      "@wippa/piece-help-scout": [
         "packages/pieces/community/help-scout/src/index.ts"
       ],
-      "@activepieces/piece-heygen": [
+      "@wippa/piece-heygen": [
         "packages/pieces/community/heygen/src/index.ts"
       ],
-      "@activepieces/piece-hootsuite": [
+      "@wippa/piece-hootsuite": [
         "packages/pieces/community/hootsuite/src/index.ts"
       ],
-      "@activepieces/piece-http": ["packages/pieces/core/http/src/index.ts"],
-      "@activepieces/piece-http-oauth2": [
+      "@wippa/piece-http": ["packages/pieces/core/http/src/index.ts"],
+      "@wippa/piece-http-oauth2": [
         "packages/pieces/community/http-oauth2/src/index.ts"
       ],
-      "@activepieces/piece-hubspot": [
+      "@wippa/piece-hubspot": [
         "packages/pieces/community/hubspot/src/index.ts"
       ],
-      "@activepieces/piece-hugging-face": [
+      "@wippa/piece-hugging-face": [
         "packages/pieces/community/hugging-face/src/index.ts"
       ],
-      "@activepieces/piece-hunter": [
+      "@wippa/piece-hunter": [
         "packages/pieces/community/hunter/src/index.ts"
       ],
-      "@activepieces/piece-iloveapi": [
+      "@wippa/piece-iloveapi": [
         "packages/pieces/community/iloveapi/src/index.ts"
       ],
-      "@activepieces/piece-image-ai": [
+      "@wippa/piece-image-ai": [
         "packages/pieces/community/image-ai/src/index.ts"
       ],
-      "@activepieces/piece-image-helper": [
+      "@wippa/piece-image-helper": [
         "packages/pieces/core/image-helper/src/index.ts"
       ],
-      "@activepieces/piece-imap": [
+      "@wippa/piece-imap": [
         "packages/pieces/community/imap/src/index.ts"
       ],
-      "@activepieces/piece-imeetify": [
+      "@wippa/piece-imeetify": [
         "packages/pieces/community/imeetify/src/index.ts"
       ],
-      "@activepieces/piece-insighto-ai": [
+      "@wippa/piece-insighto-ai": [
         "packages/pieces/community/insighto-ai/src/index.ts"
       ],
-      "@activepieces/piece-instagram-business": [
+      "@wippa/piece-instagram-business": [
         "packages/pieces/community/instagram-business/src/index.ts"
       ],
-      "@activepieces/piece-instasent": [
+      "@wippa/piece-instasent": [
         "packages/pieces/community/instasent/src/index.ts"
       ],
-      "@activepieces/piece-intercom": [
+      "@wippa/piece-intercom": [
         "packages/pieces/community/intercom/src/index.ts"
       ],
-      "@activepieces/piece-invoiceninja": [
+      "@wippa/piece-invoiceninja": [
         "packages/pieces/community/invoiceninja/src/index.ts"
       ],
-      "@activepieces/piece-jina-ai": [
+      "@wippa/piece-jina-ai": [
         "packages/pieces/community/jina-ai/src/index.ts"
       ],
-      "@activepieces/piece-jungle-grid": [
+      "@wippa/piece-jungle-grid": [
         "packages/pieces/community/jungle-grid/src/index.ts"
       ],
-      "@activepieces/piece-jira-cloud": [
+      "@wippa/piece-jira-cloud": [
         "packages/pieces/community/jira-cloud/src/index.ts"
       ],
-      "@activepieces/piece-jira-data-center": [
+      "@wippa/piece-jira-data-center": [
         "packages/pieces/community/jira-data-center/src/index.ts"
       ],
-      "@activepieces/piece-jotform": [
+      "@wippa/piece-jotform": [
         "packages/pieces/community/jotform/src/index.ts"
       ],
-      "@activepieces/piece-json": [
+      "@wippa/piece-json": [
         "packages/pieces/community/json/src/index.ts"
       ],
-      "@activepieces/piece-kallabot-ai": [
+      "@wippa/piece-kallabot-ai": [
         "packages/pieces/community/kallabot-ai/src/index.ts"
       ],
-      "@activepieces/piece-kimai": [
+      "@wippa/piece-kimai": [
         "packages/pieces/community/kimai/src/index.ts"
       ],
-      "@activepieces/piece-kizeo-forms": [
+      "@wippa/piece-kizeo-forms": [
         "packages/pieces/community/kizeo-forms/src/index.ts"
       ],
-      "@activepieces/piece-klaviyo": [
+      "@wippa/piece-klaviyo": [
         "packages/pieces/community/klaviyo/src/index.ts"
       ],
-      "@activepieces/piece-klipy": [
+      "@wippa/piece-klipy": [
         "packages/pieces/community/klipy/src/index.ts"
       ],
-      "@activepieces/piece-klenty": [
+      "@wippa/piece-klenty": [
         "packages/pieces/community/klenty/src/index.ts"
       ],
-      "@activepieces/piece-knack": [
+      "@wippa/piece-knack": [
         "packages/pieces/community/knack/src/index.ts"
       ],
-      "@activepieces/piece-ko-fi": [
+      "@wippa/piece-ko-fi": [
         "packages/pieces/community/ko-fi/src/index.ts"
       ],
-      "@activepieces/piece-kustomer": [
+      "@wippa/piece-kustomer": [
         "packages/pieces/community/kustomer/src/index.ts"
       ],
-      "@activepieces/piece-kommo": [
+      "@wippa/piece-kommo": [
         "packages/pieces/community/kommo/src/index.ts"
       ],
-      "@activepieces/piece-krisp-call": [
+      "@wippa/piece-krisp-call": [
         "packages/pieces/community/krisp-call/src/index.ts"
       ],
-      "@activepieces/piece-lead-connector": [
+      "@wippa/piece-lead-connector": [
         "packages/pieces/community/lead-connector/src/index.ts"
       ],
-      "@activepieces/piece-lemlist": [
+      "@wippa/piece-lemlist": [
         "packages/pieces/community/lemlist/src/index.ts"
       ],
-      "@activepieces/piece-line": [
+      "@wippa/piece-line": [
         "packages/pieces/community/line/src/index.ts"
       ],
-      "@activepieces/piece-linear": [
+      "@wippa/piece-linear": [
         "packages/pieces/community/linear/src/index.ts"
       ],
-      "@activepieces/piece-linka": [
+      "@wippa/piece-linka": [
         "packages/pieces/community/linka/src/index.ts"
       ],
-      "@activepieces/piece-linkedin": [
+      "@wippa/piece-linkedin": [
         "packages/pieces/community/linkedin/src/index.ts"
       ],
-      "@activepieces/piece-llmrails": [
+      "@wippa/piece-llmrails": [
         "packages/pieces/community/llmrails/src/index.ts"
       ],
-      "@activepieces/piece-localai": [
+      "@wippa/piece-localai": [
         "packages/pieces/community/localai/src/index.ts"
       ],
-      "@activepieces/piece-lusha": [
+      "@wippa/piece-lusha": [
         "packages/pieces/community/lusha/src/index.ts"
       ],
-      "@activepieces/piece-magical-api": [
+      "@wippa/piece-magical-api": [
         "packages/pieces/community/magical-api/src/index.ts"
       ],
-      "@activepieces/piece-magicslides": [
+      "@wippa/piece-magicslides": [
         "packages/pieces/community/magicslides/src/index.ts"
       ],
-      "@activepieces/piece-mailchain": [
+      "@wippa/piece-mailchain": [
         "packages/pieces/community/mailchain/src/index.ts"
       ],
-      "@activepieces/piece-mailchimp": [
+      "@wippa/piece-mailchimp": [
         "packages/pieces/community/mailchimp/src/index.ts"
       ],
-      "@activepieces/piece-mailgun": [
+      "@wippa/piece-mailgun": [
         "packages/pieces/community/mailgun/src/index.ts"
       ],
-      "@activepieces/piece-mailer-lite": [
+      "@wippa/piece-mailer-lite": [
         "packages/pieces/community/mailer-lite/src/index.ts"
       ],
-      "@activepieces/piece-maileroo": [
+      "@wippa/piece-maileroo": [
         "packages/pieces/community/maileroo/src/index.ts"
       ],
-      "@activepieces/piece-manychat": [
+      "@wippa/piece-manychat": [
         "packages/pieces/community/manychat/src/index.ts"
       ],
-      "@activepieces/piece-mastodon": [
+      "@wippa/piece-mastodon": [
         "packages/pieces/community/mastodon/src/index.ts"
       ],
-      "@activepieces/piece-math-helper": [
+      "@wippa/piece-math-helper": [
         "packages/pieces/core/math-helper/src/index.ts"
       ],
-      "@activepieces/piece-matomo": [
+      "@wippa/piece-matomo": [
         "packages/pieces/community/matomo/src/index.ts"
       ],
-      "@activepieces/piece-matrix": [
+      "@wippa/piece-matrix": [
         "packages/pieces/community/matrix/src/index.ts"
       ],
-      "@activepieces/piece-mattermost": [
+      "@wippa/piece-mattermost": [
         "packages/pieces/community/mattermost/src/index.ts"
       ],
-      "@activepieces/piece-mautic": [
+      "@wippa/piece-mautic": [
         "packages/pieces/community/mautic/src/index.ts"
       ],
-      "@activepieces/piece-mcp": ["packages/pieces/community/mcp/src/index.ts"],
-      "@activepieces/piece-mcp-client": ["packages/pieces/community/mcp-client/src/index.ts"],
-      "@activepieces/piece-medullar": [
+      "@wippa/piece-mcp": ["packages/pieces/community/mcp/src/index.ts"],
+      "@wippa/piece-mcp-client": ["packages/pieces/community/mcp-client/src/index.ts"],
+      "@wippa/piece-medullar": [
         "packages/pieces/community/medullar/src/index.ts"
       ],
-      "@activepieces/piece-mem": ["packages/pieces/community/mem/src/index.ts"],
-      "@activepieces/piece-mempool-space": [
+      "@wippa/piece-mem": ["packages/pieces/community/mem/src/index.ts"],
+      "@wippa/piece-mempool-space": [
         "packages/pieces/community/mempool-space/src/index.ts"
       ],
-      "@activepieces/piece-messagebird": [
+      "@wippa/piece-messagebird": [
         "packages/pieces/community/messagebird/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-365-people": [
+      "@wippa/piece-microsoft-365-people": [
         "packages/pieces/community/microsoft-365-people/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-365-planner": [
+      "@wippa/piece-microsoft-365-planner": [
         "packages/pieces/community/microsoft-365-planner/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-excel-365": [
+      "@wippa/piece-microsoft-excel-365": [
         "packages/pieces/community/microsoft-excel-365/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-onedrive": [
+      "@wippa/piece-microsoft-onedrive": [
         "packages/pieces/community/microsoft-onedrive/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-onenote": [
+      "@wippa/piece-microsoft-onenote": [
         "packages/pieces/community/microsoft-onenote/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-outlook": [
+      "@wippa/piece-microsoft-outlook": [
         "packages/pieces/community/microsoft-outlook/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-outlook-calendar": [
+      "@wippa/piece-microsoft-outlook-calendar": [
         "packages/pieces/community/microsoft-outlook-calendar/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-power-bi": [
+      "@wippa/piece-microsoft-power-bi": [
         "packages/pieces/community/microsoft-power-bi/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-teams": [
+      "@wippa/piece-microsoft-teams": [
         "packages/pieces/community/microsoft-teams/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-teams-bot": [
+      "@wippa/piece-microsoft-teams-bot": [
         "packages/pieces/community/microsoft-teams-bot/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-todo": [
+      "@wippa/piece-microsoft-todo": [
         "packages/pieces/community/microsoft-todo/src/index.ts"
       ],
-      "@activepieces/piece-mindee": [
+      "@wippa/piece-mindee": [
         "packages/pieces/community/mindee/src/index.ts"
       ],
-      "@activepieces/piece-missive": [
+      "@wippa/piece-missive": [
         "packages/pieces/community/missive/src/index.ts"
       ],
-      "@activepieces/piece-mistral-ai": [
+      "@wippa/piece-mistral-ai": [
         "packages/pieces/community/mistral-ai/src/index.ts"
       ],
-      "@activepieces/piece-mixmax": [
+      "@wippa/piece-mixmax": [
         "packages/pieces/community/mixmax/src/index.ts"
       ],
-      "@activepieces/piece-mixpanel": [
+      "@wippa/piece-mixpanel": [
         "packages/pieces/community/mixpanel/src/index.ts"
       ],
-      "@activepieces/piece-mollie": [
+      "@wippa/piece-mollie": [
         "packages/pieces/community/mollie/src/index.ts"
       ],
-      "@activepieces/piece-monday": [
+      "@wippa/piece-monday": [
         "packages/pieces/community/monday/src/index.ts"
       ],
-      "@activepieces/piece-mongodb": [
+      "@wippa/piece-mongodb": [
         "packages/pieces/community/mongodb/src/index.ts"
       ],
-      "@activepieces/piece-motion": [
+      "@wippa/piece-motion": [
         "packages/pieces/community/motion/src/index.ts"
       ],
-      "@activepieces/piece-moxie-crm": [
+      "@wippa/piece-moxie-crm": [
         "packages/pieces/community/moxie-crm/src/index.ts"
       ],
-      "@activepieces/piece-muna-ai": [
+      "@wippa/piece-muna-ai": [
         "packages/pieces/community/muna-ai/src/index.ts"
       ],
-      "@activepieces/piece-murf-api": [
+      "@wippa/piece-murf-api": [
         "packages/pieces/community/murf-api/src/index.ts"
       ],
-      "@activepieces/piece-mysendingbox": [
+      "@wippa/piece-mysendingbox": [
         "packages/pieces/community/mysendingbox/src/index.ts"
       ],
-      "@activepieces/piece-mysql": [
+      "@wippa/piece-mysql": [
         "packages/pieces/community/mysql/src/index.ts"
       ],
-      "@activepieces/piece-netlify": [
+      "@wippa/piece-netlify": [
         "packages/pieces/community/netlify/src/index.ts"
       ],
-      "@activepieces/piece-netsuite": [
+      "@wippa/piece-netsuite": [
         "packages/pieces/community/netsuite/src/index.ts"
       ],
-      "@activepieces/piece-nifty": [
+      "@wippa/piece-nifty": [
         "packages/pieces/community/nifty/src/index.ts"
       ],
-      "@activepieces/piece-ninjapipe": [
+      "@wippa/piece-ninjapipe": [
         "packages/pieces/community/ninjapipe/src/index.ts"
       ],
-      "@activepieces/piece-ninox": [
+      "@wippa/piece-ninox": [
         "packages/pieces/community/ninox/src/index.ts"
       ],
-      "@activepieces/piece-nocodb": [
+      "@wippa/piece-nocodb": [
         "packages/pieces/community/nocodb/src/index.ts"
       ],
-      "@activepieces/piece-notion": [
+      "@wippa/piece-notion": [
         "packages/pieces/community/notion/src/index.ts"
       ],
-      "@activepieces/piece-ntfy": [
+      "@wippa/piece-ntfy": [
         "packages/pieces/community/ntfy/src/index.ts"
       ],
-      "@activepieces/piece-nuelink": [
+      "@wippa/piece-nuelink": [
         "packages/pieces/community/nuelink/src/index.ts"
       ],
-      "@activepieces/piece-odoo": [
+      "@wippa/piece-odoo": [
         "packages/pieces/community/odoo/src/index.ts"
       ],
-      "@activepieces/piece-okta": [
+      "@wippa/piece-okta": [
         "packages/pieces/community/okta/src/index.ts"
       ],
-      "@activepieces/piece-omnisend": [
+      "@wippa/piece-omnisend": [
         "packages/pieces/community/omnisend/src/index.ts"
       ],
-      "@activepieces/piece-onfleet": [
+      "@wippa/piece-onfleet": [
         "packages/pieces/community/onfleet/src/index.ts"
       ],
-      "@activepieces/piece-outseta": [
+      "@wippa/piece-outseta": [
         "packages/pieces/community/outseta/src/index.ts"
       ],
-      "@activepieces/piece-open-phone": [
+      "@wippa/piece-open-phone": [
         "packages/pieces/community/open-phone/src/index.ts"
       ],
-      "@activepieces/piece-open-router": [
+      "@wippa/piece-open-router": [
         "packages/pieces/community/open-router/src/index.ts"
       ],
-      "@activepieces/piece-openai": [
+      "@wippa/piece-openai": [
         "packages/pieces/community/openai/src/index.ts"
       ],
-      "@activepieces/piece-oracle-fusion-cloud-erp": [
+      "@wippa/piece-oracle-fusion-cloud-erp": [
         "packages/pieces/community/oracle-fusion-cloud-erp/src/index.ts"
       ],
-      "@activepieces/piece-paddle": [
+      "@wippa/piece-paddle": [
         "packages/pieces/community/paddle/src/index.ts"
       ],
-      "@activepieces/piece-pandadoc": [
+      "@wippa/piece-pandadoc": [
         "packages/pieces/community/pandadoc/src/index.ts"
       ],
-      "@activepieces/piece-paperform": [
+      "@wippa/piece-paperform": [
         "packages/pieces/community/paperform/src/index.ts"
       ],
-      "@activepieces/piece-pagerduty": [
+      "@wippa/piece-pagerduty": [
         "packages/pieces/community/pagerduty/src/index.ts"
       ],
-      "@activepieces/piece-parallel": [
+      "@wippa/piece-parallel": [
         "packages/pieces/community/parallel/src/index.ts"
       ],
-      "@activepieces/piece-parseur": [
+      "@wippa/piece-parseur": [
         "packages/pieces/community/parseur/src/index.ts"
       ],
-      "@activepieces/piece-pastebin": [
+      "@wippa/piece-pastebin": [
         "packages/pieces/community/pastebin/src/index.ts"
       ],
-      "@activepieces/piece-pastefy": [
+      "@wippa/piece-pastefy": [
         "packages/pieces/community/pastefy/src/index.ts"
       ],
-      "@activepieces/piece-pdf": ["packages/pieces/core/pdf/src/index.ts"],
-      "@activepieces/piece-pdf-co": [
+      "@wippa/piece-pdf": ["packages/pieces/core/pdf/src/index.ts"],
+      "@wippa/piece-pdf-co": [
         "packages/pieces/community/pdf-co/src/index.ts"
       ],
-      "@activepieces/piece-pdf4me": [
+      "@wippa/piece-pdf4me": [
         "packages/pieces/community/pdf4me/src/index.ts"
       ],
-      "@activepieces/piece-pdfmonkey": [
+      "@wippa/piece-pdfmonkey": [
         "packages/pieces/community/pdfmonkey/src/index.ts"
       ],
-      "@activepieces/piece-peekshot": [
+      "@wippa/piece-peekshot": [
         "packages/pieces/community/peekshot/src/index.ts"
       ],
-      "@activepieces/piece-pendo": [
+      "@wippa/piece-pendo": [
         "packages/pieces/community/pendo/src/index.ts"
       ],
-      "@activepieces/piece-perplexity-ai": [
+      "@wippa/piece-perplexity-ai": [
         "packages/pieces/community/perplexity-ai/src/index.ts"
       ],
-      "@activepieces/piece-personal-ai": [
+      "@wippa/piece-personal-ai": [
         "packages/pieces/community/personal-ai/src/index.ts"
       ],
-      "@activepieces/piece-photoroom": [
+      "@wippa/piece-photoroom": [
         "packages/pieces/community/photoroom/src/index.ts"
       ],
-      "@activepieces/piece-pinecone": [
+      "@wippa/piece-pinecone": [
         "packages/pieces/community/pinecone/src/index.ts"
       ],
-      "@activepieces/piece-pinterest": [
+      "@wippa/piece-pinterest": [
         "packages/pieces/community/pinterest/src/index.ts"
       ],
-      "@activepieces/piece-pipedrive": [
+      "@wippa/piece-pipedrive": [
         "packages/pieces/community/pipedrive/src/index.ts"
       ],
-      "@activepieces/piece-placid": [
+      "@wippa/piece-placid": [
         "packages/pieces/community/placid/src/index.ts"
       ],
-      "@activepieces/piece-podio": [
+      "@wippa/piece-podio": [
         "packages/pieces/community/podio/src/index.ts"
       ],
-      "@activepieces/piece-polydoc": [
+      "@wippa/piece-polydoc": [
         "packages/pieces/community/polydoc/src/index.ts"
       ],
-      "@activepieces/piece-poper": [
+      "@wippa/piece-poper": [
         "packages/pieces/community/poper/src/index.ts"
       ],
-      "@activepieces/piece-postgres": [
+      "@wippa/piece-postgres": [
         "packages/pieces/community/postgres/src/index.ts"
       ],
-      "@activepieces/piece-posthog": [
+      "@wippa/piece-posthog": [
         "packages/pieces/community/posthog/src/index.ts"
       ],
-      "@activepieces/piece-postiz": [
+      "@wippa/piece-postiz": [
         "packages/pieces/community/postiz/src/index.ts"
       ],
-      "@activepieces/piece-postmark": [
+      "@wippa/piece-postmark": [
         "packages/pieces/community/postmark/src/index.ts"
       ],
-      "@activepieces/piece-predict-leads": [
+      "@wippa/piece-predict-leads": [
         "packages/pieces/community/predict-leads/src/index.ts"
       ],
-      "@activepieces/piece-productboard": [
+      "@wippa/piece-productboard": [
         "packages/pieces/community/productboard/src/index.ts"
       ],
-      "@activepieces/piece-produktly": [
+      "@wippa/piece-produktly": [
         "packages/pieces/community/produktly/src/index.ts"
       ],
-      "@activepieces/piece-promotekit": [
+      "@wippa/piece-promotekit": [
         "packages/pieces/community/promotekit/src/index.ts"
       ],
-      "@activepieces/piece-prompthub": [
+      "@wippa/piece-prompthub": [
         "packages/pieces/community/prompthub/src/index.ts"
       ],
-      "@activepieces/piece-provenexpert": [
+      "@wippa/piece-provenexpert": [
         "packages/pieces/community/provenexpert/src/index.ts"
       ],
-      "@activepieces/piece-pubrio": [
+      "@wippa/piece-pubrio": [
         "packages/pieces/community/pubrio/src/index.ts"
       ],
-      "@activepieces/piece-pushover": [
+      "@wippa/piece-pushover": [
         "packages/pieces/community/pushover/src/index.ts"
       ],
-      "@activepieces/piece-pylon": [
+      "@wippa/piece-pylon": [
         "packages/pieces/community/pylon/src/index.ts"
       ],
-      "@activepieces/piece-qawafel": [
+      "@wippa/piece-qawafel": [
         "packages/pieces/community/qawafel/src/index.ts"
       ],
-      "@activepieces/piece-qdrant": [
+      "@wippa/piece-qdrant": [
         "packages/pieces/community/qdrant/src/index.ts"
       ],
-      "@activepieces/piece-qrcode": [
+      "@wippa/piece-qrcode": [
         "packages/pieces/core/qrcode/src/index.ts"
       ],
-      "@activepieces/piece-queue": [
+      "@wippa/piece-queue": [
         "packages/pieces/community/queue/src/index.ts"
       ],
-      "@activepieces/piece-quickbooks": [
+      "@wippa/piece-quickbooks": [
         "packages/pieces/community/quickbooks/src/index.ts"
       ],
-      "@activepieces/piece-quickzu": [
+      "@wippa/piece-quickzu": [
         "packages/pieces/community/quickzu/src/index.ts"
       ],
-      "@activepieces/piece-quizell": [
+      "@wippa/piece-quizell": [
         "packages/pieces/community/quizell/src/index.ts"
       ],
-      "@activepieces/piece-rabbitmq": [
+      "@wippa/piece-rabbitmq": [
         "packages/pieces/community/rabbitmq/src/index.ts"
       ],
-      "@activepieces/piece-raindrop": [
+      "@wippa/piece-raindrop": [
         "packages/pieces/community/raindrop/src/index.ts"
       ],
-      "@activepieces/piece-razorpay": [
+      "@wippa/piece-razorpay": [
         "packages/pieces/community/razorpay/src/index.ts"
       ],
-      "@activepieces/piece-reachinbox": [
+      "@wippa/piece-reachinbox": [
         "packages/pieces/community/reachinbox/src/index.ts"
       ],
-      "@activepieces/piece-read-file": [
+      "@wippa/piece-read-file": [
         "packages/pieces/read-file/src/index.ts"
       ],
-      "@activepieces/piece-readwise": [
+      "@wippa/piece-readwise": [
         "packages/pieces/community/readwise/src/index.ts"
       ],
-      "@activepieces/piece-reddit": [
+      "@wippa/piece-reddit": [
         "packages/pieces/community/reddit/src/index.ts"
       ],
-      "@activepieces/piece-rendex": [
+      "@wippa/piece-rendex": [
         "packages/pieces/community/rendex/src/index.ts"
       ],
-      "@activepieces/piece-reoon-verifier": [
+      "@wippa/piece-reoon-verifier": [
         "packages/pieces/community/reoon-verifier/src/index.ts"
       ],
-      "@activepieces/piece-resend": [
+      "@wippa/piece-resend": [
         "packages/pieces/community/resend/src/index.ts"
       ],
-      "@activepieces/piece-respaid": [
+      "@wippa/piece-respaid": [
         "packages/pieces/community/respaid/src/index.ts"
       ],
-      "@activepieces/piece-respond-io": [
+      "@wippa/piece-respond-io": [
         "packages/pieces/community/respond-io/src/index.ts"
       ],
-      "@activepieces/piece-reply-io": [
+      "@wippa/piece-reply-io": [
         "packages/pieces/community/reply-io/src/index.ts"
       ],
-      "@activepieces/piece-retable": [
+      "@wippa/piece-retable": [
         "packages/pieces/community/retable/src/index.ts"
       ],
-      "@activepieces/piece-retell-ai": [
+      "@wippa/piece-retell-ai": [
         "packages/pieces/community/retell-ai/src/index.ts"
       ],
-      "@activepieces/piece-retune": [
+      "@wippa/piece-retune": [
         "packages/pieces/community/retune/src/index.ts"
       ],
-      "@activepieces/piece-returning-ai": [
+      "@wippa/piece-returning-ai": [
         "packages/pieces/community/returning-ai/src/index.ts"
       ],
-      "@activepieces/piece-recurly": [
+      "@wippa/piece-recurly": [
         "packages/pieces/community/recurly/src/index.ts"
       ],
-      "@activepieces/piece-robolly": [
+      "@wippa/piece-robolly": [
         "packages/pieces/community/robolly/src/index.ts"
       ],
-      "@activepieces/piece-rss": ["packages/pieces/community/rss/src/index.ts"],
-      "@activepieces/piece-runway": [
+      "@wippa/piece-rss": ["packages/pieces/community/rss/src/index.ts"],
+      "@wippa/piece-runway": [
         "packages/pieces/community/runway/src/index.ts"
       ],
-      "@activepieces/piece-saastic": [
+      "@wippa/piece-saastic": [
         "packages/pieces/community/saastic/src/index.ts"
       ],
-      "@activepieces/piece-saleor": [
+      "@wippa/piece-saleor": [
         "packages/pieces/community/saleor/src/index.ts"
       ],
-      "@activepieces/piece-salesforce": [
+      "@wippa/piece-salesforce": [
         "packages/pieces/community/salesforce/src/index.ts"
       ],
-      "@activepieces/piece-salesloft": [
+      "@wippa/piece-salesloft": [
         "packages/pieces/community/salesloft/src/index.ts"
       ],
-      "@activepieces/piece-savvycal": [
+      "@wippa/piece-savvycal": [
         "packages/pieces/community/savvycal/src/index.ts"
       ],
-      "@activepieces/piece-scenario": [
+      "@wippa/piece-scenario": [
         "packages/pieces/community/scenario/src/index.ts"
       ],
-      "@activepieces/piece-schedule": [
+      "@wippa/piece-schedule": [
         "packages/pieces/core/schedule/src/index.ts"
       ],
-      "@activepieces/piece-scrapegrapghai": [
+      "@wippa/piece-scrapegrapghai": [
         "packages/pieces/community/scrapegrapghai/src/index.ts"
       ],
-      "@activepieces/piece-scrapeless": [
+      "@wippa/piece-scrapeless": [
         "packages/pieces/community/scrapeless/src/index.ts"
       ],
-      "@activepieces/piece-segment": [
+      "@wippa/piece-segment": [
         "packages/pieces/community/segment/src/index.ts"
       ],
-      "@activepieces/piece-sender": [
+      "@wippa/piece-sender": [
         "packages/pieces/community/sender/src/index.ts"
       ],
-      "@activepieces/piece-sendr": [
+      "@wippa/piece-sendr": [
         "packages/pieces/community/sendr/src/index.ts"
       ],
-      "@activepieces/piece-sendfox": [
+      "@wippa/piece-sendfox": [
         "packages/pieces/community/sendfox/src/index.ts"
       ],
-      "@activepieces/piece-sendgrid": [
+      "@wippa/piece-sendgrid": [
         "packages/pieces/community/sendgrid/src/index.ts"
       ],
-      "@activepieces/piece-sendinblue": [
+      "@wippa/piece-sendinblue": [
         "packages/pieces/community/sendinblue/src/index.ts"
       ],
-      "@activepieces/piece-sendpulse": [
+      "@wippa/piece-sendpulse": [
         "packages/pieces/community/sendpulse/src/index.ts"
       ],
-      "@activepieces/piece-sendy": [
+      "@wippa/piece-sendy": [
         "packages/pieces/community/sendy/src/index.ts"
       ],
-      "@activepieces/piece-senja": [
+      "@wippa/piece-senja": [
         "packages/pieces/community/senja/src/index.ts"
       ],
-      "@activepieces/piece-serp-api": [
+      "@wippa/piece-serp-api": [
         "packages/pieces/community/serp-api/src/index.ts"
       ],
-      "@activepieces/piece-serpstat": [
+      "@wippa/piece-serpstat": [
         "packages/pieces/community/serpstat/src/index.ts"
       ],
-      "@activepieces/piece-sessions-us": [
+      "@wippa/piece-sessions-us": [
         "packages/pieces/community/sessions-us/src/index.ts"
       ],
-      "@activepieces/piece-seven": [
+      "@wippa/piece-seven": [
         "packages/pieces/community/seven/src/index.ts"
       ],
-      "@activepieces/piece-service-now": [
+      "@wippa/piece-service-now": [
         "packages/pieces/community/service-now/src/index.ts"
       ],
-      "@activepieces/piece-sftp": ["packages/pieces/core/sftp/src/index.ts"],
-      "@activepieces/piece-shopify": [
+      "@wippa/piece-sftp": ["packages/pieces/core/sftp/src/index.ts"],
+      "@wippa/piece-shopify": [
         "packages/pieces/community/shopify/src/index.ts"
       ],
-      "@activepieces/piece-short-io": [
+      "@wippa/piece-short-io": [
         "packages/pieces/community/short-io/src/index.ts"
       ],
-      "@activepieces/piece-simplepdf": [
+      "@wippa/piece-simplepdf": [
         "packages/pieces/community/simplepdf/src/index.ts"
       ],
-      "@activepieces/piece-simpliroute": [
+      "@wippa/piece-simpliroute": [
         "packages/pieces/community/simpliroute/src/index.ts"
       ],
-      "@activepieces/piece-simplybookme": [
+      "@wippa/piece-simplybookme": [
         "packages/pieces/community/simplybookme/src/index.ts"
       ],
-      "@activepieces/piece-simplyprint": [
+      "@wippa/piece-simplyprint": [
         "packages/pieces/community/simplyprint/src/index.ts"
       ],
-      "@activepieces/piece-sitespeakai": [
+      "@wippa/piece-sitespeakai": [
         "packages/pieces/community/sitespeakai/src/index.ts"
       ],
-      "@activepieces/piece-skyvern": [
+      "@wippa/piece-skyvern": [
         "packages/pieces/community/skyvern/src/index.ts"
       ],
-      "@activepieces/piece-slack": [
+      "@wippa/piece-slack": [
         "packages/pieces/community/slack/src/index.ts"
       ],
-      "@activepieces/piece-slashed": [
+      "@wippa/piece-slashed": [
         "packages/pieces/community/slashed/src/index.ts"
       ],
-      "@activepieces/piece-slidespeak": [
+      "@wippa/piece-slidespeak": [
         "packages/pieces/community/slidespeak/src/index.ts"
       ],
-      "@activepieces/piece-slite": [
+      "@wippa/piece-slite": [
         "packages/pieces/community/slite/src/index.ts"
       ],
-      "@activepieces/piece-smaily": [
+      "@wippa/piece-smaily": [
         "packages/pieces/community/smaily/src/index.ts"
       ],
-      "@activepieces/piece-smartsheet": [
+      "@wippa/piece-smartsheet": [
         "packages/pieces/community/smartsheet/src/index.ts"
       ],
-      "@activepieces/piece-smartsuite": [
+      "@wippa/piece-smartsuite": [
         "packages/pieces/community/smartsuite/src/index.ts"
       ],
-      "@activepieces/piece-smoove": [
+      "@wippa/piece-smoove": [
         "packages/pieces/community/smoove/src/index.ts"
       ],
-      "@activepieces/piece-smtp": ["packages/pieces/core/smtp/src/index.ts"],
-      "@activepieces/piece-soap": [
+      "@wippa/piece-smtp": ["packages/pieces/core/smtp/src/index.ts"],
+      "@wippa/piece-soap": [
         "packages/pieces/community/soap/src/index.ts"
       ],
-      "@activepieces/piece-socialkit": [
+      "@wippa/piece-socialkit": [
         "packages/pieces/community/socialkit/src/index.ts"
       ],
-      "@activepieces/piece-softr": [
+      "@wippa/piece-softr": [
         "packages/pieces/community/softr/src/index.ts"
       ],
-      "@activepieces/piece-sofya": [
+      "@wippa/piece-sofya": [
         "packages/pieces/community/sofya/src/index.ts"
       ],
-      "@activepieces/piece-sperse": [
+      "@wippa/piece-sperse": [
         "packages/pieces/community/sperse/src/index.ts"
       ],
-      "@activepieces/piece-spotify": [
+      "@wippa/piece-spotify": [
         "packages/pieces/community/spotify/src/index.ts"
       ],
-      "@activepieces/piece-square": [
+      "@wippa/piece-square": [
         "packages/pieces/community/square/src/index.ts"
       ],
-      "@activepieces/piece-stability-ai": [
+      "@wippa/piece-stability-ai": [
         "packages/pieces/community/stability-ai/src/index.ts"
       ],
-      "@activepieces/piece-modelslab": [
+      "@wippa/piece-modelslab": [
         "packages/pieces/community/modelslab/src/index.ts"
       ],
-      "@activepieces/piece-stable-diffusion-webui": [
+      "@wippa/piece-stable-diffusion-webui": [
         "packages/pieces/community/stable-diffusion-webui/src/index.ts"
       ],
-      "@activepieces/piece-store": ["packages/pieces/core/store/src/index.ts"],
-      "@activepieces/piece-straico": [
+      "@wippa/piece-store": ["packages/pieces/core/store/src/index.ts"],
+      "@wippa/piece-straico": [
         "packages/pieces/community/straico/src/index.ts"
       ],
-      "@activepieces/piece-streak": [
+      "@wippa/piece-streak": [
         "packages/pieces/community/streak/src/index.ts"
       ],
-      "@activepieces/piece-stripe": [
+      "@wippa/piece-stripe": [
         "packages/pieces/community/stripe/src/index.ts"
       ],
-      "@activepieces/piece-subflows": [
+      "@wippa/piece-subflows": [
         "packages/pieces/core/subflows/src/index.ts"
       ],
-      "@activepieces/piece-supabase": [
+      "@wippa/piece-supabase": [
         "packages/pieces/community/supabase/src/index.ts"
       ],
-      "@activepieces/piece-supadata": [
+      "@wippa/piece-supadata": [
         "packages/pieces/community/supadata/src/index.ts"
       ],
-      "@activepieces/piece-surrealdb": [
+      "@wippa/piece-surrealdb": [
         "packages/pieces/community/surrealdb/src/index.ts"
       ],
-      "@activepieces/piece-surveymonkey": [
+      "@wippa/piece-surveymonkey": [
         "packages/pieces/community/surveymonkey/src/index.ts"
       ],
-      "@activepieces/piece-systeme-io": [
+      "@wippa/piece-systeme-io": [
         "packages/pieces/community/systeme-io/src/index.ts"
       ],
-      "@activepieces/piece-tables": [
+      "@wippa/piece-tables": [
         "packages/pieces/core/tables/src/index.ts"
       ],
-      "@activepieces/piece-tags": ["packages/pieces/core/tags/src/index.ts"],
-      "@activepieces/piece-talkable": [
+      "@wippa/piece-tags": ["packages/pieces/core/tags/src/index.ts"],
+      "@wippa/piece-talkable": [
         "packages/pieces/community/talkable/src/index.ts"
       ],
-      "@activepieces/piece-tally": [
+      "@wippa/piece-tally": [
         "packages/pieces/community/tally/src/index.ts"
       ],
-      "@activepieces/piece-tapfiliate": [
+      "@wippa/piece-tapfiliate": [
         "packages/pieces/community/tapfiliate/src/index.ts"
       ],
-      "@activepieces/piece-tarvent": [
+      "@wippa/piece-tarvent": [
         "packages/pieces/community/tarvent/src/index.ts"
       ],
-      "@activepieces/piece-taskade": [
+      "@wippa/piece-taskade": [
         "packages/pieces/community/taskade/src/index.ts"
       ],
-      "@activepieces/piece-tavily": [
+      "@wippa/piece-tavily": [
         "packages/pieces/community/tavily/src/index.ts"
       ],
-      "@activepieces/piece-teamhood": [
+      "@wippa/piece-teamhood": [
         "packages/pieces/community/teamhood/src/index.ts"
       ],
-      "@activepieces/piece-teamleader": [
+      "@wippa/piece-teamleader": [
         "packages/pieces/community/teamleader/src/index.ts"
       ],
-      "@activepieces/piece-teamwork": [
+      "@wippa/piece-teamwork": [
         "packages/pieces/community/teamwork/src/index.ts"
       ],
-      "@activepieces/piece-telegram-bot": [
+      "@wippa/piece-telegram-bot": [
         "packages/pieces/community/telegram-bot/src/index.ts"
       ],
-      "@activepieces/piece-telnyx": [
+      "@wippa/piece-telnyx": [
         "packages/pieces/community/telnyx/src/index.ts"
       ],
-      "@activepieces/piece-text-ai": [
+      "@wippa/piece-text-ai": [
         "packages/pieces/community/text-ai/src/index.ts"
       ],
-      "@activepieces/piece-text-helper": [
+      "@wippa/piece-text-helper": [
         "packages/pieces/core/text-helper/src/index.ts"
       ],
-      "@activepieces/piece-textcortex-ai": [
+      "@wippa/piece-textcortex-ai": [
         "packages/pieces/community/textcortex-ai/src/index.ts"
       ],
-      "@activepieces/piece-thankster": [
+      "@wippa/piece-thankster": [
         "packages/pieces/community/thankster/src/index.ts"
       ],
-      "@activepieces/piece-ticktick": [
+      "@wippa/piece-ticktick": [
         "packages/pieces/community/ticktick/src/index.ts"
       ],
-      "@activepieces/piece-tidycal": [
+      "@wippa/piece-tidycal": [
         "packages/pieces/community/tidycal/src/index.ts"
       ],
-      "@activepieces/piece-timelines-ai": [
+      "@wippa/piece-timelines-ai": [
         "packages/pieces/community/timelines-ai/src/index.ts"
       ],
-      "@activepieces/piece-todoist": [
+      "@wippa/piece-todoist": [
         "packages/pieces/community/todoist/src/index.ts"
       ],
-      "@activepieces/piece-toggl-track": [
+      "@wippa/piece-toggl-track": [
         "packages/pieces/community/toggl-track/src/index.ts"
       ],
-      "@activepieces/piece-totalcms": [
+      "@wippa/piece-totalcms": [
         "packages/pieces/community/totalcms/src/index.ts"
       ],
-      "@activepieces/piece-trello": [
+      "@wippa/piece-trello": [
         "packages/pieces/community/trello/src/index.ts"
       ],
-      "@activepieces/piece-truelayer": [
+      "@wippa/piece-truelayer": [
         "packages/pieces/community/truelayer/src/index.ts"
       ],
-      "@activepieces/piece-trust": [
+      "@wippa/piece-trust": [
         "packages/pieces/community/trust/src/index.ts"
       ],
-      "@activepieces/piece-twilio": [
+      "@wippa/piece-twilio": [
         "packages/pieces/community/twilio/src/index.ts"
       ],
-      "@activepieces/piece-typefully": [
+      "@wippa/piece-typefully": [
         "packages/pieces/community/typefully/src/index.ts"
       ],
-      "@activepieces/piece-twin-labs": [
+      "@wippa/piece-twin-labs": [
         "packages/pieces/community/twin-labs/src/index.ts"
       ],
-      "@activepieces/piece-twitter": [
+      "@wippa/piece-twitter": [
         "packages/pieces/community/twitter/src/index.ts"
       ],
-      "@activepieces/piece-twenty": [
+      "@wippa/piece-twenty": [
         "packages/pieces/community/twenty/src/index.ts"
       ],
-      "@activepieces/piece-typeform": [
+      "@wippa/piece-typeform": [
         "packages/pieces/community/typeform/src/index.ts"
       ],
-      "@activepieces/piece-umami": [
+      "@wippa/piece-umami": [
         "packages/pieces/community/umami/src/index.ts"
       ],
-      "@activepieces/piece-upgradechat": [
+      "@wippa/piece-upgradechat": [
         "packages/pieces/community/upgradechat/src/index.ts"
       ],
-      "@activepieces/piece-uptimerobot": [
+      "@wippa/piece-uptimerobot": [
         "packages/pieces/community/uptimerobot/src/index.ts"
       ],
-      "@activepieces/piece-useinbox": [
+      "@wippa/piece-useinbox": [
         "packages/pieces/community/useinbox/src/index.ts"
       ],
-      "@activepieces/piece-utility-ai": [
+      "@wippa/piece-utility-ai": [
         "packages/pieces/community/utility-ai/src/index.ts"
       ],
-      "@activepieces/piece-uxsniff": [
+      "@wippa/piece-uxsniff": [
         "packages/pieces/community/uxsniff/src/index.ts"
       ],
-      "@activepieces/piece-vadoo-ai": [
+      "@wippa/piece-vadoo-ai": [
         "packages/pieces/community/vadoo-ai/src/index.ts"
       ],
-      "@activepieces/piece-vbout": [
+      "@wippa/piece-vbout": [
         "packages/pieces/community/vbout/src/index.ts"
       ],
-      "@activepieces/piece-video-ai": [
+      "@wippa/piece-video-ai": [
         "packages/pieces/community/video-ai/src/index.ts"
       ],
-      "@activepieces/piece-village": [
+      "@wippa/piece-village": [
         "packages/pieces/community/village/src/index.ts"
       ],
-      "@activepieces/piece-vimeo": [
+      "@wippa/piece-vimeo": [
         "packages/pieces/community/vimeo/src/index.ts"
       ],
-      "@activepieces/piece-vlm-run": [
+      "@wippa/piece-vlm-run": [
         "packages/pieces/community/vlm-run/src/index.ts"
       ],
-      "@activepieces/piece-vtex": [
+      "@wippa/piece-vtex": [
         "packages/pieces/community/vtex/src/index.ts"
       ],
-      "@activepieces/piece-vtiger": [
+      "@wippa/piece-vtiger": [
         "packages/pieces/community/vtiger/src/index.ts"
       ],
-      "@activepieces/piece-wafeq": [
+      "@wippa/piece-wafeq": [
         "packages/pieces/community/wafeq/src/index.ts"
       ],
-      "@activepieces/piece-wealthbox": [
+      "@wippa/piece-wealthbox": [
         "packages/pieces/community/wealthbox/src/index.ts"
       ],
-      "@activepieces/piece-webflow": [
+      "@wippa/piece-webflow": [
         "packages/pieces/community/webflow/src/index.ts"
       ],
-      "@activepieces/piece-webhook": [
+      "@wippa/piece-webhook": [
         "packages/pieces/core/webhook/src/index.ts"
       ],
-      "@activepieces/piece-webling": [
+      "@wippa/piece-webling": [
         "packages/pieces/community/webling/src/index.ts"
       ],
-      "@activepieces/piece-webscraping-ai": [
+      "@wippa/piece-webscraping-ai": [
         "packages/pieces/community/webscraping-ai/src/index.ts"
       ],
-      "@activepieces/piece-wedof": [
+      "@wippa/piece-wedof": [
         "packages/pieces/community/wedof/src/index.ts"
       ],
-      "@activepieces/piece-weekdone": [
+      "@wippa/piece-weekdone": [
         "packages/pieces/community/weekdone/src/index.ts"
       ],
-      "@activepieces/piece-what-converts": [
+      "@wippa/piece-what-converts": [
         "packages/pieces/community/what-converts/src/index.ts"
       ],
-      "@activepieces/piece-whatsable": [
+      "@wippa/piece-whatsable": [
         "packages/pieces/community/whatsable/src/index.ts"
       ],
-      "@activepieces/piece-whatsapp": [
+      "@wippa/piece-whatsapp": [
         "packages/pieces/community/whatsapp/src/index.ts"
       ],
-      "@activepieces/piece-whatsscale": [
+      "@wippa/piece-whatsscale": [
         "packages/pieces/community/whatsscale/src/index.ts"
       ],
-      "@activepieces/piece-wistia": [
+      "@wippa/piece-wistia": [
         "packages/pieces/community/wistia/src/index.ts"
       ],
-      "@activepieces/piece-wonderchat": [
+      "@wippa/piece-wonderchat": [
         "packages/pieces/community/wonderchat/src/index.ts"
       ],
-      "@activepieces/piece-woocommerce": [
+      "@wippa/piece-woocommerce": [
         "packages/pieces/community/woocommerce/src/index.ts"
       ],
-      "@activepieces/piece-wootric": [
+      "@wippa/piece-wootric": [
         "packages/pieces/community/wootric/src/index.ts"
       ],
-      "@activepieces/piece-wordpress": [
+      "@wippa/piece-wordpress": [
         "packages/pieces/community/wordpress/src/index.ts"
       ],
-      "@activepieces/piece-workable": [
+      "@wippa/piece-workable": [
         "packages/pieces/community/workable/src/index.ts"
       ],
-      "@activepieces/piece-workday": [
+      "@wippa/piece-workday": [
         "packages/pieces/community/workday/src/index.ts"
       ],
-      "@activepieces/piece-wrike": [
+      "@wippa/piece-wrike": [
         "packages/pieces/community/wrike/src/index.ts"
       ],
-      "@activepieces/piece-wufoo": [
+      "@wippa/piece-wufoo": [
         "packages/pieces/community/wufoo/src/index.ts"
       ],
-      "@activepieces/piece-xero": [
+      "@wippa/piece-xero": [
         "packages/pieces/community/xero/src/index.ts"
       ],
-      "@activepieces/piece-xquik": [
+      "@wippa/piece-xquik": [
         "packages/pieces/community/xquik/src/index.ts"
       ],
-      "@activepieces/piece-xml": ["packages/pieces/core/xml/src/index.ts"],
-      "@activepieces/piece-youtube": [
+      "@wippa/piece-xml": ["packages/pieces/core/xml/src/index.ts"],
+      "@wippa/piece-youtube": [
         "packages/pieces/community/youtube/src/index.ts"
       ],
-      "@activepieces/piece-youtrack": [
+      "@wippa/piece-youtrack": [
         "packages/pieces/community/youtrack/src/index.ts"
       ],
-      "@activepieces/piece-zagomail": [
+      "@wippa/piece-zagomail": [
         "packages/pieces/community/zagomail/src/index.ts"
       ],
-      "@activepieces/piece-zendesk": [
+      "@wippa/piece-zendesk": [
         "packages/pieces/community/zendesk/src/index.ts"
       ],
-      "@activepieces/piece-zerobounce": [
+      "@wippa/piece-zerobounce": [
         "packages/pieces/community/zerobounce/src/index.ts"
       ],
-      "@activepieces/piece-zoho-bookings": [
+      "@wippa/piece-zoho-bookings": [
         "packages/pieces/community/zoho-bookings/src/index.ts"
       ],
-      "@activepieces/piece-zoho-books": [
+      "@wippa/piece-zoho-books": [
         "packages/pieces/community/zoho-books/src/index.ts"
       ],
-      "@activepieces/piece-zoho-campaigns": [
+      "@wippa/piece-zoho-campaigns": [
         "packages/pieces/community/zoho-campaigns/src/index.ts"
       ],
-      "@activepieces/piece-zoho-crm": [
+      "@wippa/piece-zoho-crm": [
         "packages/pieces/community/zoho-crm/src/index.ts"
       ],
-      "@activepieces/piece-zoho-desk": [
+      "@wippa/piece-zoho-desk": [
         "packages/pieces/community/zoho-desk/src/index.ts"
       ],
-      "@activepieces/piece-zoho-invoice": [
+      "@wippa/piece-zoho-invoice": [
         "packages/pieces/community/zoho-invoice/src/index.ts"
       ],
-      "@activepieces/piece-zoho-mail": [
+      "@wippa/piece-zoho-mail": [
         "packages/pieces/community/zoho-mail/src/index.ts"
       ],
-      "@activepieces/piece-zoo": ["packages/pieces/community/zoo/src/index.ts"],
-      "@activepieces/piece-zoom": [
+      "@wippa/piece-zoo": ["packages/pieces/community/zoo/src/index.ts"],
+      "@wippa/piece-zoom": [
         "packages/pieces/community/zoom/src/index.ts"
       ],
-      "@activepieces/pieces-common": ["packages/pieces/common/src/index.ts"],
-      "@activepieces/pieces-framework": [
+      "@wippa/pieces-common": ["packages/pieces/common/src/index.ts"],
+      "@wippa/pieces-framework": [
         "packages/pieces/framework/src/index.ts"
       ],
-      "@activepieces/piece-meistertask": [
+      "@wippa/piece-meistertask": [
         "packages/pieces/community/meistertask/src/index.ts"
       ],
-      "@activepieces/server-utils": ["packages/server/utils/src/index.ts"],
-      "@activepieces/sandbox": ["packages/server/sandbox/src/index.ts"],
-      "@activepieces/shared": ["packages/core/shared/src/index.ts"],
+      "@wippa/server-utils": ["packages/server/utils/src/index.ts"],
+      "@wippa/sandbox": ["packages/server/sandbox/src/index.ts"],
+      "@wippa/shared": ["packages/core/shared/src/index.ts"],
       "@ee/*": ["packages/ee/*"],
       "Aminos": ["packages/pieces/community/Aminos/src/index.ts"],
       "activepieces/piece-microsoft-dynamics-365-business-central": [
@@ -1589,557 +1589,557 @@
       ],
       "ee-embed-sdk": ["packages/ee/embed-sdk/src/index.ts"],
       "ui-feature-forms": ["packages/ui/features-forms/src/index.ts"],
-      "@activepieces/piece-kissflow": [
+      "@wippa/piece-kissflow": [
         "packages/pieces/community/kissflow/src/index.ts"
       ],
-      "@activepieces/piece-housecall-pro": [
+      "@wippa/piece-housecall-pro": [
         "packages/pieces/community/housecall-pro/src/index.ts"
       ],
-      "@activepieces/piece-chat-aid": [
+      "@wippa/piece-chat-aid": [
         "packages/pieces/community/chat-aid/src/index.ts"
       ],
-      "@activepieces/piece-videoask": [
+      "@wippa/piece-videoask": [
         "packages/pieces/community/videoask/src/index.ts"
       ],
-      "@activepieces/piece-presentation": [
+      "@wippa/piece-presentation": [
         "packages/pieces/community/presentation/src/index.ts"
       ],
-      "@activepieces/piece-formspark": [
+      "@wippa/piece-formspark": [
         "packages/pieces/community/formspark/src/index.ts"
       ],
-      "@activepieces/piece-webex": [
+      "@wippa/piece-webex": [
         "packages/pieces/community/webex/src/index.ts"
       ],
-      "@activepieces/piece-tableau": [
+      "@wippa/piece-tableau": [
         "packages/pieces/community/tableau/src/index.ts"
       ],
-      "@activepieces/piece-fragment": [
+      "@wippa/piece-fragment": [
         "packages/pieces/community/fragment/src/index.ts"
       ],
-      "@activepieces/piece-fountain": [
+      "@wippa/piece-fountain": [
         "packages/pieces/community/fountain/src/index.ts"
       ],
-      "@activepieces/piece-omni-co": [
+      "@wippa/piece-omni-co": [
         "packages/pieces/community/omni-co/src/index.ts"
       ],
-      "@activepieces/piece-instabase": [
+      "@wippa/piece-instabase": [
         "packages/pieces/community/instabase/src/index.ts"
       ],
-      "@activepieces/piece-gladia": [
+      "@wippa/piece-gladia": [
         "packages/pieces/community/gladia/src/index.ts"
       ],
-      "@activepieces/piece-glide": [
+      "@wippa/piece-glide": [
         "packages/pieces/community/glide/src/index.ts"
       ],
-      "@activepieces/piece-manus": [
+      "@wippa/piece-manus": [
         "packages/pieces/community/manus/src/index.ts"
       ],
-      "@activepieces/piece-recall-ai": [
+      "@wippa/piece-recall-ai": [
         "packages/pieces/community/recall-ai/src/index.ts"
       ],
-      "@activepieces/piece-contextual-ai": [
+      "@wippa/piece-contextual-ai": [
         "packages/pieces/community/contextual-ai/src/index.ts"
       ],
-      "@activepieces/piece-hume-ai": [
+      "@wippa/piece-hume-ai": [
         "packages/pieces/community/hume-ai/src/index.ts"
       ],
-      "@activepieces/piece-chatsistant": [
+      "@wippa/piece-chatsistant": [
         "packages/pieces/community/chatsistant/src/index.ts"
       ],
-      "@activepieces/piece-rapidtext-ai": [
+      "@wippa/piece-rapidtext-ai": [
         "packages/pieces/community/rapidtext-ai/src/index.ts"
       ],
-      "@activepieces/piece-opnform": [
+      "@wippa/piece-opnform": [
         "packages/pieces/community/opnform/src/index.ts"
       ],
-      "@activepieces/piece-opportify": [
+      "@wippa/piece-opportify": [
         "packages/pieces/community/opportify/src/index.ts"
       ],
-      "@activepieces/piece-promptmate": [
+      "@wippa/piece-promptmate": [
         "packages/pieces/community/promptmate/src/index.ts"
       ],
-      "@activepieces/piece-guidelite": [
+      "@wippa/piece-guidelite": [
         "packages/pieces/community/guidelite/src/index.ts"
       ],
-      "@activepieces/piece-bolna": [
+      "@wippa/piece-bolna": [
         "packages/pieces/community/bolna/src/index.ts"
       ],
-      "@activepieces/piece-appfollow": [
+      "@wippa/piece-appfollow": [
         "packages/pieces/community/appfollow/src/index.ts"
       ],
-      "@activepieces/piece-griptape": [
+      "@wippa/piece-griptape": [
         "packages/pieces/community/griptape/src/index.ts"
       ],
-      "@activepieces/piece-bexio": [
+      "@wippa/piece-bexio": [
         "packages/pieces/community/bexio/src/index.ts"
       ],
-      "@activepieces/piece-pushbullet": [
+      "@wippa/piece-pushbullet": [
         "packages/pieces/community/pushbullet/src/index.ts"
       ],
-      "@activepieces/piece-denser-ai": [
+      "@wippa/piece-denser-ai": [
         "packages/pieces/community/denser-ai/src/index.ts"
       ],
-      "@activepieces/piece-ask-handle": [
+      "@wippa/piece-ask-handle": [
         "packages/pieces/community/ask-handle/src/index.ts"
       ],
-      "@activepieces/piece-phantombuster": [
+      "@wippa/piece-phantombuster": [
         "packages/pieces/community/phantombuster/src/index.ts"
       ],
-      "@activepieces/piece-openmic-ai": [
+      "@wippa/piece-openmic-ai": [
         "packages/pieces/community/openmic-ai/src/index.ts"
       ],
-      "@activepieces/piece-datafuel": [
+      "@wippa/piece-datafuel": [
         "packages/pieces/community/datafuel/src/index.ts"
       ],
-      "@activepieces/piece-doctly": [
+      "@wippa/piece-doctly": [
         "packages/pieces/community/doctly/src/index.ts"
       ],
-      "@activepieces/piece-chatnode": [
+      "@wippa/piece-chatnode": [
         "packages/pieces/community/chatnode/src/index.ts"
       ],
-      "@activepieces/piece-greip": [
+      "@wippa/piece-greip": [
         "packages/pieces/community/greip/src/index.ts"
       ],
-      "@activepieces/piece-chaindesk": [
+      "@wippa/piece-chaindesk": [
         "packages/pieces/community/chaindesk/src/index.ts"
       ],
-      "@activepieces/piece-orimon": [
+      "@wippa/piece-orimon": [
         "packages/pieces/community/orimon/src/index.ts"
       ],
-      "@activepieces/piece-linkup": [
+      "@wippa/piece-linkup": [
         "packages/pieces/community/linkup/src/index.ts"
       ],
-      "@activepieces/piece-linkupapi": [
+      "@wippa/piece-linkupapi": [
         "packages/pieces/community/linkupapi/src/index.ts"
       ],
-      "@activepieces/piece-youform": [
+      "@wippa/piece-youform": [
         "packages/pieces/community/youform/src/index.ts"
       ],
-      "@activepieces/piece-flow-parser": [
+      "@wippa/piece-flow-parser": [
         "packages/pieces/community/flow-parser/src/index.ts"
       ],
-      "@activepieces/piece-writesonic-bulk": [
+      "@wippa/piece-writesonic-bulk": [
         "packages/pieces/community/writesonic-bulk/src/index.ts"
       ],
-      "@activepieces/piece-documentpro": [
+      "@wippa/piece-documentpro": [
         "packages/pieces/community/documentpro/src/index.ts"
       ],
-      "@activepieces/piece-image-router": [
+      "@wippa/piece-image-router": [
         "packages/pieces/community/image-router/src/index.ts"
       ],
-      "@activepieces/piece-pollybot-ai": [
+      "@wippa/piece-pollybot-ai": [
         "packages/pieces/community/pollybot-ai/src/index.ts"
       ],
-      "@activepieces/piece-documerge": [
+      "@wippa/piece-documerge": [
         "packages/pieces/community/documerge/src/index.ts"
       ],
-      "@activepieces/piece-letta": [
+      "@wippa/piece-letta": [
         "packages/pieces/community/letta/src/index.ts"
       ],
-      "@activepieces/piece-logrocket": [
+      "@wippa/piece-logrocket": [
         "packages/pieces/community/logrocket/src/index.ts"
       ],
-      "@activepieces/piece-logsnag": [
+      "@wippa/piece-logsnag": [
         "packages/pieces/community/logsnag/src/index.ts"
       ],
-      "@activepieces/piece-couchbase": [
+      "@wippa/piece-couchbase": [
         "packages/pieces/community/couchbase/src/index.ts"
       ],
-      "@activepieces/piece-cursor": [
+      "@wippa/piece-cursor": [
         "packages/pieces/community/cursor/src/index.ts"
       ],
-      "@activepieces/piece-gptzero-detect-ai": [
+      "@wippa/piece-gptzero-detect-ai": [
         "packages/pieces/community/gptzero-detect-ai/src/index.ts"
       ],
-      "@activepieces/piece-bursty-ai": [
+      "@wippa/piece-bursty-ai": [
         "packages/pieces/community/bursty-ai/src/index.ts"
       ],
-      "@activepieces/piece-tl-dv": [
+      "@wippa/piece-tl-dv": [
         "packages/pieces/community/tl-dv/src/index.ts"
       ],
-      "@activepieces/piece-parser-expert": [
+      "@wippa/piece-parser-expert": [
         "packages/pieces/community/parser-expert/src/index.ts"
       ],
-      "@activepieces/piece-vidlab7": [
+      "@wippa/piece-vidlab7": [
         "packages/pieces/community/vidlab7/src/index.ts"
       ],
-      "@activepieces/piece-bookedin": [
+      "@wippa/piece-bookedin": [
         "packages/pieces/community/bookedin/src/index.ts"
       ],
-      "@activepieces/piece-ai": ["packages/pieces/community/ai/src/index.ts"],
-      "@activepieces/piece-customgpt": [
+      "@wippa/piece-ai": ["packages/pieces/community/ai/src/index.ts"],
+      "@wippa/piece-customgpt": [
         "packages/pieces/community/customgpt/src/index.ts"
       ],
-      "@activepieces/piece-synthesia": [
+      "@wippa/piece-synthesia": [
         "packages/pieces/community/synthesia/src/index.ts"
       ],
-      "@activepieces/piece-meetgeek-ai": [
+      "@wippa/piece-meetgeek-ai": [
         "packages/pieces/community/meetgeek-ai/src/index.ts"
       ],
-      "@activepieces/piece-fellow": [
+      "@wippa/piece-fellow": [
         "packages/pieces/community/fellow/src/index.ts"
       ],
-      "@activepieces/piece-echowin": [
+      "@wippa/piece-echowin": [
         "packages/pieces/community/echowin/src/index.ts"
       ],
-      "@activepieces/piece-feathery": [
+      "@wippa/piece-feathery": [
         "packages/pieces/community/feathery/src/index.ts"
       ],
-      "@activepieces/piece-chatling": [
+      "@wippa/piece-chatling": [
         "packages/pieces/community/chatling/src/index.ts"
       ],
-      "@activepieces/piece-air-ops": [
+      "@wippa/piece-air-ops": [
         "packages/pieces/community/air-ops/src/index.ts"
       ],
-      "@activepieces/piece-mind-studio": [
+      "@wippa/piece-mind-studio": [
         "packages/pieces/community/mind-studio/src/index.ts"
       ],
-      "@activepieces/piece-easy-peasy-ai": [
+      "@wippa/piece-easy-peasy-ai": [
         "packages/pieces/community/easy-peasy-ai/src/index.ts"
       ],
-      "@activepieces/piece-leexi": [
+      "@wippa/piece-leexi": [
         "packages/pieces/community/leexi/src/index.ts"
       ],
-      "@activepieces/piece-tiny-talk-ai": [
+      "@wippa/piece-tiny-talk-ai": [
         "packages/pieces/community/tiny-talk-ai/src/index.ts"
       ],
-      "@activepieces/piece-sap-ariba": [
+      "@wippa/piece-sap-ariba": [
         "packages/pieces/community/sap-ariba/src/index.ts"
       ],
-      "@activepieces/piece-hastewire": [
+      "@wippa/piece-hastewire": [
         "packages/pieces/community/hastewire/src/index.ts"
       ],
-      "@activepieces/piece-greenpt": [
+      "@wippa/piece-greenpt": [
         "packages/pieces/community/greenpt/src/index.ts"
       ],
-      "@activepieces/piece-oncehub": [
+      "@wippa/piece-oncehub": [
         "packages/pieces/community/oncehub/src/index.ts"
       ],
-      "@activepieces/piece-swarmnode": [
+      "@wippa/piece-swarmnode": [
         "packages/pieces/community/swarmnode/src/index.ts"
       ],
-      "@activepieces/piece-alt-text-ai": [
+      "@wippa/piece-alt-text-ai": [
         "packages/pieces/community/alt-text-ai/src/index.ts"
       ],
-      "@activepieces/piece-dashworks": [
+      "@wippa/piece-dashworks": [
         "packages/pieces/community/dashworks/src/index.ts"
       ],
-      "@activepieces/piece-raia-ai": [
+      "@wippa/piece-raia-ai": [
         "packages/pieces/community/raia-ai/src/index.ts"
       ],
-      "@activepieces/piece-alttextify": [
+      "@wippa/piece-alttextify": [
         "packages/pieces/community/alttextify/src/index.ts"
       ],
-      "@activepieces/piece-motiontools": [
+      "@wippa/piece-motiontools": [
         "packages/pieces/community/motiontools/src/index.ts"
       ],
-      "@activepieces/piece-formsite": [
+      "@wippa/piece-formsite": [
         "packages/pieces/community/formsite/src/index.ts"
       ],
-      "@activepieces/piece-lofty": [
+      "@wippa/piece-lofty": [
         "packages/pieces/community/lofty/src/index.ts"
       ],
-      "@activepieces/piece-loops": [
+      "@wippa/piece-loops": [
         "packages/pieces/community/loops/src/index.ts"
       ],
-      "@activepieces/piece-youcanbookme": [
+      "@wippa/piece-youcanbookme": [
         "packages/pieces/community/youcanbookme/src/index.ts"
       ],
-      "@activepieces/piece-esignatures": [
+      "@wippa/piece-esignatures": [
         "packages/pieces/community/esignatures/src/index.ts"
       ],
-      "@activepieces/piece-base44": [
+      "@wippa/piece-base44": [
         "packages/pieces/community/base44/src/index.ts"
       ],
-      "@activepieces/piece-luxury-presence": [
+      "@wippa/piece-luxury-presence": [
         "packages/pieces/community/luxury-presence/src/index.ts"
       ],
-      "@activepieces/piece-signrequest": [
+      "@wippa/piece-signrequest": [
         "packages/pieces/community/signrequest/src/index.ts"
       ],
-      "@activepieces/piece-hystruct": [
+      "@wippa/piece-hystruct": [
         "packages/pieces/community/hystruct/src/index.ts"
       ],
-      "@activepieces/piece-chatfly": [
+      "@wippa/piece-chatfly": [
         "packages/pieces/community/chatfly/src/index.ts"
       ],
-      "@activepieces/piece-azure-blob-storage": [
+      "@wippa/piece-azure-blob-storage": [
         "packages/pieces/community/azure-blob-storage/src/index.ts"
       ],
-      "@activepieces/piece-metatext": [
+      "@wippa/piece-metatext": [
         "packages/pieces/community/metatext/src/index.ts"
       ],
-      "@activepieces/piece-kudosity": [
+      "@wippa/piece-kudosity": [
         "packages/pieces/community/kudosity/src/index.ts"
       ],
-      "@activepieces/piece-neverbounce": [
+      "@wippa/piece-neverbounce": [
         "packages/pieces/community/neverbounce/src/index.ts"
       ],
-      "@activepieces/piece-mailercheck": [
+      "@wippa/piece-mailercheck": [
         "packages/pieces/community/mailercheck/src/index.ts"
       ],
-      "@activepieces/piece-vero": [
+      "@wippa/piece-vero": [
         "packages/pieces/community/vero/src/index.ts"
       ],
-      "@activepieces/piece-digital-pilot": [
+      "@wippa/piece-digital-pilot": [
         "packages/pieces/community/digital-pilot/src/index.ts"
       ],
-      "@activepieces/piece-clearoutphone": [
+      "@wippa/piece-clearoutphone": [
         "packages/pieces/community/clearoutphone/src/index.ts"
       ],
-      "@activepieces/piece-omnihr": [
+      "@wippa/piece-omnihr": [
         "packages/pieces/community/omnihr/src/index.ts"
       ],
-      "@activepieces/piece-clicdog": [
+      "@wippa/piece-clicdog": [
         "packages/pieces/community/clicdata/src/index.ts"
       ],
-      "@activepieces/piece-katana": [
+      "@wippa/piece-katana": [
         "packages/pieces/community/katana/src/index.ts"
       ],
-      "@activepieces/piece-giftbit": [
+      "@wippa/piece-giftbit": [
         "packages/pieces/community/giftbit/src/index.ts"
       ],
-      "@activepieces/piece-free-agent": [
+      "@wippa/piece-free-agent": [
         "packages/pieces/community/free-agent/src/index.ts"
       ],
-      "@activepieces/piece-lemon-squeezy": [
+      "@wippa/piece-lemon-squeezy": [
         "packages/pieces/community/lemon-squeezy/src/index.ts"
       ],
-      "@activepieces/piece-qwilr": [
+      "@wippa/piece-qwilr": [
         "packages/pieces/community/qwilr/src/index.ts"
       ],
-      "@activepieces/piece-splitwise": [
+      "@wippa/piece-splitwise": [
         "packages/pieces/community/splitwise/src/index.ts"
       ],
-      "@activepieces/piece-voipstudio": [
+      "@wippa/piece-voipstudio": [
         "packages/pieces/community/voipstudio/src/index.ts"
       ],
-      "@activepieces/piece-millionverifier": [
+      "@wippa/piece-millionverifier": [
         "packages/pieces/community/millionverifier/src/index.ts"
       ],
-      "@activepieces/piece-octopush-sms": [
+      "@wippa/piece-octopush-sms": [
         "packages/pieces/community/octopush-sms/src/index.ts"
       ],
-      "@activepieces/piece-twitch": [
+      "@wippa/piece-twitch": [
         "packages/pieces/community/twitch/src/index.ts"
       ],
-      "@activepieces/piece-moonclerk": [
+      "@wippa/piece-moonclerk": [
         "packages/pieces/community/moonclerk/src/index.ts"
       ],
-      "@activepieces/piece-heymarket-sms": [
+      "@wippa/piece-heymarket-sms": [
         "packages/pieces/community/heymarket-sms/src/index.ts"
       ],
-      "@activepieces/piece-flipando": [
+      "@wippa/piece-flipando": [
         "packages/pieces/community/flipando/src/index.ts"
       ],
-      "@activepieces/piece-skyprep": [
+      "@wippa/piece-skyprep": [
         "packages/pieces/community/skyprep/src/index.ts"
       ],
-      "@activepieces/piece-influencers-club": [
+      "@wippa/piece-influencers-club": [
         "packages/pieces/community/influencers-club/src/index.ts"
       ],
-      "@activepieces/piece-tenzo": [
+      "@wippa/piece-tenzo": [
         "packages/pieces/community/tenzo/src/index.ts"
       ],
-      "@activepieces/piece-seek-table": [
+      "@wippa/piece-seek-table": [
         "packages/pieces/community/seek-table/src/index.ts"
       ],
-      "@activepieces/piece-lucidya": [
+      "@wippa/piece-lucidya": [
         "packages/pieces/community/lucidya/src/index.ts"
       ],
-      "@activepieces/piece-phone-validator": [
+      "@wippa/piece-phone-validator": [
         "packages/pieces/community/phone-validator/src/index.ts"
       ],
-      "@activepieces/piece-barcode-lookup": [
+      "@wippa/piece-barcode-lookup": [
         "packages/pieces/community/barcode-lookup/src/index.ts"
       ],
-      "@activepieces/piece-intruder": [
+      "@wippa/piece-intruder": [
         "packages/pieces/community/intruder/src/index.ts"
       ],
-      "@activepieces/piece-tidely": [
+      "@wippa/piece-tidely": [
         "packages/pieces/community/tidely/src/index.ts"
       ],
-      "@activepieces/piece-cryptolens": [
+      "@wippa/piece-cryptolens": [
         "packages/pieces/community/cryptolens/src/index.ts"
       ],
-      "@activepieces/piece-ampeco": [
+      "@wippa/piece-ampeco": [
         "packages/pieces/community/ampeco/src/index.ts"
       ],
-      "@activepieces/piece-quaderno": [
+      "@wippa/piece-quaderno": [
         "packages/pieces/community/quaderno/src/index.ts"
       ],
-      "@activepieces/piece-livesession": [
+      "@wippa/piece-livesession": [
         "packages/pieces/community/livesession/src/index.ts"
       ],
-      "@activepieces/piece-roe-ai": [
+      "@wippa/piece-roe-ai": [
         "packages/pieces/community/roe-ai/src/index.ts"
       ],
-      "@activepieces/piece-duckdb": [
+      "@wippa/piece-duckdb": [
         "packages/pieces/community/duckdb/src/index.ts"
       ],
-      "@activepieces/piece-waitwhile": [
+      "@wippa/piece-waitwhile": [
         "packages/pieces/community/waitwhile/src/index.ts"
       ],
-      "@activepieces/piece-baremetrics": [
+      "@wippa/piece-baremetrics": [
         "packages/pieces/community/baremetrics/src/index.ts"
       ],
-      "@activepieces/piece-chartly": [
+      "@wippa/piece-chartly": [
         "packages/pieces/community/chartly/src/index.ts"
       ],
-      "@activepieces/piece-insta-charts": [
+      "@wippa/piece-insta-charts": [
         "packages/pieces/community/insta-charts/src/index.ts"
       ],
-      "@activepieces/piece-pinch-payments": [
+      "@wippa/piece-pinch-payments": [
         "packages/pieces/community/pinch-payments/src/index.ts"
       ],
-      "@activepieces/piece-just-invoice": [
+      "@wippa/piece-just-invoice": [
         "packages/pieces/community/just-invoice/src/index.ts"
       ],
-      "@activepieces/piece-billplz": [
+      "@wippa/piece-billplz": [
         "packages/pieces/community/billplz/src/index.ts"
       ],
-      "@activepieces/piece-vouchery-io": [
+      "@wippa/piece-vouchery-io": [
         "packages/pieces/community/vouchery-io/src/index.ts"
       ],
-      "@activepieces/piece-lokalise": [
+      "@wippa/piece-lokalise": [
         "packages/pieces/community/lokalise/src/index.ts"
       ],
-      "@activepieces/piece-digital-ocean": [
+      "@wippa/piece-digital-ocean": [
         "packages/pieces/community/digital-ocean/src/index.ts"
       ],
-      "@activepieces/piece-hashi-corp-vault": [
+      "@wippa/piece-hashi-corp-vault": [
         "packages/pieces/community/hashi-corp-vault/src/index.ts"
       ],
-      "@activepieces/piece-leap-ai": [
+      "@wippa/piece-leap-ai": [
         "packages/pieces/community/leap-ai/src/index.ts"
       ],
-      "@activepieces/piece-time-ops": [
+      "@wippa/piece-time-ops": [
         "packages/pieces/community/time-ops/src/index.ts"
       ],
-      "@activepieces/piece-formitable": [
+      "@wippa/piece-formitable": [
         "packages/pieces/community/formitable/src/index.ts"
       ],
-      "@activepieces/piece-gender-api": [
+      "@wippa/piece-gender-api": [
         "packages/pieces/community/gender-api/src/index.ts"
       ],
-      "@activepieces/piece-plausible": [
+      "@wippa/piece-plausible": [
         "packages/pieces/community/plausible/src/index.ts"
       ],
-      "@activepieces/piece-woodpecker": [
+      "@wippa/piece-woodpecker": [
         "packages/pieces/community/woodpecker/src/index.ts"
       ],
-      "@activepieces/piece-visible": [
+      "@wippa/piece-visible": [
         "packages/pieces/community/visible/src/index.ts"
       ],
-      "@activepieces/piece-paywhirl": [
+      "@wippa/piece-paywhirl": [
         "packages/pieces/community/paywhirl/src/index.ts"
       ],
-      "@activepieces/piece-smsmode": [
+      "@wippa/piece-smsmode": [
         "packages/pieces/community/smsmode/src/index.ts"
       ],
-      "@activepieces/piece-mooninvoice": [
+      "@wippa/piece-mooninvoice": [
         "packages/pieces/community/mooninvoice/src/index.ts"
       ],
-      "@activepieces/piece-chain-aware": [
+      "@wippa/piece-chain-aware": [
         "packages/pieces/community/chain-aware/src/index.ts"
       ],
-      "@activepieces/piece-detecting-ai": [
+      "@wippa/piece-detecting-ai": [
         "packages/pieces/community/detecting-ai/src/index.ts"
       ],
-      "@activepieces/piece-moveo-ai": [
+      "@wippa/piece-moveo-ai": [
         "packages/pieces/community/moveo-ai/src/index.ts"
       ],
-      "@activepieces/piece-oneclickimpact": [
+      "@wippa/piece-oneclickimpact": [
         "packages/pieces/community/oneclickimpact/src/index.ts"
       ],
-      "@activepieces/piece-bokio": [
+      "@wippa/piece-bokio": [
         "packages/pieces/community/bokio/src/index.ts"
       ],
-      "@activepieces/piece-vidnoz": [
+      "@wippa/piece-vidnoz": [
         "packages/pieces/community/vidnoz/src/index.ts"
       ],
-      "@activepieces/piece-lets-calendar": [
+      "@wippa/piece-lets-calendar": [
         "packages/pieces/community/lets-calendar/src/index.ts"
       ],
-      "@activepieces/piece-predis-ai": [
+      "@wippa/piece-predis-ai": [
         "packages/pieces/community/predis-ai/src/index.ts"
       ],
-      "@activepieces/piece-week-done": [
+      "@wippa/piece-week-done": [
         "packages/pieces/community/week-done/src/index.ts"
       ],
-      "@activepieces/piece-manual-trigger": [
+      "@wippa/piece-manual-trigger": [
         "packages/pieces/core/manual-trigger/src/index.ts"
       ],
-      "@activepieces/piece-zeplin": [
+      "@wippa/piece-zeplin": [
         "packages/pieces/community/zeplin/src/index.ts"
       ],
-      "@activepieces/piece-google-search": [
+      "@wippa/piece-google-search": [
         "packages/pieces/community/google-search/src/index.ts"
       ],
-      "@activepieces/piece-microsoft-copilot": [
+      "@wippa/piece-microsoft-copilot": [
         "packages/pieces/community/microsoft-copilot/src/index.ts"
       ],
-      "@activepieces/piece-asknews": [
+      "@wippa/piece-asknews": [
         "packages/pieces/community/asknews/src/index.ts"
       ],
-      "@activepieces/piece-valyu": [
+      "@wippa/piece-valyu": [
         "packages/pieces/community/valyu/src/index.ts"
       ],
-      "@activepieces/piece-alai": [
+      "@wippa/piece-alai": [
         "packages/pieces/community/alai/src/index.ts"
       ],
-      "@activepieces/piece-algolia": [
+      "@wippa/piece-algolia": [
         "packages/pieces/community/algolia/src/index.ts"
       ],
-      "@activepieces/piece-kapso": [
+      "@wippa/piece-kapso": [
         "packages/pieces/community/kapso/src/index.ts"
       ],
-      "@activepieces/piece-pdfcrowd": [
+      "@wippa/piece-pdfcrowd": [
         "packages/pieces/community/pdfcrowd/src/index.ts"
       ],
-      "@activepieces/piece-amazon-bedrock": [
+      "@wippa/piece-amazon-bedrock": [
         "packages/pieces/community/amazon-bedrock/src/index.ts"
       ],
-      "@activepieces/piece-brave-search": [
+      "@wippa/piece-brave-search": [
         "packages/pieces/community/brave-search/src/index.ts"
       ],
-      "@activepieces/piece-amazon-secrets-manager": [
+      "@wippa/piece-amazon-secrets-manager": [
         "packages/pieces/community/amazon-secrets-manager/src/index.ts"
       ],
-      "@activepieces/piece-validatedmails": [
+      "@wippa/piece-validatedmails": [
         "packages/pieces/community/validatedmails/src/index.ts"
       ],
-      "@activepieces/piece-coralogix": [
+      "@wippa/piece-coralogix": [
         "packages/pieces/community/coralogix/src/index.ts"
       ],
-      "@activepieces/piece-pocketbase": [
+      "@wippa/piece-pocketbase": [
         "packages/pieces/community/pocketbase/src/index.ts"
       ],
-      "@activepieces/piece-carbone": [
+      "@wippa/piece-carbone": [
         "packages/pieces/community/carbone/src/index.ts"
       ],
-      "@activepieces/piece-emailit": [
+      "@wippa/piece-emailit": [
         "packages/pieces/community/emailit/src/index.ts"
       ],
-      "@activepieces/piece-bland-ai": [
+      "@wippa/piece-bland-ai": [
         "packages/pieces/community/bland-ai/src/index.ts"
       ],
-      "@activepieces/piece-vapi": [
+      "@wippa/piece-vapi": [
         "packages/pieces/community/vapi/src/index.ts"
       ],
-      "@activepieces/piece-canny": [
+      "@wippa/piece-canny": [
         "packages/pieces/community/canny/src/index.ts"
       ],
-      "@activepieces/piece-knock": [
+      "@wippa/piece-knock": [
         "packages/pieces/community/knock/src/index.ts"
       ],
-      "@activepieces/piece-plunk": [
+      "@wippa/piece-plunk": [
         "packages/pieces/community/plunk/src/index.ts"
       ],
-      "@activepieces/piece-proxycurl": [
+      "@wippa/piece-proxycurl": [
         "packages/pieces/community/proxycurl/src/index.ts"
       ],
-      "@activepieces/piece-connectuc": [
+      "@wippa/piece-connectuc": [
         "packages/pieces/community/connectuc/src/index.ts"
       ]
     },

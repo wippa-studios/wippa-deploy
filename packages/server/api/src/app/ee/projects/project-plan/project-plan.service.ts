@@ -1,5 +1,5 @@
-import { ActivepiecesError, apId, ErrorCode, isNil, PlatformUsageMetric } from '@activepieces/core-utils'
-import { ApEdition, FlowStatus, PiecesFilterType, ProjectPlan } from '@activepieces/shared'
+import { ActivepiecesError, apId, ErrorCode, isNil, PlatformUsageMetric } from '@wippa/core-utils'
+import { ApEdition, FlowStatus, PiecesFilterType, ProjectPlan } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EntityManager, In } from 'typeorm'
 import { repoFactory } from '../../../core/db/repo-factory'

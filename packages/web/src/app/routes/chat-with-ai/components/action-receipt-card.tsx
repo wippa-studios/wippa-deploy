@@ -1,4 +1,4 @@
-import { ActionReceiptEvent } from '@activepieces/shared';
+import { ActionReceiptEvent } from '@wippa/shared';
 import { t } from 'i18next';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion } from 'motion/react';

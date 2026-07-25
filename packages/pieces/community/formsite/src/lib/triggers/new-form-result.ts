@@ -3,7 +3,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 export const newFormResult = createTrigger({
   auth: formsiteAuth,

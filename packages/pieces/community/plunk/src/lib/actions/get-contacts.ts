@@ -1,9 +1,9 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { PLUNK_BASE_URL, plunkAuth } from '../auth';
 
 type PlunkContactsPage = {

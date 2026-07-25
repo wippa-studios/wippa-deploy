@@ -1,4 +1,4 @@
-import { EngineGenericError, ExecutionError, FetchError, VariableNotFoundError } from '@activepieces/shared'
+import { EngineGenericError, ExecutionError, FetchError, VariableNotFoundError } from '@wippa/shared'
 import { utils } from '../utils'
 
 export const createVariableResolver = ({ projectId: _projectId, engineToken, apiUrl }: CreateVariableResolverParams): VariableResolver => {

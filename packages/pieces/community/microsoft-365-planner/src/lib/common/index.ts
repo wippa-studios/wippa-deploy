@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { microsoftCloudProperty, getGraphBaseUrl, getMicrosoftCloudFromAuth } from './microsoft-cloud';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { PlannerBucket } from '@microsoft/microsoft-graph-types';

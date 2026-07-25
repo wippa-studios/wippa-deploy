@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 
 import { cannyAuth } from '../auth';
 

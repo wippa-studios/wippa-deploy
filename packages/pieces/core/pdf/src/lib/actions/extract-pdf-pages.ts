@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { PDFDocument } from 'pdf-lib';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 
 export function pageRangeToIndexes(
   startPage: number,

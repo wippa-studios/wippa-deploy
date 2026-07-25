@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import { rssNewItemTrigger } from './lib/triggers/new-item-trigger';
 import { rssNewItemListTrigger } from './lib/triggers/new-item-list-triggers';
 

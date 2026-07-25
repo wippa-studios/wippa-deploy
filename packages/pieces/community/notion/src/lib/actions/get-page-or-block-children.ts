@@ -2,7 +2,7 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { NotionToMarkdown } from 'notion-to-md';
 import { notionAuth } from '../auth';
 import { getNotionToken } from '../common';

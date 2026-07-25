@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { ApEdition, ApFlagId } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { ApEdition, ApFlagId } from '@wippa/shared';
 import React, { ComponentType } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Navigate, useLocation } from 'react-router-dom';

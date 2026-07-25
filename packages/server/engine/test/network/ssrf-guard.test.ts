@@ -1,6 +1,6 @@
 import dns from 'node:dns'
 import { createServer, Server, Socket } from 'node:net'
-import { SSRFBlockedError } from '@activepieces/shared'
+import { SSRFBlockedError } from '@wippa/shared'
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { ssrfGuard } from '../../src/lib/network/ssrf-guard'
 

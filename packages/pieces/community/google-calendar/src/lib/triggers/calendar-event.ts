@@ -1,10 +1,10 @@
-import { AppConnectionValueForAuthProperty, createTrigger, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, createTrigger, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import { googleCalendarCommon } from '../common';
 import { getEvents } from '../common/helper';
 import { GoogleCalendarEvent } from '../common/types';
 import { googleCalendarAuth } from '../common';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 import { eventOutputSchema } from '../output-schemas';
 
 const polling: Polling<

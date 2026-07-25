@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { tryCatch } from '@wippa/pieces-framework';
 
 export const mixmaxAuth = PieceAuth.SecretText({
   displayName: 'API Token',

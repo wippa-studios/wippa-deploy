@@ -1,9 +1,9 @@
-import { AIProviderName } from '@activepieces/core-utils';
+import { AIProviderName } from '@wippa/core-utils';
 import {
   AIProviderModelType,
   CreateAIProviderRequest,
   ProviderModelConfig,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   Plus,

@@ -5,7 +5,7 @@ import {
     flowStructureUtil,
     FlowVersion,
     mcpToolNameUtils,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { Migration } from '.'
 
 const FLOW_ID_LENGTH = 21
@@ -33,7 +33,7 @@ export const migrateV16AgentPieceToolNames: Migration = {
     targetSchemaVersion: '16',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
-            if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== '@activepieces/piece-ai' || step.settings.actionName !== 'run_agent') {
+            if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== '@wippa/piece-ai' || step.settings.actionName !== 'run_agent') {
                 return step
             }
 

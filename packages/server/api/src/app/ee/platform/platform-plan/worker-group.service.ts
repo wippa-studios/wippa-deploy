@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { apDayjsDuration } from '@activepieces/server-utils'
+import { isNil } from '@wippa/core-utils'
+import { apDayjsDuration } from '@wippa/server-utils'
 import { FastifyBaseLogger } from 'fastify'
 import { distributedStore } from '../../../database/redis-connections'
 import { getPlatformGroupQueueName, QueueName } from '../../../workers/job'

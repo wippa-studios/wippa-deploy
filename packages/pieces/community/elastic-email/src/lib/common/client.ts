@@ -2,7 +2,7 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 import { ELASTIC_EMAIL_API_BASE } from './constants';
 

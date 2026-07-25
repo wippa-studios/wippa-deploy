@@ -1,5 +1,5 @@
-import { StoreScope } from '@activepieces/pieces-framework'
-import { StorageError, StorageInvalidKeyError, StorageLimitError, STORE_KEY_MAX_LENGTH, STORE_VALUE_MAX_SIZE } from '@activepieces/shared'
+import { StoreScope } from '@wippa/pieces-framework'
+import { StorageError, StorageInvalidKeyError, StorageLimitError, STORE_KEY_MAX_LENGTH, STORE_VALUE_MAX_SIZE } from '@wippa/shared'
 import { createContextStore } from '../../src/lib/piece-context/store'
 
 const STORE_PARAMS = {

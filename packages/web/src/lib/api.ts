@@ -1,4 +1,4 @@
-import { ApErrorParams, ErrorCode, isNil } from '@activepieces/core-utils';
+import { ApErrorParams, ErrorCode, isNil } from '@wippa/core-utils';
 import axios, {
   AxiosError,
   AxiosRequestConfig,

@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode, PlatformId, sanitizeObjectForPostgresql } from '@activepieces/core-utils'
-import { FlowOperationRequest, flowOperations, FlowOperationType, flowPieceUtil, FlowVersion, FlowVersionState, FlowVersionTemplate } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, PlatformId, sanitizeObjectForPostgresql } from '@wippa/core-utils'
+import { FlowOperationRequest, flowOperations, FlowOperationType, flowPieceUtil, FlowVersion, FlowVersionState, FlowVersionTemplate } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { flowVersionValidationUtil } from '../flows/flow-version/flow-version-validator-util'
 

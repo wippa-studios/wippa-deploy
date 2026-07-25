@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { imageToBase64 } from './lib/actions/image-to-base64.action';
 import { getMetaData } from './lib/actions/get-metadata.action';
 import { cropImage } from './lib/actions/crop-image.action';

@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { outlookCalendarAuth } from '../..';
 import { outlookCalendarCommon } from '../common/common';
 import dayjs from 'dayjs';

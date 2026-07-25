@@ -3,12 +3,12 @@ import {
   Property,
   StoreScope,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import mime from 'mime-types';
 import * as z from 'zod/mini'
 import { googleGeminiAuth } from '../auth';
 import { defaultLLM, getGeminiModelOptions } from '../common/common';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 import { chatGeminiActionOutputSchema } from '../output-schemas';
 
 export const chatGemini = createAction({

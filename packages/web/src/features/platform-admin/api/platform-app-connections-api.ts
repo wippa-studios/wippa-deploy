@@ -1,9 +1,9 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   ListPlatformAppConnectionsRequestQuery,
   PlatformAppConnectionOwnersResponse,
   PlatformAppConnectionsListItem,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

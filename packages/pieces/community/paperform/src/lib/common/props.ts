@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { paperformCommon } from './client';
 import {
   PaperformCoupon,
@@ -6,7 +6,7 @@ import {
   PaperformProduct,
   PaperformSpace,
 } from './types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { paperformAuth } from './auth';
 
 export const paperformCommonProps = {

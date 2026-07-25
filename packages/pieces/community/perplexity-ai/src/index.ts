@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createChatCompletionAction } from './lib/actions/create-chat-completion.action';
 import { perplexityAiAuth } from './lib/auth';
 

@@ -1,7 +1,7 @@
-import { createAction, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { createAction, PieceAuth, Property } from '@wippa/pieces-framework';
 import { tablesCommon } from '../common';
-import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@activepieces/pieces-common';
-import { FieldType, Filter, FilterOperator, ListRecordsRequest, PopulatedRecord, SeekPage } from '@activepieces/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@wippa/pieces-common';
+import { FieldType, Filter, FilterOperator, ListRecordsRequest, PopulatedRecord, SeekPage } from '@wippa/pieces-framework';
 import * as z from 'zod/mini'
 import qs from 'qs';
 type FieldInfo = {

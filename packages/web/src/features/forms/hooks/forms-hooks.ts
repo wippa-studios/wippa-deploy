@@ -1,4 +1,4 @@
-import { FormResponse, HumanInputFormResult } from '@activepieces/shared';
+import { FormResponse, HumanInputFormResult } from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { humanInputApi } from '../api/human-input-api';

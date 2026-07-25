@@ -1,9 +1,9 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowOperationType,
   StepLocationRelativeToParent,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import {
   DndContext,
   DragEndEvent,

@@ -6,8 +6,8 @@ import {
     FlowVersionState,
     PieceTrigger,
     SampleDataSettings,
-} from '@activepieces/shared'
-import type { FlowVersion } from '@activepieces/shared'
+} from '@wippa/shared'
+import type { FlowVersion } from '@wippa/shared'
 
 const mockGetPiece = vi.fn()
 const mockGetPlatformId = vi.fn().mockResolvedValue('platform-1')
@@ -82,7 +82,7 @@ const mockLog = {
 
 function makePieceTriggerSettings(extras: Partial<PieceTrigger['settings']> = {}): PieceTrigger['settings'] {
     return {
-        pieceName: '@activepieces/piece-gmail',
+        pieceName: '@wippa/piece-gmail',
         pieceVersion: '~0.1.0',
         triggerName: 'new_email',
         input: {},
@@ -112,7 +112,7 @@ function makeFlowVersion(overrides: { id?: string, trigger?: FlowVersion['trigge
                 lastUpdatedDate: '2024-01-01T00:00:00Z',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@activepieces/piece-slack',
+                    pieceName: '@wippa/piece-slack',
                     pieceVersion: '~0.2.0',
                     actionName: 'send_message',
                     input: {},

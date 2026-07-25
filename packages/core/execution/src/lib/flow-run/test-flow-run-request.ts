@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ApId } from '@activepieces/core-utils'
+import { ApId } from '@wippa/core-utils'
 import { FlowRunStatus } from './execution/flow-execution'
 import { FlowRetryStrategy } from './flow-run'
 

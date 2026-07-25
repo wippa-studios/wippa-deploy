@@ -1,5 +1,5 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpRequest, HttpMethod } from '@activepieces/pieces-common';
+import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpRequest, HttpMethod } from '@wippa/pieces-common';
 import crypto from 'crypto';
 import { smartsheetAuth } from '../auth';
 

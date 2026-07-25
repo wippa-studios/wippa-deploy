@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { getGraphBaseUrl } from './lib/common/microsoft-cloud';
 import { appendNote } from './lib/actions/append-note';
 import { createImageNote } from './lib/actions/create-image-note';

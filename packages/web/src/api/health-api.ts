@@ -1,4 +1,4 @@
-import { GetSystemHealthChecksResponse } from '@activepieces/shared';
+import { GetSystemHealthChecksResponse } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

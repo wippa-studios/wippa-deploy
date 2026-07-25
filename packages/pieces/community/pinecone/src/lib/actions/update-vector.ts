@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { createPineconeClientFromAuth } from '../common/pinecone-client';
 import { pineconeAuth } from '../auth';
 

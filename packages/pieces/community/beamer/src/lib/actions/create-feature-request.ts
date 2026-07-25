@@ -3,8 +3,8 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { beamerCommon } from '../common';
 
 export const createNewFeatureRequest = createAction({

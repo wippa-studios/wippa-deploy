@@ -1,4 +1,4 @@
-import { chatToolClassification, PersistedChatPartType, PersistedChatRole, PersistedToolCallStatus } from '@activepieces/shared'
+import { chatToolClassification, PersistedChatPartType, PersistedChatRole, PersistedToolCallStatus } from '@wippa/shared'
 import { LiveScenario } from './scenarios'
 
 const EXECUTE_TOOL = 'ap_execute_action'

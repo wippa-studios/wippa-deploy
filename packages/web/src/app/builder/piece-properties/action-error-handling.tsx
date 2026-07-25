@@ -1,4 +1,4 @@
-import { FlowAction, FlowTrigger } from '@activepieces/shared';
+import { FlowAction, FlowTrigger } from '@wippa/shared';
 import { t } from 'i18next';
 import { ShieldAlert } from 'lucide-react';
 import React from 'react';

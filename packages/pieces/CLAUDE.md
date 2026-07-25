@@ -8,7 +8,7 @@ npm run create-action    # Add action
 npm run create-trigger   # Add trigger
 ```
 
-After creating: add path to `tsconfig.base.json`: `"@activepieces/piece-{name}": ["packages/pieces/community/{name}/src/index.ts"]`
+After creating: add path to `tsconfig.base.json`: `"@wippa/piece-{name}": ["packages/pieces/community/{name}/src/index.ts"]`
 
 ## Structure
 
@@ -46,6 +46,6 @@ Three types: `PieceAuth.SecretText()` with validate callback, `PieceAuth.OAuth2(
 ## Key Rules
 
 - Trigger `run()` must return an **array**
-- Use `httpClient` from `@activepieces/pieces-common` for HTTP requests
+- Use `httpClient` from `@wippa/pieces-common` for HTTP requests
 - Always provide `sampleData` for triggers
 - i18n: `src/i18n/translation.json` with identity-mapped English keys

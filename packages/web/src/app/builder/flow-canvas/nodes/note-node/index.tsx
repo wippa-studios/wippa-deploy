@@ -1,4 +1,4 @@
-import { Note, NoteColorVariant } from '@activepieces/shared';
+import { Note, NoteColorVariant } from '@wippa/shared';
 import { useDraggable } from '@dnd-kit/core';
 import { Editor } from '@tiptap/core';
 import { NodeProps, NodeResizeControl } from '@xyflow/react';

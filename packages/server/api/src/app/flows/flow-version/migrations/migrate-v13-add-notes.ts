@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { FlowVersion } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { FlowVersion } from '@wippa/shared'
 import { Migration } from '.'
 
 export const migrateV13AddNotes: Migration = {

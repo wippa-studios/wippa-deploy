@@ -1,5 +1,5 @@
-import { SeekPage } from '@activepieces/core-utils';
-import { ApplicationEvent, ListAuditEventsRequest } from '@activepieces/shared';
+import { SeekPage } from '@wippa/core-utils';
+import { ApplicationEvent, ListAuditEventsRequest } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

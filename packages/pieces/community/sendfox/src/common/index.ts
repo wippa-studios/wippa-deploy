@@ -1,11 +1,11 @@
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import {
   HttpMethod,
   HttpMessageBody,
   HttpResponse,
   httpClient,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { sendfoxAuth } from '../lib/auth';
 
 export async function getLists(accessToken: string) {

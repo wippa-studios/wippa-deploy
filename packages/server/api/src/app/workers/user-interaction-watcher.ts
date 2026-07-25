@@ -1,5 +1,5 @@
-import { ActivepiecesError, apId, ErrorCode, isNil } from '@activepieces/core-utils'
-import { LATEST_JOB_DATA_SCHEMA_VERSION, UserInteractionJobDataWithoutWatchingInformation } from '@activepieces/shared'
+import { ActivepiecesError, apId, ErrorCode, isNil } from '@wippa/core-utils'
+import { LATEST_JOB_DATA_SCHEMA_VERSION, UserInteractionJobDataWithoutWatchingInformation } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { engineResponseWatcher } from './engine-response-watcher'
 import { jobQueue, JobType } from './job-queue/job-queue'

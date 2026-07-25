@@ -5,8 +5,8 @@
 Each action goes in its own file under `src/lib/actions/`:
 
 ```typescript
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
 import { myAppAuth } from '../../';
 
 export const createRecordAction = createAction({

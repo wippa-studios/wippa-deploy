@@ -1,12 +1,12 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { addTarget } from './lib/actions/add-target';
 import { startScan } from './lib/actions/start-scan';
 import { intruderAuth } from './lib/common/auth';
 import { searchForATarget } from './lib/actions/search-for-a-target';
 import { searchForAnIssue } from './lib/actions/search-for-an-issue';
 import { searchForAnIssueOccurrence } from './lib/actions/search-for-an-issue-occurrence';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const intruder = createPiece({
   displayName: 'Intruder',

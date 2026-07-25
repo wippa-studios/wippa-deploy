@@ -1,4 +1,4 @@
-import { HttpMessageBody } from '@activepieces/pieces-common';
+import { HttpMessageBody } from '@wippa/pieces-common';
 export interface VboutResponseBody<T> extends HttpMessageBody {
   response: {
     header: {

@@ -1,11 +1,11 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import {
   ApFlagId,
   FlowOperationType,
   FlowVersionState,
   supportUrl,
   UncategorizedFolderId,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { ChevronDown, CircleHelp, HistoryIcon } from 'lucide-react';

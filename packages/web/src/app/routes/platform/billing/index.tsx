@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   ApSubscriptionStatus,
   AiCreditsAutoTopUpState,
   ApEdition,
   ApFlagId,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 
 import { CenteredPage } from '@/app/components/centered-page';

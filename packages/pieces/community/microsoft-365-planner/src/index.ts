@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { createBucket } from './lib/actions/create-bucket';
 import { createPlan } from './lib/actions/create-plan';
 import { createTask } from './lib/actions/create-task';
@@ -14,7 +14,7 @@ import { microsoft365PlannerAuth } from './lib/common';
 import { newPlanCreated } from './lib/triggers/new-plan-created';
 import { newTaskAssignedToUser } from './lib/triggers/new-task-assigned-to-user';
 import { newTaskCreated } from './lib/triggers/new-task-created';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
 
 export const microsoft365Planner = createPiece({

@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { logrocketAuth } from '../common/auth';
 
 export const highlightsReady = createTrigger({

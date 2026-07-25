@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { Nullable } from '@activepieces/core-utils'
+import { Nullable } from '@wippa/core-utils'
 export enum NoteColorVariant {
     ORANGE = 'orange',
     RED = 'red',

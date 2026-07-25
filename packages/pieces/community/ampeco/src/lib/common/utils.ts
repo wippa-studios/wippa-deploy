@@ -2,9 +2,9 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { ampecoAuth } from './auth';
 
 /**

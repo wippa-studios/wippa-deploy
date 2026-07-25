@@ -2,7 +2,7 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { documentproAuth } from '../common/auth';
 
 export const newDocument = createTrigger({

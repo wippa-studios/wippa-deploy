@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpMessageBody, HttpResponse } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpMessageBody, HttpResponse } from '@wippa/pieces-common';
 
 const BASE_URL = 'https://api.pdf4me.com';
 

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { docsCommon } from '../common';
 import { googleDocsAuth, getAccessToken } from '../auth';
 import { createDocumentActionOutputSchema } from '../output-schemas';

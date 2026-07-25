@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-trello",
+  "name": "@wippa/piece-trello",
   "version": "0.4.10",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -9,12 +9,12 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "dayjs": "1.11.9",
     "form-data": "4.0.6",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

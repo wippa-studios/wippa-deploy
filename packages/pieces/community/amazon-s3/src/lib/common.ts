@@ -1,8 +1,8 @@
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { S3 } from '@aws-sdk/client-s3';
 import { SecretsManagerClient } from '@aws-sdk/client-secrets-manager';
 import { AssumeRoleWithWebIdentityCommand, STSClient } from '@aws-sdk/client-sts';
-import { ServerContext } from '@activepieces/pieces-framework';
+import { ServerContext } from '@wippa/pieces-framework';
 import { AccessKeyAuthProps, OidcAuthProps, S3AuthProps } from './auth';
 
 const AWS_STS_AUDIENCE = 'sts.amazonaws.com';

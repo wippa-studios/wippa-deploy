@@ -2,7 +2,7 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { youcanbookmeAuth } from '../common/auth';
 export const newBooking = createTrigger({
   auth: youcanbookmeAuth,

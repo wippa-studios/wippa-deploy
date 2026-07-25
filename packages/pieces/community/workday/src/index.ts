@@ -1,9 +1,9 @@
 import {
 	OAuth2PropertyValue,
 	createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 import { workdayAuth } from './lib/auth';
 

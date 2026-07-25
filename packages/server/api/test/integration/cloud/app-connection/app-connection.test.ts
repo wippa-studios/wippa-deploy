@@ -2,7 +2,7 @@ import {
     AppConnectionType,
     DefaultProjectRole,
     PackageType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { pieceMetadataService } from '../../../../src/app/pieces/metadata/piece-metadata-service'

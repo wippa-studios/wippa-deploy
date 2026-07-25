@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { newAttachment } from './lib/triggers/new-attachment';
 import { newPerson } from './lib/triggers/new-person';
 import { newSection } from './lib/triggers/new-section';
@@ -21,8 +21,8 @@ import { findTask } from './lib/actions/find-task';
 import { findOrCreateAttachment } from './lib/actions/find-or-create-attachment';
 import { findOrCreateTask } from './lib/actions/find-or-create-task';
 import { findOrCreateLabel } from './lib/actions/find-or-create-label';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType, createCustomApiCallAction } from '@activepieces/pieces-common';
+import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType, createCustomApiCallAction } from '@wippa/pieces-common';
 import { MEISTERTASK_API_URL } from './lib/common/common';
 import { meistertaskAuth } from './lib/auth';
 

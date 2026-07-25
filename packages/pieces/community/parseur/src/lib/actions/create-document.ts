@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { parseurAuth, parseurCommon } from '../common';
 
 export const createDocument = createAction({

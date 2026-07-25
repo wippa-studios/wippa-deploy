@@ -9,14 +9,14 @@
  *   - bun must be available for piece installation
  *   - Redis (in-memory via AP_REDIS_TYPE=MEMORY) is started automatically
  */
-import { apDayjs } from '@activepieces/server-utils'
+import { apDayjs } from '@wippa/server-utils'
 import {
     FlowTriggerType,
     FlowVersionState,
     PackageType,
     PieceType,
     PrincipalType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { worker } from '../../../../../worker/src/lib/worker'
@@ -69,7 +69,7 @@ describe('Piece Options E2E', () => {
                 name: 'trigger',
                 displayName: 'Catch Webhook',
                 settings: {
-                    pieceName: '@activepieces/piece-webhook',
+                    pieceName: '@wippa/piece-webhook',
                     pieceVersion: '~0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'basic' },
@@ -82,7 +82,7 @@ describe('Piece Options E2E', () => {
         await db.save('flow_version', mockFlowVersion)
 
         const mockPiece = createMockPieceMetadata({
-            name: '@activepieces/piece-webhook',
+            name: '@wippa/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -106,7 +106,7 @@ describe('Piece Options E2E', () => {
                 projectId: mockProject.id,
                 flowId: mockFlow.id,
                 flowVersionId: mockFlowVersion.id,
-                pieceName: '@activepieces/piece-webhook',
+                pieceName: '@wippa/piece-webhook',
                 pieceVersion: '~0.1.29',
                 actionOrTriggerName: 'catch_webhook',
                 propertyName: 'authFields',

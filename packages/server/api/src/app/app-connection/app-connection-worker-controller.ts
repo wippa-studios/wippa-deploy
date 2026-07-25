@@ -1,5 +1,5 @@
-import { ActivepiecesError, assertNotNullOrUndefined, ErrorCode, isNil } from '@activepieces/core-utils'
-import { AppConnection, EnginePrincipal, GetAppConnectionForWorkerRequestQuery } from '@activepieces/shared'
+import { ActivepiecesError, assertNotNullOrUndefined, ErrorCode, isNil } from '@wippa/core-utils'
+import { AppConnection, EnginePrincipal, GetAppConnectionForWorkerRequestQuery } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { securityAccess } from '../core/security/authorization/fastify-security'
 import { secretManagersService } from '../ee/secret-managers/secret-managers.service'

@@ -1,4 +1,4 @@
-import { TelemetryEventName } from '@activepieces/shared';
+import { TelemetryEventName } from '@wippa/shared';
 import { HttpStatusCode } from 'axios';
 import { t } from 'i18next';
 import { MailCheck, MailX } from 'lucide-react';

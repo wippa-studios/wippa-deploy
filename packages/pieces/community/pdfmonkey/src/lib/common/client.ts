@@ -1,6 +1,6 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@wippa/pieces-common';
 import { pdfmonkeyAuth } from './auth';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 
 
 export const BASE_URL = `https://api.pdfmonkey.io/api/v1`;

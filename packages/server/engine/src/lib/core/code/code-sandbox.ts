@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { EngineGenericError, ExecutionMode } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { EngineGenericError, ExecutionMode } from '@wippa/shared'
 import { CodeSandbox } from '../../core/code/code-sandbox-common'
 
 export const EXECUTION_MODE = process.env.AP_EXECUTION_MODE as ExecutionMode | undefined

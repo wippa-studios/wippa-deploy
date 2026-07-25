@@ -1,10 +1,10 @@
-import { isNil, Permission } from '@activepieces/core-utils';
+import { isNil, Permission } from '@wippa/core-utils';
 import {
   ConfigureRepoRequest,
   GitBranchType,
   GitRepo,
   PushGitRepoRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { useAuthorization } from '@/hooks/authorization-hooks';

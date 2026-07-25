@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { whatsscaleAuth } from './lib/auth';
 
 //  Text actions
@@ -47,7 +47,7 @@ import { watchGroupMessagesTrigger } from './lib/triggers/watch-group-messages';
 import { watchChannelMessagesTrigger } from './lib/triggers/watch-channel-messages';
 import { watchSpecificGroupMessagesTrigger } from './lib/triggers/watch-specific-group-messages';
 import { watchSpecificChannelMessagesTrigger } from './lib/triggers/watch-specific-channel-messages';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const whatsscale = createPiece({
   displayName: 'WhatsScale',

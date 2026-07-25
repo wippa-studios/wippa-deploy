@@ -4,7 +4,7 @@ import {
   HttpRequest,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const TAPFILIATE_BASE_URL = 'https://api.tapfiliate.com/1.6';
 

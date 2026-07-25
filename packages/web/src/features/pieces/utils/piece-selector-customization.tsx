@@ -2,7 +2,7 @@ import {
   PIECE_SELECTOR_BUILTIN_TABS,
   PieceSelectorConfig,
   PieceSelectorTabConfig,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import {
   ActivityIcon,
   AppWindowIcon,

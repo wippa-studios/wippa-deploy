@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
 
 import { AlgoliaAuthValue, AlgoliaBatchResponse, AlgoliaBrowseResponse, AlgoliaIndex, AlgoliaIndexListResponse, AlgoliaRecord, AlgoliaTaskStatusResponse } from './types';
 

@@ -1,11 +1,11 @@
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { youtubeNewVideoTrigger } from './lib/triggers/new-video.trigger';
 import { youtubeAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { youtubeListPlaylistItemsAction } from './lib/actions/list-playlist-items';
 import { youtubeSearchAction } from './lib/actions/search';
 import { youtubeListCaptionsAction } from './lib/actions/list-captions';

@@ -2,9 +2,9 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { quickzuAuth } from '../auth';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 const markdown = `
 - Go to the **Settings->API and Webhooks** section.
 - In the webhook settings, paste this URL: 

@@ -1,10 +1,10 @@
 import { straicoAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { baseUrlv0 } from '../common/common';
 
 export const deleteRag = createAction({

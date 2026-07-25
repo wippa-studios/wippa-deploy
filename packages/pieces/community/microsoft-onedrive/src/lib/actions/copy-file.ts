@@ -3,8 +3,8 @@ import {
   DropdownOption,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { tryCatch } from '@wippa/pieces-framework';
 import { Client, PageCollection, ResponseType } from '@microsoft/microsoft-graph-client';
 import { DriveItem } from '@microsoft/microsoft-graph-types';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';

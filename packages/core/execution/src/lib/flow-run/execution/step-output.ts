@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import { FlowActionType } from '../../flows/actions/action'
 import { FlowTriggerType } from '../../flows/triggers/trigger'
 

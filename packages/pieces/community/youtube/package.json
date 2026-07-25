@@ -1,16 +1,16 @@
 {
-  "name": "@activepieces/piece-youtube",
+  "name": "@wippa/piece-youtube",
   "version": "0.4.10",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "1.11.9",
     "feedparser": "2.2.10",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "scripts": {
     "build": "tsc -p tsconfig.lib.json && cp package.json dist/",

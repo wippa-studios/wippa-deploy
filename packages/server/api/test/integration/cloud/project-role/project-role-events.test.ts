@@ -1,4 +1,4 @@
-import { ApplicationEventName } from '@activepieces/shared'
+import { ApplicationEventName } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

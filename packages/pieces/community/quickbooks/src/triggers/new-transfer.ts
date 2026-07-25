@@ -3,7 +3,7 @@ import {
   createTrigger,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { quickbooksAuth } from '../lib/auth';
 import dayjs from 'dayjs';
 import {
@@ -12,7 +12,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { quickbooksCommon, QuickbooksEntityResponse } from '../lib/common';
 import { QuickbooksInvoice } from '../lib/types';
 

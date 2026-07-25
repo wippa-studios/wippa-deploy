@@ -1,4 +1,4 @@
-import { apId, ErrorCode, isNil, tryCatch } from '@activepieces/core-utils';
+import { apId, ErrorCode, isNil, tryCatch } from '@wippa/core-utils';
 import {
   ActionPreviewEvent,
   ActionReceiptEvent,
@@ -12,7 +12,7 @@ import {
   DEFAULT_CHAT_TIER_ID,
   PersistedChatMessage,
   ToolProgressEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

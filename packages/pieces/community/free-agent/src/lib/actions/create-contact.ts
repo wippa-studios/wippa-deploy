@@ -2,8 +2,8 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
 import { freeAgentAuth } from '../auth';
 
 export const freeAgentCreateContact = createAction({

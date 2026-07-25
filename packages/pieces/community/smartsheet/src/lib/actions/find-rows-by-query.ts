@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
 import { smartsheetAuth } from '../auth';
 import { smartsheetCommon } from '../common';
 

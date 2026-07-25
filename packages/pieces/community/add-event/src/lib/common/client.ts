@@ -5,7 +5,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { AddEventPage } from './types';
 
 const BASE_URL = 'https://api.addevent.com/calevent/v2';

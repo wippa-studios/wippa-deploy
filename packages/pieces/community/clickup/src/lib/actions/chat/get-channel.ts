@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
 import { callClickUpApi3, clickupCommon } from '../../common';
 import { clickupAuth } from '../../auth';
 import { getChannelOutputSchema } from '../../output-schemas';

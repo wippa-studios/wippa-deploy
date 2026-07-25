@@ -3,8 +3,8 @@ import {
   createTrigger,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import { googleCalendarCommon, getAccessToken } from '../common';
 import { GoogleCalendarEvent } from '../common/types';
 import { googleCalendarAuth } from '../common';
@@ -12,13 +12,13 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { getEvents } from '../common/helper';
 import { eventOutputSchema } from '../output-schemas';
 

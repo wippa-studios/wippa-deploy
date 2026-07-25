@@ -2,7 +2,7 @@ import { createAction, Property } from "@activepieces/pieces-framework";
 import Odoo from "../../commom/index";
 import { odooAuth } from '../auth';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export default createAction({
     name: 'get_records',

@@ -5,14 +5,14 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   DropdownState,
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import * as crypto from 'crypto-js';
 import { Challenge, Instance } from './models';
 import { vtigerAuth } from '..';

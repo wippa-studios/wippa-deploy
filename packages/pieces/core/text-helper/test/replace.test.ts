@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { replace } from '../src/lib/actions/replace';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('replace action', () => {
   test('replaces all occurrences by default', async () => {

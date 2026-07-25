@@ -1,9 +1,9 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { clicksendSendSmsAction } from './lib/action/send-sms';
 import { clicksendSendMms } from './lib/action/send-mms';
 import { clicksendCreateContactAction } from './lib/action/create-contact';

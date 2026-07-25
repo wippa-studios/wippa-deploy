@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
 import { ModelModality } from '@aws-sdk/client-bedrock';
 import { awsBedrockCombinedAuth } from '../auth';

@@ -3,7 +3,7 @@ import { housecallProAuth, makeHousecallProRequest } from "../common";
 import { HttpMethod } from "@activepieces/pieces-common";
 import * as z from 'zod/mini'
 import { propsValidation } from "@activepieces/pieces-common";
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 
 export const createCustomer = createAction({
   auth: housecallProAuth,

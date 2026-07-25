@@ -1,5 +1,5 @@
-import { apId, Permission } from '@activepieces/core-utils'
-import { FieldType, McpToolDefinition, ProjectScopedMcpServer } from '@activepieces/shared'
+import { apId, Permission } from '@wippa/core-utils'
+import { FieldType, McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { fieldService } from '../../tables/field/field.service'

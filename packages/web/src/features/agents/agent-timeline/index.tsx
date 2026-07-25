@@ -1,9 +1,9 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   type AgentResult,
   AgentTaskStatus,
   ContentBlockType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 
 import { ScrollArea } from '@/components/ui/scroll-area';

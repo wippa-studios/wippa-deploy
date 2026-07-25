@@ -1,9 +1,9 @@
 import { sftpAuth } from '../auth';
 import { endClient, getClient, getProtocolBackwardCompatibility } from '../common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import Client from 'ssh2-sftp-client';
 import { Client as FTPClient, FTPError } from 'basic-ftp';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import { getSftpError } from './common';
 
 async function renameFTP(client: FTPClient, oldPath: string, newPath: string) {

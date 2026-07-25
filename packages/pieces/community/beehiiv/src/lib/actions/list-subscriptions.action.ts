@@ -1,9 +1,9 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { beehiivAuth } from '../common/auth';
 import { publicationId } from '../common/props';
 import { beehiivApiCall } from '../common/client';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 type SubscriptionListResponse = {
 	data: Record<string, unknown>[];

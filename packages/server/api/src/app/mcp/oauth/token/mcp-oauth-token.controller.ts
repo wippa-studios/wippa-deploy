@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { McpOAuthClient } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { McpOAuthClient } from '@wippa/shared'
 import { FastifyReply } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { z } from 'zod'

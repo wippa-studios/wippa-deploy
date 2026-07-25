@@ -1,15 +1,15 @@
 {
-  "name": "@activepieces/piece-mailer-lite",
+  "name": "@wippa/piece-mailer-lite",
   "version": "0.6.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@mailerlite/mailerlite-nodejs": "1.1.0",
     "dayjs": "1.11.9",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import Odoo from '../commom/index';
 
 export const odooAuth = PieceAuth.CustomAuth({

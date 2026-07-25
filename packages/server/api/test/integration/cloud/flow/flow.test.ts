@@ -7,7 +7,7 @@ import {
     PieceType,
     TriggerStrategy,
     TriggerTestStrategy,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { db } from '../../../helpers/db'
@@ -39,7 +39,7 @@ async function setupFlowWithScheduleTrigger(ctx: TestContext) {
     await db.save('flow', mockFlow)
 
     const mockPieceMetadata = createMockPieceMetadata({
-        name: '@activepieces/piece-schedule',
+        name: '@wippa/piece-schedule',
         version: '0.1.5',
         triggers: {
             every_hour: {
@@ -65,7 +65,7 @@ async function setupFlowWithScheduleTrigger(ctx: TestContext) {
             type: FlowTriggerType.PIECE,
             name: 'trigger',
             settings: {
-                pieceName: '@activepieces/piece-schedule',
+                pieceName: '@wippa/piece-schedule',
                 pieceVersion: '0.1.5',
                 input: {},
                 propertySettings: {},

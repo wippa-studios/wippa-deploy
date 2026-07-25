@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { createAgent } from './lib/actions/create-agent';
 import { createConversation } from './lib/actions/create-conversation';
 import { updateSettings } from './lib/actions/update-settings';
@@ -9,7 +9,7 @@ import { updateAgent } from './lib/actions/update-agent';
 import { exportConversation } from './lib/actions/export-conversation';
 import { customgptAuth } from './lib/common/auth';
 import { newConversation } from './lib/triggers/new-conversation';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const customgpt = createPiece({
   displayName: 'CustomGPT',

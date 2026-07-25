@@ -1,4 +1,4 @@
-import { CreateTrialLicenseKeyRequestBody } from '@activepieces/shared';
+import { CreateTrialLicenseKeyRequestBody } from '@wippa/shared';
 
 import { flagsApi } from '@/api/flags-api';
 import { api } from '@/lib/api';

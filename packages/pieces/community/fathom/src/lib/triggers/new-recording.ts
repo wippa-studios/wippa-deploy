@@ -3,7 +3,7 @@ import {
   createTrigger,
   TriggerStrategy,
   Property
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { CreateWebhookRequest } from 'fathom-typescript/dist/esm/sdk/models/operations';
 
 interface WebhookInformation {

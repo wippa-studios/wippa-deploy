@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { beehiivAuth } from '../common/auth';
 import { automationId, publicationId, subscriptionId } from '../common/props';
 import { beehiivApiCall } from '../common/client';

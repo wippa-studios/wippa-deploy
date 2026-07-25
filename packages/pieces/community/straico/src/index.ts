@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { baseUrlv1 } from './lib/common/common';
 import { promptCompletion } from './lib/actions/prompt-completion';
 import { imageGeneration } from './lib/actions/image-generation';
@@ -22,7 +22,7 @@ import { agentDelete } from './lib/actions/agent-delete';
 import { agentUpdate } from './lib/actions/agent-update';
 import { agentGet } from './lib/actions/agent-get';
 import { agentPromptCompletion } from './lib/actions/agent-prompt-completion';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { straicoAuth } from './lib/auth';
 
 const markdownDescription = `

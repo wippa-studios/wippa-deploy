@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { Metadata } from '@activepieces/core-utils'
+import { Metadata } from '@wippa/core-utils'
 
 export const CreateFlowRequest = z.object({
     displayName: z.string(),

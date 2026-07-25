@@ -1,5 +1,5 @@
 import { TlsOptions } from 'node:tls'
-import { isNil, spreadIfDefined } from '@activepieces/core-utils'
+import { isNil, spreadIfDefined } from '@wippa/core-utils'
 import 'pg'
 import { DataSource } from 'typeorm'
 import { MakeStripeSubscriptionNullable1685053959806 } from '../ee/database/migrations/postgres/1685053959806-MakeStripeSubscriptionNullable'

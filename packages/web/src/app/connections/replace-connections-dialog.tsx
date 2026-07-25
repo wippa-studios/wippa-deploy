@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { AppConnectionScope, PopulatedFlow } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { AppConnectionScope, PopulatedFlow } from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { ChevronDown, GlobeIcon, Info, WorkflowIcon } from 'lucide-react';
@@ -167,8 +167,8 @@ const ReplaceConnectionsDialog = ({
     pieces
       ?.filter(
         (piece) =>
-          piece.name !== '@activepieces/piece-mcp' &&
-          piece.name !== '@activepieces/piece-webhook' &&
+          piece.name !== '@wippa/piece-mcp' &&
+          piece.name !== '@wippa/piece-webhook' &&
           connectionPieceNames.has(piece.name),
       )
       .map((piece) => ({

@@ -1,5 +1,5 @@
 
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { redisHelper } from '../../database/redis'

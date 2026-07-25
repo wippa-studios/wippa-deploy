@@ -1,5 +1,5 @@
-import { createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import {
 	pipedriveApiCall,
 	pipedriveCommon,
@@ -7,9 +7,9 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { pipedriveAuth } from '../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { GetField } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 
 interface PipedriveDealV2 {

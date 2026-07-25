@@ -1,9 +1,9 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { helpScoutApiRequest } from '../common/api';
 import { helpScoutAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { customerIdDropdown, customerProperties } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export const updateCustomerProperties = createAction({
   auth: helpScoutAuth,

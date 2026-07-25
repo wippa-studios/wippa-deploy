@@ -1,5 +1,5 @@
 export * from './auth';
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 
 export const runwayModelProperty = Property.ShortText({ displayName: 'Model', required: true });
 

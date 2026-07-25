@@ -1,8 +1,8 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { manusAuth } from '../common/auth';
 
 export const newTaskCreated = createTrigger({

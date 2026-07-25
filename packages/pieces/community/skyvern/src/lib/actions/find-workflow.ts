@@ -1,6 +1,6 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { skyvernAuth } from '../common/auth';
 import { skyvernApiCall } from '../common/client';
 import { ListWorkflowResponse } from '../common/props';

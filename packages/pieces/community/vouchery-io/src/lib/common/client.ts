@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 const BASE_URL = `https://admin.sandbox.vouchery.app/api/v2.1`;
 

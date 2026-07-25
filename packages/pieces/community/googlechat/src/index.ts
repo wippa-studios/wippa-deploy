@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { googleChatApiAuth } from './lib/common/constants';
 import { newMessage } from './lib/triggers/new-message';
 import { newMention } from './lib/triggers/new-mention';
@@ -8,7 +8,7 @@ import { addASpaceMember } from './lib/actions/add-a-space-member';
 import { getMessageDetails } from './lib/actions/get-message';
 import { searchMessages } from './lib/actions/search-messages';
 import { findMember } from './lib/actions/find-member';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const googlechat = createPiece({
   displayName: 'Google Chat',

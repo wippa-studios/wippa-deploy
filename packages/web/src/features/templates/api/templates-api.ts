@@ -1,11 +1,11 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   CreateTemplateRequestBody,
   ListTemplatesRequestQuery,
   Template,
   UpdateTemplateRequestBody,
   Flag,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

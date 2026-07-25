@@ -1,4 +1,4 @@
-import { CodeAction, MarkdownVariant } from '@activepieces/shared';
+import { CodeAction, MarkdownVariant } from '@wippa/shared';
 import { t } from 'i18next';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';

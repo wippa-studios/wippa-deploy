@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-letmepost",
+  "name": "@wippa/piece-letmepost",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",
@@ -9,8 +9,8 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*"
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*"
   },
   "devDependencies": {
     "tslib": "^2.3.0"

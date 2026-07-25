@@ -1,6 +1,6 @@
 
 import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 const auth = PieceAuth.SecretText({
   displayName: "API Key",

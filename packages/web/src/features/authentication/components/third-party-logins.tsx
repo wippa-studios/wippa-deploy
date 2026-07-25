@@ -4,7 +4,7 @@ import {
   ThirdPartyAuthnProviderEnum,
   ThirdPartyAuthnProvidersToShowMap,
   TelemetryEventName,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import React from 'react';
 

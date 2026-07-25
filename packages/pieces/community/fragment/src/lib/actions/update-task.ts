@@ -1,8 +1,8 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { fragmentAuth } from '../common/auth';
 import { fragmentClient } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { isEmpty } from '@wippa/pieces-framework';
 
 export const updateTask = createAction({
 	auth: fragmentAuth,

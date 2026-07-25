@@ -4,13 +4,13 @@ import {
   PiecePropValueSchema,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { meistertaskAuth } from '../auth';
 import { makeRequest, meisterTaskCommon } from '../common/common';

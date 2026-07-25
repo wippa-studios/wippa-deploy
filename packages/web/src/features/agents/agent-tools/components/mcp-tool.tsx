@@ -1,4 +1,4 @@
-import { AgentMcpTool } from '@activepieces/shared';
+import { AgentMcpTool } from '@wippa/shared';
 import { t } from 'i18next';
 import { Plus, X } from 'lucide-react';
 

@@ -6,7 +6,7 @@ import {
     EngineResponse,
     ERROR_MESSAGES_TO_REDACT,
     WorkerNotifyContract,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { io, type ManagerOptions, type Socket, type SocketOptions } from 'socket.io-client'
 import { flowRunProgressReporter } from './helper/flow-run-progress-reporter'
 import { execute } from './operations'

@@ -3,7 +3,7 @@ import {
   ChatConversation,
   ChatConversationStatus,
   WebsocketClientEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQueries, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

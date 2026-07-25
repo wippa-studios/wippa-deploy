@@ -1,4 +1,4 @@
-import { RouterAction } from '@activepieces/shared';
+import { RouterAction } from '@wippa/shared';
 import { t } from 'i18next';
 import React from 'react';
 import { useFieldArray, useFormContext } from 'react-hook-form';

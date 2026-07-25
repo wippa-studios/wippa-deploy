@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { getAccessTokenOrThrow } from '@wippa/pieces-common';
 import { mailchimpCommon } from '../common';
 import { mailchimpAuth } from '../..';
 import mailchimp from '@mailchimp/mailchimp_marketing';

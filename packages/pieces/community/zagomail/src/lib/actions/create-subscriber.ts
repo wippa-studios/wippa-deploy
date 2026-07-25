@@ -1,8 +1,8 @@
 import { zagomailAuth } from '../auth';
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { zagoMailApiService } from '../common/request';
 import { listFields, listUId } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 
 export const createSubscriber = createAction({

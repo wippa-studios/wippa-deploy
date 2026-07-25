@@ -2,7 +2,7 @@
  * Standalone Node entrypoint that loads a piece's compiled JS and prints its
  * metadata as JSON on stdout. Invoked as a child process from
  * `piece-script-utils.ts:loadPieceFromFolder` so that the piece's
- * `require('@activepieces/pieces-framework')` resolves via standard
+ * `require('@wippa/pieces-framework')` resolves via standard
  * node_modules lookup — matching the pinned framework inside the piece's
  * package.json — instead of being intercepted by `tsconfig-paths/register`
  * in the parent script (which would redirect to the local workspace

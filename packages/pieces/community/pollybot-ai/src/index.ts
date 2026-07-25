@@ -1,11 +1,11 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { pollybotAuth } from './lib/auth';
 import { createLead } from './lib/actions/create-lead';
 import { getLead } from './lib/actions/get-lead';
 import { updateLead } from './lib/actions/update-lead';
 import { deleteLead } from './lib/actions/delete-lead';
 import { listLeads } from './lib/actions/list-leads';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { newLead } from './lib/triggers/new-lead';
 
 export const pollybotAi = createPiece({

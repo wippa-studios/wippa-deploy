@@ -1,4 +1,4 @@
-import { isObject } from '@activepieces/core-utils';
+import { isObject } from '@wippa/core-utils';
 import {
   ActionReceiptEvent,
   BuildPlanEvent,
@@ -10,7 +10,7 @@ import {
   PersistedChatPart,
   PersistedChatPartType,
   PersistedToolCallStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { formatUtils } from '@/lib/format-utils';
 

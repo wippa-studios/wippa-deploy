@@ -2,13 +2,13 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { getBudget } from './lib/actions/get-budget';
 import { importTransaction } from './lib/actions/import-transaction';
 import { getCategories } from './lib/actions/get-categories';
 import { importTransactions } from './lib/actions/import-transactions';
 import { getAccounts } from './lib/actions/get-accounts';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const actualBudgetAuth = PieceAuth.CustomAuth({
   description: 'Enter authentication details',

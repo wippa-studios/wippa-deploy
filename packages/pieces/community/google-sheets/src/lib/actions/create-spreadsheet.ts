@@ -2,18 +2,18 @@ import {
 	AppConnectionValueForAuthProperty,
 	createAction,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
 	HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { drive as googleDrive } from '@googleapis/drive';
 import { includeTeamDrivesProp } from '../common/props';
 import { createGoogleClient, getAccessToken, googleSheetsAuth } from '../common/common';
-import { isNil } from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 import { createSpreadsheetActionOutputSchema } from '../output-schemas';
 
 export const createSpreadsheetAction = createAction({

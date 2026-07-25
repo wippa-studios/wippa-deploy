@@ -1,4 +1,4 @@
-import { FlowVersion } from '@activepieces/shared'
+import { FlowVersion } from '@wippa/shared'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
 

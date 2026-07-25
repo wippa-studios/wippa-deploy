@@ -2,8 +2,8 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { createHmac, timingSafeEqual } from 'node:crypto';
 import { letmepostAuth } from '../common/auth';
 import { letmepostApiCall } from '../common';

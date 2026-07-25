@@ -1,9 +1,9 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { attioApiCall, verifyWebhookSignature } from '../common/client';
 import { attioAuth } from '../auth';
 import { CallRecordingResponse, CallRecordingWebhookPayload, MeetingResponse, WebhookResponse } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 const TRIGGER_KEY = 'call-recording-created-trigger';
 

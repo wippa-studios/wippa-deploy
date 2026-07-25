@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { waitwhileAuth } from './lib/common/auth';
 import { createACustomer } from './lib/actions/create-a-customer';
 import { createOrUpdateAVisit } from './lib/actions/create-or-update-a-visit';
@@ -6,8 +6,8 @@ import { deleteAVisit } from './lib/actions/delete-a-visit';
 import { searchCustomers } from './lib/actions/search-customers';
 import { newOrUpdatedMessage } from './lib/triggers/new-or-updated-message';
 import { newOrUpdatedVisit } from './lib/triggers/new-or-updated-visit';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const waitwhile = createPiece({
   displayName: 'WaitWhile',

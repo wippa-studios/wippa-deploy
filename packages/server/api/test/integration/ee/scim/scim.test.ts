@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { PrincipalType, ProjectType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { PrincipalType, ProjectType } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

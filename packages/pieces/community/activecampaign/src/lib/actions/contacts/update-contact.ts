@@ -1,5 +1,5 @@
 import { activeCampaignAuth } from '../../auth';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { activecampaignCommon, makeClient } from '../../common';
 import { CreateContactRequest } from '../../common/types';
 

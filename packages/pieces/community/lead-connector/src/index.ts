@@ -1,12 +1,12 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { baseUrl, getContacts, leadConnectorHeaders } from './lib/common';
 
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { addContactToCampaignAction } from './lib/actions/add-contact-to-campaign';
 import { addContactToWorkflowAction } from './lib/actions/add-contact-to-workflow';
 import { addNoteToContactAction } from './lib/actions/add-note-to-contact';

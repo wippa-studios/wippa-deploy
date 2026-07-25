@@ -1,8 +1,8 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { meetgeekaiAuth } from '../common/auth';
 import { teamIdDropdown } from '../common/props';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const getTeamMeetings = createAction({
   auth: meetgeekaiAuth,

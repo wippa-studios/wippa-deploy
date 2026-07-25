@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-presentation` to build the library.
+Run `turbo run build --filter=@wippa/piece-presentation` to build the library.

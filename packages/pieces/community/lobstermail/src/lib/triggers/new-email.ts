@@ -1,9 +1,9 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { lobstermailCommon, inboxIdDropdownOptional } from '../common';
 import { lobstermailAuth } from '../..';
 

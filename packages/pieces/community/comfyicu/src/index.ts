@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { getRunOutputAction } from './lib/actions/get-run-outputs';
 import { getRunStatusAction } from './lib/actions/get-run-status';
 import { listWorkflowsAction } from './lib/actions/list-workflows';

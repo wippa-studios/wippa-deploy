@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { Contact, ContactFolder } from '@microsoft/microsoft-graph-types';
 import { getGraphBaseUrl } from './microsoft-cloud';

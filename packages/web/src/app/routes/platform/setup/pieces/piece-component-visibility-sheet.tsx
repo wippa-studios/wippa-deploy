@@ -1,5 +1,5 @@
-import { ActionBase, TriggerBase } from '@activepieces/pieces-framework';
-import { PieceSet } from '@activepieces/shared';
+import { ActionBase, TriggerBase } from '@wippa/pieces-framework';
+import { PieceSet } from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown, ChevronRight, Loader2 } from 'lucide-react';
 import { useMemo, useState } from 'react';

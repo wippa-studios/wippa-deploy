@@ -1,4 +1,4 @@
-import { ApFlagId, isNil } from '@activepieces/shared';
+import { ApFlagId, isNil } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   Boxes,

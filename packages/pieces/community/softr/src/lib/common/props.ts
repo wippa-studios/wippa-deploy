@@ -1,6 +1,6 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { TableField } from './types';
 import { SoftrAuth } from './auth';
 

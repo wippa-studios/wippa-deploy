@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-pdf-co` to build the library.
+Run `turbo run build --filter=@wippa/piece-pdf-co` to build the library.

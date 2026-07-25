@@ -1,4 +1,4 @@
-import { Project } from '@activepieces/shared'
+import { Project } from '@wippa/shared'
 import { hooksFactory } from '../helper/hooks-factory'
 
 export const projectHooks = hooksFactory.create<ProjectHooks>(_log => ({

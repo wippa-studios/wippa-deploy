@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { FlowActionType, FlowOperationType } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { FlowActionType, FlowOperationType } from '@wippa/shared';
 
 import { CardList, CardListItemSkeleton } from '@/components/custom/card-list';
 import {
@@ -16,33 +16,33 @@ import GenericActionOrTriggerItem from './generic-piece-selector-item';
 
 const APPROVAL_PIECES_CONFIG = [
   {
-    pieceName: '@activepieces/piece-slack',
+    pieceName: '@wippa/piece-slack',
     approvalActionNames: [
       'request_approval_message',
       'request_approval_direct_message',
     ],
   },
   {
-    pieceName: '@activepieces/piece-discord',
+    pieceName: '@wippa/piece-discord',
     approvalActionNames: ['request_approval_message'],
   },
   {
-    pieceName: '@activepieces/piece-microsoft-teams',
+    pieceName: '@wippa/piece-microsoft-teams',
     approvalActionNames: [
       'request_approval_direct_message',
       'request_approval_in_channel',
     ],
   },
   {
-    pieceName: '@activepieces/piece-microsoft-outlook',
+    pieceName: '@wippa/piece-microsoft-outlook',
     approvalActionNames: ['request_approval_in_mail'],
   },
   {
-    pieceName: '@activepieces/piece-gmail',
+    pieceName: '@wippa/piece-gmail',
     approvalActionNames: ['request_approval_in_mail'],
   },
   {
-    pieceName: '@activepieces/piece-telegram-bot',
+    pieceName: '@wippa/piece-telegram-bot',
     approvalActionNames: ['request_approval_message'],
   },
 ];

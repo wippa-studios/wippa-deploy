@@ -5,9 +5,9 @@ import {
 	HttpRequest,
 	QueryParams,
 	httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { JiraDataCenterAuth } from '../../auth';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export async function sendJiraRequest(request: HttpRequest & { auth: JiraDataCenterAuth }) {
 	return httpClient.sendRequest({

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
 import { createEntryAction } from './lib/actions/create-entry';
 import { updateEntryAction } from './lib/actions/update-entry';
 import { deleteEntryAction } from './lib/actions/delete-entry';
@@ -9,7 +9,7 @@ import { entryUpdatedTrigger } from './lib/triggers/entry-updated';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { makeRequest } from './lib/common';
 import { cognitoFormsAuth } from './lib/auth';
 

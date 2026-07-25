@@ -3,7 +3,7 @@ import { fellowAuth, getBaseUrl } from "../common/auth";
 import { DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from "@activepieces/pieces-common";
 import dayjs from 'dayjs';
 import { ListRecordingsResponse } from "../common/types";
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof fellowAuth>, Record<string, never>> = {
     strategy: DedupeStrategy.TIMEBASED,

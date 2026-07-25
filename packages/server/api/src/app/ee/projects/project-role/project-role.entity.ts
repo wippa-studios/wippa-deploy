@@ -1,5 +1,5 @@
-import { PlatformId, ProjectRole } from '@activepieces/core-utils'
-import { ProjectMember } from '@activepieces/shared'
+import { PlatformId, ProjectRole } from '@wippa/core-utils'
+import { ProjectMember } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { BaseColumnSchemaPart } from '../../../database/database-common'
 

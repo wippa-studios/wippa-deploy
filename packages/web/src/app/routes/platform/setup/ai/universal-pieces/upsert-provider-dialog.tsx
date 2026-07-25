@@ -1,4 +1,4 @@
-import { AIProviderName, isNil } from '@activepieces/core-utils';
+import { AIProviderName, isNil } from '@wippa/core-utils';
 import {
   AIProviderConfig,
   AnthropicProviderAuthConfig,
@@ -17,7 +17,7 @@ import {
   OpenAIProviderAuthConfig,
   OpenAIProviderConfig,
   UpdateAIProviderRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { AxiosError } from 'axios';

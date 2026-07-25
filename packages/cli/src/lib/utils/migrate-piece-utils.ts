@@ -35,7 +35,7 @@ function collectTsFiles(dir: string): string[] {
     return files
 }
 
-// A piece imports only from @activepieces/pieces-framework (which re-exports the foundation
+// A piece imports only from @wippa/pieces-framework (which re-exports the foundation
 // symbols). Repoint every shared / core-* import specifier to the framework; a symbol the
 // framework does not re-export was server-only and will surface as a build error.
 function repointImports(content: string): string {
@@ -58,7 +58,7 @@ function migrateManifest({ piecePath, dryRun }: MigratePieceParams): boolean {
     const devDependencies: Record<string, string> = manifest.devDependencies ?? {}
     const scripts: Record<string, string> = manifest.scripts ?? {}
 
-    delete dependencies['@activepieces/shared']
+    delete dependencies['@wippa/shared']
     for (const dep of REQUIRED_DEPENDENCIES) {
         dependencies[dep] = dependencies[dep] ?? 'workspace:*'
     }
@@ -119,27 +119,27 @@ function defaultEslintConfig(): Record<string, unknown> {
     }
 }
 
-const FRAMEWORK = '@activepieces/pieces-framework'
+const FRAMEWORK = '@wippa/pieces-framework'
 const REPOINTED_MODULES = [
-    '@activepieces/shared',
-    '@activepieces/core-utils',
-    '@activepieces/core-piece-types',
-    '@activepieces/core-formula',
-    '@activepieces/core-execution',
+    '@wippa/shared',
+    '@wippa/core-utils',
+    '@wippa/core-piece-types',
+    '@wippa/core-formula',
+    '@wippa/core-execution',
 ]
 const REQUIRED_DEPENDENCIES = [
-    '@activepieces/pieces-common',
-    '@activepieces/pieces-framework',
-    '@activepieces/core-piece-types',
-    '@activepieces/core-utils',
+    '@wippa/pieces-common',
+    '@wippa/pieces-framework',
+    '@wippa/core-piece-types',
+    '@wippa/core-utils',
 ]
 const IMPORT_BOUNDARY_PATTERNS = [
     'lodash',
     'lodash/*',
-    '@activepieces/core-*',
-    '@activepieces/server*',
-    '@activepieces/engine',
-    '@activepieces/shared',
+    '@wippa/core-*',
+    '@wippa/server*',
+    '@wippa/engine',
+    '@wippa/shared',
 ]
 const TSLIB_VERSION = '2.6.2'
 const BUNDLE_SCRIPT = 'node ../../../../dist/packages/cli/src/index.js pieces bundle'

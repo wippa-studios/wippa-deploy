@@ -1,4 +1,4 @@
-import { DropdownOption, OAuth2PropertyValue, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, OAuth2PropertyValue, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
 
 import { PageCollection } from '@microsoft/microsoft-graph-client';
 import { Team, Channel, Chat, ConversationMember, CallTranscript, CallRecording } from '@microsoft/microsoft-graph-types';

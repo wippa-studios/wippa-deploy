@@ -1,5 +1,5 @@
 import { wedofAuth } from '../../auth';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const newCertificationFolderCreated = createTrigger({

@@ -2,7 +2,7 @@ import {
   ProjectType,
   TeamProjectsLimit,
   ProjectWithLimits,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Plus } from 'lucide-react';
 

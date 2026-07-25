@@ -1,4 +1,4 @@
-import { KnowledgeBaseSourceType } from '@activepieces/shared';
+import { KnowledgeBaseSourceType } from '@wippa/shared';
 import { t } from 'i18next';
 import { FileText, Plus, Table2 } from 'lucide-react';
 import { useState } from 'react';

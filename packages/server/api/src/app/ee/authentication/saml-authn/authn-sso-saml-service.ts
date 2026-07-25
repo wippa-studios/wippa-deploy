@@ -1,6 +1,6 @@
 import { resolveTxt } from 'dns/promises'
-import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, isNil, PlatformId, tryCatch } from '@activepieces/core-utils'
-import { ApEdition, AuthenticationResponse, SAMLAuthnProviderConfig, SsoDomainVerification, SsoDomainVerificationRecordType, SsoDomainVerificationStatus, UserIdentityProvider } from '@activepieces/shared'
+import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, isNil, PlatformId, tryCatch } from '@wippa/core-utils'
+import { ApEdition, AuthenticationResponse, SAMLAuthnProviderConfig, SsoDomainVerification, SsoDomainVerificationRecordType, SsoDomainVerificationStatus, UserIdentityProvider } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { authenticationService } from '../../../authentication/authentication.service'
@@ -178,8 +178,8 @@ async function txtRecordMatches({ name, expected, log }: { name: string, expecte
     return lookup.data.some((chunks) => chunks.join('').trim() === expected)
 }
 
-const VERIFICATION_NAME_PREFIX = '_activepieces-verify'
-const VERIFICATION_VALUE_PREFIX = 'activepieces-verify'
+const VERIFICATION_NAME_PREFIX = '_wippa-verify'
+const VERIFICATION_VALUE_PREFIX = 'wippa-verify'
 
 type LoginResponse = {
     redirectUrl: string

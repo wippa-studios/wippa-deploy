@@ -4,13 +4,13 @@ import {
   PiecePropValueSchema,
   StaticPropsValue,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { structureIdDropdown } from '../common/props';
 import { griptapeAuth } from '../common/auth';

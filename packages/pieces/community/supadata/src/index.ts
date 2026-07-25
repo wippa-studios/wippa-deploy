@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { getTranscriptAction } from './lib/actions/get-transcript';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { supadataConfig } from './lib/config';
 
 const markdownDescription = `

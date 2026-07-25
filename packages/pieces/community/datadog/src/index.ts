@@ -1,12 +1,12 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   constructDatadogBaseHeaders,
   constructDatadogBaseUrl,
 } from './lib/common/helpers';
 import { sendMultipleLogs } from './lib/actions/send-multiple-logs';
 import { sendOneLog } from './lib/actions/send-one-log';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { datadogAuth } from './lib/common/auth';
 
 export const datadog = createPiece({

@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   TextClassificationArgs,
   ZeroShotClassificationArgs,
   InferenceClient,
 } from '@huggingface/inference';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { huggingFaceAuth } from '../auth';
 
 export const textClassification = createAction({

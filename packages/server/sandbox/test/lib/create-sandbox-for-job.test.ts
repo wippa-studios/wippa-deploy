@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { ApEnvironment, ExecutionMode, NetworkMode } from '@activepieces/shared'
+import { ApEnvironment, ExecutionMode, NetworkMode } from '@wippa/shared'
 
 const { createSandboxMock, isolateProcessMock, simpleProcessMock, getGlobalCacheCommonPathMock, getGlobalCodeCachePathMock, getEnginePathMock } = vi.hoisted(() => ({
     createSandboxMock: vi.fn(),

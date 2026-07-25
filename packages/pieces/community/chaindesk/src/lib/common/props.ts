@@ -2,8 +2,8 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { BASE_URL } from './constants';
 import { ListAgentsResponse } from './types';
 import { chaindeskAuth } from './auth';

@@ -2,14 +2,14 @@ import {
   createTrigger,
   AppConnectionValueForAuthProperty,
   Property,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import { googleCalendarAuth } from '../common';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { getCalendars } from '../common/helper';
 import { CalendarObject } from '../common/types';
 import { calendarOutputSchema } from '../output-schemas';

@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { InferenceClient } from '@huggingface/inference';
 import type {
   ObjectDetectionInput,
   ObjectDetectionOutput,
 } from '@huggingface/tasks';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { huggingFaceAuth } from '../auth';
 
 export const objectDetection = createAction({

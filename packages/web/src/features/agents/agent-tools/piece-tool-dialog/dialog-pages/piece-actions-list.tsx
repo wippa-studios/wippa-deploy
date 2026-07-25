@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { AgentTool, mcpToolNameUtils } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { AgentTool, mcpToolNameUtils } from '@wippa/shared';
 import Fuse from 'fuse.js';
 import { t } from 'i18next';
 import { Search } from 'lucide-react';

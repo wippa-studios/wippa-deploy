@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { PlatformRole, PrincipalType, ProjectType, UserStatus } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { PlatformRole, PrincipalType, ProjectType, UserStatus } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'

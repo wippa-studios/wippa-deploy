@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
 
 export class CloudConvertClient {
     private readonly auth: any;

@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { PaperformCreateProductResponse } from '../common/types';
 import { paperformCommonProps } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export const updateFormProduct = createAction({
   auth: paperformAuth,

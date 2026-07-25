@@ -1,4 +1,4 @@
-import { JobData } from '@activepieces/shared'
+import { JobData } from '@wippa/shared'
 import { Job } from 'bullmq'
 import { FastifyBaseLogger } from 'fastify'
 

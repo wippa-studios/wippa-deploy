@@ -1,11 +1,11 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { heymarketSmsAuth } from './lib/common/auth';
 import { createOrUpdateContact } from './lib/actions/create-or-update-contact';
 import { sendCustomMessage } from './lib/actions/send-custom-message';
 import { sendTemplateMessage } from './lib/actions/send-template-message';
 import { updateList } from './lib/actions/update-list';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { chatStarted } from './lib/triggers/chat-started-';
 import { newOrUpdatedContact } from './lib/triggers/new-or-updated-contact';
 

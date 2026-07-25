@@ -8,7 +8,7 @@ import {
     PieceType,
     PopulatedFlow,
     StepLocationRelativeToParent,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { db } from '../../../../helpers/db'
@@ -225,7 +225,7 @@ describe('Flow Operations API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPiece = createMockPieceMetadata({
-                name: '@activepieces/piece-schedule',
+                name: '@wippa/piece-schedule',
                 version: '0.2.0',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
@@ -244,7 +244,7 @@ describe('Flow Operations API', () => {
                 request: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@activepieces/piece-schedule',
+                        pieceName: '@wippa/piece-schedule',
                         pieceVersion: '0.2.0',
                         input: {},
                         triggerName: 'every_hour',
@@ -258,7 +258,7 @@ describe('Flow Operations API', () => {
             expect(response?.statusCode).toBe(StatusCodes.OK)
             const body = response?.json()
             expect(body.version.trigger.type).toBe(FlowTriggerType.PIECE)
-            expect(body.version.trigger.settings.pieceName).toBe('@activepieces/piece-schedule')
+            expect(body.version.trigger.settings.pieceName).toBe('@wippa/piece-schedule')
         })
     })
 
@@ -414,7 +414,7 @@ describe('Flow Operations API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPiece = createMockPieceMetadata({
-                name: '@activepieces/piece-test',
+                name: '@wippa/piece-test',
                 version: '0.1.0',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
@@ -436,7 +436,7 @@ describe('Flow Operations API', () => {
                         displayName: 'Piece Step',
                         name: 'step_1',
                         settings: {
-                            pieceName: '@activepieces/piece-test',
+                            pieceName: '@wippa/piece-test',
                             pieceVersion: '0.1.0',
                             actionName: 'test_action',
                             input: {},
@@ -456,7 +456,7 @@ describe('Flow Operations API', () => {
                     displayName: 'Piece Step',
                     name: 'step_1',
                     settings: {
-                        pieceName: '@activepieces/piece-test',
+                        pieceName: '@wippa/piece-test',
                         pieceVersion: '0.1.0',
                         actionName: 'test_action',
                         input: inputData,

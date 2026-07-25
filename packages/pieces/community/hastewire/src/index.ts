@@ -1,7 +1,7 @@
 
 import { createPiece } from "@activepieces/pieces-framework";
 import { hastewireAuth } from "./lib/common/auth";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { detectTextAction } from "./lib/actions/detect-text";
 import { humanizeTextAction } from "./lib/actions/humanize-text";
 

@@ -1,7 +1,7 @@
 import FormData from 'form-data';
 import { carboneAuth } from '../auth';
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { CARBONE_API_URL, CARBONE_VERSION } from '../common/constants';
 
 

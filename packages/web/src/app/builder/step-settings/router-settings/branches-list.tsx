@@ -1,9 +1,9 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   RouterAction,
   BranchExecutionType,
   RouterActionSettings,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { GripVertical, Trash, CopyPlus, Pencil } from 'lucide-react';
 import React, { useState } from 'react';

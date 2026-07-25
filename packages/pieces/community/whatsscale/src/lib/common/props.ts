@@ -1,5 +1,5 @@
-import { Property, DropdownState } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, DropdownState } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { whatsscaleAuth } from '../auth';
 import { whatsscaleClient } from './client';
 

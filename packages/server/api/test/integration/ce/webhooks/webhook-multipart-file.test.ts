@@ -1,4 +1,4 @@
-import { FileType, Flow, FlowStatus, Project } from '@activepieces/shared'
+import { FileType, Flow, FlowStatus, Project } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import FormData from 'form-data'
 import { StatusCodes } from 'http-status-codes'

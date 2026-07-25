@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-bursty-ai` to build the library.
+Run `turbo run build --filter=@wippa/piece-bursty-ai` to build the library.

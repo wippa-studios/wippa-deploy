@@ -1,4 +1,4 @@
-import { PersistedChatPartType, PersistedChatRole, PersistedToolCallStatus } from '@activepieces/shared'
+import { PersistedChatPartType, PersistedChatRole, PersistedToolCallStatus } from '@wippa/shared'
 import { describe, expect, it } from 'vitest'
 import { LiveScenario } from './scenarios'
 import { liveTagger } from './tagger'
@@ -119,7 +119,7 @@ describe('liveTagger.tag', () => {
 
         const http = liveTagger.tag({
             scenario: scenario({ shape: 'native-http', native: 'http' }),
-            uiMessages: [assistant([toolCall({ toolName: 'ap_execute_action', pieceName: '@activepieces/piece-http', outputText: '✅ ok' })])],
+            uiMessages: [assistant([toolCall({ toolName: 'ap_execute_action', pieceName: '@wippa/piece-http', outputText: '✅ ok' })])],
         })
         expect(http.nativeHandled).toBe(true)
 

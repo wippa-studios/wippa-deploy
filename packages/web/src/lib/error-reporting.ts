@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { ApFlagId } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { ApFlagId } from '@wippa/shared';
 
 import { FlagsMap } from '@/api/flags-api';
 import { queryClient } from '@/app/query-client';

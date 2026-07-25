@@ -1,6 +1,6 @@
 
-import { tryParseFriendlyPieceError } from '@activepieces/core-utils'
-import { BranchOperator, FlowRunStatus, RouterExecutionType } from '@activepieces/shared'
+import { tryParseFriendlyPieceError } from '@wippa/core-utils'
+import { BranchOperator, FlowRunStatus, RouterExecutionType } from '@wippa/shared'
 import { codeExecutor } from '../../src/lib/handler/code-executor'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { loopExecutor } from '../../src/lib/handler/loop-executor'
@@ -40,7 +40,7 @@ describe('piece with error handling', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'send_http',
-                pieceName: '@activepieces/piece-http',
+                pieceName: '@wippa/piece-http',
                 actionName: 'send_request',
                 input: {
                     'method': 'POST',

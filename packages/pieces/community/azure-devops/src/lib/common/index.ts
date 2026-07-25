@@ -3,12 +3,12 @@ import {
   HttpMethod,
   HttpMessageBody,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 function asAzureAuth(auth: unknown): AzureDevOpsAuth {
   return auth as AzureDevOpsAuth;

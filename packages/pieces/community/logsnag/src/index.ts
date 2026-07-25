@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { createEvent } from './lib/actions/create-event';
 import { newEventCreated } from './lib/triggers/new-event-created';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const logsnagAuth = PieceAuth.SecretText({
   displayName: 'API Key',

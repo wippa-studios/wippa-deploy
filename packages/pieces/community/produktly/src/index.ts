@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/shared';
 import { produktlyAuth } from './lib/common/auth';
 import { PRODUKTLY_BASE_URL } from './lib/common/client';
 import { listChangelogs } from './lib/actions/list-changelogs';

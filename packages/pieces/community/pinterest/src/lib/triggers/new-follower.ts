@@ -4,14 +4,14 @@ import {
   PiecePropValueSchema,
   OAuth2PropertyValue,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
   getAccessTokenOrThrow,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';
 

@@ -1,4 +1,4 @@
-import { PlatformMetricsLive } from '@activepieces/shared';
+import { PlatformMetricsLive } from '@wippa/shared';
 import { t } from 'i18next';
 import { Activity, Loader2 } from 'lucide-react';
 

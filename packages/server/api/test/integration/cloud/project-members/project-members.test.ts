@@ -1,5 +1,5 @@
-import { Permission, ProjectRole, RoleType } from '@activepieces/core-utils'
-import { DefaultProjectRole, PlatformRole, PrincipalType, UpdateProjectMemberRoleRequestBody } from '@activepieces/shared'
+import { Permission, ProjectRole, RoleType } from '@wippa/core-utils'
+import { DefaultProjectRole, PlatformRole, PrincipalType, UpdateProjectMemberRoleRequestBody } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../helpers/auth'

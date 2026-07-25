@@ -1,8 +1,8 @@
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { formStackAuth } from './lib/common/auth';
 
 import { createSubmission } from './lib/actions/create-submission';

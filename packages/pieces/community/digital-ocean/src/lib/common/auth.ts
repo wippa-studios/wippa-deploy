@@ -1,10 +1,10 @@
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { digitalOceanApiCall } from './client';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 export const digitalOceanAuth = [
   PieceAuth.OAuth2({

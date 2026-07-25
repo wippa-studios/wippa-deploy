@@ -3,7 +3,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { randomUUID } from 'crypto';
 import { googleCalendarCommon, GoogleCalendarAuthValue, getAccessToken } from '.';
 import {

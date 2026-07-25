@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { lemlistApiService } from './requests';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 export const BASE_URL = 'https://api.lemlist.com/api';
 

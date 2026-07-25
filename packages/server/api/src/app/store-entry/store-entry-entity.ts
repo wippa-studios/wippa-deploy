@@ -1,4 +1,4 @@
-import { STORE_KEY_MAX_LENGTH, StoreEntry } from '@activepieces/shared'
+import { STORE_KEY_MAX_LENGTH, StoreEntry } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

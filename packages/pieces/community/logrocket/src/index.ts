@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { logrocketAuth } from './lib/common/auth';
 import { requestHighlights } from './lib/actions/request-highlights';
 import { identifyUser } from './lib/actions/identify-user';

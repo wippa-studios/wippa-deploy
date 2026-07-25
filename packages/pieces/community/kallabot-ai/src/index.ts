@@ -1,8 +1,8 @@
 import {
   createPiece,
   PieceAuth,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { makeCallAction } from './lib/actions/make-call';
 import { getCallDetailsAction } from './lib/actions/get-call-details';
 import { addContactToListAction } from './lib/actions/add-contact-to-list';

@@ -1,5 +1,5 @@
-import { OAuth2GrantType } from '@activepieces/pieces-framework';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { OAuth2GrantType } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const cloudconvertAuth = PieceAuth.OAuth2({
     description: 'Connect your CloudConvert account using OAuth2',

@@ -1,7 +1,7 @@
 import { hubspotAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { staticListsDropdown } from '../common/props';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { Client } from '@hubspot/api-client';
 import { FilterOperatorEnum, HubSpotAddContactsToListResponse } from '../common/types';
 

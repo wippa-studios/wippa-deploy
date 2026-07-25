@@ -1,5 +1,5 @@
 import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createCustomApiCallAction } from "@activepieces/pieces-common";
 import { Buffer } from 'buffer'; 
 

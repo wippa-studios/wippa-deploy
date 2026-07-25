@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-stable-diffusion-webui` to build the library.
+Run `turbo run build --filter=@wippa/piece-stable-diffusion-webui` to build the library.

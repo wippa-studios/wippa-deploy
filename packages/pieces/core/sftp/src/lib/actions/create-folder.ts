@@ -1,6 +1,6 @@
   import { sftpAuth } from '../auth';
 import { endClient, getClient, getProtocolBackwardCompatibility } from '../../index';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import Client from 'ssh2-sftp-client';
 import { Client as FTPClient, FTPError } from 'basic-ftp';
 import { getSftpError } from './common';

@@ -1,4 +1,4 @@
-import { ApMultipartFile } from '@activepieces/core-utils'
+import { ApMultipartFile } from '@wippa/core-utils'
 import { Multipart } from '@fastify/multipart'
 
 /**

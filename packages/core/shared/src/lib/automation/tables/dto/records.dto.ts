@@ -1,4 +1,4 @@
-import { Cursor, OptionalArrayFromQuery } from '@activepieces/core-utils'
+import { Cursor, OptionalArrayFromQuery } from '@wippa/core-utils'
 import { z } from 'zod'
 
 const coerceToString = z.preprocess(

@@ -3,7 +3,7 @@ import {
   FlowActionType,
   FlowTrigger,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import React, {
   createContext,
@@ -32,7 +32,7 @@ const ActionTestRunnerContext =
 
 const isReturnResponseAndWaitForWebhook = (step: FlowAction) =>
   step.type === FlowActionType.PIECE &&
-  step.settings.pieceName === '@activepieces/piece-webhook' &&
+  step.settings.pieceName === '@wippa/piece-webhook' &&
   step.settings.actionName === 'return_response_and_wait_for_next_webhook';
 
 const ActionTestRunnerProvider = ({

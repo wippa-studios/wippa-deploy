@@ -1,4 +1,4 @@
-import { Platform, User, UserChatMemory } from '@activepieces/shared'
+import { Platform, User, UserChatMemory } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../../database/database-common'
 

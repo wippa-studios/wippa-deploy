@@ -1,4 +1,4 @@
-import { createPiece, Piece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, Piece, PieceAuth } from '@wippa/pieces-framework';
 import { getHighlights } from './lib/actions/get-highlights';
 import { getMeetingDetails } from './lib/actions/get-meeting-details';
 import { getMeetingsSummaryInsights } from './lib/actions/get-meetings-summary-insights';
@@ -7,7 +7,7 @@ import { getTranscript } from './lib/actions/get-transcript';
 import { uploadRecording } from './lib/actions/upload-recording';
 import { newMeeting } from './lib/triggers/new-meeting';
 import { meetgeekaiAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const meetgeekAi = createPiece({
   displayName: 'Meetgeek',

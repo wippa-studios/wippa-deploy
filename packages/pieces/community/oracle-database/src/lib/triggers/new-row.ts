@@ -3,12 +3,12 @@ import {
   TriggerStrategy,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import crypto from 'crypto';
 import dayjs from 'dayjs';
 import { oracleDbAuth } from '../common/auth';

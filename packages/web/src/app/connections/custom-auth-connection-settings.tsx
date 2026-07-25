@@ -1,4 +1,4 @@
-import { CustomAuthProperty } from '@activepieces/pieces-framework';
+import { CustomAuthProperty } from '@wippa/pieces-framework';
 import React from 'react';
 
 import { GenericPropertiesForm } from '@/app/builder/piece-properties/generic-properties-form';

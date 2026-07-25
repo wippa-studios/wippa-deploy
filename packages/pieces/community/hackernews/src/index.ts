@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import { fetchTopStories } from './lib/actions/top-stories-in-hacker-news';
 
 export const hackernews = createPiece({

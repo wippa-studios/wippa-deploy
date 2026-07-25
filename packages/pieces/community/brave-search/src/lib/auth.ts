@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const braveSearchAuth = PieceAuth.SecretText({
   displayName: 'API Key',

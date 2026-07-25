@@ -51,7 +51,7 @@ const EXPERTISE: Record<string, PieceExpertise> = {
 // Returns curated notes for a piece (and optionally a specific action), or undefined if none exist.
 // Generic-first: the absence of a note is fine — the generic engine handles the long tail.
 function getNotes({ pieceName, actionName }: { pieceName: string, actionName?: string }): string | undefined {
-    const shortName = (mcpUtils.normalizePieceName(pieceName) ?? pieceName).replace('@activepieces/piece-', '')
+    const shortName = (mcpUtils.normalizePieceName(pieceName) ?? pieceName).replace('@wippa/piece-', '')
     const entry = EXPERTISE[shortName]
     if (!entry) {
         return undefined
@@ -61,7 +61,7 @@ function getNotes({ pieceName, actionName }: { pieceName: string, actionName?: s
 }
 
 function hasNotes({ pieceName }: { pieceName: string }): boolean {
-    const shortName = (mcpUtils.normalizePieceName(pieceName) ?? pieceName).replace('@activepieces/piece-', '')
+    const shortName = (mcpUtils.normalizePieceName(pieceName) ?? pieceName).replace('@wippa/piece-', '')
     return Boolean(EXPERTISE[shortName])
 }
 

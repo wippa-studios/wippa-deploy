@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { lokaliseAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createComment } from './lib/actions/create-comment';
 import { createProject } from './lib/actions/create-project';
 import { createKey } from './lib/actions/create-key';
@@ -16,7 +16,7 @@ import { retrieveAKey } from './lib/actions/retrieve-a-key';
 import { keyAdded } from './lib/triggers/key-added';
 import { keyUpdated } from './lib/triggers/key-updated';
 import { translationUpdated } from './lib/triggers/translation-updated';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const lokalise = createPiece({
   displayName: 'Lokalise',

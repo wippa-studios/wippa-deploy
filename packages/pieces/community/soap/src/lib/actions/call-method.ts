@@ -7,7 +7,7 @@ import {
   StaticMultiSelectDropdownProperty,
   StaticPropsValue,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { soapAuth } from '../shared/auth';
 
 type DynamicProp =

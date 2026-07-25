@@ -2,13 +2,13 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { askChatbot } from './lib/actions/ask-chatbot';
 import { retuneAuth } from './lib/auth';
 

@@ -1,5 +1,5 @@
 import http from 'node:http'
-import { FetchHttpClient, HttpMethod } from '@activepieces/pieces-common'
+import { FetchHttpClient, HttpMethod } from '@wippa/pieces-common'
 import FormData from 'form-data'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 

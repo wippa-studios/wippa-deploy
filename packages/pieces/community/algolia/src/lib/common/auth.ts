@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { tryCatch } from '@wippa/pieces-framework';
 
 import { validateAlgoliaAuth } from './client';
 

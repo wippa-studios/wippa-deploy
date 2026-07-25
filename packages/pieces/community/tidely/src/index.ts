@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { importInvoice } from './lib/actions/import-invoice';
 import { tidelyAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { create } from 'domain';
 import { createAPlan } from './lib/actions/create-a-plan';
 

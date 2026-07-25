@@ -1,4 +1,4 @@
-import { Project, ProjectPlan } from '@activepieces/shared'
+import { Project, ProjectPlan } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

@@ -1,4 +1,4 @@
-import { isNil, tryParseFriendlyPieceError } from '@activepieces/core-utils';
+import { isNil, tryParseFriendlyPieceError } from '@wippa/core-utils';
 import {
   StepOutputStatus,
   flowStructureUtil,
@@ -12,7 +12,7 @@ import {
   LogSliceRef,
   StepOutputType,
   RunInternalError,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Download, Info, ShieldAlert } from 'lucide-react';
 import { useMemo, useState } from 'react';

@@ -3,7 +3,7 @@ import { createAction, Property, StoreScope } from "@activepieces/pieces-framewo
 import OpenAI from 'openai';
 import { baseUrl } from '../common/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const askDeepseek = createAction({
   audience: 'human',

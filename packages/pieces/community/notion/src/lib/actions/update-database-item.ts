@@ -1,7 +1,7 @@
 import {
   createAction,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { Client } from '@notionhq/client';
 import { NotionFieldMapping } from '../common/models';
 

@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { githubAuth } from '../auth';
 import { githubApiCall } from '../common';
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { HttpError, HttpMethod } from '@wippa/pieces-common';
 
 export const githubFindUserAction = createAction({
   auth: githubAuth,

@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
-import { ApFlagId, CreateTemplateRequestBody, TemplateType, UpdateTemplateRequestBody, UpdateTemplatesCategoriesFlagRequestBody } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
+import { ApFlagId, CreateTemplateRequestBody, TemplateType, UpdateTemplateRequestBody, UpdateTemplatesCategoriesFlagRequestBody } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 import { securityAccess } from '../../../../core/security/authorization/fastify-security'

@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-oracle-fusion-cloud-erp` to build the library.
+Run `turbo run build --filter=@wippa/piece-oracle-fusion-cloud-erp` to build the library.

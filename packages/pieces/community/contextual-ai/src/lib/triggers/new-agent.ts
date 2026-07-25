@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 import { contextualAiAuth } from '../auth';
 import { ContextualAI } from 'contextual-client';
 import type { Agent } from 'contextual-client/resources/agents';

@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { Channel, Guild } from '../common/models';
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { discordAuth } from '../auth';
 
 export interface Member {

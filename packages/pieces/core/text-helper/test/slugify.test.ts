@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { slugifyAction } from '../src/lib/actions/slugify';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('slugify action', () => {
   test('slugifies a simple string', async () => {

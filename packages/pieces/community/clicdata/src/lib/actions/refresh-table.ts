@@ -1,8 +1,8 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { clicdataAuth } from '../common/auth';
 import { clicdataApiCall } from '../common/client';
 import { clicdataCommonProps } from '../common/props';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const refreshTable = createAction({
   auth: clicdataAuth,

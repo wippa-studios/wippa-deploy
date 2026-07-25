@@ -65,7 +65,7 @@ Email templates live in `src/assets/emails/`. When creating or modifying email t
 
 ## Structured Logging Field Schema (evlog)
 
-All structured logging goes through evlog — `logger.{info,warn,error,debug}({ fields }, msg)` and `wideEvent.set/error/timed` from `@activepieces/server-utils`. The **field keys** (not message strings) are the queryable schema behind dashboards, alerts, and the OTLP drain. They MUST be consistent: **one concept = one path, everywhere.** Following [evlog's guidance](https://www.evlog.dev/learn/wide-events), fields are **grouped by entity** (which flattens to the dotted `entity.id` paths OpenTelemetry recommends), not flat prefixed keys.
+All structured logging goes through evlog — `logger.{info,warn,error,debug}({ fields }, msg)` and `wideEvent.set/error/timed` from `@wippa/server-utils`. The **field keys** (not message strings) are the queryable schema behind dashboards, alerts, and the OTLP drain. They MUST be consistent: **one concept = one path, everywhere.** Following [evlog's guidance](https://www.evlog.dev/learn/wide-events), fields are **grouped by entity** (which flattens to the dotted `entity.id` paths OpenTelemetry recommends), not flat prefixed keys.
 
 **Rules:**
 
@@ -81,7 +81,7 @@ Only the metadata object of a logging call (`logger.*`, `log.child`, `createLogg
 
 ## Release Version Detection (`apVersionUtil`)
 
-`apVersionUtil.getCurrentRelease()` (in `@activepieces/server-utils`, `ap-version.ts`) reads the running release from `<process.cwd()>/package.json`. **It is `cwd`-relative, not module-relative** — `__dirname` was tried and does not work in the bundled output, so do not "fix" it that way. On any failure (missing file, bad JSON, missing/non-string `version`) it logs a `warn` and returns the sentinel `UNKNOWN_VERSION` (`'0.0.0'`).
+`apVersionUtil.getCurrentRelease()` (in `@wippa/server-utils`, `ap-version.ts`) reads the running release from `<process.cwd()>/package.json`. **It is `cwd`-relative, not module-relative** — `__dirname` was tried and does not work in the bundled output, so do not "fix" it that way. On any failure (missing file, bad JSON, missing/non-string `version`) it logs a `warn` and returns the sentinel `UNKNOWN_VERSION` (`'0.0.0'`).
 
 **`UNKNOWN_VERSION` means "the read failed", NOT "this process is version 0.0.0".** Never treat it as a real release. The worker↔app dispatch gate (added in PR #13518) stops a version-skewed worker from silently corrupting runs during rolling deploys. Both ends route their comparison through **`apVersionUtil.versionsAreCompatible({ versionA, versionB })`**, which is **fail-closed**:
 - `undefined` on either side (an old, pre-gate worker) → incompatible.

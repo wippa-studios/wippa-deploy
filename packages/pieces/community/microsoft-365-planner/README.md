@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-microsoft-365-planner` to build the library.
+Run `turbo run build --filter=@wippa/piece-microsoft-365-planner` to build the library.

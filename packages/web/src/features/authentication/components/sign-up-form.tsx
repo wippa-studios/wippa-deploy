@@ -1,10 +1,10 @@
-import { ErrorCode, isNil } from '@activepieces/core-utils';
+import { ErrorCode, isNil } from '@wippa/core-utils';
 import {
   OtpType,
   ApEdition,
   ApFlagId,
   TelemetryEventName,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Eye, EyeOff } from 'lucide-react';
 import { useMemo, useState } from 'react';

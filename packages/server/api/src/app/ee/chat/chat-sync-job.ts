@@ -1,5 +1,5 @@
-import { AIProviderName, chunk, isNil, tryCatch } from '@activepieces/core-utils'
-import { ACTIVEPIECES_CHAT_TIERS, ApEdition, ChatConversation, ChatHistoryMessage, PersistedChatMessage, PersistedChatPart, PersistedChatPartType, PersistedChatRole, PersistedToolCallStatus } from '@activepieces/shared'
+import { AIProviderName, chunk, isNil, tryCatch } from '@wippa/core-utils'
+import { ACTIVEPIECES_CHAT_TIERS, ApEdition, ChatConversation, ChatHistoryMessage, PersistedChatMessage, PersistedChatPart, PersistedChatPartType, PersistedChatRole, PersistedToolCallStatus } from '@wippa/shared'
 import { ModelMessage } from 'ai'
 import { FastifyBaseLogger } from 'fastify'
 import { aiProviderService } from '../../ai/ai-provider-service'

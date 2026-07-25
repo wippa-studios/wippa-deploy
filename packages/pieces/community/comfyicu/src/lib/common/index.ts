@@ -4,8 +4,8 @@ import {
   httpClient,
   HttpRequest,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty, Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, Property } from '@wippa/pieces-framework';
 import { comfyIcuAuth } from '../auth';
 
 export async function comfyIcuApiCall({

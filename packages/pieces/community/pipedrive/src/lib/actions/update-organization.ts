@@ -1,5 +1,5 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { organizationCommonProps, organizationIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -8,8 +8,8 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, GetOrganizationResponse } from '../common/types';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { isEmpty } from '@wippa/pieces-framework';
 
 export const updateOrganizationAction = createAction({
 	auth: pipedriveAuth,

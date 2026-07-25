@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { lemlistAuth } from './lib/common/constants';
 import { newActivity } from './lib/triggers/new-activity';
 import { unsubscribedRecipient } from './lib/triggers/unsubscribed-recipient';

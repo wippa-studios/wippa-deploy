@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/pieces-common';
 import { wistiaAuth } from '../../';
 import { flattenProject, wistiaApiCall, WistiaProject } from '../common';
 

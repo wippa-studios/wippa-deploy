@@ -2,8 +2,8 @@ import {
   HttpMethod,
   httpClient,
   getAccessTokenOrThrow,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
 import { facebookPagesAuth } from '../..';
 
 export const facebookPagesCommon = {

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { searchCompanies } from './lib/actions/search-companies';
 import { lookupCompany } from './lib/actions/lookup-company';
 import { enrichCompany } from './lib/actions/enrich-company';
@@ -30,7 +30,7 @@ import { pubrioWebhookTrigger } from './lib/triggers/webhook';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { pubrioRequest } from './lib/common';
 
 export const pubrioAuth = PieceAuth.SecretText({

@@ -1,6 +1,6 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
 import { attioApiCall, attioPaginatedApiCall } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import {
 	AttributeResponse,
 	CallRecordingResponse,
@@ -9,7 +9,7 @@ import {
 	ObjectResponse,
 	SelectOptionResponse,
 } from './types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { attioAuth } from '../auth';
 
 interface DropdownParams {

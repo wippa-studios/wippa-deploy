@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { IdentityQueries } from '../../common/queries';
 import { sendIdentityGraphQLRequest } from '../../common/helpers';
 

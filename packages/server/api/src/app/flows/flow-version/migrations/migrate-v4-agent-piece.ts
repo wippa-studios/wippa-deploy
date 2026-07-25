@@ -1,11 +1,11 @@
-import { flowStructureUtil, FlowVersion } from '@activepieces/shared'
+import { flowStructureUtil, FlowVersion } from '@wippa/shared'
 import { flowMigrationUtil } from './flow-migration-util'
 import { Migration } from '.'
 
 export const migrateAgentPieceV4: Migration = {
     targetSchemaVersion: '4',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
-        const newVersion = flowMigrationUtil.pinPieceToVersion(flowVersion, '@activepieces/piece-agent', '0.2.4')
+        const newVersion = flowMigrationUtil.pinPieceToVersion(flowVersion, '@wippa/piece-agent', '0.2.4')
         const agentIds = flowStructureUtil.extractAgentIds(newVersion)
         return {
             ...newVersion,

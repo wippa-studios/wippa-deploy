@@ -1,4 +1,4 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   CountTablesRequest,
   CreateTableRequest,
@@ -7,7 +7,7 @@ import {
   Table,
   TableTemplate,
   UpdateTableRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

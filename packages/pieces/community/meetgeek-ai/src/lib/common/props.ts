@@ -1,7 +1,7 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { meetgeekaiAuth } from './auth';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const meetingIdDropdwon = Property.Dropdown({
   auth: meetgeekaiAuth,

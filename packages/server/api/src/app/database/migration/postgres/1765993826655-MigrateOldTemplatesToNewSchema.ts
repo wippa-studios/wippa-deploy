@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { FlowVersion, TemplateStatus } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { FlowVersion, TemplateStatus } from '@wippa/shared'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { z } from 'zod'
 import { system } from '../../../helper/system/system'

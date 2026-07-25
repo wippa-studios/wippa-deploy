@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import snowflake from 'snowflake-sdk';
 import { snowflakeAuth } from '../auth';
 import {

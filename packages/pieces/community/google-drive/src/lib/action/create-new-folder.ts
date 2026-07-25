@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { googleDriveAuth, createGoogleClient } from '../auth';
 import { common } from '../common';
 import { drive as googleDrive } from '@googleapis/drive';

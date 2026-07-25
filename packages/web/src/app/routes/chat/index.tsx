@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { USE_DRAFT_QUERY_PARAM_NAME } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { USE_DRAFT_QUERY_PARAM_NAME } from '@wippa/shared';
 import { nanoid } from 'nanoid';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';

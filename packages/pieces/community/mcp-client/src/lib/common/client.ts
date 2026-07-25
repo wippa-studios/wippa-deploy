@@ -4,7 +4,7 @@ import {
   McpAuthType,
   McpProtocol,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

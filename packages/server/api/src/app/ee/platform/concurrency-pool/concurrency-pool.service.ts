@@ -1,4 +1,4 @@
-import { apId, isNil } from '@activepieces/core-utils'
+import { apId, isNil } from '@wippa/core-utils'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../../../core/db/repo-factory'
 import { getConcurrencyPoolLimitKey, getProjectConcurrencyPoolKey } from '../../../database/redis/keys'

@@ -1,4 +1,4 @@
-import type { ApId, PlatformId, ProjectId } from '@activepieces/core-utils'
+import type { ApId, PlatformId, ProjectId } from '@wippa/core-utils'
 import { PrincipalType } from './principal-type'
 
 export type WorkerPrincipal = {

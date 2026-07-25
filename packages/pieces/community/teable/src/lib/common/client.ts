@@ -4,7 +4,7 @@ import {
   QueryParams,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { TEABLE_CLOUD_URL } from './constants';
 
 

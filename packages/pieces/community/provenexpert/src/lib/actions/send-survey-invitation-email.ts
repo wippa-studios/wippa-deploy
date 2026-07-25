@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { provenExpertAuth } from '../common/auth';
 import { provenExpertCommon } from '../common';
 

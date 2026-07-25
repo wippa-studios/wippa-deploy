@@ -1,7 +1,7 @@
-import { formulaEvaluator } from '@activepieces/core-formula'
-import { applyFunctionToValues, extractMustacheTokens, isNil, isString } from '@activepieces/core-utils'
-import { ContextVersion } from '@activepieces/pieces-framework'
-import { FormulaEvaluationError } from '@activepieces/shared'
+import { formulaEvaluator } from '@wippa/core-formula'
+import { applyFunctionToValues, extractMustacheTokens, isNil, isString } from '@wippa/core-utils'
+import { ContextVersion } from '@wippa/pieces-framework'
+import { FormulaEvaluationError } from '@wippa/shared'
 
 import { initCodeSandbox } from '../core/code/code-sandbox'
 import { FlowExecutorContext } from '../handler/context/flow-execution-context'

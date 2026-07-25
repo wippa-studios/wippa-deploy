@@ -3,9 +3,9 @@ import {
 	Property,
 	createPiece,
 	OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 import { addContactToCampaign } from './lib/action/add-contact-to-campaign';
 import { addFileToRecord } from './lib/action/add-file-to-record';

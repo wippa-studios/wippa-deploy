@@ -1,7 +1,7 @@
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { createMessage } from './lib/actions/create-message';
 import { createRoom } from './lib/actions/create-room';
 import { createTeam } from './lib/actions/create-team';
@@ -10,8 +10,8 @@ import { findRoom } from './lib/actions/find-room';
 import { webexAuth } from './lib/common/auth';
 import { newRoom } from './lib/triggers/new-room';
 import { newMeeting } from './lib/triggers/new-meeting';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/client';
 
 export const webex = createPiece({

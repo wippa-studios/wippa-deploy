@@ -1,4 +1,4 @@
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { createAction, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
 import { excelAuth } from '../auth';
 import { objectToArray } from '../common/common';
 import { commonProps } from '../common/props';

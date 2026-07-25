@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode, isNil, UserId } from '@activepieces/core-utils'
-import { ApplicationEvent, ApplicationEventName, OtpType, ResetPasswordRequestBody, UserIdentity, VerifyEmailRequestBody } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, isNil, UserId } from '@wippa/core-utils'
+import { ApplicationEvent, ApplicationEventName, OtpType, ResetPasswordRequestBody, UserIdentity, VerifyEmailRequestBody } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { userIdentityService } from '../../../authentication/user-identity/user-identity-service'
 import { applicationEvents } from '../../../helper/application-events'

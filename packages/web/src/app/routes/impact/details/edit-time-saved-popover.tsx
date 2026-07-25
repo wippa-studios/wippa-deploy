@@ -1,4 +1,4 @@
-import { FlowOperationType } from '@activepieces/shared';
+import { FlowOperationType } from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useContext, useRef, useState } from 'react';

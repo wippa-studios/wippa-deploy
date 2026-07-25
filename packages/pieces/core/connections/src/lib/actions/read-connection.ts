@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 const markdown = `
 **Advanced Piece**

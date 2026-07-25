@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // Importing the data-selector utils pulls in `@/features/pieces` → `src/lib/api.ts`,
 // which reads `window.location.origin` at module load, so this suite needs a DOM.
-import { FlowAction, FlowActionType } from '@activepieces/shared';
+import { FlowAction, FlowActionType } from '@wippa/shared';
 import { describe, expect, it } from 'vitest';
 
 import { DataSelectorTreeNode } from '@/app/builder/data-selector/type';

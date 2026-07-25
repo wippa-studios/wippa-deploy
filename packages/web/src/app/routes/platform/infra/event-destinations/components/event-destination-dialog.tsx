@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   ApFlagId,
   ApplicationEventName,
   EventDestination,
   CreatePlatformEventDestinationRequestBody,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { ChevronDown, Sparkles } from 'lucide-react';

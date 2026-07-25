@@ -1,5 +1,5 @@
-import { ErrorCode } from '@activepieces/core-utils'
-import { PrincipalType, ProjectType, TeamProjectsLimit } from '@activepieces/shared'
+import { ErrorCode } from '@wippa/core-utils'
+import { PrincipalType, ProjectType, TeamProjectsLimit } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

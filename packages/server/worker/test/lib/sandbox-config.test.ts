@@ -3,8 +3,8 @@ import { describe, it, expect, vi } from 'vitest'
 // Inlined in the mock factory below too — vi.mock is hoisted above const initialization.
 const TWO_GB_IN_BYTES = 2 * 1024 * 1024 * 1024
 
-vi.mock('@activepieces/server-utils', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('@activepieces/server-utils')>()
+vi.mock('@wippa/server-utils', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('@wippa/server-utils')>()
     return {
         ...actual,
         systemUsage: {

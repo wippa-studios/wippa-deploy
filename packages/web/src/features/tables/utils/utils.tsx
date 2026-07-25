@@ -1,4 +1,4 @@
-import { ExportTableResponse, FieldType } from '@activepieces/shared';
+import { ExportTableResponse, FieldType } from '@wippa/shared';
 import JSZip from 'jszip';
 import { Type, Calendar, Hash, ChevronDownCircle } from 'lucide-react';
 import { createContext, ReactNode } from 'react';

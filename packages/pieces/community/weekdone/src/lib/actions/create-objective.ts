@@ -1,5 +1,5 @@
-import { createAction, Property, DynamicPropsValue } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property, DynamicPropsValue } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { weekdoneAuth } from '../auth';
 import { weekdoneCommon } from '../common';
 

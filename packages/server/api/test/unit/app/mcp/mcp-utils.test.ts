@@ -1,4 +1,4 @@
-import { PropertyType } from '@activepieces/pieces-framework'
+import { PropertyType } from '@wippa/pieces-framework'
 import { describe, expect, it } from 'vitest'
 import { mcpUtils } from '../../../../src/app/mcp/tools/mcp-utils'
 

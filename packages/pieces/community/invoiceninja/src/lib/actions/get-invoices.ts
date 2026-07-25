@@ -1,6 +1,6 @@
 // action to return invoices from InvoiceNinja with filtering by invoice status and client id
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { invoiceninjaAuth } from '../..';
 export const getInvoices = createAction({
   auth: invoiceninjaAuth,

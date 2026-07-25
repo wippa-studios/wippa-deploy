@@ -20,7 +20,7 @@ No explicit plan flag gate. The module is available to all platform users (list 
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
 - **OAuth App**: A platform-scoped record mapping a piece name to its custom OAuth credentials.
-- **pieceName**: The piece identifier (e.g., `@activepieces/piece-google-sheets`) that this credential applies to.
+- **pieceName**: The piece identifier (e.g., `@wippa/piece-google-sheets`) that this credential applies to.
 - **clientId**: The public OAuth 2.0 client identifier.
 - **clientSecret**: The OAuth 2.0 client secret — stored encrypted as `jsonb`, decrypted on use.
 

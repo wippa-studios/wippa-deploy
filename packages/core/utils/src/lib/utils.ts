@@ -192,7 +192,7 @@ export function validateIndexBound({
 }
 
 export function isManualPieceTrigger({ pieceName, triggerName }: { pieceName: string, triggerName: string }) {
-    return pieceName === '@activepieces/piece-manual-trigger' && triggerName === 'manual_trigger'
+    return pieceName === '@wippa/piece-manual-trigger' && triggerName === 'manual_trigger'
 }
 
 export function isEnumValue<T extends { [key: string]: string | number }>(

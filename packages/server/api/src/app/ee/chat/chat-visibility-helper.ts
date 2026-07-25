@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
-import { ApEdition, chatVisibility, PlatformWithoutSensitiveData, PrincipalType } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
+import { ApEdition, chatVisibility, PlatformWithoutSensitiveData, PrincipalType } from '@wippa/shared'
 import { onRequestAsyncHookHandler } from 'fastify'
 import { system } from '../../helper/system/system'
 import { userIdentityHelper } from '../../helper/user-identity-helper'

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { Contact, EmailAddress } from '@microsoft/microsoft-graph-types';
 import { microsoft365PeopleAuth } from '../common/auth';
 import { microsoft365PeopleCommon } from '../common/common';

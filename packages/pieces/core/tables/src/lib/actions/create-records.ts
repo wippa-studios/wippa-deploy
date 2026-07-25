@@ -1,6 +1,6 @@
-import { createAction, MarkdownVariant, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@activepieces/pieces-common';
-import { CreateRecordsRequest } from '@activepieces/pieces-framework';
+import { createAction, MarkdownVariant, PieceAuth, Property } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@wippa/pieces-common';
+import { CreateRecordsRequest } from '@wippa/pieces-framework';
 import { tablesCommon } from '../common';
 
 export const createRecords = createAction({

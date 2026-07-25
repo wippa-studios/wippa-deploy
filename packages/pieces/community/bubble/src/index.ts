@@ -2,9 +2,9 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { bubbleCreateThingAction } from './lib/actions/create-thing';
 import { bubbleDeleteThingAction } from './lib/actions/delete-thing';
 import { bubbleGetThingAction } from './lib/actions/get-thing';

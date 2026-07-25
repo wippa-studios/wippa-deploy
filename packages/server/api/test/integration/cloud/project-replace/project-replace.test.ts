@@ -1,4 +1,4 @@
-import { memoryLock } from '@activepieces/server-utils'
+import { memoryLock } from '@wippa/server-utils'
 import {
     FlowState,
     Folder,
@@ -6,7 +6,7 @@ import {
     PROJECT_REPLACE_SCHEMA_VERSION,
     ProjectReplaceErrorKind,
     ProjectReplaceRequest,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { vi } from 'vitest'
@@ -125,7 +125,7 @@ describe('Project Replace API', () => {
                 body: {
                     ...emptyReplaceRequest(),
                     requiredPieces: [{
-                        name: '@activepieces/piece-definitely-does-not-exist-on-npm',
+                        name: '@wippa/piece-definitely-does-not-exist-on-npm',
                         version: '1.2.3',
                         pieceType: PieceType.OFFICIAL,
                     }],
@@ -136,7 +136,7 @@ describe('Project Replace API', () => {
             const body = response.json()
             expect(body.failures).toHaveLength(1)
             expect(body.failures[0]).toMatchObject({
-                pieceName: '@activepieces/piece-definitely-does-not-exist-on-npm',
+                pieceName: '@wippa/piece-definitely-does-not-exist-on-npm',
                 version: '1.2.3',
                 pieceType: PieceType.OFFICIAL,
             })
@@ -153,7 +153,7 @@ describe('Project Replace API', () => {
                     ...emptyReplaceRequest(),
                     connections: [{
                         externalId: 'slack_main',
-                        pieceName: '@activepieces/piece-slack',
+                        pieceName: '@wippa/piece-slack',
                         displayName: 'Slack Main',
                     }],
                 },
@@ -165,7 +165,7 @@ describe('Project Replace API', () => {
             expect(body.connectionsAwaitingAuthorization).toEqual([
                 expect.objectContaining({
                     externalId: 'slack_main',
-                    pieceName: '@activepieces/piece-slack',
+                    pieceName: '@wippa/piece-slack',
                     displayName: 'Slack Main',
                 }),
             ])
@@ -178,7 +178,7 @@ describe('Project Replace API', () => {
                 platformId: platform.id,
                 projectIds: [project.id],
                 externalId: 'shared_conn',
-                pieceName: '@activepieces/piece-discord',
+                pieceName: '@wippa/piece-discord',
             }, ownerId)
             await db.save('app_connection', connection)
 
@@ -189,7 +189,7 @@ describe('Project Replace API', () => {
                     ...emptyReplaceRequest(),
                     connections: [{
                         externalId: 'shared_conn',
-                        pieceName: '@activepieces/piece-slack',
+                        pieceName: '@wippa/piece-slack',
                         displayName: 'Slack Main',
                     }],
                 },
@@ -201,8 +201,8 @@ describe('Project Replace API', () => {
             expect(mismatch).toMatchObject({
                 kind: ProjectReplaceErrorKind.CONNECTION_PIECE_MISMATCH,
                 externalId: 'shared_conn',
-                expectedPieceName: '@activepieces/piece-slack',
-                foundPieceName: '@activepieces/piece-discord',
+                expectedPieceName: '@wippa/piece-slack',
+                foundPieceName: '@wippa/piece-discord',
             })
         })
 

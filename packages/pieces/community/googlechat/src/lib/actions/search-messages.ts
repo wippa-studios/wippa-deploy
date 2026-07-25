@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
 import { googleChatApiAuth, googleChatCommon } from '../common';
 import { allSpacesDropdown } from '../common/props';
 import { googleChatAPIService } from '../common/requests';

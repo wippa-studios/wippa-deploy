@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 
 import { glideAuth } from '../auth';
 import { listGlideTables } from '../common/client';

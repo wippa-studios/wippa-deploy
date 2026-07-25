@@ -1,11 +1,11 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   ProjectSyncPlan,
   CreateProjectReleaseRequestBody,
   ProjectRelease,
   DiffReleaseRequest,
   ListProjectReleasesRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

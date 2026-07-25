@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { EngineOperationType, EngineResponseStatus, FlowVersion, RenewWebhookJobData, TriggerHookType, WorkerJobType } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { EngineOperationType, EngineResponseStatus, FlowVersion, RenewWebhookJobData, TriggerHookType, WorkerJobType } from '@wippa/shared'
 import { workerSettings } from '../../config/worker-settings'
 import { FireAndForgetJobResult, JobContext, JobHandler, JobResultKind } from '../types'
 import { getWebhookUrl } from '../utils/webhook-url'

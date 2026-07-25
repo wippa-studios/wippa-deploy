@@ -2,9 +2,9 @@ import {
   DropdownOption,
   Property,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { makeRequest } from '.';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
 import { pinterestAuth } from './auth';
 
 export const boardIdDropdown = Property.Dropdown({

@@ -1,5 +1,5 @@
-import { ActionBase, TriggerBase } from '@activepieces/pieces-framework'
-import { apId, PackageType, PieceCategory, PieceType, TriggerStrategy, TriggerTestStrategy } from '@activepieces/shared'
+import { ActionBase, TriggerBase } from '@wippa/pieces-framework'
+import { apId, PackageType, PieceCategory, PieceType, TriggerStrategy, TriggerTestStrategy } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest'
 import { databaseConnection, resetDatabaseConnection } from '../../../../src/app/database/database-connection'
@@ -53,7 +53,7 @@ function trigger(over: Pick<TriggerBase, 'name' | 'displayName' | 'description'>
 
 async function seedCatalog(): Promise<void> {
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@activepieces/piece-slack',
+        name: '@wippa/piece-slack',
         displayName: 'Slack',
         version: '1.0.0',
         pieceType: PieceType.OFFICIAL,
@@ -62,7 +62,7 @@ async function seedCatalog(): Promise<void> {
         triggers: { new_message: trigger({ name: 'new_message', displayName: 'New Message', description: 'Triggers when a new message is posted to a Slack channel' }) },
     }))
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@activepieces/piece-google-calendar',
+        name: '@wippa/piece-google-calendar',
         displayName: 'Google Calendar',
         version: '1.0.0',
         pieceType: PieceType.OFFICIAL,
@@ -71,7 +71,7 @@ async function seedCatalog(): Promise<void> {
         triggers: {},
     }))
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@activepieces/piece-gmail',
+        name: '@wippa/piece-gmail',
         displayName: 'Gmail',
         version: '1.0.0',
         pieceType: PieceType.OFFICIAL,
@@ -137,7 +137,7 @@ describe('Tool Search Engine (Phase 1)', () => {
         // bound NULL into the NOT NULL requiresConnection column, aborting the whole upsert (index unbuilt).
         const legacyAction = { name: 'legacy_action', displayName: 'Legacy Action', description: 'Send a message to a Slack channel', props: {} } as unknown as ActionBase
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@activepieces/piece-legacy',
+            name: '@wippa/piece-legacy',
             displayName: 'Legacy',
             version: '1.0.0',
             pieceType: PieceType.OFFICIAL,
@@ -152,7 +152,7 @@ describe('Tool Search Engine (Phase 1)', () => {
         expect(result.objectsIndexed).toBe(1)
         const [row] = await databaseConnection().query(
             'SELECT "requiresConnection" FROM "tool_search_index" WHERE "pieceName" = $1 AND "objectName" = $2',
-            ['@activepieces/piece-legacy', 'legacy_action'],
+            ['@wippa/piece-legacy', 'legacy_action'],
         )
         expect(row.requiresConnection).toBe(true)
     })
@@ -165,7 +165,7 @@ describe('Tool Search Engine (Phase 1)', () => {
 
         expect(mode).toBe('semantic')
         expect(results[0]).toMatchObject({
-            pieceName: '@activepieces/piece-slack',
+            pieceName: '@wippa/piece-slack',
             actionName: 'send_channel_message',
             displayName: 'Send Channel Message',
             oneLineDescription: 'Send a message to a Slack channel',
@@ -229,7 +229,7 @@ describe('Tool Search Engine (Phase 2 — τ no-match gate)', () => {
         const { results, mode } = await toolSearchService(log).searchActions('send a slack message', { embedder: withTau(0.1), limit: 5 })
 
         expect(mode).toBe('semantic')
-        expect(results[0]).toMatchObject({ pieceName: '@activepieces/piece-slack', actionName: 'send_channel_message' })
+        expect(results[0]).toMatchObject({ pieceName: '@wippa/piece-slack', actionName: 'send_channel_message' })
         expect(results[0].cosine).toBeGreaterThanOrEqual(0.1)
     })
 })
@@ -239,11 +239,11 @@ describe('Tool Search Engine (Phase 3 — incremental catalog sync)', () => {
         await seedCatalog()
         const first = await toolSearchReindexService(log).reindex({ embedder: fakeEmbedder })
         expect(first.objectsEmbedded).toBe(4)
-        const before = await getIndexRow('@activepieces/piece-slack', 'send_channel_message')
+        const before = await getIndexRow('@wippa/piece-slack', 'send_channel_message')
 
         // New version row, identical actions/triggers text → same retrieval doc → same hash.
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@activepieces/piece-slack',
+            name: '@wippa/piece-slack',
             displayName: 'Slack',
             version: '1.0.1',
             pieceType: PieceType.OFFICIAL,
@@ -257,7 +257,7 @@ describe('Tool Search Engine (Phase 3 — incremental catalog sync)', () => {
         expect(second.objectsIndexed).toBe(4)
         expect(second.objectsEmbedded).toBe(0)
         expect(await indexRowCount()).toBe(4)
-        const after = await getIndexRow('@activepieces/piece-slack', 'send_channel_message')
+        const after = await getIndexRow('@wippa/piece-slack', 'send_channel_message')
         expect(after?.pieceVersion).toBe('1.0.1')
         expect(after?.embedding).toBe(before?.embedding)
         expect(after?.embedding).not.toBeNull()
@@ -268,13 +268,13 @@ describe('Tool Search Engine (Phase 3 — incremental catalog sync)', () => {
         await toolSearchReindexService(log).reindex({ embedder: fakeEmbedder })
         expect(await indexRowCount()).toBe(4)
 
-        await databaseConnection().getRepository('piece_metadata').delete({ name: '@activepieces/piece-gmail' })
+        await databaseConnection().getRepository('piece_metadata').delete({ name: '@wippa/piece-gmail' })
         const result = await toolSearchReindexService(log).reindex({ embedder: fakeEmbedder })
 
         expect(result.objectsDeleted).toBe(1)
         expect(result.objectsEmbedded).toBe(0)
         expect(await indexRowCount()).toBe(3)
-        expect(await getIndexRow('@activepieces/piece-gmail', 'send_email')).toBeUndefined()
+        expect(await getIndexRow('@wippa/piece-gmail', 'send_email')).toBeUndefined()
     })
 
     it('a model_version swap builds new-version rows while the old rows survive (serving reads until cutover)', async () => {
@@ -289,7 +289,7 @@ describe('Tool Search Engine (Phase 3 — incremental catalog sync)', () => {
         expect(result.objectsDeleted).toBe(0)
         expect(await indexRowCount()).toBe(8)
 
-        const oldRow = await getIndexRow('@activepieces/piece-slack', 'send_channel_message')
+        const oldRow = await getIndexRow('@wippa/piece-slack', 'send_channel_message')
         expect(oldRow?.embedding).not.toBeNull()
 
         const [{ count: newRows }] = await databaseConnection().query(
@@ -365,7 +365,7 @@ describe('Tool Search Engine (Phase 3 — incremental catalog sync)', () => {
         expect(first.objectsEmbedded).toBe(4)
 
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@activepieces/piece-trello',
+            name: '@wippa/piece-trello',
             displayName: 'Trello',
             version: '1.0.0',
             pieceType: PieceType.OFFICIAL,
@@ -385,11 +385,11 @@ describe('Tool Search Engine (Phase 3 — incremental catalog sync)', () => {
     it('a changed description re-embeds only that object', async () => {
         await seedCatalog()
         await toolSearchReindexService(log).reindex({ embedder: fakeEmbedder })
-        const before = await getIndexRow('@activepieces/piece-gmail', 'send_email')
+        const before = await getIndexRow('@wippa/piece-gmail', 'send_email')
 
         // New version of gmail with different action text → hash changes for that one object only.
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@activepieces/piece-gmail',
+            name: '@wippa/piece-gmail',
             displayName: 'Gmail',
             version: '1.0.1',
             pieceType: PieceType.OFFICIAL,
@@ -402,7 +402,7 @@ describe('Tool Search Engine (Phase 3 — incremental catalog sync)', () => {
 
         expect(result.objectsEmbedded).toBe(1)
         expect(result.objectsDeleted).toBe(0)
-        const after = await getIndexRow('@activepieces/piece-gmail', 'send_email')
+        const after = await getIndexRow('@wippa/piece-gmail', 'send_email')
         expect(after?.embeddingInputHash).not.toBe(before?.embeddingInputHash)
         expect(after?.embedding).not.toBeNull()
     })
@@ -437,7 +437,7 @@ describe('Tool Search Engine (bulk upsert — crosses the chunk boundary)', () =
             })
         }
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@activepieces/piece-bulk',
+            name: '@wippa/piece-bulk',
             displayName: 'Bulk',
             version: '1.0.0',
             pieceType: PieceType.OFFICIAL,
@@ -471,7 +471,7 @@ describe('Tool Search Engine (bulk upsert — crosses the chunk boundary)', () =
 // COALESCE-based exclusion can be exercised without dropping NULL-audience rows.
 async function seedAudiences(): Promise<void> {
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@activepieces/piece-notify',
+        name: '@wippa/piece-notify',
         displayName: 'Notify',
         version: '1.0.0',
         pieceType: PieceType.OFFICIAL,
@@ -548,7 +548,7 @@ describe('Tool Search Engine (Phase 4 — multi-tenancy & filtering)', () => {
         })
 
         const pieces = results.map((r) => r.pieceName)
-        expect(pieces).toContain('@activepieces/piece-slack') // shared base catalog
+        expect(pieces).toContain('@wippa/piece-slack') // shared base catalog
         expect(pieces).toContain('@acme/piece-internal') // own custom piece
         expect(pieces).not.toContain('@globex/piece-secret') // another tenant's — never visible
     })
@@ -561,18 +561,18 @@ describe('Tool Search Engine (Phase 4 — multi-tenancy & filtering)', () => {
         const { results } = await toolSearchService(log).searchActions('send a message', {
             embedder: fakeEmbedder,
             limit: 10,
-            enabledPieceNames: new Set(['@activepieces/piece-slack', '@activepieces/piece-google-calendar']),
+            enabledPieceNames: new Set(['@wippa/piece-slack', '@wippa/piece-google-calendar']),
         })
 
         const pieces = results.map((r) => r.pieceName)
-        expect(pieces).toContain('@activepieces/piece-slack')
-        expect(pieces).not.toContain('@activepieces/piece-gmail')
+        expect(pieces).toContain('@wippa/piece-slack')
+        expect(pieces).not.toContain('@wippa/piece-gmail')
     })
 
     it('applies tenant + audience + enabled-piece + connected filters together', async () => {
-        await seedAudiences() // @activepieces/piece-notify: send_human/ai/both/unset
+        await seedAudiences() // @wippa/piece-notify: send_human/ai/both/unset
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@activepieces/piece-other',
+            name: '@wippa/piece-other',
             displayName: 'Other',
             version: '1.0.0',
             pieceType: PieceType.OFFICIAL,
@@ -586,13 +586,13 @@ describe('Tool Search Engine (Phase 4 — multi-tenancy & filtering)', () => {
             embedder: fakeEmbedder,
             limit: 20,
             audiences: ['ai', 'both'], // excludes send_human
-            enabledPieceNames: new Set(['@activepieces/piece-notify']), // excludes @piece-other
-            connectedPieceNames: new Set(['@activepieces/piece-notify']),
+            enabledPieceNames: new Set(['@wippa/piece-notify']), // excludes @piece-other
+            connectedPieceNames: new Set(['@wippa/piece-notify']),
         })
 
         // Only Notify's non-human actions survive both filters, each flagged connected.
         expect(actionNames(results)).toEqual(['send_ai', 'send_both', 'send_unset'])
-        expect(results.every((r) => r.pieceName === '@activepieces/piece-notify' && r.connected === true)).toBe(true)
+        expect(results.every((r) => r.pieceName === '@wippa/piece-notify' && r.connected === true)).toBe(true)
     })
 
     it('each row carries an accurate connected flag for the calling tenant', async () => {
@@ -603,11 +603,11 @@ describe('Tool Search Engine (Phase 4 — multi-tenancy & filtering)', () => {
         const { results } = await toolSearchService(log).searchActions('send a message', {
             embedder: fakeEmbedder,
             limit: 10,
-            connectedPieceNames: new Set(['@activepieces/piece-slack']),
+            connectedPieceNames: new Set(['@wippa/piece-slack']),
         })
 
-        const slack = results.find((r) => r.pieceName === '@activepieces/piece-slack')
-        const gmail = results.find((r) => r.pieceName === '@activepieces/piece-gmail')
+        const slack = results.find((r) => r.pieceName === '@wippa/piece-slack')
+        const gmail = results.find((r) => r.pieceName === '@wippa/piece-gmail')
         expect(slack?.connected).toBe(true)
         expect(gmail?.connected).toBe(false)
     })
@@ -627,7 +627,7 @@ describe('Tool Search Engine (Phase 4 — multi-tenancy & filtering)', () => {
             type: 'SECRET_TEXT',
             status: 'ACTIVE',
             platformId: 'platform-conn',
-            pieceName: '@activepieces/piece-slack',
+            pieceName: '@wippa/piece-slack',
             ownerId: null,
             projectIds: [projectId],
             scope: 'PROJECT',
@@ -646,8 +646,8 @@ describe('Tool Search Engine (Phase 4 — multi-tenancy & filtering)', () => {
             projectId,
         })
 
-        const slack = results.find((r) => r.pieceName === '@activepieces/piece-slack')
-        const gmail = results.find((r) => r.pieceName === '@activepieces/piece-gmail')
+        const slack = results.find((r) => r.pieceName === '@wippa/piece-slack')
+        const gmail = results.find((r) => r.pieceName === '@wippa/piece-gmail')
         expect(slack?.connected).toBe(true)
         expect(gmail?.connected).toBe(false)
     })
@@ -672,11 +672,11 @@ describe('Tool Search Engine (Phase 4 — multi-tenancy & filtering)', () => {
         const { results } = await toolSearchService(log).searchActions('send a message', {
             embedder: fakeEmbedder,
             limit: 10,
-            pieceName: '@activepieces/piece-slack',
+            pieceName: '@wippa/piece-slack',
         })
 
         expect(results.length).toBeGreaterThan(0)
-        expect(results.every((r) => r.pieceName === '@activepieces/piece-slack')).toBe(true)
+        expect(results.every((r) => r.pieceName === '@wippa/piece-slack')).toBe(true)
     })
 })
 
@@ -690,7 +690,7 @@ describe('Tool Search Engine (Phase 5 — keyword floor / degradation)', () => {
         expect(mode).toBe('keyword')
         // No model is configured, so the reason must be no-embedder (not a failed call).
         expect(degradeReason).toBe('no-embedder')
-        const slack = results.find((r) => r.pieceName === '@activepieces/piece-slack')
+        const slack = results.find((r) => r.pieceName === '@wippa/piece-slack')
         expect(slack).toMatchObject({
             actionName: 'send_channel_message',
             displayName: 'Send Channel Message',
@@ -714,7 +714,7 @@ describe('Tool Search Engine (Phase 5 — keyword floor / degradation)', () => {
         expect(mode).toBe('keyword')
         // A model WAS configured; its embed call threw — the reason must reflect the failure, not config.
         expect(degradeReason).toBe('embed-failed')
-        expect(results.some((r) => r.pieceName === '@activepieces/piece-slack')).toBe(true)
+        expect(results.some((r) => r.pieceName === '@wippa/piece-slack')).toBe(true)
     })
 
     it('honors the pieceName scope in the keyword floor — a scoped query returns only that piece’s rows', async () => {
@@ -727,17 +727,17 @@ describe('Tool Search Engine (Phase 5 — keyword floor / degradation)', () => {
 
         const { results, mode } = await toolSearchService(log).searchActions('send', {
             limit: 10,
-            pieceName: '@activepieces/piece-slack',
+            pieceName: '@wippa/piece-slack',
         })
 
         expect(mode).toBe('keyword')
         expect(results.length).toBeGreaterThan(0)
-        expect(results.every((r) => r.pieceName === '@activepieces/piece-slack')).toBe(true)
+        expect(results.every((r) => r.pieceName === '@wippa/piece-slack')).toBe(true)
     })
 
     it('returns audience:"ai" actions in the keyword floor — the search engine sees the full audience, not the human view', async () => {
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@activepieces/piece-agent-tools',
+            name: '@wippa/piece-agent-tools',
             displayName: 'Agent Tools',
             version: '1.0.0',
             pieceType: PieceType.OFFICIAL,
@@ -757,7 +757,7 @@ describe('Tool Search Engine (Phase 5 — keyword floor / degradation)', () => {
 // exercised for ranking, action/trigger isolation, and pieceName scope on the same vocabulary.
 async function seedTriggerCatalog(): Promise<void> {
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@activepieces/piece-slack',
+        name: '@wippa/piece-slack',
         displayName: 'Slack',
         version: '1.0.0',
         pieceType: PieceType.OFFICIAL,
@@ -766,7 +766,7 @@ async function seedTriggerCatalog(): Promise<void> {
         triggers: { new_message: trigger({ name: 'new_message', displayName: 'New Message', description: 'Triggers when a new message is posted to a Slack channel' }) },
     }))
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@activepieces/piece-google-calendar',
+        name: '@wippa/piece-google-calendar',
         displayName: 'Google Calendar',
         version: '1.0.0',
         pieceType: PieceType.OFFICIAL,
@@ -789,7 +789,7 @@ describe('Tool Search Engine (Phase 6 — ap_search_triggers)', () => {
 
         expect(mode).toBe('semantic')
         expect(results[0]).toMatchObject({
-            pieceName: '@activepieces/piece-slack',
+            pieceName: '@wippa/piece-slack',
             triggerName: 'new_message',
             displayName: 'New Message',
             oneLineDescription: 'Triggers when a new message is posted to a Slack channel',
@@ -825,7 +825,7 @@ describe('Tool Search Engine (Phase 6 — ap_search_triggers)', () => {
         const { results, mode } = await toolSearchService(log).searchTriggers('new message', { limit: 5 })
 
         expect(mode).toBe('keyword')
-        const slack = results.find((r) => r.pieceName === '@activepieces/piece-slack')
+        const slack = results.find((r) => r.pieceName === '@wippa/piece-slack')
         expect(slack).toMatchObject({
             triggerName: 'new_message',
             displayName: 'New Message',
@@ -841,9 +841,9 @@ describe('Tool Search Engine (Phase 6 — ap_search_triggers)', () => {
         await seedTriggerCatalog()
         await toolSearchReindexService(log).reindex({ embedder: fakeEmbedder })
 
-        const { results } = await toolSearchService(log).searchTriggers('a new message or event', { embedder: fakeEmbedder, limit: 10, pieceName: '@activepieces/piece-slack' })
+        const { results } = await toolSearchService(log).searchTriggers('a new message or event', { embedder: fakeEmbedder, limit: 10, pieceName: '@wippa/piece-slack' })
 
         expect(results.length).toBeGreaterThan(0)
-        expect(results.every((r) => r.pieceName === '@activepieces/piece-slack')).toBe(true)
+        expect(results.every((r) => r.pieceName === '@wippa/piece-slack')).toBe(true)
     })
 })

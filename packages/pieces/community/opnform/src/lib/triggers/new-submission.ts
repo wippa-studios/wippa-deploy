@@ -1,5 +1,5 @@
 import { opnformCommon, workspaceIdProp, formIdProp } from '../common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { opnformAuth } from '../auth';
 
 export const opnformNewSubmission = createTrigger({

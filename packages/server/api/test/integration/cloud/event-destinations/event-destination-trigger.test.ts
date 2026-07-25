@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { ApplicationEventName, EventDestinationScope, FlowCreatedEvent, FlowDeletedEvent, FlowRunEvent, WorkerJobType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { ApplicationEventName, EventDestinationScope, FlowCreatedEvent, FlowDeletedEvent, FlowRunEvent, WorkerJobType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { eventDestinationService } from '../../../../src/app/event-destinations/event-destinations.service'
 import { applicationEvents } from '../../../../src/app/helper/application-events'

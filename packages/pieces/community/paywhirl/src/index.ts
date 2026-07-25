@@ -1,13 +1,13 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { paywhirlAuth } from './lib/common/auth';
 import { cancelSubscription } from './lib/actions/cancel-subscription';
 import { createCustomer } from './lib/actions/create-customer';
 import { getCustomer } from './lib/actions/get-customer';
 import { subscribeCustomer } from './lib/actions/subscribe-customer';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { searchCustomersSubscription } from './lib/actions/search-customers-subscription';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const paywhirl = createPiece({
   displayName: 'Paywhirl',

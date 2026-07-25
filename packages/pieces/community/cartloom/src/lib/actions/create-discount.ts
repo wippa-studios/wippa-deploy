@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { createDiscount } from '../api';
 import { CartloomAuthType, cartloomAuth } from '../auth';
 import { buildProductsDropdown } from '../props';

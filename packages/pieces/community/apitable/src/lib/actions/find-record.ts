@@ -2,7 +2,7 @@ import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { APITableCommon, makeClient } from '../common';
 import { APITableAuth } from '../auth';
 import { prepareQuery } from '../common/client';

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const dimoAuth = PieceAuth.CustomAuth({
 	description: `You can obtain following credentials by creating Developer License at [Developer Console](https://console.dimo.org/).`,

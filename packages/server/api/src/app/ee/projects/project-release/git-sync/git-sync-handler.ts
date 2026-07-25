@@ -3,7 +3,7 @@ import { FlowState, FlowVersionState,
     PopulatedTable,
     PushFlowsGitRepoRequest,
     PushTablesGitRepoRequest,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { SimpleGit } from 'simple-git'
 import { flowService } from '../../../../flows/flow/flow.service'

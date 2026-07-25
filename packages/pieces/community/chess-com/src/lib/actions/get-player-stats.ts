@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import * as z from 'zod/mini'
 
 export const getPlayerStats = createAction({

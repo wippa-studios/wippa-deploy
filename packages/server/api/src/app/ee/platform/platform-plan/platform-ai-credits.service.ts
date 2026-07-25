@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined, isNil, tryCatch } from '@activepieces/core-utils'
-import { AiCreditsAutoTopUpState, CreateAICreditCheckoutSessionParamsSchema, PlatformPlan, UpdateAICreditsAutoTopUpParamsSchema } from '@activepieces/shared'
+import { assertNotNullOrUndefined, isNil, tryCatch } from '@wippa/core-utils'
+import { AiCreditsAutoTopUpState, CreateAICreditCheckoutSessionParamsSchema, PlatformPlan, UpdateAICreditsAutoTopUpParamsSchema } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { aiProviderService } from '../../../ai/ai-provider-service'

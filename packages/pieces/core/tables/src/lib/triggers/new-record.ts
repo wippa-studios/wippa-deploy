@@ -1,6 +1,6 @@
-import { createTrigger, PieceAuth, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, PieceAuth, TriggerStrategy } from '@wippa/pieces-framework';
 import { tablesCommon } from '../common';
-import { PopulatedRecord, TableWebhookEventType } from '@activepieces/pieces-framework';
+import { PopulatedRecord, TableWebhookEventType } from '@wippa/pieces-framework';
 
 export const newRecordTrigger = createTrigger({
     name: 'newRecord',

@@ -1,5 +1,5 @@
-import { Permission } from '@activepieces/core-utils'
-import { FlowActionType, FlowCreatorType, FlowOperationType, flowStructureUtil, FlowTriggerType, McpToolContext, McpToolDefinition, PieceTrigger, StepLocationRelativeToParent, UpdateActionRequest } from '@activepieces/shared'
+import { Permission } from '@wippa/core-utils'
+import { FlowActionType, FlowCreatorType, FlowOperationType, flowStructureUtil, FlowTriggerType, McpToolContext, McpToolDefinition, PieceTrigger, StepLocationRelativeToParent, UpdateActionRequest } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { flowService } from '../../flows/flow/flow.service'
@@ -46,7 +46,7 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
         inputSchema: {
             flowName: z.string().describe('Name for the new flow'),
             trigger: z.object({
-                pieceName: z.string().describe('Trigger piece name (e.g. "@activepieces/piece-webhook")'),
+                pieceName: z.string().describe('Trigger piece name (e.g. "@wippa/piece-webhook")'),
                 triggerName: z.string().describe('Trigger name (e.g. "catch_webhook")'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Trigger input config'),
                 auth: z.string().optional().describe('Connection externalId for trigger auth'),

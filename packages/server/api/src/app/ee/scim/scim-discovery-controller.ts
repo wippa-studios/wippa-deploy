@@ -7,7 +7,7 @@ import {
     SCIM_SCHEMA_SCHEMA,
     SCIM_SERVICE_PROVIDER_CONFIG_SCHEMA,
     SCIM_USER_SCHEMA,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { securityAccess } from '../../core/security/authorization/fastify-security'

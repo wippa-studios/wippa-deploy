@@ -1,10 +1,10 @@
 
-import { wideEvent } from '@activepieces/server-utils'
+import { wideEvent } from '@wippa/server-utils'
 import {
     RAW_PAYLOAD_HEADER,
     WebhookUrlParams,
     WebsocketClientEvent,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyRequest } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { securityAccess } from '../core/security/authorization/fastify-security'

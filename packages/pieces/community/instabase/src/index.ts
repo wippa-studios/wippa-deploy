@@ -1,8 +1,8 @@
 
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { PieceAuth, createPiece, Property } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
 import { converseWithDocumentAction } from './lib/actions/converse-with-document';
 import { createConversationAction } from './lib/actions/create-conversation';
 import { newConversationTrigger } from './lib/triggers/new-conversation';

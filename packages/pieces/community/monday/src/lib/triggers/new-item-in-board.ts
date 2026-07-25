@@ -1,13 +1,13 @@
 import {
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { mondayAuth } from '../auth';
 import { makeClient, mondayCommon } from '../common';
 import { MondayWebhookEventType } from '../common/constants';
 import { parseMondayColumnValue } from '../common/helper';
 import { WebhookInformation } from '../common/models';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 export const newItemInBoardTrigger = createTrigger({
   auth: mondayAuth,
   name: 'monday_new_item_in_board',

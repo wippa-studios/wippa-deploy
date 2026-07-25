@@ -1,8 +1,8 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { allProfileIdsMultiSelectDropdown, listIdDropdown } from '../common/props';
 import { klaviyoAuth, KlaviyoAuthValue } from '../common/auth';
 import { makeRequest, normalizeProfileIds } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const addProfileToList = createAction({
   auth: klaviyoAuth,

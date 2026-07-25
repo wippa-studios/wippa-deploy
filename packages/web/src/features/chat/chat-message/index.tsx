@@ -1,4 +1,4 @@
-import { FileResponseInterface } from '@activepieces/shared';
+import { FileResponseInterface } from '@wippa/shared';
 import React from 'react';
 
 import { FileMessage } from './file-message';

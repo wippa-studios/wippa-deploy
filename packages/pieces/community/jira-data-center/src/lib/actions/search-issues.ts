@@ -1,8 +1,8 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { jiraDataCenterAuth } from '../../auth';
 import { searchIssuesByJql } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const searchIssuesAction = createAction({
 	name: 'search_issues',

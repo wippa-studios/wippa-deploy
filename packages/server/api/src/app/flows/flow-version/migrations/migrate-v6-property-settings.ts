@@ -6,7 +6,7 @@ import {
     FlowVersion,
     PropertyExecutionType,
     SampleDataDataType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { fileService } from '../../../file/file.service'
 import { Migration, MigrationContext } from '.'
 

@@ -4,13 +4,13 @@ import {
   StaticPropsValue,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 import { vidnozAuth } from '../..';
 import { vidnozClient } from '../common/auth';

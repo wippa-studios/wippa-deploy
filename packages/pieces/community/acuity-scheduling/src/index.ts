@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
 import {
 	addBlockedTimeAction,
 	createAppointmentAction,
@@ -8,8 +8,8 @@ import {
 	rescheduleAppointmentAction,
 	updateClientAction,
 } from './lib/actions';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { API_URL } from './lib/common';
 import { appointmentCanceledTrigger, appointmentScheduledTrigger } from './lib/triggers';
 import { acuitySchedulingAuth } from './lib/auth';

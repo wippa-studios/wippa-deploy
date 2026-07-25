@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { updateBusinessTimeAction } from './lib/actions/business-settings/update-business-time';
 import { createCategoryAction } from './lib/actions/categories/create-category';
 import { deleteCategoryAction } from './lib/actions/categories/delete-category';

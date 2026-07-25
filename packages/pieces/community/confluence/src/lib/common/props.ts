@@ -1,11 +1,11 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { confluenceApiCall, confluencePaginatedApiCall } from '.';
 import { confluenceAuth } from '../auth';
 import {
 	DropdownOption,
 	DynamicPropsValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { parseStringPromise } from 'xml2js';
 
 function buildSpaceDropdown(required: boolean) {

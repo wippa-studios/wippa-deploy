@@ -1,6 +1,6 @@
 
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/pieces-common';
 import { smooveAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 

@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth, PiecePropValueSchema } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { leadStatusChangedTrigger, newContactAddedTrigger, newLeadCreatedTrigger, newTaskCreatedTrigger } from "./lib/triggers";
 import { findLeadAction, updateContactAction, createLeadAction, createContactAction, findContactAction, findCompanyAction, updateLeadAction } from "./lib/actions";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { kommoAuth } from './lib/auth';
 
 const markdownDescription = `

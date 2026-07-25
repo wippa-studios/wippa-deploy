@@ -1,6 +1,6 @@
 import os from 'os'
 import { monitorEventLoopDelay } from 'perf_hooks'
-import { ApEdition } from '@activepieces/shared'
+import { ApEdition } from '@wippa/shared'
 import { createLogger } from 'evlog'
 import { FastifyBaseLogger } from 'fastify'
 import { jobQueue } from '../workers/job-queue/job-queue'

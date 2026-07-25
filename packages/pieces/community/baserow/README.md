@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-baserow` to build the library.
+Run `turbo run build --filter=@wippa/piece-baserow` to build the library.

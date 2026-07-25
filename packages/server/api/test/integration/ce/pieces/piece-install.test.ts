@@ -6,7 +6,7 @@ import {
     PackageType,
     PieceScope,
     PieceType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { MockInstance } from 'vitest'

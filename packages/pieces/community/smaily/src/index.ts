@@ -3,14 +3,14 @@ import {
   PieceAuth,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod, createCustomApiCallAction 
 
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { createOrUpdateSubscriberAction } from './lib/actions/create-or-update-subscriber.action';
 import { getSubscriberAction } from './lib/actions/get-subscriber.action';
 import { smailyAuth } from './lib/auth';

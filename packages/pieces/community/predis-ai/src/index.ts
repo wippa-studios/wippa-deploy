@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { predisAiActions } from './lib/actions';
 import { predisAiTriggers } from './lib/triggers';
 

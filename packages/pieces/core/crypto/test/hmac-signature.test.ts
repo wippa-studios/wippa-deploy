@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { hmacSignature } from '../src/lib/actions/hmac-signature';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('hmacSignature', () => {
   test('generates HMAC with SHA256 and UTF-8 key (hex output)', async () => {

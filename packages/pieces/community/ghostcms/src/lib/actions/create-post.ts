@@ -2,8 +2,8 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 import { ghostAuth } from '../..';
 import { common } from '../common';

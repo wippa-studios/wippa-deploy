@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { proxycurlAuth } from '../../index';
 import { BASE_URL } from '../common/client';
 

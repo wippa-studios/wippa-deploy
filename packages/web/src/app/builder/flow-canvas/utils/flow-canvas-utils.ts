@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowAction,
   FlowActionType,
@@ -13,7 +13,7 @@ import {
   FlowTrigger,
   FlowTriggerType,
   Note,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 
 import { flowRunUtils } from '@/features/flow-runs';

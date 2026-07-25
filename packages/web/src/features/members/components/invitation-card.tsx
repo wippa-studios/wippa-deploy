@@ -1,5 +1,5 @@
-import { Permission } from '@activepieces/core-utils';
-import { UserInvitation } from '@activepieces/shared';
+import { Permission } from '@wippa/core-utils';
+import { UserInvitation } from '@wippa/shared';
 import { t } from 'i18next';
 import { Trash } from 'lucide-react';
 

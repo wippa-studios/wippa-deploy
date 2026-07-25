@@ -1,8 +1,8 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { askClaude } from './lib/actions/send-prompt';
 import { baseUrl } from './lib/common/common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { extractStructuredDataAction } from './lib/actions/extract-structured-data';
 import { claudeAuth } from './lib/auth';
 

@@ -3,8 +3,8 @@ import {
   HttpMethod,
   HttpMessageBody,
   HttpResponse,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { descriptAuth, getAuthToken } from '../auth';
 
 const BASE_URL = 'https://descriptapi.com/v1';

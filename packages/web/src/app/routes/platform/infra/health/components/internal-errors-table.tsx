@@ -1,4 +1,4 @@
-import { InternalErrorImpactItem } from '@activepieces/shared';
+import { InternalErrorImpactItem } from '@wippa/shared';
 import { t } from 'i18next';
 import { CircleCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

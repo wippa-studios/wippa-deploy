@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { sliteAuth } from '../auth';
 import { sliteApi } from '../common/client';
 import { sliteProps } from '../common/props';

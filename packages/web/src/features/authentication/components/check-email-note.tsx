@@ -1,4 +1,4 @@
-import { CreateOtpRequestBody, OtpType } from '@activepieces/shared';
+import { CreateOtpRequestBody, OtpType } from '@wippa/shared';
 import { t } from 'i18next';
 import { MailCheck } from 'lucide-react';
 import { toast } from 'sonner';

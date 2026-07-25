@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { ApEdition } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { ApEdition } from '@wippa/shared'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { isNotOneOfTheseEditions } from '../../database-common'
 

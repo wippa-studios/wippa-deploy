@@ -1,13 +1,13 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { WafeqAuth, wafeqAuth } from '../common/auth';
 import { wafeqApiCall, WafeqPaginatedResponse } from '../common/client';
 

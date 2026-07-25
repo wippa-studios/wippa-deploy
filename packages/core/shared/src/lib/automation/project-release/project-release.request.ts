@@ -1,4 +1,4 @@
-import { Nullable } from '@activepieces/core-utils'
+import { Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export enum ProjectReleaseType {

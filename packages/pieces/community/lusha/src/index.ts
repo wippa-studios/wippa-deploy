@@ -1,5 +1,5 @@
 import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { searchCompanies } from "./lib/actions/companies/search";
 import { enrichCompanies } from "./lib/actions/companies/enrich";
 

@@ -4,8 +4,8 @@ import {
 	DynamicPropsValue,
 	PiecePropValueSchema,
 	AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { confluenceAuth } from '../auth';
 import { confluenceApiCall } from '../common';
 

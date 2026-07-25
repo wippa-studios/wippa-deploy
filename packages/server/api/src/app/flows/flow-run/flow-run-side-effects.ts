@@ -2,7 +2,7 @@ import { ApplicationEventName,
     FlowRun,
     isFlowRunStateTerminal,
     PlatformId,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { applicationEvents } from '../../helper/application-events'
 import { flowRunHooks } from './flow-run-hooks'

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { lightfunnelsAuth } from '../auth';
 import { lightfunnelsCommon } from '../common/index';
 

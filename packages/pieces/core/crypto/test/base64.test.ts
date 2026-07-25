@@ -2,7 +2,7 @@
 
 import { base64Encode } from '../src/lib/actions/base64-encode';
 import { base64Decode } from '../src/lib/actions/base64-decode';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('base64Encode', () => {
   test('encodes text to base64', async () => {

@@ -1,4 +1,4 @@
-import { CHAT_ALLOWED_MIME_TYPES, FileCompression, FileType } from '@activepieces/shared'
+import { CHAT_ALLOWED_MIME_TYPES, FileCompression, FileType } from '@wippa/shared'
 import { UserContent } from 'ai'
 import { FastifyBaseLogger } from 'fastify'
 import { fileService } from '../../file/file.service'

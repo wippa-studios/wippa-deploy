@@ -1,8 +1,8 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { projectId } from '../common/props';
 import { customgptAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const deleteAgent = createAction({
   auth: customgptAuth,

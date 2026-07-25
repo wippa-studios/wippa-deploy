@@ -1,9 +1,9 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@wippa/pieces-common';
   import { wedofAuth } from '../../auth';
   import {
     createAction,
     Property,
-  } from '@activepieces/pieces-framework';
+  } from '@wippa/pieces-framework';
   import { wedofCommon } from '../../common/wedof';
   
   export const listCertificationFolderSurveys = createAction({

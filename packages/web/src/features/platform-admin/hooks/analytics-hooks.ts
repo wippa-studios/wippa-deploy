@@ -1,7 +1,7 @@
 import {
   AnalyticsTimePeriod,
   PlatformAnalyticsReport,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useContext } from 'react';
 

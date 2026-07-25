@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { OptionalArrayFromQuery } from '@activepieces/core-utils'
-import { Cursor } from '@activepieces/core-utils'
+import { OptionalArrayFromQuery } from '@wippa/core-utils'
+import { Cursor } from '@wippa/core-utils'
 import { FlowStatus } from '../flow'
 import { FlowVersionState } from '../flow-version'
 

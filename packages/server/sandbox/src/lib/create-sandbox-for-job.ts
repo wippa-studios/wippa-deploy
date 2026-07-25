@@ -1,5 +1,5 @@
-import { type ApLogger } from '@activepieces/server-utils'
-import { ExecutionMode, maxSocketHttpBufferSizeBytes, NetworkMode } from '@activepieces/shared'
+import { type ApLogger } from '@wippa/server-utils'
+import { ExecutionMode, maxSocketHttpBufferSizeBytes, NetworkMode } from '@wippa/shared'
 import { nanoid } from 'nanoid'
 import { cacheUtils } from './cache/cache-paths'
 import { sandboxCapacity } from './sandbox/capacity'

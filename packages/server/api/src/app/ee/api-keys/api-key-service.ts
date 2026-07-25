@@ -1,6 +1,6 @@
-import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, isNil, secureApId, SeekPage } from '@activepieces/core-utils'
-import { cryptoUtils } from '@activepieces/server-utils'
-import { ApiKey, ApiKeyResponseWithValue } from '@activepieces/shared'
+import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, isNil, secureApId, SeekPage } from '@wippa/core-utils'
+import { cryptoUtils } from '@wippa/server-utils'
+import { ApiKey, ApiKeyResponseWithValue } from '@wippa/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { ApiKeyEntity } from './api-key-entity'
 

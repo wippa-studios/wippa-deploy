@@ -2,14 +2,14 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   createPiece,
   PieceAuth,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { triggers } from './lib/triggers';
 
 const markdownPropertyDescription = `

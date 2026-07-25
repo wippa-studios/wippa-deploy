@@ -1,7 +1,7 @@
-import { createAction, Property, DynamicPropsValue, PiecePropValueSchema } from '@activepieces/pieces-framework';
+import { createAction, Property, DynamicPropsValue, PiecePropValueSchema } from '@wippa/pieces-framework';
 import { teamworkAuth } from '../common/auth';
 import { teamworkRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const createCompany = createAction({
 	name: 'create_company',

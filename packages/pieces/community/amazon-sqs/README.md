@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-amazon-sqs` to build the library.
+Run `turbo run build --filter=@wippa/piece-amazon-sqs` to build the library.

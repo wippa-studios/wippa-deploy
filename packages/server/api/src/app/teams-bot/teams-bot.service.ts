@@ -1,5 +1,5 @@
-import { safeHttp } from '@activepieces/server-utils'
-import { ActivepiecesError, ErrorCode, isNil } from '@activepieces/shared'
+import { safeHttp } from '@wippa/server-utils'
+import { ActivepiecesError, ErrorCode, isNil } from '@wippa/shared'
 import { teamsBotInstallationDb } from './teams-bot-installation.repo'
 
 export const teamsBotService = {

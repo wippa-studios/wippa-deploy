@@ -11,10 +11,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@activepieces/core-utils": [
+      "@wippa/core-utils": [
         "../utils/dist/index.d.ts"
       ],
-      "@activepieces/core-piece-types": [
+      "@wippa/core-piece-types": [
         "../piece-types/dist/index.d.ts"
       ]
     }

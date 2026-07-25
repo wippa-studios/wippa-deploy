@@ -1,6 +1,6 @@
 import { findAllPiecesDirectoryInSource } from '../utils/piece-script-utils'
 import { preparePieceDistForPublish } from '../../../packages/cli/src/lib/utils/prepare-piece-utils'
-import { chunk } from '@activepieces/core-utils'
+import { chunk } from '@wippa/core-utils'
 
 function getChangedPiecePaths(): string[] | null {
     const changedPieces = process.env['CHANGED_PIECES']

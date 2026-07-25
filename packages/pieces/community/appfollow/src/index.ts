@@ -1,11 +1,11 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { appfollowAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 import { newReview } from './lib/triggers/new-review';
 import { newTag } from './lib/triggers/new-tag';
 
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/client';
 import { replyToReview } from './lib/actions/reply-to-review';
 import { addUser } from './lib/actions/add-user';

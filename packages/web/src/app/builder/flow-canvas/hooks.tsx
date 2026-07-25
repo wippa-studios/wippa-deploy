@@ -1,10 +1,10 @@
-import { Permission, isNil } from '@activepieces/core-utils';
+import { Permission, isNil } from '@wippa/core-utils';
 import {
   FlowRunStatus,
   WebsocketClientEvent,
   RunEnvironment,
   isFlowRunStateTerminal,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useReactFlow } from '@xyflow/react';
 import { t } from 'i18next';

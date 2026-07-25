@@ -4,7 +4,7 @@ import {
   PopulatedRecord,
   Table,
   UpdateTableRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { PromiseQueue } from '@/lib/promise-queue';
 

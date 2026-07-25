@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { signrequestAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 export const signrequestSigned = createTrigger({
   auth: signrequestAuth,
   name: 'signrequestSigned',

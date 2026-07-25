@@ -1,4 +1,4 @@
-import type { ApId, BaseModel, ProjectId } from '@activepieces/core-utils'
+import type { ApId, BaseModel, ProjectId } from '@wippa/core-utils'
 
 export type StoreEntryId = ApId
 

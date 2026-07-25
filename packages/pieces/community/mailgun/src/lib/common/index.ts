@@ -6,9 +6,9 @@ import {
   HttpMessageBody,
   HttpResponse,
   HttpError,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { tryCatch } from '@wippa/pieces-framework';
 import { mailgunAuth } from '../..';
 
 export function verifyMailgunSignature(

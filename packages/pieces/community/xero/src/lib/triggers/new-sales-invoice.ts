@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
 import { xeroAuth } from '../..';
 import { createHmac } from 'crypto';
 import {
@@ -6,7 +6,7 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { props } from '../common/props';
 
 export const xeroNewSalesInvoice = createTrigger({

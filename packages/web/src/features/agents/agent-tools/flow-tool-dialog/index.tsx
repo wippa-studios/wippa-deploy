@@ -3,7 +3,7 @@ import {
   FlowTriggerType,
   AgentToolType,
   AgentFlowTool,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Search } from 'lucide-react';
 import { useMemo, useState } from 'react';
@@ -53,7 +53,7 @@ export function AgentFlowToolDialog({
     return data?.data.filter(
       (flow) =>
         flow.version.trigger.type === FlowTriggerType.PIECE &&
-        flow.version.trigger.settings.pieceName === '@activepieces/piece-mcp',
+        flow.version.trigger.settings.pieceName === '@wippa/piece-mcp',
     );
   }, [data]);
 

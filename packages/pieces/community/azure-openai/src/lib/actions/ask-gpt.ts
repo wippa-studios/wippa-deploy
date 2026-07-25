@@ -3,11 +3,11 @@ import {
     Property,
     StoreScope,
     createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { OpenAIClient, AzureKeyCredential } from '@azure/openai';
 import { calculateMessagesTokenSize, exceedsHistoryLimit, reduceContextSize } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const askGpt = createAction({
   audience: 'human',

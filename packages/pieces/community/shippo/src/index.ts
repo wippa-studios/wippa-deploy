@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 
 import { shippoAuth } from './lib/auth';
 import { createOrder } from './lib/actions/create-order';

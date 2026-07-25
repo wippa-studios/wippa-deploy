@@ -3,13 +3,13 @@ import {
   TriggerStrategy,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { descriptAuth } from '../auth';
 import { descriptCommon } from '../common';
 

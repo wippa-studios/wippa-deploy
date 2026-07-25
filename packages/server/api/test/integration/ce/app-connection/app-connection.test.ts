@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { AppConnectionScope, AppConnectionStatus, AppConnectionType, PackageType, PieceType, PLACEHOLDER_CONNECTION_TYPE } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { AppConnectionScope, AppConnectionStatus, AppConnectionType, PackageType, PieceType, PLACEHOLDER_CONNECTION_TYPE } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { pieceMetadataService } from '../../../../src/app/pieces/metadata/piece-metadata-service'

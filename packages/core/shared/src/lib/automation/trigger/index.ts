@@ -1,4 +1,4 @@
-import { BaseModelSchema, Nullable } from '@activepieces/core-utils'
+import { BaseModelSchema, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export enum TriggerStrategy {

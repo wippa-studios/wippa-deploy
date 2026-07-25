@@ -7,7 +7,7 @@ import { cwd } from 'node:process'
 import * as semver from 'semver'
 import { readPackageJson } from './files'
 import { StatusCodes } from 'http-status-codes'
-import { pieceTranslation, PieceMetadata } from '@activepieces/pieces-framework'
+import { pieceTranslation, PieceMetadata } from '@wippa/pieces-framework'
 
 const LOAD_PIECE_METADATA_CHILD = resolve(
     __dirname,
@@ -26,7 +26,7 @@ type LoadedPieceChildPayload = {
 export const AP_CLOUD_API_BASE = 'https://cloud.activepieces.com/api/v1';
 export const PIECES_FOLDER = 'packages/pieces'
 export const COMMUNITY_PIECE_FOLDER = 'packages/pieces/community'
-export const NON_PIECES_PACKAGES = ['@activepieces/pieces-framework', '@activepieces/pieces-common']
+export const NON_PIECES_PACKAGES = ['@wippa/pieces-framework', '@wippa/pieces-common']
 
 const validateSupportedRelease = (minRelease: string | undefined, maxRelease: string | undefined) => {
     if (minRelease !== undefined && !semver.valid(minRelease)) {

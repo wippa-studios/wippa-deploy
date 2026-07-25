@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import { getPlayerProfile } from './lib/actions/get-player-profile';
 import { getPlayerStats } from './lib/actions/get-player-stats';
 import { getDailyPuzzle } from './lib/actions/get-daily-puzzle';

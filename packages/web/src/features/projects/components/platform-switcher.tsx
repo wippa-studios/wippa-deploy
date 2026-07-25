@@ -1,4 +1,4 @@
-import { ApEdition, ApFlagId } from '@activepieces/shared';
+import { ApEdition, ApFlagId } from '@wippa/shared';
 import { t } from 'i18next';
 import { Check, Plus } from 'lucide-react';
 import * as React from 'react';

@@ -3,7 +3,7 @@ import {
     flowStructureUtil,
     FlowVersion,
     Step,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { expressionRewriter } from './expression-rewriter'
 import { Migration } from '.'
 

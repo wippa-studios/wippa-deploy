@@ -1,4 +1,4 @@
-import { ProjectMemberWithUser } from '@activepieces/shared';
+import { ProjectMemberWithUser } from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Pencil } from 'lucide-react';

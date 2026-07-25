@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import { Queue } from 'bullmq'
 import { FastifyBaseLogger } from 'fastify'
 import { jobQueue } from './job-queue/job-queue'

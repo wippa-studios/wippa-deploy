@@ -5,7 +5,7 @@ import {
   OAuth2PropertyValue,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { getGraphBaseUrl } from './microsoft-cloud';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import {

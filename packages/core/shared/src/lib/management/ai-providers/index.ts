@@ -1,4 +1,4 @@
-import { AIProviderName, BaseModelSchema } from '@activepieces/core-utils'
+import { AIProviderName, BaseModelSchema } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export enum AIProviderModelType {

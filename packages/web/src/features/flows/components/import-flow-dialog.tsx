@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   PopulatedFlow,
   TelemetryEventName,
   UncategorizedFolderId,
   Template,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { HttpStatusCode } from 'axios';
 import { t } from 'i18next';

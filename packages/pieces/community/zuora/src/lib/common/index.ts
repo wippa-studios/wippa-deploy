@@ -4,14 +4,14 @@ import {
   DropdownOption,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export async function queryAccounts(
   auth: AppConnectionValueForAuthProperty<typeof zuoraAuth>

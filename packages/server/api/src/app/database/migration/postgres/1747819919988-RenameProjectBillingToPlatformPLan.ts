@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { ApEdition } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { ApEdition } from '@wippa/shared'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
 

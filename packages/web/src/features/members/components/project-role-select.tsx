@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useEffect } from 'react';

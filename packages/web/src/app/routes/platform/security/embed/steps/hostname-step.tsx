@@ -1,7 +1,7 @@
 import {
   EmbedSubdomain,
   GenerateEmbedSubdomainRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';

@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { pipedriveApiCall, pipedrivePaginatedV1ApiCall, pipedrivePaginatedV2ApiCall } from '.';
 import { pipedriveAuth } from '../auth';
 import {
@@ -6,9 +6,9 @@ import {
 	DynamicPropsValue,
 	PiecePropValueSchema,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { GetField, StageWithPipelineInfo } from './types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { context } from '@opentelemetry/api';
 
 /**

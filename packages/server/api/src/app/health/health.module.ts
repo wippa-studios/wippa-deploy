@@ -1,4 +1,4 @@
-import { GetDiagnosticsResponse, GetSystemHealthChecksResponse, PlatformMetricsHealthHistory, PlatformMetricsLive, PlatformMetricsReport, PlatformMetricsReportRequest, PrincipalType } from '@activepieces/shared'
+import { GetDiagnosticsResponse, GetSystemHealthChecksResponse, PlatformMetricsHealthHistory, PlatformMetricsLive, PlatformMetricsReport, PlatformMetricsReportRequest, PrincipalType } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { securityAccess } from '../core/security/authorization/fastify-security'

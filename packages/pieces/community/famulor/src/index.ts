@@ -1,5 +1,5 @@
 import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { makePhoneCall } from "./lib/actions/make-phone-call";
 import { phoneCallEnded } from "./lib/triggers/phone-call-ended";
 import { conversationEnded } from "./lib/triggers/conversation-ended";
@@ -7,7 +7,7 @@ import { addLead } from "./lib/actions/add-lead";
 import { sendSms } from "./lib/actions/send-sms";
 import { inboundCall } from "./lib/triggers/inbound-call";
 import { getAssistants } from "./lib/triggers/get-assistants";
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { baseApiUrl } from './lib/common';
 import { campaignControl } from "./lib/actions/campaign-control";
 import { createCampaign } from "./lib/actions/create-campaign";

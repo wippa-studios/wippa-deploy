@@ -1,4 +1,4 @@
-import { PlatformAnalyticsReport } from '@activepieces/shared';
+import { PlatformAnalyticsReport } from '@wippa/shared';
 import { t } from 'i18next';
 import { Zap } from 'lucide-react';
 

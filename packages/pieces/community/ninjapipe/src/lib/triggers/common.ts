@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling } from '@wippa/pieces-common';
 import { ninjapipeAuth } from '../../';
 import { ninjapipeApiCall, extractItems, flattenCustomFields, getAuth } from '../common';
 

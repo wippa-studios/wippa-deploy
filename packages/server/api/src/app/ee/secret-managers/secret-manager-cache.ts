@@ -1,4 +1,4 @@
-import { apDayjsDuration } from '@activepieces/server-utils'
+import { apDayjsDuration } from '@wippa/server-utils'
 import { redisHelper } from '../../database/redis'
 import { distributedStore, redisConnections } from '../../database/redis-connections'
 import { EncryptedObject, encryptUtils } from '../../helper/encryption'

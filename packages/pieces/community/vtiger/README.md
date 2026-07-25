@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-vtiger` to build the library.
+Run `turbo run build --filter=@wippa/piece-vtiger` to build the library.

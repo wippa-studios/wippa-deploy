@@ -1,7 +1,7 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { retellAiApiCall } from './client';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema } from '@wippa/pieces-framework';
 import { retellAiAuth } from './auth';
 
 interface RetellAiAgent {

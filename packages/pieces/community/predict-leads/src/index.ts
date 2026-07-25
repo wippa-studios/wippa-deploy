@@ -2,15 +2,15 @@ import {
   createPiece,
   PieceAuth,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
 import { findCompaniesAction, findCompanyByDomainAction } from './lib/actions/companies';
 import { findJobOpeningsAction, getAJobOpeningByIdAction, getCompanyJobOpeningsActions } from './lib/actions/jobs';
 import { makeClient } from './lib/common';
 import { findTechnologiesByCompanyAction, findCompaniesByTechnologyIdAction } from './lib/actions/technology';
 import { findNewsEventByIdAction, findNewsEventsByDomainAction } from './lib/actions/news-events';
 import { findConnectionsAction, findConnectionsByDomainAction } from './lib/actions/connections';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { PredictLeadsAuth } from './lib/auth';
 
 export const predictLeads = createPiece({

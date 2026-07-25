@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   MarkdownContentBlock,
   MarkdownVariant,
@@ -7,7 +7,7 @@ import {
   ExecutionToolStatus,
   normalizeToolOutputToExecuteResponse,
   type ToolCallContentBlock,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   CircleX,

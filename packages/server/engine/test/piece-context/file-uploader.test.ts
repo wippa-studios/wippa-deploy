@@ -1,5 +1,5 @@
 import { Readable } from 'node:stream'
-import { EngineGenericError, FileSizeError } from '@activepieces/shared'
+import { EngineGenericError, FileSizeError } from '@wippa/shared'
 import { createFileUploader } from '../../src/lib/piece-context/file-uploader'
 
 const SERVICE_PARAMS = {

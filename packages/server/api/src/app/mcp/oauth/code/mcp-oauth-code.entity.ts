@@ -1,4 +1,4 @@
-import { McpOAuthAuthorizationCode } from '@activepieces/shared'
+import { McpOAuthAuthorizationCode } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../../../database/database-common'
 

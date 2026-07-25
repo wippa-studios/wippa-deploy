@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { FieldType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { FieldType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { db } from '../../../helpers/db'

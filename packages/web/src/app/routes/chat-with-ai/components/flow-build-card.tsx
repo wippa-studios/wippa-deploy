@@ -1,4 +1,4 @@
-import { BuildPlanStep } from '@activepieces/shared';
+import { BuildPlanStep } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   AlertCircle,

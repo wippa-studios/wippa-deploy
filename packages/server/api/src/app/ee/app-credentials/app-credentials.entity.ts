@@ -1,4 +1,4 @@
-import { AppCredential, Project } from '@activepieces/shared'
+import { AppCredential, Project } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

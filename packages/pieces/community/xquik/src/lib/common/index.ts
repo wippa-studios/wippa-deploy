@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 function cleanQueryParams(
   params: Record<string, boolean | number | string | null | undefined>

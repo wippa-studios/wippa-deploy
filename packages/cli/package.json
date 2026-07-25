@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/cli",
+  "name": "@wippa/cli",
   "version": "1.3.0",
   "bin": {
     "pieces-cli": "../../dist/packages/cli/src/index.js"
@@ -12,9 +12,9 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "*",
-    "@activepieces/shared": "*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "*",
+    "@wippa/shared": "*",
     "autocannon": "8.0.0",
     "axios": "1.18.0",
     "chalk": "4.1.2",

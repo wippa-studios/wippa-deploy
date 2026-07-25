@@ -7,8 +7,8 @@ import {
   HttpRequest,
   AuthenticationType,
   HttpHeaders,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/pieces-framework';
 
 const BUSINESS_CENTRAL_HOSTS: Record<string, string> = {
   'login.microsoftonline.com': 'api.businesscentral.dynamics.com',

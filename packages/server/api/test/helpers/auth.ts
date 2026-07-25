@@ -1,5 +1,5 @@
-import { apId, isNil } from '@activepieces/core-utils'
-import { DefaultProjectRole, Principal, SigningKeyId } from '@activepieces/shared'
+import { apId, isNil } from '@wippa/core-utils'
+import { DefaultProjectRole, Principal, SigningKeyId } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import jwt, { Algorithm, JwtPayload, SignOptions } from 'jsonwebtoken'
 import {

@@ -1,5 +1,5 @@
 import { motionAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   BASE_URL,
   projectId,
@@ -11,7 +11,7 @@ import {
   httpClient,
   HttpMethod,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const findTask = createAction({
   auth: motionAuth,

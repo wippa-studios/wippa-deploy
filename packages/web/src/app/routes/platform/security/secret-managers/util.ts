@@ -4,7 +4,7 @@ import {
   SecretManagerConnectionWithStatus,
   SecretManagerProviderConfig,
   SecretManagerProviderId,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 export const secretManagersUtils = {
   getEmptySecretManagerConfig,

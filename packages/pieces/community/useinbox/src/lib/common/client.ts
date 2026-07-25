@@ -4,7 +4,7 @@ import {
   HttpMessageBody,
   HttpResponse,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 const ACCOUNT_BASE_URL = 'https://useapi.useinbox.com';
 const INBOX_BASE_URL = 'https://useapi.useinbox.com/inbox/v1';

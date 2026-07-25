@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { microsoftCloudProperty } from './common/microsoft-cloud';
 
 const authDesc = `

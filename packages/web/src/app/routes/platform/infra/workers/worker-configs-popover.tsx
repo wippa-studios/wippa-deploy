@@ -1,4 +1,4 @@
-import { WorkerProps } from '@activepieces/shared';
+import { WorkerProps } from '@wippa/shared';
 import { t } from 'i18next';
 import { SlidersHorizontal } from 'lucide-react';
 import React from 'react';

@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowAction,
   FlowRun,
   FlowRunStatus,
   FlowTrigger,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { ArrowRight } from 'lucide-react';

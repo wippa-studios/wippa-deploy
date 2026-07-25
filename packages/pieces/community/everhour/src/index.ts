@@ -1,9 +1,9 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { everhourAuth } from './lib/auth';
 import { createTaskAction } from './lib/actions/create-task';
 import { startTimerAction } from './lib/actions/start-timer';
 import { stopTimerAction } from './lib/actions/stop-timer';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const everhour = createPiece({
   displayName: 'Everhour',

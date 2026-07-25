@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { rsaSignature } from '../src/lib/actions/rsa-signature';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 import Crypto from 'crypto';
 
 const { privateKey, publicKey } = Crypto.generateKeyPairSync('rsa', {

@@ -1,4 +1,4 @@
-import { FlowActionType, FlowTriggerType } from '@activepieces/shared';
+import { FlowActionType, FlowTriggerType } from '@wippa/shared';
 import React from 'react';
 
 import { TestActionSection } from './test-action-section';

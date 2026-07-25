@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { greipAuth } from './lib/common/auth';
 import { asnLookup } from './lib/actions/asn-lookup';
 import { binLookup } from './lib/actions/bin-lookup';

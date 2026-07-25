@@ -3,7 +3,7 @@ import {
 	PiecePropValueSchema,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { BASE_URL } from '../common';
 import {
 	DedupeStrategy,
@@ -11,7 +11,7 @@ import {
 	HttpMethod,
 	Polling,
 	pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { circleAuth } from '../common/auth';
 
 import dayjs from 'dayjs';

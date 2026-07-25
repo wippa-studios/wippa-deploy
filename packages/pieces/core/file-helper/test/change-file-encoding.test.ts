@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { changeFileEncoding } from '../src/lib/actions/change-file-encoding';
-import { createMockActionContext, ApFile } from '@activepieces/pieces-framework';
+import { createMockActionContext, ApFile } from '@wippa/pieces-framework';
 
 describe('changeFileEncoding', () => {
   test('changes encoding from utf8 to base64', async () => {

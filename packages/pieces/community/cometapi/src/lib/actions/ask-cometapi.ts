@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { cometApiAuth } from '../common/auth';
 import * as z from 'zod/mini'
 import { modelIdDropdown } from '../common/props';

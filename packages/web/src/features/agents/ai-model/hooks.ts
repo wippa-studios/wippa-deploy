@@ -1,8 +1,8 @@
-import { AIProviderName, isNil } from '@activepieces/core-utils';
+import { AIProviderName, isNil } from '@wippa/core-utils';
 import {
   AIProviderModel,
   ALLOWED_CHAT_MODELS_BY_PROVIDER,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 
 import { aiProviderApi } from '@/features/platform-admin/api/ai-provider-api';

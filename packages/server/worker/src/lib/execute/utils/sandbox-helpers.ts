@@ -1,4 +1,4 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
 
 export function isSandboxTimeout(e: unknown): boolean {
     return e instanceof ActivepiecesError && e.error.code === ErrorCode.SANDBOX_EXECUTION_TIMEOUT

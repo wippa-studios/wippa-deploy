@@ -2,7 +2,7 @@ import {
   PieceAuth,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 export const generateRandom = createAction({
   audience: 'human',

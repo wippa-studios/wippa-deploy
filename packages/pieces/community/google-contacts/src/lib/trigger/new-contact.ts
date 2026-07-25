@@ -3,12 +3,12 @@ import {
   createTrigger,
   OAuth2PropertyValue,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   Polling,
   DedupeStrategy,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { googleContactsAuth } from '../auth';
 import { people as googlePeople } from '@googleapis/people';
 import { OAuth2Client } from 'google-auth-library';

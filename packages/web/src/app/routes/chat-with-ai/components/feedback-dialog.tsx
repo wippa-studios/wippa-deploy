@@ -1,4 +1,4 @@
-import { ChatFeedbackReason } from '@activepieces/shared';
+import { ChatFeedbackReason } from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useState } from 'react';

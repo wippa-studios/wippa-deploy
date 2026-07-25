@@ -2,17 +2,17 @@ import {
   PiecePropValueSchema,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { wooAuth } from '../auth';
 import { WebhookInformation, wooCommon } from '../common';
-import { isEmpty } from '@activepieces/pieces-framework';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { isEmpty } from '@wippa/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 export const woocommerceRegisterTrigger = ({
   name,
   topic,

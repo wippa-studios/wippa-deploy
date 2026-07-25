@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
-import { AddPieceRequestBody, PieceScope, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
+import { AddPieceRequestBody, PieceScope, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI } from '@wippa/shared'
 import { FastifyPluginAsyncZod, FastifyPluginCallbackZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'

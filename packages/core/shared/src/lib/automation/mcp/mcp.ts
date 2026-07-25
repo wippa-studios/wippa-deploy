@@ -1,10 +1,10 @@
-import { PopulatedFlow } from '@activepieces/core-execution'
-import { ApId, BaseModelSchema, Permission } from '@activepieces/core-utils'
+import { PopulatedFlow } from '@wippa/core-execution'
+import { ApId, BaseModelSchema, Permission } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export type McpId = ApId
 
-export const MCP_TRIGGER_PIECE_NAME = '@activepieces/piece-mcp'
+export const MCP_TRIGGER_PIECE_NAME = '@wippa/piece-mcp'
 
 export enum McpServerType {
     PLATFORM = 'PLATFORM',

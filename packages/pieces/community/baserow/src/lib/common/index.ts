@@ -2,8 +2,8 @@ import {
   DynamicPropsValue,
   DropdownState,
   Property,
-} from '@activepieces/pieces-framework';
-import { tryCatch, unique } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { tryCatch, unique } from '@wippa/pieces-framework';
 import {
   baserowAuth,
   BaserowAuthValue,

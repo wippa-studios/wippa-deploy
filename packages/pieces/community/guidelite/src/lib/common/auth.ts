@@ -1,7 +1,7 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { makeRequest } from './client';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 export const guideliteAuth = PieceAuth.SecretText({
   displayName: 'Guidelite API Key',

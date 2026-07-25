@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import {Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import {Property } from '@wippa/pieces-framework';
 import { raindropAuth } from '../auth';
 
 const BASE_URL = 'https://api.raindrop.io/rest/v1';

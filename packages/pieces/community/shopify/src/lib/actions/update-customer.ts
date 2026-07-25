@@ -1,8 +1,8 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { shopifyAuth } from '../..';
 import { updateCustomer } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const updateCustomerAction = createAction({
   auth: shopifyAuth,

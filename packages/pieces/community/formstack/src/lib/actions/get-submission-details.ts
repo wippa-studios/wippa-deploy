@@ -2,11 +2,11 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { formIdDropdown, submissionIdDropdown } from '../common/props';
 import { formStackAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const getSubmissionDetails = createAction({
   auth: formStackAuth,

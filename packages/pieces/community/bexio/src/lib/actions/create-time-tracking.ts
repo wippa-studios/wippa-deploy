@@ -1,4 +1,4 @@
-import { createAction, Property, OAuth2PropertyValue, DynamicPropsValue } from '@activepieces/pieces-framework';
+import { createAction, Property, OAuth2PropertyValue, DynamicPropsValue } from '@wippa/pieces-framework';
 import { bexioAuth } from '../auth';
 import { BexioClient } from '../common/client';
 

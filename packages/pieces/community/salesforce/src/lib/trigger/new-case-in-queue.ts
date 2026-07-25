@@ -1,9 +1,9 @@
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/pieces-common';
 import {
     AppConnectionValueForAuthProperty,
     TriggerStrategy,
     createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { querySalesforceApi, salesforcesCommon } from '../common';
 
 import dayjs from 'dayjs';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { lettaAuth } from '../common/auth';
 import { getLettaClient } from '../common/client';
 import { agentIdDropdown } from '../common/props';

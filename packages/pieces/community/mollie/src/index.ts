@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { mollieCreateOrder } from './lib/actions/create-order';
 import { mollieCreatePaymentLink } from './lib/actions/create-payment-link';
 import { mollieCreatePayment } from './lib/actions/create-payment';
@@ -14,7 +14,7 @@ import { mollieNewInvoice } from './lib/triggers/new-invoice';
 import { mollieNewPayment } from './lib/triggers/new-payment';
 import { mollieNewRefund } from './lib/triggers/new-refund';
 import { mollieNewChargeback } from './lib/triggers/new-chargeback';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { mollieAuth } from './lib/auth';
 
 export const mollie = createPiece({

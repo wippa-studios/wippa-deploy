@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { STEP_NAME_REGEX } from '@activepieces/core-utils'
-import { VersionType } from '@activepieces/core-piece-types'
+import { STEP_NAME_REGEX } from '@wippa/core-utils'
+import { VersionType } from '@wippa/core-piece-types'
 import { CodeActionSettings, LoopOnItemsActionSettings, PieceActionSettings, RouterActionSettings } from '../actions/action'
 import { PropertySettings } from '../properties'
 import { SampleDataSetting } from '../sample-data'

@@ -2,9 +2,9 @@ import {
   ApFunction,
   formulaEvaluator,
   typeCheckTiptapDoc,
-} from '@activepieces/core-formula';
-import { isNil } from '@activepieces/core-utils';
-import { flowStructureUtil } from '@activepieces/shared';
+} from '@wippa/core-formula';
+import { isNil } from '@wippa/core-utils';
+import { flowStructureUtil } from '@wippa/shared';
 import { Extensions } from '@tiptap/core';
 import { Document } from '@tiptap/extension-document';
 import { HardBreak } from '@tiptap/extension-hard-break';

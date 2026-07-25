@@ -35,7 +35,7 @@ Create endpoint for $ARGUMENTS.
        },
        schema: {
            tags: ['my-feature'],
-           body: CreateMyFeatureRequest,  // Zod schema from @activepieces/shared
+           body: CreateMyFeatureRequest,  // Zod schema from @wippa/shared
            response: { [StatusCodes.CREATED]: MyFeature },
        },
    }
@@ -55,6 +55,6 @@ Create endpoint for $ARGUMENTS.
    }
    ```
 
-6. **Add Permission** if new: add to `Permission` enum in `@activepieces/shared`.
+6. **Add Permission** if new: add to `Permission` enum in `@wippa/shared`.
 
 7. **Verify**: `npm run lint-dev`

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 const markdownPropertyDescription = `
 *Get your api Key: https://discourse.yourinstance.com/admin/api/keys

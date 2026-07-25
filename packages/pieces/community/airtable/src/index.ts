@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
-} from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { airtableCreateRecordAction } from './lib/actions/create-record';
 import { airtableDeleteRecordAction } from './lib/actions/delete-record';
 import { airtableFindRecordAction } from './lib/actions/find-record';

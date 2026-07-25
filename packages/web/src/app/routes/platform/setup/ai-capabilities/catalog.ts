@@ -1,4 +1,4 @@
-import { AiToolCapability, AiToolProvider } from '@activepieces/shared';
+import { AiToolCapability, AiToolProvider } from '@wippa/shared';
 import { t } from 'i18next';
 
 export type AiToolProviderInfo = {

@@ -3,7 +3,7 @@ import {
 	createAction,
 	DynamicPropsValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { drive as googleDrive } from '@googleapis/drive';
 import { docs as googleDocs } from '@googleapis/docs';
 import { folderIdProp } from '../common/props';

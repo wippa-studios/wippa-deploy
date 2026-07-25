@@ -5,15 +5,15 @@ import {
   HttpRequest,
   QueryParams,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   ApFile,
   createAction,
   DynamicPropsValue,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { assertNotNullOrUndefined, isEmpty } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined, isEmpty } from '@wippa/pieces-framework';
 import FormData from 'form-data';
 import { httpMethodDropdown } from '../common/props';
 import { ProxyAgent } from 'undici';

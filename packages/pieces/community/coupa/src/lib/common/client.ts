@@ -4,7 +4,7 @@ import {
   HttpMessageBody,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import FormData from 'form-data';
 import { formatCoupaError, normalizeInstanceUrl } from './utils';
 

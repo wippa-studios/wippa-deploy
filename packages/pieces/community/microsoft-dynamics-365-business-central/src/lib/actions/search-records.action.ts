@@ -1,5 +1,5 @@
 import { businessCentralAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { commonProps } from '../common';
 import { makeClient } from '../common/client';
 import { TRIGGER_ENTITY_DROPDOWN_OPTIONS } from '../common/constants';

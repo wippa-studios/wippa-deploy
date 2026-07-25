@@ -1,5 +1,5 @@
-import { Permission } from '@activepieces/core-utils'
-import { FlowCreatorType, McpToolContext, McpToolDefinition } from '@activepieces/shared'
+import { Permission } from '@wippa/core-utils'
+import { FlowCreatorType, McpToolContext, McpToolDefinition } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { flowService } from '../../flows/flow/flow.service'

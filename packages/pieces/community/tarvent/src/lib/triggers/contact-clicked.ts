@@ -1,5 +1,5 @@
 import { tarventAuth } from '../auth';
-import { Property, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { Property, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
 import { makeClient, tarventCommon } from '../common';
 import { CreateWebhookResponse } from '../common/types';
 

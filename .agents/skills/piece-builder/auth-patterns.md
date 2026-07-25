@@ -7,8 +7,8 @@ Most common. Use for simple APIs that issue a single API key or token.
 Inside `validate`, `auth` is a plain string. Inside actions/triggers, it's the full connection object — read the secret via `context.auth.secret_text`.
 
 ```typescript
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const myAppAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -40,7 +40,7 @@ export const myAppAuth = PieceAuth.SecretText({
 For services like Google, Slack, GitHub that use OAuth2 authorization flows.
 
 ```typescript
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const myAppAuth = PieceAuth.OAuth2({
   required: true,
@@ -90,7 +90,7 @@ createCustomApiCallAction({
 For APIs using username/password authentication.
 
 ```typescript
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const myAppAuth = PieceAuth.BasicAuth({
   displayName: 'Connection',
@@ -131,7 +131,7 @@ export const myAppAuth = PieceAuth.BasicAuth({
 For APIs needing multiple fields — e.g. instance URL + API key, or region + credentials.
 
 ```typescript
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const myAppAuth = PieceAuth.CustomAuth({
   displayName: 'Connection',

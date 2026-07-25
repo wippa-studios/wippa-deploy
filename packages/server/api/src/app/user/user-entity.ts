@@ -1,4 +1,4 @@
-import { Project, User, UserIdentity } from '@activepieces/shared'
+import { Project, User, UserIdentity } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { BaseColumnSchemaPart } from '../database/database-common'
 

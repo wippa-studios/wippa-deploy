@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpClient } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpClient } from '@wippa/pieces-common';
 import {
   ValidateEmailProps,
   ValidatedMailsValidationResponse,

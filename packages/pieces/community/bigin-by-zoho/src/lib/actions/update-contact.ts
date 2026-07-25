@@ -4,7 +4,7 @@ import {
   Property,
   InputPropertyMap,
   PropertyContext,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { companyDropdown, tagsDropdown, usersDropdown } from '../common/props';
 import { biginApiService } from '../common/request';
 import { handleDropdownError } from '../common/helpers';

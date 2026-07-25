@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { CAPTAIN_DATA_BASE_URL, captainDataAuth } from '..';
 
 export const workflowProp = Property.Dropdown({

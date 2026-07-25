@@ -1,4 +1,4 @@
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { BexioClient } from './client';
 import { BexioAccount, BexioTax, BexioCurrency } from './types';
 import { bexioAuth } from '../auth';

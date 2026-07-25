@@ -1,4 +1,4 @@
-import { PlatformAnalyticsReport } from '@activepieces/shared';
+import { PlatformAnalyticsReport } from '@wippa/shared';
 
 import { ActiveFlowsMetric } from './active-flows-metric';
 import { ActiveUsersMetric } from './active-users-metric';

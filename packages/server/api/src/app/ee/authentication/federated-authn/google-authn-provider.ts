@@ -1,4 +1,4 @@
-import { ActivepiecesError, assertNotEqual, ErrorCode, isNil } from '@activepieces/core-utils'
+import { ActivepiecesError, assertNotEqual, ErrorCode, isNil } from '@wippa/core-utils'
 import { FastifyBaseLogger } from 'fastify'
 import jwksClient from 'jwks-rsa'
 import { JwtSignAlgorithm, jwtUtils } from '../../../helper/jwt-utils'

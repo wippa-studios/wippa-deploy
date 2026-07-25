@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { enrichlayerAuth } from '../auth';
 import { enrichlayerApiCall } from '../common/client';
 import { ENDPOINTS } from '../common/constants';

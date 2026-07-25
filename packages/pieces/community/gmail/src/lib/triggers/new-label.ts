@@ -1,8 +1,8 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { gmailAuth, createGoogleClient } from '../auth';
 import { gmail as googleGmail } from '@googleapis/gmail';
 import { getFirstFiveOrAll } from '../common/data';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { newLabelTriggerOutputSchema } from '../output-schemas';
 
 const TRIGGER_KEY = 'labels';

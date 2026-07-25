@@ -1,7 +1,7 @@
 import {
   FlowProjectOperationType,
   FlowProjectOperation,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { PencilIcon, Plus, TrashIcon } from 'lucide-react';
 import React from 'react';
 

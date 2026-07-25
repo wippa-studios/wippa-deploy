@@ -1,5 +1,5 @@
 import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 import { identifyAction } from './lib/actions/identify';
 import { trackAction } from './lib/actions/track';

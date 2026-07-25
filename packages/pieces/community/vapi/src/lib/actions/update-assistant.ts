@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { Vapi } from '@vapi-ai/server-sdk';
 import { vapiAuth } from '../auth';
 import { createVapiClient } from '../common/client';

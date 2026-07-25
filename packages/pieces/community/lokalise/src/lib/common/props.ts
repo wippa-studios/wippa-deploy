@@ -1,7 +1,7 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { lokaliseAuth } from './auth';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const projectDropdown = Property.Dropdown<string,true,typeof lokaliseAuth>({
   auth: lokaliseAuth,

@@ -1,18 +1,18 @@
 {
-  "name": "@activepieces/piece-google-gemini",
+  "name": "@wippa/piece-google-gemini",
   "version": "0.1.12",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@google/genai": "1.29.0",
     "@google/generative-ai": "0.21.0",
     "mime-types": "2.1.35",
     "wav": "^1.0.2",
     "zod": "4.3.6",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "@types/wav": "^1.0.4",

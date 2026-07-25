@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { bigcommerceAuth } from '../common/auth';
 import { bigCommerceApiService } from '../common/requests';
 

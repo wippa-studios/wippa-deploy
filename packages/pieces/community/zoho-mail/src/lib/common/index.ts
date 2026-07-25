@@ -4,8 +4,8 @@ import {
 	HttpRequest,
 	QueryParams,
 	httpClient,
-} from '@activepieces/pieces-common';
-import { FilesService, PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { FilesService, PiecePropValueSchema } from '@wippa/pieces-framework';
 import { Attachment, ParsedMail, simpleParser } from 'mailparser';
 import { zohoMailAuth } from './auth';
 

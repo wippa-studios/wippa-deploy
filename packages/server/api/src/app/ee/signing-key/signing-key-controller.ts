@@ -1,5 +1,5 @@
-import { ActivepiecesError, ApId, assertNotNullOrUndefined, ErrorCode, isNil } from '@activepieces/core-utils'
-import { AddSigningKeyRequestBody, ApplicationEventName, PrincipalType } from '@activepieces/shared'
+import { ActivepiecesError, ApId, assertNotNullOrUndefined, ErrorCode, isNil } from '@wippa/core-utils'
+import { AddSigningKeyRequestBody, ApplicationEventName, PrincipalType } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'

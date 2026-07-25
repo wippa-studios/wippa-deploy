@@ -1,4 +1,4 @@
-import { AIProviderModelType, ProviderModelConfig } from '@activepieces/shared';
+import { AIProviderModelType, ProviderModelConfig } from '@wippa/shared';
 import { t } from 'i18next';
 import { useState } from 'react';
 

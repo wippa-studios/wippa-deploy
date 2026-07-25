@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode, isNil, tryCatch } from '@activepieces/core-utils'
-import { AlertChannel, ProjectType, UserIdentityProvider } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, isNil, tryCatch } from '@wippa/core-utils'
+import { AlertChannel, ProjectType, UserIdentityProvider } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { userIdentityService } from '../../authentication/user-identity/user-identity-service'
 import { ProjectHooks } from '../../project/project-hooks'

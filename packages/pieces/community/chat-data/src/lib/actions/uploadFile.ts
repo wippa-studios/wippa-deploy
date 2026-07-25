@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { ChatDataClient } from '../common/client';
 import { chatDataAuth } from '../common/types';
 

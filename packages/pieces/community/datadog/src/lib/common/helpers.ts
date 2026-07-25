@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { client } from '@datadog/datadog-api-client';
 import { datadogAuth } from './auth';
 

@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { checkAddressSanction } from './lib/actions/check-address-sanction';
 
 export const chainalysisApiAuth = PieceAuth.SecretText({

@@ -1,4 +1,4 @@
-import { ApId, BaseModelSchema, DateOrString, Nullable } from '@activepieces/core-utils'
+import { ApId, BaseModelSchema, DateOrString, Nullable } from '@wippa/core-utils'
 import * as z from 'zod/mini'
 import { PackageType, PieceType } from './piece'
 import { TriggerStrategy } from './trigger'

@@ -1,5 +1,5 @@
-import { apId, ProjectRole } from '@activepieces/core-utils'
-import { DefaultProjectRole, PieceSelectionMode, PiecesFilterType } from '@activepieces/shared'
+import { apId, ProjectRole } from '@wippa/core-utils'
+import { DefaultProjectRole, PieceSelectionMode, PiecesFilterType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { Redis } from 'ioredis'

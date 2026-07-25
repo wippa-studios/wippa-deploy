@@ -1,5 +1,5 @@
-import { safeHttp } from '@activepieces/server-utils'
-import { PlatformRole, PrincipalType, SecretManagerConnectionScope, SecretManagerFieldsSeparator, SecretManagerProviderId } from '@activepieces/shared'
+import { safeHttp } from '@wippa/server-utils'
+import { PlatformRole, PrincipalType, SecretManagerConnectionScope, SecretManagerFieldsSeparator, SecretManagerProviderId } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { MockInstance } from 'vitest'

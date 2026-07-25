@@ -1,4 +1,4 @@
-# @activepieces/piece-produktly
+# @wippa/piece-produktly
 
 Activepieces piece for [Produktly](https://produktly.com) — the onboarding and announcement tool for SaaS products.
 

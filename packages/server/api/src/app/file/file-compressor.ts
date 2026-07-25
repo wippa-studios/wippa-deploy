@@ -1,6 +1,6 @@
 import { promisify } from 'node:util'
 import { zstdCompress as zstdCompressCallback, zstdDecompress as zstdDecompressCallback } from 'node:zlib'
-import { FileCompression, isZstdCompressed } from '@activepieces/shared'
+import { FileCompression, isZstdCompressed } from '@wippa/shared'
 
 const zstdCompress = promisify(zstdCompressCallback)
 const zstdDecompress = promisify(zstdDecompressCallback)

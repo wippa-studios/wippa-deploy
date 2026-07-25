@@ -1,4 +1,4 @@
-import { EngineResponseStatus, FlowTriggerType, FlowVersion, FlowVersionState, LATEST_FLOW_SCHEMA_VERSION, TriggerRunStatus, WorkerToApiContract } from '@activepieces/shared'
+import { EngineResponseStatus, FlowTriggerType, FlowVersion, FlowVersionState, LATEST_FLOW_SCHEMA_VERSION, TriggerRunStatus, WorkerToApiContract } from '@wippa/shared'
 import { describe, expect, it, vi } from 'vitest'
 import { recordTriggerRun } from '../../../../src/lib/execute/utils/trigger-run-recorder'
 
@@ -40,24 +40,24 @@ describe('recordTriggerRun', () => {
         const recordTriggerRunRpc = vi.fn(async () => undefined)
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
 
-        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@activepieces/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })
+        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@wippa/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })
 
-        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@activepieces/piece-slack', status: TriggerRunStatus.COMPLETED })
+        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@wippa/piece-slack', status: TriggerRunStatus.COMPLETED })
     })
 
     it('maps non-OK statuses to FAILED', async () => {
         const recordTriggerRunRpc = vi.fn(async () => undefined)
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
 
-        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@activepieces/piece-slack'), platformId: 'p1', status: EngineResponseStatus.INTERNAL_ERROR })
+        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@wippa/piece-slack'), platformId: 'p1', status: EngineResponseStatus.INTERNAL_ERROR })
 
-        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@activepieces/piece-slack', status: TriggerRunStatus.FAILED })
+        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@wippa/piece-slack', status: TriggerRunStatus.FAILED })
     })
 
     it('skips non-piece triggers', async () => {
         const recordTriggerRunRpc = vi.fn(async () => undefined)
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
-        const emptyTriggerFlowVersion = { ...buildPieceFlowVersion('@activepieces/piece-slack'), trigger: { type: FlowTriggerType.EMPTY, settings: {} } } as unknown as FlowVersion
+        const emptyTriggerFlowVersion = { ...buildPieceFlowVersion('@wippa/piece-slack'), trigger: { type: FlowTriggerType.EMPTY, settings: {} } } as unknown as FlowVersion
 
         await recordTriggerRun({ apiClient, log, flowVersion: emptyTriggerFlowVersion, platformId: 'p1', status: EngineResponseStatus.OK })
 
@@ -70,6 +70,6 @@ describe('recordTriggerRun', () => {
         })
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
 
-        await expect(recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@activepieces/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })).resolves.toBeUndefined()
+        await expect(recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@wippa/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })).resolves.toBeUndefined()
     })
 })

@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 export const BUTTONDOWN_BASE_URL = 'https://api.buttondown.com/v1';
 

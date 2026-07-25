@@ -1,4 +1,4 @@
-import { FileType, Flow, FlowStatus, Project, WebhookHandshakeStrategy } from '@activepieces/shared'
+import { FileType, Flow, FlowStatus, Project, WebhookHandshakeStrategy } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { webhookHandshake } from '../../../../src/app/webhooks/webhook-handshake'

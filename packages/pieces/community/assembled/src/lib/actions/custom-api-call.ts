@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { assembledAuth } from '../common/auth';
 
 export const customApiCall = createCustomApiCallAction({

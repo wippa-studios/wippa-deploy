@@ -1,4 +1,4 @@
-import { ConcurrencyPool, Project } from '@activepieces/shared'
+import { ConcurrencyPool, Project } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../../../database/database-common'
 

@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
 import { famulorAuth } from '../..';
 import { famulorCommon } from '../common';
 import type { ConversationChannelType } from '../common/types';

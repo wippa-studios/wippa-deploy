@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { googleSearchConsoleAuth } from '../auth';
 import { createAuthClient } from '../../';
 

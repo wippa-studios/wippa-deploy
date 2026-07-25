@@ -1,4 +1,4 @@
-import { DynamicPropsValue, createAction, Property } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, createAction, Property } from '@wippa/pieces-framework';
 import {
   ConverseCommand,
   ConversationRole,

@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { AuthenticationType, HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
 
 export const produktlyAuth = PieceAuth.SecretText({
   displayName: 'API Key',

@@ -2,13 +2,13 @@ import {
     DedupeStrategy,
     Polling,
     pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
     createTrigger,
     PiecePropValueSchema,
     TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { parseurAuth, parseurCommon } from '../common';
 
 const polling: Polling<

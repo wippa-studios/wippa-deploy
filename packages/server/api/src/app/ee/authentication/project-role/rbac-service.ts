@@ -1,5 +1,5 @@
-import { ActivepiecesError, ApId, ErrorCode, isNil, Permission, ProjectId, ProjectRole } from '@activepieces/core-utils'
-import { ApEdition, FlowOperationType, Principal, PrincipalType, UserPrincipal } from '@activepieces/shared'
+import { ActivepiecesError, ApId, ErrorCode, isNil, Permission, ProjectId, ProjectRole } from '@wippa/core-utils'
+import { ApEdition, FlowOperationType, Principal, PrincipalType, UserPrincipal } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../helper/system/system'
 import { projectService } from '../../../project/project-service'

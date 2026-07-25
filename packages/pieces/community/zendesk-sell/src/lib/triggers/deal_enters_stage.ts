@@ -3,8 +3,8 @@ import {
     TriggerStrategy,
     PiecePropValueSchema,
     AppConnectionValueForAuthProperty
-} from '@activepieces/pieces-framework';
-import { HttpMethod, DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod, DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
 import { zendeskSellAuth } from '../common/auth';
 import { zendeskSellCommon } from '../common/props';
 import { callZendeskApi } from '../common/client';

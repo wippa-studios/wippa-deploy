@@ -1,5 +1,5 @@
-import { PopulatedFlow } from '@activepieces/core-execution'
-import { Nullable, NullableEnum } from '@activepieces/core-utils'
+import { PopulatedFlow } from '@wippa/core-execution'
+import { Nullable, NullableEnum } from '@wippa/core-utils'
 import { z } from 'zod'
 import { TableAutomationStatus, TableAutomationTrigger } from '../tables/table'
 

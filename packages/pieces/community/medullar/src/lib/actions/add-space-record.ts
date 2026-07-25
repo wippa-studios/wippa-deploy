@@ -1,6 +1,6 @@
 import { medullarAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { getUser, medullarCommon, medullarPropsCommon } from '../common';
 
 export const addSpaceRecord = createAction({

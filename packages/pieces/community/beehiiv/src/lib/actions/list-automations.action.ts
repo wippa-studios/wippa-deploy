@@ -1,9 +1,9 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { publicationId } from '../common/props';
 import { beehiivAuth } from '../common/auth';
 import { beehiivApiCall, BeehiivPaginatedApiCall } from '../common/client';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export const listAutomationsAction = createAction({
 	auth: beehiivAuth,

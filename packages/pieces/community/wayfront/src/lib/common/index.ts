@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { wayfrontAuth } from '../auth';
 
 function buildBaseUrl(workspaceUrl: string) {

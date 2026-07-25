@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-sendinblue` to build the library.
+Run `turbo run build --filter=@wippa/piece-sendinblue` to build the library.

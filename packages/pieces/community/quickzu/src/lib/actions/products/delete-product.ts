@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { quickzuAuth } from '../../auth';
 import { makeClient, quickzuCommon } from '../../common';
 

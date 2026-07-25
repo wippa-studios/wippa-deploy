@@ -1,4 +1,4 @@
-import { AppConnection, AppConnectionScope, FlowStatus, FlowVersionState } from '@activepieces/shared'
+import { AppConnection, AppConnectionScope, FlowStatus, FlowVersionState } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { db } from '../../../helpers/db'
@@ -20,7 +20,7 @@ afterAll(async () => {
     await teardownTestEnvironment()
 })
 
-const PIECE_NAME = '@activepieces/piece-slack'
+const PIECE_NAME = '@wippa/piece-slack'
 
 describe('POST /v1/app-connections/replace', () => {
     it('keeps the source connection when deleteSourceConnection is not set', async () => {

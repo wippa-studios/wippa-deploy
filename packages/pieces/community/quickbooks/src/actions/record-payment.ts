@@ -1,5 +1,5 @@
-import { createAction, Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { quickbooksAuth } from '../lib/auth';
 import { quickbooksCommon, QuickbooksEntityResponse } from '../lib/common';
 import { QuickbooksCustomer, QuickbooksPayment, QuickbooksRef } from '../lib/types';

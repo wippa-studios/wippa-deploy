@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { coralogixAuth } from '../common/auth';
 
 export const newAlertEvent = createTrigger({

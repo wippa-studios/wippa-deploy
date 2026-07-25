@@ -1,4 +1,4 @@
-import { AIProviderModel, OpenAICompatibleProviderAuthConfig, OpenAICompatibleProviderConfig } from '@activepieces/shared'
+import { AIProviderModel, OpenAICompatibleProviderAuthConfig, OpenAICompatibleProviderConfig } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { AIProviderStrategy } from './ai-provider'
 

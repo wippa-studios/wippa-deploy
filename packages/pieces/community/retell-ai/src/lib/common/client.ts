@@ -4,8 +4,8 @@ import {
   HttpRequest,
   HttpMessageBody,
   AuthenticationType
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/pieces-framework';
 import { retellAiAuth } from './auth';
 
 export type RetellAiApiCallParams = {

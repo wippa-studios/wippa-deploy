@@ -1,4 +1,4 @@
-import { isNil, SeekPage } from '@activepieces/core-utils'
+import { isNil, SeekPage } from '@wippa/core-utils'
 import dayjs from 'dayjs'
 import { CursorResult } from './paginator'
 

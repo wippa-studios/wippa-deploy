@@ -1,4 +1,4 @@
-import { FieldType } from '@activepieces/shared';
+import { FieldType } from '@wippa/shared';
 import { createContext, useContext } from 'react';
 
 import { useTableState } from './ap-table-state-provider';

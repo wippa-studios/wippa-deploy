@@ -2,7 +2,7 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { listContainers } from './lib/actions/list-containers';
 import { listBlobs } from './lib/actions/list-blobs';
 import { createBlob } from './lib/actions/create-blob';

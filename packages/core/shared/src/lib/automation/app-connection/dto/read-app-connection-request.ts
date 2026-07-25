@@ -1,4 +1,4 @@
-import { OptionalArrayFromQuery } from '@activepieces/core-utils'
+import { OptionalArrayFromQuery } from '@wippa/core-utils'
 import { z } from 'zod'
 import { ProjectType } from '../../../management/project/project'
 import { AppConnectionScope, AppConnectionStatus, AppConnectionWithoutSensitiveData } from '../app-connection'

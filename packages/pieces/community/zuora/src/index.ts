@@ -2,9 +2,9 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { createInvoiceAction } from './lib/actions/create-invoice.action';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { findProductRatePlanAction } from './lib/actions/find-product-rate-plans.action';
 import { findAccountAction } from './lib/actions/find-account.action';
 import { findProductAction } from './lib/actions/find-product.action';

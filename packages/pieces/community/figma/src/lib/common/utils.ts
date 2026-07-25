@@ -3,7 +3,7 @@ import {
   HttpMethod,
   HttpRequest,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const figmaGetRequest = async ({
   token,

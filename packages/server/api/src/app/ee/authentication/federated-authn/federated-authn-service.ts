@@ -2,7 +2,7 @@ import {
     AuthenticationResponse,
     FederatedAuthnLoginResponse,
     UserIdentityProvider,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { authenticationService } from '../../../authentication/authentication.service'
 import { domainHelper } from '../../../helper/domain-helper'

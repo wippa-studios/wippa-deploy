@@ -1,5 +1,5 @@
 import { fathomAuth, getFathomClient } from '../common/auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { ListTeamsRequest } from 'fathom-typescript/dist/esm/sdk/models/operations';
 
 export const findTeam = createAction({

@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { ContinueOnFailureBranches, FlowAction, FlowActionType, FlowState, FlowTrigger, FlowTriggerType, FlowVersion } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { ContinueOnFailureBranches, FlowAction, FlowActionType, FlowState, FlowTrigger, FlowTriggerType, FlowVersion } from '@wippa/shared'
 
 function cleanFlowState(flowState: FlowState): FlowState {
     return {

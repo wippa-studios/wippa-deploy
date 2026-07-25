@@ -1,4 +1,4 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import { describe, expect, it, vi } from 'vitest';
 
 import { determineDefaultRoute } from '@/lib/route-utils';

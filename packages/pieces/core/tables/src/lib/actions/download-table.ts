@@ -2,14 +2,14 @@ import {
   createAction,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { tablesCommon, csvUtils } from '../common';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { ExportTableResponse } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { ExportTableResponse } from '@wippa/pieces-framework';
 
 export const downloadTable = createAction({
   audience: 'human',

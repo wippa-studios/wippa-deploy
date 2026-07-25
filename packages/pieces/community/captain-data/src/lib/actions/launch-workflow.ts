@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { captainDataAuth } from '../..';
 import { CAPTAIN_DATA_BASE_URL } from '../..';
 import { workflowProp } from '../common';

@@ -12,7 +12,7 @@ PieceSetConfig = {
 
 - Pieces: `include_all` → visible = everything (present + future) minus `exceptions`; `exclude_all` → visible = only `exceptions`. This subsumes the old set-level `includeNewPieces` boolean (now `pieces.mode`).
 - Components: an absent piece key means all actions/triggers are visible (new ones auto-appear); a present array is the visible allow-list (new/renamed names stay hidden).
-- Resolution lives in two pure functions exported from `@activepieces/shared` (`isPieceVisible`, `isComponentVisible`), imported by both the server filter layer and the web UI.
+- Resolution lives in two pure functions exported from `@wippa/shared` (`isPieceVisible`, `isComponentVisible`), imported by both the server filter layer and the web UI.
 
 ## Why
 

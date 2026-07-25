@@ -1,14 +1,14 @@
-import { setAtPath } from '@activepieces/core-utils';
+import { setAtPath } from '@wippa/core-utils';
 import {
   PieceMetadataModel,
   PiecePropertyMap,
   piecePropertiesUtils,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   FlowAction,
   FlowTrigger,
   PropertyExecutionType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import {
   createContext,
   ReactNode,

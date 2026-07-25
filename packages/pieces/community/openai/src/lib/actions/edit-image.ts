@@ -1,7 +1,7 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import OpenAI, { toFile } from 'openai';
 import { randomBytes } from 'node:crypto';
-import { kebabCase } from '@activepieces/pieces-framework';
+import { kebabCase } from '@wippa/pieces-framework';
 import mime from 'mime-types';
 import { openaiAuth } from '../auth';
 

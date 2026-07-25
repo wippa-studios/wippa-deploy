@@ -1,4 +1,4 @@
-import { PlatformRole } from '@activepieces/shared';
+import { PlatformRole } from '@wippa/shared';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';
 

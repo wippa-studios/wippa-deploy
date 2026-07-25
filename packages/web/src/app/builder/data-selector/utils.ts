@@ -1,11 +1,11 @@
-import { isNil, isObject } from '@activepieces/core-utils';
+import { isNil, isObject } from '@wippa/core-utils';
 import {
   flowCanvasUtils,
   FlowAction,
   FlowActionType,
   FlowTrigger,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 
 import { pieceSelectorUtils } from '@/features/pieces';

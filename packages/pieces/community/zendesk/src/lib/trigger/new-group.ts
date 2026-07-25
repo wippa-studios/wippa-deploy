@@ -2,7 +2,7 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   DedupeStrategy,
@@ -10,7 +10,7 @@ import {
   httpClient,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { zendeskAuth } from '../..';
 
 interface ZendeskGroup {

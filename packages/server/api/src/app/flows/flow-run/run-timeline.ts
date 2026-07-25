@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { RunTimeline } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { RunTimeline } from '@wippa/shared'
 
 // Assembles the leg-0 latency breakdown from the run timestamps + worker-measured phase durations.
 // Pure and dependency-free so the phase math stays unit-testable in isolation.

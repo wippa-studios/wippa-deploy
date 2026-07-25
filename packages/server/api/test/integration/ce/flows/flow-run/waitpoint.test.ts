@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { FlowRunStatus, FlowVersionState, PauseType, RunEnvironment } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { FlowRunStatus, FlowVersionState, PauseType, RunEnvironment } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { waitpointService } from '../../../../../src/app/flows/flow-run/waitpoint/waitpoint-service'
 import { WaitpointStatus } from '../../../../../src/app/flows/flow-run/waitpoint/waitpoint-types'

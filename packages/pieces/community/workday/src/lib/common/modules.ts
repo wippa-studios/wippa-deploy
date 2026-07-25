@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { ServicePath, WorkdayService } from './index';
 import { WorkdayModule } from './fields';
 

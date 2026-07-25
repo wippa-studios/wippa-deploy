@@ -1,7 +1,7 @@
 import { zerobounceAuth } from '../..';
-import { createAction, Property, StoreScope } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { createAction, Property, StoreScope } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { isNil } from '@wippa/pieces-framework';
 
 export const validateEmail = createAction({
   name: 'validateEmail',

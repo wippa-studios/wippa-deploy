@@ -3,8 +3,8 @@ import {
   HttpMethod,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { googleGeminiAuth } from '../auth';
 
 export const defaultLLM = 'gemini-1.5-flash';

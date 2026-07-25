@@ -1,6 +1,6 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { foreplayCoApiCall } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { findBrands as findBrandsProperties } from '../properties';
 import { findBrandsSchema } from '../schemas';
 import { foreplayCoAuth } from '../..';

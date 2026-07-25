@@ -1,6 +1,6 @@
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { smartScraper } from './lib/actions/smart-scraper';
 import { localScraper } from './lib/actions/local-scraper';
 import { markdownify } from './lib/actions/markdownify';

@@ -1,4 +1,4 @@
-import { ProjectWithLimits } from '@activepieces/shared';
+import { ProjectWithLimits } from '@wippa/shared';
 import { t } from 'i18next';
 import { Layers, Search } from 'lucide-react';
 import { useState } from 'react';

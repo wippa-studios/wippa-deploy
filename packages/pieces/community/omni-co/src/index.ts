@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { omniAuth } from './lib/common/auth';
 import { createADocument } from './lib/actions/create-a-document';
 import { createASchedule } from './lib/actions/create-a-schedule';
@@ -9,7 +9,7 @@ import { moveDocument } from './lib/actions/move-document';
 import { runQuery } from './lib/actions/run-query';
 import { editSchedule } from './lib/actions/edit-schedule';
 import { generateQuery } from './lib/actions/generate-query';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const omniCo = createPiece({
   displayName: 'Omni',

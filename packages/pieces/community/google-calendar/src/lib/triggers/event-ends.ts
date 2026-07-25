@@ -2,21 +2,21 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   Property,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import { googleCalendarCommon, googleCalendarAuth, getAccessToken } from '../common';
 import { GoogleCalendarEvent } from '../common/types';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { eventOutputSchema } from '../output-schemas';
 
 interface GoogleCalendarEventList {

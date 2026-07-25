@@ -1,4 +1,4 @@
-import { Metadata, isNil } from '@activepieces/core-utils';
+import { Metadata, isNil } from '@wippa/core-utils';
 import {
   piecePropertiesUtils,
   OAuth2Props,
@@ -8,7 +8,7 @@ import {
   PieceProperty,
   PiecePropertyMap,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AppConnectionScope,
   AppConnectionType,
@@ -37,7 +37,7 @@ import {
   PieceTriggerSettings,
   AUTHENTICATION_PROPERTY_NAME,
   OAuth2GrantType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { z, ZodObject, ZodType } from 'zod';
 

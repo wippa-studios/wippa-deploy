@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { mailchainCommon } from './lib/common/common';
 import { getAuthenticatedUser } from './lib/actions/get-authenticated-user';
 import { sendEmail } from './lib/actions/send-email';

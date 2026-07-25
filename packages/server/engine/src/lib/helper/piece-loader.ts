@@ -1,8 +1,8 @@
 import fs from 'fs/promises'
 import path from 'path'
-import { ActivepiecesError, ErrorCode, isNil } from '@activepieces/core-utils'
-import { Action, Piece, PiecePropertyMap, Trigger } from '@activepieces/pieces-framework'
-import { EngineGenericError, extractPieceFromModule, getPackageAliasForPiece, getPieceNameFromAlias, trimVersionFromAlias } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
+import { Action, Piece, PiecePropertyMap, Trigger } from '@wippa/pieces-framework'
+import { EngineGenericError, extractPieceFromModule, getPackageAliasForPiece, getPieceNameFromAlias, trimVersionFromAlias } from '@wippa/shared'
 import { utils } from '../utils'
 
 export const pieceLoader = {

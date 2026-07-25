@@ -3,8 +3,8 @@ import {
   HttpMethod,
   HttpMessageBody,
   HttpResponse,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { letmepostAuth, LetmepostAuth } from './auth';
 
 const DEFAULT_BASE_URL = 'https://api.letmepost.dev';

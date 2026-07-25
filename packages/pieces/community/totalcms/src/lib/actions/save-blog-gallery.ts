@@ -1,11 +1,11 @@
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { saveBlogGallery } from '../api';
 import { cmsAuth } from '../auth';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const saveBlogGalleryAction = createAction({
   name: 'save_blog_gallery',

@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { readFileAction } from '../src/lib/actions/read-file';
-import { createMockActionContext, ApFile } from '@activepieces/pieces-framework';
+import { createMockActionContext, ApFile } from '@wippa/pieces-framework';
 
 describe('readFileAction', () => {
   test('reads file as text', async () => {

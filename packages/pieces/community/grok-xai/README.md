@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-grok-xai` to build the library.
+Run `turbo run build --filter=@wippa/piece-grok-xai` to build the library.

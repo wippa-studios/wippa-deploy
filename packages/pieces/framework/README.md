@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/pieces-framework` to build the library.
+Run `turbo run build --filter=@wippa/pieces-framework` to build the library.

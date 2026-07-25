@@ -1,18 +1,18 @@
 {
-  "name": "@activepieces/piece-image-helper",
+  "name": "@wippa/piece-image-helper",
   "version": "0.1.15",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "exifreader": "4.40.1",
     "heic-convert": "2.1.0",
     "jimp": "^0.22.12",
     "sharp": "^0.35.2",
     "mime-types": "2.1.35",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "bundleDeps": false,
   "scripts": {

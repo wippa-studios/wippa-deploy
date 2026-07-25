@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { mailgunAuth } from '../..';
 import {
   mailgunCommon,
@@ -7,7 +7,7 @@ import {
   unsubscribeWebhook,
   verifyMailgunSignature,
 } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 function flattenEventData(eventData: Record<string, unknown>): Record<string, unknown> {
   const result: Record<string, unknown> = {};

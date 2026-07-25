@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { PackageType, PieceSelectionMode, PieceType, PrincipalType, SuggestionType, TriggerStrategy, TriggerTestStrategy } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { PackageType, PieceSelectionMode, PieceType, PrincipalType, SuggestionType, TriggerStrategy, TriggerTestStrategy } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
 import { pieceCache } from '../../../../src/app/pieces/metadata/piece-cache'

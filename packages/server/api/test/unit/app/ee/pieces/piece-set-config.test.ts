@@ -1,4 +1,4 @@
-import { PieceSelectionMode, PieceSetConfig } from '@activepieces/shared'
+import { PieceSelectionMode, PieceSetConfig } from '@wippa/shared'
 import { pieceSetConfig } from '../../../../../src/app/ee/pieces/piece-set/piece-set-config'
 
 const base: PieceSetConfig = {

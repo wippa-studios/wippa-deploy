@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 
 function buildEstimateJobPayload(propsValue: Record<string, unknown>): Record<string, unknown> {
   return buildJobPayload({

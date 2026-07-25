@@ -2,9 +2,9 @@ import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { clarifaiAskLLM } from './lib/actions/ask-llm';
 import { audioToTextModelPredictAction } from './lib/actions/call-audio-model';
 import {

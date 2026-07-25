@@ -4,7 +4,7 @@ import {
   PROJECT_COLOR_PALETTE,
   ProjectWithLimits,
   tryCatch,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown } from 'lucide-react';
 import { useMemo, useState } from 'react';

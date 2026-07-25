@@ -24,7 +24,7 @@ All editions. Base listing and installation is Community-level. EE/Cloud per-pie
 
 > Canonical term definitions live in the bounded-context glossaries — see [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
 
-- **Piece** — a named integration (e.g. `@activepieces/piece-gmail`) providing actions and triggers
+- **Piece** — a named integration (e.g. `@wippa/piece-gmail`) providing actions and triggers
 - **PieceType** — `OFFICIAL` (bundled) or `CUSTOM` (platform-installed)
 - **PackageType** — `REGISTRY` (NPM) or `ARCHIVE` (uploaded tarball)
 - **pieceCache** — an in-memory map of piece metadata keyed by name+version+platformId, rebuilt from DB
@@ -39,7 +39,7 @@ All editions. Base listing and installation is Community-level. EE/Cloud per-pie
 | Column | Type | Notes |
 |---|---|---|
 | id | string | ApId |
-| name | string | e.g. `@activepieces/piece-gmail` |
+| name | string | e.g. `@wippa/piece-gmail` |
 | displayName | string | |
 | version | string | semver, collation-sorted |
 | authors | string[] | |

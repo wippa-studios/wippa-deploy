@@ -2,8 +2,8 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createContactAction } from './lib/actions/accounts/create-contact';
 import { createOrganizationAction } from './lib/actions/accounts/create-organization';
 import { deleteContactAction } from './lib/actions/accounts/delete-contact';

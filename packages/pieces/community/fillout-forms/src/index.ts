@@ -1,11 +1,11 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { getFormResponses } from './lib/actions/get-form-responses';
 import { getSingleResponse } from './lib/actions/get-single-response';
 import { findFormByTitle } from './lib/actions/find-form-by-title';
 import { newFormResponse } from './lib/triggers/new-form-response';
-import { createCustomApiCallAction, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { makeRequest } from './lib/common';
 import { filloutFormsAuth } from './lib/auth';
 

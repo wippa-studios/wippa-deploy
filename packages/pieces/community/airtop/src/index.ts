@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
 import { createSessionAction } from './lib/actions/create-session';
 import { terminateSessionAction } from './lib/actions/terminate-session';
 import { createNewBrowserWindowAction } from './lib/actions/create-new-browser-window';

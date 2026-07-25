@@ -1,7 +1,7 @@
 import {
 	DynamicPropsValue,
 	createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { TeableCommon, makeClient } from '../common';
 import { TeableAuth, TeableAuthValue } from '../auth';
 

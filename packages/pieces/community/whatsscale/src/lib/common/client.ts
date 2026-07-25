@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpResponse } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpResponse } from '@wippa/pieces-common';
 
 export const BASE_URL = 'https://proxy.whatsscale.com';
 

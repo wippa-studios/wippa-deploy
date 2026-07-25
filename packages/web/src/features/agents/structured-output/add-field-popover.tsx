@@ -1,4 +1,4 @@
-import { AgentOutputFieldType } from '@activepieces/shared';
+import { AgentOutputFieldType } from '@wippa/shared';
 import { t } from 'i18next';
 import { Plus } from 'lucide-react';
 import { useState } from 'react';

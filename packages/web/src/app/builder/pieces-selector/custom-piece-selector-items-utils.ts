@@ -1,4 +1,4 @@
-import { FlowOperationType } from '@activepieces/shared';
+import { FlowOperationType } from '@wippa/shared';
 
 import {
   PieceSelectorOperation,

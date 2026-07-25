@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
 import { connectucAuth } from '../../index';
 import { registerConnectUCWebhook, unregisterConnectUCWebhook } from '../common/webhook-helpers';
 import { domainProp, usersProp } from '../common/props';

@@ -2,7 +2,7 @@ import {
   ColorName,
   PROJECT_COLOR_PALETTE,
   ProjectType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { Avatar } from '@/components/ui/avatar';
 

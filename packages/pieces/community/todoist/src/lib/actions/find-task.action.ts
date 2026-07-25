@@ -1,8 +1,8 @@
 import { todoistAuth } from '../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { todoistProjectIdDropdown } from '../common/props';
 import { todoistRestClient } from '../common/client/rest-client';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
 
 export const todoistFindTaskAction = createAction({
 	auth: todoistAuth,

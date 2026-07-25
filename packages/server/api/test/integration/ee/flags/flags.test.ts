@@ -1,4 +1,4 @@
-import { ApFlagId } from '@activepieces/shared'
+import { ApFlagId } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { createTestContext } from '../../../helpers/test-context'

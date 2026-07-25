@@ -2,7 +2,7 @@ import {
   SECRET_MANAGER_PROVIDERS_METADATA,
   SecretManagerConnectionScope,
   SecretManagerConnectionWithStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {

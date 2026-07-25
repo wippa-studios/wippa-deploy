@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { PieceMetadataModel } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/core-utils';
+import { PieceMetadataModel } from '@wippa/pieces-framework';
 
 import { StepPropertySnapshot } from './explanation-prompt';
 

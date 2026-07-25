@@ -18,8 +18,8 @@ export {
   startCase,
   tryCatch,
   AIProviderName,
-} from '@activepieces/core-utils';
-export type { SeekPage } from '@activepieces/core-utils';
+} from '@wippa/core-utils';
+export type { SeekPage } from '@wippa/core-utils';
 
 export {
   PieceCategory,
@@ -98,7 +98,7 @@ export {
   RAW_PAYLOAD_HEADER,
   PARENT_RUN_ID_HEADER,
   FAIL_PARENT_ON_FAILURE_HEADER,
-} from '@activepieces/core-piece-types';
+} from '@wippa/core-piece-types';
 export type {
   McpAuthConfig,
   BasicAuthConnectionValue,
@@ -109,4 +109,4 @@ export type {
   ToolCallBase,
   ExecuteToolResponse,
   PopulatedFlow,
-} from '@activepieces/core-piece-types';
+} from '@wippa/core-piece-types';

@@ -1,4 +1,4 @@
-import { AgentPieceTool, mcpToolNameUtils } from '@activepieces/shared';
+import { AgentPieceTool, mcpToolNameUtils } from '@wippa/shared';
 import { t } from 'i18next';
 import { Plus, Puzzle, X } from 'lucide-react';
 import { useMemo } from 'react';

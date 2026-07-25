@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { projectId } from '../common/props';
 import { BASE_URL } from '../common/client';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { customgptAuth } from '../common/auth';
 
 export const updateAgent = createAction({

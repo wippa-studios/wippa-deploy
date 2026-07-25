@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { PlatformBillingInformation } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { PlatformBillingInformation } from '@wippa/shared';
 import dayjs from 'dayjs';
 import { t } from 'i18next';
 import { CalendarDays } from 'lucide-react';

@@ -1,5 +1,5 @@
-import { apId, isNil } from '@activepieces/core-utils'
-import { ApEdition } from '@activepieces/shared'
+import { apId, isNil } from '@wippa/core-utils'
+import { ApEdition } from '@wippa/shared'
 import { IsNull, Not } from 'typeorm'
 import { repoFactory } from '../../core/db/repo-factory'
 import { isNotOneOfTheseEditions } from '../../database/database-common'

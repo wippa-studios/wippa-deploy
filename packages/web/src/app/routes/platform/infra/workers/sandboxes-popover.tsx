@@ -1,4 +1,4 @@
-import { SandboxInformation } from '@activepieces/shared';
+import { SandboxInformation } from '@wippa/shared';
 import { t } from 'i18next';
 import { Box } from 'lucide-react';
 import prettyBytes from 'pretty-bytes';

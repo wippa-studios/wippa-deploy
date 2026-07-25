@@ -1,4 +1,4 @@
-import { FlowAction, FlowRunStatus, StepOutputStatus, StreamStepProgress, UpdateRunProgressRequest } from '@activepieces/shared'
+import { FlowAction, FlowRunStatus, StepOutputStatus, StreamStepProgress, UpdateRunProgressRequest } from '@wippa/shared'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { buildPieceAction, generateMockEngineConstants } from './test-helper'
@@ -91,7 +91,7 @@ const buildMapper = ({ name, mapping, skip, nextAction }: {
         name,
         input: { mapping: mapping ?? {} },
         skip,
-        pieceName: '@activepieces/piece-data-mapper',
+        pieceName: '@wippa/piece-data-mapper',
         actionName: 'advanced_mapping',
     }),
     nextAction,

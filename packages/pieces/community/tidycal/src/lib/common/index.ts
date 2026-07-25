@@ -4,9 +4,9 @@ import {
   HttpMethod,
   HttpResponse,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { tidyCalAuth } from '../auth';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 
 export async function calltidycalapi<T extends HttpMessageBody>(
   method: HttpMethod,

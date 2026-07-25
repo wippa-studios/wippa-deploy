@@ -1,4 +1,4 @@
-import { PresenceRequest, PrincipalType, WebsocketClientEvent, WebsocketServerEvent } from '@activepieces/shared'
+import { PresenceRequest, PrincipalType, WebsocketClientEvent, WebsocketServerEvent } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { userService } from '../../../user/user-service'

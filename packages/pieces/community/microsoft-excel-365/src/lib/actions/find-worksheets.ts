@@ -1,5 +1,5 @@
 import { excelAuth } from '../auth';
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { createAction, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
 import { commonProps } from '../common/props';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { getDrivePath } from '../common/helpers';

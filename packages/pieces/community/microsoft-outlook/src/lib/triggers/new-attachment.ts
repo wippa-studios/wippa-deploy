@@ -1,11 +1,11 @@
-import { FilesService, TriggerStrategy, createTrigger,  Property } from '@activepieces/pieces-framework';
+import { FilesService, TriggerStrategy, createTrigger,  Property } from '@wippa/pieces-framework';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import { Message, FileAttachment } from '@microsoft/microsoft-graph-types';
 import dayjs from 'dayjs';
 import { microsoftOutlookAuth } from '../common/auth';
 import { outlookCommon } from '../common/client';
 import { mailFolderIdDropdown } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 async function enrichAttachments(
 	client: Client,

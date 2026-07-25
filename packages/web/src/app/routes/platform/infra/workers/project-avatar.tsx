@@ -2,7 +2,7 @@ import {
   PROJECT_COLOR_PALETTE,
   ProjectType,
   ProjectWithLimits,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { cn } from '@/lib/utils';
 

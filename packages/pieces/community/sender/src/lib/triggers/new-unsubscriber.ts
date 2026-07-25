@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { makeSenderRequest, senderAuth } from '../common/common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 
 export const newUnsubscriberTrigger = createTrigger({

@@ -2,7 +2,7 @@ import {
   createAction,
   InputPropertyMap,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { CopperAuth } from '../common/constants';
 import { projectsDropdown } from '../common/props';
 import { CopperApiService } from '../common/requests';

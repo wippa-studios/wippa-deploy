@@ -1,11 +1,11 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
 import {
     AppConnectionValue,
     EngineOperationType,
     EngineResponseStatus,
     ExecuteTokenRefreshJobData,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { workerSettings } from '../../config/worker-settings'
 import { JobContext, JobHandler, JobResultKind, SynchronousJobResult } from '../types'
 

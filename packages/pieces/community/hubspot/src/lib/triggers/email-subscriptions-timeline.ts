@@ -6,14 +6,14 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { hubspotAuth } from '../auth';
 import {
 	AppConnectionValueForAuthProperty,
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 type SubscriptionTimeLineResponse = {
 	hasMore: boolean;

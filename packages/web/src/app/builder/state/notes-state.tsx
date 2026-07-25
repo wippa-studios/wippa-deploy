@@ -1,10 +1,10 @@
-import { apId } from '@activepieces/core-utils';
+import { apId } from '@wippa/core-utils';
 import {
   AddNoteRequest,
   FlowOperationType,
   NoteColorVariant,
   Note,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { StoreApi } from 'zustand';
 
 import { authenticationSession } from '@/lib/authentication-session';

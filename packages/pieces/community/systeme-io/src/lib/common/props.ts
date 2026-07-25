@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { systemeIoCommon } from './client';
 import { systemeIoAuth } from './auth';
 

@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 const BASE_URL = 'https://api.flowparser.one/v1';
 

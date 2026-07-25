@@ -1,4 +1,4 @@
-import { ApiKeyResponseWithoutValue } from '@activepieces/shared';
+import { ApiKeyResponseWithoutValue } from '@wippa/shared';
 import { t } from 'i18next';
 import { Key, MoreHorizontal, Trash } from 'lucide-react';
 

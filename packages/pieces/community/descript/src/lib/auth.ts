@@ -1,8 +1,8 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 export const descriptAuth = PieceAuth.SecretText({
   displayName: 'API Token',

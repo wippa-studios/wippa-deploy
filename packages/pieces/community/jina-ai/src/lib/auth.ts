@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 const markdownDescription = `
 You can get your API key from [Jina AI](https://jina.ai).

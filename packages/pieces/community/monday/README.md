@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-monday` to build the library.
+Run `turbo run build --filter=@wippa/piece-monday` to build the library.

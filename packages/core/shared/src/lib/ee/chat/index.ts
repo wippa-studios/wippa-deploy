@@ -1,5 +1,5 @@
-import { ChatPromptOverride } from '@activepieces/core-execution'
-import { BaseModelSchema, Nullable } from '@activepieces/core-utils'
+import { ChatPromptOverride } from '@wippa/core-execution'
+import { BaseModelSchema, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 import { formErrors } from '../../form-errors'
 

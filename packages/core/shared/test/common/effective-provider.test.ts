@@ -1,4 +1,4 @@
-import { AIProviderName } from '@activepieces/core-utils'
+import { AIProviderName } from '@wippa/core-utils'
 import { getEffectiveProviderAndModel } from '../../src/lib/management/ai-providers'
 
 describe('getEffectiveProviderAndModel', () => {

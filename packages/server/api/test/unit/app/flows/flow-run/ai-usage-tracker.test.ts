@@ -7,7 +7,7 @@ import {
     StepOutput,
     StepOutputStatus,
     StepOutputType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { describe, expect, it, vi } from 'vitest'
 import { aiUsageExtractor } from '../../../../../src/app/flows/flow-run/ai-usage-extractor'
 

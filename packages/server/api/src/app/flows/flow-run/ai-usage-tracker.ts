@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { FileType, FlowRun, FlowVersion, LogSliceRef } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { FileType, FlowRun, FlowVersion, LogSliceRef } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { platformPlanService } from '../../ee/platform/platform-plan/platform-plan.service'
 import { fileService } from '../../file/file.service'

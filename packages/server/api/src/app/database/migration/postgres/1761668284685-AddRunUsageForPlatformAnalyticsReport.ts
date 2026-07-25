@@ -1,5 +1,5 @@
-import { DateOrString } from '@activepieces/core-utils'
-import { ApEdition } from '@activepieces/shared'
+import { DateOrString } from '@wippa/core-utils'
+import { ApEdition } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { z } from 'zod'

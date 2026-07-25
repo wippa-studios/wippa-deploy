@@ -1,7 +1,7 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { propsValidation, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { propsValidation, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { cloudconvertAuth, CloudConvertClient, archiveFileSchema } from '../common';
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 
 const archiveFileProps = () => ({
   import_method: Property.StaticDropdown({

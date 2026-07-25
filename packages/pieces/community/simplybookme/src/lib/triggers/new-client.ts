@@ -2,12 +2,12 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { simplybookAuth, makeJsonRpcCall } from '../common';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof simplybookAuth>, Record<string, never>> = {

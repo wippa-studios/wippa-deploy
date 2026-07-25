@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const mailjetAuth = PieceAuth.BasicAuth({
   description: 'Enter your api credentials',

@@ -2,16 +2,16 @@ import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../core/db/repo-factory'
 import { TemplateEntity } from './template.entity'
 import { templateValidator } from './template-validator'
-import { apId } from '@activepieces/core-utils'
-import { TemplateType, TemplateStatus } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { TemplateType, TemplateStatus } from '@wippa/shared'
 
 const templateRepo = repoFactory(TemplateEntity)
 
-const XERO_PIECE = '@activepieces/piece-xero'
+const XERO_PIECE = '@wippa/piece-xero'
 const XERO_VERSION = '~0.6.8'
-const SLACK_PIECE = '@activepieces/piece-slack'
+const SLACK_PIECE = '@wippa/piece-slack'
 const SLACK_VERSION = '~0.17.0'
-const SENDGRID_PIECE = '@activepieces/piece-sendgrid'
+const SENDGRID_PIECE = '@wippa/piece-sendgrid'
 const SENDGRID_VERSION = '~0.5.0'
 
 function now(): string {

@@ -1,4 +1,4 @@
-import { LockResourceRequest, PrincipalType, WebsocketClientEvent, WebsocketServerEvent } from '@activepieces/shared'
+import { LockResourceRequest, PrincipalType, WebsocketClientEvent, WebsocketServerEvent } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { userService } from '../../../user/user-service'

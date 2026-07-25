@@ -1,17 +1,17 @@
 import {
   createCustomApiCallAction,
   HttpError,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
 import { kimaiCreateTimesheetAction } from './lib/actions/create-timesheet';
 import { makeClient } from './lib/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const kimaiAuth = PieceAuth.CustomAuth({
   description: `

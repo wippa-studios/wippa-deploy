@@ -5,7 +5,7 @@ import {
     FlowVersion,
     Project,
     User,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

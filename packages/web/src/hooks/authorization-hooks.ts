@@ -1,5 +1,5 @@
-import { isNil, Permission } from '@activepieces/core-utils';
-import { ApEdition, ApFlagId, PlatformRole } from '@activepieces/shared';
+import { isNil, Permission } from '@wippa/core-utils';
+import { ApEdition, ApFlagId, PlatformRole } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 
 import { authenticationApi } from '@/api/authentication-api';

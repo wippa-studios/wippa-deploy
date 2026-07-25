@@ -1,4 +1,4 @@
-import { apDayjs } from '@activepieces/server-utils'
+import { apDayjs } from '@wippa/server-utils'
 import { FastifyInstance } from 'fastify'
 import { SystemJobName } from '../../../../src/app/helper/system-jobs/common'
 import { systemJobsQueue, systemJobsSchedule } from '../../../../src/app/helper/system-jobs/system-job'

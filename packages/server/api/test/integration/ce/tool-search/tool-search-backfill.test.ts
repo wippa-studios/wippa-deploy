@@ -1,4 +1,4 @@
-import { apId } from '@activepieces/shared'
+import { apId } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 import { databaseConnection } from '../../../../src/app/database/database-connection'

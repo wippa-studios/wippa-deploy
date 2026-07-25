@@ -1,11 +1,11 @@
 import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { microsoft365CopilotAuth } from './lib/common/auth';
 import { chatWithCopilot } from './lib/actions/chat-with-copilot';
 import { searchCopilot } from './lib/actions/search-copilot';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
 
 export const microsoft365Copilot = createPiece({

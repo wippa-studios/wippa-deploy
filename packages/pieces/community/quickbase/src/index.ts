@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { createRecord } from './lib/actions/create-record';
 import { updateRecord } from './lib/actions/update-record';
 import { deleteRecord } from './lib/actions/delete-record';

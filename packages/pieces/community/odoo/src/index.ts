@@ -2,7 +2,7 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import Odoo from './commom/index';
 import actions from './lib/actions';
 import { odooAuth } from './lib/auth';

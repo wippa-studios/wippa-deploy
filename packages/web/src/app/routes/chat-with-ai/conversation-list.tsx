@@ -1,4 +1,4 @@
-import { ChatConversation } from '@activepieces/shared';
+import { ChatConversation } from '@wippa/shared';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import {

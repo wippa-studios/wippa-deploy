@@ -4,8 +4,8 @@ import {
     AuthenticationType,
     HttpMessageBody,
     HttpResponse,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { deftformAuth } from '../auth';
 
 const BASE_URL = 'https://deftform.com/api/v1';

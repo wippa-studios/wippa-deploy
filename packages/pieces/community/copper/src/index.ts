@@ -2,7 +2,7 @@ import {
   createPiece,
   PieceAuth,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { BASE_URL, CopperAuth } from './lib/common/constants';
 import { newPerson } from './lib/triggers/new-person';
 import { newLead } from './lib/triggers/new-lead';
@@ -34,8 +34,8 @@ import { searchForACompany } from './lib/actions/search-for-a-company';
 import { searchForAnOpportunity } from './lib/actions/search-for-an-opportunity';
 import { searchForAProject } from './lib/actions/search-for-a-project';
 import { newActivity } from './lib/triggers/new-activity';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const copper = createPiece({
   displayName: 'Copper',

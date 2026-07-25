@@ -3,12 +3,12 @@ import {
   TriggerStrategy,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   pollingHelper,
   Polling,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { base44Auth } from '../..';
 import { createClient, Base44Error, type Base44Client } from '@base44/sdk';
 

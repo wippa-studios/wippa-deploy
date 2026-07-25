@@ -1,10 +1,10 @@
 import { 
   createAction, 
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { baremetricsApiCall, BaremetricsAuth } from '../common/client';
 import { baremetricsAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const updateCustomer = createAction({
   name: 'update_customer',

@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { whatConvertsAuth } from '../common/auth';
 
 export const newLeadTrigger = createTrigger({

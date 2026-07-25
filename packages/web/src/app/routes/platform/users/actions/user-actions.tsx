@@ -1,4 +1,4 @@
-import { PlatformRole, UserStatus } from '@activepieces/shared';
+import { PlatformRole, UserStatus } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   CircleMinus,

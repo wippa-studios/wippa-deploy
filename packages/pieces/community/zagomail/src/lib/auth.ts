@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { zagoMailApiService } from './common/request';
 
 export const zagomailAuth = PieceAuth.SecretText({

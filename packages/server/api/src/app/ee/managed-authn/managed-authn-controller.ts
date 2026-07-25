@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined } from '@activepieces/core-utils'
-import { ApplicationEventName, AuthenticationResponse, ManagedAuthnRequestBody } from '@activepieces/shared'
+import { assertNotNullOrUndefined } from '@wippa/core-utils'
+import { ApplicationEventName, AuthenticationResponse, ManagedAuthnRequestBody } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { securityAccess } from '../../core/security/authorization/fastify-security'
 import { applicationEvents } from '../../helper/application-events'

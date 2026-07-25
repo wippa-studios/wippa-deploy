@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import { ArrowUpIcon, Paperclip } from 'lucide-react';
 import * as React from 'react';
 import { useRef, useState } from 'react';

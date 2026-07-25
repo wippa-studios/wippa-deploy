@@ -1,10 +1,10 @@
-import { isNil, Permission } from '@activepieces/core-utils';
+import { isNil, Permission } from '@wippa/core-utils';
 import {
   ApFlagId,
   PlatformRole,
   ProjectType,
   UserStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { UsersRound, Lock } from 'lucide-react';
 import { useState } from 'react';

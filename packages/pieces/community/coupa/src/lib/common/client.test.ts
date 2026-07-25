@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpResponse,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CoupaClient } from './client';
 

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
   gmailAuth,
   createGoogleClient,
@@ -8,8 +8,8 @@ import {
 import { gmail as googleGmail } from '@googleapis/gmail';
 import MailComposer from 'nodemailer/lib/mail-composer';
 import Mail from 'nodemailer/lib/mailer';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
-import { ExecutionType } from '@activepieces/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
+import { ExecutionType } from '@wippa/pieces-framework';
 import { requestApprovalInMailActionOutputSchema } from '../output-schemas';
 
 export const requestApprovalInEmail = createAction({

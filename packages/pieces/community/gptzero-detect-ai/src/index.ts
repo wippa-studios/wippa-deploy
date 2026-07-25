@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { scanFile } from './lib/actions/scan-file';
 import { scanText } from './lib/actions/scan-text';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { gptzeroDetectAiAuth } from './lib/common/auth';
 
 export const gptzeroDetectAi = createPiece({

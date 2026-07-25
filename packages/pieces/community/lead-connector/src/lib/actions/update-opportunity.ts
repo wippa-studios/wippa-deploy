@@ -2,7 +2,7 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   getContacts,
   getOpportunities,
@@ -15,7 +15,7 @@ import {
 } from '../common';
 import { leadConnectorAuth } from '../..';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const updateOpportunityAction = createAction({
   auth: leadConnectorAuth,

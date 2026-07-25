@@ -1,5 +1,5 @@
 import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { baremetricsAuth } from "./lib/common/auth";
 import { createCustomer } from "./lib/actions/create-customer";
 import { createPlan } from "./lib/actions/create-plan";

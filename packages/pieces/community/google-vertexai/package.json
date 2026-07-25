@@ -1,16 +1,16 @@
 {
-  "name": "@activepieces/piece-google-vertexai",
+  "name": "@wippa/piece-google-vertexai",
   "version": "0.1.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@google/genai": "1.43.0",
     "google-auth-library": "10.6.1",
     "mime-types": "2.1.35",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "@types/mime-types": "2.1.1"

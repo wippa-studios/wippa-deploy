@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import { Mutex } from 'async-mutex'
 import Redis from 'ioredis'
 import { system } from '../../helper/system/system'

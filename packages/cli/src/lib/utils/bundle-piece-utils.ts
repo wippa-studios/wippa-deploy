@@ -48,7 +48,7 @@ async function bundlePiece({ piecePath, distPath, repoRoot }: BundlePieceParams)
 
     const bundleBytes = statSync(outfile).size
     const rawBytes = totalInputBytes(pass.result.metafile)
-    const external = [...pass.externalized].filter((dep) => !dep.startsWith('@activepieces/') && !BUNDLE_HELPER_DEPS.has(dep))
+    const external = [...pass.externalized].filter((dep) => !dep.startsWith('@wippa/') && !BUNDLE_HELPER_DEPS.has(dep))
 
     enforceSizeGate({ piecePath, bundleBytes })
 
@@ -106,7 +106,7 @@ function readInlineConfig(manifest: PieceManifest): InlineConfig {
     return { inlineAll: true, inlineList: new Set(), excludeList }
 }
 
-// Only @activepieces/* workspace code and relative/absolute imports are always bundled in.
+// Only @wippa/* workspace code and relative/absolute imports are always bundled in.
 // Node builtins and packages in `external` (known-native + auto-externalized dynamic-require
 // deps) are kept external. Everything else is inlined when inlineAll / listed in inlineList.
 function externalizeThirdParty({ inlineAll, inlineList, external, inlined, externalized }: ExternalizeParams): esbuild.Plugin {
@@ -121,7 +121,7 @@ function externalizeThirdParty({ inlineAll, inlineList, external, inlined, exter
                 if (id.startsWith('.') || isAbsolute(id)) {
                     return null
                 }
-                if (id.startsWith('@activepieces/')) {
+                if (id.startsWith('@wippa/')) {
                     return null
                 }
                 if (id.startsWith('node:') || NODE_BUILTINS.has(id)) {
@@ -250,13 +250,13 @@ function workspaceAliases(repoRoot: string): Record<string, string> {
         // form-data → mime-types → mime-db pulls ~133 KB of MIME data into every HTTP piece
         // bundle. Swap in a minimal common-types table; uncommon types fall back gracefully.
         'mime-db': resolve(repoRoot, 'packages', 'pieces', 'framework', 'src', 'mime-db-min.cjs'),
-        '@activepieces/shared': resolve(repoRoot, 'packages', 'core', 'shared', 'src'),
-        '@activepieces/pieces-framework': resolve(repoRoot, 'packages', 'pieces', 'framework', 'src'),
-        '@activepieces/pieces-common': resolve(repoRoot, 'packages', 'pieces', 'common', 'src'),
-        '@activepieces/core-utils': resolve(repoRoot, 'packages', 'core', 'utils', 'src'),
-        '@activepieces/core-piece-types': resolve(repoRoot, 'packages', 'core', 'piece-types', 'src'),
-        '@activepieces/core-formula': resolve(repoRoot, 'packages', 'core', 'formula', 'src'),
-        '@activepieces/core-execution': resolve(repoRoot, 'packages', 'core', 'execution', 'src'),
+        '@wippa/shared': resolve(repoRoot, 'packages', 'core', 'shared', 'src'),
+        '@wippa/pieces-framework': resolve(repoRoot, 'packages', 'pieces', 'framework', 'src'),
+        '@wippa/pieces-common': resolve(repoRoot, 'packages', 'pieces', 'common', 'src'),
+        '@wippa/core-utils': resolve(repoRoot, 'packages', 'core', 'utils', 'src'),
+        '@wippa/core-piece-types': resolve(repoRoot, 'packages', 'core', 'piece-types', 'src'),
+        '@wippa/core-formula': resolve(repoRoot, 'packages', 'core', 'formula', 'src'),
+        '@wippa/core-execution': resolve(repoRoot, 'packages', 'core', 'execution', 'src'),
     }
 }
 
@@ -279,7 +279,7 @@ function enforceSizeGate({ piecePath, bundleBytes }: SizeGateParams): void {
 // The published bundle lives at src/index.js — the entry path the engine's piece loader
 // resolves (older deployed engines hardcode `<package>/src/index.js`, ignoring package.json
 // "main"). Emitting a single self-contained src/index.js keeps bundled pieces installable
-// on every engine version while still inlining all @activepieces/* workspace code.
+// on every engine version while still inlining all @wippa/* workspace code.
 const BUNDLE_FILENAME = 'src/index.js'
 // tslib only exists to back tsc's `importHelpers` down-levelling. esbuild emits its own inline
 // helpers, so the published bundle never requires it. Drop it from every manifest rather than

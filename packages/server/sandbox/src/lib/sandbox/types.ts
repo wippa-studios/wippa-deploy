@@ -1,5 +1,5 @@
 import { ChildProcess } from 'child_process'
-import { EngineOperation, EngineOperationType, EngineResponse } from '@activepieces/shared'
+import { EngineOperation, EngineOperationType, EngineResponse } from '@wippa/shared'
 
 export type SandboxMount = {
     hostPath: string

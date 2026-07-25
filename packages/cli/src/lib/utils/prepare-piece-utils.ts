@@ -49,7 +49,7 @@ async function preparePieceDistForPublish(piecePath: string): Promise<void> {
     console.info(`[preparePiece] bundled ${piecePath} → ${(bundleBytes / 1024).toFixed(0)} KB (${ratio}x smaller than ${(rawBytes / 1024).toFixed(0)} KB raw inputs)${extNote}`)
 }
 
-// The published artifact inlines @activepieces/* workspace code AND third-party deps into the
+// The published artifact inlines @wippa/* workspace code AND third-party deps into the
 // self-contained bundle by default. Only deps that cannot be safely inlined (native addons,
 // dynamic require) stay external and are kept here so the runtime installer resolves them.
 // A piece can force a dep external via bundleDeps in its package.json (escape hatch).

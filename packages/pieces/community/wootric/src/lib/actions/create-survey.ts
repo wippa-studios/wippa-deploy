@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { wootricAuth } from '../auth';
 import { WOOTRIC_API_URL } from '../auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const sendSurvey = async (surveyRequestPayload: object) => {
   const EMAIL_SURVEY = `${WOOTRIC_API_URL}/v1/email_survey`;

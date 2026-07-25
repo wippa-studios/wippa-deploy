@@ -1,4 +1,4 @@
-import { ApId } from '@activepieces/core-utils'
+import { ApId } from '@wippa/core-utils'
 import { z } from 'zod'
 import { SignUpRequest } from '../../../core/authentication/dto/sign-up-request'
 

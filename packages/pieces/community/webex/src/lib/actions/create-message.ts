@@ -2,8 +2,8 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from '../common/client';
 import { webexAuth } from '../common/auth';
 import { fetchRooms, roomIdDropdown } from '../common/props';

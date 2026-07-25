@@ -1,6 +1,6 @@
-import { assertNotNullOrUndefined, isNil } from '@activepieces/pieces-framework';
-import { AgentToolType } from '@activepieces/pieces-framework';
-import { AgentResult, AgentStepBlock, AgentTaskStatus, AgentTool, ContentBlockType, ExecutionToolStatus, MarkdownContentBlock, ToolCallBase, ToolCallContentBlock, ToolCallStatus, ToolCallType } from '@activepieces/pieces-framework';
+import { assertNotNullOrUndefined, isNil } from '@wippa/pieces-framework';
+import { AgentToolType } from '@wippa/pieces-framework';
+import { AgentResult, AgentStepBlock, AgentTaskStatus, AgentTool, ContentBlockType, ExecutionToolStatus, MarkdownContentBlock, ToolCallBase, ToolCallContentBlock, ToolCallStatus, ToolCallType } from '@wippa/pieces-framework';
 
 export const agentOutputBuilder = (prompt: string) => {
   let status: AgentTaskStatus = AgentTaskStatus.IN_PROGRESS;

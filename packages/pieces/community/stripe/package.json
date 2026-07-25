@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-stripe",
+  "name": "@wippa/piece-stripe",
   "version": "0.6.10",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -9,11 +9,11 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "stripe": "18.2.1",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

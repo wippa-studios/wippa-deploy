@@ -1,7 +1,7 @@
 // add-or-update-contact.ts
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { chargekeepAuth } from '../auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const addOrUpdateContact = createAction({
   name: 'addOrUpdateContact',

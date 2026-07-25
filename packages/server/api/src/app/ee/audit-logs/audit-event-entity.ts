@@ -1,4 +1,4 @@
-import { ApplicationEvent, Platform } from '@activepieces/shared'
+import { ApplicationEvent, Platform } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { BaseColumnSchemaPart } from '../../database/database-common'
 

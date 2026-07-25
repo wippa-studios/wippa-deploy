@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { OAuth2Props, PiecePropertyMap } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/core-utils';
+import { OAuth2Props, PiecePropertyMap } from '@wippa/pieces-framework';
 import {
   FlowActionType,
   FlowOperationRequest,
@@ -7,7 +7,7 @@ import {
   FlowTriggerType,
   PieceAction,
   PieceTrigger,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { AlertTriangle, ArrowUp, Info } from 'lucide-react';
 import semver from 'semver';

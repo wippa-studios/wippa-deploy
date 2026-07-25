@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { OAuth2GrantType } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { OAuth2GrantType } from '@wippa/pieces-framework';
 import * as properties from './properties';
 import * as schemas from './schemas';
 import {

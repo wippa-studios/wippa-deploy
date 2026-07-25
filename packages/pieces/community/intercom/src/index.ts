@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { getIntercomRegion, getIntercomToken, IntercomAuthValue } from './lib/common';
 import { sendMessageAction } from './lib/actions/send-message.action';
 import crypto from 'node:crypto';

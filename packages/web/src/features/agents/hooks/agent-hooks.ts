@@ -1,7 +1,7 @@
 import {
   AgentMcpTool,
   ValidateAgentMcpToolResponse,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { flowsApi } from '@/features/flows/api/flows-api';

@@ -2,8 +2,8 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { OAuth2PropertyValue } from '@wippa/pieces-framework';
 
 export const gcsCommon = {
   gcsBaseUrl: 'https://www.googleapis.com/storage/v1',

@@ -1,7 +1,7 @@
 import {
   createCustomApiCallAction
-} from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
 import { shortIoAuth } from './lib/common/auth';
 import { createCountryTargetingRuleAction } from './lib/actions/create-country-targeting-for-a-link';
 import { createShortLinkAction } from './lib/actions/create-short-link';

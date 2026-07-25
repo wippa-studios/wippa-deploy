@@ -2,7 +2,7 @@ import {
   PopulatedFlow,
   FlowTriggerType,
   TriggerSourceScheduleType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import cronstrue from 'cronstrue/i18n';
 import { t } from 'i18next';
 import JSZip from 'jszip';

@@ -1,5 +1,5 @@
-import { ActivepiecesError, apId, deleteProps, ErrorCode, isNil, SeekPage } from '@activepieces/core-utils'
-import { ListOAuth2AppRequest, OAuthApp, UpsertOAuth2AppRequest } from '@activepieces/shared'
+import { ActivepiecesError, apId, deleteProps, ErrorCode, isNil, SeekPage } from '@wippa/core-utils'
+import { ListOAuth2AppRequest, OAuthApp, UpsertOAuth2AppRequest } from '@wippa/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { encryptUtils } from '../../helper/encryption'
 import { buildPaginator } from '../../helper/pagination/build-paginator'

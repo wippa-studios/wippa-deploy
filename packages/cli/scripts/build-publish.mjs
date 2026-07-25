@@ -8,16 +8,16 @@ const packageDir = resolve(here, '..')
 const repoRoot = resolve(packageDir, '../..')
 const distDir = resolve(packageDir, 'dist')
 
-// @activepieces/* workspace packages are no longer published to npm, so the published CLI must
+// @wippa/* workspace packages are no longer published to npm, so the published CLI must
 // inline them. esbuild resolves them from source via these aliases (mirrors the piece bundler).
 const alias = {
-    '@activepieces/shared': resolve(repoRoot, 'packages/core/shared/src'),
-    '@activepieces/pieces-framework': resolve(repoRoot, 'packages/pieces/framework/src'),
-    '@activepieces/pieces-common': resolve(repoRoot, 'packages/pieces/common/src'),
-    '@activepieces/core-utils': resolve(repoRoot, 'packages/core/utils/src'),
-    '@activepieces/core-piece-types': resolve(repoRoot, 'packages/core/piece-types/src'),
-    '@activepieces/core-formula': resolve(repoRoot, 'packages/core/formula/src'),
-    '@activepieces/core-execution': resolve(repoRoot, 'packages/core/execution/src'),
+    '@wippa/shared': resolve(repoRoot, 'packages/core/shared/src'),
+    '@wippa/pieces-framework': resolve(repoRoot, 'packages/pieces/framework/src'),
+    '@wippa/pieces-common': resolve(repoRoot, 'packages/pieces/common/src'),
+    '@wippa/core-utils': resolve(repoRoot, 'packages/core/utils/src'),
+    '@wippa/core-piece-types': resolve(repoRoot, 'packages/core/piece-types/src'),
+    '@wippa/core-formula': resolve(repoRoot, 'packages/core/formula/src'),
+    '@wippa/core-execution': resolve(repoRoot, 'packages/core/execution/src'),
 }
 
 // esbuild ships a platform-specific native binary, and autocannon loads a .wasm histogram —

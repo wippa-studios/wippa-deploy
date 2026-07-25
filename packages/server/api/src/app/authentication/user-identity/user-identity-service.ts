@@ -1,5 +1,5 @@
-import { ActivepiecesError, apId, ErrorCode, isNil, spreadIfDefined } from '@activepieces/core-utils'
-import { UserIdentity } from '@activepieces/shared'
+import { ActivepiecesError, apId, ErrorCode, isNil, spreadIfDefined } from '@wippa/core-utils'
+import { UserIdentity } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { nanoid } from 'nanoid'
 import { repoFactory } from '../../core/db/repo-factory'

@@ -2,7 +2,7 @@
     import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
 import { createExpenseAction } from './lib/actions/create-expense';
 import { newExpenseTrigger } from './lib/triggers/new-expense';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { splitwiseAuth } from './lib/auth';
 
 const markdownDescription = `

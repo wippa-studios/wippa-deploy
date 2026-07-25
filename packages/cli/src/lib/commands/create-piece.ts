@@ -67,10 +67,10 @@ const scaffoldPiece = async (
     main: './dist/src/index.js',
     types: './dist/src/index.d.ts',
     dependencies: {
-      '@activepieces/pieces-common': 'workspace:*',
-      '@activepieces/pieces-framework': 'workspace:*',
-      '@activepieces/core-piece-types': 'workspace:*',
-      '@activepieces/core-utils': 'workspace:*',
+      '@wippa/pieces-common': 'workspace:*',
+      '@wippa/pieces-framework': 'workspace:*',
+      '@wippa/core-piece-types': 'workspace:*',
+      '@wippa/core-utils': 'workspace:*',
     },
     devDependencies: {
       tslib: '2.6.2',
@@ -142,10 +142,10 @@ const scaffoldPiece = async (
               patterns: [
                 'lodash',
                 'lodash/*',
-                '@activepieces/core-*',
-                '@activepieces/server*',
-                '@activepieces/engine',
-                '@activepieces/shared',
+                '@wippa/core-*',
+                '@wippa/server*',
+                '@wippa/engine',
+                '@wippa/shared',
               ],
             },
           ],
@@ -170,7 +170,7 @@ const scaffoldPiece = async (
     })
     .join('');
 
-  const indexTemplate = `import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+  const indexTemplate = `import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 
 export const ${pieceNameCamelCase} = createPiece({
   displayName: '${capitalizeFirstLetter(pieceName)}',
@@ -218,7 +218,7 @@ export const createPieceCommand = new Command('create')
         name: 'packageName',
         message: 'Enter the package name:',
         default: (answers: Record<string, string>) =>
-          `@activepieces/piece-${answers.pieceName}`,
+          `@wippa/piece-${answers.pieceName}`,
         when: (answers: Record<string, string>) =>
           answers.pieceName !== undefined,
       },

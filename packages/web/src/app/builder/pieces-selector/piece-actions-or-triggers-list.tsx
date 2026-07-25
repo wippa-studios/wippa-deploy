@@ -1,9 +1,9 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowActionType,
   FlowTriggerType,
   TelemetryEventName,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { MoveLeft } from 'lucide-react';
 import React from 'react';

@@ -4,7 +4,7 @@ import {
   PopulatedRecord,
   Table,
   TableAutomationStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { nanoid } from 'nanoid';
 import { create } from 'zustand';
 

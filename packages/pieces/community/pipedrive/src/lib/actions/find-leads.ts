@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { pipedriveApiCall } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { pipedriveAuth } from '../auth';
 
 export const findLeadAction = createAction({

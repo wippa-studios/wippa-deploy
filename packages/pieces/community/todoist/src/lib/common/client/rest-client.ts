@@ -3,8 +3,8 @@ import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
-import { isNotUndefined, pickBy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { isNotUndefined, pickBy } from '@wippa/pieces-framework';
 import {
   TodoistCompletedTask,
   TodoistCreateTaskRequest,

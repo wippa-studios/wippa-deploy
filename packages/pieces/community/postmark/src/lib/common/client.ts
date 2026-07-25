@@ -2,7 +2,7 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 const POSTMARK_API_BASE_URL = 'https://api.postmarkapp.com';
 

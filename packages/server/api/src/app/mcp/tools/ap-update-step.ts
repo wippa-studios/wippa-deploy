@@ -1,5 +1,5 @@
-import { isNil, Permission } from '@activepieces/core-utils'
-import { FlowActionType, FlowOperationRequest, FlowOperationType, flowStructureUtil, McpToolDefinition, PieceActionSettings, ProjectScopedMcpServer, UpdateActionRequest } from '@activepieces/shared'
+import { isNil, Permission } from '@wippa/core-utils'
+import { FlowActionType, FlowOperationRequest, FlowOperationType, flowStructureUtil, McpToolDefinition, PieceActionSettings, ProjectScopedMcpServer, UpdateActionRequest } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { flowService } from '../../flows/flow/flow.service'

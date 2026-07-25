@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { whatConvertsAuth } from '../common/auth';
 import { whatConvertsClient } from '../common/client';
 import { whatConvertsProps } from '../common/props';

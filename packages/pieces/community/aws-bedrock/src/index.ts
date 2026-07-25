@@ -1,7 +1,7 @@
 import {
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { sendPrompt } from './lib/actions/send-prompt';
 import { generateContentFromImage } from './lib/actions/generate-content-from-image';
 import { generateImage } from './lib/actions/generate-image';

@@ -1,4 +1,4 @@
-import { Metadata } from '@activepieces/core-utils'
+import { Metadata } from '@wippa/core-utils'
 import { z } from 'zod'
 import { VARIABLE_NAME_REGEX } from '../variable'
 

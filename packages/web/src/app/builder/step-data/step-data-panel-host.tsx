@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { FlowActionType, FlowTriggerType } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { FlowActionType, FlowTriggerType } from '@wippa/shared';
 import { useCallback, useRef, useSyncExternalStore } from 'react';
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';

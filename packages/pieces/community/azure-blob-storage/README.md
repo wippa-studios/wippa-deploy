@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-azure-blob-storage` to build the library.
+Run `turbo run build --filter=@wippa/piece-azure-blob-storage` to build the library.

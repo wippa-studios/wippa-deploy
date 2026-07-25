@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { lightfunnelsAuth } from '../auth';
 import { lightfunnelsCommon } from '../common/index';
 

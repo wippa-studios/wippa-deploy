@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-fireflies-ai` to build the library.
+Run `turbo run build --filter=@wippa/piece-fireflies-ai` to build the library.

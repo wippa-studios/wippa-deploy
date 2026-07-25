@@ -1,5 +1,5 @@
-import { isNil, tryCatch } from '@activepieces/core-utils'
-import { ConsumeJobRequest, ConsumeJobResponse, EngineResponseStatus, JobData } from '@activepieces/shared'
+import { isNil, tryCatch } from '@wippa/core-utils'
+import { ConsumeJobRequest, ConsumeJobResponse, EngineResponseStatus, JobData } from '@wippa/shared'
 import { Worker as BullMQWorker, Job, UnrecoverableError } from 'bullmq'
 import { FastifyBaseLogger } from 'fastify'
 import { accessTokenManager } from '../../authentication/lib/access-token-manager'

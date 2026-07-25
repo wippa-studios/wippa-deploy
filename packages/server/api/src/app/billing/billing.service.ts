@@ -1,4 +1,4 @@
-import { ActivepiecesError, ErrorCode, assertNotNullOrUndefined } from '@activepieces/core-utils'
+import { ActivepiecesError, ErrorCode, assertNotNullOrUndefined } from '@wippa/core-utils'
 import { FastifyBaseLogger } from 'fastify'
 import Stripe from 'stripe'
 import { repoFactory } from '../core/db/repo-factory'

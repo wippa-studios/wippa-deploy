@@ -1,11 +1,11 @@
 
 import { createPiece } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { serpstatAuth } from "./lib/common/auth";
 import { getKeywords } from "./lib/actions/keyword-analysis/get-keywords";
 import { getSuggestions } from "./lib/actions/keyword-analysis/get-suggestions";
 import { BASE_URL } from "./lib/common/client";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const serpstat = createPiece({
   displayName: "Serpstat",

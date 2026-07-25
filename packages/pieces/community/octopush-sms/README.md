@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-octopush-sms` to build the library.
+Run `turbo run build --filter=@wippa/piece-octopush-sms` to build the library.

@@ -1,8 +1,8 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { firefliesAiAuth } from '../auth';
 import { getTranscript } from '../common/queries';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { BASE_URL } from '../common';
 
 export const findRecentMeetingAction = createAction({

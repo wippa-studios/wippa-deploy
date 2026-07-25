@@ -1,5 +1,5 @@
 import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { featheryAuth } from "./lib/common/auth";
 import { createFormAction } from "./lib/actions/create-form";
 import { updateFormAction } from "./lib/actions/update-form";

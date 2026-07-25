@@ -3,7 +3,7 @@ import {
   FlowRunStatus,
   isFlowRunStateTerminal,
   StepOutputStatus,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useReactFlow } from '@xyflow/react';
 import { t } from 'i18next';
 import { ArrowRight, CircleHelp, Info, Magnet } from 'lucide-react';

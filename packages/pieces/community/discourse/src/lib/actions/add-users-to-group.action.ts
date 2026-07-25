@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { discourseAuth } from '../auth';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
 
 export const addUsersToGroup = createAction({
   auth: discourseAuth,

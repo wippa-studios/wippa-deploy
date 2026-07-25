@@ -1,5 +1,5 @@
-import { tryCatch } from '@activepieces/core-utils'
-import { EngineOperationType, EngineResponseStatus, ExecutePropertyJobData, WorkerJobType } from '@activepieces/shared'
+import { tryCatch } from '@wippa/core-utils'
+import { EngineOperationType, EngineResponseStatus, ExecutePropertyJobData, WorkerJobType } from '@wippa/shared'
 import { workerSettings } from '../../config/worker-settings'
 import { JobContext, JobHandler, JobResultKind, SynchronousJobResult } from '../types'
 import { isSandboxTimeout } from '../utils/sandbox-helpers'

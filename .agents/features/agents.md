@@ -1,7 +1,7 @@
 # AI Agents
 
 ## Summary
-Agents is a flow step type (backed by `@activepieces/piece-agent`) that executes an LLM-driven autonomous loop. The agent is given a prompt, a set of tools, an AI provider/model, and optional structured-output fields. It runs a ReAct-style loop (up to `maxSteps`) where the model can call any configured tool before producing a final answer. Tools can be piece actions, other flows, MCP servers, or knowledge-base files. The feature is entirely configured inside the Flow Builder as a special step and does not have its own backend entity — the agent configuration lives inside the flow version's step settings.
+Agents is a flow step type (backed by `@wippa/piece-agent`) that executes an LLM-driven autonomous loop. The agent is given a prompt, a set of tools, an AI provider/model, and optional structured-output fields. It runs a ReAct-style loop (up to `maxSteps`) where the model can call any configured tool before producing a final answer. Tools can be piece actions, other flows, MCP servers, or knowledge-base files. The feature is entirely configured inside the Flow Builder as a special step and does not have its own backend entity — the agent configuration lives inside the flow version's step settings.
 
 ## Key Files
 
@@ -45,7 +45,7 @@ Gated by `platform.plan.agentsEnabled`. When disabled, the agent step type is hi
 - **AgentTaskStatus** — `COMPLETED`, `FAILED`, `IN_PROGRESS`
 
 ## Agent Step Configuration (stored in flow version)
-The agent step is a `PIECE` action on `@activepieces/piece-agent`. Its `settings.input` contains:
+The agent step is a `PIECE` action on `@wippa/piece-agent`. Its `settings.input` contains:
 - `agentTools` — `AgentTool[]`
 - `structuredOutput` — `AgentOutputField[]`
 - `prompt` — string (may include `{{variables}}`)

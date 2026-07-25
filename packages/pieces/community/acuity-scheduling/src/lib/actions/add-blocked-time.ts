@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { AuthenticationType, HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
 import { acuitySchedulingAuth } from '../auth';
 import { API_URL } from '../common';
 import { calendarIdDropdown } from '../common/props';

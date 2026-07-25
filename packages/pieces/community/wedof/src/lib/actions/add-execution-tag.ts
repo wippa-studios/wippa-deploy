@@ -1,5 +1,5 @@
 import { wedofAuth } from '../auth';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 
 export const addExecutionTag = createAction({
   auth: wedofAuth,

@@ -1,4 +1,4 @@
-import { FileProducedEvent } from '@activepieces/shared';
+import { FileProducedEvent } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 import { Download, FileIcon } from 'lucide-react';
 import { motion } from 'motion/react';

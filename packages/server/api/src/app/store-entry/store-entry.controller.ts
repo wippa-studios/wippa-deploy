@@ -3,7 +3,7 @@ import {
     GetStoreEntryRequest,
     PutStoreEntryRequest,
     STORE_VALUE_MAX_SIZE,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import sizeof from 'object-sizeof'

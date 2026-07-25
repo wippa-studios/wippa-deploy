@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { googleSheetsAuth } from '../common/common';
 import { areSheetIdsValid, columnToLabel, labelToColumn } from '../common/common';
 import {
@@ -20,7 +20,7 @@ import {
 	WebhookRenewStrategy,
 	Property,
 	DropdownOption,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 import crypto from 'crypto';
 import { commonProps } from '../common/props';

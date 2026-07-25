@@ -1,8 +1,8 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { generateText } from 'ai';
 import { createAIModel } from '../../common/ai-sdk';
 import { aiProps } from '../../common/props';
-import { AIProviderName } from '@activepieces/pieces-framework';
+import { AIProviderName } from '@wippa/pieces-framework';
 
 export const classifyText = createAction({
   audience: 'human',

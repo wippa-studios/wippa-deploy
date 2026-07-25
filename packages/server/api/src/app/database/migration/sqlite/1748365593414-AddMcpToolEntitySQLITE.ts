@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { ActionBase } from '@activepieces/pieces-framework'
+import { apId } from '@wippa/core-utils'
+import { ActionBase } from '@wippa/pieces-framework'
 import { gt } from 'semver'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
@@ -79,7 +79,7 @@ function isNil(value: unknown): value is null | undefined {
 }
 
 function isMcpTriggerPiece(trigger: { type: TriggerType, settings: { pieceName: string } }): boolean {
-    return trigger.type === TriggerType.PIECE && trigger.settings.pieceName === '@activepieces/piece-mcp'
+    return trigger.type === TriggerType.PIECE && trigger.settings.pieceName === '@wippa/piece-mcp'
 }
 
 const log = system.globalLogger()

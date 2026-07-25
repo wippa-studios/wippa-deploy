@@ -1,4 +1,4 @@
-import { omit } from '@activepieces/core-utils';
+import { omit } from '@wippa/core-utils';
 import {
   ActionPreviewEvent,
   ActionReceiptEvent,
@@ -6,7 +6,7 @@ import {
   BuildPlanEvent,
   FileProducedEvent,
   ImageGeneratedEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { StoreApi, create } from 'zustand';
 
 import { chatApi } from './chat-api';

@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, StaticPropsValue, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, StaticPropsValue, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { makeRequest } from '../common/client';
 import { SiteSpeakAuth } from '../common/auth';

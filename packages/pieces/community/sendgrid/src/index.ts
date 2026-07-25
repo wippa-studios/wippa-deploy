@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createOrUpdateContact } from './lib/actions/create-or-update-contact';
 import { findListByName } from './lib/actions/find-list-by-name';
 import { sendDynamicTemplate } from './lib/actions/send-dynamic-template';

@@ -1,4 +1,4 @@
-import { apId } from '@activepieces/core-utils';
+import { apId } from '@wippa/core-utils';
 import {
   ApplicationEventName,
   BranchExecutionType,
@@ -13,10 +13,10 @@ import {
   Template,
   TemplateStatus,
   TemplateType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 const SCHEMA_VERSION = '20';
-const WEBHOOK_PIECE_NAME = '@activepieces/piece-webhook';
+const WEBHOOK_PIECE_NAME = '@wippa/piece-webhook';
 const WEBHOOK_PIECE_VERSION = '0.1.33';
 const WEBHOOK_TRIGGER_NAME = 'catch_webhook';
 const EVENT_FIELD_PATH = "{{trigger['body']['action']}}";

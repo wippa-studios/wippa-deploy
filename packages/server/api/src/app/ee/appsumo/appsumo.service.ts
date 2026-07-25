@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { APPSUMO_PLAN, PlanName, PlatformPlanWithOnlyLimits, PlatformRole, STANDARD_CLOUD_PLAN } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { APPSUMO_PLAN, PlanName, PlatformPlanWithOnlyLimits, PlatformRole, STANDARD_CLOUD_PLAN } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { userIdentityService } from '../../authentication/user-identity/user-identity-service'
 import { repoFactory } from '../../core/db/repo-factory'

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { bigCommerceApiService } from '../common/requests';
 import { bigcommerceAuth } from '../common/auth';
 import { multiCustomerDropdown } from '../common/props';

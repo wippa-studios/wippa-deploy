@@ -1,5 +1,5 @@
-import { ProjectId } from '@activepieces/core-utils'
-import { AdminRetryRunsRequestBody, ApplyLicenseKeyByEmailRequestBody, FlowRetryStrategy, FlowRun, IncreaseAICreditsForPlatformRequestBody, PlatformRole } from '@activepieces/shared'
+import { ProjectId } from '@wippa/core-utils'
+import { AdminRetryRunsRequestBody, ApplyLicenseKeyByEmailRequestBody, FlowRetryStrategy, FlowRun, IncreaseAICreditsForPlatformRequestBody, PlatformRole } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { In } from 'typeorm'
 import { aiProviderService } from '../../../ai/ai-provider-service'

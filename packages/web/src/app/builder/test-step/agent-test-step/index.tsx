@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   AgentResult,
   AgentTaskStatus,
   AI_PIECE_NAME,
   FlowActionType,
   Step,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 
 import { DataDisplayTabs } from '@/app/builder/data-display/data-display-tabs';

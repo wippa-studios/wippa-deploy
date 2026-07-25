@@ -1,4 +1,4 @@
-import { BaseModelSchema, DateOrString, Nullable } from '@activepieces/core-utils'
+import { BaseModelSchema, DateOrString, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export enum PlatformRole {

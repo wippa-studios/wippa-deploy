@@ -1,5 +1,5 @@
-// Repoint community pieces: imports of @activepieces/core-utils / core-piece-types
-// now come from @activepieces/pieces-framework (which re-exports them), so pieces
+// Repoint community pieces: imports of @wippa/core-utils / core-piece-types
+// now come from @wippa/pieces-framework (which re-exports them), so pieces
 // depend only on framework + common. Also drops the core-* deps from package.json.
 
 import fs from 'node:fs'
@@ -27,10 +27,10 @@ for (const piece of fs.readdirSync(COMMUNITY)) {
 
     for (const file of walk(src)) {
         let content = fs.readFileSync(file, 'utf8')
-        if (!content.includes('@activepieces/core-utils') && !content.includes('@activepieces/core-piece-types')) continue
+        if (!content.includes('@wippa/core-utils') && !content.includes('@wippa/core-piece-types')) continue
         const next = content
-            .replaceAll("from '@activepieces/core-utils'", "from '@activepieces/pieces-framework'")
-            .replaceAll("from '@activepieces/core-piece-types'", "from '@activepieces/pieces-framework'")
+            .replaceAll("from '@wippa/core-utils'", "from '@wippa/pieces-framework'")
+            .replaceAll("from '@wippa/core-piece-types'", "from '@wippa/pieces-framework'")
         if (next !== content) {
             fs.writeFileSync(file, next)
             filesChanged++
@@ -42,11 +42,11 @@ for (const piece of fs.readdirSync(COMMUNITY)) {
         const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
         const deps = pkg.dependencies ?? {}
         let changed = false
-        for (const coreDep of ['@activepieces/core-utils', '@activepieces/core-piece-types']) {
+        for (const coreDep of ['@wippa/core-utils', '@wippa/core-piece-types']) {
             if (deps[coreDep]) { delete deps[coreDep]; changed = true }
         }
-        if (changed && !deps['@activepieces/pieces-framework']) {
-            deps['@activepieces/pieces-framework'] = 'workspace:*'
+        if (changed && !deps['@wippa/pieces-framework']) {
+            deps['@wippa/pieces-framework'] = 'workspace:*'
         }
         if (changed) {
             pkg.dependencies = deps

@@ -1,4 +1,4 @@
-import { ApEdition, TeamProjectsLimit } from '@activepieces/shared'
+import { ApEdition, TeamProjectsLimit } from '@wippa/shared'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
 import { isNotOneOfTheseEditions } from '../../database-common'

@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, PieceAuth } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { OAuth2PropertyValue, PieceAuth } from '@wippa/pieces-framework';
 
 import { BASE_URL } from './common/base-url';
 

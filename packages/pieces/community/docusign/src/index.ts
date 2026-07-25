@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 import { createApiClient } from './lib/common';
 import { listEnvelopes } from './lib/actions/list-envelopes';

@@ -1,4 +1,4 @@
-import { ApEnvironment } from '@activepieces/shared'
+import { ApEnvironment } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../../helper/system/system'
 import { AppSystemProp } from '../../../../helper/system/system-props'

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { createClient } from '@supabase/supabase-js';
 import { supabaseAuth } from '../auth';
 import { supabaseCommon } from '../common/props';

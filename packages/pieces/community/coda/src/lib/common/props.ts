@@ -1,4 +1,4 @@
-import { DropdownOption, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, DynamicPropsValue, Property } from '@wippa/pieces-framework';
 import { codaClient, CodaTableColumn } from './types';
 import { codaAuth } from '../auth';
 

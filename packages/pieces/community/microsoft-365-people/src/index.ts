@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { createContact } from './lib/actions/create-contact';
 import { createContactFolder } from './lib/actions/create-contact-folder';
 import { deleteContact } from './lib/actions/delete-contact';

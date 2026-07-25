@@ -2,7 +2,7 @@ import {
   ApEdition,
   ApFlagId,
   ThirdPartyAuthnProvidersToShowMap,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';

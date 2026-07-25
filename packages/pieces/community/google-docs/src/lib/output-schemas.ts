@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@wippa/pieces-framework';
 
 const driveFileFields: OutputSchema['fields'] = [
   {

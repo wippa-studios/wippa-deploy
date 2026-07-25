@@ -1,8 +1,8 @@
-import { AIProviderName } from '@activepieces/core-utils';
+import { AIProviderName } from '@wippa/core-utils';
 import {
   AIProviderWithoutSensitiveData,
   PlatformRole,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { MessageSquare } from 'lucide-react';
 

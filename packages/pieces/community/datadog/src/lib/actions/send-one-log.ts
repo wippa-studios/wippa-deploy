@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { v2 } from '@datadog/datadog-api-client';
 import { getDatadogConfiguration } from '../common/helpers';
 import { datadogAuth } from '../common/auth';

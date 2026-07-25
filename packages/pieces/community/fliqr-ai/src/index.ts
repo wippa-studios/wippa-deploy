@@ -1,9 +1,9 @@
-import { HttpMethod, createCustomApiCallAction, httpClient } from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { HttpMethod, createCustomApiCallAction, httpClient } from '@wippa/pieces-common';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import { getFliqrAccountDetails } from './lib/actions/get-account-details';
 import { fliqrConfig } from './lib/common/models';
 import { getFliqrAccountFlows } from './lib/actions/get-account-flows';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { fliqrAuth } from './lib/auth';
 
 export const fliqrAi = createPiece({

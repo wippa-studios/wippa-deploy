@@ -1,5 +1,5 @@
 import { intercomAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { intercomClient, TriggerPayload } from '../common';
 
 export const newLeadTrigger = createTrigger({

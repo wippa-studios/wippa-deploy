@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { connectucAuth } from '../../index';
 import { connectucApiCall, getUserId } from '../common/api-helpers';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const updateCdrAction = createAction({
     auth: connectucAuth,

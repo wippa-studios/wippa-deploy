@@ -1,5 +1,5 @@
-import { FlowVersion, Note } from '@activepieces/core-execution'
-import { BaseModelSchema, ColorHex, Metadata, Nullable } from '@activepieces/core-utils'
+import { FlowVersion, Note } from '@wippa/core-execution'
+import { BaseModelSchema, ColorHex, Metadata, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export const TemplateTag = z.object({

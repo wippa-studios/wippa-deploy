@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-ko-fi` to build the library.
+Run `turbo run build --filter=@wippa/piece-ko-fi` to build the library.

@@ -2,8 +2,8 @@ import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { openaiAuth } from '../auth';
 import FormData from 'form-data';
 import mime from 'mime-types';

@@ -1,10 +1,10 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { easyPeasyAiAuth } from './lib/common/auth';
 import { customGeneratorText } from './lib/actions/custom-generator-text';
 import { getAiTranscription } from './lib/actions/get-ai-transcription';
 import { generateAiImage } from './lib/actions/generate-ai-image';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const easyPeasyAi = createPiece({
   displayName: 'Easy-Peasy.AI',

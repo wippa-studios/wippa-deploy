@@ -28,20 +28,20 @@ for (const piece of fs.readdirSync(COMMUNITY)) {
     let usesPieceTypes = false
     for (const file of walk(src)) {
         const content = fs.readFileSync(file, 'utf8')
-        if (content.includes("'@activepieces/core-utils'")) usesUtils = true
-        if (content.includes("'@activepieces/core-piece-types'")) usesPieceTypes = true
+        if (content.includes("'@wippa/core-utils'")) usesUtils = true
+        if (content.includes("'@wippa/core-piece-types'")) usesPieceTypes = true
     }
     if (!usesUtils && !usesPieceTypes) continue
 
     const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
     pkg.dependencies = pkg.dependencies ?? {}
     let changed = false
-    if (usesUtils && !pkg.dependencies['@activepieces/core-utils']) {
-        pkg.dependencies['@activepieces/core-utils'] = 'workspace:*'
+    if (usesUtils && !pkg.dependencies['@wippa/core-utils']) {
+        pkg.dependencies['@wippa/core-utils'] = 'workspace:*'
         changed = true
     }
-    if (usesPieceTypes && !pkg.dependencies['@activepieces/core-piece-types']) {
-        pkg.dependencies['@activepieces/core-piece-types'] = 'workspace:*'
+    if (usesPieceTypes && !pkg.dependencies['@wippa/core-piece-types']) {
+        pkg.dependencies['@wippa/core-piece-types'] = 'workspace:*'
         changed = true
     }
     if (changed) {

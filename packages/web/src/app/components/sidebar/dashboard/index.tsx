@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   PROJECT_COLOR_PALETTE,
   PlatformRole,
   ProjectType,
   TeamProjectsLimit,
   TemplateTelemetryEventType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Search } from 'lucide-react';
 import { useState, useMemo, useEffect, useCallback } from 'react';

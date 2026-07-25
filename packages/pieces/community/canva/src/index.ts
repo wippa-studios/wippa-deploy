@@ -2,9 +2,9 @@ import {
   OAuth2PropertyValue,
   PieceAuth,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { canvaCommon } from './lib/common';
 import { createDesign } from './lib/actions/create-design';
 import { getDesign } from './lib/actions/get-design';

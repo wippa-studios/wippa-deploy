@@ -1,9 +1,9 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { letsCalendarAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { addContactToCampaign } from './lib/actions/add-contact-to-campaign';
 import { newCampaign } from './lib/triggers/new-campaign';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const letsCalendar = createPiece({
   displayName: `Let's Calendar`,

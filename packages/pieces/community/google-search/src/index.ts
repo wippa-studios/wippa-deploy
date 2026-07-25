@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { searchAction } from './lib/actions/search';
 import { googleSearchAuth } from './lib/auth';
 

@@ -1,8 +1,8 @@
-import { createAction, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
 import { googleCloudStorageAuth } from '../common/auth';
 import { gcsCommon } from '../common/client';
 import { bucketDropdown, aclEntityProperty, projectIdProperty } from '../common/props';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const deleteBucketDefaultObjectAcl = createAction({
   auth: googleCloudStorageAuth,

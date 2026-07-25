@@ -1,9 +1,9 @@
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
 import {
   apId,
   PieceSelectorTabConfig,
   PieceSelectorTabSection,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   CheckIcon,

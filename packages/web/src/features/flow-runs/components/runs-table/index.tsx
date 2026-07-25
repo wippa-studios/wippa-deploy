@@ -1,4 +1,4 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import {
   FlowRetryStrategy,
   FlowRun,
@@ -6,7 +6,7 @@ import {
   FlowRunWithRetryError,
   isFailedState,
   isFlowRunStateTerminal,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import {

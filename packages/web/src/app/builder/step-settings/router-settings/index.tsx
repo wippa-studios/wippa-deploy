@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowActionType,
   FlowOperationRequest,
@@ -7,7 +7,7 @@ import {
   FlowVersion,
   RouterAction,
   RouterExecutionType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useReactFlow } from '@xyflow/react';
 import { t } from 'i18next';
 import { Split } from 'lucide-react';

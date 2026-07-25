@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-tableau` to build the library.
+Run `turbo run build --filter=@wippa/piece-tableau` to build the library.

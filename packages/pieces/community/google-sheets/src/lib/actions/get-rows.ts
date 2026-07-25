@@ -3,7 +3,7 @@ import {
   Store,
   StoreScope,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { googleSheetsAuth } from '../common/common';
 import {
   areSheetIdsValid,
@@ -11,10 +11,10 @@ import {
   googleSheetsCommon,
   mapRowsToHeaderNames,
 } from '../common/common';
-import { isNil } from '@activepieces/pieces-framework';
-import { HttpError } from '@activepieces/pieces-common';
+import { isNil } from '@wippa/pieces-framework';
+import { HttpError } from '@wippa/pieces-common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 import { getWorkSheetGridSize } from '../triggers/helpers';
 import { commonProps } from '../common/props';
 import { getNextRowsActionOutputSchema } from '../output-schemas';

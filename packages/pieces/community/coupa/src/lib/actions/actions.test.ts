@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpResponse,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import FormData from 'form-data';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { addFileAttachment } from './add-file-attachment';

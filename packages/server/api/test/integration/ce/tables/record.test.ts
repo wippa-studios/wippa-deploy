@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { FieldType, FilterOperator } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { FieldType, FilterOperator } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import qs from 'qs'

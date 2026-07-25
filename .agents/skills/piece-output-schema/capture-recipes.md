@@ -81,8 +81,8 @@ Dev pieces load from each piece's built `dist/`, and the watcher only rebuilds o
 
 ```bash
 # build the piece (+ framework/common if needed)
-npx turbo run build --filter=@activepieces/piece-<name> \
-  --filter=@activepieces/pieces-framework --filter=@activepieces/pieces-common
+npx turbo run build --filter=@wippa/piece-<name> \
+  --filter=@wippa/pieces-framework --filter=@wippa/pieces-common
 # tsc doesn't copy src/i18n — copy it if the piece has one
 cp -R packages/pieces/community/<name>/src/i18n packages/pieces/community/<name>/dist/src/i18n 2>/dev/null || true
 # invalidate the in-memory dev-piece cache without a full restart:

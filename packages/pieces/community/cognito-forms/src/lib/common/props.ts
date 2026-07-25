@@ -2,9 +2,9 @@ import {
   Property,
   DropdownOption,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { makeRequest } from './index';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { cognitoFormsAuth } from '../auth';
 
 export const formIdDropdown = Property.Dropdown({

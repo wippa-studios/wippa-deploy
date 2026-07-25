@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { ContentfulAuth, PropertyKeys, makeClient } from '../../common';
 
 export const ContentfulGetRecordAction = createAction({

@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined, isNil } from '@activepieces/core-utils'
-import { File, FileLocation, FileType } from '@activepieces/shared'
+import { assertNotNullOrUndefined, isNil } from '@wippa/core-utils'
+import { File, FileLocation, FileType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyReply } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { system } from '../helper/system/system'

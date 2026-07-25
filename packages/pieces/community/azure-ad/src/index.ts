@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { azureAdAuth } from './lib/auth';
 import { addMemberToGroupAction } from './lib/actions/add-member-to-group';
 import { addOrRemoveUserLicenseAction } from './lib/actions/add-or-remove-user-license';

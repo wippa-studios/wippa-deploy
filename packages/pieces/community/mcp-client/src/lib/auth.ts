@@ -1,4 +1,4 @@
-import { McpAuthType, McpProtocol, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { McpAuthType, McpProtocol, PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const mcpClientAuth = PieceAuth.CustomAuth({
   description:

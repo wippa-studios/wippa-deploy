@@ -3,7 +3,7 @@ import {
   EmbedSubdomainStatus,
   EmbedVerificationRecord,
   EmbedVerificationRecordPurpose,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { CheckCircle, Loader2, XCircle } from 'lucide-react';
 

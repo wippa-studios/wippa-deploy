@@ -3,7 +3,7 @@ import {
   AppConnectionStatus,
   MAX_PLATFORM_APP_CONNECTION_OWNERS,
   PlatformAppConnectionsListItem,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {

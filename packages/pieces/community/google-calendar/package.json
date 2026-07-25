@@ -1,16 +1,16 @@
 {
-  "name": "@activepieces/piece-google-calendar",
+  "name": "@wippa/piece-google-calendar",
   "version": "0.9.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@googleapis/calendar": "15.0.0",
     "dayjs": "1.11.9",
     "google-auth-library": "10.5.0",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

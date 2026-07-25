@@ -1,9 +1,9 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { qawafelAuth } from '../common/auth';
 import { qawafelApiCall } from '../common/client';
 

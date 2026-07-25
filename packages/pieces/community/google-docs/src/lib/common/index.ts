@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
 
 export const docsCommon = {
 	baseUrl: 'https://docs.googleapis.com/v1',

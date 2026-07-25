@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { PrincipalType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { PrincipalType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest'

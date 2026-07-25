@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework'
-import { PropertyExecutionType } from '@activepieces/shared'
+import { Property } from '@wippa/pieces-framework'
+import { PropertyExecutionType } from '@wippa/shared'
 import { dynamicPropKeys } from '../../src/lib/helper/dynamic-prop-keys'
 import { propsProcessor } from '../../src/lib/variables/props-processor'
 

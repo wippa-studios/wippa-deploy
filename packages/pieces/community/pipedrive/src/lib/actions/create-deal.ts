@@ -1,5 +1,5 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { dealCommonProps } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -7,10 +7,10 @@ import {
 	pipedriveParseCustomFields,
 	pipedriveTransformCustomFields,
 } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { GetField, GetDealResponse } from '../common/types';
 import dayjs from 'dayjs';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { isEmpty } from '@wippa/pieces-framework';
 
 export const createDealAction = createAction({
 	auth: pipedriveAuth,

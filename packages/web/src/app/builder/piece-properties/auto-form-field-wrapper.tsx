@@ -2,12 +2,12 @@ import {
   PieceAuthProperty,
   PieceProperty,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   FlowAction,
   FlowTrigger,
   PropertyExecutionType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Calendar, SquareFunction, File } from 'lucide-react';
 import React from 'react';

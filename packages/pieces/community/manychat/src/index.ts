@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { findUserByCustomFieldAction } from './lib/actions/find-user-by-custom-field';
 import { createSubscriberAction } from './lib/actions/create-subscriber';
 import { sendContentToUserAction } from './lib/actions/send-content-to-user';
@@ -6,8 +6,8 @@ import { setCustomFieldAction } from './lib/actions/set-custom-fields';
 import { removeTagFromUserAction } from './lib/actions/remove-tag-from-user';
 import { addTagToUserAction } from './lib/actions/add-tag-to-user';
 import { findUserByNameAction } from './lib/actions/find-user-by-name';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/props';
 import { manychatAuth } from './lib/auth';
 

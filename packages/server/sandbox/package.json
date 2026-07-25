@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/sandbox",
+  "name": "@wippa/sandbox",
   "version": "0.1.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",
@@ -10,9 +10,9 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@activepieces/core-utils": "workspace:*",
-    "@activepieces/server-utils": "workspace:*",
-    "@activepieces/shared": "workspace:*",
+    "@wippa/core-utils": "workspace:*",
+    "@wippa/server-utils": "workspace:*",
+    "@wippa/shared": "workspace:*",
     "nanoid": "3.3.8",
     "socket.io": "4.7.5",
     "tree-kill": "1.2.2",

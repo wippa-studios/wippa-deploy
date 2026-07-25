@@ -1,4 +1,4 @@
-import { ApEdition } from '@activepieces/shared'
+import { ApEdition } from '@wippa/shared'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { system } from '../../../../src/app/helper/system/system'
 import { AppSystemProp } from '../../../../src/app/helper/system/system-props'

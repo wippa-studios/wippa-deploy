@@ -1,8 +1,8 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { youtubeAuth } from '../common/auth';
 
 export const youtubeDownloadCaptionAction = createAction({

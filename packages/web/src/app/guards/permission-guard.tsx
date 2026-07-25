@@ -1,4 +1,4 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 

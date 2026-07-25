@@ -4,8 +4,8 @@ import {
   HttpMessageBody,
   HttpResponse,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { OAuth2PropertyValue } from '@wippa/pieces-framework';
 
 const BASE_URL = 'https://platform.hootsuite.com/v1';
 

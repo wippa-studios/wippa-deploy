@@ -1,5 +1,5 @@
-import { ProjectRole } from '@activepieces/core-utils'
-import { Project, UserInvitation } from '@activepieces/shared'
+import { ProjectRole } from '@wippa/core-utils'
+import { Project, UserInvitation } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { BaseColumnSchemaPart } from '../database/database-common'
 

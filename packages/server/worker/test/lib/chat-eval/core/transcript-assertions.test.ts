@@ -1,4 +1,4 @@
-import { PersistedChatPart, PersistedChatPartType } from '@activepieces/shared'
+import { PersistedChatPart, PersistedChatPartType } from '@wippa/shared'
 import { describe, expect, it } from 'vitest'
 import { transcriptAssertions } from './transcript-assertions'
 import { ChatTurnResult, ChatTurnToolCall } from '../../../../src/lib/execute/jobs/ee/chat/run-chat-turn'

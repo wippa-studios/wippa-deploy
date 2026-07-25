@@ -1,6 +1,6 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import { makeRequest } from './client';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const bokioAuth = PieceAuth.CustomAuth({
   displayName: 'Bokio API Key',

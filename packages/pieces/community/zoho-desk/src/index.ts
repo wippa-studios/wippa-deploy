@@ -2,9 +2,9 @@ import {
 	OAuth2PropertyValue,
 	createPiece,
 	PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { listTicketsAction } from './lib/actions/list-tickets';
 import { createTicketAction } from './lib/actions/create-ticket';
 import { organizationId } from './lib/common/props';

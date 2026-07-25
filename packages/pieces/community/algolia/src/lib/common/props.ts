@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
+import { tryCatch } from '@wippa/pieces-framework';
 
 import { algoliaAuth } from './auth';
 import { listAlgoliaIndices } from './client';

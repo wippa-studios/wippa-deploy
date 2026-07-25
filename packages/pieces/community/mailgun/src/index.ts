@@ -3,10 +3,10 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { PieceAuth, Property, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceAuth, Property, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { tryCatch } from '@wippa/pieces-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { validateEmail } from './lib/actions/validate-email';
 import { addMailingListMember } from './lib/actions/add-mailing-list-member';

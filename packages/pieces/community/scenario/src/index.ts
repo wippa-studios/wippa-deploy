@@ -2,9 +2,9 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { BasicAuthConnectionValue } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { BasicAuthConnectionValue } from '@wippa/pieces-framework';
 
 export const scenarioAuth = PieceAuth.BasicAuth({
   description:

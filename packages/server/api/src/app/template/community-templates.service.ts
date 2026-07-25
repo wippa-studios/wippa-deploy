@@ -1,5 +1,5 @@
-import { SeekPage } from '@activepieces/core-utils'
-import { ListTemplatesRequestQuery, Template, TemplateType } from '@activepieces/shared'
+import { SeekPage } from '@wippa/core-utils'
+import { ListTemplatesRequestQuery, Template, TemplateType } from '@wippa/shared'
 import { repoFactory } from '../core/db/repo-factory'
 import { TemplateEntity } from './template.entity'
 

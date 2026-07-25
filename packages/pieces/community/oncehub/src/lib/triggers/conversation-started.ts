@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { makeRequest } from '../common/client';
 import { oncehubAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 export const conversationStarted = createTrigger({
   auth: oncehubAuth,
   name: 'conversationStarted',

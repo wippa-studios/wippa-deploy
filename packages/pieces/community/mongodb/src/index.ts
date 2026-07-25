@@ -3,9 +3,9 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
 import * as z from 'zod/mini'
 
 import actions from './lib/actions';

@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import { addMemberToList } from './lib/actions/add-member-to-list';
 import { addNoteToSubscriber } from './lib/actions/add-note-to-subscriber';
 import { removeSubscriberFromTag } from './lib/actions/remove-subscriber-from-tag';
@@ -17,7 +17,7 @@ import { createTag } from './lib/actions/create-tag';
 import { sendCampaign } from './lib/actions/send-campaign';
 import { createCustomEvent } from './lib/actions/create-custom-event';
 
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { mailChimpSubscribeTrigger } from './lib/triggers/subscribe-trigger';
 import { mailChimpUnsubscriberTrigger } from './lib/triggers/unsubscribe-trigger';
 import { mailChimpNewCampaignTrigger } from './lib/triggers/new-campaign-trigger';

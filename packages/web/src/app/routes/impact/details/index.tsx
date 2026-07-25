@@ -3,7 +3,7 @@ import {
   PROJECT_COLOR_PALETTE,
   ProjectType,
   ProjectWithLimits,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {

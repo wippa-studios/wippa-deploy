@@ -2,7 +2,7 @@ import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { limitField, makeClient, pageField } from '../common';
 import { PredictLeadsAuth } from '../auth';
 import { prepareQuery } from '../common/client';

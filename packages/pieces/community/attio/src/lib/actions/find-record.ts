@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { attioAuth } from '../auth';
 import { formatInputFields, objectFields, objectTypeIdDropdown } from '../common/props';
 import { attioApiCall, attioPaginatedApiCall, buildMembersMap, normalizeRecord } from '../common/client';

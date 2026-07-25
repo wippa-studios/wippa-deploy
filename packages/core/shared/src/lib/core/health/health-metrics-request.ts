@@ -1,5 +1,5 @@
-import { FlowRunStatus } from '@activepieces/core-execution'
-import { ApId } from '@activepieces/core-utils'
+import { FlowRunStatus } from '@wippa/core-execution'
+import { ApId } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export const PlatformMetricsReportRequest = z.object({

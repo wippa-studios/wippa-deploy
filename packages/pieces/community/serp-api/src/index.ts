@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { googleNewsSearch } from './lib/actions/google-news-search';
 import { googleSearch } from './lib/actions/google-search';
 import { googleTrendsSearch } from './lib/actions/google-trends-search';

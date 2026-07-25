@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { BLAND_AI_BASE_URL } from '../auth';
 
 export async function blandApiCall<T>(params: {

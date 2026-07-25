@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import { GetDocumentAnalysisCommand } from '@aws-sdk/client-textract';
 import { createTextractClient } from './common';
 

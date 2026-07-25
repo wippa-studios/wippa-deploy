@@ -1,4 +1,4 @@
-import { InvitationType, UserInvitation } from '@activepieces/shared';
+import { InvitationType, UserInvitation } from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { userInvitationApi } from '../api/user-invitation';

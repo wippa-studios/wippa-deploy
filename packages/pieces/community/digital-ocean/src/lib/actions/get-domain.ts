@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { digitalOceanAuth, DigitalOceanAuthValue } from '../common/auth';
 import { digitalOceanApiCall, getAuthFromValue } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const getDomain = createAction({
   auth: digitalOceanAuth,

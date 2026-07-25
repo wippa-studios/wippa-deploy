@@ -3,11 +3,11 @@ import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   Property,
   DropdownState,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { Stripe } from 'stripe';
 import { stripeAuth } from '../..';
 import {

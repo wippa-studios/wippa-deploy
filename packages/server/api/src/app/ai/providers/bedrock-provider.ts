@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils'
-import { AIProviderModel, AIProviderModelType, BedrockProviderAuthConfig, BedrockProviderConfig } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { AIProviderModel, AIProviderModelType, BedrockProviderAuthConfig, BedrockProviderConfig } from '@wippa/shared'
 
 import {
     BedrockClient,

@@ -1,4 +1,4 @@
-import { FlowStatus, PlatformAnalyticsReport } from '@activepieces/shared';
+import { FlowStatus, PlatformAnalyticsReport } from '@wippa/shared';
 import { t } from 'i18next';
 import { Workflow } from 'lucide-react';
 

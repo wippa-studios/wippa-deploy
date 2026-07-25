@@ -1,7 +1,7 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { capsuleCrmAuth } from './auth';
 import { capsuleCrmClient } from './client';
 

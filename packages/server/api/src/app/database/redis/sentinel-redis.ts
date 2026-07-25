@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { assertNotNullOrUndefined, isNil } from '@activepieces/core-utils'
+import { assertNotNullOrUndefined, isNil } from '@wippa/core-utils'
 import Redis, { RedisOptions } from 'ioredis'
 import { RedisConnectionSettings } from './types'
 

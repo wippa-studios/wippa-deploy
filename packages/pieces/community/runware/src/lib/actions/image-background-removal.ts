@@ -1,5 +1,5 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { runwareAuth, runwareCommon } from '../common';
 
 export const imageBackgroundRemoval = createAction({

@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { timelinesAiAuth, timelinesAiCommon } from '.';
 
 export const chatDropdown = ({

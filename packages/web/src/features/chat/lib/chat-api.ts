@@ -1,4 +1,4 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   type ChatFeedbackReason,
   type ChatHistoryMessage,
@@ -11,7 +11,7 @@ import {
   InstructChatMemoryRequest,
   UpdateChatConversationRequest,
   UpdateChatMemoryRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

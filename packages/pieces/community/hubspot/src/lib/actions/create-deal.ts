@@ -1,8 +1,8 @@
 import { hubspotAuth } from '../auth';
 
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import { OBJECT_TYPE } from '../common/constants';
 import {
 	getDefaultPropertiesForObject,

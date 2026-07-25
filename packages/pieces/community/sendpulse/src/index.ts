@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
 import { sendpulseAuth } from './lib/common/auth';
 import { sendpulseApiCall } from './lib/common/client';
 import { newSubscriberTrigger } from './lib/triggers/new-subscriber';

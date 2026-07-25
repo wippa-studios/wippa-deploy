@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { FlowOperationType } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { FlowOperationType } from '@wippa/shared';
 import { useTranslation } from 'react-i18next';
 
 import { CardListItemSkeleton } from '@/components/custom/card-list';
@@ -17,7 +17,7 @@ const AITabContent = ({ operation }: { operation: PieceSelectorOperation }) => {
   const { t } = useTranslation();
   const { selectedTab } = usePieceSelectorTabs();
   const { pieceModel, isLoading, isError } = piecesHooks.usePiece({
-    name: '@activepieces/piece-ai',
+    name: '@wippa/piece-ai',
   });
 
   if (

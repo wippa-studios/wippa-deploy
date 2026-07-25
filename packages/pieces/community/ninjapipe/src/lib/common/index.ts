@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@activepieces/pieces-common';
-import { PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@wippa/pieces-common';
+import { PiecePropValueSchema, Property } from '@wippa/pieces-framework';
 import { ninjapipeAuth } from '../../';
 
 export type NinjaPipeAuth = { base_url: string; api_key: string };

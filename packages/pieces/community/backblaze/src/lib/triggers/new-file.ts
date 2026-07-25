@@ -3,13 +3,13 @@ import {
   PiecePropValueSchema,
   Property,
   createTrigger,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 import { backBlazeS3Auth } from '../..';
 import { createBackBlazeS3 } from '../common';

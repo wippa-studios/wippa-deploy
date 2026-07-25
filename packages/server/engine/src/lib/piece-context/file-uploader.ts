@@ -1,7 +1,7 @@
 import { Readable } from 'node:stream'
-import { apId } from '@activepieces/core-utils'
-import { FilesService } from '@activepieces/pieces-framework'
-import { FileSizeError, FileType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { FilesService } from '@wippa/pieces-framework'
+import { FileSizeError, FileType } from '@wippa/shared'
 import { engineFileApi } from '../api/engine-file-api'
 
 export function createFileUploader({ engineToken, apiUrl }: CreateFileUploaderParams): FilesService {

@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpError, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { HttpError, HttpMethod, QueryParams } from '@wippa/pieces-common';
 import { hunterApiCall } from '../common';
 import { hunterAuth } from '../auth';
 import {

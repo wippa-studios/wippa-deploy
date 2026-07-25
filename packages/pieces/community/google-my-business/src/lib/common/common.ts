@@ -2,13 +2,13 @@ import {
   Property,
   OAuth2PropertyValue,
   DropdownOption,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { googleAuth } from '../..';
 
 export const googleBusinessCommon = {

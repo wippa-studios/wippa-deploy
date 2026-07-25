@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { BaseModelSchema } from '@activepieces/core-utils'
+import { BaseModelSchema } from '@wippa/core-utils'
 import { EngineResponseStatus } from '../engine/engine-operation'
 import { JobData } from './job-data'
 

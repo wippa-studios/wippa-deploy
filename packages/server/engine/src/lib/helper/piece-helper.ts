@@ -1,5 +1,5 @@
 import path from 'path'
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 import {
     DropdownProperty,
     DynamicProperties,
@@ -11,8 +11,8 @@ import {
     PiecePropertyMap,
     pieceTranslation,
     PropertyType,
-    StaticPropsValue } from '@activepieces/pieces-framework'
-import { AppConnectionType, AppConnectionValue, EngineGenericError, ExecuteExtractPieceMetadata, ExecutePropsOptions, ExecuteRefreshTokenAuthOperation, ExecuteRefreshTokenAuthResponse, ExecuteValidateAuthOperation, ExecuteValidateAuthResponse } from '@activepieces/shared'
+    StaticPropsValue } from '@wippa/pieces-framework'
+import { AppConnectionType, AppConnectionValue, EngineGenericError, ExecuteExtractPieceMetadata, ExecutePropsOptions, ExecuteRefreshTokenAuthOperation, ExecuteRefreshTokenAuthResponse, ExecuteValidateAuthOperation, ExecuteValidateAuthResponse } from '@wippa/shared'
 import { EngineConstants } from '../handler/context/engine-constants'
 
 const DEFAULT_REFRESH_EXPIRES_IN_SECONDS = 3300

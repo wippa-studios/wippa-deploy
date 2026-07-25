@@ -1,9 +1,9 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   PROJECT_COLOR_PALETTE,
   ProjectType,
   ProjectWithLimits,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { User } from 'lucide-react';
 
 import { Avatar } from '@/components/ui/avatar';

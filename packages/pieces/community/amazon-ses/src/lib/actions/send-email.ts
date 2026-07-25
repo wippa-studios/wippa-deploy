@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 import { amazonSesAuth } from '../auth';
 import {

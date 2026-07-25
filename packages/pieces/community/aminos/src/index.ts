@@ -2,8 +2,8 @@
       PieceAuth,
       Property,
       createPiece,
-    } from '@activepieces/pieces-framework';
-    import { PieceCategory } from '@activepieces/pieces-framework';
+    } from '@wippa/pieces-framework';
+    import { PieceCategory } from '@wippa/pieces-framework';
     import { createUser } from './lib/actions/createUser';
 
     export const aminosAuth = PieceAuth.CustomAuth({

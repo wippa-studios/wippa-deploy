@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { heygenAuth } from '../common/auth';
 import { heygenApiCall } from '../common/client';
 import {
@@ -8,7 +8,7 @@ import {
 	templateDropdown,
 	templateVariables,
 } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export const createVideoFromTemplateAction = createAction({
 	auth: heygenAuth,

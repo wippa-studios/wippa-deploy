@@ -3,7 +3,7 @@ import {
   FlowVersion,
   Step,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useReactFlow } from '@xyflow/react';
 import { t } from 'i18next';
 import React, { useMemo } from 'react';

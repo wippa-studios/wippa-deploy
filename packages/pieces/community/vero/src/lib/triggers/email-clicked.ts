@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { veroAuth } from '../common/auth';
 export const emailClicked = createTrigger({
   auth: veroAuth,

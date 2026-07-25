@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { microsoftCloudProperty, getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
 import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createEventAction } from './lib/actions/create-event';
 import { deleteEventAction } from './lib/actions/delete-event';
 import { listEventsAction } from './lib/actions/list-events';

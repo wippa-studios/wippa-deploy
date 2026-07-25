@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, OAuth2PropertyValue, PieceAuth } from '@wippa/pieces-framework';
 import { webmasters as googleWebmasters } from '@googleapis/webmasters';
 import { OAuth2Client } from 'google-auth-library';
 import { urlInspection } from './lib/actions/url-inspection';
@@ -8,7 +8,7 @@ import { submitSitemap } from './lib/actions/submit-a-sitemap';
 import { listSites } from './lib/actions/list-sites';
 import { addSite } from './lib/actions/add-a-site';
 import { deleteSite } from './lib/actions/delete-a-site';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { googleSearchConsoleAuth } from './lib/auth';
 
 export const createAuthClient = (accessToken: string) => {

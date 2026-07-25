@@ -3,7 +3,7 @@ import {
 	createAction,
 	DropdownOption,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { intercomClient, IntercomAuthValue } from '../common';
 
 export const createConversationAction = createAction({

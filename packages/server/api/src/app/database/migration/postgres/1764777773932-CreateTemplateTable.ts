@@ -1,5 +1,5 @@
-import { apId, isNil } from '@activepieces/core-utils'
-import { FlowVersion } from '@activepieces/shared'
+import { apId, isNil } from '@wippa/core-utils'
+import { FlowVersion } from '@wippa/shared'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { z } from 'zod'
 import { system } from '../../../helper/system/system'

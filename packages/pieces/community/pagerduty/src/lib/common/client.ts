@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 export const PAGERDUTY_API_BASE_URL = 'https://api.pagerduty.com';
 export const PAGERDUTY_ACCEPT_HEADER =

@@ -3,14 +3,14 @@ import {
 	Polling,
 	QueryParams,
 	pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
 	AppConnectionValueForAuthProperty,
 	Property,
 	StaticPropsValue,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import dayjs from 'dayjs';
 import { workdayAuth } from '../auth';
 import { workdayGetReport } from '../common';

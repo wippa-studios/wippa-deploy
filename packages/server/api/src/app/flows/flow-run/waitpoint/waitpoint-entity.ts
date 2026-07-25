@@ -1,4 +1,4 @@
-import { PauseType, Project } from '@activepieces/shared'
+import { PauseType, Project } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../../../database/database-common'
 import { Waitpoint, WaitpointStatus, WaitpointVersionEnum } from './waitpoint-types'

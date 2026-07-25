@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { weekdoneAuth } from '../auth';
 
 async function fetchUsers({ token }: { token: string }): Promise<WeekdoneUser[]> {

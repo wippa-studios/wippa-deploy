@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { onChatSubmission } from './lib/triggers/chat-trigger';
 import { onFormSubmission } from './lib/triggers/form-trigger';
 import { returnResponse } from './lib/actions/return-response';

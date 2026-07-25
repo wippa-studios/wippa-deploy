@@ -1,12 +1,12 @@
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import FormData from 'form-data';
 import { seekTableAuth } from '../../lib/common/auth';
 import { seekTableApiCall } from '../../lib/common/client';

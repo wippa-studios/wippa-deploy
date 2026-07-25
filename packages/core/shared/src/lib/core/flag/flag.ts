@@ -1,4 +1,4 @@
-import { ApId, BaseModel } from '@activepieces/core-utils'
+import { ApId, BaseModel } from '@wippa/core-utils'
 
 export type FlagId = ApId
 

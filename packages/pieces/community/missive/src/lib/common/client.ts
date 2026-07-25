@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { missiveAuth } from './auth';
 
 const MISSIVE_API_BASE_URL = 'https://public.missiveapp.com/v1';

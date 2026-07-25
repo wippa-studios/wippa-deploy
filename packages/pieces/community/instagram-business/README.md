@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-instagram-business` to build the library.
+Run `turbo run build --filter=@wippa/piece-instagram-business` to build the library.

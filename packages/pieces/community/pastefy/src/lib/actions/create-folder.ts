@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { makeClient, pastefyCommon } from '../common';
 import { pastefyAuth } from '../..';
 

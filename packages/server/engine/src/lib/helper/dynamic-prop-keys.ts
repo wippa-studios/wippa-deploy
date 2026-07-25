@@ -1,5 +1,5 @@
-import { isObject } from '@activepieces/core-utils'
-import { InputPropertyMap } from '@activepieces/pieces-framework'
+import { isObject } from '@wippa/core-utils'
+import { InputPropertyMap } from '@wippa/pieces-framework'
 
 // react-hook-form treats `.` and `[` as path separators and strips `]`, `"` and `'`
 // (see its stringToPath util), so dynamic-property keys containing any of these break

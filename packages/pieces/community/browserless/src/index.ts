@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { browserlessAuth } from './lib/common/auth';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
 import { generatePdf } from './lib/actions/generate-pdf';

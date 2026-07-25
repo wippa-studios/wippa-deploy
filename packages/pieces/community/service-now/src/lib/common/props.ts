@@ -1,4 +1,4 @@
-import { Property, DynamicPropsValue, PieceAuth, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { Property, DynamicPropsValue, PieceAuth, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { ServiceNowClient } from './client';
 
 export const servicenowAuth = PieceAuth.CustomAuth({

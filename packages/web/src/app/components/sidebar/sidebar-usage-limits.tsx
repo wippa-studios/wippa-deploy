@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { ApEdition, ApFlagId, PlatformRole } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { ApEdition, ApFlagId, PlatformRole } from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronRight, Info } from 'lucide-react';
 import React from 'react';

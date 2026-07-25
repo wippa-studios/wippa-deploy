@@ -1,4 +1,4 @@
-import { FlowRunStatus } from '@activepieces/shared'
+import { FlowRunStatus } from '@wippa/shared'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { runWithExponentialBackoff } from '../../src/lib/helper/error-handling'
 import { buildCodeAction, generateMockEngineConstants } from '../handler/test-helper'

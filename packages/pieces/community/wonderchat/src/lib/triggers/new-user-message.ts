@@ -4,14 +4,14 @@ import {
   TriggerStrategy,
   Property,
   AppConnectionValueForAuthProperty
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   Polling,
   pollingHelper,
   DedupeStrategy,
   httpClient,
   HttpMethod
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { wonderchatAuth } from '../..';
 
 interface Message {

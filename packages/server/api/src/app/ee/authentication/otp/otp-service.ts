@@ -1,5 +1,5 @@
-import { apId, PlatformId } from '@activepieces/core-utils'
-import { OtpModel, OtpState, OtpType } from '@activepieces/shared'
+import { apId, PlatformId } from '@wippa/core-utils'
+import { OtpModel, OtpState, OtpType } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { userIdentityService } from '../../../authentication/user-identity/user-identity-service'

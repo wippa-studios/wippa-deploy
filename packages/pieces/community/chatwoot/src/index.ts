@@ -1,8 +1,8 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { newMessage } from './lib/triggers/new-message';
 import { chatwootAuth } from './lib/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { getChatwootAuth } from './lib/common/types';
 import { CHATWOOT_AUTH_HEADER } from './lib/common/constants';
 

@@ -2,8 +2,8 @@ import {
   createAction,
   Property,
   ActionContext,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { gladiaAuth } from '../common/auth';
 import { BASE_URL } from '../common/client';
 import FormData from 'form-data';

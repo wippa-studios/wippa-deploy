@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { applyFunctionToValuesSync, isString } from '@activepieces/core-utils'
+import { applyFunctionToValuesSync, isString } from '@wippa/core-utils'
 import { FlowAction } from '../actions/action'
 import { FlowVersion } from '../flow-version'
 import { flowStructureUtil } from '../util/flow-structure-util'

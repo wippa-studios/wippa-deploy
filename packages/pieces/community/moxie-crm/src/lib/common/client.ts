@@ -4,7 +4,7 @@ import {
   httpClient,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   ContactCreateRequest,
   ClientCreateRequest,

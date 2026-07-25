@@ -1,4 +1,4 @@
-import { ChatUIResponse } from '@activepieces/shared';
+import { ChatUIResponse } from '@wippa/shared';
 import React from 'react';
 
 interface ChatIntroProps {

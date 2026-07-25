@@ -1,5 +1,5 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { DropdownState, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { produktlyApiCall } from './client';
 import { produktlyAuth } from './auth';
 

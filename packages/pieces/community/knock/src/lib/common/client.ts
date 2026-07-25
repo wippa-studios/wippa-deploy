@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, HttpRequest } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient, HttpRequest } from '@wippa/pieces-common';
 import { KNOCK_API_BASE_URL, knockHeaders } from '../auth';
 
 interface KnockApiCallParams {

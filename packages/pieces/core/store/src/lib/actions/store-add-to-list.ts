@@ -1,6 +1,6 @@
-import { ActionContext, ArrayProperty, CheckboxProperty, createAction, PieceAuthProperty, Property, ShortTextProperty, StaticDropdownProperty } from '@activepieces/pieces-framework';
+import { ActionContext, ArrayProperty, CheckboxProperty, createAction, PieceAuthProperty, Property, ShortTextProperty, StaticDropdownProperty } from '@wippa/pieces-framework';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 import deepEqual from 'deep-equal';
 import { common, getScopeAndKey, PieceStoreScope } from './common';
 

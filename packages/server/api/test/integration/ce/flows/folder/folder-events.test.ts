@@ -1,4 +1,4 @@
-import { ApplicationEventName } from '@activepieces/shared'
+import { ApplicationEventName } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import * as applicationEventsModule from '../../../../../src/app/helper/application-events'

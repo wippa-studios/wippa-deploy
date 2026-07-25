@@ -1,9 +1,9 @@
 import { spawn } from 'node:child_process'
 import { copyFile, cp } from 'node:fs/promises'
 import { join } from 'path'
-import { isNil } from '@activepieces/core-utils'
-import { memoryLock } from '@activepieces/server-utils'
-import { WebsocketClientEvent } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { memoryLock } from '@wippa/server-utils'
+import { WebsocketClientEvent } from '@wippa/shared'
 import chokidar from 'chokidar'
 import { FastifyInstance } from 'fastify'
 import { system } from '../helper/system/system'
@@ -24,9 +24,9 @@ async function buildPieces(app: FastifyInstance, piecesInfo: PieceInfo[]): Promi
 
     const pieceFilters = piecesInfo.map(p => `--filter=${p.packageName}`)
     const filterArgs = [
-        '--filter=@activepieces/pieces-framework',
-        '--filter=@activepieces/pieces-common',
-        '--filter=@activepieces/shared',
+        '--filter=@wippa/pieces-framework',
+        '--filter=@wippa/pieces-common',
+        '--filter=@wippa/shared',
         ...pieceFilters,
         '--force',
     ]

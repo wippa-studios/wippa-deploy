@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/pieces-common",
+  "name": "@wippa/pieces-common",
   "version": "0.12.6",
   "type": "commonjs",
   "sideEffects": false,
@@ -10,8 +10,8 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-framework": "workspace:*",
-    "@activepieces/core-utils": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/core-utils": "workspace:*",
     "form-data": "4.0.6",
     "zod": "4.3.6"
   },

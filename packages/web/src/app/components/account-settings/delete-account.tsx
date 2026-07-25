@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { isCloudPlanButNotEnterprise } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { isCloudPlanButNotEnterprise } from '@wippa/shared';
 import { t } from 'i18next';
 import { Trash } from 'lucide-react';
 import { useForm } from 'react-hook-form';

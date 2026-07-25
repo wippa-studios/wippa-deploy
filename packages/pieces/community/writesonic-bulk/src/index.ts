@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { blogIdeas } from './lib/actions/blog-ideas';
 import { blogIntros } from './lib/actions/blog-intros';
 import { blogOutlines } from './lib/actions/blog-outlines';
@@ -9,9 +9,9 @@ import { generateProductDescriptions } from './lib/actions/generate-product-desc
 import { googleAds } from './lib/actions/google-ads';
 import { landingPageHeadlines } from './lib/actions/landing-page-headlines';
 import { sentenceExpander } from './lib/actions/sentence-expander';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { writesonicBulkAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 

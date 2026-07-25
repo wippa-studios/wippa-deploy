@@ -1,4 +1,4 @@
-import { AlertChannel, PlatformRole, PrincipalType, ProjectType } from '@activepieces/shared'
+import { AlertChannel, PlatformRole, PrincipalType, ProjectType } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

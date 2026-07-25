@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { googleContactsAddContactAction } from './lib/action/create-contact';
 import { googleContactsUpdateContactAction } from './lib/action/update-contact';
 import { googleContactsSearchContactsAction } from './lib/action/search-contact';

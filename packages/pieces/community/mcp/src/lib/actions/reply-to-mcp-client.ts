@@ -3,8 +3,8 @@ import {
   PieceAuth,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
-import { StopResponse } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { StopResponse } from '@wippa/pieces-framework';
 import { StatusCodes } from 'http-status-codes';
 
 

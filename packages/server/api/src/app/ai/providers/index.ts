@@ -1,5 +1,5 @@
-import { AIProviderName } from '@activepieces/core-utils'
-import { AIProviderAuthConfig, AIProviderConfig } from '@activepieces/shared'
+import { AIProviderName } from '@wippa/core-utils'
+import { AIProviderAuthConfig, AIProviderConfig } from '@wippa/shared'
 import { AIProviderStrategy } from './ai-provider'
 import { anthropicProvider } from './anthropic-provider'
 import { azureProvider } from './azure-provider'

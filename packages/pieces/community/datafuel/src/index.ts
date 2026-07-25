@@ -1,9 +1,9 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { dataFuelAuth } from './lib/common/auth';
 import { crawlWebsiteAction } from './lib/actions/crawl-website';
 import { scrapeWebsiteAction } from './lib/actions/scrape-website';
 import { getScrapeAction } from './lib/actions/get-scrape-result';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/constants';
 
 export const datafuel = createPiece({

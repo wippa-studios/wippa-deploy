@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { TeableCommon, makeClient } from '../common';
 import { TeableAuth, TeableAuthValue } from '../auth';
 

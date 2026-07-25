@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { microsoft365PlannerAuth, microsoft365PlannerCommon } from '../common';
 import { PlanDropdown, TaskDropdown } from '../common/properties';
 

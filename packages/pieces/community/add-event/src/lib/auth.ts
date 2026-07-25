@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { HttpError, HttpMethod } from '@wippa/pieces-common';
 import { addEventApi } from './common/client';
 
 const markdownDescription = `

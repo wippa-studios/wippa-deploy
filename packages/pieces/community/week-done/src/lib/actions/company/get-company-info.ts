@@ -1,9 +1,9 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import {
   OAuth2PropertyValue,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { weekdoneAuth } from '../../auth';
 import { weekdoneApiCall } from '../../common';
 

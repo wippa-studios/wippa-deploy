@@ -2,7 +2,7 @@ import {
   Property,
   createAction,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { canvaAuth } from '../../index';
 import { canvaCommon, fetchUserFolders, fetchUserDesigns, fetchUserAssets } from '../common';
 

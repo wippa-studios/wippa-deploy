@@ -1,5 +1,5 @@
 
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { listEnsDomains } from './lib/actions/list-ens-domains';
 import { ensCommon } from './lib/common/common';
 

@@ -2,8 +2,8 @@ import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { rendexAuth } from '../common/auth';
 import { RENDEX_BASE_URL } from '../common/common';
 

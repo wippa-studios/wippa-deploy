@@ -5,13 +5,13 @@ import {
   PiecePropValueSchema, 
   OAuth2PropertyValue, 
   AppConnectionValueForAuthProperty
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { 
   DedupeStrategy, 
   Polling, 
   pollingHelper, 
   HttpMethod 
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { formStackAuth } from '../common/auth';
 import { makeRequest } from '../common/client';

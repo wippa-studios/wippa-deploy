@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { esignaturesAuth } from '../common/auth';
 export const signatureReceived = createTrigger({
   auth: esignaturesAuth,

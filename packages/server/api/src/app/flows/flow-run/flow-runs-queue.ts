@@ -1,5 +1,5 @@
-import { apId, isNil, sanitizeObjectForPostgresql, spreadIfDefined } from '@activepieces/core-utils'
-import { FlowRun, FlowRunStatus, isFlowRunStateTerminal, RunTimeline } from '@activepieces/shared'
+import { apId, isNil, sanitizeObjectForPostgresql, spreadIfDefined } from '@wippa/core-utils'
+import { FlowRun, FlowRunStatus, isFlowRunStateTerminal, RunTimeline } from '@wippa/shared'
 import { Queue, Worker } from 'bullmq'
 import { FastifyBaseLogger } from 'fastify'
 import { distributedLock, distributedStore, redisConnections } from '../../database/redis-connections'

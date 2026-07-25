@@ -1,4 +1,4 @@
-import { apId, DefaultProjectRole, WebsocketServerEvent } from '@activepieces/shared'
+import { apId, DefaultProjectRole, WebsocketServerEvent } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { Socket } from 'socket.io'
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest'

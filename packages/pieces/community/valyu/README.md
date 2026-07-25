@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-valyu` to build the library.
+Run `turbo run build --filter=@wippa/piece-valyu` to build the library.

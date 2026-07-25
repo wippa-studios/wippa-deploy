@@ -2,7 +2,7 @@ import {
     EngineOperationType,
     ExecuteExtractPieceMetadataJobData,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { workerSettings } from '../../config/worker-settings'
 import { JobContext, JobHandler, JobResultKind, SynchronousJobResult } from '../types'
 

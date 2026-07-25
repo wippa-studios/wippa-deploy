@@ -1,4 +1,4 @@
-import { FlowAction, FlowRunStatus } from '@activepieces/shared'
+import { FlowAction, FlowRunStatus } from '@wippa/shared'
 import { codeExecutor } from '../../src/lib/handler/code-executor'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { flowExecutor } from '../../src/lib/handler/flow-executor'

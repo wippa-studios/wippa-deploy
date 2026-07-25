@@ -1,18 +1,18 @@
 {
-  "name": "@activepieces/piece-pdf",
+  "name": "@wippa/piece-pdf",
   "version": "0.5.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "jimp": "^0.22.12",
     "mime-types": "2.1.35",
     "nanoid": "3.3.8",
     "pdf-lib": "1.17.1",
     "unpdf": "1.4.0",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "vitest": "3.2.6",

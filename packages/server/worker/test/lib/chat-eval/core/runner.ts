@@ -1,6 +1,6 @@
-import { chatAiUtils } from '@activepieces/server-utils'
-import { tryCatch } from '@activepieces/core-utils';
-import { ChatPhase, PersistedChatPartType } from '@activepieces/shared';
+import { chatAiUtils } from '@wippa/server-utils'
+import { tryCatch } from '@wippa/core-utils';
+import { ChatPhase, PersistedChatPartType } from '@wippa/shared';
 import { hasToolCall, isLoopFinished, ModelMessage, ToolSet } from 'ai'
 import { ChatEvalFixture } from './fixture'
 import { llmJudge } from './llm-judge'

@@ -1,9 +1,9 @@
 import {
   createPiece,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { addPermission } from './lib/action/add-permission.action';
 import { googleDriveCreateNewFolder } from './lib/action/create-new-folder';
 import { googleDriveCreateNewTextFile } from './lib/action/create-new-text-file';

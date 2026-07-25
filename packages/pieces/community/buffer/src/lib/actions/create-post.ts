@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { bufferAuth } from '../common/auth';
 import { bufferClient } from '../common/client';
 import { bufferProps } from '../common/props';

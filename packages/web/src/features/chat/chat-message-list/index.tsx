@@ -1,5 +1,5 @@
-import { ApErrorParams, isNil } from '@activepieces/core-utils';
-import { ChatUIResponse, FileResponseInterface } from '@activepieces/shared';
+import { ApErrorParams, isNil } from '@wippa/core-utils';
+import { ChatUIResponse, FileResponseInterface } from '@wippa/shared';
 import { BotIcon } from 'lucide-react';
 import React from 'react';
 import { z } from 'zod';

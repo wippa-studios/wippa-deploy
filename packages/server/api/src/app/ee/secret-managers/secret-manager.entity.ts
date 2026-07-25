@@ -1,4 +1,4 @@
-import { Platform, SecretManagerConnection } from '@activepieces/shared'
+import { Platform, SecretManagerConnection } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../../database/database-common'
 import { EncryptedObject } from '../../helper/encryption'

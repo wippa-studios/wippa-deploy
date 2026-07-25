@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { getAccessTokenOrThrow } from '@wippa/pieces-common';
 import { mailchimpCommon } from '../common';
 import { MailChimpClickWebhookRequest } from '../common/types';
 import { mailchimpAuth } from '../..';

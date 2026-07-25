@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { areSheetIdsValid, createGoogleClient, Dimension, objectToArray, ValueInputOption } from '../common/common';
 import { googleSheetsAuth } from '../common/common';
 import { getWorkSheetName } from '../triggers/helpers';
 import { sheets as googleSheets } from '@googleapis/sheets';
-import {  isString } from '@activepieces/pieces-framework';
+import {  isString } from '@wippa/pieces-framework';
 import { commonProps, isFirstRowHeaderProp, rowValuesProp } from '../common/props';
 import { updateRowActionOutputSchema } from '../output-schemas';
 

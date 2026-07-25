@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { createPiece, PieceAuth, OAuth2AuthorizationMethod, Property, OAuth2PropertyValue } from "@activepieces/pieces-framework";
 import { retrieveRedditPost } from './lib/actions/retrieve-reddit-post';
 import { getRedditPostDetails } from './lib/actions/get-reddit-post-details';
@@ -9,8 +9,8 @@ import { editRedditPost } from './lib/actions/edit-reddit-post';
 import { editRedditComment } from './lib/actions/edit-reddit-comment';
 import { deleteRedditPost } from './lib/actions/delete-reddit-post';
 import { deleteRedditComment } from './lib/actions/delete-reddit-comment';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { OAuth2GrantType } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { OAuth2GrantType } from '@wippa/pieces-framework';
 import { redditAuth } from './lib/auth';
 
 const markdown = `

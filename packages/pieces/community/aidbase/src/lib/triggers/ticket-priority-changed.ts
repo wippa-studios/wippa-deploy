@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { aidbaseAuth } from '../common/auth';
 import { ticketFormDropdown } from '../common/props';
 

@@ -1,7 +1,7 @@
 import { workableAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { getAccountSubdomain } from '../common/get-subdomain';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const moveCandidate = createAction({
   auth: workableAuth,

@@ -4,11 +4,11 @@ import {
   PieceAuth,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   assertNotNullOrUndefined,
   MarkdownVariant,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { createHmac, timingSafeEqual } from 'crypto';
 
 const liveMarkdown = `**Live URL:**

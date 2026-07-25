@@ -1,4 +1,4 @@
-import { FilesService } from '@activepieces/pieces-framework';
+import { FilesService } from '@wippa/pieces-framework';
 import {
   GmailLabel,
   GmailMessage,
@@ -10,7 +10,7 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { Attachment, ParsedMail, simpleParser } from 'mailparser';
 import { GmailAuthValue, getAccessToken } from '../auth';
 

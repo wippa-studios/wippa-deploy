@@ -1,4 +1,4 @@
-import { Permission } from '@activepieces/core-utils'
+import { Permission } from '@wippa/core-utils'
 import { DefaultProjectRole } from '../../management/project/project-member'
 
 export const rolePermissions: Record<DefaultProjectRole, Permission[]> = {

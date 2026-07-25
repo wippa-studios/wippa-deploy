@@ -1,4 +1,4 @@
-import { PieceAuth, PiecePropValueSchema } from '@activepieces/pieces-framework';
+import { PieceAuth, PiecePropValueSchema } from '@wippa/pieces-framework';
 import { makeClient } from './common';
 
 export const BikaAuth = PieceAuth.CustomAuth({

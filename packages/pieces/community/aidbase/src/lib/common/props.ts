@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { aidbaseClient } from './client';
 import { aidbaseAuth } from './auth';
 

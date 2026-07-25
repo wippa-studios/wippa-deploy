@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { apId, createAction, FieldType, PieceAuth, Property, Table } from '@activepieces/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { apId, createAction, FieldType, PieceAuth, Property, Table } from '@wippa/pieces-framework';
 import * as z from 'zod/mini';
 
 export const createTable = createAction({

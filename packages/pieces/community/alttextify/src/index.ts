@@ -1,6 +1,6 @@
 
 import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { alttextifyAuth } from "./lib/common/auth";
 import { generateAltTextAction } from "./lib/actions/generate-alt-text";
 import { createCustomApiCallAction } from "@activepieces/pieces-common";

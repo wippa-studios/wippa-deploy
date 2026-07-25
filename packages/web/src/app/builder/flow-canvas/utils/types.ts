@@ -3,7 +3,7 @@ import {
   StepLocationRelativeToParent,
   FlowTrigger,
   Note,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { Edge } from '@xyflow/react';
 
 export enum ApNodeType {

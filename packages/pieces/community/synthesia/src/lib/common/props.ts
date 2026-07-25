@@ -1,6 +1,6 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { synthesiaAuth } from './auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export const templateIdDropdown = Property.Dropdown({
   auth: synthesiaAuth,

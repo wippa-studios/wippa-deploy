@@ -1,6 +1,6 @@
-import { ActivepiecesError, ApId, apId, ErrorCode, isNil, SeekPage, tryCatch } from '@activepieces/core-utils'
-import { apDayjsDuration } from '@activepieces/server-utils'
-import { Alert, AlertChannel, ApEdition, FailedStep, flowStructureUtil, ListAlertsParams, ProjectType } from '@activepieces/shared'
+import { ActivepiecesError, ApId, apId, ErrorCode, isNil, SeekPage, tryCatch } from '@wippa/core-utils'
+import { apDayjsDuration } from '@wippa/server-utils'
+import { Alert, AlertChannel, ApEdition, FailedStep, flowStructureUtil, ListAlertsParams, ProjectType } from '@wippa/shared'
 
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'

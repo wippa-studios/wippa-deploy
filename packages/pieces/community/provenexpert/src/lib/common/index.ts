@@ -4,8 +4,8 @@ import {
   AuthenticationType,
   HttpMessageBody,
   HttpResponse,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
 import { provenExpertAuth } from './auth';
 
 const BASE_URL = 'https://www.provenexpert.com/api/v1';

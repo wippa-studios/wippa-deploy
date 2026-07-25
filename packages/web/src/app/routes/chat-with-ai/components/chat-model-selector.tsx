@@ -1,4 +1,4 @@
-import { ACTIVEPIECES_CHAT_TIERS } from '@activepieces/shared';
+import { ACTIVEPIECES_CHAT_TIERS } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   ArrowDown,

@@ -61,7 +61,7 @@ Source and destination are **separate Activepieces deployments**, each with its 
   "flows":   [ /* full flow states with externalId */ ],
   "tables":  [ /* schema only — name, externalId, fields[], status, trigger */ ],
   "folders": [ /* externalId, displayName, displayOrder */ ],
-  "requiredPieces": [ { "name": "@activepieces/piece-slack", "version": "1.2.3" } ]
+  "requiredPieces": [ { "name": "@wippa/piece-slack", "version": "1.2.3" } ]
 }
 ```
 

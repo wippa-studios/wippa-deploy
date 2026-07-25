@@ -1,4 +1,4 @@
-import { EnginePrincipal, PrincipalType } from '@activepieces/shared'
+import { EnginePrincipal, PrincipalType } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { beforeAll, describe, expect, it, vi } from 'vitest'

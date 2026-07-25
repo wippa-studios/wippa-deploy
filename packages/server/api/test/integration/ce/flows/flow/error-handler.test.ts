@@ -1,4 +1,4 @@
-import { apId, ErrorCode } from '@activepieces/core-utils'
+import { apId, ErrorCode } from '@wippa/core-utils'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { createTestContext } from '../../../../helpers/test-context'

@@ -3,11 +3,11 @@ import {
   HttpRequest,
   httpClient,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { cloudconvertAuth, cloudconvertCommon } from '../common';
 
 export const newJob = createTrigger({

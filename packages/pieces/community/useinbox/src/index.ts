@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { useinboxAuth } from './lib/common/auth';
 import { useinboxClient } from './lib/common/client';
 import { addContactToListAction } from './lib/actions/add-contact-to-list';

@@ -3,7 +3,7 @@ import {
   Field,
   ListFieldsRequestQuery,
   UpdateFieldRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

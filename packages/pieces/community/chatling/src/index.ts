@@ -1,9 +1,9 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { makeRequest } from './lib/common';
 import { sendMessage } from './lib/actions/send-message';
 import { createChatbot } from './lib/actions/create-chatbot';

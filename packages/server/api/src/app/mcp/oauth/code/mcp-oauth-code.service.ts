@@ -1,6 +1,6 @@
 import { randomBytes } from 'crypto'
-import { apId } from '@activepieces/core-utils'
-import { McpOAuthAuthorizationCode } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { McpOAuthAuthorizationCode } from '@wippa/shared'
 import { repoFactory } from '../../../core/db/repo-factory'
 import { McpOAuthAuthorizationCodeEntity } from './mcp-oauth-code.entity'
 

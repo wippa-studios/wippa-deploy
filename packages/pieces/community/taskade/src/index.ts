@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { createTaskAction } from './lib/actions/create-task.action';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { completeTaskAction } from './lib/actions/complete-task.action';
 import { deleteTaskAction } from './lib/actions/delete-task.action';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { taskadeAuth } from './lib/auth';
 
 export const taskade = createPiece({

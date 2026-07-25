@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, HttpMessageBody } from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, HttpMessageBody } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { fragmentAuth } from './auth';
 
 export const BASE_URL = 'https://api.onfragment.com/api/v1';

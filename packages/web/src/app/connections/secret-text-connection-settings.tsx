@@ -1,5 +1,5 @@
-import { SecretTextProperty } from '@activepieces/pieces-framework';
-import { UpsertSecretTextRequest } from '@activepieces/shared';
+import { SecretTextProperty } from '@wippa/pieces-framework';
+import { UpsertSecretTextRequest } from '@wippa/shared';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { z } from 'zod';

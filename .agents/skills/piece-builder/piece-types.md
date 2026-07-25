@@ -14,14 +14,14 @@ Use `community/` for almost all work.
 
 | Location | Format | Example |
 |---|---|---|
-| `community/` | `@activepieces/piece-<name>` | `@activepieces/piece-slack` |
-| `core/` | `@activepieces/piece-<name>` | `@activepieces/piece-http` |
+| `community/` | `@wippa/piece-<name>` | `@wippa/piece-slack` |
+| `core/` | `@wippa/piece-<name>` | `@wippa/piece-http` |
 | `custom/` | Any npm-valid name | `@mycompany/piece-crm` |
 
 ## PieceCategory Values
 
 ```typescript
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@wippa/shared';
 ```
 
 | Category | Use for |

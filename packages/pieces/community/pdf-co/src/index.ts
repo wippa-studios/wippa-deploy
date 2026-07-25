@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import {
 	searchAndReplaceText,
 	addTextToPdf,
@@ -9,7 +9,7 @@ import {
 	extractTablesFromPdf,
 	addBarcodeToPdf,
 } from './lib/actions';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { pdfCoAuth } from './lib/auth';
 
 export const pdfCo = createPiece({

@@ -1,4 +1,4 @@
-import { Metadata, Nullable, OptionalArrayFromQuery } from '@activepieces/core-utils'
+import { Metadata, Nullable, OptionalArrayFromQuery } from '@wippa/core-utils'
 import { z } from 'zod'
 import { FlowVersionTemplate, TemplateStatus, TemplateTag, TemplateType } from './template'
 

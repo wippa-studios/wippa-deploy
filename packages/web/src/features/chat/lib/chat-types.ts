@@ -1,11 +1,11 @@
-import { isObject, parseToJsonIfPossible } from '@activepieces/core-utils';
+import { isObject, parseToJsonIfPossible } from '@wippa/core-utils';
 import {
   BatchProgressData,
   ChatMessageFeedback,
   ChatToolName,
   ChatToolOutputs,
   chatToolClassification,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import {
   DynamicToolUIPart,
   getToolName,
@@ -150,7 +150,7 @@ function normalizePieceName(name: string): string {
   const stripped = name.startsWith('piece-')
     ? name.slice('piece-'.length)
     : name;
-  return `@activepieces/piece-${stripped.replace(/_/g, '-')}`;
+  return `@wippa/piece-${stripped.replace(/_/g, '-')}`;
 }
 
 function extractPieceNames(

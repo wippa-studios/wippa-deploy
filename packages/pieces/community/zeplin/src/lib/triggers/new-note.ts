@@ -1,7 +1,7 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { ziplinAuth } from '../common/auth';
 
 export const newNote = createTrigger({

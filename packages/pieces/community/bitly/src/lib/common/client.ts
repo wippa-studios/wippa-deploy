@@ -4,7 +4,7 @@ import {
   HttpRequest,
   HttpMessageBody,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export type BitlyAuthProps = {
   accessToken: string;

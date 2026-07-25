@@ -1,11 +1,11 @@
 {
-  "name": "@activepieces/piece-amazon-s3",
+  "name": "@wippa/piece-amazon-s3",
   "version": "0.6.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@aws-sdk/client-s3": "3.974.0",
     "@aws-sdk/client-sts": "3.974.0",
     "@aws-sdk/client-secrets-manager": "^3.0.0",
@@ -13,8 +13,8 @@
     "dayjs": "1.11.9",
     "mime-types": "2.1.35",
     "openpgp": "^6.3.0",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "bundleDeps": false,
   "scripts": {

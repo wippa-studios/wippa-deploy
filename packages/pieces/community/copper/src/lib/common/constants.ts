@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/pieces-framework';
 import { CopperApiService } from './requests';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 export const BASE_URL = 'https://api.copper.com/developer_api';
 

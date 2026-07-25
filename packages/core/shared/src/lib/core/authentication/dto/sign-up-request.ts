@@ -1,4 +1,4 @@
-import { ApId, SAFE_STRING_PATTERN } from '@activepieces/core-utils'
+import { ApId, SAFE_STRING_PATTERN } from '@wippa/core-utils'
 import { z } from 'zod'
 import { EmailType, PasswordType } from '../../user/user'
 

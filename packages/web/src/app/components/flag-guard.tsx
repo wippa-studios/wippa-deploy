@@ -1,4 +1,4 @@
-import { ApFlagId } from '@activepieces/shared';
+import { ApFlagId } from '@wippa/shared';
 
 import { flagsHooks } from '@/hooks/flags-hooks';
 

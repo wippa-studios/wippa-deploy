@@ -2,8 +2,8 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PiecePropValueSchema } from '@wippa/pieces-framework';
 import { surrealdbAuth } from '..';
 
 const query = async (

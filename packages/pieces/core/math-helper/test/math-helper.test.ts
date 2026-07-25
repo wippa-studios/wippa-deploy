@@ -6,7 +6,7 @@ import { multiplication } from '../src/lib/actions/multiplication';
 import { division } from '../src/lib/actions/division';
 import { modulo } from '../src/lib/actions/modulo';
 import { generateRandom } from '../src/lib/actions/generateRandom';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('addition', () => {
   test('adds two positive numbers', async () => {

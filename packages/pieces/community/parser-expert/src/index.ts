@@ -1,5 +1,5 @@
 import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { parserExpertAuth } from "./lib/common/auth";
 import { uploadDocument } from "./lib/actions/upload-document";
 import { getExtractedData } from "./lib/actions/get-extracted-data";

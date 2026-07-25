@@ -2,7 +2,7 @@ import {
 	createTrigger,
 	TriggerStrategy,
 	AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { crispAuth } from '../common/auth';
 import { websiteIdProp } from '../common/props';
 import {
@@ -11,7 +11,7 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { crispApiCall } from '../common/client';
 

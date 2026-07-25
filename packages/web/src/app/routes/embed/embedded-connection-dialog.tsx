@@ -1,5 +1,5 @@
-import { apId, isNil } from '@activepieces/core-utils';
-import { AppConnectionWithoutSensitiveData } from '@activepieces/shared';
+import { apId, isNil } from '@wippa/core-utils';
+import { AppConnectionWithoutSensitiveData } from '@wippa/shared';
 import {
   ActivepiecesClientConnectionNameIsInvalid,
   ActivepiecesClientConnectionPieceNotFound,

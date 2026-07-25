@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { knockAuth, KNOCK_API_BASE_URL, knockHeaders } from './lib/auth';
 import { triggerWorkflow } from './lib/actions/trigger-workflow';
 import { identifyUser } from './lib/actions/identify-user';

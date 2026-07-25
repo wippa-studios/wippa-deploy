@@ -1,4 +1,4 @@
-import { AssignProjectsRequestBody, CreatePieceSetRequestBody, DuplicatePieceSetRequestBody, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI, UpdatePieceSetRequestBody } from '@activepieces/shared'
+import { AssignProjectsRequestBody, CreatePieceSetRequestBody, DuplicatePieceSetRequestBody, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI, UpdatePieceSetRequestBody } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'

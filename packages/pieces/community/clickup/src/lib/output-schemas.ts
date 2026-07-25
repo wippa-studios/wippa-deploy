@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@wippa/pieces-framework';
 
 const userFields: OutputSchemaField[] = [
   {

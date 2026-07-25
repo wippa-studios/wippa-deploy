@@ -1,4 +1,4 @@
-import { PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema, Property } from '@wippa/pieces-framework';
 import { getCalendars } from './helpers';
 import { weblingAuth } from '../auth';
 

@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { createLead } from './lib/actions/create-lead';
 import { findLead } from './lib/actions/find-lead';
 import { newLeadAdded } from './lib/triggers/new-lead-added';

@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { PieceAuth } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
 
 const markdownDescription = `
 To obtain your Smartsheet access token:

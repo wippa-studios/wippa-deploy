@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { createPptFromTopic } from './lib/actions/create-ppt-from-topic';
 import { createPptFromSummary } from './lib/actions/create-ppt-from-summary';
 import { createPptFromYoutubeVideo } from './lib/actions/create-ppt-from-youtube-video';

@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { typefullyApiCall } from './client';
 import { typefullyAuth } from '../auth';
 import {
@@ -7,7 +7,7 @@ import {
   TypefullySocialSet,
   TypefullyTag,
 } from './types';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 
 async function fetchAllPages<T>(
   apiKey: string,

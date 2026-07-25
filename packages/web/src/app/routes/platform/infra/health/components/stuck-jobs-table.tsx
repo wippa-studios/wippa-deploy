@@ -1,4 +1,4 @@
-import { StuckJob } from '@activepieces/shared';
+import { StuckJob } from '@wippa/shared';
 import { t } from 'i18next';
 import { CircleCheck, TriangleAlert } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

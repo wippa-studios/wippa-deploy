@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { Nullable } from '@activepieces/core-utils'
-import { Metadata } from '@activepieces/core-utils'
+import { Nullable } from '@wippa/core-utils'
+import { Metadata } from '@wippa/core-utils'
 import { BranchCondition, CodeActionSchema, CodeActionSettings, FlowActionType, LoopOnItemsActionSchema, LoopOnItemsActionSettings, PieceActionSchema, PieceActionSettings, RouterActionSchema, RouterActionSettings } from '../actions/action'
 import { FlowStatus } from '../flow'
 import { FlowVersion, FlowVersionState } from '../flow-version'

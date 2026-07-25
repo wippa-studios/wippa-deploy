@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { removeBackground } from './lib/actions/remove-background';
 
 export const photoroomAuth = PieceAuth.CustomAuth({

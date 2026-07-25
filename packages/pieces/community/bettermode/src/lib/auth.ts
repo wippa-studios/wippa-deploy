@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 import { getAuthToken } from './api';
 
 export type BettermodeAuthType = {

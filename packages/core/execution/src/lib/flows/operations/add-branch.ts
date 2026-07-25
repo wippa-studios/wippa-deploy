@@ -1,4 +1,4 @@
-import { insertAt } from '@activepieces/core-utils'
+import { insertAt } from '@wippa/core-utils'
 import { FlowActionType, RouterAction } from '../actions/action'
 import { FlowVersion } from '../flow-version'
 import { flowStructureUtil } from '../util/flow-structure-util'

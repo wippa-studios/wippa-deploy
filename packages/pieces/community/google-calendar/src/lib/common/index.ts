@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { getCalendars, getColors, getEventsForDropdown } from './helper';
 import { googleCalendarAuth, GoogleCalendarAuthValue, getAccessToken } from '../auth';
 

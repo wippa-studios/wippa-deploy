@@ -1,6 +1,6 @@
-import { ApFile, createAction, Property } from '@activepieces/pieces-framework';
+import { ApFile, createAction, Property } from '@wippa/pieces-framework';
 import { ChatAidAuth } from '../common/auth';
-import { HttpMethod, HttpRequest, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, HttpRequest, httpClient } from '@wippa/pieces-common';
 import { BASE_URL } from '../common/client';
 import FormData from 'form-data';
 

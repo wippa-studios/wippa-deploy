@@ -1,5 +1,5 @@
 import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { vertexAiAuth } from "./lib/auth";
 import { generateContent, generateImage, customApiCall } from "./lib/actions";
 

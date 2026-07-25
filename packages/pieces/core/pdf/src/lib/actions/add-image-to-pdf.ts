@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { PDFDocument, degrees } from 'pdf-lib';
 import { getTargetPages, mapVisualToIntrinsic } from '../common';
 import mime from 'mime-types';

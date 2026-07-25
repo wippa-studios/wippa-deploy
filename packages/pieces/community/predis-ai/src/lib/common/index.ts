@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 
 export const predisAiCommon = {
   baseUrl: 'https://brain.predis.ai/predis_api/v1',

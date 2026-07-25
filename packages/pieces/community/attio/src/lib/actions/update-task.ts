@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { attioAuth } from '../auth';
 import { attioApiCall } from '../common/client';
 import { linkedRecordDropdown, objectTypeIdDropdown, taskIdDropdown } from '../common/props';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export const updateTaskAction = createAction({
 	auth: attioAuth,

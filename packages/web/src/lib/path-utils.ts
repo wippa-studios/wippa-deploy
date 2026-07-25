@@ -1,4 +1,4 @@
-import { isObject } from '@activepieces/core-utils';
+import { isObject } from '@wippa/core-utils';
 
 const COMMON_WRAPPERS = [
   'properties',

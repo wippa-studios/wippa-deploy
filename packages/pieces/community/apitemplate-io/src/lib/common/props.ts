@@ -1,10 +1,10 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import {
   ApitemplateAuthConfig,
   ApitemplateRegion,
   makeRequest,
 } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { ApitemplateAuth } from './auth';
 
 export const regionDropdown = Property.StaticDropdown({

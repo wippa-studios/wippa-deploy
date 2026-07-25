@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { visibleAuth } from '../..';
 
 export const customApiCall = createCustomApiCallAction({

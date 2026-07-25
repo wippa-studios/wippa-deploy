@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { parseurAuth, parseurCommon } from '../common';
 import { parserDropdown } from '../common/properties';
 import { WebhookInformation } from '../common/types';

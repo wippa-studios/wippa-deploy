@@ -1,13 +1,13 @@
 import { pipedriveAuth } from '../auth';
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { personIdProp } from '../common/props';
 import {
 	pipedrivePaginatedV1ApiCall,
 	pipedrivePaginatedV2ApiCall,
 	pipedriveTransformCustomFields,
 } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { isNil } from '@wippa/pieces-framework';
 import { GetField } from '../common/types';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 

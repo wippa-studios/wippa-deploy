@@ -1,5 +1,5 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { vlmRunAuth, vlmRunCommon } from '../common';
 import { analyzeAudioProperties } from '../common/properties';
 import { analyzeAudioSchema } from '../common/schemas';

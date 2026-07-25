@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { SNSClient } from '@aws-sdk/client-sns';
 
 export function createSNS(auth: {

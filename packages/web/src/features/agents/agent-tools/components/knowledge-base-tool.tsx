@@ -1,10 +1,10 @@
-import { AIProviderName } from '@activepieces/core-utils';
+import { AIProviderName } from '@wippa/core-utils';
 import {
   AgentKnowledgeBaseTool,
   AgentTool,
   ApFlagId,
   KnowledgeBaseSourceType,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { BookOpen, FileText, Table2, X } from 'lucide-react';
 

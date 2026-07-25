@@ -1,4 +1,4 @@
-import { apId, ChatConversationStatus } from '@activepieces/shared'
+import { apId, ChatConversationStatus } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'

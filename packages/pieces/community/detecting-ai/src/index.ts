@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { detectingAiAuth, BASE_URL } from './lib/common';
 import { detectAiContent } from './lib/actions/detect-ai-content';
 import { checkPlagiarism } from './lib/actions/check-plagiarism';

@@ -1,4 +1,4 @@
-import { AIProviderName, isNil, tryCatch } from '@activepieces/shared'
+import { AIProviderName, isNil, tryCatch } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { aiProviderService } from '../ai/ai-provider-service'
 import { system } from '../helper/system/system'

@@ -4,14 +4,14 @@ import {
   formatPieceError,
   isString,
   tryParseFriendlyPieceError,
-} from '@activepieces/core-utils';
+} from '@wippa/core-utils';
 import {
   FlowAction,
   StepRunResponse,
   FlowTrigger,
   TriggerEventWithPayload,
   TriggerTestStrategy,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import deepEqual from 'deep-equal';
 import { t } from 'i18next';

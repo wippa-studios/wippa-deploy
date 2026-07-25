@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { linkupAuth } from './lib/common/auth';
 import { search } from './lib/actions/search';
 import { fetch } from './lib/actions/fetch';

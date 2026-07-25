@@ -1,7 +1,7 @@
 
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { formitableTriggers } from './lib/triggers';
 
 const markdown = `

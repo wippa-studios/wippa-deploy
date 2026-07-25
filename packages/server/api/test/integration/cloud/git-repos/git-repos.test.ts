@@ -1,4 +1,4 @@
-import { GitBranchType, PlatformRole, PrincipalType } from '@activepieces/shared'
+import { GitBranchType, PlatformRole, PrincipalType } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

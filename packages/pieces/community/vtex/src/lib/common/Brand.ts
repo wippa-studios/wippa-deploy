@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { CreateBrandParams, UpdateBrandParams } from './types';
 
 export class Brand {

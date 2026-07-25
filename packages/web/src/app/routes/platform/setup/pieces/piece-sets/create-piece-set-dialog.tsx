@@ -1,4 +1,4 @@
-import { CreatePieceSetRequestBody } from '@activepieces/shared';
+import { CreatePieceSetRequestBody } from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { Plus } from 'lucide-react';

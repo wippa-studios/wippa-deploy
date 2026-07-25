@@ -2,11 +2,11 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { createProject } from './lib/actions/create-project';
 import { listProject } from './lib/actions/list-project';
 import { updateProject } from './lib/actions/update-project';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { activePieceAuth } from './lib/auth';
 
 const markdown = `

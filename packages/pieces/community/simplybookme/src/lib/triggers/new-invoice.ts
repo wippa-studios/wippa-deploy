@@ -2,13 +2,13 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper
-} from '@activepieces/pieces-common';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { simplybookAuth, getAccessToken } from '../common';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof simplybookAuth>, Record<string, never>> = {

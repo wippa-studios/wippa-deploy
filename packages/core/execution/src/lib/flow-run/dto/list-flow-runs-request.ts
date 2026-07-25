@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { OptionalArrayFromQuery, OptionalBooleanFromQuery } from '@activepieces/core-utils'
-import { ApId } from '@activepieces/core-utils'
+import { OptionalArrayFromQuery, OptionalBooleanFromQuery } from '@wippa/core-utils'
+import { ApId } from '@wippa/core-utils'
 import { FlowRunStatus } from '../execution/flow-execution'
 
 export const ListFlowRunsRequestQuery = z.object({

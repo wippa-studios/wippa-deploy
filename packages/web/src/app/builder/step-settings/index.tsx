@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowAction,
   FlowActionType,
@@ -7,7 +7,7 @@ import {
   FlowTriggerType,
   flowPieceUtil,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import deepEqual from 'deep-equal';
 import { useEffect, useRef, useState } from 'react';
@@ -162,7 +162,7 @@ const StepSettingsContainer = () => {
     ) && !isNil(stepMetadata);
 
   const runAgentStep =
-    modifiedStep.settings.pieceName === '@activepieces/piece-ai' &&
+    modifiedStep.settings.pieceName === '@wippa/piece-ai' &&
     modifiedStep.settings.actionName === 'run_agent';
 
   useEffect(() => {

@@ -3,8 +3,8 @@ import {
   HttpMethod,
   HttpRequest,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { mollieAuth } from '../auth';
 
 export const mollieCommon = {

@@ -6,10 +6,10 @@ import {
   ShortTextProperty,
   StaticDropdownProperty,
   StoreScope,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { getScopeAndKey, PieceStoreScope } from './common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 async function executeStorageGet(context: ActionContext<PieceAuthProperty | undefined, {
   key: ShortTextProperty<true>;

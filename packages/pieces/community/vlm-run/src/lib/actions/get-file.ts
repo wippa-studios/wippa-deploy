@@ -1,5 +1,5 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { vlmRunAuth, vlmRunCommon } from '../common';
 import { getFileProperties } from '../common/properties';
 import { getFileSchema } from '../common/schemas';

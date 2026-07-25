@@ -1,4 +1,4 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   ApplicationEvent,
   ApplicationEventName,
@@ -12,7 +12,7 @@ import {
   Template,
   TestPlatformEventDestinationRequestBody,
   UpdatePlatformEventDestinationRequestBody,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { queryCollectionOptions } from '@tanstack/query-db-collection';
 import { createCollection, useLiveQuery } from '@tanstack/react-db';
 import { QueryClient, useMutation } from '@tanstack/react-query';

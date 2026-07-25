@@ -1,4 +1,4 @@
-import { Metadata, Nullable, OptionalArrayFromQuery, SAFE_STRING_PATTERN } from '@activepieces/core-utils'
+import { Metadata, Nullable, OptionalArrayFromQuery, SAFE_STRING_PATTERN } from '@wippa/core-utils'
 import { z } from 'zod'
 import { PiecesFilterType, ProjectIcon, ProjectType } from './project'
 

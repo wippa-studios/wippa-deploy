@@ -1,6 +1,6 @@
 import { makeClient } from '../../common';
 import { clockodoAuth } from '../../auth';
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 
 export default createAction({
   auth: clockodoAuth,

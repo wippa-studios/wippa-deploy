@@ -1,5 +1,5 @@
-import { ProjectRole } from '@activepieces/core-utils'
-import { ApiKeyResponseWithValue, DefaultProjectRole, InvitationStatus, InvitationType, Platform, PlatformRole, PrincipalType, Project, ProjectType, SendUserInvitationRequest, User } from '@activepieces/shared'
+import { ProjectRole } from '@wippa/core-utils'
+import { ApiKeyResponseWithValue, DefaultProjectRole, InvitationStatus, InvitationType, Platform, PlatformRole, PrincipalType, Project, ProjectType, SendUserInvitationRequest, User } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

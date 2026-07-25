@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
-import { OAuth2Property, OAuth2Props } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/core-utils';
+import { OAuth2Property, OAuth2Props } from '@wippa/pieces-framework';
 import {
   AppConnectionType,
   BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE,
   OAuth2GrantType,
   ThirdPartyAuthnProviderEnum,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useSearchParams } from 'react-router-dom';
 
 import {

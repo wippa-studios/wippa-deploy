@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils'
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
 import { BranchCondition, BranchExecutionType, emptyCondition, FlowAction, FlowActionType } from '../actions/action'
 import { FlowVersion } from '../flow-version'
 import { FlowTrigger, FlowTriggerType } from '../triggers/trigger'
 
 
-export const AI_PIECE_NAME = '@activepieces/piece-ai'
+export const AI_PIECE_NAME = '@wippa/piece-ai'
 
 export type Step = FlowAction | FlowTrigger
 type StepWithIndex = Step & {

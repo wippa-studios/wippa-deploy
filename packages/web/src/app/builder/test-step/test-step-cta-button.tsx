@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   FlowAction,
   FlowTrigger,
   FlowTriggerType,
   Step,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Play } from 'lucide-react';
 import { useContext, useEffect } from 'react';

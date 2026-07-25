@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
 import { createCouchbaseClient, closeCluster, CouchbaseAuthValue } from './lib/common';
 import actions from './lib/actions';
 

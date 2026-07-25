@@ -4,7 +4,7 @@ import {
   PiecePropertyMap,
   Property,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { PastefyClient } from './client';
 import { FolderHierarchy } from './models/folder';
 import { PasteVisibility } from './models/paste';

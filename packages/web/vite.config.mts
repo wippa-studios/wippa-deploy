@@ -101,7 +101,7 @@ export default defineConfig(({ command, mode }) => {
       ],
       alias: {
         '@': path.resolve(__dirname, './src'),
-        '@activepieces/shared': path.resolve(
+        '@wippa/shared': path.resolve(
           __dirname,
           '../../packages/core/shared/src',
         ),
@@ -109,23 +109,23 @@ export default defineConfig(({ command, mode }) => {
           __dirname,
           '../../packages/ee/embed-sdk/src',
         ),
-        '@activepieces/pieces-framework': path.resolve(
+        '@wippa/pieces-framework': path.resolve(
           __dirname,
           '../../packages/pieces/framework/src',
         ),
-        '@activepieces/core-utils': path.resolve(
+        '@wippa/core-utils': path.resolve(
           __dirname,
           '../../packages/core/utils/src',
         ),
-        '@activepieces/core-formula': path.resolve(
+        '@wippa/core-formula': path.resolve(
           __dirname,
           '../../packages/core/formula/src',
         ),
-        '@activepieces/core-piece-types': path.resolve(
+        '@wippa/core-piece-types': path.resolve(
           __dirname,
           '../../packages/core/piece-types/src',
         ),
-        '@activepieces/core-execution': path.resolve(
+        '@wippa/core-execution': path.resolve(
           __dirname,
           '../../packages/core/execution/src',
         ),

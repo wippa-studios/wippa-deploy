@@ -1,6 +1,6 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { makeRequest } from './client';
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { omniAuth } from './auth';
 
 export const modelIdDropdown = Property.Dropdown({ 

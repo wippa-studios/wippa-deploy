@@ -1,7 +1,7 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import { respondIoApiCall } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 // For typing purposes in the client
 export const RespondIoAuth = PieceAuth.SecretText({

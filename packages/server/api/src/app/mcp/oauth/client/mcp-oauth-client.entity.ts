@@ -1,4 +1,4 @@
-import { McpOAuthClient } from '@activepieces/shared'
+import { McpOAuthClient } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { BaseColumnSchemaPart } from '../../../database/database-common'
 

@@ -2,8 +2,8 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
 import { discordAuth } from '../auth';
 import { discordCommon } from '../common';
 

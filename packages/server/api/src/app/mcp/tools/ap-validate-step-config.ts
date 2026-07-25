@@ -6,7 +6,7 @@ import {
     RouterActionSettingsWithValidation,
     RouterExecutionType,
     SourceCode,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { mcpUtils } from './mcp-utils'
@@ -51,7 +51,7 @@ const validateStepConfigInput = z.object({
     stepType: z.enum(['PIECE_ACTION', 'PIECE_TRIGGER', 'CODE', 'LOOP_ON_ITEMS', 'ROUTER'])
         .describe('The type of step to validate.'),
     pieceName: z.string().optional()
-        .describe('For PIECE_ACTION/PIECE_TRIGGER: piece name (e.g. "slack" or "@activepieces/piece-slack").'),
+        .describe('For PIECE_ACTION/PIECE_TRIGGER: piece name (e.g. "slack" or "@wippa/piece-slack").'),
     actionName: z.string().optional()
         .describe('For PIECE_ACTION: action name (e.g. "send_channel_message").'),
     triggerName: z.string().optional()

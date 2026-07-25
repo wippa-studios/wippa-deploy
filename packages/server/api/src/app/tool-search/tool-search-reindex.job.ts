@@ -1,5 +1,5 @@
-import { apDayjs } from '@activepieces/server-utils'
-import { ApEdition, isNil } from '@activepieces/shared'
+import { apDayjs } from '@wippa/server-utils'
+import { ApEdition, isNil } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { distributedLock } from '../database/redis-connections'
 import { system } from '../helper/system/system'

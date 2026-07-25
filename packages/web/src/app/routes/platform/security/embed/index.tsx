@@ -3,7 +3,7 @@ import {
   ApFlagId,
   EmbedSubdomainStatus,
   SigningKey,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   ExternalLink,

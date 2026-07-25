@@ -1,6 +1,6 @@
-import { isNil } from '@activepieces/core-utils';
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
-import { AppConnectionWithoutSensitiveData } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
+import { AppConnectionWithoutSensitiveData } from '@wippa/shared';
 import { t } from 'i18next';
 import React, { useState } from 'react';
 

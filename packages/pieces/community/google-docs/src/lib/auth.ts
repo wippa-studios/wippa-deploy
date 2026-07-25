@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 import { JWT, OAuth2Client } from 'google-auth-library';
 
 export const googleDocsScopes = [

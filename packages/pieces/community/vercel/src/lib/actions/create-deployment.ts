@@ -1,5 +1,5 @@
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { vercelAuth, VercelAuthValue } from '../common/auth';
 import { listDeployments, vercelApiCall } from '../common/client';
 import { deploymentTargetProperty, vercelProjectDropdown } from '../common/props';

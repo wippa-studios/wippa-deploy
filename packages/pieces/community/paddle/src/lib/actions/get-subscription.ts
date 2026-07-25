@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 
 import { paddleAuth } from '../auth';
 import { paddleClient } from '../common/client';

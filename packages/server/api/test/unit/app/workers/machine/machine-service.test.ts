@@ -1,4 +1,4 @@
-import { ExecutionMode } from '@activepieces/shared'
+import { ExecutionMode } from '@wippa/shared'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 vi.mock('../../../../../src/app/workers/machine/machine-cache', () => ({

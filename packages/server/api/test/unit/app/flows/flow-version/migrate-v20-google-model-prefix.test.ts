@@ -4,8 +4,8 @@ import {
     flowStructureUtil,
     FlowTriggerType,
     FlowVersionState,
-} from '@activepieces/shared'
-import type { FlowVersion } from '@activepieces/shared'
+} from '@wippa/shared'
+import type { FlowVersion } from '@wippa/shared'
 import { describe, expect, it } from 'vitest'
 import { migrateV20GoogleModelPrefix } from '../../../../../src/app/flows/flow-version/migrations/migrate-v20-google-model-prefix'
 
@@ -28,7 +28,7 @@ function makeFlowVersion(): FlowVersion {
                 displayName: 'Ask AI',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@activepieces/piece-ai',
+                    pieceName: '@wippa/piece-ai',
                     pieceVersion: '0.1.0',
                     actionName: 'askAi',
                     input: {
@@ -43,7 +43,7 @@ function makeFlowVersion(): FlowVersion {
                     displayName: 'Run Agent',
                     type: FlowActionType.PIECE,
                     settings: {
-                        pieceName: '@activepieces/piece-ai',
+                        pieceName: '@wippa/piece-ai',
                         pieceVersion: '0.1.0',
                         actionName: 'run_agent',
                         input: {
@@ -60,7 +60,7 @@ function makeFlowVersion(): FlowVersion {
                         displayName: 'Run Agent Managed',
                         type: FlowActionType.PIECE,
                         settings: {
-                            pieceName: '@activepieces/piece-ai',
+                            pieceName: '@wippa/piece-ai',
                             pieceVersion: '0.1.0',
                             actionName: 'run_agent',
                             input: {

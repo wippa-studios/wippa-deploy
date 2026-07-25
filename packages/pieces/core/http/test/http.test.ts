@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { describe, it, expect, vi, afterEach, beforeEach } from 'vitest';
-import { AxiosHttpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AxiosHttpClient, HttpMethod } from '@wippa/pieces-common';
 import type { AxiosInstance } from 'axios';
 
 describe('AxiosHttpClient', () => {

@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-personal-ai` to build the library.
+Run `turbo run build --filter=@wippa/piece-personal-ai` to build the library.

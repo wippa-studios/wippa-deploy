@@ -1,4 +1,4 @@
-import { ApId, BaseModelSchema, Nullable } from '@activepieces/core-utils'
+import { ApId, BaseModelSchema, Nullable } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export const ApiKey = z.object({

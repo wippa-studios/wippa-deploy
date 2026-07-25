@@ -1,4 +1,4 @@
-import { tryCatch } from '@activepieces/core-utils';
+import { tryCatch } from '@wippa/core-utils';
 import { Node } from '@xyflow/react';
 import { getFontEmbedCSS } from 'html-to-image';
 

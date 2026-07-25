@@ -1,4 +1,4 @@
-import { tryCatchSync } from '@activepieces/core-utils';
+import { tryCatchSync } from '@wippa/core-utils';
 
 const ACQUISITION_PARAM_KEYS = [
   'utm_source',

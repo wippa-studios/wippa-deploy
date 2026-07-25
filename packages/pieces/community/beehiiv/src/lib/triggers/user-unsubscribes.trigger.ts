@@ -1,9 +1,9 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { publicationId } from '../common/props';
 import { beehiivAuth } from '../common/auth';
 import { beehiivApiCall, WebhookPayload } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { isNil } from '@wippa/pieces-framework';
 
 const TRIGGER_KEY = 'user-unsubscribes-trigger';
 

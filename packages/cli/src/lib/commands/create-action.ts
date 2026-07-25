@@ -8,7 +8,7 @@ import { join } from 'node:path';
 
 function createActionTemplate(displayName: string, description: string) {
   const camelCase = displayNameToCamelCase(displayName)
-  const actionTemplate = `import { createAction, Property } from '@activepieces/pieces-framework';
+  const actionTemplate = `import { createAction, Property } from '@wippa/pieces-framework';
 
 export const ${camelCase} = createAction({
   // auth: check https://www.activepieces.com/docs/developers/piece-reference/authentication,

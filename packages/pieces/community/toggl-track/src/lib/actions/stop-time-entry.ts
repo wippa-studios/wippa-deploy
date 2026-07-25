@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, HttpError } from '@activepieces/pieces-common';
+import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient, HttpError } from '@wippa/pieces-common';
 import { togglTrackAuth } from '../..';
 import { togglCommon } from '../common';
 

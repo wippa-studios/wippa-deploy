@@ -1,5 +1,5 @@
-import { isNil, Permission } from '@activepieces/core-utils'
-import { FlowRunStatus, McpToolDefinition, ProjectScopedMcpServer, RunEnvironment } from '@activepieces/shared'
+import { isNil, Permission } from '@wippa/core-utils'
+import { FlowRunStatus, McpToolDefinition, ProjectScopedMcpServer, RunEnvironment } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { flowRunService } from '../../flows/flow-run/flow-run-service'

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { linkupAuth, linkupAction, accountIdProp } from '../common';
 
 export const getCompany = createAction({

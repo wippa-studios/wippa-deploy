@@ -1,10 +1,10 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   OAuth2Props,
   PiecePropertyMap,
   ArraySubProps,
-} from '@activepieces/pieces-framework';
-import { PropertyExecutionType, PropertySettings } from '@activepieces/shared';
+} from '@wippa/pieces-framework';
+import { PropertyExecutionType, PropertySettings } from '@wippa/shared';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 

@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { bolnaaiAuth } from './lib/common/auth';
 import { makePhoneCall } from './lib/actions/make-phone-call';
 import { callCompletionReport } from './lib/triggers/call-completion-report';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const bolna = createPiece({
   displayName: 'Bolna AI',

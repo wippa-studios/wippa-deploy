@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { verifyEmail } from './lib/actions/verify-email';
 import { verifySingleEmail } from './lib/common/send-util';
-import { HttpError } from '@activepieces/pieces-common';
+import { HttpError } from '@wippa/pieces-common';
 import { bulkEmailVerification } from './lib/actions/bulk-email-verification';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { bulkVerificationResult } from './lib/actions/bulk-email-verification-status';
 
 const description = `

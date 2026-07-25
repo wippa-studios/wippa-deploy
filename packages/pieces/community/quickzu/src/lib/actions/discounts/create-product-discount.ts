@@ -2,7 +2,7 @@ import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { quickzuAuth } from '../../auth';
 import { makeClient } from '../../common';
 import {

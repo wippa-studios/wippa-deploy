@@ -3,9 +3,9 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { copyMediaAction } from './lib/actions/copy-media';
 import { createProjectAction } from './lib/actions/create-project';
 import { deleteMediaAction } from './lib/actions/delete-media';

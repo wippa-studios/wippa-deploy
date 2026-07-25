@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import { CognosClient } from './common/cognos-client';
 
 export const ibmCognoseAuth = PieceAuth.CustomAuth({

@@ -3,13 +3,13 @@ import {
   createPiece,
   Property,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { getVendor } from './lib/actions/get-vendor';
 import { getCustomer } from './lib/actions/get-customer';
 import { runSuiteQL } from './lib/actions/run-suiteql';
 import { executeDataset } from './lib/actions/execute-dataset';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { createOAuthHeader } from './lib/common/oauth';
 
 export const netsuiteAuth = PieceAuth.CustomAuth({

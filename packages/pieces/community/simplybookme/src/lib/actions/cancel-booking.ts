@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { simplybookAuth, makeJsonRpcCall, SimplybookAuth, bookingDropdown } from '../common';
 
 export const cancelBooking = createAction({

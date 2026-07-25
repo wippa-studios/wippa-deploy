@@ -1,7 +1,7 @@
 import {
     TriggerStrategy,
     createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { XMLParser } from 'fast-xml-parser';
 import { salesforceAuth } from '../..';
 

@@ -1,4 +1,4 @@
-import { FlowAction, ApFlagId, FlowTrigger } from '@activepieces/shared';
+import { FlowAction, ApFlagId, FlowTrigger } from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useState } from 'react';

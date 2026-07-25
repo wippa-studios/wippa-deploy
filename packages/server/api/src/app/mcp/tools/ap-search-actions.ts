@@ -1,4 +1,4 @@
-import { McpToolDefinition, ProjectScopedMcpServer } from '@activepieces/shared'
+import { McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { toolSearchService } from '../../tool-search/tool-search.service'
@@ -53,5 +53,5 @@ export const apSearchActionsTool = (mcp: ProjectScopedMcpServer, log: FastifyBas
 const searchActionsInput = z.object({
     query: z.string().trim().min(1, 'query must be a non-empty task description').describe('Natural-language description of the task to accomplish (e.g. "send a message to a Slack channel", "create a Google Calendar event").'),
     limit: z.number().int().min(1).max(20).optional().describe('Maximum number of action matches to return. Defaults to 5.'),
-    pieceName: z.string().optional().describe('Restrict results to a single piece (e.g. "slack" or "@activepieces/piece-slack"). Omit to search the whole catalog.'),
+    pieceName: z.string().optional().describe('Restrict results to a single piece (e.g. "slack" or "@wippa/piece-slack"). Omit to search the whole catalog.'),
 })

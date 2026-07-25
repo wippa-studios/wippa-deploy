@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { ApEdition, FileCompression, FileLocation, FileType, FlowOperationStatus, FlowStatus, PlanName, PlatformRole, PrincipalType, UpdatePlatformRequestBody, UserIdentityProvider } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { ApEdition, FileCompression, FileLocation, FileType, FlowOperationStatus, FlowStatus, PlanName, PlatformRole, PrincipalType, UpdatePlatformRequestBody, UserIdentityProvider } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
@@ -355,12 +355,12 @@ describe('Platform API', () => {
                         title: 'Internal Tools',
                         icon: 'Star',
                         hidden: false,
-                        pieceNames: ['@activepieces/piece-internal-a', '@activepieces/piece-internal-b'],
+                        pieceNames: ['@wippa/piece-internal-a', '@wippa/piece-internal-b'],
                         sections: [
                             {
                                 id: apId(),
                                 title: 'CRM',
-                                pieceNames: ['@activepieces/piece-internal-crm'],
+                                pieceNames: ['@wippa/piece-internal-crm'],
                             },
                         ],
                     },

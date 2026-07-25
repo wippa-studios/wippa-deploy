@@ -1,4 +1,4 @@
-import { createAction, Property, ApFile, DynamicPropsValue } from '@activepieces/pieces-framework';
+import { createAction, Property, ApFile, DynamicPropsValue } from '@wippa/pieces-framework';
 import { GoogleGenAI, PersonGeneration } from '@google/genai';
 import { vertexAiAuth, GoogleVertexAIAuthValue } from '../auth';
 import { getVertexAILocationOptions, getVertexAIImageModelOptions } from '../common';

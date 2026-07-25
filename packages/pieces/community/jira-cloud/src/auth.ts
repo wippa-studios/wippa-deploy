@@ -2,12 +2,12 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { sendJiraRequest } from './lib/common';
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { HttpError, HttpMethod } from '@wippa/pieces-common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { propsValidation } from '@wippa/pieces-common';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 export const jiraCloudAuth = PieceAuth.CustomAuth({
   description: `

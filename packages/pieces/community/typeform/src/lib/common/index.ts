@@ -3,13 +3,13 @@ import {
   OAuth2PropertyValue,
   DropdownOption,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { typeformAuth } from '../..';
 
 type FormListResponse = {

@@ -1,6 +1,6 @@
-import { apId } from '@activepieces/core-utils'
-import { ActionBase } from '@activepieces/pieces-framework'
-import { DefaultProjectRole, FlowTriggerType, PackageType, PieceType, PrincipalType } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { ActionBase } from '@wippa/pieces-framework'
+import { DefaultProjectRole, FlowTriggerType, PackageType, PieceType, PrincipalType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
@@ -176,7 +176,7 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPiece = createMockPieceMetadata({
-                name: '@activepieces/ce-scoped-piece',
+                name: '@wippa/ce-scoped-piece',
                 pieceType: PieceType.OFFICIAL,
                 displayName: 'CE Scoped Test',
                 packageType: PackageType.REGISTRY,
@@ -184,11 +184,11 @@ describe('Piece Metadata CE API', () => {
             await db.save('piece_metadata', mockPiece)
             await pieceCache(mockLog).setup()
 
-            const response = await ctx.get(`/v1/pieces/@activepieces/ce-scoped-piece?projectId=${ctx.project.id}`)
+            const response = await ctx.get(`/v1/pieces/@wippa/ce-scoped-piece?projectId=${ctx.project.id}`)
 
             expect(response?.statusCode).toBe(StatusCodes.OK)
             const body = response?.json()
-            expect(body.name).toBe('@activepieces/ce-scoped-piece')
+            expect(body.name).toBe('@wippa/ce-scoped-piece')
         })
     })
 
@@ -206,7 +206,7 @@ describe('Piece Metadata CE API', () => {
     describe('release-compatibility fallback', () => {
         it('GET /v1/pieces/:scope/:name falls back to the newest compatible version when latest requires a newer release', async () => {
             const compatible = createMockPieceMetadata({
-                name: '@activepieces/piece-release-test',
+                name: '@wippa/piece-release-test',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.32',
@@ -214,7 +214,7 @@ describe('Piece Metadata CE API', () => {
                 maximumSupportedRelease: '99999.99999.9999',
             })
             const incompatible = createMockPieceMetadata({
-                name: '@activepieces/piece-release-test',
+                name: '@wippa/piece-release-test',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.33',
@@ -225,7 +225,7 @@ describe('Piece Metadata CE API', () => {
             await pieceCache(mockLog).setup()
 
             const ctx = await createTestContext(app!)
-            const response = await ctx.get('/v1/pieces/@activepieces/piece-release-test')
+            const response = await ctx.get('/v1/pieces/@wippa/piece-release-test')
 
             expect(response?.statusCode).toBe(StatusCodes.OK)
             expect(response?.json().version).toBe('0.1.32')
@@ -269,7 +269,7 @@ describe('Piece Metadata CE API', () => {
 
         it('GET /v1/pieces/:scope/:name returns 404 when all versions are incompatible', async () => {
             const incompatible = createMockPieceMetadata({
-                name: '@activepieces/piece-all-incompatible',
+                name: '@wippa/piece-all-incompatible',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.33',
@@ -280,7 +280,7 @@ describe('Piece Metadata CE API', () => {
             await pieceCache(mockLog).setup()
 
             const ctx = await createTestContext(app!)
-            const response = await ctx.get('/v1/pieces/@activepieces/piece-all-incompatible')
+            const response = await ctx.get('/v1/pieces/@wippa/piece-all-incompatible')
 
             expect(response?.statusCode).toBe(StatusCodes.NOT_FOUND)
         })
@@ -344,7 +344,7 @@ describe('Piece Metadata CE API', () => {
         it('should reject deleting a platform-owned official piece with 403', async () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
-                name: '@activepieces/official-piece',
+                name: '@wippa/official-piece',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
@@ -649,7 +649,7 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces/:scope/:name hides audience:ai by default', async () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
-                name: '@activepieces/audience-scoped-piece',
+                name: '@wippa/audience-scoped-piece',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
@@ -657,7 +657,7 @@ describe('Piece Metadata CE API', () => {
             await db.save('piece_metadata', mockPiece)
             await pieceCache(mockLog).setup()
 
-            const response = await ctx.get('/v1/pieces/@activepieces/audience-scoped-piece')
+            const response = await ctx.get('/v1/pieces/@wippa/audience-scoped-piece')
 
             expect(response?.statusCode).toBe(StatusCodes.OK)
             const body = response?.json()

@@ -6,7 +6,7 @@ import {
   SignUpRequest,
   UserIdentity,
   VerifyEmailRequestBody,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 
 import { authenticationApi } from '@/api/authentication-api';

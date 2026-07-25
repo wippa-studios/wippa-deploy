@@ -1,4 +1,4 @@
-import { isNil, SeekPage } from '@activepieces/core-utils';
+import { isNil, SeekPage } from '@wippa/core-utils';
 import {
   CreatePlatformProjectRequest,
   ListProjectRequestForPlatformQueryParams,
@@ -6,7 +6,7 @@ import {
   ProjectType,
   ProjectWithLimits,
   ProjectWithLimitsWithPlatform,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { queryCollectionOptions } from '@tanstack/query-db-collection';
 import {
   and,

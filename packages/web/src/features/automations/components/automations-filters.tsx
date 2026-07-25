@@ -1,9 +1,9 @@
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
 import {
   AppConnectionWithoutSensitiveData,
   FlowStatus,
   FolderDto,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import {
   Filter,

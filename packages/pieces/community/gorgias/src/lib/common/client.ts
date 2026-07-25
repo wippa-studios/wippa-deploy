@@ -5,7 +5,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { GorgiasAuth, getGorgiasBaseUrl } from '../auth';
 
 export type GorgiasPaginationMeta = {

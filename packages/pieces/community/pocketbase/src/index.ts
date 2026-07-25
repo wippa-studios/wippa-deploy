@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { getFullList } from './lib/actions/get-full-list';
 import { getList } from './lib/actions/get-list';
 import { getRecord } from './lib/actions/get-record';
 import { createRecord } from './lib/actions/create-record';
 import { updateRecord } from './lib/actions/update-record';
 import { deleteRecord } from './lib/actions/delete-record';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 const markdown = `
 Provide your PocketBase **host URL** and **superuser credentials**.

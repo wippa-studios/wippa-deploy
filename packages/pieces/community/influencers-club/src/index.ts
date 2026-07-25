@@ -1,10 +1,10 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { influencersClubAuth } from './lib/common/auth';
 import { enrichCreatorByEmail } from './lib/actions/enrich-creator-by-email';
 import { enrichCreatorByHandle } from './lib/actions/enrich-creator-by-handle';
 import { findSimilarCreator } from './lib/actions/find-similar-creator';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const influencersClub = createPiece({
   displayName: 'Influencers.club',

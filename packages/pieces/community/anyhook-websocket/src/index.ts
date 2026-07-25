@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { websocketCommon } from './lib/common/common';
 import { websocketSubscriptionTrigger } from './lib/triggers/websocket-subscription-trigger';
 

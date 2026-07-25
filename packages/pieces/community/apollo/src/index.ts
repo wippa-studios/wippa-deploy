@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { matchPerson } from './lib/actions/match-person';
 import { enrichCompany } from './lib/actions/enrich-company';
 import { newsArticlesSearch } from './lib/actions/news-articles-search';
 import { organizationJobPostings } from './lib/actions/organization-job-postings';
 import { organizationSearch } from './lib/actions/organization-search';
 import { peopleSearch } from './lib/actions/people-search';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { apolloAuth } from './lib/auth';
 
 export const apollo = createPiece({

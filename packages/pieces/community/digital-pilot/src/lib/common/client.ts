@@ -3,7 +3,7 @@ import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 const BASE_URL = 'https://api.digitalpilot.app/v1';
 

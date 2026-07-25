@@ -1,8 +1,8 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createTranscription } from './lib/actions/create-transcription';
 import { uploadAFile } from './lib/actions/upload-a-file';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { gladiaAuth } from './lib/common/auth';
 
 export const gladia = createPiece({

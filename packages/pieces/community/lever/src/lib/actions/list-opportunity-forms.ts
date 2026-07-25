@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { LeverAuth, leverAuth } from '../..';
 import { LEVER_BASE_URL } from '../..';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 export const listOpportunityForms = createAction({
   name: 'listOpportunityForms',

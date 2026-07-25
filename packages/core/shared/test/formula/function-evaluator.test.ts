@@ -1,4 +1,4 @@
-import { formulaEvaluator } from '@activepieces/core-formula'
+import { formulaEvaluator } from '@wippa/core-formula'
 import { describe, expect, it } from 'vitest'
 
 const ok = (expr: string, data: Record<string, unknown> = {}) =>

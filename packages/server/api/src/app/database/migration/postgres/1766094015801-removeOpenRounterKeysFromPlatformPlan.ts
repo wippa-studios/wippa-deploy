@@ -1,4 +1,4 @@
-import { AIProviderName, apId } from '@activepieces/core-utils'
+import { AIProviderName, apId } from '@wippa/core-utils'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { encryptUtils } from '../../../helper/encryption'
 

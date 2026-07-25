@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { quickbaseAuth } from '../auth';
 import { appIdProp, tableIdProp, mergeFieldProp } from '../common/props';
 import { QuickbaseClient } from '../common/client';

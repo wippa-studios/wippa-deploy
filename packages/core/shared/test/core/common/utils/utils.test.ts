@@ -15,7 +15,7 @@ import {
     startCase,
     unique,
     validateIndexBound,
-} from '@activepieces/core-utils'
+} from '@wippa/core-utils'
 
 describe('setAtPath', () => {
     it('should set a value at a dot-separated path', () => {

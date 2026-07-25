@@ -1,5 +1,5 @@
-import { SeekPage } from '@activepieces/core-utils';
-import { FolderDto, PopulatedFlow, Table } from '@activepieces/shared';
+import { SeekPage } from '@wippa/core-utils';
+import { FolderDto, PopulatedFlow, Table } from '@wippa/shared';
 
 export type TreeItemType = 'folder' | 'flow' | 'table' | 'load-more-folder';
 

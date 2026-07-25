@@ -1,5 +1,5 @@
-import { isNil } from '@activepieces/core-utils';
-import { AgentTool, mcpToolNameUtils } from '@activepieces/shared';
+import { isNil } from '@wippa/core-utils';
+import { AgentTool, mcpToolNameUtils } from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronLeft } from 'lucide-react';
 import { useMemo, useEffect } from 'react';
@@ -38,12 +38,12 @@ type AgentToolsDialogProps = {
 };
 
 const excludedPieces = [
-  '@activepieces/piece-ai',
-  '@activepieces/piece-mcp',
-  '@activepieces/piece-openai',
-  '@activepieces/piece-claude',
-  '@activepieces/piece-google-gemini',
-  '@activepieces/piece-grok-xai',
+  '@wippa/piece-ai',
+  '@wippa/piece-mcp',
+  '@wippa/piece-openai',
+  '@wippa/piece-claude',
+  '@wippa/piece-google-gemini',
+  '@wippa/piece-grok-xai',
 ];
 
 export function AgentPieceDialog({

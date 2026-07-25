@@ -1,4 +1,4 @@
-import { SsoDomainVerificationStatus } from '@activepieces/shared';
+import { SsoDomainVerificationStatus } from '@wippa/shared';
 import { t } from 'i18next';
 import { CheckCircle, LockIcon, MailIcon, Earth } from 'lucide-react';
 import { toast } from 'sonner';

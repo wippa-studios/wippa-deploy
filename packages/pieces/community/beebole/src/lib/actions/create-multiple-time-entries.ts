@@ -1,7 +1,7 @@
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { beeboleAuth } from '../common/auth';
 import { beeboleClient } from '../common/client';
 import { beeboleProps } from '../common/props';

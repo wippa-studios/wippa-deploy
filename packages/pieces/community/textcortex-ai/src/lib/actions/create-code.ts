@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { textcortexAuth } from '../common/auth';
 import { textcortexCommon } from '../common/client';
 import { PROGRAMMING_LANGUAGES, API_ENDPOINTS, AI_MODELS } from '../common/common';

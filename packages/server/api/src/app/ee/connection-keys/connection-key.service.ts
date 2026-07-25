@@ -1,6 +1,6 @@
 import crypto from 'crypto'
-import { ActivepiecesError, apId, Cursor, ErrorCode, isNil, ProjectId, SeekPage } from '@activepieces/core-utils'
-import { AppConnectionScope, AppConnectionType, AppConnectionWithoutSensitiveData, AppCredentialType, ConnectionKey, ConnectionKeyId, GetOrDeleteConnectionFromTokenRequest, UpsertApiKeyConnectionFromToken, UpsertConnectionFromToken, UpsertOAuth2ConnectionFromToken, UpsertSigningKeyConnection } from '@activepieces/shared'
+import { ActivepiecesError, apId, Cursor, ErrorCode, isNil, ProjectId, SeekPage } from '@wippa/core-utils'
+import { AppConnectionScope, AppConnectionType, AppConnectionWithoutSensitiveData, AppCredentialType, ConnectionKey, ConnectionKeyId, GetOrDeleteConnectionFromTokenRequest, UpsertApiKeyConnectionFromToken, UpsertConnectionFromToken, UpsertOAuth2ConnectionFromToken, UpsertSigningKeyConnection } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import jsonwebtoken from 'jsonwebtoken'
 import { appConnectionService } from '../../app-connection/app-connection-service/app-connection-service'
@@ -23,7 +23,7 @@ export const connectionKeyService = (log: FastifyBaseLogger) => ({
         const project = await projectService(log).getOneOrThrow(projectId)
 
         // TODO this is hardcoded for now, just to make sure it's not changed on client side
-        const finalAppName = appName.replace('@activepieces/piece-', '')
+        const finalAppName = appName.replace('@wippa/piece-', '')
         if (connectionName == null) {
             throw new ActivepiecesError({
                 code: ErrorCode.INVALID_OR_EXPIRED_JWT_TOKEN,
@@ -62,7 +62,7 @@ export const connectionKeyService = (log: FastifyBaseLogger) => ({
         }
 
         // TODO this is hardcoded for now, just to make sure it's not changed on client side
-        const finalAppName = `@activepieces/piece-${appCredential.appName}`
+        const finalAppName = `@wippa/piece-${appCredential.appName}`
         switch (appCredential.settings.type) {
             case AppCredentialType.API_KEY: {
                 const apiRequest = request as UpsertApiKeyConnectionFromToken

@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { HttpError } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { HttpError } from '@wippa/pieces-common';
 import { dimoAuth } from '../../auth';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 import { DimoClient, getTirePressurePositionLabel, getNumberExpression } from '../../common/helpers';
 import {
 	CreateWebhookParams,

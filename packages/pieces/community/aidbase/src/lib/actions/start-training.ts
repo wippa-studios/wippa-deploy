@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { aidbaseAuth } from '../common/auth';
 import { aidbaseClient } from '../common/client';
 import { knowledgeItemDropdown } from '../common/props';

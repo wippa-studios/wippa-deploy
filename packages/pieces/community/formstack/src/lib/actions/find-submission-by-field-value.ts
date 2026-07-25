@@ -2,10 +2,10 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { formStackAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const findSubmissionByFieldValue = createAction({
   auth: formStackAuth,

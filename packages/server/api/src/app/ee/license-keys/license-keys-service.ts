@@ -1,5 +1,5 @@
-import { ActivepiecesError, ErrorCode, isNil } from '@activepieces/core-utils'
-import { ApEdition, CreateTrialLicenseKeyRequestBody, LicenseKeyEntity, PlanName, TeamProjectsLimit, TelemetryEventName } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
+import { ApEdition, CreateTrialLicenseKeyRequestBody, LicenseKeyEntity, PlanName, TeamProjectsLimit, TelemetryEventName } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

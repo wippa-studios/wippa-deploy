@@ -3,7 +3,7 @@ import {
   AgentToolType,
   mcpToolNameUtils,
   PopulatedFlow,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Workflow } from 'lucide-react';
 import { useMemo } from 'react';

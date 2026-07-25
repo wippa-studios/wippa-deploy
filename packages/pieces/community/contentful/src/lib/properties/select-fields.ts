@@ -1,6 +1,6 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownState, Property } from '@wippa/pieces-framework';
 import { ContentfulAuth, PropertyKeys, makeClient } from '../common';
-import { isEmpty, isNil } from '@activepieces/pieces-framework';
+import { isEmpty, isNil } from '@wippa/pieces-framework';
 
 const SelectFields = Property.MultiSelectDropdown({
   displayName: 'Return Fields', 

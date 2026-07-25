@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 
 export const cyberarkAuth = PieceAuth.CustomAuth({
   description: 'CyberArk PVWA Authentication',

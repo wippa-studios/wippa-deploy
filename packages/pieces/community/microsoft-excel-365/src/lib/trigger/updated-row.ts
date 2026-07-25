@@ -2,8 +2,8 @@ import {
     AppConnectionValueForAuthProperty,
     Property,
     createTrigger,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import { excelCommon } from '../common/common';
 import { commonProps } from '../common/props';
 import { getDrivePath } from '../common/helpers';
@@ -12,7 +12,7 @@ import {
     DedupeStrategy,
     Polling,
     pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { createHmac } from 'node:crypto';
 
 const triggerName = 'updated_row';

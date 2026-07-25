@@ -1,11 +1,11 @@
-import { Permission } from '@activepieces/core-utils';
+import { Permission } from '@wippa/core-utils';
 import {
   FlowOperationType,
   FlowVersion,
   FlowVersionState,
   GitBranchType,
   PopulatedFlow,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import {

@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { calculateAverage } from './lib/actions/calculate-average';
 import { calculateSum } from './lib/actions/calculate-sum';
 import { countUniques } from './lib/actions/count-uniques';
 import { getMinMax } from './lib/actions/get-min-max';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const dataSummarizer = createPiece({
   displayName: 'Data Summarizer',

@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { pollybotAuth } from '../auth';
 export const newLead = createTrigger({
   auth: pollybotAuth,

@@ -1,5 +1,5 @@
-import { ProjectRole } from '@activepieces/core-utils'
-import { PlatformRole, PrincipalType, UpdateProjectRoleRequestBody } from '@activepieces/shared'
+import { ProjectRole } from '@wippa/core-utils'
+import { PlatformRole, PrincipalType, UpdateProjectRoleRequestBody } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

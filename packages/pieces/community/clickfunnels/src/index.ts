@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { scheduledAppointmentEventCreated } from './lib/triggers/scheduled-appointment-event-created';
 import {
   CLICKFUNNELS_APIKEY_AUTH,
@@ -18,8 +18,8 @@ import { removeTagFromContact } from './lib/actions/remove-tag-from-contact';
 import { enrollAContactIntoACourse } from './lib/actions/enroll-a-contact-into-a-course';
 import { updateOrCreateContact } from './lib/actions/update-or-create-contact';
 import { searchContacts } from './lib/actions/search-contacts';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const clickfunnels = createPiece({
   displayName: 'ClickFunnels',

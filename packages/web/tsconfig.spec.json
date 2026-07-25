@@ -8,16 +8,16 @@
       "@/*": [
         "./src/*"
       ],
-      "@activepieces/shared": [
+      "@wippa/shared": [
         "../../packages/core/shared/src"
       ],
-      "@activepieces/pieces-framework": [
+      "@wippa/pieces-framework": [
         "../../packages/pieces/framework/src"
       ],
       "ee-embed-sdk": [
         "../../packages/ee/embed-sdk/src"
       ],
-      "@activepieces/piece-ai": [
+      "@wippa/piece-ai": [
         "../../packages/pieces/community/ai/src"
       ]
     },

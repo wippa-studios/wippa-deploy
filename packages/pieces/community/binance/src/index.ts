@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 import { fetchCryptoPairPrice } from './lib/actions/fetch-pair-price';
 
 export const binance = createPiece({

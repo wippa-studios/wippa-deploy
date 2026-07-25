@@ -43,7 +43,7 @@ You are working in the Activepieces web application (`packages/web`).
 
 ## React Hook Form
 
-- **Zod error messages must use `formErrors`** — For standard validation messages (e.g. required fields) use the `formErrors` constant from `@activepieces/shared`. For custom messages, add the key to `packages/web/public/locales/en/translation.json` first, then use the key string. `FormMessage` automatically calls `t()` on every error message, so the string must be a valid translation key.
+- **Zod error messages must use `formErrors`** — For standard validation messages (e.g. required fields) use the `formErrors` constant from `@wippa/shared`. For custom messages, add the key to `packages/web/public/locales/en/translation.json` first, then use the key string. `FormMessage` automatically calls `t()` on every error message, so the string must be a valid translation key.
 - **Always use `zodResolver`** — Wire the Zod schema directly to the form: `useForm({ resolver: zodResolver(MySchema) })`.
 - **Always set `defaultValues`** — Prevents uncontrolled→controlled warnings and ensures clean resets. Derive them from a helper, not inline literals.
 - **Use `mode: 'onChange'`** — Gives immediate validation feedback as the user types.

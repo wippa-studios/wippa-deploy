@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-figma",
+  "name": "@wippa/piece-figma",
   "version": "0.5.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -9,11 +9,11 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "nanoid": "3.3.8",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

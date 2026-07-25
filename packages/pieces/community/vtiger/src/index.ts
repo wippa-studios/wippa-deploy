@@ -2,8 +2,8 @@ import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createRecord } from './lib/actions/create-record';
 import { deleteRecord } from './lib/actions/delete-record';
 import { getRecord } from './lib/actions/get-record';
@@ -13,7 +13,7 @@ import { updateRecord } from './lib/actions/update-record';
 import { instanceLogin, isBaseUrl } from './lib/common';
 import { newOrUpdatedRecord } from './lib/triggers/new-or-updated-record';
 import { queryRecords } from './lib/actions/query-records';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 const markdownProperty = `
 To obtain your Access Key, follow these steps:

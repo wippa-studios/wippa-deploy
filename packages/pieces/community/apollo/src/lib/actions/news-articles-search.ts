@@ -1,10 +1,10 @@
 import { apolloAuth } from '../auth';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import {
   Property,
   StoreScope,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 export const newsArticlesSearch = createAction({
   auth: apolloAuth,

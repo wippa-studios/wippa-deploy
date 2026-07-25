@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { base44Auth } from '../..';
 import { createClient, Base44Error, type Base44Client } from '@base44/sdk';
 

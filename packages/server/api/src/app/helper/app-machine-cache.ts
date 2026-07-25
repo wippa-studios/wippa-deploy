@@ -1,7 +1,7 @@
 import os from 'os'
-import { parseToJsonIfPossible } from '@activepieces/core-utils'
-import { apDayjs, apVersionUtil, systemUsage } from '@activepieces/server-utils'
-import { AppInstance } from '@activepieces/shared'
+import { parseToJsonIfPossible } from '@wippa/core-utils'
+import { apDayjs, apVersionUtil, systemUsage } from '@wippa/server-utils'
+import { AppInstance } from '@wippa/shared'
 import { redisConnections } from '../database/redis-connections'
 
 // Apps are stateless behind the load balancer and, unlike workers, have no inbound healthcheck

@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { addContact } from './lib/actions/add-contact';
 import { deleteContacts } from './lib/actions/delete-contacts';
 import { sendSms } from './lib/actions/send-sms';
 import { sendMms } from './lib/actions/send-mms';
 import { triggers } from './lib/triggers';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { krispcallAuth } from './lib/auth';
 
 export type krispcallAuth = {

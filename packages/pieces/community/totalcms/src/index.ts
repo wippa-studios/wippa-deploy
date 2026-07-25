@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { cmsAuth } from './lib/auth';
 
 import { getBlogPostAction } from './lib/actions/get-blog-post';
@@ -15,8 +15,8 @@ import { saveTextAction } from './lib/actions/save-text';
 import { saveToggleAction } from './lib/actions/save-toggle';
 import { saveVideoAction } from './lib/actions/save-video';
 
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { newBlogPost } from './lib/triggers/new-blog-post';
 
 export const totalcms = createPiece({

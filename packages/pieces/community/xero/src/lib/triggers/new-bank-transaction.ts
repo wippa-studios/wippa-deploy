@@ -4,7 +4,7 @@ import {
   PiecePropValueSchema,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { xeroAuth } from '../..';
 import {
   DedupeStrategy,
@@ -12,7 +12,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { props } from '../common/props';
 
 function parseXeroDateToEpoch(dateVal: unknown): number {

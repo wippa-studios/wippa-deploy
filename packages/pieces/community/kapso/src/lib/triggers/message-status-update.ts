@@ -2,8 +2,8 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import { kapsoAuth } from '../common';
 import { parseWebhookPayload } from '../common/webhook';
 

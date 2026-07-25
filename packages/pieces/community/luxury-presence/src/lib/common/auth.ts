@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const luxuryPresenceAuth = PieceAuth.SecretText({
   displayName: 'API Key',

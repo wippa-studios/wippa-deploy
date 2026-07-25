@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { codyAuth } from '../..';
 import { codyClient } from '../common/client';
 import { folderIdDropdown } from '../common/props';

@@ -1,4 +1,4 @@
-import { ListAuditEventsRequest, PrincipalType } from '@activepieces/shared'
+import { ListAuditEventsRequest, PrincipalType } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { securityAccess } from '../../core/security/authorization/fastify-security'
 import { platformMustHaveFeatureEnabled } from '../authentication/ee-authorization'

@@ -1,9 +1,9 @@
-import { AppConnectionValueForAuthProperty, Property } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, Property } from '@wippa/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { jotformAuth } from '../..';
 
 export const jotformCommon = {

@@ -4,14 +4,14 @@ import {
   createTrigger,
   PiecePropValueSchema,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { comfyIcuApiCall, commonProps } from '../common';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 
 const polling: Polling<

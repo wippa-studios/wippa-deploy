@@ -1,4 +1,4 @@
-import { ProjectId } from '@activepieces/core-utils'
+import { ProjectId } from '@wippa/core-utils'
 import { OAuth2GrantType } from '../../../automation/app-connection/dto/upsert-app-connection-request'
 
 export type AppCredentialId = string

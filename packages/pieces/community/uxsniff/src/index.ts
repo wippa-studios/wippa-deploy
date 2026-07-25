@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { newFeedbackTrigger } from './lib/triggers/new-feedback';
 import { newSurveyResponseTrigger } from './lib/triggers/new-survey-response';
 

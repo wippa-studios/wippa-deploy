@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import TurndownService from '@joplin/turndown';
 
 import { gfm } from '@joplin/turndown-plugin-gfm';

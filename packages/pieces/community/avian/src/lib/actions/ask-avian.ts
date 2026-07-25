@@ -1,9 +1,9 @@
 import { avianAuth } from '../auth';
-import { createAction, Property, StoreScope } from '@activepieces/pieces-framework';
+import { createAction, Property, StoreScope } from '@wippa/pieces-framework';
 import OpenAI from 'openai';
 import { baseUrl } from '../common/common';
 import * as z from 'zod/mini'
-import { propsValidation, httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { propsValidation, httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
 
 export const askAvian = createAction({
   auth: avianAuth,

@@ -1,4 +1,4 @@
-import { Property, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { Property, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
 import { iloveapiAuth } from '../common/auth';
 import { matchesEvent, webhookInstructions } from './common';
 

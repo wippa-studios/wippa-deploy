@@ -1,7 +1,7 @@
 import {
   UpdateAICreditsAutoTopUpParamsSchema,
   AiCreditsAutoTopUpState,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { airtableAuth } from '../auth';
 import { airtableCommon } from '../common';
 import { AirtableTable } from '../common/models';

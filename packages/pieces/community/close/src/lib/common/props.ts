@@ -1,6 +1,6 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
 import { closePaginatedApiCall } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { closeAuth } from '../auth';
 
 export const customFields = (objectType: string) =>

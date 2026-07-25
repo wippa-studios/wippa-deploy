@@ -1,4 +1,4 @@
-import { EventDestination } from '@activepieces/shared';
+import { EventDestination } from '@wippa/shared';
 import { t } from 'i18next';
 import { ExternalLink, Globe, Workflow } from 'lucide-react';
 

@@ -1,8 +1,8 @@
-import { safeHttp } from '@activepieces/server-utils'
-import { AgentToolType, McpAuthType, McpProtocol } from '@activepieces/shared'
+import { safeHttp } from '@wippa/server-utils'
+import { AgentToolType, McpAuthType, McpProtocol } from '@wippa/shared'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-vi.mock('@activepieces/server-utils', () => ({
+vi.mock('@wippa/server-utils', () => ({
     safeHttp: { axios: { request: vi.fn() } },
 }))
 

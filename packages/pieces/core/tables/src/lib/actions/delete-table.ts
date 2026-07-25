@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, PieceAuth } from '@activepieces/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, PieceAuth } from '@wippa/pieces-framework';
 import { tablesCommon } from '../common';
 
 export const deleteTable = createAction({

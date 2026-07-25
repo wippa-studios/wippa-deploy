@@ -3,7 +3,7 @@ import {
   PopulatedFlow,
   ProjectMemberWithUser,
   Table,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { t } from 'i18next';
 import { Activity, Clock, Info, Type, User } from 'lucide-react';

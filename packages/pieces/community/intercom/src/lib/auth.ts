@@ -1,9 +1,9 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 
 const regionProp = Property.StaticDropdown({
 	displayName: 'Region',

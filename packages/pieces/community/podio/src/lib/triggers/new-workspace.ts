@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { podioAuth } from '../auth';
 import { podioApiCall, getAccessToken, dynamicSpaceProperty, dynamicOrgProperty } from '../common';
 

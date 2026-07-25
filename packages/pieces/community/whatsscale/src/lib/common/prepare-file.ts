@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 import { whatsscaleClient } from './client';
 
 export async function prepareFile(apiKey: string, fileUrl: string, mediaType?: string): Promise<string> {

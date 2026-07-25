@@ -1,6 +1,6 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
 
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createPhotoPost } from './lib/actions/create-photo-post';
 import { createPost } from './lib/actions/create-post';
 import { createVideoPost } from './lib/actions/create-video-post';

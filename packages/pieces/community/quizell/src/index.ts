@@ -1,7 +1,7 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
 import { quizellApiCall } from './lib/common/client';
 import { createCustomer } from './lib/actions/create-customer';
 import { updateCustomer } from './lib/actions/update-customer';

@@ -1,5 +1,5 @@
-import { AuthenticationType, HttpError, HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { AuthenticationType, HttpError, HttpMethod, httpClient } from '@wippa/pieces-common';
+import { tryCatch } from '@wippa/pieces-framework';
 
 import type {
 	TallyForm,

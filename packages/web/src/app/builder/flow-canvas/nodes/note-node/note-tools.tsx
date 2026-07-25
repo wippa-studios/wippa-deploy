@@ -1,4 +1,4 @@
-import { NoteColorVariant } from '@activepieces/shared';
+import { NoteColorVariant } from '@wippa/shared';
 import { Editor } from '@tiptap/core';
 import { t } from 'i18next';
 import { TrashIcon } from 'lucide-react';

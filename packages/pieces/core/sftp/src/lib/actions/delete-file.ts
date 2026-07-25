@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { endClient, getClient, getProtocolBackwardCompatibility } from '../common';
 import { sftpAuth } from '../auth';
 import { Client as FTPClient, FTPError } from 'basic-ftp';

@@ -1,4 +1,4 @@
-import { McpServer, UpdateMcpServerRequest } from '@activepieces/shared';
+import { McpServer, UpdateMcpServerRequest } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

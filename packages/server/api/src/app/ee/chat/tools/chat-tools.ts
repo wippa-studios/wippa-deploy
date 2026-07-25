@@ -1,6 +1,6 @@
-import { isNil, isObject, isString, parseToJsonIfPossible, Permission, spreadIfDefined, tryCatch } from '@activepieces/core-utils'
-import { chatAiUtils } from '@activepieces/server-utils'
-import { AppConnectionStatus, AppConnectionType, chatToolClassification, FileCompression, FileType, FlowRunStatus, FlowStatus, Project, RunEnvironment } from '@activepieces/shared'
+import { isNil, isObject, isString, parseToJsonIfPossible, Permission, spreadIfDefined, tryCatch } from '@wippa/core-utils'
+import { chatAiUtils } from '@wippa/server-utils'
+import { AppConnectionStatus, AppConnectionType, chatToolClassification, FileCompression, FileType, FlowRunStatus, FlowStatus, Project, RunEnvironment } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { appConnectionService } from '../../../app-connection/app-connection-service/app-connection-service'
 import { fileService } from '../../../file/file.service'
@@ -42,7 +42,7 @@ function toFlowRunStatus(value?: string): FlowRunStatus | undefined {
 }
 
 function pieceShortName(fullName: string): string {
-    return fullName.replace('@activepieces/piece-', '')
+    return fullName.replace('@wippa/piece-', '')
 }
 
 function pieceDisplayLabel(shortName: string): string {
@@ -369,7 +369,7 @@ function buildAdhocOffload({ projectId, platformId, pieceName, actionName, log }
         thresholdBytes: LARGE_RESULT_OFFLOAD_BYTES,
         handle: async ({ payload, byteSize, label, statusNote }) => {
             const json = JSON.stringify(payload, null, 2)
-            const fileName = `${pieceName.replace('@activepieces/piece-', '')}-${actionName}.json`
+            const fileName = `${pieceName.replace('@wippa/piece-', '')}-${actionName}.json`
             const { data: saved, error } = await tryCatch(() => fileService(log).save({
                 projectId,
                 platformId,

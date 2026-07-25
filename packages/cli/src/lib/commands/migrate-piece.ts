@@ -14,7 +14,7 @@ function reportMigration({ pieceFolder, label, dryRun }: { pieceFolder: string, 
     }
     console.info(chalk.green(`${dryRun ? '[dry run] ' : ''}✓ ${label}`))
     if (report.repointedFiles.length > 0) {
-        console.info(`    repointed imports in ${report.repointedFiles.length} file(s) → @activepieces/pieces-framework`)
+        console.info(`    repointed imports in ${report.repointedFiles.length} file(s) → @wippa/pieces-framework`)
     }
     if (report.manifestChanged) {
         console.info('    updated package.json (dropped shared, added core build deps, moved tslib to devDependencies, added bundle script)')
@@ -42,7 +42,7 @@ async function migrateAll({ dryRun }: { dryRun: boolean }): Promise<void> {
 }
 
 export const migratePieceCommand = new Command('migrate')
-    .description('Migrate a piece to the self-contained bundle model: repoint imports to @activepieces/pieces-framework, fix package.json, and add the import-boundary lint rule')
+    .description('Migrate a piece to the self-contained bundle model: repoint imports to @wippa/pieces-framework, fix package.json, and add the import-boundary lint rule')
     .argument('[name]', 'name of the piece to migrate')
     .option('--name <pieceName>', 'name of the piece to migrate')
     .option('--all', 'migrate every piece under packages/pieces')

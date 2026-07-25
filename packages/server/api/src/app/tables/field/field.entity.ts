@@ -1,4 +1,4 @@
-import { Cell, Field, FieldType, Project, Table } from '@activepieces/shared'
+import { Cell, Field, FieldType, Project, Table } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { ApIdSchema, BaseColumnSchemaPart } from '../../database/database-common'
 

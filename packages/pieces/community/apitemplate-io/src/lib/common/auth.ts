@@ -1,7 +1,7 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
 import { makeRequest, ApitemplateAuthConfig } from './client';
 import { regionDropdown } from './props';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@wippa/pieces-common';
 
 export const ApitemplateAuth = PieceAuth.CustomAuth({
   description: `

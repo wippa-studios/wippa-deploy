@@ -1,6 +1,6 @@
-import { AP_FUNCTIONS, formulaEvaluator } from '@activepieces/core-formula';
-import { assertNotNullOrUndefined, isNil } from '@activepieces/core-utils';
-import { FlowAction, FlowTrigger } from '@activepieces/shared';
+import { AP_FUNCTIONS, formulaEvaluator } from '@wippa/core-formula';
+import { assertNotNullOrUndefined, isNil } from '@wippa/core-utils';
+import { FlowAction, FlowTrigger } from '@wippa/shared';
 import { MentionNodeAttrs } from '@tiptap/extension-mention';
 import { JSONContent } from '@tiptap/react';
 import { Variable as VariableIcon } from 'lucide-react';

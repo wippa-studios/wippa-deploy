@@ -1,7 +1,7 @@
 import {
 	httpClient,
 	HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import Ajv from 'ajv';
 import { randomUUID } from 'crypto';
 

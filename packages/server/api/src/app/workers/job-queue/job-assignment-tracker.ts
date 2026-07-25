@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/core-utils'
+import { isNil } from '@wippa/core-utils'
 
 // Tracks which in-flight job each worker CONNECTION holds. The app moves a job to BullMQ `active`
 // when a worker polls — BEFORE the worker has received/started it — so a job orphaned by a

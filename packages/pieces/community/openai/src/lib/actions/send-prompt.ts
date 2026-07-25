@@ -2,7 +2,7 @@ import {
   createAction,
   Property,
   StoreScope,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import OpenAI from 'openai';
 import { openaiAuth } from '../auth';
 import {
@@ -12,7 +12,7 @@ import {
   reduceContextSize,
 } from '../common/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@wippa/pieces-common';
 
 export const askOpenAI = createAction({
   audience: 'human',

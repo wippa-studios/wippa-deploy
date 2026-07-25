@@ -1,16 +1,16 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { BASE_URL } from './lib/common/constants';
 import { uploadDocumentAction } from './lib/actions/upload-document';
 import { createPresentationAction } from './lib/actions/create-presentation';
 import { editPresentationAction } from './lib/actions/edit-presentation';
 import { getTaskStatusAction } from './lib/actions/get-task-status';
 import { newPresentationTrigger } from './lib/triggers/new-presentation';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { slidespeakAuth } from './lib/auth';
 
 export const slidespeak = createPiece({

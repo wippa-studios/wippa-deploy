@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-dimo` to build the library.
+Run `turbo run build --filter=@wippa/piece-dimo` to build the library.

@@ -1,8 +1,8 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { opnformNewSubmission } from './lib/triggers/new-submission';
 import { API_URL_DEFAULT } from './lib/common';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { opnformAuth } from './lib/auth';
 
 export const opnform = createPiece({

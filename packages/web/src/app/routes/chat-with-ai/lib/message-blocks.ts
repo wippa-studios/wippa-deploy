@@ -1,4 +1,4 @@
-import { BatchProgressData } from '@activepieces/shared';
+import { BatchProgressData } from '@wippa/shared';
 
 import { ToolCallMeta } from '@/features/chat/lib/chat-store';
 import {

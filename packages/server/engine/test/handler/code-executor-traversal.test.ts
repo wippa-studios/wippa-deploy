@@ -1,4 +1,4 @@
-import { CodeAction, FlowRunStatus } from '@activepieces/shared'
+import { CodeAction, FlowRunStatus } from '@wippa/shared'
 import { codeExecutor } from '../../src/lib/handler/code-executor'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { buildCodeAction, generateMockEngineConstants } from './test-helper'

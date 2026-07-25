@@ -1,11 +1,11 @@
 import { acumbamailAuth } from '../auth';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@wippa/pieces-framework';
 import { acumbamailCommon } from '../common';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import FormData from 'form-data';
 
 export const duplicateTemplateAction = createAction({

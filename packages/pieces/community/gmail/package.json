@@ -1,11 +1,11 @@
 {
-  "name": "@activepieces/piece-gmail",
+  "name": "@wippa/piece-gmail",
   "version": "0.12.8",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
     "@googleapis/gmail": "17.0.0",
     "@googleapis/oauth2": "5.0.1",
     "dayjs": "1.11.9",
@@ -13,8 +13,8 @@
     "mailparser": "3.9.3",
     "mime-types": "2.1.35",
     "nodemailer": "8.0.5",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "scripts": {
     "build": "tsc -p tsconfig.lib.json && cp package.json dist/",

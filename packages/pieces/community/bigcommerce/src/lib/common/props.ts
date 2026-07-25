@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@wippa/pieces-framework';
 import { handleDropdownError } from './constants';
 import { bigCommerceApiService } from './requests';
 import { bigcommerceAuth } from './auth';

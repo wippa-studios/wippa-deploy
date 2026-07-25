@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { AppConnectionScope, AppConnectionType, PackageType, PlatformRole, PrincipalType, UpdateGlobalConnectionValueRequestBody, UpsertGlobalConnectionRequestBody } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { AppConnectionScope, AppConnectionType, PackageType, PlatformRole, PrincipalType, UpdateGlobalConnectionValueRequestBody, UpsertGlobalConnectionRequestBody } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../helpers/auth'

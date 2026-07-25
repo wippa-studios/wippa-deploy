@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, Property } from '@wippa/pieces-framework';
 import { medullarAuth } from '../auth';
 
 export const medullarCommon = {

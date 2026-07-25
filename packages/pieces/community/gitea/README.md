@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-gitea` to build the library.
+Run `turbo run build --filter=@wippa/piece-gitea` to build the library.

@@ -1,9 +1,9 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { oncehubAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { findContact } from './lib/actions/find-contact';
 import { createContact } from './lib/actions/create-contact';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { bookingCanceled } from './lib/triggers/booking-canceled';
 import { bookingCanceledThenRescheduled } from './lib/triggers/booking-canceled-then-rescheduled';
 import { bookingCompleted } from './lib/triggers/booking-completed';

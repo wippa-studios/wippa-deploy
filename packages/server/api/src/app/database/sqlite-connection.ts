@@ -1,6 +1,6 @@
 import { mkdirSync } from 'node:fs'
 import path from 'node:path'
-import { ApEdition, ApEnvironment } from '@activepieces/shared'
+import { ApEdition, ApEnvironment } from '@wippa/shared'
 import { DataSource, MigrationInterface } from 'typeorm'
 import { system } from '../helper/system/system'
 import { AppSystemProp } from '../helper/system/system-props'

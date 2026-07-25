@@ -1,7 +1,7 @@
 import {
   PlatformPlanLimits,
   PlatformWithoutSensitiveData,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { Check, Lock } from 'lucide-react';
 

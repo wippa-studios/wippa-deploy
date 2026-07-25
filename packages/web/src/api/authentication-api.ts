@@ -1,4 +1,4 @@
-import { ProjectRole } from '@activepieces/core-utils';
+import { ProjectRole } from '@wippa/core-utils';
 import {
   CreateOtpRequestBody,
   GetCurrentProjectMemberRoleQuery,
@@ -12,7 +12,7 @@ import {
   SwitchPlatformRequest,
   ThirdPartyAuthnProviderEnum,
   UserIdentity,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

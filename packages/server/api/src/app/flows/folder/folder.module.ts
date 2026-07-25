@@ -1,5 +1,5 @@
-import { Permission } from '@activepieces/core-utils'
-import { ApplicationEventName, CreateFolderRequest, DeleteFolderRequest, ListFolderRequest, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI, UpdateFolderRequest } from '@activepieces/shared'
+import { Permission } from '@wippa/core-utils'
+import { ApplicationEventName, CreateFolderRequest, DeleteFolderRequest, ListFolderRequest, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI, UpdateFolderRequest } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'

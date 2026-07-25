@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { pdfcrowdAuth } from '../common/auth';
 import { getAuthHeader, getConvertUrl } from '../common/client';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import FormData from 'form-data';
 
 export const urlToPdfAction = createAction({

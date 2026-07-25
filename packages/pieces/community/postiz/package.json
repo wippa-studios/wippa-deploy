@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-postiz",
+  "name": "@wippa/piece-postiz",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",
@@ -10,10 +10,10 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@wippa/pieces-common": "workspace:*",
+    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "^2.3.0"

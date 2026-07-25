@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { extractDateParts } from '../src/lib/actions/extract-date-parts';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 describe('extractDateParts', () => {
   test('extracts multiple parts', async () => {

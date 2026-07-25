@@ -1,5 +1,5 @@
-import { ProjectRole } from '@activepieces/core-utils'
-import { ApEdition, DefaultProjectRole, InvitationStatus, InvitationType, OtpType, PlatformRole, Principal, PrincipalType, ProjectType, UserStatus } from '@activepieces/shared'
+import { ProjectRole } from '@wippa/core-utils'
+import { ApEdition, DefaultProjectRole, InvitationStatus, InvitationType, OtpType, PlatformRole, Principal, PrincipalType, ProjectType, UserStatus } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { ampecoAuth } from '../../../common/auth';
 import { handleApiError, makeAmpecoApiCall, prepareQueryParams, prepareRequestBody, processPathParameters } from '../../../common/utils';
 import { CreateFlexibilityAssetResponse } from '../../../models/responses';

@@ -1,4 +1,4 @@
-import { ChatConversationStatus } from '@activepieces/shared'
+import { ChatConversationStatus } from '@wippa/shared'
 
 const DEFAULT_BASE_URL = 'http://localhost:3000/api'
 const POLL_INTERVAL_MS = 1_500

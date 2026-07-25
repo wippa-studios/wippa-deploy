@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
 
 export async function makeRequest<T = unknown>({
   token,

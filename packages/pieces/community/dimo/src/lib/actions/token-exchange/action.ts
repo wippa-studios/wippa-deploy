@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpError } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpError } from '@wippa/pieces-common';
 import { dimoAuth } from '../../auth';
 import { DimoClient } from '../../common/helpers';
 

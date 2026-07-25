@@ -4,7 +4,7 @@ import { pieceExpertise } from '../../../../src/app/mcp/tools/piece-expertise'
 describe('pieceExpertise.getNotes', () => {
     it('returns curated notes by short name and by full piece name', () => {
         expect(pieceExpertise.getNotes({ pieceName: 'airtable' })).toMatch(/linked-record/i)
-        expect(pieceExpertise.getNotes({ pieceName: '@activepieces/piece-airtable' })).toMatch(/linked-record/i)
+        expect(pieceExpertise.getNotes({ pieceName: '@wippa/piece-airtable' })).toMatch(/linked-record/i)
     })
 
     it('appends the action-specific note when an action is given', () => {

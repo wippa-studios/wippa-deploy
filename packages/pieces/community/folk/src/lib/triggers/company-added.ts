@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { folkAuth } from '../common/auth';
 import { folkClient } from '../common/client';
 import { folkProps } from '../common/props';

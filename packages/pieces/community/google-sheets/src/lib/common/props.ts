@@ -1,4 +1,4 @@
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, Property } from '@wippa/pieces-framework';
 import { sheets as googleSheets } from '@googleapis/sheets';
 import { drive as googleDrive, drive_v3 } from '@googleapis/drive';
 import {
@@ -9,7 +9,7 @@ import {
 	GoogleSheetsAuthValue,
 	googleSheetsCommon,
 } from './common';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 const createEmptyOptionList = (message: string) => {
 	return {

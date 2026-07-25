@@ -17,10 +17,10 @@
 import {
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { drupalAuth } from '../auth';
 
 export type DrupalAuthType = AppConnectionValueForAuthProperty<typeof drupalAuth>;

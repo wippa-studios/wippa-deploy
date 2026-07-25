@@ -1,10 +1,10 @@
-import { isNil, Permission } from '@activepieces/core-utils';
+import { isNil, Permission } from '@wippa/core-utils';
 import {
   FlowRun,
   FlowVersion,
   FlowVersionState,
   PopulatedFlow,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Info } from 'lucide-react';

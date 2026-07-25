@@ -5,7 +5,7 @@ import {
     ScimListQueryParams,
     ScimPatchRequest,
     ScimResourceId,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { securityAccess } from '../../core/security/authorization/fastify-security'

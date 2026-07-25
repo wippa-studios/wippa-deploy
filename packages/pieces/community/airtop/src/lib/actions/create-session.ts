@@ -1,11 +1,11 @@
-import { HttpMethod, propsValidation } from '@activepieces/pieces-common';
+import { HttpMethod, propsValidation } from '@wippa/pieces-common';
 import {
 	createAction,
 	DynamicPropsValue,
 	InputPropertyMap,
 	Property,
 	PropertyContext,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { airtopAuth } from '../common/auth';
 import { airtopApiCall } from '../common/client';
 import * as z from 'zod/mini'

@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { listNotesAction } from './lib/actions/list-notes';
 import { getNoteAction } from './lib/actions/get-note';
 import { newNoteTrigger } from './lib/triggers/new-note';

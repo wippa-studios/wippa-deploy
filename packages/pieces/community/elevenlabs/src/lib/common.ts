@@ -1,6 +1,6 @@
 import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
 import { ElevenLabsEnvironment } from '@elevenlabs/elevenlabs-js/environments';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
 import { elevenlabsAuth } from '..';
 
 export type ElevenResidency = 'default' | 'us' | 'eu';

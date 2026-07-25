@@ -1,5 +1,5 @@
-import { ssrfIpClassifier } from '@activepieces/core-utils'
-import { NetworkMode } from '@activepieces/shared'
+import { ssrfIpClassifier } from '@wippa/core-utils'
+import { NetworkMode } from '@wippa/shared'
 import { installDnsLookupGuard } from './dns-lookup-guard'
 import { installSocketConnectGuard } from './socket-connect-guard'
 

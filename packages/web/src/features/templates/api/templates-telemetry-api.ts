@@ -1,4 +1,4 @@
-import { TemplateTelemetryEvent } from '@activepieces/shared';
+import { TemplateTelemetryEvent } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

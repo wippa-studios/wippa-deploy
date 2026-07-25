@@ -5,7 +5,7 @@ import {
   PropertyType,
   ExecutePropsResult,
   InputPropertyMap,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AddPieceRequestBody,
   ApEdition,
@@ -14,7 +14,7 @@ import {
   ListPiecesRequestQuery,
   PackageType,
   PieceOptionRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 
 import { internalErrorToast } from '@/components/ui/sonner';

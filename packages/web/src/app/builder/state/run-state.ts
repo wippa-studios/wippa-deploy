@@ -1,4 +1,4 @@
-import { isNil, stringifyNullOrUndefined } from '@activepieces/core-utils';
+import { isNil, stringifyNullOrUndefined } from '@wippa/core-utils';
 import {
   FlowAction,
   FlowActionType,
@@ -12,7 +12,7 @@ import {
   StepRunResponse,
   TestStepProgressEvent,
   WebsocketClientEvent,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { Socket } from 'socket.io-client';
 import { StoreApi } from 'zustand';
 

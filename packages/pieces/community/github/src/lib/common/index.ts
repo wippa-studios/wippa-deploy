@@ -5,9 +5,9 @@ import {
   HttpRequest,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { Property } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { githubAuth } from '../auth';
 import { githubAuthHelpers, GithubAuthValue, isAppAuth } from './auth-helpers';
 

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { ActivepiecesError, ErrorCode } from '@activepieces/core-utils';
-import { EngineResponseStatus, ExecutionType, FlowActionType, FlowRunStatus, FlowTriggerType, FlowVersionState, StreamStepProgress, RunEnvironment, WorkerJobType } from '@activepieces/shared';
-import type { ExecuteFlowJobData, FlowVersion } from '@activepieces/shared'
+import { ActivepiecesError, ErrorCode } from '@wippa/core-utils';
+import { EngineResponseStatus, ExecutionType, FlowActionType, FlowRunStatus, FlowTriggerType, FlowVersionState, StreamStepProgress, RunEnvironment, WorkerJobType } from '@wippa/shared';
+import type { ExecuteFlowJobData, FlowVersion } from '@wippa/shared'
 
 vi.mock('../../../../src/lib/config/worker-settings', () => ({
     workerSettings: {
@@ -26,7 +26,7 @@ function makeFlowVersion(): FlowVersion {
             lastUpdatedDate: '2024-01-01T00:00:00Z',
             type: FlowTriggerType.PIECE,
             settings: {
-                pieceName: '@activepieces/piece-gmail',
+                pieceName: '@wippa/piece-gmail',
                 pieceVersion: '~0.1.0',
                 triggerName: 'new_email',
                 input: {},
@@ -39,7 +39,7 @@ function makeFlowVersion(): FlowVersion {
                 lastUpdatedDate: '2024-01-01T00:00:00Z',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@activepieces/piece-slack',
+                    pieceName: '@wippa/piece-slack',
                     pieceVersion: '~0.2.0',
                     actionName: 'send_message',
                     input: {},
@@ -191,7 +191,7 @@ describe('executeFlowJob', () => {
         })
 
         it('marks run as FAILED and completes the job (OK) when the flow is disabled', async () => {
-            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @activepieces/piece-http@1.0.0 is not installed' }
+            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @wippa/piece-http@1.0.0 is not installed' }
             const ctx = makeMockContext({ resolveResult: { kind: 'disabled', failedStep } })
             const data = makeResumeJobData({ executionType: ExecutionType.BEGIN })
 

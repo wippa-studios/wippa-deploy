@@ -1,4 +1,4 @@
-import { TriggerHookContext, TriggerStrategy, SecretTextProperty } from '@activepieces/pieces-framework';
+import { TriggerHookContext, TriggerStrategy, SecretTextProperty } from '@wippa/pieces-framework';
 import { httpClient, HttpMethod } from "@activepieces/pieces-common";
 
 interface ActionPayloadProps {

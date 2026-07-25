@@ -1,5 +1,5 @@
-import { ApId } from '@activepieces/core-utils'
-import { FlowRunStatus, PauseType, RespondResponse, WaitpointVersion } from '@activepieces/shared'
+import { ApId } from '@wippa/core-utils'
+import { FlowRunStatus, PauseType, RespondResponse, WaitpointVersion } from '@wippa/shared'
 
 enum WaitpointStatus {
     PENDING = 'PENDING',

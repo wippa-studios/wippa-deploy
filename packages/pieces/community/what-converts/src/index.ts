@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { whatConvertsAuth } from '../src/lib/common/auth';
 import { createLeadAction } from '../src/lib/actions/create-lead';
 import { exportLeadsAction } from '../src/lib/actions/create-export';
@@ -6,7 +6,7 @@ import { updateLeadAction } from '../src/lib/actions/update-lead';
 import { findLeadAction } from '../src/lib/actions/find-lead';
 import { newLeadTrigger } from '../src/lib/triggers/new-lead';
 import { updatedLeadTrigger } from '../src/lib/triggers/update-lead';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const whatConverts = createPiece({
   displayName: 'WhatConverts',

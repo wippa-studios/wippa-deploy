@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import {
 	areSheetIdsValid,
 	Dimension,
@@ -10,13 +10,13 @@ import {
 	ValueInputOption,
 } from '../common/common';
 import { googleSheetsAuth } from '../common/common';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
 	HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { commonProps, isFirstRowHeaderProp, rowValuesProp } from '../common/props';
 import { insertRowActionOutputSchema } from '../output-schemas';
 

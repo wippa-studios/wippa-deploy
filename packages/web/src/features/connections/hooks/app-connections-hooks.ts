@@ -3,11 +3,11 @@ import {
   ErrorCode,
   isNil,
   SeekPage,
-} from '@activepieces/core-utils';
+} from '@wippa/core-utils';
 import {
   getAuthPropertyForValue,
   PieceAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   AppConnectionScope,
   AppConnectionStatus,
@@ -16,7 +16,7 @@ import {
   PLACEHOLDER_CONNECTION_TYPE,
   ReplaceAppConnectionsRequestBody,
   UpsertAppConnectionRequestBody,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useMemo } from 'react';

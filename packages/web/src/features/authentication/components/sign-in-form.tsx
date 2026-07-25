@@ -1,4 +1,4 @@
-import { ErrorCode, isNil } from '@activepieces/core-utils';
+import { ErrorCode, isNil } from '@wippa/core-utils';
 import {
   OtpType,
   ApEdition,
@@ -6,7 +6,7 @@ import {
   AuthenticationResponse,
   SignInRequest,
   TelemetryEventName,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';

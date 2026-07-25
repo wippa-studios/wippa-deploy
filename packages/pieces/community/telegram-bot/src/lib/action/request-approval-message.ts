@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
-import { ExecutionType } from '@activepieces/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
+import { ExecutionType } from '@wippa/pieces-framework';
 import { requestApprovalMessageActionOutputSchema } from '../output-schemas';
 
 export const telegramRequestApprovalMessageAction = createAction({

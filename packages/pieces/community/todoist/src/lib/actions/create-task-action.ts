@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
 import { todoistRestClient } from '../common/client/rest-client';
 import {
   todoistProjectIdDropdown,

@@ -1,6 +1,6 @@
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { weekdoneAuth } from './lib/auth';
 import { createItemAction } from './lib/actions/create-item';
 import { updateItemAction } from './lib/actions/update-item';

@@ -1,7 +1,7 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import * as actions from './lib/actions';
 import { assemblyaiAuth } from './lib/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const assemblyai = createPiece({
   displayName: 'AssemblyAI',

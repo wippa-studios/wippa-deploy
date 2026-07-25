@@ -3,13 +3,13 @@ import {
   TriggerStrategy,
   StaticPropsValue,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import dayjs from 'dayjs';
 import { guideliteAuth } from '../common/auth';
 import { makeRequest } from '../common/client';

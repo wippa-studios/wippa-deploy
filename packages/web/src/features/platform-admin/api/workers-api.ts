@@ -1,4 +1,4 @@
-import { WorkerMachineWithStatus } from '@activepieces/shared';
+import { WorkerMachineWithStatus } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

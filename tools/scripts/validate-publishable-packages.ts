@@ -13,7 +13,7 @@ async function processBatches<T>(items: T[], batchSize: number, processor: (item
 
 const main = async () => {
   const piecesMetadata = await findAllPiecesDirectoryInSource()
-  // pieces-framework, pieces-common and @activepieces/shared are no longer published to npm:
+  // pieces-framework, pieces-common and @wippa/shared are no longer published to npm:
   // pieces are self-contained bundles that inline these at build time. Exclude them from the
   // publishable-package validation and only validate the pieces themselves.
   const notPublished = ['packages/pieces/framework', 'packages/pieces/common']

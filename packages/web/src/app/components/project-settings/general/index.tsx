@@ -6,7 +6,7 @@ import {
   ProjectIcon,
   ProjectType,
   TeamProjectsLimit,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';

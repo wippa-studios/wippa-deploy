@@ -1,6 +1,6 @@
 import { inspect } from 'util'
-import { isNil } from '@activepieces/core-utils'
-import { ApEdition, ApEnvironment, DefaultProjectRole, ExecutionMode, FileLocation, NetworkMode, PieceSyncMode } from '@activepieces/shared'
+import { isNil } from '@wippa/core-utils'
+import { ApEdition, ApEnvironment, DefaultProjectRole, ExecutionMode, FileLocation, NetworkMode, PieceSyncMode } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { DatabaseType } from '../database/database-type'
 import { RedisType } from '../database/redis/types'

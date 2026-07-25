@@ -1,7 +1,7 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { createOrUpdateSubscriber } from './lib/actions/create-or-update-subscription';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { triggers } from './triggers/triggers';
 import { addSubscriberToGroupAction } from './lib/actions/add-subscriber-to-group';
 import { removeSubscriberFromGroupAction } from './lib/actions/remove-subscriber-from-group';

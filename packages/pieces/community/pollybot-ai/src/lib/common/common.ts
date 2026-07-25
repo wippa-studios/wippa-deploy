@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/pieces-common';
 export const baseUrl = 'https://pollybot.app/api/v1';
 
 export const leadStatusOptions = {

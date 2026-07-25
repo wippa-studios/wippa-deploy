@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { wayfrontAuth } from './lib/auth';
 import { createClientAction } from './lib/actions/create-client';
 import { updateClientAction } from './lib/actions/update-client';

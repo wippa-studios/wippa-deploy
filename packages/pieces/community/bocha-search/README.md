@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `npx turbo run build --filter=@activepieces/piece-bocha-search` to build the library.
+Run `npx turbo run build --filter=@wippa/piece-bocha-search` to build the library.

@@ -4,7 +4,7 @@ import * as XLSX from 'xlsx';
 import { csvToJsonAction } from '../src/lib/actions/convert-csv-to-json';
 import { excelToCsvAction } from '../src/lib/actions/convert-excel-to-csv';
 import { jsonToCsvAction } from '../src/lib/actions/convert-json-to-csv';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@wippa/pieces-framework';
 
 function makeXlsxBase64(sheets: Record<string, (string | number)[][]>): string {
   const wb = XLSX.utils.book_new();

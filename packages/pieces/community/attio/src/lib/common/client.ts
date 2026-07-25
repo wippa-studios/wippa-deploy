@@ -5,7 +5,7 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import crypto from 'crypto';
 import { AttioAttributeValue, AttioRecordResponse, WorkspaceMemberResponse } from './types';
 

@@ -1,4 +1,4 @@
-import { ErrorCode, isNil } from '@activepieces/core-utils';
+import { ErrorCode, isNil } from '@wippa/core-utils';
 import { MutationCache, QueryCache, QueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 

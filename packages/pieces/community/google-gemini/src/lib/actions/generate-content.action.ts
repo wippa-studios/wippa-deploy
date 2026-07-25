@@ -1,9 +1,9 @@
 import { googleGeminiAuth } from '../auth';
-import { ApFile, DynamicPropsValue, Property, createAction } from '@activepieces/pieces-framework';
+import { ApFile, DynamicPropsValue, Property, createAction } from '@wippa/pieces-framework';
 import { defaultLLM, getGeminiModelOptions } from '../common/common';
 import { GenerateContentParameters, GoogleGenAI } from '@google/genai';
-import { isEmpty } from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { isEmpty } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/pieces-framework';
 import mime from 'mime-types';
 import { generateContentActionOutputSchema } from '../output-schemas';
 

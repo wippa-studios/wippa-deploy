@@ -1,4 +1,4 @@
-import { RoleType, SAFE_STRING_PATTERN } from '@activepieces/core-utils'
+import { RoleType, SAFE_STRING_PATTERN } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export const CreateProjectRoleRequestBody = z.object({

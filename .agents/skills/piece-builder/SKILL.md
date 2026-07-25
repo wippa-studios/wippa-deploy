@@ -53,7 +53,7 @@ tsconfig.lib.json
 
 ```json
 {
-    "name": "@activepieces/piece-<name>",
+    "name": "@wippa/piece-<name>",
     "version": "0.0.1",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index.d.ts",
@@ -62,9 +62,9 @@ tsconfig.lib.json
         "lint": "eslint 'src/**/*.ts'"
     },
     "dependencies": {
-        "@activepieces/pieces-common": "workspace:*",
-        "@activepieces/pieces-framework": "workspace:*",
-        "@activepieces/shared": "workspace:*",
+        "@wippa/pieces-common": "workspace:*",
+        "@wippa/pieces-framework": "workspace:*",
+        "@wippa/shared": "workspace:*",
         "tslib": "2.6.2"
     }
 }
@@ -150,15 +150,15 @@ The condensed rules in this file (Quick Auth Reference, Quick Piece Definition T
 - [ ] Add `createCustomApiCallAction` to `actions: [...]`
 - [ ] Register in `tsconfig.base.json` at repo root (insert **alphabetically** — build fails without this):
     ```json
-    "@activepieces/piece-<name>": ["packages/pieces/community/<name>/src/index.ts"]
+    "@wippa/piece-<name>": ["packages/pieces/community/<name>/src/index.ts"]
     ```
 
 **Build and lint:**
 
 ```bash
 bun install   # new pieces only — creates workspace symlinks
-npx turbo run build --filter=@activepieces/piece-<name>
-npx turbo run lint --filter=@activepieces/piece-<name>
+npx turbo run build --filter=@wippa/piece-<name>
+npx turbo run lint --filter=@wippa/piece-<name>
 ```
 
 Both must pass. Lint failures (unused imports, `any` types, unused vars) block CI even when the build is green.
@@ -216,7 +216,7 @@ Full code examples: read `auth-patterns.md`
 
 **`src/lib/auth.ts`**
 ```typescript
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 
 export const myAppAuth = PieceAuth.SecretText({
     displayName: 'API Key',
@@ -227,9 +227,9 @@ export const myAppAuth = PieceAuth.SecretText({
 
 **`src/index.ts`**
 ```typescript
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/shared';
+import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/shared';
 import { myAppAuth } from './lib/auth';
 import { myAction } from './lib/actions/my-action';
 import { myTrigger } from './lib/triggers/my-trigger';

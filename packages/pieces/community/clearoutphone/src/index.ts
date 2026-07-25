@@ -1,9 +1,9 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { clearoutphoneAuth } from './lib/common/auth';
 import { findPhoneNumberCarrier } from './lib/actions/find-phone-number-carrier';
 import { findPhoneNumberIsMobile } from './lib/actions/find-phone-number-is-mobile';
 import { validatePhoneNumber } from './lib/actions/validate-phone-number';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const clearoutphone = createPiece({
   displayName: 'ClearoutPhone',

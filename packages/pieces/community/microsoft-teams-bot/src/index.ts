@@ -1,4 +1,4 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceCategory } from '@wippa/pieces-framework';
 import { sendChannelMessageAsBotAction } from './lib/actions/send-channel-message-as-bot';
 import { microsoftTeamsBotAuth } from './lib/auth';
 

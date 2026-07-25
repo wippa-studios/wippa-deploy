@@ -3,9 +3,9 @@ import {
   Property,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { performImapOperation } from './imap';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@wippa/pieces-framework';
 
 const description = `
 **Gmail Users:**

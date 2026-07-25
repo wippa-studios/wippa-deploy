@@ -1,4 +1,4 @@
-import { ApFlagId, feedbackUrl } from '@activepieces/shared';
+import { ApFlagId, feedbackUrl } from '@wippa/shared';
 import { t } from 'i18next';
 import { MessageSquarePlusIcon, SearchXIcon } from 'lucide-react';
 

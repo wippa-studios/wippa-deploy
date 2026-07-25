@@ -1,5 +1,5 @@
-import { assertNotNullOrUndefined, isNil, unique } from '@activepieces/core-utils'
-import { AlertChannel, ApEdition, InvitationType, OtpType, UserIdentity, UserInvitation } from '@activepieces/shared'
+import { assertNotNullOrUndefined, isNil, unique } from '@wippa/core-utils'
+import { AlertChannel, ApEdition, InvitationType, OtpType, UserIdentity, UserInvitation } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { domainHelper } from '../../../helper/domain-helper'
 import { system } from '../../../helper/system/system'

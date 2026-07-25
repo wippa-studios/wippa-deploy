@@ -1,5 +1,5 @@
-import { ActivepiecesError, apId, ErrorCode, isNil, spreadIfDefined } from '@activepieces/core-utils'
-import { KnowledgeBaseFile } from '@activepieces/shared'
+import { ActivepiecesError, apId, ErrorCode, isNil, spreadIfDefined } from '@wippa/core-utils'
+import { KnowledgeBaseFile } from '@wippa/shared'
 import { parse as parseCsv } from 'csv-parse/sync'
 import { FastifyBaseLogger } from 'fastify'
 import { IsNull, Not } from 'typeorm'

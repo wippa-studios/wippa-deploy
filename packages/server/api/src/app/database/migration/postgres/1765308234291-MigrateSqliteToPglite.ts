@@ -1,4 +1,4 @@
-import { ApEnvironment } from '@activepieces/shared'
+import { ApEnvironment } from '@wippa/shared'
 import { DataSource, EntityMetadata, MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
 import { AppSystemProp } from '../../../helper/system/system-props'

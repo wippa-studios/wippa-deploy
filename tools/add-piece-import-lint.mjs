@@ -1,5 +1,5 @@
 // Add the import-boundary lint rule to every community piece's .eslintrc.json:
-// pieces may not import @activepieces/core-*, server*, or engine (they depend only
+// pieces may not import @wippa/core-*, server*, or engine (they depend only
 // on framework + common). Injected into each config's "*.ts" override.
 
 import fs from 'node:fs'
@@ -12,9 +12,9 @@ const RULE = ['error', {
     patterns: [
         'lodash',
         'lodash/*',
-        '@activepieces/core-*',
-        '@activepieces/server*',
-        '@activepieces/engine',
+        '@wippa/core-*',
+        '@wippa/server*',
+        '@wippa/engine',
     ],
 }]
 

@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-zendesk-sell` to build the library.
+Run `turbo run build --filter=@wippa/piece-zendesk-sell` to build the library.

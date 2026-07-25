@@ -1,4 +1,4 @@
-// Codemod: split each community piece's `@activepieces/shared` named import into
+// Codemod: split each community piece's `@wippa/shared` named import into
 // core-utils / core-piece-types / (remaining) shared. Pieces whose every shared
 // symbol is covered by the core packages end up with ZERO shared imports.
 // Run with --write to apply; default is a dry run (report only).
@@ -45,10 +45,10 @@ function rewriteFile(content) {
         }
         changed = true
         const lines = []
-        if (utils.length) lines.push(buildImport(typeModifier, utils, '@activepieces/core-utils'))
-        if (pieceTypes.length) lines.push(buildImport(typeModifier, pieceTypes, '@activepieces/core-piece-types'))
+        if (utils.length) lines.push(buildImport(typeModifier, utils, '@wippa/core-utils'))
+        if (pieceTypes.length) lines.push(buildImport(typeModifier, pieceTypes, '@wippa/core-piece-types'))
         if (rest.length) {
-            lines.push(buildImport(typeModifier, rest, '@activepieces/shared'))
+            lines.push(buildImport(typeModifier, rest, '@wippa/shared'))
             fullySevered = false
         }
         return lines.join('\n')
@@ -78,7 +78,7 @@ for (const piece of fs.readdirSync(COMMUNITY)) {
     let pieceStillShared = false
     for (const file of walk(src)) {
         const content = fs.readFileSync(file, 'utf8')
-        if (!content.includes('@activepieces/shared')) continue
+        if (!content.includes('@wippa/shared')) continue
         const { out, changed, hadShared } = rewriteFile(content)
         if (hadShared) pieceHadShared = true
         if (changed) {
@@ -87,7 +87,7 @@ for (const piece of fs.readdirSync(COMMUNITY)) {
             if (WRITE) fs.writeFileSync(file, out)
         }
         // recompute residual shared after rewrite
-        if (out.includes("from '@activepieces/shared'")) pieceStillShared = true
+        if (out.includes("from '@wippa/shared'")) pieceStillShared = true
     }
     if (pieceHadShared) {
         if (pieceStillShared) piecesStillShared.add(piece)

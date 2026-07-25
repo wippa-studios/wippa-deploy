@@ -1,6 +1,6 @@
-import { AIProviderName, ProjectId, UserId } from '@activepieces/core-utils'
-import { apVersionUtil } from '@activepieces/server-utils'
-import { ApEdition, FlowRunStatus, pickTelemetryPii, RunEnvironment, TelemetryEvent, User, UserIdentity } from '@activepieces/shared'
+import { AIProviderName, ProjectId, UserId } from '@wippa/core-utils'
+import { apVersionUtil } from '@wippa/server-utils'
+import { ApEdition, FlowRunStatus, pickTelemetryPii, RunEnvironment, TelemetryEvent, User, UserIdentity } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { PostHog } from 'posthog-node'
 import { platformService } from '../platform/platform.service'
@@ -122,8 +122,8 @@ async function getMetadata() {
     const edition = system.getEdition()
     return {
         activepiecesVersion: currentVersion,
-        activepiecesEnvironment: system.get(AppSystemProp.ENVIRONMENT),
-        activepiecesEdition: edition,
+        wippaEnvironment: system.get(AppSystemProp.ENVIRONMENT),
+        wippaEdition: edition,
         source_site: 'product',
     }
 }

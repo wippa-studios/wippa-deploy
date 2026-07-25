@@ -4,7 +4,7 @@ import {
 	DynamicPropsValue,
 	OAuth2PropertyValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { commonProps } from '../common/props';
 import { getDrivePath } from '../common/helpers';
 import { excelAuth } from '../auth';

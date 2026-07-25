@@ -1,7 +1,7 @@
 import { googleSheetsAuth } from '../common/common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { sheets as googleSheets } from '@googleapis/sheets';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 import { includeTeamDrivesProp, spreadsheetIdProp } from '../common/props';
 import { createGoogleClient } from '../common/common';
 import { newWorksheetTriggerOutputSchema } from '../output-schemas';

@@ -1,6 +1,6 @@
 
-import { ActivepiecesError, apId, ErrorCode, Permission, ProjectRole, RoleType } from '@activepieces/core-utils'
-import { DefaultProjectRole, PlatformRole, Principal, PrincipalType } from '@activepieces/shared'
+import { ActivepiecesError, apId, ErrorCode, Permission, ProjectRole, RoleType } from '@wippa/core-utils'
+import { DefaultProjectRole, PlatformRole, Principal, PrincipalType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { AuthorizationRouteSecurity } from '../../../../src/app/core/security/authorization/authorization'
 import { AuthorizationType, RouteKind } from '../../../../src/app/core/security/authorization/common'

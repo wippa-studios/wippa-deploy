@@ -1,7 +1,7 @@
 import {
   CreateAiToolConfigRequest,
   UpdateAiToolConfigRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 

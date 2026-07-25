@@ -1,5 +1,5 @@
-import { ContextVersion } from '@activepieces/pieces-framework'
-import { AppConnectionStatus, AppConnectionType, ConnectionExpiredError, ConnectionLoadingError, ConnectionNotFoundError, FetchError } from '@activepieces/shared'
+import { ContextVersion } from '@wippa/pieces-framework'
+import { AppConnectionStatus, AppConnectionType, ConnectionExpiredError, ConnectionLoadingError, ConnectionNotFoundError, FetchError } from '@wippa/shared'
 import { createConnectionResolver } from '../../src/lib/piece-context/connection-resolver'
 
 const RESOLVER_PARAMS = {

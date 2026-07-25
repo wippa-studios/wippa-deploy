@@ -1,11 +1,11 @@
-import { isNil } from '@activepieces/core-utils';
+import { isNil } from '@wippa/core-utils';
 import {
   ApFlagId,
   PieceAction,
   PieceActionSettings,
   PieceTrigger,
   PieceTriggerSettings,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import React from 'react';
 
 import { Skeleton } from '@/components/ui/skeleton';

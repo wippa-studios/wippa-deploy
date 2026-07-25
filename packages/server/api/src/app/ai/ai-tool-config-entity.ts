@@ -1,5 +1,5 @@
-import { BaseModelSchema } from '@activepieces/core-utils'
-import { AiToolCapability, AiToolProvider, AiToolProviderConfig, Platform } from '@activepieces/shared'
+import { BaseModelSchema } from '@wippa/core-utils'
+import { AiToolCapability, AiToolProvider, AiToolProviderConfig, Platform } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import { z } from 'zod'
 import { ApIdSchema, BaseColumnSchemaPart } from '../database/database-common'

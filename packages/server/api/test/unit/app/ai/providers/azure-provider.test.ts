@@ -1,9 +1,9 @@
-import { AIProviderModelType } from '@activepieces/shared'
+import { AIProviderModelType } from '@wippa/shared'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const { mockSendRequest } = vi.hoisted(() => ({ mockSendRequest: vi.fn() }))
 
-vi.mock('@activepieces/pieces-common', () => ({
+vi.mock('@wippa/pieces-common', () => ({
     httpClient: { sendRequest: mockSendRequest },
     HttpMethod: { GET: 'GET' },
 }))

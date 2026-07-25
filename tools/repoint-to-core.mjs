@@ -1,6 +1,6 @@
-// Repoint imports of core-utils / core-formula symbols from '@activepieces/shared'
+// Repoint imports of core-utils / core-formula symbols from '@wippa/shared'
 // to the core packages directly, across server/web/ee. Splits mixed imports;
-// the remaining (genuinely-shared) symbols stay on '@activepieces/shared'.
+// the remaining (genuinely-shared) symbols stay on '@wippa/shared'.
 
 import fs from 'node:fs'
 import path from 'node:path'
@@ -32,9 +32,9 @@ function rewrite(content) {
         if (utils.length === 0 && formula.length === 0) return match
         changed = true
         const lines = []
-        if (utils.length) lines.push(buildImport(typeMod, utils, '@activepieces/core-utils'))
-        if (formula.length) lines.push(buildImport(typeMod, formula, '@activepieces/core-formula'))
-        if (rest.length) lines.push(buildImport(typeMod, rest, '@activepieces/shared'))
+        if (utils.length) lines.push(buildImport(typeMod, utils, '@wippa/core-utils'))
+        if (formula.length) lines.push(buildImport(typeMod, formula, '@wippa/core-formula'))
+        if (rest.length) lines.push(buildImport(typeMod, rest, '@wippa/shared'))
         return lines.join('\n')
     })
     return { out, changed }
@@ -57,7 +57,7 @@ for (const root of ROOTS) {
     if (!fs.existsSync(root)) continue
     for (const file of walk(root)) {
         const content = fs.readFileSync(file, 'utf8')
-        if (!content.includes('@activepieces/shared')) continue
+        if (!content.includes('@wippa/shared')) continue
         const { out, changed } = rewrite(content)
         if (changed) {
             fs.writeFileSync(file, out)

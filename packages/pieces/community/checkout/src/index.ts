@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { checkoutComAuth } from './lib/common/auth';
 import { createCustomerAction } from './lib/actions/create-customer';
 import { updateCustomerAction } from './lib/actions/update-customer';

@@ -1,9 +1,9 @@
-import { createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/pieces-framework';
 import { stripeCommon } from '../common';
 import { stripeAuth } from '../..';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { isEmpty } from '@wippa/pieces-framework';
 
 export const stripeNewPayment = createTrigger({
   auth: stripeAuth,

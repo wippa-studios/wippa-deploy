@@ -1,4 +1,4 @@
-import { ApId, BaseModelSchema } from '@activepieces/core-utils'
+import { ApId, BaseModelSchema } from '@wippa/core-utils'
 import { z } from 'zod'
 
 export enum AlertChannel {

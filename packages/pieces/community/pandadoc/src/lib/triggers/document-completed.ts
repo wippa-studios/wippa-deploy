@@ -2,9 +2,9 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
 import { pandadocAuth, pandadocClient } from '../common';
 
 export const documentCompleted = createTrigger({

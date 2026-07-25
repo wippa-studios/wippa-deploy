@@ -1,7 +1,7 @@
-import { PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema, Property } from '@wippa/pieces-framework';
 import { ClockodoClient } from './client';
 import { clockodoAuth } from '../auth';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 type ClockodoAuthValue = PiecePropValueSchema<typeof clockodoAuth>;
 

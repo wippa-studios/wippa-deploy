@@ -1,9 +1,9 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@wippa/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { BASE_URL } from './constants';
 
 export const chaindeskAuth = PieceAuth.SecretText({

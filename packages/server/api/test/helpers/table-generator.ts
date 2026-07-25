@@ -1,5 +1,5 @@
-import { apId } from '@activepieces/core-utils'
-import { Field, FieldState, FieldType, PopulatedTable, TableAutomationStatus } from '@activepieces/shared'
+import { apId } from '@wippa/core-utils'
+import { Field, FieldState, FieldType, PopulatedTable, TableAutomationStatus } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 
 export const tableGenerator = {

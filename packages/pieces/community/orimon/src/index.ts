@@ -1,8 +1,8 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
 import { orimonAuth } from './lib/common/auth';
 import { sendMessage } from './lib/actions/send-message';
 import { newLead } from './lib/triggers/new-lead';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const orimon = createPiece({
   displayName: 'Orimon',

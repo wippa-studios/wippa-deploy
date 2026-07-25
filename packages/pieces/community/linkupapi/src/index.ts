@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { LINKUPAPI_BASE_URL, linkupAuth } from './lib/common';
 // actions
 import { listAccounts } from './lib/actions/list-accounts';
@@ -16,7 +16,7 @@ import { checkInvitationStatus } from './lib/actions/check-invitation-status';
 // triggers
 import { newMessageReceived } from './lib/triggers/new-message-received';
 import { invitationAccepted } from './lib/triggers/invitation-accepted';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 export const linkupapi = createPiece({
   displayName: 'LinkupAPI',

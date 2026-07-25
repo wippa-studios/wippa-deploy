@@ -1,4 +1,4 @@
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
 import { t } from 'i18next';
 import React, { useState } from 'react';
 

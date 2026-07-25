@@ -1,4 +1,4 @@
-import { ProjectType } from '@activepieces/shared';
+import { ProjectType } from '@wippa/shared';
 import { t } from 'i18next';
 import { AlignJustify } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';

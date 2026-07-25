@@ -1,4 +1,4 @@
-import { SeekPage } from '@activepieces/core-utils';
+import { SeekPage } from '@wippa/core-utils';
 import {
   GetFlowTemplateRequestQuery,
   CreateFlowRequest,
@@ -11,7 +11,7 @@ import {
   PopulatedFlow,
   SharedTemplate,
   CountFlowsRequest,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { toast } from 'sonner';
 
 import { UNSAVED_CHANGES_TOAST } from '@/components/ui/sonner';

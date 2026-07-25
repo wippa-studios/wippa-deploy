@@ -1,4 +1,4 @@
-import { apId } from '@activepieces/core-utils';
+import { apId } from '@wippa/core-utils';
 import { StoreApi } from 'zustand';
 
 import { ChatDrawerSource } from '@/app/builder/types';

@@ -1,8 +1,8 @@
 import {
   createPiece,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { smartsuiteAuth } from './lib/auth';
 
 // Actions
@@ -16,7 +16,7 @@ import { getRecord } from './lib/actions/get-record';
 // Triggers
 import { newRecord } from './lib/triggers/new-record';
 import { updatedRecord } from './lib/triggers/updated-record';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { SMARTSUITE_API_URL } from './lib/common/constants';
 
 export const smartsuite = createPiece({

@@ -2,7 +2,7 @@ import {
   InvitationStatus,
   PlatformRole,
   UserWithMetaInformation,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMemo } from 'react';
 
 import { projectMembersHooks } from '@/features/members/hooks/project-members-hooks';

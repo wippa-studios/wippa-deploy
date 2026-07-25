@@ -3,7 +3,7 @@ import {
     AppConnectionStatus,
     User,
     UserIdentity,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     BaseColumnSchemaPart,

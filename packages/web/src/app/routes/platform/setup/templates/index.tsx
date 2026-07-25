@@ -1,4 +1,4 @@
-import { Template, TemplateType } from '@activepieces/shared';
+import { Template, TemplateType } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';

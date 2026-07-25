@@ -10,7 +10,7 @@ import {
     RequiredPiece,
     SeekPage,
     TableState,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import axios, { AxiosError } from 'axios';
 import chalk from 'chalk';
 import { Command } from 'commander';

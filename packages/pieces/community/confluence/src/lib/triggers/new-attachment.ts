@@ -2,14 +2,14 @@ import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+} from '@wippa/pieces-common';
+import { isNil } from '@wippa/pieces-framework';
 import { confluenceAuth, confluenceAuthValue } from '../auth';
 import { confluenceApiCall, PaginatedResponse } from '../common';
 import { pageIdProp, spaceIdProp } from '../common/props';

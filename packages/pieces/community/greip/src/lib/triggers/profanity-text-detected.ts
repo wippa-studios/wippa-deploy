@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { greipAuth } from '../common/auth';
 
 export const profanityTextDetectedTrigger = createTrigger({

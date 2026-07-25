@@ -4,12 +4,12 @@ import {
   Property,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { TotalCMSAuthType, cmsAuth } from '../auth';
 import { getContent } from '../api';
 

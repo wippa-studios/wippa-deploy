@@ -1,10 +1,10 @@
 import { pipedriveAuth } from '../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { filterIdProp } from '../common/props';
 import { pipedriveApiCall, pipedrivePaginatedV2ApiCall } from '../common';
 import { LeadListResponse } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@wippa/pieces-framework';
 
 export const activityMatchingFilterTrigger = createTrigger({
 	auth: pipedriveAuth,

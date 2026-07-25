@@ -1,5 +1,5 @@
 import { googleDriveAuth, createGoogleClient } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { common } from '../common';
 import { drive as googleDrive } from '@googleapis/drive';
 import { googleDriveMoveFileActionOutputSchema } from '../output-schemas';

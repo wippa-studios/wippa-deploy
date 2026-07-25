@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 
 import { postmarkAuth } from '../auth';
 import { postmarkClient, SendEmailResponse } from '../common/client';

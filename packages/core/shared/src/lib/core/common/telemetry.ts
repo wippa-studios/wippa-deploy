@@ -1,5 +1,5 @@
-import type { RunEnvironment } from '@activepieces/core-execution'
-import type { FlowId, ProjectId, UserId } from '@activepieces/core-utils'
+import type { RunEnvironment } from '@wippa/core-execution'
+import type { FlowId, ProjectId, UserId } from '@wippa/core-utils'
 import type { McpId } from '../../automation/mcp/mcp'
 
 type FlowCreated = {

@@ -1,4 +1,4 @@
-import { FileCompression, FileLocation, FileType } from '@activepieces/shared'
+import { FileCompression, FileLocation, FileType } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { FastifyInstance } from 'fastify'
 import { In } from 'typeorm'

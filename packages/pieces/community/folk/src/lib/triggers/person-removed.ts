@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
 import { folkAuth } from '../common/auth';
 import { folkClient } from '../common/client';
 import { folkProps } from '../common/props';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { dataforb2bAuth, dataForB2BRequest } from '../common';
 
 export const reasoningSearch = createAction({

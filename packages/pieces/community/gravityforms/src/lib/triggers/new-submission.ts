@@ -3,7 +3,7 @@ import {
   PieceAuth,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 
 const markdown = `
 - Go to the "Plugins" section.

@@ -1,4 +1,4 @@
-import { Property, ServerContext, createAction } from '@activepieces/pieces-framework';
+import { Property, ServerContext, createAction } from '@wippa/pieces-framework';
 import { PutObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { amazonS3CombinedAuth, AccessKeyAuthProps, OidcAuthProps, S3AuthProps } from '../auth';

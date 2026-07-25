@@ -1,5 +1,5 @@
 import { notionAuth } from '../auth';
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@wippa/pieces-framework';
 import { getNotionToken, notionCommon } from '../common';
 import { Client } from '@notionhq/client';
 import { notionFindDatabaseItemActionOutputSchema } from '../output-schemas';

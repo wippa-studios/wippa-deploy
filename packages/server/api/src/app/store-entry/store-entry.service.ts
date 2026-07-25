@@ -1,5 +1,5 @@
-import { apId, ProjectId, sanitizeObjectForPostgresql } from '@activepieces/core-utils'
-import { PutStoreEntryRequest, StoreEntry } from '@activepieces/shared'
+import { apId, ProjectId, sanitizeObjectForPostgresql } from '@wippa/core-utils'
+import { PutStoreEntryRequest, StoreEntry } from '@wippa/shared'
 import { repoFactory } from '../core/db/repo-factory'
 import { StoreEntryEntity } from './store-entry-entity'
 

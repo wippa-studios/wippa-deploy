@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { HttpError, HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { HttpError, HttpMethod, httpClient } from '@wippa/pieces-common';
 
 const markdown = `
 For Sending API key, follow these steps:

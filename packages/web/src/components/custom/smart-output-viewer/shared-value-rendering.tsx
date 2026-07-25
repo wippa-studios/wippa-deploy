@@ -1,4 +1,4 @@
-import { isNil, isObject } from '@activepieces/core-utils';
+import { isNil, isObject } from '@wippa/core-utils';
 import { t } from 'i18next';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useState } from 'react';

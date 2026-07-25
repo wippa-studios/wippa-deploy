@@ -1,4 +1,4 @@
-import { ApEdition } from '@activepieces/shared'
+import { ApEdition } from '@wippa/shared'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
 import { AppSystemProp } from '../../../helper/system/system-props'

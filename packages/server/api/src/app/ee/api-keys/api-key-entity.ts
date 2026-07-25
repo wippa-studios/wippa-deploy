@@ -1,4 +1,4 @@
-import { ApiKey, Platform } from '@activepieces/shared'
+import { ApiKey, Platform } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

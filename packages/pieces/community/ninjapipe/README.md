@@ -33,5 +33,5 @@ Activepieces piece for the NinjaPipe CRM.
 - New or Updated Task
 
 ## Wiring
-- Add `"@activepieces/piece-ninjapipe": ["packages/pieces/community/ninjapipe/src/index.ts"]` alphabetically into the root `tsconfig.base.json` `compilerOptions.paths`.
-- Build via `bun install` then `npx turbo run build --filter=@activepieces/piece-ninjapipe`.
+- Add `"@wippa/piece-ninjapipe": ["packages/pieces/community/ninjapipe/src/index.ts"]` alphabetically into the root `tsconfig.base.json` `compilerOptions.paths`.
+- Build via `bun install` then `npx turbo run build --filter=@wippa/piece-ninjapipe`.

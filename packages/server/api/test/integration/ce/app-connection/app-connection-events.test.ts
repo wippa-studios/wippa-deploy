@@ -1,10 +1,10 @@
-import { wideEvent } from '@activepieces/server-utils'
+import { wideEvent } from '@wippa/server-utils'
 import {
     AppConnectionType,
     ApplicationEventName,
     PackageType,
     PieceType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import * as applicationEventsModule from '../../../../src/app/helper/application-events'

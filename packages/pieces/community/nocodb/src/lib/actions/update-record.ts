@@ -3,7 +3,7 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@wippa/pieces-framework';
 import { makeClient, nocodbCommon } from '../common';
 
 export const updateRecordAction = createAction({

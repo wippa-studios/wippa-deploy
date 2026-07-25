@@ -1,8 +1,8 @@
-import { ApErrorParams, ErrorCode, isNil } from '@activepieces/core-utils';
+import { ApErrorParams, ErrorCode, isNil } from '@wippa/core-utils';
 import {
   ChatUIResponse,
   HumanInputFormResultTypes,
-} from '@activepieces/shared';
+} from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import { nanoid } from 'nanoid';

@@ -1,6 +1,6 @@
 
 import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { runwayAuth } from "./lib/common/auth";
 import { generateImageFromText } from "./lib/actions/generate-image-from-text";
 import { generateVideoFromImage } from "./lib/actions/generate-video-from-image";

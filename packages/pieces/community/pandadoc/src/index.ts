@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/pieces-common';
 
 import { createDocumentFromTemplate } from './lib/actions/create-document-from-template';
 import { createAttachment } from './lib/actions/create-attachment';
@@ -14,7 +14,7 @@ import { documentStateChanged } from './lib/triggers/document-state-changed';
 import { documentUpdated } from './lib/triggers/document-updated';
 
 import { pandadocAuth } from './lib/common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 
 export const pandadoc = createPiece({
   displayName: 'PandaDoc',

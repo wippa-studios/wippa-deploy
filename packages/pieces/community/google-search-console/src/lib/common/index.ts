@@ -1,6 +1,6 @@
 import { googleSearchConsoleAuth } from '../auth';
 import { createAuthClient } from '../../';
-import { PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema, Property } from '@wippa/pieces-framework';
 
 export const commonProps = {
   siteUrl: Property.Dropdown({

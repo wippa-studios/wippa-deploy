@@ -1,6 +1,6 @@
-import { AIProviderName, isObject, tryCatch, tryCatchSync } from '@activepieces/core-utils'
-import { chatAiUtils, ContentPartLike } from '@activepieces/server-utils'
-import { aiProviderUtils, ChatPhase, chatToolClassification, chatToolPhases, PersistedChatPart } from '@activepieces/shared'
+import { AIProviderName, isObject, tryCatch, tryCatchSync } from '@wippa/core-utils'
+import { chatAiUtils, ContentPartLike } from '@wippa/server-utils'
+import { aiProviderUtils, ChatPhase, chatToolClassification, chatToolPhases, PersistedChatPart } from '@wippa/shared'
 import { generateText, isLoopFinished, LanguageModel, LanguageModelUsage, ModelMessage, stepCountIs, StopCondition, streamText, ToolCallOptions, ToolSet } from 'ai'
 
 const MAX_RESPONSE_OUTPUT_TOKENS = 32_000

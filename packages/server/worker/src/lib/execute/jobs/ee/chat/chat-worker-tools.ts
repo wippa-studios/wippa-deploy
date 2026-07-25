@@ -1,6 +1,6 @@
-import { chunk, isNil, isObject, spreadIfDefined, tryCatch, tryCatchSync } from '@activepieces/core-utils'
-import { safeHttp } from '@activepieces/server-utils'
-import { ActionPreviewEvent, ActionReceiptEvent, apId, BatchItemResult, BuildPlanEvent, ChatAgentEventType, ChatPhase, chatToolClassification, FileProducedEvent, ImageGeneratedEvent, SaveChatFileResponse, SendChatEmailResponse, SendChatEventRequest, ToolProgressEvent } from '@activepieces/shared'
+import { chunk, isNil, isObject, spreadIfDefined, tryCatch, tryCatchSync } from '@wippa/core-utils'
+import { safeHttp } from '@wippa/server-utils'
+import { ActionPreviewEvent, ActionReceiptEvent, apId, BatchItemResult, BuildPlanEvent, ChatAgentEventType, ChatPhase, chatToolClassification, FileProducedEvent, ImageGeneratedEvent, SaveChatFileResponse, SendChatEmailResponse, SendChatEventRequest, ToolProgressEvent } from '@wippa/shared'
 import { tool, ToolExecutionOptions, ToolSet } from 'ai'
 import { stripHtml } from 'string-strip-html'
 import { z } from 'zod'
@@ -34,7 +34,7 @@ const cardTitleFields = {
 }
 const richOptionSchema = z.object({
     label: z.string().describe('The choice label'),
-    piece: z.string().optional().describe('When this option IS an app/integration, set its piece name (e.g. "google-sheets", "hubspot", "@activepieces/piece-airtable") to show the real app logo. Prefer this over icon whenever the option is an app — use the exact piece names returned by ap_research_pieces.'),
+    piece: z.string().optional().describe('When this option IS an app/integration, set its piece name (e.g. "google-sheets", "hubspot", "@wippa/piece-airtable") to show the real app logo. Prefer this over icon whenever the option is an app — use the exact piece names returned by ap_research_pieces.'),
     icon: z.string().optional().describe(`Optional Lucide icon name (kebab-case) for short (1-2 word) non-app labels (ignored if piece is set). Allowed names: ${QUESTION_ICON_NAMES}`),
     description: z.string().optional().describe('Optional one-line subtitle under the label'),
 })
@@ -185,7 +185,7 @@ function looksLikeMcpContentParts(array: unknown[]): boolean {
 function normalizePieceName(piece: string): string {
     if (piece.startsWith('@')) return piece
     const stripped = piece.startsWith('piece-') ? piece.slice('piece-'.length) : piece
-    return `@activepieces/piece-${stripped.replace(/_/g, '-')}`
+    return `@wippa/piece-${stripped.replace(/_/g, '-')}`
 }
 
 function createEventEmitter({ sendEvent, userId, conversationId, log }: {
@@ -557,7 +557,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
             description: 'Check what authentication a piece needs and find available connections. Call this BEFORE ap_execute_action to determine if auth is needed.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@activepieces/piece-gmail"'),
+                pieceName: z.string().describe('Piece name, e.g. "@wippa/piece-gmail"'),
             }),
             execute: async (input) => {
                 return executeWithTimeout('ap_discover_action_auth', input)
@@ -578,7 +578,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
             description: 'Execute a piece action once or in batch. Before the FIRST call to an action you have not already inspected this conversation, call ap_get_piece_props to get the exact prop names, required fields, dropdown values, and dynamic sub-field shapes — never guess the input shape (guessing fails validation and wastes turns). Use ap_discover_action_auth first to check if auth is needed. The system manages connections automatically after the user selects one. If a call fails, fix the input from the returned error and retry ONCE; do not re-send a near-identical call repeatedly. For batch execution, provide an items array where each element is a complete input object for one invocation.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@activepieces/piece-gmail"'),
+                pieceName: z.string().describe('Piece name, e.g. "@wippa/piece-gmail"'),
                 actionName: z.string().describe('Action to run, e.g. "gmail_search_mail"'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Input for the action (single-item mode)'),
                 items: z.array(z.record(z.string(), z.unknown())).max(MAX_BATCH_SIZE).optional().describe('Array of input objects for batch execution. Each element is a complete input for one invocation. Max 100 items.'),
@@ -699,7 +699,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
             description: 'Read-only look at the user\'s real data during discovery — list/get/search/read a sheet\'s rows and columns, channels, records, etc. — to understand what they have and build something that fits. Only runs read actions (never writes). Needs a connection like ap_execute_action; ensure one is selected first AND that you pass auth + any resolved object/list id (via ap_get_piece_props with auth) — an empty read is usually an unset connection or an unresolved id, NOT absence of data, so fix that and retry before concluding there is nothing there. Keep samples small (~20 rows). This is for understanding, NOT for performing the task — use ap_execute_action to actually do things.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@activepieces/piece-google-sheets"'),
+                pieceName: z.string().describe('Piece name, e.g. "@wippa/piece-google-sheets"'),
                 actionName: z.string().describe('A read action, e.g. "get_rows", "list_channels"'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Input for the read action (keep limits small)'),
             }),

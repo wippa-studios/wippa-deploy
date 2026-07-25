@@ -1,4 +1,4 @@
-import { OIDCAuthProps, OIDCProperty } from '@activepieces/pieces-framework';
+import { OIDCAuthProps, OIDCProperty } from '@wippa/pieces-framework';
 import React from 'react';
 
 import { GenericPropertiesForm } from '@/app/builder/piece-properties/generic-properties-form';

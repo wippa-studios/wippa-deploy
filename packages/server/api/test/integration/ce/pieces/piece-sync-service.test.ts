@@ -1,7 +1,7 @@
 import {
     PackageType,
     PieceType,
-} from '@activepieces/shared'
+} from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
 import { pieceMetadataService } from '../../../../src/app/pieces/metadata/piece-metadata-service'

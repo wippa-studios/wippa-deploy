@@ -1,12 +1,12 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@wippa/pieces-framework';
 import { randomBytes } from 'node:crypto';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@wippa/pieces-common';
 import { stableDiffusionAuth } from '../auth';
-import { kebabCase } from '@activepieces/pieces-framework';
+import { kebabCase } from '@wippa/pieces-framework';
 
 export const textToImage = createAction({
   name: 'textToImage',

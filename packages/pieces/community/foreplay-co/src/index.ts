@@ -1,6 +1,6 @@
 
 import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@wippa/pieces-framework';
 import { getAdById, getAdsByPage, findBrands, findAds, findBoards } from "./lib/actions";
 import { newAdInSpyder, newAdInBoard, newSwipefileAd } from "./lib/triggers";
 
