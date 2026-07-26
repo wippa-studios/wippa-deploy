@@ -99,7 +99,8 @@ export const CanvasContextMenuContent = ({
     contextMenuType === ContextMenuType.STEP;
   const showPasteAsBranchChild =
     selectedNodes.length === 1 &&
-    firstSelectedStep?.type === FlowActionType.ROUTER &&
+    (firstSelectedStep?.type === FlowActionType.ROUTER ||
+     firstSelectedStep?.type === FlowActionType.PARALLEL) &&
     !readonly &&
     contextMenuType === ContextMenuType.STEP;
   const showPasteAsCofBranchChild =

@@ -137,6 +137,7 @@ const createStepGraph: (params: {
     edges:
       step.type !== FlowActionType.LOOP_ON_ITEMS &&
       step.type !== FlowActionType.ROUTER &&
+      step.type !== FlowActionType.PARALLEL &&
       !sharedFlowCanvasUtils.hasContinueOnFailureBranches(step)
         ? [straightLineEdge]
         : [],
@@ -164,6 +165,8 @@ const buildFlowGraph: (params: {
       ? buildLoopChildGraph({ step, orientation })
       : step.type === FlowActionType.ROUTER
       ? buildRouterChildGraph({ step, orientation })
+      : step.type === FlowActionType.PARALLEL
+      ? buildParallelChildGraph({ step, orientation })
       : sharedFlowCanvasUtils.hasContinueOnFailureBranches(step)
       ? buildContinueOnFailureBranchesGraph({ step, orientation })
       : null;
@@ -477,6 +480,109 @@ const buildRouterChildGraph = ({
   };
 };
 
+const buildParallelChildGraph = ({
+  step,
+  orientation,
+}: {
+  step: FlowAction & { type: FlowActionType.PARALLEL; children: (FlowAction | null)[] };
+  orientation: CanvasOrientation;
+}) => {
+  const layout = getLayout(orientation);
+  const childGraphs = step.children.map((branch, index) => {
+    return branch
+      ? buildFlowGraph({ step: branch, orientation })
+      : createBigAddButtonGraph({
+          parentStep: step,
+          nodeData: {
+            parentStepName: step.name,
+            stepLocationRelativeToParent:
+              StepLocationRelativeToParent.INSIDE_BRANCH,
+            branchIndex: index,
+            edgeId: `${step.name}-parallel-${index}-start-edge`,
+          },
+          orientation,
+        });
+  });
+
+  const childGraphsAfterOffset = offsetRouterChildSteps({
+    childGraphs,
+    orientation,
+  });
+
+  const maxHeight = Math.max(
+    ...childGraphsAfterOffset.map(
+      (cg) => calculateGraphBoundingBox({ graph: cg, orientation }).height,
+    ),
+  );
+
+  const subgraphEndSubNode: ApGraphEndNode = {
+    id: `${step.name}-parallel-subgraph-end`,
+    type: ApNodeType.GRAPH_END_WIDGET,
+    position: {
+      x: layout.stepCrossSize / 2,
+      y:
+        layout.stepAlongSize +
+        layout.routerOffsetAlong +
+        maxHeight +
+        flowCanvasLayoutConsts.ARC_LENGTH +
+        layout.spaceAlongBetweenSteps,
+    },
+    data: {},
+    selectable: false,
+  };
+  const edges: ApEdge[] = childGraphsAfterOffset
+    .map((childGraph, branchIndex) => {
+      const pathName = `${t('Parallel Path')} ${branchIndex + 1}`;
+      return [
+        {
+          id: `${step.name}-parallel-${branchIndex}-start-edge`,
+          source: step.name,
+          target: `${childGraph.nodes[0].id}`,
+          type: ApEdgeType.ROUTER_START_EDGE as const,
+          data: {
+            isBranchEmpty: isNil(step.children[branchIndex]),
+            label: pathName,
+            branchIndex,
+            stepLocationRelativeToParent:
+              StepLocationRelativeToParent.INSIDE_BRANCH as const,
+            drawHorizontalLine:
+              branchIndex === 0 ||
+              branchIndex === childGraphsAfterOffset.length - 1,
+            drawStartingVerticalLine: branchIndex === 0,
+          },
+        },
+        {
+          id: `${step.name}-parallel-${branchIndex}-end-edge`,
+          source: `${childGraph.nodes.at(-1)!.id}`,
+          target: subgraphEndSubNode.id,
+          type: ApEdgeType.ROUTER_END_EDGE as const,
+          data: {
+            drawEndingVerticalLine: branchIndex === 0,
+            verticalSpaceBetweenLastNodeInBranchAndEndLine:
+              subgraphEndSubNode.position.y -
+              childGraph.nodes.at(-1)!.position.y -
+              layout.spaceAlongBetweenSteps -
+              flowCanvasLayoutConsts.ARC_LENGTH,
+            drawHorizontalLine:
+              branchIndex === 0 ||
+              branchIndex === childGraphsAfterOffset.length - 1,
+            routerOrBranchStepName: step.name,
+            isNextStepEmpty: isNil(step.nextAction),
+          },
+        },
+      ];
+    })
+    .flat();
+
+  return {
+    nodes: [
+      ...childGraphsAfterOffset.map((cg) => cg.nodes).flat(),
+      subgraphEndSubNode,
+    ],
+    edges: [...childGraphsAfterOffset.map((cg) => cg.edges).flat(), ...edges],
+  };
+};
+
 const buildContinueOnFailureBranchesGraph = ({
   step,
   orientation,
@@ -651,6 +757,7 @@ const isSkipped = (stepName: string, trigger: FlowTrigger) => {
       (stepInPath) =>
         stepInPath.type === FlowActionType.LOOP_ON_ITEMS ||
         stepInPath.type === FlowActionType.ROUTER ||
+        stepInPath.type === FlowActionType.PARALLEL ||
         sharedFlowCanvasUtils.hasContinueOnFailureBranches(stepInPath),
     )
     .filter((parentInPath) =>

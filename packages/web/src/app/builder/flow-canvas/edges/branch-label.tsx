@@ -91,7 +91,7 @@ const BranchLabel = (props: BaseBranchLabel) => {
   if (isNil(step)) {
     return <></>;
   }
-  if (isInsideRouterBranch && step.type !== FlowActionType.ROUTER) {
+  if (isInsideRouterBranch && step.type !== FlowActionType.ROUTER && step.type !== FlowActionType.PARALLEL) {
     return <></>;
   }
 
