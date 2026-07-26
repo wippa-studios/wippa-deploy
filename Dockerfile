@@ -82,19 +82,13 @@ RUN node -e "\
   process.stdout.write(JSON.stringify(names));\
 " > packages/server/api/dist/src/migration-manifest.json
 
-# Remove workspaces not needed at runtime: pieces except the 4 the api imports,
-# plus web/cli/tests-e2e/embed-sdk whose deps (react & friends) would otherwise land
-# in the runtime node_modules. dist/packages/web is already built and kept.
+# Keep all community pieces — Wippa is an Australian Zapier alternative,
+# users expect the full 700+ integration catalog. Only remove workspaces
+# that are not needed at runtime (web/cli/tests/ee-embed-sdk) — their
+# deps (react & friends) would otherwise bloat the runtime node_modules.
+# dist/packages/web is already built and kept.
 # Then drop the removed entries from the root workspaces list and regenerate bun.lock.
-RUN rm -rf packages/pieces/core packages/pieces/custom \
-      packages/web packages/cli packages/tests-e2e packages/ee && \
-    find packages/pieces/community -mindepth 1 -maxdepth 1 -type d \
-      ! -name xero \
-      ! -name slack \
-      ! -name sendgrid \
-      ! -name smtp \
-      ! -name email \
-      -exec rm -rf {} + && \
+RUN rm -rf packages/web packages/cli packages/tests-e2e packages/ee && \
     node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))" && \
     rm -f bun.lock && bun install
 
