@@ -66,7 +66,7 @@ RUN --mount=type=cache,target=/root/.bun/install/cache \
 COPY . .
 
 # Build frontend, engine, server API, and worker
-RUN npx turbo run build --filter=web --filter=@wippa/engine --filter=api --filter=worker
+RUN npx turbo run build --filter=web --filter=@wippa/engine --filter=api --filter=worker --concurrency=2
 
 # The web build emits hidden source maps (vite build.sourcemap='hidden') used to
 # symbolicate production stack traces in Sentry/BetterStack error tracking. Upload
@@ -87,10 +87,11 @@ RUN node -e "\
 # that are not needed at runtime (web/cli/tests/ee-embed-sdk) — their
 # deps (react & friends) would otherwise bloat the runtime node_modules.
 # dist/packages/web is already built and kept.
-# Then drop the removed entries from the root workspaces list and regenerate bun.lock.
+# Drop the removed entries from the root workspaces list.
+# node_modules is already fully resolved from the initial bun install,
+# so we skip the lockfile regeneration here.
 RUN rm -rf packages/web packages/cli packages/tests-e2e packages/ee && \
-    node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))" && \
-    rm -f bun.lock && bun install
+    node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))"
 
 ### STAGE 2: Run ###
 FROM base AS run
@@ -113,9 +114,11 @@ COPY --from=build /usr/src/app/packages ./packages
 # Copy built engine
 COPY --from=build /usr/src/app/dist/packages/engine/ ./dist/packages/engine/
 
-# Regenerate lockfile and install production dependencies (pieces were trimmed from workspace)
-RUN --mount=type=cache,target=/root/.bun/install/cache \
-    bun install --production
+# Copy the full node_modules from build stage — this avoids re-resolving
+# all 724 pieces' production dependencies in the runtime stage.
+# The image will be larger (~2-3GB) but this is the cost of shipping
+# every integration out of the box like Zapier does.
+COPY --from=build /usr/src/app/node_modules ./node_modules
 
 # Copy frontend files
 COPY --from=build /usr/src/app/dist/packages/web ./dist/packages/web/
