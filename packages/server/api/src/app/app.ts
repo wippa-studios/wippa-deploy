@@ -4,7 +4,7 @@ import { createAdapter } from '@socket.io/redis-adapter'
 import { isNil, spreadIfDefined } from '@wippa/core-utils'
 import { PieceMetadata } from '@wippa/pieces-framework'
 import { apVersionUtil, onCallService, UNKNOWN_VERSION, wideEvent } from '@wippa/server-utils'
-import { AddAllowedEmbedOriginsRequestBody, ApEdition, ApEnvironment, AppConnectionWithoutSensitiveData, ApplicationEventName, ConnectionDeletedEvent, ConnectionUpsertedEvent, Flow, FlowActivatedEvent, FlowCreatedEvent, FlowDeactivatedEvent, FlowDeletedEvent, FlowPublishedEvent, FlowRun, FlowRunFinishedEvent, FlowRunRetriedEvent, FlowRunStartedEvent, FlowUpdatedEvent, Folder, FolderCreatedEvent, FolderDeletedEvent, FolderUpdatedEvent, GitRepoWithoutSensitiveData, ProjectMember, ProjectRelease, ProjectReleaseEvent, ProjectRoleEvent, ProjectWithLimits, SigningKeyEvent, SignUpEvent, Template, UserEmailVerifiedEvent, UserInvitation, UserPasswordResetEvent, UserSignedInEvent, UserWithMetaInformation } from '@wippa/shared'
+import { AddAllowedEmbedOriginsRequestBody, ApEnvironment, AppConnectionWithoutSensitiveData, ApplicationEventName, ConnectionDeletedEvent, ConnectionUpsertedEvent, Flow, FlowActivatedEvent, FlowCreatedEvent, FlowDeactivatedEvent, FlowDeletedEvent, FlowPublishedEvent, FlowRun, FlowRunFinishedEvent, FlowRunRetriedEvent, FlowRunStartedEvent, FlowUpdatedEvent, Folder, FolderCreatedEvent, FolderDeletedEvent, FolderUpdatedEvent, GitRepoWithoutSensitiveData, ProjectMember, ProjectRelease, ProjectReleaseEvent, ProjectRoleEvent, ProjectWithLimits, SigningKeyEvent, SignUpEvent, Template, UserEmailVerifiedEvent, UserInvitation, UserPasswordResetEvent, UserSignedInEvent, UserWithMetaInformation } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance, FastifyRequest, HTTPMethods } from 'fastify'
 import { jsonSchemaTransform, jsonSchemaTransformObject } from 'fastify-type-provider-zod'
 import Mustache from 'mustache'
@@ -92,7 +92,6 @@ import { shutdownTelemetry } from './helper/telemetry.utils'
 import { knowledgeBaseModule } from './knowledge-base/knowledge-base.module'
 import { mcpServerModule } from './mcp/mcp-module'
 import { mcpOAuthApproveController } from './mcp/oauth/code/mcp-oauth-approve.controller'
-import { communityPiecesModule } from './pieces/community-piece-module'
 import { startDevPieceWatcher } from './pieces/dev-piece-watcher'
 import { pieceModule } from './pieces/metadata/piece-metadata-controller'
 import { pieceMetadataService } from './pieces/metadata/piece-metadata-service'
@@ -260,7 +259,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
 
     // Dev-only: accept browser debug logs into the shared evlog fs drain so a
     // chat run can be reconstructed end-to-end (web + api + worker). Never in cloud/prod.
-    const clientLogsEnabled = system.get(AppSystemProp.LOG_FILE) === 'true' && system.getEdition() !== ApEdition.CLOUD
+    const clientLogsEnabled = system.get(AppSystemProp.LOG_FILE) === 'true' && !(system.getBoolean(AppSystemProp.WIPPA_CLOUD) ?? false)
     if (clientLogsEnabled) {
         await app.register(clientLogsModule)
     }
@@ -303,91 +302,60 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
 
     await validateEnvPropsOnStartup(app.log)
 
-    const edition = system.getEdition()
-    app.log.info({
-        edition,
-    }, 'Wippa Edition')
-    switch (edition) {
-        case ApEdition.CLOUD:
-            await app.register(adminPlatformModule)
-            await app.register(adminPlatformTemplatesCloudModule)
-            await app.register(appCredentialModule)
-            await app.register(connectionKeyModule)
-            await app.register(platformProjectModule)
-            await platformAiCreditsService(app.log).init()
-            await app.register(platformPlanModule)
-            await app.register(projectMemberModule)
-            await app.register(appSumoModule)
-            await app.register(signingKeyModule)
-            await app.register(authnSsoSamlModule)
-            await app.register(managedAuthnModule)
-            await app.register(oauthAppModule)
-            await app.register(platformPieceModule)
-            await app.register(pieceSetModule)
-            await app.register(otpModule)
-            await app.register(enterpriseLocalAuthnModule)
-            await app.register(federatedAuthModule)
-            await app.register(apiKeyModule)
-            await app.register(gitRepoModule)
-            await app.register(auditEventModule)
-            await app.register(platformWebhooksModule)
-            await app.register(projectRoleModule)
-            await app.register(projectReleaseModule)
-            await app.register(projectReplaceModule)
-            await app.register(globalConnectionModule)
-            await app.register(secretManagersModule)
-            await app.register(scimModule)
-            await app.register(embedSubdomainModule)
-            await app.register(chatModule)
-            await app.register(chatEvalModule)
-            await app.register(aiToolConfigModule)
-            setPlatformOAuthService(platformOAuth2Service(app.log))
-            projectHooks.set(projectEnterpriseHooks)
-            flagHooks.set(enterpriseFlagsHooks)
-            resumePageHooks.set((log) => ({ getTheme: (params) => appearanceHelper.getTheme({ ...params, log }) }))
-            exceptionHandler.initializeSentry(system.get(AppSystemProp.SENTRY_DSN))
-            systemJobHandlers.registerJobHandler(SystemJobName.HARD_DELETE_PLATFORM, (data) => platformBackgroundJobs(app.log).hardDeletePlatformHandler(data))
-            break
-        case ApEdition.ENTERPRISE:
-            await platformAiCreditsService(app.log).init()
-            await app.register(platformPlanModule)
-            await app.register(platformProjectModule)
-            await app.register(projectMemberModule)
-            await app.register(signingKeyModule)
-            await app.register(authnSsoSamlModule)
-            await app.register(managedAuthnModule)
-            await app.register(oauthAppModule)
-            await app.register(platformPieceModule)
-            await app.register(pieceSetModule)
-            await app.register(otpModule)
-            await app.register(enterpriseLocalAuthnModule)
-            await app.register(federatedAuthModule)
-            await app.register(apiKeyModule)
-            await app.register(gitRepoModule)
-            await app.register(auditEventModule)
-            await app.register(platformWebhooksModule)
-            await app.register(projectRoleModule)
-            await app.register(projectReleaseModule)
-            await app.register(projectReplaceModule)
-            await app.register(globalConnectionModule)
-            await app.register(secretManagersModule)
-            await app.register(scimModule)
-            await app.register(embedSubdomainModule)
-            await app.register(chatModule)
-            await app.register(chatEvalModule)
-            await app.register(aiToolConfigModule)
-            setPlatformOAuthService(platformOAuth2Service(app.log))
-            projectHooks.set(projectEnterpriseHooks)
-            flagHooks.set(enterpriseFlagsHooks)
-            resumePageHooks.set((log) => ({ getTheme: (params) => appearanceHelper.getTheme({ ...params, log }) }))
-            break
-        case ApEdition.COMMUNITY:
-            await app.register(platformProjectModule)
-            await app.register(communityPiecesModule)
-            await app.register(oauthAppModule)
-            setPlatformOAuthService(platformOAuth2Service(app.log))
-            break
+    // Wippa: unified registration — all features available to all deployments.
+    // Cloud-specific modules (admin platform, appsumo) are gated by env vars.
+    // Billing is gated by Stripe config.
+    // No edition-based code split.
+
+    await app.register(platformProjectModule)
+    await app.register(projectMemberModule)
+    await app.register(signingKeyModule)
+    await app.register(authnSsoSamlModule)
+    await app.register(managedAuthnModule)
+    await app.register(oauthAppModule)
+    await app.register(platformPieceModule)
+    await app.register(pieceSetModule)
+    await app.register(otpModule)
+    await app.register(enterpriseLocalAuthnModule)
+    await app.register(federatedAuthModule)
+    await app.register(apiKeyModule)
+    await app.register(gitRepoModule)
+    await app.register(auditEventModule)
+    await app.register(platformWebhooksModule)
+    await app.register(projectRoleModule)
+    await app.register(projectReleaseModule)
+    await app.register(projectReplaceModule)
+    await app.register(globalConnectionModule)
+    await app.register(secretManagersModule)
+    await app.register(scimModule)
+    await app.register(embedSubdomainModule)
+    await app.register(chatModule)
+    await app.register(chatEvalModule)
+    await app.register(aiToolConfigModule)
+
+    // Cloud-only modules
+    if (system.getBoolean(AppSystemProp.WIPPA_CLOUD) ?? false) {
+        await app.register(adminPlatformModule)
+        await app.register(adminPlatformTemplatesCloudModule)
+        await app.register(appCredentialModule)
+        await app.register(connectionKeyModule)
+        await app.register(appSumoModule)
+        exceptionHandler.initializeSentry(system.get(AppSystemProp.SENTRY_DSN))
     }
+
+    // Billing (gated by Stripe config)
+    if (system.get(AppSystemProp.STRIPE_SECRET_KEY)) {
+        await platformAiCreditsService(app.log).init()
+        if (system.getBoolean(AppSystemProp.WIPPA_CLOUD) ?? false) {
+            await app.register(platformPlanModule)
+        }
+    }
+
+    setPlatformOAuthService(platformOAuth2Service(app.log))
+    projectHooks.set(projectEnterpriseHooks)
+    flagHooks.set(enterpriseFlagsHooks)
+    resumePageHooks.set((log) => ({ getTheme: (params) => appearanceHelper.getTheme({ ...params, log }) }))
+    systemJobHandlers.registerJobHandler(SystemJobName.HARD_DELETE_PLATFORM, (data) => platformBackgroundJobs(app.log).hardDeletePlatformHandler(data))
 
     const isCanaryApp = system.getBoolean(AppSystemProp.IS_CANARY_APP) ?? false
     if (isCanaryApp) {

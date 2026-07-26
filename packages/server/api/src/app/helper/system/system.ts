@@ -19,7 +19,7 @@ const systemPropDefaultValues: Partial<Record<SystemProp, string>> = {
     [AppSystemProp.CLOUD_AUTH_ENABLED]: 'true',
     [AppSystemProp.CONFIG_PATH]: path.join(os.homedir(), '.activepieces'),
     [AppSystemProp.DB_TYPE]: DatabaseType.POSTGRES,
-    [AppSystemProp.EDITION]: ApEdition.COMMUNITY,
+    [AppSystemProp.EDITION]: ApEdition.ENTERPRISE,
     [AppSystemProp.APP_WEBHOOK_SECRETS]: '{}',
     [AppSystemProp.CONTAINER_TYPE]: ContainerType.WORKER_AND_APP,
     [AppSystemProp.PORT]: '3000',
@@ -158,7 +158,14 @@ export const system = {
         return value
     },
     getEdition(): ApEdition {
-        return this.getOrThrow<ApEdition>(AppSystemProp.EDITION)
+        // Wippa: all features available in every deployment.
+        // Self-hosted = ENTERPRISE (everything enabled).
+        // Cloud = CLOUD (cloud-specific billing/admin added).
+        // COMMUNITY edition is removed — no feature restrictions.
+        if (this.getBoolean(AppSystemProp.WIPPA_CLOUD)) {
+            return ApEdition.CLOUD
+        }
+        return ApEdition.ENTERPRISE
     },
     isWorker(): boolean {
         return [ContainerType.WORKER, ContainerType.WORKER_AND_APP].includes(

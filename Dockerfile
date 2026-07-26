@@ -1,142 +1,136 @@
-FROM node:24.14.0-bullseye-slim AS base
+FROM node:24.14.0-bullseye-slim AS builder
 
-# C.UTF-8 ships with Debian, so no locale generation is needed
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
 
-# Install all system dependencies in a single layer with cache mounts.
-# libcap2 is isolate's runtime lib (the isolate binaries ship prebuilt in api assets).
+# System dependencies (single layer, cached)
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-        openssh-client \
-        python3 \
-        g++ \
-        build-essential \
-        git \
-        poppler-utils \
-        poppler-data \
-        procps \
-        unzip \
-        curl \
-        ca-certificates \
-        iptables \
-        libcap2
+        openssh-client python3 g++ build-essential git \
+        poppler-utils poppler-data procps unzip curl \
+        ca-certificates iptables libcap2
 
-# Download, extract, and clean up bun in a single layer so the zip never ships
+# Install bun
 RUN export ARCH=$(uname -m) && \
     if [ "$ARCH" = "x86_64" ]; then \
       curl -fSL https://github.com/oven-sh/bun/releases/download/bun-v1.3.1/bun-linux-x64-baseline.zip -o bun.zip; \
     elif [ "$ARCH" = "aarch64" ]; then \
       curl -fSL https://github.com/oven-sh/bun/releases/download/bun-v1.3.1/bun-linux-aarch64.zip -o bun.zip; \
     fi && \
-    unzip bun.zip && \
-    mv bun-*/bun /usr/local/bin/bun && \
-    chmod +x /usr/local/bin/bun && \
-    rm -rf bun.zip bun-* && \
-    bun --version
+    unzip bun.zip && mv bun-*/bun /usr/local/bin/bun && chmod +x /usr/local/bin/bun && \
+    rm -rf bun.zip bun-*
 
-# Install global npm packages in a single layer
-RUN --mount=type=cache,target=/root/.npm \
-    npm install -g --no-fund --no-audit \
-    node-gyp \
-    npm@11.11.0 \
-    pm2@6.0.10 \
-    esbuild@0.25.0
+# Install global build tools
+RUN npm install -g --no-fund --no-audit node-gyp npm@11.11.0 esbuild@0.25.0
 
-# Install isolated-vm globally (needed for sandboxes)
-RUN --mount=type=cache,target=/root/.bun/install/cache \
-    cd /usr/src && bun install isolated-vm@6.0.2
-
-### STAGE 1: Build ###
-FROM base AS build
+# Install isolated-vm for sandboxes
+RUN cd /usr/src && bun install isolated-vm@6.0.2
 
 WORKDIR /usr/src/app
 
-# Copy dependency files and workspace package.json files for resolution
-COPY .npmrc package.json bun.lock bunfig.toml ./
+# Copy dependency lockfile first (layer caching)
+COPY package.json bun.lock bunfig.toml .npmrc ./
 COPY packages/ ./packages/
 
-# Install all dependencies (lockfile regenerated during namespace migration)
+# Install all workspace dependencies (lockfile includes all @wippa/* packages)
 RUN --mount=type=cache,target=/root/.bun/install/cache \
     bun install
 
-# Copy remaining source code (turbo config, etc.)
+# Copy remaining source code
 COPY . .
 
-# Build frontend, engine, server API, and worker
-RUN npx turbo run build --filter=web --filter=@wippa/engine --filter=api --filter=worker --concurrency=2
+# Build core packages: frontend, engine, server API, worker
+RUN npx turbo run build \
+    --filter=web \
+    --filter=@wippa/engine \
+    --filter=api \
+    --filter=worker \
+    --concurrency=2
 
-# Build all 724+ community pieces so they are resolvable at runtime. Each piece's
-# package.json points to ./dist/src/index.js, so the compiled dist must exist.
-RUN --mount=type=cache,target=/tmp/turbo \
-    npx turbo run build --filter=./packages/pieces/** --concurrency=4
+# Compile all 724+ community pieces with esbuild (replaces per-piece tsc compilation)
+# esbuild is 10-100× faster than tsc and uses far less memory per process.
+# We use --external:* so npm deps are resolved from node_modules at runtime.
+RUN find packages/pieces -name "package.json" -maxdepth 3 ! -path "*/node_modules/*" | \
+    while IFS= read -r pkg; do \
+        dir="$(dirname "$pkg")"; \
+        src="$dir/src/index.ts"; \
+        outdir="$dir/dist"; \
+        if [ -f "$src" ]; then \
+            mkdir -p "$outdir" && \
+            esbuild "$src" --bundle --outfile="$outdir/src/index.js" --platform=node --external:* && \
+            cp "$dir/package.json" "$outdir/"; \
+        fi; \
+    done
 
-# The web build emits hidden source maps (vite build.sourcemap='hidden') used to
-# symbolicate production stack traces in Sentry/BetterStack error tracking. Upload
-# them here (cloud CI, guarded by a token) BEFORE stripping, then always remove the
-# .map files so source is never served from the shipped image (self-hosted too).
-# TODO(cloud-ci): inject + upload maps with sentry-cli when SENTRY_AUTH_TOKEN is set.
-RUN find dist/packages/web -name '*.map' -delete
+# Remove source TypeScript from all pieces (only dist/ + package.json needed at runtime)
+RUN find packages/pieces -type d -name src -prune -exec rm -rf {} + 2>/dev/null || true
 
-# Generate migration manifest (ordered list of migration names) for image-tag-based rollback
+# Generate migration manifest for rollback support
 RUN node -e "\
   const {getMigrations} = require('./packages/server/api/dist/src/app/database/postgres-connection');\
-  const names = getMigrations().map(M => new M().name);\
+  const names = getMigrations().map(m => new m().name);\
   process.stdout.write(JSON.stringify(names));\
 " > packages/server/api/dist/src/migration-manifest.json
 
-# Keep all community pieces — Wippa is an Australian Zapier alternative,
-# users expect the full 700+ integration catalog. Only remove workspaces
-# that are not needed at runtime (web/cli/tests/ee-embed-sdk) — their
-# deps (react & friends) would otherwise bloat the runtime node_modules.
-# dist/packages/web is already built and kept.
-# Drop the removed entries from the root workspaces list.
-# node_modules is already fully resolved from the initial bun install,
-# so we skip the lockfile regeneration here.
+# Remove dev-only packages that bloat the runtime node_modules
 RUN rm -rf packages/web packages/cli packages/tests-e2e packages/ee && \
     node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))"
 
-# Remove piece source TypeScript files from the runtime image. Only the compiled
-# dist/ and package.json are needed for dynamic piece loading at runtime.
-RUN find packages/pieces -type d -name src -prune -exec rm -rf {} + 2>/dev/null || true
+# Remove per-piece node_modules (if any exist — bun links root-level when possible)
+RUN rm -rf packages/pieces/*/*/node_modules 2>/dev/null || true
 
-### STAGE 2: Run ###
-FROM base AS run
+### STAGE 2: Runtime ###
+FROM node:24.14.0-bullseye-slim
+
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
+
+# Runtime system deps
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        ca-certificates curl procps libcap2 && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
-# Copy static configuration files first (better layer caching)
-COPY --from=build /usr/src/app/packages/server/api/src/assets/default.cf /usr/local/etc/isolate
+# Isolate config
+COPY --from=builder /usr/src/app/packages/server/api/src/assets/default.cf /usr/local/etc/isolate
+
+# Entrypoint
 COPY docker-entrypoint.sh .
+RUN chmod +x docker-entrypoint.sh
 
-# Copy root config files needed for dependency resolution
-COPY --from=build /usr/src/app/package.json ./
-COPY --from=build /usr/src/app/.npmrc ./
-COPY --from=build /usr/src/app/bunfig.toml ./
-COPY --from=build /usr/src/app/LICENSE .
+# Root config files
+COPY --from=builder /usr/src/app/package.json ./
+COPY --from=builder /usr/src/app/.npmrc ./
+COPY --from=builder /usr/src/app/bunfig.toml ./
+COPY --from=builder /usr/src/app/LICENSE ./
 
-# Copy workspace package.json files (needed for bun workspace resolution)
-COPY --from=build /usr/src/app/packages ./packages
+# Workspace package.json files (needed for bun workspace resolution)
+COPY --from=builder /usr/src/app/packages ./packages
 
-# Copy built engine
-COPY --from=build /usr/src/app/dist/packages/engine/ ./dist/packages/engine/
+# Built engine
+COPY --from=builder /usr/src/app/dist/packages/engine/ ./dist/packages/engine/
 
-# Copy the full node_modules from build stage — this avoids re-resolving
-# all 724 pieces' production dependencies in the runtime stage.
-# The image will be larger (~2-3GB) but this is the cost of shipping
-# every integration out of the box like Zapier does.
-COPY --from=build /usr/src/app/node_modules ./node_modules
+# Full node_modules (already trimmed of dev-only packages in build stage)
+COPY --from=builder /usr/src/app/node_modules ./node_modules
 
-# Copy frontend files
-COPY --from=build /usr/src/app/dist/packages/web ./dist/packages/web/
+# Frontend built files
+COPY --from=builder /usr/src/app/dist/packages/web ./dist/packages/web/
+
+# Migration manifest (used for rollback)
+COPY --from=builder /usr/src/app/packages/server/api/dist/src/migration-manifest.json \
+    ./packages/server/api/dist/src/migration-manifest.json
 
 LABEL service=wippa
 
-# WORKER containers have no HTTP server; treat them as healthy (probe only the app).
 HEALTHCHECK --interval=10s --timeout=5s --start-period=60s --retries=5 \
-    CMD [ "$AP_CONTAINER_TYPE" = "WORKER" ] && exit 0 || curl -fsS "http://localhost:${AP_PORT:-80}/api/v1/health" || exit 1
+    CMD [ "$AP_CONTAINER_TYPE" = "WORKER" ] && exit 0 || \
+        curl -fsS "http://localhost:${AP_PORT:-80}/api/v1/health" || exit 1
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
 EXPOSE 80
