@@ -55,7 +55,7 @@ FROM base AS build
 WORKDIR /usr/src/app
 
 # Copy dependency files and workspace package.json files for resolution
-COPY .npmrc package.json bunfig.toml ./
+COPY .npmrc package.json bun.lock bunfig.toml ./
 COPY packages/ ./packages/
 
 # Install all dependencies (lockfile regenerated during namespace migration)
