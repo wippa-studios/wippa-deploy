@@ -1,7 +1,7 @@
 import { ActivepiecesError, ErrorCode, FlowId, isNil } from '@wippa/core-utils'
 import { ChatUIResponse, FormInputType, FormResponse, PopulatedFlow } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
-import { pieceMetadataService } from '../../../connectors/metadata/piece-metadata-service'
+import { pieceMetadataService } from '../../../connectors/metadata/connector-metadata-service'
 import { platformService } from '../../../platform/platform.service'
 import { projectService } from '../../../project/project-service'
 import { flowVersionService } from '../../flow-version/flow-version.service'

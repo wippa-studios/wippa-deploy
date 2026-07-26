@@ -3,9 +3,9 @@ import { PieceMetadataModel, PieceMetadataModelSummary } from '@wippa/connectors
 import { ApEdition, isComponentVisible, isPieceVisible, ConnectorSet, PieceSetConfig } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../helper/system/system'
-import { PieceMetadataSchema } from '../../../connectors/metadata/piece-metadata-entity'
+import { PieceMetadataSchema } from '../../../connectors/metadata/connector-metadata-entity'
 import { projectRepo } from '../../../project/project-repo'
-import { pieceSetRepo, pieceSetService } from '../connector-set/piece-set.service'
+import { connectorSetRepo, connectorSetService } from '../connector-set/connector-set.service'
 
 export async function resolveVisibility({ platformId, projectId, log }: ResolveVisibilityParams): Promise<VisibilityPolicy | null> {
     const edition = system.getEdition()
@@ -52,9 +52,9 @@ async function resolvePieceSetForProject({ log, projectId, platformId }: Resolve
     const pieceSetId = project?.pieceSetId ?? null
 
     return isNil(pieceSetId)
-        ? pieceSetService(log).getOrCreateDefaultPieceSet(platformId)
-        : (await pieceSetRepo().findOneBy({ id: pieceSetId, platformId }))
-            ?? pieceSetService(log).getOrCreateDefaultPieceSet(platformId)
+        ? connectorSetService(log).getOrCreateDefaultPieceSet(platformId)
+        : (await connectorSetRepo().findOneBy({ id: pieceSetId, platformId }))
+            ?? connectorSetService(log).getOrCreateDefaultPieceSet(platformId)
 }
 
 export type VisibilityPolicy = {

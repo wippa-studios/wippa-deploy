@@ -5,10 +5,10 @@ import { EntityManager, In, QueryFailedError } from 'typeorm'
 import { repoFactory } from '../../../core/db/repo-factory'
 import { transaction } from '../../../core/db/transaction'
 import { distributedLock } from '../../../database/redis-connections'
-import { pieceSetConfig } from './connector-set-config'
-import { PieceSetEntity } from './connector-set.entity'
+import { connectorSetConfig } from './connector-set-config'
+import { ConnectorSetEntity } from './connector-set.entity'
 
-export const pieceSetRepo = repoFactory<ConnectorSet>(PieceSetEntity)
+export const connectorSetRepo = repoFactory<ConnectorSet>(ConnectorSetEntity)
 
 const MAX_PIECE_SET_PAGE_SIZE = 100
 
@@ -49,33 +49,33 @@ type AssignProjectParams = {
 }
 
 type AssignProjectsParams = {
-    pieceSetId: string
+    connectorSetId: string
     platformId: string
     projectIds: string[]
     entityManager?: EntityManager
 }
 
-export const pieceSetService = (log: FastifyBaseLogger) => ({
-    async getOrCreateDefaultPieceSet(platformId: string): Promise<ConnectorSet> {
-        const existing = await pieceSetRepo().findOneBy({ platformId, isDefault: true })
+export const connectorSetService = (log: FastifyBaseLogger) => ({
+    async getOrCreateDefaultConnectorSet(platformId: string): Promise<ConnectorSet> {
+        const existing = await connectorSetRepo().findOneBy({ platformId, isDefault: true })
         if (!isNil(existing)) return existing
 
         return distributedLock(log).runExclusive({
             key: `piece_set_default_${platformId}`,
             timeoutInSeconds: 60,
             fn: async () => {
-                const existing = await pieceSetRepo().findOneBy({ platformId, isDefault: true })
+                const existing = await connectorSetRepo().findOneBy({ platformId, isDefault: true })
                 if (!isNil(existing)) return existing
 
-                await pieceSetRepo().save(pieceSetConfig.buildDefaultSet(platformId))
-                return pieceSetRepo().findOneByOrFail({ platformId, isDefault: true })
+                await connectorSetRepo().save(connectorSetConfig.buildDefaultSet(platformId))
+                return connectorSetRepo().findOneByOrFail({ platformId, isDefault: true })
             },
         })
     },
 
     async list({ platformId, cursor, limit = 10 }: ListParams): Promise<SeekPage<ConnectorSet>> {
         const boundedLimit = Math.min(limit, MAX_PIECE_SET_PAGE_SIZE)
-        const qb = pieceSetRepo()
+        const qb = connectorSetRepo()
             .createQueryBuilder('ps')
             .where('ps.platformId = :platformId', { platformId })
             .orderBy('ps.created', 'ASC')
@@ -101,7 +101,7 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
     },
 
     async getOne({ id, platformId }: GetOneParams): Promise<ConnectorSet> {
-        const set = await pieceSetRepo().findOneBy({ id, platformId })
+        const set = await connectorSetRepo().findOneBy({ id, platformId })
         if (isNil(set)) {
             throw new ActivepiecesError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
@@ -113,27 +113,27 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
 
     async create({ platformId, name, key, isDefault = false, generatedForProjectId = null, config }: CreateParams): Promise<ConnectorSet> {
         const id = apId()
-        const { error } = await tryCatch(() => pieceSetRepo().save({
+        const { error } = await tryCatch(() => connectorSetRepo().save({
             id,
             platformId,
             name,
             key: resolveKey({ key, name }),
             isDefault,
             generatedForProjectId,
-            config: config ?? pieceSetConfig.emptyConfig(),
+            config: config ?? connectorSetConfig.emptyConfig(),
         }))
         if (error) {
             rethrowKeyConflict(error)
         }
-        return pieceSetRepo().findOneByOrFail({ id })
+        return connectorSetRepo().findOneByOrFail({ id })
     },
 
     async update({ id, platformId, request }: UpdateParams): Promise<ConnectorSet> {
         const existing = await this.getOne({ id, platformId })
 
-        const updatedConfig = pieceSetConfig.applyUpdate({ current: existing.config, request })
+        const updatedConfig = connectorSetConfig.applyUpdate({ current: existing.config, request })
 
-        const { error } = await tryCatch(() => pieceSetRepo().update({ id, platformId }, {
+        const { error } = await tryCatch(() => connectorSetRepo().update({ id, platformId }, {
             ...spreadIfDefined('name', request.name),
             ...(request.key !== undefined ? { key: resolveKey({ key: request.key, name: request.name ?? existing.name }) } : {}),
             config: updatedConfig,
@@ -155,18 +155,18 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
             })
         }
 
-        const defaultSet = await this.getOrCreateDefaultPieceSet(platformId)
+        const defaultSet = await this.getOrCreateDefaultConnectorSet(platformId)
 
         await transaction(async (em) => {
             await em
                 .createQueryBuilder()
                 .update('project')
-                .set({ pieceSetId: defaultSet.id })
-                .where('"pieceSetId" = :pieceSetId', { pieceSetId: id })
+                .set({ connectorSetId: defaultSet.id })
+                .where('"connectorSetId" = :connectorSetId', { connectorSetId: id })
                 .andWhere('"platformId" = :platformId', { platformId })
                 .execute()
 
-            await em.delete(PieceSetEntity, { id, platformId })
+            await em.delete(ConnectorSetEntity, { id, platformId })
         })
     },
 
@@ -186,35 +186,35 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
     async assignProject({ connectorSet, projectId, entityManager }: AssignProjectParams): Promise<void> {
         const repo = entityManager
             ? entityManager.getRepository('project')
-            : pieceSetRepo().manager.getRepository('project')
+            : connectorSetRepo().manager.getRepository('project')
 
-        await repo.update({ id: projectId, platformId: connectorSet.platformId }, { pieceSetId: connectorSet.id })
+        await repo.update({ id: projectId, platformId: connectorSet.platformId }, { connectorSetId: connectorSet.id })
     },
 
-    async assignProjects({ pieceSetId, platformId, projectIds, entityManager }: AssignProjectsParams): Promise<void> {
+    async assignProjects({ connectorSetId, platformId, projectIds, entityManager }: AssignProjectsParams): Promise<void> {
         if (projectIds.length === 0) return
 
-        await this.getOne({ id: pieceSetId, platformId })
+        await this.getOne({ id: connectorSetId, platformId })
 
         const repo = entityManager
             ? entityManager.getRepository('project')
-            : pieceSetRepo().manager.getRepository('project')
+            : connectorSetRepo().manager.getRepository('project')
 
-        await repo.update({ id: In(projectIds), platformId }, { pieceSetId })
+        await repo.update({ id: In(projectIds), platformId }, { connectorSetId })
     },
 
-    async removeProjectAssignment({ pieceSetId, platformId, projectId }: { pieceSetId: string, platformId: string, projectId: string }): Promise<void> {
-        const set = await this.getOne({ id: pieceSetId, platformId })
+    async removeProjectAssignment({ connectorSetId, platformId, projectId }: { connectorSetId: string, platformId: string, projectId: string }): Promise<void> {
+        const set = await this.getOne({ id: connectorSetId, platformId })
         if (set.isDefault) {
             throw new ActivepiecesError({
                 code: ErrorCode.VALIDATION,
                 params: { message: 'Cannot remove project from the default piece set' },
             })
         }
-        const defaultSet = await this.getOrCreateDefaultPieceSet(platformId)
-        await pieceSetRepo().manager.getRepository('project').update(
-            { id: projectId, platformId, pieceSetId },
-            { pieceSetId: defaultSet.id },
+        const defaultSet = await this.getOrCreateDefaultConnectorSet(platformId)
+        await connectorSetRepo().manager.getRepository('project').update(
+            { id: projectId, platformId, connectorSetId },
+            { connectorSetId: defaultSet.id },
         )
     },
 })

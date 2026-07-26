@@ -9,7 +9,7 @@ type PieceSetSchema = {
     platform: Platform
 } & ConnectorSet
 
-export const PieceSetEntity = new EntitySchema<PieceSetSchema>({
+export const ConnectorSetEntity = new EntitySchema<PieceSetSchema>({
     name: 'piece_set',
     columns: {
         ...BaseColumnSchemaPart,

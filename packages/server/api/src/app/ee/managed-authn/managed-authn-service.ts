@@ -8,7 +8,7 @@ import { userIdentityService } from '../../authentication/user-identity/user-ide
 import { platformService } from '../../platform/platform.service'
 import { projectService } from '../../project/project-service'
 import { userService } from '../../user/user-service'
-import { pieceSetRepo, pieceSetService } from '../connectors/piece-set/piece-set.service'
+import { connectorSetRepo, connectorSetService } from '../connectors/connector-set/connector-set.service'
 import { concurrencyPoolService } from '../platform/concurrency-pool/concurrency-pool.service'
 import { projectMemberService } from '../projects/project-members/project-member.service'
 import { externalTokenExtractor } from './lib/external-token-extractor'
@@ -108,18 +108,18 @@ const applyProjectPieceAccess = async ({ platformId, projectId, pieceSetKey, pie
 
     const set = isNil(targetKey)
         ? null
-        : await pieceSetRepo().findOneBy({ platformId, key: targetKey })
+        : await connectorSetRepo().findOneBy({ platformId, key: targetKey })
 
     if (!isNil(set)) {
-        await pieceSetService(log).assignProject({ connectorSet: set, projectId })
+        await connectorSetService(log).assignProject({ connectorSet: set, projectId })
         return
     }
 
     if (!isNil(targetKey)) {
         log.warn({ platform: { id: platformId }, project: { id: projectId } }, `[managedAuthn] connectorSet key "${targetKey}" not found — falling back to default`)
     }
-    const defaultSet = await pieceSetService(log).getOrCreateDefaultPieceSet(platformId)
-    await pieceSetService(log).assignProject({ connectorSet: defaultSet, projectId })
+    const defaultSet = await connectorSetService(log).getOrCreateDefaultPieceSet(platformId)
+    await connectorSetService(log).assignProject({ connectorSet: defaultSet, projectId })
 }
 
 const getOrCreateUser = async (

@@ -3,7 +3,7 @@ import { ConnectorPropertyMap, PropertyType } from '@wippa/connectors-framework'
 import { EngineResponse, EngineResponseStatus, McpToolDefinition, ProjectScopedMcpServer, WorkerJobType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
-import { getPiecePackageWithoutArchive } from '../../connectors/metadata/piece-metadata-service'
+import { getPiecePackageWithoutArchive } from '../../connectors/metadata/connector-metadata-service'
 import { userInteractionWatcher } from '../../workers/user-interaction-watcher'
 import { mcpUtils, PropSummary } from './mcp-utils'
 

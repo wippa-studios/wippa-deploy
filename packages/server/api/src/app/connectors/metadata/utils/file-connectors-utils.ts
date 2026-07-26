@@ -10,7 +10,7 @@ import { AppSystemProp, environmentVariables } from '../../../helper/system/syst
 
 const SOURCE_PIECES_PATH = resolve(cwd(), 'packages', 'pieces')
 
-export const filePiecesUtils = (log: FastifyBaseLogger) => ({
+export const fileConnectorsUtils = (log: FastifyBaseLogger) => ({
 
     getPackageNameFromFolderPath: async (folderPath: string): Promise<string> => {
         const packageJson = await readFile(join(folderPath, 'package.json'), 'utf-8').then(JSON.parse)
@@ -34,7 +34,7 @@ export const filePiecesUtils = (log: FastifyBaseLogger) => ({
         const paths = await findAllDistPiecesFolders(SOURCE_PIECES_PATH)
         for (const path of paths) {
             try {
-                const packageJsonName = await filePiecesUtils(log).getPackageNameFromFolderPath(path)
+                const packageJsonName = await fileConnectorsUtils(log).getPackageNameFromFolderPath(path)
                 if (packageJsonName === packageName) {
                     return path
                 }

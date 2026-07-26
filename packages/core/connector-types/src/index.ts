@@ -1,4 +1,4 @@
-export { PackageType, ConnectorType, PieceCategory, MAX_KEY_LENGTH_FOR_CORWDIN } from './lib/piece'
+export { PackageType, ConnectorType, PieceCategory, MAX_KEY_LENGTH_FOR_CORWDIN } from './lib/connector'
 
 export {
     AppConnectionType,
@@ -51,7 +51,7 @@ export * from './lib/tables'
 
 export * from './lib/flow-contracts'
 
-export * from './lib/mcp-piece'
+export * from './lib/mcp-connector'
 
 export * from './lib/engine-tools'
 

@@ -2,7 +2,7 @@ import { AppConnectionStatus, isNil, PieceAudienceFilter, SuggestionType, tryCat
 import { FastifyBaseLogger } from 'fastify'
 import { appConnectionService } from '../app-connection/app-connection-service/app-connection-service'
 import { databaseConnection } from '../database/database-connection'
-import { pieceMetadataService } from '../connectors/metadata/piece-metadata-service'
+import { pieceMetadataService } from '../connectors/metadata/connector-metadata-service'
 import { ToolSearchEmbedder } from './embedder'
 import { applyNoMatchGate } from './no-match-gate'
 import { resolveEmbedder } from './resolve-embedder'

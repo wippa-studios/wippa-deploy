@@ -8,8 +8,8 @@ import chokidar from 'chokidar'
 import { FastifyInstance } from 'fastify'
 import { system } from '../helper/system/system'
 import { AppSystemProp } from '../helper/system/system-props'
-import { filePiecesUtils } from './metadata/utils/file-pieces-utils'
-import { invalidateDevPieceCache } from './metadata/utils/piece-cache-utils'
+import { fileConnectorsUtils } from './metadata/utils/file-connectors-utils'
+import { invalidateDevPieceCache } from './metadata/utils/connector-cache-utils'
 
 const PIECES_BUILDER_MUTEX_KEY = 'pieces-builder'
 
@@ -40,7 +40,7 @@ async function buildPieces(app: FastifyInstance, piecesInfo: ConnectorInfo[]): P
 
         app.log.info(`Build completed in ${buildTime.toFixed(2)} seconds`)
 
-        const utils = filePiecesUtils(app.log)
+        const utils = fileConnectorsUtils(app.log)
         await Promise.all(piecesInfo.map(async (piece) => {
             await copyPackageJsonToDist(piece.pieceDirectory)
             await copyI18nToDist(piece.pieceDirectory)
@@ -67,7 +67,7 @@ export async function startDevPieceWatcher(app: FastifyInstance): Promise<void> 
     if (isNil(devPiecesConfig) || devPiecesConfig.trim() === '') return
 
     const piecesNames = [...new Set(devPiecesConfig.split(',').map(n => n.trim()))]
-    const utils = filePiecesUtils(app.log)
+    const utils = fileConnectorsUtils(app.log)
 
     const resolvedInfos = await Promise.all(piecesNames.map(async (connectorName) => {
         const pieceDirectory = await utils.findSourcePiecePathByPieceName(connectorName)

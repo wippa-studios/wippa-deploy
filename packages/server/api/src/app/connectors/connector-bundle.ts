@@ -9,7 +9,7 @@ import { AppSystemProp } from '../helper/system/system-props'
 import { SystemJobName } from '../helper/system-jobs/common'
 import { systemJobHandlers } from '../helper/system-jobs/job-handlers'
 import { systemJobsSchedule } from '../helper/system-jobs/system-job'
-import { pieceMetadataService } from './metadata/piece-metadata-service'
+import { pieceMetadataService } from './metadata/connector-metadata-service'
 
 // Resolves a piece to a single downloadable link (see ADR 0002 — "Pieces are distributed as links").
 // Official/registry pieces resolve to a signed-S3 object when cached, else to the npm tarball (and a

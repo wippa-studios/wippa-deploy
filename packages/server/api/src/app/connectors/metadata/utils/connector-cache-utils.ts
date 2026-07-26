@@ -6,7 +6,7 @@ import { system } from '../../../helper/system/system'
 import { AppSystemProp } from '../../../helper/system/system-props'
 import { PieceRegistryEntry } from '../connector-cache'
 import { PieceMetadataSchema } from '../connector-metadata-entity'
-import { filePiecesUtils } from './file-pieces-utils'
+import { fileConnectorsUtils } from './file-connectors-utils'
 
 export function isNewerVersion(a: string, b: string): boolean {
     const aValid = semVer.valid(a)
@@ -57,7 +57,7 @@ export async function loadDevPiecesIfEnabled(log: FastifyBaseLogger): Promise<Pi
 
 async function loadDevPieces(log: FastifyBaseLogger, devPiecesConfig: string): Promise<PieceMetadataSchema[]> {
     const piecesNames = devPiecesConfig.split(',')
-    const pieces = await filePiecesUtils(log).loadDistPiecesMetadata(piecesNames)
+    const pieces = await fileConnectorsUtils(log).loadDistPiecesMetadata(piecesNames)
 
     return pieces.map((p): PieceMetadataSchema => ({
         id: apId(),

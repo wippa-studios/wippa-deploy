@@ -15,7 +15,7 @@ import { AppSystemProp } from '../../helper/system/system-props'
 import {
     getPiecePackageWithoutArchive,
     pieceMetadataService,
-} from '../../connectors/metadata/piece-metadata-service'
+} from '../../connectors/metadata/connector-metadata-service'
 import { projectRepo } from '../../project/project-service'
 import { userService } from '../../user/user-service'
 import { userInteractionWatcher } from '../../workers/user-interaction-watcher'

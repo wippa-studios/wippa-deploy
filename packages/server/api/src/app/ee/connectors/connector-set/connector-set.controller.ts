@@ -3,12 +3,12 @@ import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'
 import { securityAccess } from '../../../core/security/authorization/fastify-security'
-import { pieceSetService } from './connector-set.service'
+import { connectorSetService } from './connector-set.service'
 
 const platformAdminSecurity = securityAccess.platformAdminOnly([PrincipalType.USER, PrincipalType.SERVICE])
 
-export const pieceSetController: FastifyPluginAsyncZod = async (app) => {
-    const service = pieceSetService(app.log)
+export const connectorSetController: FastifyPluginAsyncZod = async (app) => {
+    const service = connectorSetService(app.log)
 
     app.get('/', ListPieceSets, async (req) => {
         return service.list({
@@ -38,7 +38,7 @@ export const pieceSetController: FastifyPluginAsyncZod = async (app) => {
         })
     })
 
-    app.delete('/:id', DeletePieceSet, async (req, reply) => {
+    app.delete('/:id', DeleteConnectorSet, async (req, reply) => {
         await service.delete({ id: req.params.id, platformId: req.principal.platform.id })
         return reply.status(StatusCodes.NO_CONTENT).send()
     })
@@ -50,7 +50,7 @@ export const pieceSetController: FastifyPluginAsyncZod = async (app) => {
 
     app.post('/:id/projects', AssignProjects, async (req, reply) => {
         await service.assignProjects({
-            pieceSetId: req.params.id,
+            connectorSetId: req.params.id,
             platformId: req.principal.platform.id,
             projectIds: req.body.projectIds,
         })
@@ -59,7 +59,7 @@ export const pieceSetController: FastifyPluginAsyncZod = async (app) => {
 
     app.delete('/:id/projects/:projectId', RemoveProjectAssignment, async (req, reply) => {
         await service.removeProjectAssignment({
-            pieceSetId: req.params.id,
+            connectorSetId: req.params.id,
             platformId: req.principal.platform.id,
             projectId: req.params.projectId,
         })
@@ -114,7 +114,7 @@ const UpdatePieceSet = {
     },
 }
 
-const DeletePieceSet = {
+const DeleteConnectorSet = {
     config: { security: platformAdminSecurity },
     schema: {
         tags: ['piece-sets'],

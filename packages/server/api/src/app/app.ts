@@ -48,8 +48,8 @@ import { appearanceHelper } from './ee/helper/appearance-helper'
 import { licenseKeysModule } from './ee/license-keys/license-keys-module'
 import { managedAuthnModule } from './ee/managed-authn/managed-authn-module'
 import { oauthAppModule } from './ee/oauth-apps/oauth-app.module'
-import { pieceSetModule } from './ee/pieces/piece-set/piece-set.module'
-import { platformPieceModule } from './ee/pieces/platform-piece-module'
+import { connectorSetModule } from './ee/connectors/connector-set/connector-set.module'
+import { platformPieceModule } from './ee/connectors/platform-connector-module'
 import { adminPlatformModule } from './ee/platform/admin/admin-platform.controller'
 import { adminPlatformTemplatesCloudModule } from './ee/platform/admin/templates/admin-platform-templates-cloud.module'
 import { platformAiCreditsService } from './ee/platform/platform-plan/platform-ai-credits.service'
@@ -92,10 +92,10 @@ import { shutdownTelemetry } from './helper/telemetry.utils'
 import { knowledgeBaseModule } from './knowledge-base/knowledge-base.module'
 import { mcpServerModule } from './mcp/mcp-module'
 import { mcpOAuthApproveController } from './mcp/oauth/code/mcp-oauth-approve.controller'
-import { startDevPieceWatcher } from './connectors/dev-piece-watcher'
-import { pieceModule } from './connectors/metadata/piece-metadata-controller'
-import { pieceMetadataService } from './connectors/metadata/piece-metadata-service'
-import { connectorSyncService } from './connectors/piece-sync-service'
+import { startDevPieceWatcher as startDevConnectorWatcher } from './connectors/dev-connector-watcher'
+import { pieceModule } from './connectors/metadata/connector-metadata-controller'
+import { pieceMetadataService } from './connectors/metadata/connector-metadata-service'
+import { connectorSyncService } from './connectors/connector-sync-service'
 import { platformBackgroundJobs } from './platform/platform-jobs'
 import { platformModule } from './platform/platform.module'
 import { projectHooks } from './project/project-hooks'
@@ -314,7 +314,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
     await app.register(managedAuthnModule)
     await app.register(oauthAppModule)
     await app.register(platformPieceModule)
-    await app.register(pieceSetModule)
+    await app.register(connectorSetModule)
     await app.register(otpModule)
     await app.register(enterpriseLocalAuthnModule)
     await app.register(federatedAuthModule)
@@ -416,7 +416,7 @@ The application started on ${await domainHelper.getPublicApiUrl({ path: '' })}, 
             `[WARNING]: This is only shows pieces specified in AP_DEV_PIECES ${pieces} environment variable.`,
         )
     }
-    void startDevPieceWatcher(app)
+    void startDevConnectorWatcher(app)
     const { seedTemplates } = await import('./template/seed-templates')
     await seedTemplates(app.log)
 }

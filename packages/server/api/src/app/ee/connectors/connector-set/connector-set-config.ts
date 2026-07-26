@@ -1,7 +1,7 @@
 import { apId, isNil, unique } from '@wippa/core-utils'
 import { ComponentIntent, PieceSelectionMode, PieceSetConfig, UpdatePieceSetRequestBody } from '@wippa/shared'
 
-export const pieceSetConfig = {
+export const connectorSetConfig = {
     buildDefaultSet(platformId: string) {
         return {
             id: apId(),

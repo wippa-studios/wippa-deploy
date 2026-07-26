@@ -7,7 +7,7 @@ import { rejectedPromiseHandler } from '../helper/promise-handler'
 import { isToolSearchEnabled } from '../tool-search/tool-search-flag'
 import { toolSearchReindexJob } from '../tool-search/tool-search-reindex.job'
 import { userInteractionWatcher } from '../workers/user-interaction-watcher'
-import { pieceMetadataService } from './metadata/piece-metadata-service'
+import { pieceMetadataService } from './metadata/connector-metadata-service'
 
 export const connectorInstallService = (log: FastifyBaseLogger) => ({
     async installConnector(

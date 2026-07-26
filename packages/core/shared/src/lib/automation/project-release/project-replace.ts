@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ConnectorType } from '../connectors/piece'
+import { ConnectorType } from '../connectors/connector'
 import { ConnectionState, FolderState, ProjectState, TableState } from './project-state'
 
 export const PROJECT_REPLACE_SCHEMA_VERSION = 1

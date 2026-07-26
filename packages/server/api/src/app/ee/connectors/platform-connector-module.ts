@@ -5,7 +5,7 @@ import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'
 import { securityAccess } from '../../core/security/authorization/fastify-security'
 import { attachMultipartFieldsToBody } from '../../helper/multipart-body'
-import { connectorInstallService } from '../../connectors/piece-install-service'
+import { connectorInstallService } from '../../connectors/connector-install-service'
 
 export const platformPieceModule: FastifyPluginAsyncZod = async (app) => {
     await app.register(platformPieceController, { prefix: '/v1/pieces' })

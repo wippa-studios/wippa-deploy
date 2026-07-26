@@ -1,5 +1,5 @@
 import { apId } from '@wippa/core-utils'
-import { ActionBase } from '@wippa/pieces-framework'
+import { ActionBase } from '@wippa/connectors-framework'
 import { gt } from 'semver'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'

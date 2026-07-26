@@ -1,4 +1,4 @@
-export * from './dto/piece-requests'
+export * from './dto/connector-requests'
 export * from './connector'
 export * from './utils'
 

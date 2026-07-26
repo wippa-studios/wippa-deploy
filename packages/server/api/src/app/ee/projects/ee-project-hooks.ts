@@ -5,7 +5,7 @@ import { userIdentityService } from '../../authentication/user-identity/user-ide
 import { ProjectHooks } from '../../project/project-hooks'
 import { userService } from '../../user/user-service'
 import { alertsService } from '../alerts/alerts-service'
-import { pieceSetService } from '../connectors/piece-set/piece-set.service'
+import { connectorSetService } from '../connectors/connector-set/connector-set.service'
 import { platformPlanService } from '../platform/platform-plan/platform-plan.service'
 
 export const projectEnterpriseHooks = (log: FastifyBaseLogger): ProjectHooks => ({
@@ -52,8 +52,8 @@ async function assignDefaultPieceSet({ log, project }: AssignDefaultPieceSetPara
     if (!platformPlan.managePiecesEnabled) {
         return
     }
-    const defaultSet = await pieceSetService(log).getOrCreateDefaultPieceSet(project.platformId)
-    await pieceSetService(log).assignProject({
+    const defaultSet = await connectorSetService(log).getOrCreateDefaultPieceSet(project.platformId)
+    await connectorSetService(log).assignProject({
         connectorSet: defaultSet,
         projectId: project.id,
     })
