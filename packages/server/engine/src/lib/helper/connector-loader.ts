@@ -6,19 +6,19 @@ import { EngineGenericError, extractConnectorFromModule, getPackageAliasForConne
 import { utils } from '../utils'
 
 export const connectorLoader = {
-    loadPieceOrThrow: async (
-        { connectorName, connectorVersion, devPieces }: LoadPieceParams,
+    loadConnectorOrThrow: async (
+        { connectorName, connectorVersion, devConnectors }: LoadConnectorParams,
     ): Promise<Connector> => {
         const { data: piece, error: connectorError } = await utils.tryCatchAndThrowOnEngineError(async () => {
             const packageName = connectorLoader.getPackageAlias({
                 connectorName,
                 connectorVersion,
-                devPieces,
+                devConnectors,
             })
-            const piecePath = await connectorLoader.getPiecePath({ packageName, devPieces })
+            const piecePath = await connectorLoader.getConnectorPath({ packageName, devConnectors })
             const module = await import(piecePath)
 
-            const piece = extractConnectorFromModule<Piece>({
+            const piece = extractConnectorFromModule<Connector>({
                 module,
                 connectorName,
                 connectorVersion,
@@ -35,9 +35,9 @@ export const connectorLoader = {
         return piece
     },
 
-    getPieceAndTriggerOrThrow: async (params: GetPieceAndTriggerParams): Promise<{ piece: Connector, connectorTrigger: Trigger }> => {
-        const { connectorName, connectorVersion, triggerName, devPieces } = params
-        const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
+    getConnectorAndTriggerOrThrow: async (params: GetConnectorAndTriggerParams): Promise<{ piece: Connector, connectorTrigger: Trigger }> => {
+        const { connectorName, connectorVersion, triggerName, devConnectors } = params
+        const piece = await connectorLoader.loadConnectorOrThrow({ connectorName, connectorVersion, devConnectors })
         const trigger = piece.getTrigger(triggerName)
 
         if (trigger === undefined) {
@@ -50,10 +50,10 @@ export const connectorLoader = {
         }
     },
 
-    getPieceAndActionOrThrow: async (params: GetPieceAndActionParams): Promise<{ piece: Connector, connectorAction: Action }> => {
-        const { connectorName, connectorVersion, actionName, devPieces } = params
+    getConnectorAndActionOrThrow: async (params: GetConnectorAndActionParams): Promise<{ piece: Connector, connectorAction: Action }> => {
+        const { connectorName, connectorVersion, actionName, devConnectors } = params
 
-        const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
+        const piece = await connectorLoader.loadConnectorOrThrow({ connectorName, connectorVersion, devConnectors })
         const connectorAction = piece.getAction(actionName)
 
         if (isNil(connectorAction)) {
@@ -74,8 +74,8 @@ export const connectorLoader = {
         }
     },
 
-    getPropOrThrow: async ({ connectorName, connectorVersion, actionOrTriggerName, propertyName, devPieces }: GetPropParams) => {
-        const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
+    getPropOrThrow: async ({ connectorName, connectorVersion, actionOrTriggerName, propertyName, devConnectors }: GetPropParams) => {
+        const piece = await connectorLoader.loadConnectorOrThrow({ connectorName, connectorVersion, devConnectors })
 
         const actionOrTrigger = piece.getAction(actionOrTriggerName) ?? piece.getTrigger(actionOrTriggerName)
 
@@ -108,8 +108,8 @@ export const connectorLoader = {
         return { property, piece }
     },
 
-    getPackageAlias: ({ connectorName, connectorVersion, devPieces }: GetPackageAliasParams) => {
-        if (devPieces.includes(getConnectorNameFromAlias(connectorName))) {
+    getPackageAlias: ({ connectorName, connectorVersion, devConnectors }: GetPackageAliasParams) => {
+        if (devConnectors.includes(getConnectorNameFromAlias(connectorName))) {
             return connectorName
         }
 
@@ -119,10 +119,10 @@ export const connectorLoader = {
         })
     },
 
-    getPiecePath: async ({ packageName, devPieces }: GetPiecePathParams): Promise<string> => {
-        const piecePath = devPieces.includes(getConnectorNameFromAlias(packageName))
+    getConnectorPath: async ({ packageName, devConnectors }: GetConnectorPathParams): Promise<string> => {
+        const piecePath = devConnectors.includes(getConnectorNameFromAlias(packageName))
             ? await findInDistFolder(packageName)
-            : await traverseAllParentFoldersToFindPiece(packageName)
+            : await traverseAllParentFoldersToFindConnector(packageName)
         if (isNil(piecePath)) {
             throw new EngineGenericError('PieceNotFoundError', `Piece not found for package: ${packageName}`)
         }
@@ -131,11 +131,11 @@ export const connectorLoader = {
 }
 
 async function findInDistFolder(packageName: string): Promise<string | null> {
-    const sourcePiecesPath = path.resolve('packages/pieces')
-    if (!await utils.folderExists(sourcePiecesPath)) {
+    const sourceConnectorsPath = path.resolve('packages/connectors')
+    if (!await utils.folderExists(sourceConnectorsPath)) {
         return null
     }
-    const distPackageJsonPaths = await findDistPackageJsonFiles(sourcePiecesPath)
+    const distPackageJsonPaths = await findDistPackageJsonFiles(sourceConnectorsPath)
     for (const packageJsonPath of distPackageJsonPaths) {
         const { data: result } = await utils.tryCatchAndThrowOnEngineError(async () => {
             const content = await fs.readFile(packageJsonPath, 'utf-8')
@@ -180,11 +180,11 @@ async function findDistPackageJsonFiles(dirPath: string): Promise<string[]> {
 }
 
 
-async function traverseAllParentFoldersToFindPiece(packageName: string): Promise<string | null> {
+async function traverseAllParentFoldersToFindConnector(packageName: string): Promise<string | null> {
     const trimmedName = trimVersionFromAlias(packageName)
     const customPaths = (process.env.AP_CUSTOM_PIECES_PATHS ?? '').split(':').filter(Boolean)
     for (const customPath of customPaths) {
-        const entry = await resolveInstalledPieceEntry(path.resolve(customPath, 'pieces', packageName), trimmedName)
+        const entry = await resolveInstalledConnectorEntry(path.resolve(customPath, 'pieces', packageName), trimmedName)
         if (!isNil(entry)) {
             return entry
         }
@@ -194,7 +194,7 @@ async function traverseAllParentFoldersToFindPiece(packageName: string): Promise
     let currentDir = __dirname
     const maxIterations = currentDir.split(path.sep).length
     for (let i = 0; i < maxIterations; i++) {
-        const entry = await resolveInstalledPieceEntry(path.resolve(currentDir, 'pieces', packageName), trimmedName)
+        const entry = await resolveInstalledConnectorEntry(path.resolve(currentDir, 'pieces', packageName), trimmedName)
         if (!isNil(entry)) {
             return entry
         }
@@ -211,7 +211,7 @@ async function traverseAllParentFoldersToFindPiece(packageName: string): Promise
 // A piece entry is resolved from its package.json "main" (defaulting to src/index.js).
 // Registry/dev installs keep the package nested in node_modules; a packed-archive bundle is
 // extracted straight to the install-folder root. Try the nested package first, then the root.
-async function resolveInstalledPieceEntry(pieceFolder: string, trimmedName: string): Promise<string | null> {
+async function resolveInstalledConnectorEntry(pieceFolder: string, trimmedName: string): Promise<string | null> {
     const packageDir = path.join(pieceFolder, 'node_modules', trimmedName)
     if (await utils.folderExists(packageDir)) {
         return resolveEntryFromPackageDir(packageDir)
@@ -241,29 +241,29 @@ async function resolveEntryFromPackageDir(packageDir: string): Promise<string> {
     return mainEntry ?? path.join(packageDir, 'src', 'index.js')
 }
 
-type GetPiecePathParams = {
+type GetConnectorPathParams = {
     packageName: string
-    devPieces: string[]
+    devConnectors: string[]
 }
 
-type LoadPieceParams = {
+type LoadConnectorParams = {
     connectorName: string
     connectorVersion: string
-    devPieces: string[]
+    devConnectors: string[]
 }
 
-type GetPieceAndTriggerParams = {
+type GetConnectorAndTriggerParams = {
     connectorName: string
     connectorVersion: string
     triggerName: string
-    devPieces: string[]
+    devConnectors: string[]
 }
 
-type GetPieceAndActionParams = {
+type GetConnectorAndActionParams = {
     connectorName: string
     connectorVersion: string
     actionName: string
-    devPieces: string[]
+    devConnectors: string[]
 }
 
 type GetPropParams = {
@@ -271,12 +271,12 @@ type GetPropParams = {
     connectorVersion: string
     actionOrTriggerName: string
     propertyName: string
-    devPieces: string[]
+    devConnectors: string[]
 }
 
 type GetPackageAliasParams = {
     connectorName: string
-    devPieces: string[]
+    devConnectors: string[]
     connectorVersion: string
 }
 

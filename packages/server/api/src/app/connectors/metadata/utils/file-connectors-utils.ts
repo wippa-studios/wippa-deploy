@@ -127,7 +127,7 @@ const loadPieceFromFolder = async (
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const module = require(indexPath)
     const { name: connectorName, version: connectorVersion } = packageJson
-    const piece = extractConnectorFromModule<Piece>({
+    const piece = extractConnectorFromModule<Connector>({
         module,
         connectorName,
         connectorVersion,
