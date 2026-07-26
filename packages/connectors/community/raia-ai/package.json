@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-raia-ai",
+  "name": "@wippa/connector-raia-ai",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

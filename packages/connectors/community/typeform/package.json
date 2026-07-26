@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-typeform",
+  "name": "@wippa/connector-typeform",
   "version": "0.4.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

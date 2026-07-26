@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-mysql",
+  "name": "@wippa/connector-mysql",
   "version": "0.2.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

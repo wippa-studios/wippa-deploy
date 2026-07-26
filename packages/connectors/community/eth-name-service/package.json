@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-eth-name-service",
+  "name": "@wippa/connector-eth-name-service",
   "version": "0.1.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-week-done",
+  "name": "@wippa/connector-week-done",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-agentx",
+  "name": "@wippa/connector-agentx",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-time-ops",
+  "name": "@wippa/connector-time-ops",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-pdf",
+  "name": "@wippa/connector-pdf",
   "version": "0.5.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

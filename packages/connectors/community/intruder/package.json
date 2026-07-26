@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-intruder",
+  "name": "@wippa/connector-intruder",
   "version": "0.0.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

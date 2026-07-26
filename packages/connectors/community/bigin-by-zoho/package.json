@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-bigin-by-zoho",
+  "name": "@wippa/connector-bigin-by-zoho",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

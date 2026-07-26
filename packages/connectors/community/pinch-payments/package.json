@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-pinch-payments",
+  "name": "@wippa/connector-pinch-payments",
   "version": "0.0.9",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-qwilr",
+  "name": "@wippa/connector-qwilr",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-klipy",
+  "name": "@wippa/connector-klipy",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

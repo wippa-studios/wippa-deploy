@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-microsoft-power-bi",
+  "name": "@wippa/connector-microsoft-power-bi",
   "version": "0.2.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

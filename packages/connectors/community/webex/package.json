@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-webex",
+  "name": "@wippa/connector-webex",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-microsoft-365-people",
+  "name": "@wippa/connector-microsoft-365-people",
   "version": "0.2.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

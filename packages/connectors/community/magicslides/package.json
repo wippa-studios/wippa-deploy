@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-magicslides",
+  "name": "@wippa/connector-magicslides",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

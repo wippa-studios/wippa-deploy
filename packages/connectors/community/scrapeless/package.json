@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-scrapeless",
+  "name": "@wippa/connector-scrapeless",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

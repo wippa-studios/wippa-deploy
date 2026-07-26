@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-dataforb2b",
+  "name": "@wippa/connector-dataforb2b",
   "version": "0.0.2",
   "type": "commonjs",
   "main": "./dist/src/index.js",

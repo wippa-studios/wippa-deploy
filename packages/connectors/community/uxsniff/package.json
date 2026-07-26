@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-uxsniff",
+  "name": "@wippa/connector-uxsniff",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

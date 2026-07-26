@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-datadog",
+  "name": "@wippa/connector-datadog",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

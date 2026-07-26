@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-toggl-track",
+  "name": "@wippa/connector-toggl-track",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

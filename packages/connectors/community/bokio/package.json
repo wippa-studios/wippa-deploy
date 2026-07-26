@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-bokio",
+  "name": "@wippa/connector-bokio",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-telnyx",
+  "name": "@wippa/connector-telnyx",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

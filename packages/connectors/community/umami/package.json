@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-umami",
+  "name": "@wippa/connector-umami",
   "version": "0.2.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-amazon-secrets-manager",
+  "name": "@wippa/connector-amazon-secrets-manager",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

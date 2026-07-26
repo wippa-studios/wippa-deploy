@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-flow-parser",
+  "name": "@wippa/connector-flow-parser",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

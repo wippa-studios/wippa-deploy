@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-instagram-business",
+  "name": "@wippa/connector-instagram-business",
   "version": "0.2.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

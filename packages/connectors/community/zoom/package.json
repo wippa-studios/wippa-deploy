@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-zoom",
+  "name": "@wippa/connector-zoom",
   "version": "0.7.0",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

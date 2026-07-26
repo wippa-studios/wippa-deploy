@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-pylon",
+  "name": "@wippa/connector-pylon",
   "version": "0.1.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

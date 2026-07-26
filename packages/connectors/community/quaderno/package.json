@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-quaderno",
+  "name": "@wippa/connector-quaderno",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

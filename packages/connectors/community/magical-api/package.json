@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-magical-api",
+  "name": "@wippa/connector-magical-api",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

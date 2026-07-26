@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-lobstermail",
+  "name": "@wippa/connector-lobstermail",
   "version": "0.1.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

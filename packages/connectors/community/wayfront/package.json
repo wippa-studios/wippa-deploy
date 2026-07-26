@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-wayfront",
+  "name": "@wippa/connector-wayfront",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

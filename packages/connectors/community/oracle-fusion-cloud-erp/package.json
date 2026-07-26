@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-oracle-fusion-cloud-erp",
+  "name": "@wippa/connector-oracle-fusion-cloud-erp",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

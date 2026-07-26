@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-data-summarizer",
+  "name": "@wippa/connector-data-summarizer",
   "version": "0.0.11",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

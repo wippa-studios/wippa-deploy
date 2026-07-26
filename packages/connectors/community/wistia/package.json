@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-wistia",
+  "name": "@wippa/connector-wistia",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

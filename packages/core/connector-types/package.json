@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/core-piece-types",
+  "name": "@wippa/core-connector-types",
   "version": "0.3.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

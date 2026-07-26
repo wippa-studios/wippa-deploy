@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-trello",
+  "name": "@wippa/connector-trello",
   "version": "0.4.10",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

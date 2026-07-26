@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-sofya",
+  "name": "@wippa/connector-sofya",
   "version": "0.0.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

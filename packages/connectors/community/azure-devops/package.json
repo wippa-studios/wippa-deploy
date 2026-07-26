@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-azure-devops",
+  "name": "@wippa/connector-azure-devops",
   "version": "0.0.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

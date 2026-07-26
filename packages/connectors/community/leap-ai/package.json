@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-leap-ai",
+  "name": "@wippa/connector-leap-ai",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

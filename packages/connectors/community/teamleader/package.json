@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-teamleader",
+  "name": "@wippa/connector-teamleader",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

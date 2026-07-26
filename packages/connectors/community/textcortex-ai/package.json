@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-textcortex-ai",
+  "name": "@wippa/connector-textcortex-ai",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

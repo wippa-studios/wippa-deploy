@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-just-invoice",
+  "name": "@wippa/connector-just-invoice",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

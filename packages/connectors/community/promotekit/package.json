@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-promotekit",
+  "name": "@wippa/connector-promotekit",
   "version": "0.3.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-bocha-search",
+  "name": "@wippa/connector-bocha-search",
   "version": "0.0.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

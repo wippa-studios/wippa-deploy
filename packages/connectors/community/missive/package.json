@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-missive",
+  "name": "@wippa/connector-missive",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

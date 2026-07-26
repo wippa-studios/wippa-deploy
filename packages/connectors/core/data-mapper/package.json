@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-data-mapper",
+  "name": "@wippa/connector-data-mapper",
   "version": "0.3.16",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

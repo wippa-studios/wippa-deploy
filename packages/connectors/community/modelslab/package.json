@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-modelslab",
+  "name": "@wippa/connector-modelslab",
   "version": "0.0.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-fathom",
+  "name": "@wippa/connector-fathom",
   "version": "0.2.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-letmepost",
+  "name": "@wippa/connector-letmepost",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

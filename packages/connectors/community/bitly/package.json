@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-bitly",
+  "name": "@wippa/connector-bitly",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

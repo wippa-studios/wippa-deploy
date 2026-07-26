@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-postiz",
+  "name": "@wippa/connector-postiz",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

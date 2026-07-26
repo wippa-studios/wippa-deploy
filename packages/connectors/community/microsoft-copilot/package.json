@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-microsoft-copilot",
+  "name": "@wippa/connector-microsoft-copilot",
   "version": "0.1.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

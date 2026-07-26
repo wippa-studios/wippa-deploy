@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-meetgeek-ai",
+  "name": "@wippa/connector-meetgeek-ai",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

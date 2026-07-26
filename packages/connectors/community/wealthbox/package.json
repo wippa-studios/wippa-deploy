@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-wealthbox",
+  "name": "@wippa/connector-wealthbox",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

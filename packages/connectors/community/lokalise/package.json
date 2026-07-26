@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-lokalise",
+  "name": "@wippa/connector-lokalise",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

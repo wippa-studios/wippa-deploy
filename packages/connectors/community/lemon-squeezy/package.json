@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-lemon-squeezy",
+  "name": "@wippa/connector-lemon-squeezy",
   "version": "0.1.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

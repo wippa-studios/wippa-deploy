@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-mcp-client",
+  "name": "@wippa/connector-mcp-client",
   "version": "0.0.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-apitemplate-io",
+  "name": "@wippa/connector-apitemplate-io",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

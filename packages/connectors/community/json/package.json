@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-json",
+  "name": "@wippa/connector-json",
   "version": "0.1.9",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

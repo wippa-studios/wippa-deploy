@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-chargebee",
+  "name": "@wippa/connector-chargebee",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

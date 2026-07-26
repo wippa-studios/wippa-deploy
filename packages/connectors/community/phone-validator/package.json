@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-phone-validator",
+  "name": "@wippa/connector-phone-validator",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

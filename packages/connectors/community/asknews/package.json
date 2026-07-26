@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-asknews",
+  "name": "@wippa/connector-asknews",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-hubspot",
+  "name": "@wippa/connector-hubspot",
   "version": "0.8.7",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

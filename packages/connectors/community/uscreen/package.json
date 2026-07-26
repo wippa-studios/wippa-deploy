@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-uscreen",
+  "name": "@wippa/connector-uscreen",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

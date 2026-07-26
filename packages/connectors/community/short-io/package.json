@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-short-io",
+  "name": "@wippa/connector-short-io",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

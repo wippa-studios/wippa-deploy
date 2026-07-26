@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-visible",
+  "name": "@wippa/connector-visible",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

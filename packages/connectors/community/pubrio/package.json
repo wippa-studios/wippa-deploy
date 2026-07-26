@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-pubrio",
+  "name": "@wippa/connector-pubrio",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

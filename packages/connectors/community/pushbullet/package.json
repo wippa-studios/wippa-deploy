@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-pushbullet",
+  "name": "@wippa/connector-pushbullet",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

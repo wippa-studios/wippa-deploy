@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-azure-blob-storage",
+  "name": "@wippa/connector-azure-blob-storage",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

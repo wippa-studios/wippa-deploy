@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-avoma",
+  "name": "@wippa/connector-avoma",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-extracta-ai",
+  "name": "@wippa/connector-extracta-ai",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

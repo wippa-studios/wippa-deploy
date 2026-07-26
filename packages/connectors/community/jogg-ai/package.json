@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-jogg-ai",
+  "name": "@wippa/connector-jogg-ai",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

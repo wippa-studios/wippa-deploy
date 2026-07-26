@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-productboard",
+  "name": "@wippa/connector-productboard",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-polydoc",
+  "name": "@wippa/connector-polydoc",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

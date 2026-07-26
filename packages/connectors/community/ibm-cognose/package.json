@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-ibm-cognose",
+  "name": "@wippa/connector-ibm-cognose",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

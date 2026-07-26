@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-what-converts",
+  "name": "@wippa/connector-what-converts",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

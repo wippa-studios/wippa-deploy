@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-smtp",
+  "name": "@wippa/connector-smtp",
   "version": "0.4.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

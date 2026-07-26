@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-runware",
+  "name": "@wippa/connector-runware",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

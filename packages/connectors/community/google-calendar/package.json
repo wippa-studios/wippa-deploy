@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-google-calendar",
+  "name": "@wippa/connector-google-calendar",
   "version": "0.9.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

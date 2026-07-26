@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-chain-aware",
+  "name": "@wippa/connector-chain-aware",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

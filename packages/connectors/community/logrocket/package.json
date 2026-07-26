@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-logrocket",
+  "name": "@wippa/connector-logrocket",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-google-vertexai",
+  "name": "@wippa/connector-google-vertexai",
   "version": "0.1.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-sftp",
+  "name": "@wippa/connector-sftp",
   "version": "0.5.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

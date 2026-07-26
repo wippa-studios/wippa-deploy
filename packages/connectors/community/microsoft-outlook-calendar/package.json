@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-microsoft-outlook-calendar",
+  "name": "@wippa/connector-microsoft-outlook-calendar",
   "version": "0.2.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

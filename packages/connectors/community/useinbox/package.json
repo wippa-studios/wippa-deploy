@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-useinbox",
+  "name": "@wippa/connector-useinbox",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

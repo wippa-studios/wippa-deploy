@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-gender-api",
+  "name": "@wippa/connector-gender-api",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

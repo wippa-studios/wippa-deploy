@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-eden-ai",
+  "name": "@wippa/connector-eden-ai",
   "version": "0.2.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

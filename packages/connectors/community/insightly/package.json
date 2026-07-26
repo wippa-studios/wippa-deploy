@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-insightly",
+  "name": "@wippa/connector-insightly",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

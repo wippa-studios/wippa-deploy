@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-airtop",
+  "name": "@wippa/connector-airtop",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

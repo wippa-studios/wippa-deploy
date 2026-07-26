@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-chat-aid",
+  "name": "@wippa/connector-chat-aid",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

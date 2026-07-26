@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-google-cloud-storage",
+  "name": "@wippa/connector-google-cloud-storage",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

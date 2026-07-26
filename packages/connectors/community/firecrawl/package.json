@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-firecrawl",
+  "name": "@wippa/connector-firecrawl",
   "version": "0.3.10",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

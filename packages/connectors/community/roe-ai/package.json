@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-roe-ai",
+  "name": "@wippa/connector-roe-ai",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

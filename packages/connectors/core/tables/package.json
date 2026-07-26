@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-tables",
+  "name": "@wippa/connector-tables",
   "version": "0.3.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

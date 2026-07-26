@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-youcanbookme",
+  "name": "@wippa/connector-youcanbookme",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

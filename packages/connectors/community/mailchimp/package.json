@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-mailchimp",
+  "name": "@wippa/connector-mailchimp",
   "version": "0.5.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

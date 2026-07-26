@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-google-search-console",
+  "name": "@wippa/connector-google-search-console",
   "version": "0.2.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

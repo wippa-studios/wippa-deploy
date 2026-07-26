@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-gptzero-detect-ai",
+  "name": "@wippa/connector-gptzero-detect-ai",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-oneclickimpact",
+  "name": "@wippa/connector-oneclickimpact",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

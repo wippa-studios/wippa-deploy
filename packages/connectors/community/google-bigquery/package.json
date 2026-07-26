@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-google-bigquery",
+  "name": "@wippa/connector-google-bigquery",
   "version": "0.0.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

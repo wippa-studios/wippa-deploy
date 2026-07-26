@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-amazon-textract",
+  "name": "@wippa/connector-amazon-textract",
   "version": "0.3.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

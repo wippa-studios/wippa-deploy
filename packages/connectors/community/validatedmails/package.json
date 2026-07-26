@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-validatedmails",
+  "name": "@wippa/connector-validatedmails",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-bigcommerce",
+  "name": "@wippa/connector-bigcommerce",
   "version": "0.1.10",
   "type": "commonjs",
   "main": "./dist/src/index.js",

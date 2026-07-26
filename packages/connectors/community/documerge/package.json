@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-documerge",
+  "name": "@wippa/connector-documerge",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

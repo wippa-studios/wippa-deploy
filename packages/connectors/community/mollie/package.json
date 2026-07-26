@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-mollie",
+  "name": "@wippa/connector-mollie",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

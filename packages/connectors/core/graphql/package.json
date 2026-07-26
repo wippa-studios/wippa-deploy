@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-graphql",
+  "name": "@wippa/connector-graphql",
   "version": "0.0.13",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

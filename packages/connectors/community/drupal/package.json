@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-drupal",
+  "name": "@wippa/connector-drupal",
   "version": "1.1.9",
   "type": "commonjs",
   "main": "./dist/src/index.js",

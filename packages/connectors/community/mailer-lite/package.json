@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-mailer-lite",
+  "name": "@wippa/connector-mailer-lite",
   "version": "0.6.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

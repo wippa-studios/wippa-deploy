@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-tags",
+  "name": "@wippa/connector-tags",
   "version": "0.0.18",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

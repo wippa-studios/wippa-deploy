@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-tl-dv",
+  "name": "@wippa/connector-tl-dv",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

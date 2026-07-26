@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-manus",
+  "name": "@wippa/connector-manus",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

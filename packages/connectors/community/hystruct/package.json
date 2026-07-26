@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-hystruct",
+  "name": "@wippa/connector-hystruct",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

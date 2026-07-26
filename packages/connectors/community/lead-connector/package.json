@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-lead-connector",
+  "name": "@wippa/connector-lead-connector",
   "version": "0.2.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

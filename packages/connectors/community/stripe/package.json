@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-stripe",
+  "name": "@wippa/connector-stripe",
   "version": "0.6.10",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

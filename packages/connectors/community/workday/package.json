@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-workday",
+  "name": "@wippa/connector-workday",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

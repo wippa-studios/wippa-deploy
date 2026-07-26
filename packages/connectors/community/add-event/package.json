@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-add-event",
+  "name": "@wippa/connector-add-event",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

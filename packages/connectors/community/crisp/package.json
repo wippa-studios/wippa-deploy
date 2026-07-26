@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-crisp",
+  "name": "@wippa/connector-crisp",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-alt-text-ai",
+  "name": "@wippa/connector-alt-text-ai",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

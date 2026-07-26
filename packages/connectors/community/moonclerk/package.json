@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-moonclerk",
+  "name": "@wippa/connector-moonclerk",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

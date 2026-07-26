@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-frill",
+  "name": "@wippa/connector-frill",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

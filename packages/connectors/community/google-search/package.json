@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-google-search",
+  "name": "@wippa/connector-google-search",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

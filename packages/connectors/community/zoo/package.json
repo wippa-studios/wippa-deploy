@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-zoo",
+  "name": "@wippa/connector-zoo",
   "version": "0.1.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-paywhirl",
+  "name": "@wippa/connector-paywhirl",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

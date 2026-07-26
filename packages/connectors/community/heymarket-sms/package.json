@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-heymarket-sms",
+  "name": "@wippa/connector-heymarket-sms",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

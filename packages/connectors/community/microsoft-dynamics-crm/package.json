@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-microsoft-dynamics-crm",
+  "name": "@wippa/connector-microsoft-dynamics-crm",
   "version": "0.3.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

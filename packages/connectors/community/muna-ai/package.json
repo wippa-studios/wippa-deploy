@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-muna-ai",
+  "name": "@wippa/connector-muna-ai",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

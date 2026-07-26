@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-personal-ai",
+  "name": "@wippa/connector-personal-ai",
   "version": "0.1.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

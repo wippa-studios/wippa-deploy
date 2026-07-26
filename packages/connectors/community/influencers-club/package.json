@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-influencers-club",
+  "name": "@wippa/connector-influencers-club",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

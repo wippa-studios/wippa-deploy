@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-vercel",
+  "name": "@wippa/connector-vercel",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

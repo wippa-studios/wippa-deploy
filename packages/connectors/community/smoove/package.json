@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-smoove",
+  "name": "@wippa/connector-smoove",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

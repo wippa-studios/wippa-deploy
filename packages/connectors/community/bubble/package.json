@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-bubble",
+  "name": "@wippa/connector-bubble",
   "version": "0.1.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

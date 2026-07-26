@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-microsoft-excel-365",
+  "name": "@wippa/connector-microsoft-excel-365",
   "version": "0.7.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

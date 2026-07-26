@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-imeetify",
+  "name": "@wippa/connector-imeetify",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

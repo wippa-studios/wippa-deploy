@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-katana",
+  "name": "@wippa/connector-katana",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

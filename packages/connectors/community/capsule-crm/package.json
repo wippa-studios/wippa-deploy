@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-capsule-crm",
+  "name": "@wippa/connector-capsule-crm",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

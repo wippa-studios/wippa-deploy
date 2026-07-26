@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-slite",
+  "name": "@wippa/connector-slite",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

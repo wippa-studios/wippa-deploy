@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-mcp",
+  "name": "@wippa/connector-mcp",
   "version": "0.0.18",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

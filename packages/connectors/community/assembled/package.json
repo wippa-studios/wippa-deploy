@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-assembled",
+  "name": "@wippa/connector-assembled",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

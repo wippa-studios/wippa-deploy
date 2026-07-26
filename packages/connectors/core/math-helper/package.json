@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-math-helper",
+  "name": "@wippa/connector-math-helper",
   "version": "0.0.24",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

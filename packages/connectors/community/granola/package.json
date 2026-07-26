@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-granola",
+  "name": "@wippa/connector-granola",
   "version": "0.0.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

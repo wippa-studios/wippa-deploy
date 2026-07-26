@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-dittofeed",
+  "name": "@wippa/connector-dittofeed",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

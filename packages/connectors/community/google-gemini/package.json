@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-google-gemini",
+  "name": "@wippa/connector-google-gemini",
   "version": "0.1.12",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

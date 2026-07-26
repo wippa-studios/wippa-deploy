@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-writesonic-bulk",
+  "name": "@wippa/connector-writesonic-bulk",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

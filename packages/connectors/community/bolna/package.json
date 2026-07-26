@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-bolna",
+  "name": "@wippa/connector-bolna",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

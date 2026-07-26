@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-openmic-ai",
+  "name": "@wippa/connector-openmic-ai",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

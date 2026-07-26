@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-slashed",
+  "name": "@wippa/connector-slashed",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-open-phone",
+  "name": "@wippa/connector-open-phone",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

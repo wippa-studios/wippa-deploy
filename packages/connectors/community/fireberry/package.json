@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-fireberry",
+  "name": "@wippa/connector-fireberry",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

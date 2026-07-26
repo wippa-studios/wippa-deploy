@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-simpliroute",
+  "name": "@wippa/connector-simpliroute",
   "version": "0.1.6",
   "description": "SimpliRoute piece for Activepieces - Last mile delivery optimization platform integration",
   "type": "commonjs",

@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-checkout",
+  "name": "@wippa/connector-checkout",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

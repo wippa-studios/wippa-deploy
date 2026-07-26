@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-lightfunnels",
+  "name": "@wippa/connector-lightfunnels",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

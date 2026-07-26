@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-wonderchat",
+  "name": "@wippa/connector-wonderchat",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

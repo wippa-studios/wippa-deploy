@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-wrike",
+  "name": "@wippa/connector-wrike",
   "version": "0.1.6",
   "type": "commonjs",
   "main": "./dist/src/index.js",

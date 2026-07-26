@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-woocommerce",
+  "name": "@wippa/connector-woocommerce",
   "version": "0.1.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

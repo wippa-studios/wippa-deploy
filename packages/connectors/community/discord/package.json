@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-discord",
+  "name": "@wippa/connector-discord",
   "version": "0.5.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

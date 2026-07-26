@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-air-ops",
+  "name": "@wippa/connector-air-ops",
   "version": "0.1.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

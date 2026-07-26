@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-microsoft-teams-bot",
+  "name": "@wippa/connector-microsoft-teams-bot",
   "version": "0.0.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

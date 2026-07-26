@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-teable",
+  "name": "@wippa/connector-teable",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

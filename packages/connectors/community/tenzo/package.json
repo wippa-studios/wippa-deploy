@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-tenzo",
+  "name": "@wippa/connector-tenzo",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

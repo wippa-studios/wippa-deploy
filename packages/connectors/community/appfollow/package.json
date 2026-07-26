@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-appfollow",
+  "name": "@wippa/connector-appfollow",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

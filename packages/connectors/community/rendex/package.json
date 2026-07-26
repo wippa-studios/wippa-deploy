@@ -1,5 +1,5 @@
 {
-  "name": "@wippa/piece-rendex",
+  "name": "@wippa/connector-rendex",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",
