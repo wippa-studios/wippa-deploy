@@ -45,7 +45,7 @@ export function generateTheme({
         websiteName,
         colors: {
             avatar: themeColors?.avatar ?? '#515151',
-            'blue-link': themeColors?.['blue-link'] ?? '#1890ff',
+            'blue-link': themeColors?.['blue-link'] ?? '#f5e6a3',
             danger: themeColors?.danger ?? '#f94949',
             primary: {
                 default: primary.default,
