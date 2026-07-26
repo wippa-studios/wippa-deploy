@@ -100,7 +100,7 @@ export class CreatePieceSetTable1807000000000 implements Migration {
 
         // Only platforms with custom configuration to preserve are migrated. A project
         // with a NULL "pieceSetId" self-heals at runtime (resolvePieceSetForProject falls
-        // back to getOrCreateDefaultPieceSet), so platforms whose projects all use the
+        // back to getOrCreateDefaultConnectorSet), so platforms whose projects all use the
         // default (NONE) filter and that have no piece-bearing tags need no backfill. The
         // set that actually needs migrating is therefore much smaller than the platform
         // table, which is why we select it directly instead of paginating every platform.

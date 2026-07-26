@@ -52,9 +52,9 @@ async function resolvePieceSetForProject({ log, projectId, platformId }: Resolve
     const pieceSetId = project?.pieceSetId ?? null
 
     return isNil(pieceSetId)
-        ? connectorSetService(log).getOrCreateDefaultPieceSet(platformId)
+        ? connectorSetService(log).getOrCreateDefaultConnectorSet(platformId)
         : (await connectorSetRepo().findOneBy({ id: pieceSetId, platformId }))
-            ?? connectorSetService(log).getOrCreateDefaultPieceSet(platformId)
+            ?? connectorSetService(log).getOrCreateDefaultConnectorSet(platformId)
 }
 
 export type VisibilityPolicy = {

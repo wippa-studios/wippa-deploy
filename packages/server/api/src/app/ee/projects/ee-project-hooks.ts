@@ -52,7 +52,7 @@ async function assignDefaultPieceSet({ log, project }: AssignDefaultPieceSetPara
     if (!platformPlan.managePiecesEnabled) {
         return
     }
-    const defaultSet = await connectorSetService(log).getOrCreateDefaultPieceSet(project.platformId)
+    const defaultSet = await connectorSetService(log).getOrCreateDefaultConnectorSet(project.platformId)
     await connectorSetService(log).assignProject({
         connectorSet: defaultSet,
         projectId: project.id,

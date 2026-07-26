@@ -118,7 +118,7 @@ const applyProjectPieceAccess = async ({ platformId, projectId, pieceSetKey, pie
     if (!isNil(targetKey)) {
         log.warn({ platform: { id: platformId }, project: { id: projectId } }, `[managedAuthn] connectorSet key "${targetKey}" not found — falling back to default`)
     }
-    const defaultSet = await connectorSetService(log).getOrCreateDefaultPieceSet(platformId)
+    const defaultSet = await connectorSetService(log).getOrCreateDefaultConnectorSet(platformId)
     await connectorSetService(log).assignProject({ connectorSet: defaultSet, projectId })
 }
 
