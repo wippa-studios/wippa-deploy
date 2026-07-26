@@ -10,7 +10,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     apt-get install -y --no-install-recommends \
         openssh-client python3 g++ build-essential git \
         poppler-utils poppler-data procps unzip curl \
-        ca-certificates iptables libcap2
+        ca-certificates iptables libcap2 parallel
 
 # Install bun
 RUN export ARCH=$(uname -m) && \
@@ -52,17 +52,17 @@ RUN npx turbo run build \
 # Compile all 724+ community pieces with esbuild (replaces per-piece tsc compilation)
 # esbuild is 10-100× faster than tsc and uses far less memory per process.
 # We use --external:* so npm deps are resolved from node_modules at runtime.
+# GNU parallel gives us ~8 concurrent compilations without OOM risk.
 RUN find packages/pieces -name "package.json" -maxdepth 3 ! -path "*/node_modules/*" | \
-    while IFS= read -r pkg; do \
-        dir="$(dirname "$pkg")"; \
+    parallel --will-cite --halt now,fail=1 --jobs=4 --line-buffer ' \
+        dir=$(dirname {}); \
         src="$dir/src/index.ts"; \
         outdir="$dir/dist"; \
         if [ -f "$src" ]; then \
             mkdir -p "$outdir" && \
             esbuild "$src" --bundle --outfile="$outdir/src/index.js" --platform=node --external:* && \
             cp "$dir/package.json" "$outdir/"; \
-        fi; \
-    done
+        fi'
 
 # Remove source TypeScript from all pieces (only dist/ + package.json needed at runtime)
 RUN find packages/pieces -type d -name src -prune -exec rm -rf {} + 2>/dev/null || true
