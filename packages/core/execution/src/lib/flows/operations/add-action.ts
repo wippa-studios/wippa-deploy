@@ -57,6 +57,14 @@ function createAction(request: UpdateActionRequest, {
                 settings: request.settings,
             }
             break
+        case FlowActionType.PARALLEL:
+            action = {
+                ...baseProperties,
+                type: FlowActionType.PARALLEL,
+                settings: request.settings,
+                children: [],
+            }
+            break
     }
     const parseResult = SingleActionSchema.safeParse(action)
     const valid = (isNil(request.valid) ? true : request.valid) && parseResult.success

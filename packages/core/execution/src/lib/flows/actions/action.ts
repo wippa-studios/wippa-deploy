@@ -289,15 +289,10 @@ export type RouterActionSettings = z.infer<typeof RouterActionSettings>
 export const ParallelActionSchema = z.object({
     ...commonActionProps,
     type: z.literal(FlowActionType.PARALLEL),
-    settings: z.object({
-        ...commonActionSettings,
-    }),
+    settings: z.object({}),
 })
 
-export type ParallelActionSettings = {
-    sampleData?: unknown
-    customLogoUrl?: string
-}
+export type ParallelActionSettings = Record<string, never>
 
 // Parallel execution — runs all branches concurrently.
 // Each branch is a chain of actions; the nextAction runs after all branches complete.
@@ -348,6 +343,7 @@ export const SingleActionSchema = z.discriminatedUnion('type', [
     PieceActionSchema,
     LoopOnItemsActionSchema,
     RouterActionSchema,
+    ParallelActionSchema,
 ])
 
 // Manually defined to avoid z.infer in recursive types (causes TypeScript OOM)

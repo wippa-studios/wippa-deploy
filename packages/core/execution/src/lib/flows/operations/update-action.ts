@@ -75,6 +75,17 @@ function _updateAction(flowVersion: FlowVersion, request: UpdateActionRequest): 
                 }
                 break
             }
+            case FlowActionType.PARALLEL: {
+                const children = stepToUpdate.type === FlowActionType.PARALLEL ? stepToUpdate.children : []
+                updatedAction = {
+                    ...baseProps,
+                    settings: request.settings,
+                    type: FlowActionType.PARALLEL,
+                    nextAction: stepToUpdate.nextAction,
+                    children,
+                }
+                break
+            }
         }
         const parseResult = SingleActionSchema.safeParse(updatedAction)
         const valid = (isNil(request.valid) ? true : request.valid) && parseResult.success

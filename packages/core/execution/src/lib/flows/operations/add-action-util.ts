@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { applyFunctionToValuesSync, isString } from '@wippa/core-utils'
-import { FlowAction } from '../actions/action'
+import { FlowAction, FlowActionType } from '../actions/action'
 import { FlowVersion } from '../flow-version'
 import { flowStructureUtil } from '../util/flow-structure-util'
 
@@ -68,7 +68,7 @@ function clone(step: FlowAction, oldNameToNewName: Record<string, string>): Flow
             )
         })
     }
-    if (step.settings.sampleData) {
+    if (step.settings.sampleData && step.type !== FlowActionType.PARALLEL) {
         step.settings = {
             ...step.settings,
             sampleData: {},

@@ -100,6 +100,25 @@ function _getImportOperationsForSteps(step: FlowAction | FlowTrigger | undefined
                 }
                 break
             }
+            case FlowActionType.PARALLEL: {
+                if (step.children) {
+                    for (const [index, child] of step.children.entries()) {
+                        if (!isNil(child)) {
+                            steps.push({
+                                type: FlowOperationType.ADD_ACTION,
+                                request: {
+                                    parentStep: step.name,
+                                    stepLocationRelativeToParent: StepLocationRelativeToParent.INSIDE_BRANCH,
+                                    branchIndex: index,
+                                    action: removeAnySubsequentAction(child),
+                                },
+                            })
+                            steps.push(..._getImportOperationsForSteps(child))
+                        }
+                    }
+                }
+                break
+            }
             case FlowTriggerType.PIECE:
             case FlowTriggerType.EMPTY: {
                 break
