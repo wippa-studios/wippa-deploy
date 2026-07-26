@@ -1,17 +1,17 @@
 import assert from 'node:assert';
-import { PieceMetadata } from '../../../packages/pieces/framework/src';
+import { ConnectorMetadata } from '../../../packages/pieces/framework/src';
 import { StatusCodes } from 'http-status-codes';
 import { HttpHeader } from '../../../packages/pieces/common/src';
-import { AP_CLOUD_API_BASE, findNewPieces, pieceMetadataExists } from '../utils/piece-script-utils';
+import { AP_CLOUD_API_BASE, findNewConnectors, connectorMetadataExists } from '../utils/connector-script-utils';
 import { chunk } from '@wippa/core-utils';
 assert(process.env['AP_CLOUD_API_KEY'], 'API Key is not defined');
 
 const { AP_CLOUD_API_KEY } = process.env;
 
 const insertPieceMetadata = async (
-  pieceMetadata: PieceMetadata
+  connectorMetadata: ConnectorMetadata
 ): Promise<void> => {
-  const body = JSON.stringify(pieceMetadata);
+  const body = JSON.stringify(connectorMetadata);
 
   const headers = {
     ['api-key']: AP_CLOUD_API_KEY,
@@ -31,14 +31,14 @@ const insertPieceMetadata = async (
 
 
 
-const insertMetadataIfNotExist = async (pieceMetadata: PieceMetadata) => {
+const insertMetadataIfNotExist = async (connectorMetadata: ConnectorMetadata) => {
   console.info(
-    `insertMetadataIfNotExist, name: ${pieceMetadata.name}, version: ${pieceMetadata.version}`
+    `insertMetadataIfNotExist, name: ${connectorMetadata.name}, version: ${connectorMetadata.version}`
   );
 
-  const metadataAlreadyExist = await pieceMetadataExists(
-    pieceMetadata.name,
-    pieceMetadata.version
+  const metadataAlreadyExist = await connectorMetadataExists(
+    connectorMetadata.name,
+    connectorMetadata.version
   );
 
   if (metadataAlreadyExist) {
@@ -46,10 +46,10 @@ const insertMetadataIfNotExist = async (pieceMetadata: PieceMetadata) => {
     return;
   }
 
-  await insertPieceMetadata(pieceMetadata);
+  await insertPieceMetadata(connectorMetadata);
 };
 
-const insertMetadata = async (piecesMetadata: PieceMetadata[]) => {
+const insertMetadata = async (piecesMetadata: ConnectorMetadata[]) => {
   const batches = chunk(piecesMetadata, 30)
   for (const batch of batches) {
     await Promise.all(batch.map(insertMetadataIfNotExist))
@@ -60,7 +60,7 @@ const insertMetadata = async (piecesMetadata: PieceMetadata[]) => {
 const main = async () => {
   console.log('update pieces metadata: started')
 
-  const piecesMetadata = await findNewPieces()
+  const piecesMetadata = await findNewConnectors()
   await insertMetadata(piecesMetadata)
 
   console.log('update pieces metadata: completed')

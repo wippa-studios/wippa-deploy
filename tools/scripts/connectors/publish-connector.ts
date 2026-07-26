@@ -2,19 +2,19 @@ import assert from 'node:assert'
 import { argv } from 'node:process'
 import { exec } from '../utils/exec'
 import { readPackageJson } from '../utils/files'
-import { findAllPiecesDirectoryInSource } from '../utils/piece-script-utils'
+import { findAllConnectorsDirectoryInSource } from '../utils/connector-script-utils'
 import { isNil } from '@wippa/shared'
 import chalk from 'chalk'
 import path from 'node:path'
 import { publishNpmPackage } from '../utils/publish-npm-package'
 
-export const publishPiece = async (name: string): Promise<void> => {
-  assert(name, '[publishPiece] parameter "name" is required')
+export const publishConnector = async (name: string): Promise<void> => {
+  assert(name, '[publishConnector] parameter "name" is required')
 
-  const distPaths = await findAllPiecesDirectoryInSource()
+  const distPaths = await findAllConnectorsDirectoryInSource()
   const directory = distPaths.find(p => path.basename(p) === name)
   if (isNil(directory)) {
-    console.error(chalk.red(`[publishPiece] can't find the directory with name ${name}`))
+    console.error(chalk.red(`[publishConnector] can't find the directory with name ${name}`))
     return
   }
 
@@ -23,12 +23,12 @@ export const publishPiece = async (name: string): Promise<void> => {
 
   await publishNpmPackage(directory)
 
-  console.info(chalk.green.bold(`[publishPiece] success, name=${name}, version=${version}`))
+  console.info(chalk.green.bold(`[publishConnector] success, name=${name}, version=${version}`))
 }
 
 const main = async (): Promise<void> => {
-  const pieceName = argv[2]
-  await publishPiece(pieceName)
+  const connectorName = argv[2]
+  await publishConnector(connectorName)
 }
 
 /*

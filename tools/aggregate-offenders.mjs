@@ -8,10 +8,10 @@ const REPO = path.resolve(__dirname, '..')
 const COMMUNITY = path.join(REPO, 'packages', 'pieces', 'community')
 const WORKSPACE_ALIASES = {
     '@wippa/shared': path.join(REPO, 'packages', 'shared', 'src'),
-    '@wippa/pieces-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
-    '@wippa/pieces-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
+    '@wippa/connectors-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
+    '@wippa/connectors-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
     '@wippa/core-utils': path.join(REPO, 'packages', 'core', 'utils', 'src'),
-    '@wippa/core-piece-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
+    '@wippa/core-connector-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
 }
 const NATIVE_EXTERNALS = new Set(['oracledb', 'duckdb', 'better-sqlite3', 'sqlite3', 'pg-native', 'mongodb-client-encryption', 'kerberos', 'snappy', 'aws4', 'bson-ext', '@mongodb-js/zstd', 'playwright', 'playwright-core', 'puppeteer', 'puppeteer-core'])
 
@@ -23,8 +23,8 @@ function pkgOf(file) {
         return m[1]
     }
     if (/packages\/shared\//.test(file)) return '@wippa/shared'
-    if (/packages\/pieces\/common\//.test(file)) return '@wippa/pieces-common'
-    if (/packages\/pieces\/framework\//.test(file)) return '@wippa/pieces-framework'
+    if (/packages\/pieces\/common\//.test(file)) return '@wippa/connectors-common'
+    if (/packages\/pieces\/framework\//.test(file)) return '@wippa/connectors-framework'
     return 'piece-src/other-ws'
 }
 

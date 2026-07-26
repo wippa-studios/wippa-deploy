@@ -11,7 +11,7 @@ const COMMUNITY = path.join(REPO, 'packages', 'pieces', 'community')
 const WRITE = process.argv.includes('--write')
 
 const CORE_UTILS = new Set(['assertNotNullOrUndefined', 'Cursor', 'FlowRunId', 'isEmpty', 'isNil', 'LocalesEnum', 'ProjectId', 'SeekPage'])
-const CORE_PIECE_TYPES = new Set(['AgentPieceTool', 'AgentPieceToolMetadata', 'AgentToolType', 'AppConnectionType', 'AppConnectionValue', 'AUTHENTICATION_PROPERTY_NAME', 'BaseOAuth2ConnectionValue', 'BasicAuthConnectionValue', 'BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE', 'CloudOAuth2ConnectionValue', 'CustomAuthConnectionValue', 'DelayPauseMetadata', 'EventPayload', 'ExecutionType', 'FieldControlMode', 'MarkdownVariant', 'MAX_KEY_LENGTH_FOR_CORWDIN', 'NoAuthConnectionValue', 'OAuth2ConnectionValueWithApp', 'OAuth2GrantType', 'OIDCConnectionValue', 'PackageType', 'ParseEventResponse', 'PauseMetadata', 'PauseType', 'PieceCategory', 'PieceType', 'PlatformOAuth2ConnectionValue', 'PopulatedFlowSummary', 'PredefinedInputField', 'PredefinedInputsStructure', 'RespondResponse', 'ResumePayload', 'SecretTextConnectionValue', 'StreamStepProgress', 'TriggerPayload', 'TriggerStrategy', 'TriggerTestStrategy', 'WebhookHandshakeConfiguration', 'WebhookHandshakeStrategy', 'WebhookPauseMetadata'])
+const CORE_PIECE_TYPES = new Set(['AgentPieceTool', 'AgentPieceToolMetadata', 'AgentToolType', 'AppConnectionType', 'AppConnectionValue', 'AUTHENTICATION_PROPERTY_NAME', 'BaseOAuth2ConnectionValue', 'BasicAuthConnectionValue', 'BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE', 'CloudOAuth2ConnectionValue', 'CustomAuthConnectionValue', 'DelayPauseMetadata', 'EventPayload', 'ExecutionType', 'FieldControlMode', 'MarkdownVariant', 'MAX_KEY_LENGTH_FOR_CORWDIN', 'NoAuthConnectionValue', 'OAuth2ConnectionValueWithApp', 'OAuth2GrantType', 'OIDCConnectionValue', 'PackageType', 'ParseEventResponse', 'PauseMetadata', 'PauseType', 'PieceCategory', 'ConnectorType', 'PlatformOAuth2ConnectionValue', 'PopulatedFlowSummary', 'PredefinedInputField', 'PredefinedInputsStructure', 'RespondResponse', 'ResumePayload', 'SecretTextConnectionValue', 'StreamStepProgress', 'TriggerPayload', 'TriggerStrategy', 'TriggerTestStrategy', 'WebhookHandshakeConfiguration', 'WebhookHandshakeStrategy', 'WebhookPauseMetadata'])
 
 const IMPORT_RE = /import\s+(type\s+)?\{([^}]+)\}\s+from\s+['"]@activepieces\/shared['"];?/g
 
@@ -46,7 +46,7 @@ function rewriteFile(content) {
         changed = true
         const lines = []
         if (utils.length) lines.push(buildImport(typeModifier, utils, '@wippa/core-utils'))
-        if (pieceTypes.length) lines.push(buildImport(typeModifier, pieceTypes, '@wippa/core-piece-types'))
+        if (pieceTypes.length) lines.push(buildImport(typeModifier, pieceTypes, '@wippa/core-connector-types'))
         if (rest.length) {
             lines.push(buildImport(typeModifier, rest, '@wippa/shared'))
             fullySevered = false

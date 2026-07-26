@@ -1,5 +1,5 @@
 import { readPackageJson } from '../utils/files'
-import { findAllPiecesDirectoryInSource, NON_PIECES_PACKAGES, AP_CLOUD_API_BASE } from '../utils/piece-script-utils'
+import { findAllConnectorsDirectoryInSource, NON_CONNECTORS_PACKAGES, AP_CLOUD_API_BASE } from '../utils/connector-script-utils'
 
 const main = async () => {
   const release = (await readPackageJson('.')).version
@@ -8,13 +8,13 @@ const main = async () => {
   const registry = await fetchRegistry(release)
   console.info(`[findChangedPieces] registry has ${registry.size} name@version entries`)
 
-  const allPieceDirs = await findAllPiecesDirectoryInSource()
+  const allPieceDirs = await findAllConnectorsDirectoryInSource()
   const changedDirs: string[] = []
   const turboFilters: string[] = []
 
   for (const dir of allPieceDirs) {
     const pkg = await readPackageJson(dir)
-    if (NON_PIECES_PACKAGES.includes(pkg.name)) {
+    if (NON_CONNECTORS_PACKAGES.includes(pkg.name)) {
       continue
     }
     const key = `${pkg.name}@${pkg.version}`

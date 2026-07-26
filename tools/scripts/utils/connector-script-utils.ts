@@ -7,26 +7,26 @@ import { cwd } from 'node:process'
 import * as semver from 'semver'
 import { readPackageJson } from './files'
 import { StatusCodes } from 'http-status-codes'
-import { pieceTranslation, PieceMetadata } from '@wippa/pieces-framework'
+import { pieceTranslation, ConnectorMetadata } from '@wippa/connectors-framework'
 
 const LOAD_PIECE_METADATA_CHILD = resolve(
     __dirname,
     '..',
     'pieces',
-    'load-piece-metadata-child.mjs',
+    'load-connector-metadata-child.mjs',
 )
 
 type LoadedPieceChildPayload = {
-    metadata: Omit<PieceMetadata, 'name' | 'version'>;
+    metadata: Omit<ConnectorMetadata, 'name' | 'version'>;
     minimumSupportedRelease: string | null;
     maximumSupportedRelease: string | null;
     authors: string[];
 };
 
 export const AP_CLOUD_API_BASE = 'https://cloud.activepieces.com/api/v1';
-export const PIECES_FOLDER = 'packages/pieces'
-export const COMMUNITY_PIECE_FOLDER = 'packages/pieces/community'
-export const NON_PIECES_PACKAGES = ['@wippa/pieces-framework', '@wippa/pieces-common']
+export const CONNECTORS_FOLDER = 'packages/pieces'
+export const COMMUNITY_CONNECTOR_FOLDER = 'packages/pieces/community'
+export const NON_CONNECTORS_PACKAGES = ['@wippa/connectors-framework', '@wippa/connectors-common']
 
 const validateSupportedRelease = (minRelease: string | undefined, maxRelease: string | undefined) => {
     if (minRelease !== undefined && !semver.valid(minRelease)) {
@@ -42,38 +42,38 @@ const validateSupportedRelease = (minRelease: string | undefined, maxRelease: st
     }
 }
 
-const validateMetadata = (pieceMetadata: PieceMetadata): void => {
-    console.info(`[validateMetadata] pieceName=${pieceMetadata.name}`)
+const validateMetadata = (connectorMetadata: ConnectorMetadata): void => {
+    console.info(`[validateMetadata] connectorName=${connectorMetadata.name}`)
     validateSupportedRelease(
-        pieceMetadata.minimumSupportedRelease,
-        pieceMetadata.maximumSupportedRelease,
+        connectorMetadata.minimumSupportedRelease,
+        connectorMetadata.maximumSupportedRelease,
     )
 }
 
 
-const byDisplayNameIgnoreCase = (a: PieceMetadata, b: PieceMetadata) => {
+const byDisplayNameIgnoreCase = (a: ConnectorMetadata, b: ConnectorMetadata) => {
     const aName = a.displayName.toUpperCase();
     const bName = b.displayName.toUpperCase();
     return aName.localeCompare(bName, 'en');
 };
 
-export function getCommunityPieceFolder(pieceName: string): string {
-    return join(COMMUNITY_PIECE_FOLDER, pieceName)
+export function getCommunityConnectorFolder(connectorName: string): string {
+    return join(COMMUNITY_CONNECTOR_FOLDER, connectorName)
 }
 
 
-export async function findAllPiecesDirectoryInSource(): Promise<string[]> {
+export async function findAllConnectorsDirectoryInSource(): Promise<string[]> {
     const piecesPath = resolve(cwd(), 'packages', 'pieces')
     const paths = await traverseFolder(piecesPath)
     return paths.map(p => relative(cwd(), p))
 }
 
-export const pieceMetadataExists = async (
-    pieceName: string,
-    pieceVersion: string
+export const connectorMetadataExists = async (
+    connectorName: string,
+    connectorVersion: string
 ): Promise<boolean> => {
     const cloudResponse = await fetch(
-        `${AP_CLOUD_API_BASE}/pieces/${pieceName}?version=${pieceVersion}`
+        `${AP_CLOUD_API_BASE}/pieces/${connectorName}?version=${connectorVersion}`
     );
 
     const pieceExist: Record<number, boolean> = {
@@ -91,13 +91,13 @@ export const pieceMetadataExists = async (
     return pieceExist[cloudResponse.status];
 };
 
-export async function findNewPieces(): Promise<PieceMetadata[]> {
+export async function findNewConnectors(): Promise<ConnectorMetadata[]> {
     const changedDistPaths = getChangedPiecesDistPaths()
     const paths = changedDistPaths ?? await findAllDistPaths()
 
-    console.info(`[findNewPieces] scanning ${paths.length} dist paths${changedDistPaths ? ' (scoped to changed)' : ' (all)'}`)
+    console.info(`[findNewConnectors] scanning ${paths.length} dist paths${changedDistPaths ? ' (scoped to changed)' : ' (all)'}`)
 
-    const changedPieces: PieceMetadata[] = []
+    const changedPieces: ConnectorMetadata[] = []
 
     // Adding batches because of memory limit when we have a lot of pieces
     const batchSize = 75
@@ -105,13 +105,13 @@ export async function findNewPieces(): Promise<PieceMetadata[]> {
         const batch = paths.slice(i, i + batchSize)
         const batchResults = await Promise.all(batch.map(async (folderPath) => {
             const packageJson = await readPackageJson(folderPath);
-            if (NON_PIECES_PACKAGES.includes(packageJson.name)) {
+            if (NON_CONNECTORS_PACKAGES.includes(packageJson.name)) {
                 return null;
             }
-            const exists = await pieceMetadataExists(packageJson.name, packageJson.version)
+            const exists = await connectorMetadataExists(packageJson.name, packageJson.version)
             if (!exists) {
                 try {
-                    return loadPieceFromFolder(folderPath);
+                    return loadConnectorFromFolder(folderPath);
                 } catch (ex) {
                     return null;
                 }
@@ -119,7 +119,7 @@ export async function findNewPieces(): Promise<PieceMetadata[]> {
             return null;
         }))
 
-        const validResults = batchResults.filter((piece): piece is PieceMetadata => piece !== null)
+        const validResults = batchResults.filter((piece): piece is ConnectorMetadata => piece !== null)
         changedPieces.push(...validResults)
     }
 
@@ -142,10 +142,10 @@ function getChangedPiecesDistPaths(): string[] | null {
     })
 }
 
-export async function findAllPieces(): Promise<PieceMetadata[]> {
+export async function findAllConnectors(): Promise<ConnectorMetadata[]> {
     const paths = await findAllDistPaths()
-    const pieces = await Promise.all(paths.map((p) => loadPieceFromFolder(p)))
-    return pieces.filter((p): p is PieceMetadata => p !== null).sort(byDisplayNameIgnoreCase)
+    const pieces = await Promise.all(paths.map((p) => loadConnectorFromFolder(p)))
+    return pieces.filter((p): p is ConnectorMetadata => p !== null).sort(byDisplayNameIgnoreCase)
 }
 
 async function findAllDistPaths(): Promise<string[]> {
@@ -183,12 +183,12 @@ async function traverseFolder(folderPath: string): Promise<string[]> {
     return paths
 }
 
-async function loadPieceFromFolder(folderPath: string): Promise<PieceMetadata | null> {
+async function loadConnectorFromFolder(folderPath: string): Promise<ConnectorMetadata | null> {
     try {
         const packageJson = await readPackageJson(folderPath);
-        const payload = loadPieceViaChildProcess(folderPath);
+        const payload = loadConnectorViaChildProcess(folderPath);
         const i18n = await pieceTranslation.initializeI18n(folderPath)
-        const metadata: PieceMetadata = {
+        const metadata: ConnectorMetadata = {
             ...payload.metadata,
             name: packageJson.name,
             version: packageJson.version,
@@ -208,7 +208,7 @@ async function loadPieceFromFolder(folderPath: string): Promise<PieceMetadata | 
     return null
 }
 
-function loadPieceViaChildProcess(folderPath: string): LoadedPieceChildPayload {
+function loadConnectorViaChildProcess(folderPath: string): LoadedPieceChildPayload {
     const stdout = execFileSync('node', [LOAD_PIECE_METADATA_CHILD, folderPath], {
         encoding: 'utf8',
         stdio: ['ignore', 'pipe', 'inherit'],

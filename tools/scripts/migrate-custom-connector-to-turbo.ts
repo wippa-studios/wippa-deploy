@@ -12,7 +12,7 @@
  * 3. Deletes project.json (Nx configuration)
  *
  * Usage:
- *   npx ts-node tools/scripts/migrate-custom-piece-to-turbo.ts [piece-path]
+ *   npx ts-node tools/scripts/migrate-custom-connector-to-turbo.ts [piece-path]
  *
  * If no path is provided, it scans packages/pieces/custom/ for all pieces.
  */
@@ -20,7 +20,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const CUSTOM_PIECES_DIR = path.resolve(__dirname, '../../packages/pieces/custom');
+const CUSTOM_CONNECTORS_DIR = path.resolve(__dirname, '../../packages/pieces/custom');
 
 function getRelativeRoot(pieceDir: string): string {
   const piecesIndex = pieceDir.indexOf('/packages/pieces/');
@@ -31,11 +31,11 @@ function getRelativeRoot(pieceDir: string): string {
   return relative;
 }
 
-function migratePiece(pieceDir: string): void {
-  const pieceName = path.basename(pieceDir);
+function migrateConnector(pieceDir: string): void {
+  const connectorName = path.basename(pieceDir);
   const relativeRoot = getRelativeRoot(pieceDir);
 
-  console.log(`\nMigrating piece: ${pieceName}`);
+  console.log(`\nMigrating piece: ${connectorName}`);
 
   let changes = 0;
 
@@ -72,7 +72,7 @@ function migratePiece(pieceDir: string): void {
 
     // Ensure workspace dependencies are present
     const requiredDeps: Record<string, string> = {
-      '@wippa/pieces-framework': 'workspace:*',
+      '@wippa/connectors-framework': 'workspace:*',
       '@wippa/shared': 'workspace:*',
       'tslib': '2.6.2',
     };
@@ -238,11 +238,11 @@ if (args.length > 0) {
     console.error(`Error: Path not found: ${piecePath}`);
     process.exit(1);
   }
-  migratePiece(piecePath);
+  migrateConnector(piecePath);
 } else {
   // Migrate all custom pieces
-  console.log(`Scanning ${CUSTOM_PIECES_DIR} for pieces...`);
-  const pieceDirs = findPieceDirs(CUSTOM_PIECES_DIR);
+  console.log(`Scanning ${CUSTOM_CONNECTORS_DIR} for pieces...`);
+  const pieceDirs = findPieceDirs(CUSTOM_CONNECTORS_DIR);
 
   if (pieceDirs.length === 0) {
     console.log('No custom pieces found to migrate.');
@@ -252,7 +252,7 @@ if (args.length > 0) {
   console.log(`Found ${pieceDirs.length} piece(s) to check.\n`);
 
   for (const dir of pieceDirs) {
-    migratePiece(dir);
+    migrateConnector(dir);
   }
 
   console.log('\nMigration complete.');

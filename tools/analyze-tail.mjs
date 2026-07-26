@@ -9,10 +9,10 @@ const COMMUNITY = path.join(REPO, 'packages', 'pieces', 'community')
 
 const WORKSPACE_ALIASES = {
     '@wippa/shared': path.join(REPO, 'packages', 'shared', 'src'),
-    '@wippa/pieces-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
-    '@wippa/pieces-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
+    '@wippa/connectors-framework': path.join(REPO, 'packages', 'pieces', 'framework', 'src'),
+    '@wippa/connectors-common': path.join(REPO, 'packages', 'pieces', 'common', 'src'),
     '@wippa/core-utils': path.join(REPO, 'packages', 'core', 'utils', 'src'),
-    '@wippa/core-piece-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
+    '@wippa/core-connector-types': path.join(REPO, 'packages', 'core', 'piece-types', 'src'),
 }
 const NATIVE_EXTERNALS = new Set(['oracledb', 'duckdb', 'better-sqlite3', 'sqlite3', 'pg-native', 'mongodb-client-encryption', 'kerberos', 'snappy', 'aws4', 'bson-ext', '@mongodb-js/zstd', 'playwright', 'playwright-core', 'puppeteer', 'puppeteer-core'])
 
@@ -26,8 +26,8 @@ function groupKey(file) {
     return null
 }
 
-async function topContribForPiece(pieceName) {
-    const pieceDir = path.join(COMMUNITY, pieceName)
+async function topContribForPiece(connectorName) {
+    const pieceDir = path.join(COMMUNITY, connectorName)
     const entry = path.join(pieceDir, 'src', 'index.ts')
     if (!fs.existsSync(entry)) return null
     const pj = JSON.parse(fs.readFileSync(path.join(pieceDir, 'package.json'), 'utf8'))
@@ -41,7 +41,7 @@ async function topContribForPiece(pieceName) {
             alias: WORKSPACE_ALIASES, external, loader: { '.node': 'file' },
         })
     } catch {
-        return { pieceName, total: 0, failed: true }
+        return { connectorName, total: 0, failed: true }
     }
     const out = Object.values(result.metafile.outputs)[0]
     const total = out.bytes
@@ -55,7 +55,7 @@ async function topContribForPiece(pieceName) {
         if (/\.bun\/zod@/.test(file) && !/\/mini\//.test(file)) fullZod = true
     }
     const top = Object.entries(grp).sort((a, b) => b[1] - a[1]).slice(0, 3)
-    return { pieceName, total, top, sharedBytes, fullZod }
+    return { connectorName, total, top, sharedBytes, fullZod }
 }
 
 const pieces = fs.readdirSync(COMMUNITY).filter((d) => fs.existsSync(path.join(COMMUNITY, d, 'package.json')))
@@ -70,6 +70,6 @@ console.log(`\n${rows.length} pieces >= ${THRESHOLD / 1024}KB\n`)
 for (const r of rows) {
     const topStr = r.top.map(([k, v]) => `${k} ${fmt(v)}`).join(', ')
     const flags = (r.fullZod ? ' [FULL-ZOD]' : '') + (r.sharedBytes > 0 ? ` [shared ${fmt(r.sharedBytes)}]` : '')
-    console.log(fmt(r.total).padStart(8), r.pieceName.padEnd(26), '| ', topStr + flags)
+    console.log(fmt(r.total).padStart(8), r.connectorName.padEnd(26), '| ', topStr + flags)
 }
 fs.writeFileSync('/tmp/tail-analysis.json', JSON.stringify(rows, null, 2))

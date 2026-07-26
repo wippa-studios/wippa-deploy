@@ -33,7 +33,7 @@ COPY . .
 # Use the GLOBAL esbuild (npm -g, correct arch) not `npx` — npx resolves the bun-local esbuild whose
 # native binary can be the wrong platform when the lockfile was generated on another OS.
 # isolated-vm / the optional socket.io native addons stay external.
-RUN npx turbo run build --filter=@activepieces/engine && \
+RUN npx turbo run build --filter=@wippa/engine && \
     esbuild packages/server/worker/src/bootstrap.ts \
         --bundle --platform=node --format=cjs --target=node20 \
         --tsconfig=tsconfig.base.json \
@@ -69,5 +69,5 @@ COPY --from=build /usr/src/app/dist/packages/engine ./dist/packages/engine
 # to match the app's, so ship the workspace package.json (not 0.0.0).
 COPY --from=build /usr/src/app/package.json ./package.json
 
-LABEL service=activepieces-worker
+LABEL service=wippa-worker
 ENTRYPOINT ["node", "worker.js"]

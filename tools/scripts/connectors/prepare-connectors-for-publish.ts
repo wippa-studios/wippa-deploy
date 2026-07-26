@@ -1,4 +1,4 @@
-import { findAllPiecesDirectoryInSource } from '../utils/piece-script-utils'
+import { findAllConnectorsDirectoryInSource } from '../utils/connector-script-utils'
 import { preparePieceDistForPublish } from '../../../packages/cli/src/lib/utils/prepare-piece-utils'
 import { chunk } from '@wippa/core-utils'
 
@@ -12,7 +12,7 @@ function getChangedPiecePaths(): string[] | null {
 
 async function main(): Promise<void> {
     const changedPaths = getChangedPiecePaths()
-    const piecePaths = changedPaths ?? await findAllPiecesDirectoryInSource()
+    const piecePaths = changedPaths ?? await findAllConnectorsDirectoryInSource()
 
     console.info(`[preparePieces] processing ${piecePaths.length} pieces${changedPaths ? ' (scoped to changed)' : ' (all)'}`)
 

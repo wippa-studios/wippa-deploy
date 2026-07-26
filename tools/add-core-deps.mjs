@@ -29,7 +29,7 @@ for (const piece of fs.readdirSync(COMMUNITY)) {
     for (const file of walk(src)) {
         const content = fs.readFileSync(file, 'utf8')
         if (content.includes("'@wippa/core-utils'")) usesUtils = true
-        if (content.includes("'@wippa/core-piece-types'")) usesPieceTypes = true
+        if (content.includes("'@wippa/core-connector-types'")) usesPieceTypes = true
     }
     if (!usesUtils && !usesPieceTypes) continue
 
@@ -40,8 +40,8 @@ for (const piece of fs.readdirSync(COMMUNITY)) {
         pkg.dependencies['@wippa/core-utils'] = 'workspace:*'
         changed = true
     }
-    if (usesPieceTypes && !pkg.dependencies['@wippa/core-piece-types']) {
-        pkg.dependencies['@wippa/core-piece-types'] = 'workspace:*'
+    if (usesPieceTypes && !pkg.dependencies['@wippa/core-connector-types']) {
+        pkg.dependencies['@wippa/core-connector-types'] = 'workspace:*'
         changed = true
     }
     if (changed) {

@@ -53,7 +53,7 @@ RUN npx turbo run build \
 # esbuild is 10-100× faster than tsc and uses far less memory per process.
 # We use --external:* so npm deps are resolved from node_modules at runtime.
 # GNU parallel gives us ~8 concurrent compilations without OOM risk.
-RUN find packages/pieces -name "package.json" -maxdepth 3 ! -path "*/node_modules/*" | \
+RUN find packages/connectors -name "package.json" -maxdepth 3 ! -path "*/node_modules/*" | \
     parallel --will-cite --halt now,fail=1 --jobs=4 --line-buffer ' \
         dir=$(dirname {}); \
         src="$dir/src/index.ts"; \
@@ -65,7 +65,7 @@ RUN find packages/pieces -name "package.json" -maxdepth 3 ! -path "*/node_module
         fi'
 
 # Remove source TypeScript from all pieces (only dist/ + package.json needed at runtime)
-RUN find packages/pieces -type d -name src -prune -exec rm -rf {} + 2>/dev/null || true
+RUN find packages/connectors -type d -name src -prune -exec rm -rf {} + 2>/dev/null || true
 
 # Generate migration manifest for rollback support
 RUN node -e "\
@@ -79,7 +79,7 @@ RUN rm -rf packages/web packages/cli packages/tests-e2e packages/ee && \
     node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))"
 
 # Remove per-piece node_modules (if any exist — bun links root-level when possible)
-RUN rm -rf packages/pieces/*/*/node_modules 2>/dev/null || true
+RUN rm -rf packages/connectors/*/*/node_modules 2>/dev/null || true
 
 ### STAGE 2: Runtime ###
 FROM node:24.14.0-bullseye-slim

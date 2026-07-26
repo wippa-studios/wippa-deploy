@@ -1,5 +1,5 @@
 import { publishNpmPackage } from '../utils/publish-npm-package'
-import { findAllPiecesDirectoryInSource } from '../utils/piece-script-utils'
+import { findAllConnectorsDirectoryInSource } from '../utils/connector-script-utils'
 import { chunk } from '@wippa/core-utils'
 
 function getChangedPiecePaths(): string[] | null {
@@ -12,7 +12,7 @@ function getChangedPiecePaths(): string[] | null {
 
 const main = async () => {
   const changedPaths = getChangedPiecePaths()
-  const piecesSource = changedPaths ?? await findAllPiecesDirectoryInSource()
+  const piecesSource = changedPaths ?? await findAllConnectorsDirectoryInSource()
 
   console.info(`[publishPieces] publishing ${piecesSource.length} pieces${changedPaths ? ' (scoped to changed)' : ' (all)'}`)
 

@@ -4,7 +4,7 @@ const rows = JSON.parse(fs.readFileSync('/tmp/ap-bundle-results.json', 'utf8'))
 const fmt = (b) => b == null ? '—' : (b < 1024 * 1024 ? (b / 1024).toFixed(0) + ' KB' : (b / 1024 / 1024).toFixed(2) + ' MB')
 
 const ok = rows.filter((r) => r.bundled?.ok).map((r) => ({
-    name: r.pieceName,
+    name: r.connectorName,
     raw: r.raw.total,
     bundled: r.bundled.bundleBytes + r.bundled.externalBytes,
     ext: r.bundled.external,
@@ -23,7 +23,7 @@ const failed = rows.filter((r) => r.bundled && !r.bundled.ok)
 
 fs.writeFileSync('/tmp/ap-bundle-table.md', lines.join('\n'))
 
-console.log(`Pieces measured: ${ok.length} OK, ${failed.length} failed${failed.length ? ' (' + failed.map((r) => r.pieceName).join(', ') + ')' : ''}`)
+console.log(`Pieces measured: ${ok.length} OK, ${failed.length} failed${failed.length ? ' (' + failed.map((r) => r.connectorName).join(', ') + ')' : ''}`)
 console.log(`RAW catalog total:     ${fmt(rawTotal)}`)
 console.log(`BUNDLED catalog total: ${fmt(bundledTotal)}`)
 console.log(`Reduction: ${(100 * (1 - bundledTotal / rawTotal)).toFixed(1)}%  (${(rawTotal / bundledTotal).toFixed(1)}× smaller)`)
