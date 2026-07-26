@@ -46,6 +46,12 @@ export const CORE_STEP_METADATA: Record<
     description: t('Split your flow into branches depending on condition(s)'),
     type: FlowActionType.ROUTER as const,
   },
+  [FlowActionType.PARALLEL]: {
+    displayName: t('Parallel'),
+    logoUrl: 'https://cdn.activepieces.com/pieces/new-core/parallel.svg',
+    description: t('Run multiple branches concurrently'),
+    type: FlowActionType.PARALLEL as const,
+  },
   [FlowTriggerType.EMPTY]: {
     displayName: t('Empty Trigger'),
     logoUrl: 'https://cdn.activepieces.com/pieces/new-core/empty-trigger.svg',
@@ -57,6 +63,7 @@ export const CORE_ACTIONS_METADATA = [
   CORE_STEP_METADATA[FlowActionType.CODE],
   CORE_STEP_METADATA[FlowActionType.LOOP_ON_ITEMS],
   CORE_STEP_METADATA[FlowActionType.ROUTER],
+  CORE_STEP_METADATA[FlowActionType.PARALLEL],
 ] as const;
 
 export const stepUtils = {
@@ -86,6 +93,7 @@ export const stepUtils = {
       case FlowActionType.ROUTER:
       case FlowActionType.LOOP_ON_ITEMS:
       case FlowActionType.CODE:
+      case FlowActionType.PARALLEL:
       case FlowTriggerType.EMPTY:
         return {
           ...CORE_STEP_METADATA[step.type],
