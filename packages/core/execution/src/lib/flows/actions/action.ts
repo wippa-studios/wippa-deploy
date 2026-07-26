@@ -9,6 +9,7 @@ export enum FlowActionType {
     PIECE = 'PIECE',
     LOOP_ON_ITEMS = 'LOOP_ON_ITEMS',
     ROUTER = 'ROUTER',
+    PARALLEL = 'PARALLEL',
 }
 
 export enum RouterExecutionType {
@@ -285,8 +286,21 @@ export type RouterActionSettings = z.infer<typeof RouterActionSettings>
 
 
 
-// Union of all actions
+export const ParallelActionSchema = z.object({
+    ...commonActionProps,
+    type: z.literal(FlowActionType.PARALLEL),
+    settings: z.object({
+        ...commonActionSettings,
+    }),
+})
 
+export type ParallelActionSettings = {
+    sampleData?: unknown
+    customLogoUrl?: string
+}
+
+// Parallel execution — runs all branches concurrently.
+// Each branch is a chain of actions; the nextAction runs after all branches complete.
 export const FlowAction: z.ZodType<FlowAction> = z.lazy(() =>
     z.discriminatedUnion('type', [
         CodeActionSchema.extend({
@@ -305,6 +319,13 @@ export const FlowAction: z.ZodType<FlowAction> = z.lazy(() =>
             ...commonActionProps,
             type: z.literal(FlowActionType.ROUTER),
             settings: RouterActionSettings,
+            nextAction: FlowAction.optional(),
+            children: z.array(z.union([FlowAction, z.null()])),
+        }),
+        z.object({
+            ...commonActionProps,
+            type: z.literal(FlowActionType.PARALLEL),
+            settings: ParallelActionSchema.shape.settings,
             nextAction: FlowAction.optional(),
             children: z.array(z.union([FlowAction, z.null()])),
         }),
@@ -343,6 +364,7 @@ export type FlowAction =
     | (BaseActionProps & { type: FlowActionType.PIECE, settings: PieceActionSettings, nextAction?: FlowAction, continueOnFailureBranches?: ContinueOnFailureBranches })
     | (BaseActionProps & { type: FlowActionType.LOOP_ON_ITEMS, settings: LoopOnItemsActionSettings, nextAction?: FlowAction, firstLoopAction?: FlowAction })
     | (BaseActionProps & { type: FlowActionType.ROUTER, settings: RouterActionSettings, nextAction?: FlowAction, children: (FlowAction | null)[] })
+    | (BaseActionProps & { type: FlowActionType.PARALLEL, settings: ParallelActionSettings, nextAction?: FlowAction, children: (FlowAction | null)[] })
 
 export type RouterAction = BaseActionProps & {
     type: FlowActionType.ROUTER

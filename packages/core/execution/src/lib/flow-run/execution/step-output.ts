@@ -110,7 +110,7 @@ export type StepOutput =
   | GenericStepOutput<FlowActionType.LOOP_ON_ITEMS, LoopStepResult>
   | GenericStepOutput<FlowActionType.ROUTER, unknown>
   | GenericStepOutput<
-  | Exclude<FlowActionType, FlowActionType.LOOP_ON_ITEMS | FlowActionType.ROUTER>
+  | Exclude<FlowActionType, FlowActionType.LOOP_ON_ITEMS | FlowActionType.ROUTER | FlowActionType.PARALLEL>
   | FlowTriggerType,
   unknown
   >
