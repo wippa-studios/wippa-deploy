@@ -95,6 +95,11 @@ export function PlatformSidebar() {
       locked: !platform.plan.manageTemplatesEnabled,
     },
     {
+      to: '/platform/setup/oauth-apps',
+      label: t('OAuth Apps'),
+      icon: UnplugIcon,
+    },
+    {
       to: '/platform/setup/billing',
       label: t('Billing'),
       icon: ReceiptIcon,

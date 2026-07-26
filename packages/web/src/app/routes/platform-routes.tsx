@@ -56,6 +56,11 @@ const GlobalConnectionsTable = React.lazy(() =>
     default: m.GlobalConnectionsTable,
   })),
 );
+const OAuthAppsPage = React.lazy(() =>
+  import('./platform/setup/oauth-apps').then((m) => ({
+    default: m.default,
+  })),
+);
 const PlatformPiecesPage = React.lazy(() =>
   import('./platform/setup/pieces').then((m) => ({
     default: m.PlatformPiecesPage,
@@ -204,6 +209,18 @@ export const platformRoutes = [
         <PageTitle title="Connections">
           <SuspenseWrapper>
             <GlobalConnectionsTable />
+          </SuspenseWrapper>
+        </PageTitle>
+      </PlatformLayout>
+    ),
+  },
+  {
+    path: '/platform/setup/oauth-apps',
+    element: (
+      <PlatformLayout>
+        <PageTitle title="OAuth Apps">
+          <SuspenseWrapper>
+            <OAuthAppsPage />
           </SuspenseWrapper>
         </PageTitle>
       </PlatformLayout>
