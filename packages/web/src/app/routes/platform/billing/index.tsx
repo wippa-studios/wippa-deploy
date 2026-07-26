@@ -76,7 +76,7 @@ function BillingPageDetails() {
     <CenteredPage
       title={t('Billing')}
       description={t(
-        'For questions about billing contact us at support@activepieces.com',
+        'For questions about billing contact us at support@wippa.com.au',
       )}
     >
       <div className="flex flex-col gap-6">

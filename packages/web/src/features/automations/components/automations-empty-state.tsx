@@ -1,9 +1,5 @@
 import { Permission } from '@wippa/core-utils';
-import {
-  Template,
-  TemplateType,
-  UncategorizedFolderId,
-} from '@wippa/shared';
+import { Template, TemplateType, UncategorizedFolderId } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   ChevronRight,

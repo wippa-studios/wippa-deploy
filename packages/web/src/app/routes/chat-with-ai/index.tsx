@@ -1,6 +1,6 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { SeekPage } from '@wippa/core-utils';
 import { ChatConversation } from '@wippa/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Ellipsis, Pencil, Trash2 } from 'lucide-react';
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';

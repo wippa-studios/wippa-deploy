@@ -1,9 +1,9 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import {
   AIProviderAuthConfig,
   CreateAIProviderRequest,
   UpdateAIProviderRequest,
 } from '@wippa/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
 import { aiProviderApi } from '../api/ai-provider-api';

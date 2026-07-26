@@ -1,10 +1,10 @@
+import { useQueryClient } from '@tanstack/react-query';
 import {
   AiCreditsAutoTopUpState,
   ApEdition,
   ApFlagId,
   PlatformBillingInformation,
 } from '@wippa/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Sparkles, Settings } from 'lucide-react';
 import { useState } from 'react';

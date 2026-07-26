@@ -1,5 +1,5 @@
-import { Template, TemplateType } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
+import { Template, TemplateType } from '@wippa/shared';
 import { t } from 'i18next';
 import { LayoutGrid, Search } from 'lucide-react';
 import { useMemo, useState } from 'react';

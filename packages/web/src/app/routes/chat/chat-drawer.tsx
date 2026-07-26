@@ -1,8 +1,4 @@
-import {
-  FlowRun,
-  RunEnvironment,
-  WebsocketClientEvent,
-} from '@wippa/shared';
+import { FlowRun, RunEnvironment, WebsocketClientEvent } from '@wippa/shared';
 import { ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 

@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@wippa/core-utils';
 import {
   getAuthPropertyForValue,
@@ -14,7 +15,6 @@ import {
   BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE,
   UpsertAppConnectionRequestBody,
 } from '@wippa/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { useState } from 'react';
 import { Resolver, useForm } from 'react-hook-form';

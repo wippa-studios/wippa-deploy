@@ -1,8 +1,4 @@
-import {
-  ColorName,
-  PROJECT_COLOR_PALETTE,
-  ProjectType,
-} from '@wippa/shared';
+import { ColorName, PROJECT_COLOR_PALETTE, ProjectType } from '@wippa/shared';
 
 import { Avatar } from '@/components/ui/avatar';
 

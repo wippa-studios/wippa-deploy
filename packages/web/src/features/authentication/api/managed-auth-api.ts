@@ -1,7 +1,4 @@
-import {
-  ManagedAuthnRequestBody,
-  AuthenticationResponse,
-} from '@wippa/shared';
+import { ManagedAuthnRequestBody, AuthenticationResponse } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

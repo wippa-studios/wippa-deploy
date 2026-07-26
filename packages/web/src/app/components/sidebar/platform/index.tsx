@@ -38,7 +38,6 @@ import {
   SidebarGroupLabel,
   SidebarSeparator,
 } from '@/components/ui/sidebar-shadcn';
-import { useAuthorization } from '@/hooks/authorization-hooks';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { determineDefaultRoute } from '@/lib/route-utils';
@@ -50,9 +49,7 @@ import { SidebarUser } from '../sidebar-user';
 export function PlatformSidebar() {
   const { platform } = platformHooks.useCurrentPlatform();
   const { data: edition } = flagsHooks.useFlag<ApEdition>(ApFlagId.EDITION);
-  const { checkAccess } = useAuthorization();
   const defaultRoute = determineDefaultRoute({
-    checkAccess,
     chatEnabled: platform.plan.chatEnabled,
   });
   const chevronRef = useRef<ChevronLeftIconHandle>(null);

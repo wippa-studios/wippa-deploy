@@ -1,10 +1,10 @@
-import { FileResponseInterface } from '@wippa/shared';
 import { javascript } from '@codemirror/lang-javascript';
 import { githubDark, githubLight } from '@uiw/codemirror-theme-github';
 import ReactCodeMirror, {
   EditorState,
   EditorView,
 } from '@uiw/react-codemirror';
+import { FileResponseInterface } from '@wippa/shared';
 import { CodeIcon, Copy } from 'lucide-react';
 import React from 'react';
 import Markdown from 'react-markdown';

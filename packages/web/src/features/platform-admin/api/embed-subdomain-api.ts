@@ -1,7 +1,4 @@
-import {
-  EmbedSubdomain,
-  GenerateEmbedSubdomainRequest,
-} from '@wippa/shared';
+import { EmbedSubdomain, GenerateEmbedSubdomainRequest } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

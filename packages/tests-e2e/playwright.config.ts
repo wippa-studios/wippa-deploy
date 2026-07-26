@@ -51,7 +51,7 @@ const config: PlaywrightTestConfig = {
   /* Configure projects for major browsers */
   projects: [
     {
-      name: `@activepieces/${AP_EDITION}`,
+      name: `@wippa/${AP_EDITION}`,
       use: {
         ...devices['Desktop Chrome'],
         headless: true,

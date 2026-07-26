@@ -1,10 +1,10 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { ApErrorParams, ErrorCode, isNil } from '@wippa/core-utils';
 import {
   PieceMetadataModelSummary,
   PropertyType,
 } from '@wippa/pieces-framework';
 import { OAuth2GrantType, PieceScope, PieceType } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   CheckIcon,

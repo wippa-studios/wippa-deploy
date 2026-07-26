@@ -1,6 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import { isNil, Permission } from '@wippa/core-utils';
 import { ApEdition, ApFlagId, PlatformRole } from '@wippa/shared';
-import { useQuery } from '@tanstack/react-query';
 
 import { authenticationApi } from '@/api/authentication-api';
 import { platformApi } from '@/api/platforms-api';

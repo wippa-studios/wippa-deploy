@@ -1,3 +1,4 @@
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   ApEdition,
   ApFlagId,
@@ -5,7 +6,6 @@ import {
   EmbedSubdomainStatus,
   GenerateEmbedSubdomainRequest,
 } from '@wippa/shared';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';

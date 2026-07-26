@@ -1,7 +1,4 @@
-import {
-  AgentKnowledgeBaseTool,
-  KnowledgeBaseSourceType,
-} from '@wippa/shared';
+import { AgentKnowledgeBaseTool, KnowledgeBaseSourceType } from '@wippa/shared';
 import { create } from 'zustand';
 
 interface KnowledgeBaseToolDialogState {

@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@wippa/core-utils';
 import {
   FlowAction,
@@ -8,7 +9,6 @@ import {
   flowPieceUtil,
   flowStructureUtil,
 } from '@wippa/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import deepEqual from 'deep-equal';
 import { useEffect, useRef, useState } from 'react';
 import { useForm, Resolver } from 'react-hook-form';

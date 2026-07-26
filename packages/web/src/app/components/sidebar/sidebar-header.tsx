@@ -44,9 +44,7 @@ export const AppSidebarHeader = () => {
   const showSwitcher = edition === ApEdition.CLOUD && !embedState.isEmbedded;
   const { state } = useSidebar();
   const { platform: currentPlatform } = platformHooks.useCurrentPlatform();
-  const { checkAccess } = useAuthorization();
   const defaultRoute = determineDefaultRoute({
-    checkAccess,
     chatEnabled: currentPlatform.plan.chatEnabled,
   });
   const branding = flagsHooks.useWebsiteBranding();

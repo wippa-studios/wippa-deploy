@@ -1,9 +1,5 @@
 import { SeekPage } from '@wippa/core-utils';
-import {
-  Alert,
-  CreateAlertParams,
-  ListAlertsParams,
-} from '@wippa/shared';
+import { Alert, CreateAlertParams, ListAlertsParams } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

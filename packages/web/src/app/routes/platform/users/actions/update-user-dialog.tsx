@@ -1,10 +1,6 @@
-import {
-  PlatformRole,
-  UpdateUserRequestBody,
-  User,
-} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
+import { PlatformRole, UpdateUserRequestBody, User } from '@wippa/shared';
 import { t } from 'i18next';
 import { useState } from 'react';
 import { Resolver, useForm } from 'react-hook-form';

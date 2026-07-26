@@ -1,5 +1,5 @@
-import { ChatConversation } from '@wippa/shared';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { ChatConversation } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   ArrowUpRight,

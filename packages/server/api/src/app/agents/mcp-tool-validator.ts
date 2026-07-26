@@ -1,7 +1,7 @@
-import { safeHttp } from '@wippa/server-utils'
-import { AgentMcpTool, buildAuthHeaders, ValidateAgentMcpToolResponse } from '@wippa/shared'
 import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js'
+import { safeHttp } from '@wippa/server-utils'
+import { AgentMcpTool, buildAuthHeaders, ValidateAgentMcpToolResponse } from '@wippa/shared'
 
 export const mcpToolValidator = {
     async validateAgentMcpTool(tool: AgentMcpTool): Promise<ValidateAgentMcpToolResponse> {

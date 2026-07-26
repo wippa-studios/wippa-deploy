@@ -1,8 +1,8 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import {
   CreateAiToolConfigRequest,
   UpdateAiToolConfigRequest,
 } from '@wippa/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
 import { aiToolConfigApi } from '../api/ai-tool-config-api';

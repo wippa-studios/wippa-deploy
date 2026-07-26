@@ -1,3 +1,4 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { isNil, Permission } from '@wippa/core-utils';
 import {
   ConfigureRepoRequest,
@@ -5,7 +6,6 @@ import {
   GitRepo,
   PushGitRepoRequest,
 } from '@wippa/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';

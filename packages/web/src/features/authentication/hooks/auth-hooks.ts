@@ -1,3 +1,4 @@
+import { useMutation } from '@tanstack/react-query';
 import {
   AuthenticationResponse,
   CreateOtpRequestBody,
@@ -7,7 +8,6 @@ import {
   UserIdentity,
   VerifyEmailRequestBody,
 } from '@wippa/shared';
-import { useMutation } from '@tanstack/react-query';
 
 import { authenticationApi } from '@/api/authentication-api';
 import { HttpError } from '@/lib/api';

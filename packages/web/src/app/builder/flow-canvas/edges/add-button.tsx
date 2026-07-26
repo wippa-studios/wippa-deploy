@@ -1,5 +1,5 @@
-import { isNil } from '@wippa/core-utils';
 import { useDndMonitor, useDroppable, DragMoveEvent } from '@dnd-kit/core';
+import { isNil } from '@wippa/core-utils';
 import { Plus } from 'lucide-react';
 import React, { useState } from 'react';
 

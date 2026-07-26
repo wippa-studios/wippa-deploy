@@ -1,6 +1,6 @@
+import { GetSecretValueCommand, ListSecretsCommand, SecretsManagerClient } from '@aws-sdk/client-secrets-manager'
 import { ActivepiecesError, ErrorCode, isNil, isObject, isString } from '@wippa/core-utils'
 import { AWSProviderConfig, SecretManagerProviderId } from '@wippa/shared'
-import { GetSecretValueCommand, ListSecretsCommand, SecretsManagerClient } from '@aws-sdk/client-secrets-manager'
 import { FastifyBaseLogger } from 'fastify'
 import { SecretManagerProvider, throwConnectionError, throwGetSecretError } from './secret-manager-providers'
 

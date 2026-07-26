@@ -1,5 +1,5 @@
-import { MarkdownVariant } from '@wippa/shared';
 import { useMutation } from '@tanstack/react-query';
+import { MarkdownVariant } from '@wippa/shared';
 import { t } from 'i18next';
 import { Check, Copy, Info, AlertTriangle, Lightbulb } from 'lucide-react';
 import React, { useState } from 'react';

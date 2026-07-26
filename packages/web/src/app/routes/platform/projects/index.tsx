@@ -1,9 +1,9 @@
+import { ColumnDef } from '@tanstack/react-table';
 import {
   ProjectType,
   ProjectWithLimits,
   TeamProjectsLimit,
 } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { CheckIcon, Package, Pencil, Trash } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';

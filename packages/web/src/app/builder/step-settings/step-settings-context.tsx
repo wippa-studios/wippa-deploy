@@ -4,11 +4,7 @@ import {
   PiecePropertyMap,
   piecePropertiesUtils,
 } from '@wippa/pieces-framework';
-import {
-  FlowAction,
-  FlowTrigger,
-  PropertyExecutionType,
-} from '@wippa/shared';
+import { FlowAction, FlowTrigger, PropertyExecutionType } from '@wippa/shared';
 import {
   createContext,
   ReactNode,

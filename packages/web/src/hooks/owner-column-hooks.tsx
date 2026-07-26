@@ -1,9 +1,6 @@
-import { validateIndexBound } from '@wippa/core-utils';
-import {
-  AppConnectionOwners,
-  UserWithMetaInformation,
-} from '@wippa/shared';
 import { ColumnDef } from '@tanstack/react-table';
+import { validateIndexBound } from '@wippa/core-utils';
+import { AppConnectionOwners, UserWithMetaInformation } from '@wippa/shared';
 import { t } from 'i18next';
 import { User } from 'lucide-react';
 

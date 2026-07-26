@@ -3,8 +3,8 @@ import * as z from 'zod/mini'
 import { PackageType, PieceType } from './piece'
 import { TriggerStrategy } from './trigger'
 
-// Contracts that the execution layer (@activepieces/core-execution) and the engine
-// need from @activepieces/shared. Hosted here (the piece-types contract package) so
+// Contracts that the execution layer (@wippa/core-execution) and the engine
+// need from @wippa/shared. Hosted here (the piece-types contract package) so
 // the engine can name them without importing shared. See SRE-163.
 
 // ── store-entry ────────────────────────────────────────────────────────────

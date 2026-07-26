@@ -1,9 +1,9 @@
+import { useQuery } from '@tanstack/react-query';
 import { AIProviderName, isNil } from '@wippa/core-utils';
 import {
   AIProviderModel,
   ALLOWED_CHAT_MODELS_BY_PROVIDER,
 } from '@wippa/shared';
-import { useQuery } from '@tanstack/react-query';
 
 import { aiProviderApi } from '@/features/platform-admin/api/ai-provider-api';
 

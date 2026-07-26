@@ -1,6 +1,6 @@
+import { RateLimitOptions } from '@fastify/rate-limit'
 import { isNil } from '@wippa/core-utils'
 import { ApplicationEventName, PrincipalType, SignInRequest, SignUpRequest, SwitchPlatformRequest, TelemetryEventName, UserIdentityProvider } from '@wippa/shared'
-import { RateLimitOptions } from '@fastify/rate-limit'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { securityAccess } from '../core/security/authorization/fastify-security'
 import { applicationEvents } from '../helper/application-events'

@@ -1,6 +1,6 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { SeekPage } from '@wippa/core-utils';
 import { ChatConversation } from '@wippa/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { AlertTriangle, RefreshCw, Square } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';

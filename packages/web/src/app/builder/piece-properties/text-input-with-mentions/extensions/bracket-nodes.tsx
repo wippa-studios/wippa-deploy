@@ -1,6 +1,6 @@
-import { AP_FUNCTIONS, ApFunction } from '@wippa/core-formula';
 import { InputRule, Node, mergeAttributes } from '@tiptap/core';
 import { JSONContent } from '@tiptap/react';
+import { AP_FUNCTIONS, ApFunction } from '@wippa/core-formula';
 
 export const FUNCTION_START_NODE_TYPE = 'function_start';
 export const FUNCTION_END_NODE_TYPE = 'function_end';

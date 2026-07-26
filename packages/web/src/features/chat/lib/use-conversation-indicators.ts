@@ -1,10 +1,10 @@
+import { useQueries, useQueryClient } from '@tanstack/react-query';
 import {
   ChatAgentEventType,
   ChatConversation,
   ChatConversationStatus,
   WebsocketClientEvent,
 } from '@wippa/shared';
-import { useQueries, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useSocket } from '@/components/providers/socket-provider';

@@ -1,6 +1,6 @@
-import { allowedEmbedOriginSchema, ApFlagId } from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
+import { allowedEmbedOriginSchema, ApFlagId } from '@wippa/shared';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';
 import { useForm } from 'react-hook-form';

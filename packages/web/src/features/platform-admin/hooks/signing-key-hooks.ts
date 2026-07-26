@@ -1,8 +1,5 @@
-import {
-  AddSigningKeyRequestBody,
-  AddSigningKeyResponse,
-} from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
+import { AddSigningKeyRequestBody, AddSigningKeyResponse } from '@wippa/shared';
 
 import { signingKeyApi } from '../api/signing-key-api';
 

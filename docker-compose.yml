@@ -1,6 +1,8 @@
+# Production compose file: pulls the prebuilt Wippa image.
+# For local development builds, use docker-compose.dev.yml instead.
 services:
   app:
-    image: ghcr.io/activepieces/activepieces:0.86.3
+    image: ${WIPPA_IMAGE:-ghcr.io/wippa/wippa:latest}
     container_name: wippa-app
     restart: unless-stopped
     ports:
@@ -16,7 +18,7 @@ services:
     networks:
       - wippa
   worker:
-    image: ghcr.io/activepieces/activepieces:0.86.3
+    image: ${WIPPA_IMAGE:-ghcr.io/wippa/wippa:latest}
     restart: unless-stopped
     depends_on:
       - app

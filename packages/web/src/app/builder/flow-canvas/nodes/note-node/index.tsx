@@ -1,6 +1,6 @@
-import { Note, NoteColorVariant } from '@wippa/shared';
 import { useDraggable } from '@dnd-kit/core';
 import { Editor } from '@tiptap/core';
+import { Note, NoteColorVariant } from '@wippa/shared';
 import { NodeProps, NodeResizeControl } from '@xyflow/react';
 import { t } from 'i18next';
 import { useRef, useState } from 'react';

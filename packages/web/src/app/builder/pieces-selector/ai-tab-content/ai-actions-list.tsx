@@ -1,8 +1,4 @@
-import {
-  ApFlagId,
-  FlowActionType,
-  TelemetryEventName,
-} from '@wippa/shared';
+import { ApFlagId, FlowActionType, TelemetryEventName } from '@wippa/shared';
 import { t } from 'i18next';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';

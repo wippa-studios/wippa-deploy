@@ -1,11 +1,11 @@
-import { isNil } from '@wippa/core-utils';
-import { UserWithMetaInformation } from '@wippa/shared';
 import {
   QueryClient,
   useMutation,
   useQuery,
   useSuspenseQuery,
 } from '@tanstack/react-query';
+import { isNil } from '@wippa/core-utils';
+import { UserWithMetaInformation } from '@wippa/shared';
 
 import { userApi } from '@/api/user-api';
 import { authenticationSession } from '@/lib/authentication-session';

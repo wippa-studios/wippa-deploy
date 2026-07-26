@@ -54,8 +54,7 @@ const ApTableEditorPage = lazyWithRetry(
   'table-editor',
 );
 const TemplatesPage = lazyWithRetry(
-  () =>
-    import('./templates').then((m) => ({ default: m.TemplatesPage })),
+  () => import('./templates').then((m) => ({ default: m.TemplatesPage })),
   'templates',
 );
 

@@ -1,10 +1,10 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   AiToolConfigWithoutSensitiveData,
   AiToolProvider,
   CreateAiToolConfigRequest,
   formErrors,
 } from '@wippa/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';

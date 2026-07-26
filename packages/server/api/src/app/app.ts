@@ -1,10 +1,10 @@
+import replyFrom from '@fastify/reply-from'
+import swagger from '@fastify/swagger'
+import { createAdapter } from '@socket.io/redis-adapter'
 import { isNil, spreadIfDefined } from '@wippa/core-utils'
 import { PieceMetadata } from '@wippa/pieces-framework'
 import { apVersionUtil, onCallService, UNKNOWN_VERSION, wideEvent } from '@wippa/server-utils'
 import { AddAllowedEmbedOriginsRequestBody, ApEdition, ApEnvironment, AppConnectionWithoutSensitiveData, ApplicationEventName, ConnectionDeletedEvent, ConnectionUpsertedEvent, Flow, FlowActivatedEvent, FlowCreatedEvent, FlowDeactivatedEvent, FlowDeletedEvent, FlowPublishedEvent, FlowRun, FlowRunFinishedEvent, FlowRunRetriedEvent, FlowRunStartedEvent, FlowUpdatedEvent, Folder, FolderCreatedEvent, FolderDeletedEvent, FolderUpdatedEvent, GitRepoWithoutSensitiveData, ProjectMember, ProjectRelease, ProjectReleaseEvent, ProjectRoleEvent, ProjectWithLimits, SigningKeyEvent, SignUpEvent, Template, UserEmailVerifiedEvent, UserInvitation, UserPasswordResetEvent, UserSignedInEvent, UserWithMetaInformation } from '@wippa/shared'
-import replyFrom from '@fastify/reply-from'
-import swagger from '@fastify/swagger'
-import { createAdapter } from '@socket.io/redis-adapter'
 import { FastifyBaseLogger, FastifyInstance, FastifyRequest, HTTPMethods } from 'fastify'
 import { jsonSchemaTransform, jsonSchemaTransformObject } from 'fastify-type-provider-zod'
 import Mustache from 'mustache'
@@ -14,7 +14,6 @@ import { aiProviderService } from './ai/ai-provider-service'
 import { aiProviderModule } from './ai/ai-provider.module'
 import { aiToolConfigModule } from './ai/ai-tool-config.module'
 import { platformAnalyticsModule } from './analytics/platform-analytics.module'
-import { billingModule } from './billing/billing.module'
 import { setPlatformOAuthService } from './app-connection/app-connection-service/oauth2'
 import { appConnectionModule } from './app-connection/app-connection.module'
 import { platformAppConnectionModule } from './app-connection/platform-app-connection.module'
@@ -151,7 +150,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
                 },
             },
             info: {
-                title: "Wippa API Documentation",
+                title: 'Wippa API Documentation',
                 version: '0.0.0',
             },
             externalDocs: {
@@ -387,9 +386,6 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
             await app.register(communityPiecesModule)
             await app.register(oauthAppModule)
             setPlatformOAuthService(platformOAuth2Service(app.log))
-            if (system.get(AppSystemProp.STRIPE_SECRET_KEY)) {
-                await app.register(billingModule)
-            }
             break
     }
 

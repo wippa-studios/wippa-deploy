@@ -2,7 +2,7 @@ import { chromium } from '@playwright/test';
 import { AuthenticationPage } from './pages/authentication.page';
 import { AutomationsPage } from './pages/automations.page';
 
-export const DEFAULT_EMAIL = 'test@activepieces.com';
+export const DEFAULT_EMAIL = 'test@wippa.com.au';
 export const DEFAULT_PASSWORD = 'TestPassword123!@#';
 
 async function globalSetup() {

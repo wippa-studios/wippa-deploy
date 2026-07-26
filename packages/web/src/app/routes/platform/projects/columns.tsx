@@ -1,10 +1,10 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { isNil } from '@wippa/core-utils';
 import {
   PlatformWithoutSensitiveData,
   ProjectWithLimits,
   ProjectType,
 } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   Lock,

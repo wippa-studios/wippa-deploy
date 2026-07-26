@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 
 const plans = [
@@ -63,7 +62,12 @@ const competitorComparison = [
   { feature: 'Australian hosting', zapier: '❌', make: '❌', wippa: '✅' },
   { feature: 'Data sovereignty', zapier: '❌', make: '❌', wippa: '✅' },
   { feature: 'Xero integration', zapier: '✅', make: '✅', wippa: '✅' },
-  { feature: 'Free trial', zapier: '14 days', make: '14 days', wippa: '14 days' },
+  {
+    feature: 'Free trial',
+    zapier: '14 days',
+    make: '14 days',
+    wippa: '14 days',
+  },
 ];
 
 export const PricingPage = () => {
@@ -78,11 +82,17 @@ export const PricingPage = () => {
             </span>
           </Link>
           <div className="flex items-center gap-4">
-            <Link to="/sign-in" className="text-sm text-white/60 hover:text-white transition-colors">
+            <Link
+              to="/sign-in"
+              className="text-sm text-white/60 hover:text-white transition-colors"
+            >
               {t('Sign in')}
             </Link>
             <Link to="/sign-up">
-              <Button size="sm" className="bg-[#f5e6a3] text-black hover:bg-[#d4c48a]">
+              <Button
+                size="sm"
+                className="bg-[#f5e6a3] text-black hover:bg-[#d4c48a]"
+              >
                 {t('Get Started')}
               </Button>
             </Link>
@@ -98,11 +108,11 @@ export const PricingPage = () => {
             Australian-owned, Australian-hosted
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight mb-4">
-            Simple pricing.{' '}
-            <span className="text-[#f5e6a3]">No lock-in.</span>
+            Simple pricing. <span className="text-[#f5e6a3]">No lock-in.</span>
           </h1>
           <p className="text-lg text-white/50 max-w-2xl mx-auto">
-            Pay less than half what Zapier charges, get 6x more tasks, and keep your data in Australia.
+            Pay less than half what Zapier charges, get 6x more tasks, and keep
+            your data in Australia.
           </p>
         </div>
       </section>
@@ -135,7 +145,10 @@ export const PricingPage = () => {
               </div>
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-white/70">
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2 text-sm text-white/70"
+                  >
                     <Check className="w-4 h-4 text-[#f5e6a3] mt-0.5 shrink-0" />
                     {feature}
                   </li>
@@ -178,16 +191,30 @@ export const PricingPage = () => {
                   <th className="text-left p-4 font-medium">Feature</th>
                   <th className="p-4 font-medium text-center">Zapier</th>
                   <th className="p-4 font-medium text-center">Make</th>
-                  <th className="p-4 font-medium text-center text-[#f5e6a3]">Wippa</th>
+                  <th className="p-4 font-medium text-center text-[#f5e6a3]">
+                    Wippa
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {competitorComparison.map((row, i) => (
-                  <tr key={row.feature} className={cn(i < competitorComparison.length - 1 && 'border-b border-white/5')}>
+                  <tr
+                    key={row.feature}
+                    className={cn(
+                      i < competitorComparison.length - 1 &&
+                        'border-b border-white/5',
+                    )}
+                  >
                     <td className="p-4 text-sm text-white/70">{row.feature}</td>
-                    <td className="p-4 text-sm text-center text-white/50">{row.zapier}</td>
-                    <td className="p-4 text-sm text-center text-white/50">{row.make}</td>
-                    <td className="p-4 text-sm text-center text-[#f5e6a3] font-medium">{row.wippa}</td>
+                    <td className="p-4 text-sm text-center text-white/50">
+                      {row.zapier}
+                    </td>
+                    <td className="p-4 text-sm text-center text-white/50">
+                      {row.make}
+                    </td>
+                    <td className="p-4 text-sm text-center text-[#f5e6a3] font-medium">
+                      {row.wippa}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -200,15 +227,28 @@ export const PricingPage = () => {
       <section className="pb-20 px-6">
         <div className="max-w-3xl mx-auto text-center p-10 rounded-2xl border border-white/10 bg-white/[0.02]">
           <div className="w-12 h-12 rounded-full bg-[#f5e6a3]/10 flex items-center justify-center mx-auto mb-4">
-            <svg className="w-6 h-6 text-[#f5e6a3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              className="w-6 h-6 text-[#f5e6a3]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold mb-2">Your data stays in Australia</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            Your data stays in Australia
+          </h3>
           <p className="text-white/50 max-w-xl mx-auto">
-            Wippa runs entirely on OVHCloud Sydney. Your customer data, financial records, and 
-            business logic never leave Australia. We are not subject to the US Cloud Act, 
-            and our infrastructure is owned by a European Union parent company.
+            Wippa runs entirely on OVHCloud Sydney. Your customer data,
+            financial records, and business logic never leave Australia. We are
+            not subject to the US Cloud Act, and our infrastructure is owned by
+            a European Union parent company.
           </p>
         </div>
       </section>
@@ -216,14 +256,31 @@ export const PricingPage = () => {
       {/* FAQ */}
       <section className="pb-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">Frequently asked questions</h2>
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Frequently asked questions
+          </h2>
           <div className="space-y-6">
             {[
-              { q: 'What happens during the free trial?', a: 'You get full access to all features for 14 days. No credit card required. When the trial ends, choose a plan that fits your needs.' },
-              { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your billing settings and your subscription ends at the current billing period. No lock-in contracts.' },
-              { q: 'Is my data really only stored in Australia?', a: 'Yes. All infrastructure runs on OVHCloud Sydney. We do not replicate data to any region outside Australia.' },
-              { q: 'Do you offer GST invoices?', a: 'Yes. All Australian customers receive GST-compliant invoices with our ABN.' },
-              { q: 'Can I self-host instead?', a: 'Yes. Wippa is built on open-source technology. Enterprise customers can deploy on their own infrastructure.' },
+              {
+                q: 'What happens during the free trial?',
+                a: 'You get full access to all features for 14 days. No credit card required. When the trial ends, choose a plan that fits your needs.',
+              },
+              {
+                q: 'Can I cancel anytime?',
+                a: 'Yes. Cancel from your billing settings and your subscription ends at the current billing period. No lock-in contracts.',
+              },
+              {
+                q: 'Is my data really only stored in Australia?',
+                a: 'Yes. All infrastructure runs on OVHCloud Sydney. We do not replicate data to any region outside Australia.',
+              },
+              {
+                q: 'Do you offer GST invoices?',
+                a: 'Yes. All Australian customers receive GST-compliant invoices with our ABN.',
+              },
+              {
+                q: 'Can I self-host instead?',
+                a: 'Yes. Wippa is built on open-source technology. Enterprise customers can deploy on their own infrastructure.',
+              },
             ].map((faq) => (
               <div key={faq.q}>
                 <h4 className="font-medium mb-1">{faq.q}</h4>
@@ -237,10 +294,16 @@ export const PricingPage = () => {
       {/* Footer */}
       <footer className="border-t border-white/10 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/30">© 2026 Wippa. Australian-owned. ABN — coming soon.</p>
+          <p className="text-sm text-white/30">
+            © 2026 Wippa. Australian-owned. ABN — coming soon.
+          </p>
           <div className="flex gap-6 text-sm text-white/30">
-            <Link to="/privacy" className="hover:text-white/50">Privacy</Link>
-            <Link to="/terms" className="hover:text-white/50">Terms</Link>
+            <Link to="/privacy" className="hover:text-white/50">
+              Privacy
+            </Link>
+            <Link to="/terms" className="hover:text-white/50">
+              Terms
+            </Link>
           </div>
         </div>
       </footer>

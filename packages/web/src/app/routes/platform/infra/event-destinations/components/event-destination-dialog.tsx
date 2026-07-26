@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@wippa/core-utils';
 import {
   ApFlagId,
@@ -5,7 +6,6 @@ import {
   EventDestination,
   CreatePlatformEventDestinationRequestBody,
 } from '@wippa/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { useId, useState } from 'react';

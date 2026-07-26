@@ -10,7 +10,6 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { useTheme } from '@/components/providers/theme-provider';
 import { authenticationSession } from '@/lib/authentication-session';
 import { useRedirectAfterLogin } from '@/lib/navigation-utils';
-import { cn } from '@/lib/utils';
 
 import { FullLogo } from '../../../components/custom/full-logo';
 import { HorizontalSeparatorWithText } from '../../../components/ui/separator';
@@ -114,9 +113,6 @@ const AuthSeparator = ({
 };
 
 const AuthImage = () => {
-  const [loaded, setLoaded] = useState(false);
-  const onLoad = useCallback(() => setLoaded(true), []);
-
   return (
     <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#f5e6a3]/10 to-[#000] opacity-50" />
   );

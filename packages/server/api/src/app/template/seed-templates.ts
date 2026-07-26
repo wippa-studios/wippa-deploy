@@ -1,11 +1,22 @@
+import { apId } from '@wippa/core-utils'
+import { FlowVersionTemplate, TemplateStatus, TemplateType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../core/db/repo-factory'
-import { TemplateEntity } from './template.entity'
 import { templateValidator } from './template-validator'
-import { apId } from '@wippa/core-utils'
-import { TemplateType, TemplateStatus } from '@wippa/shared'
+import { TemplateEntity } from './template.entity'
 
 const templateRepo = repoFactory(TemplateEntity)
+
+type TemplateSeed = {
+    name: string
+    summary: string
+    description: string
+    tags: Array<{ title: string, color: string }>
+    author: string
+    categories: string[]
+    pieces: string[]
+    flows: FlowVersionTemplate[]
+}
 
 const XERO_PIECE = '@wippa/piece-xero'
 const XERO_VERSION = '~0.6.8'
@@ -22,7 +33,7 @@ function stepName(): string {
     return `step_${Math.random().toString(36).substring(2, 8)}`
 }
 
-const TEMPLATES: any[] = [
+const TEMPLATES: TemplateSeed[] = [
     {
         name: 'New Xero Invoice → Email Reminder',
         summary: 'Automatically send an email reminder when a new invoice is created in Xero.',
@@ -54,7 +65,7 @@ const TEMPLATES: any[] = [
                     lastUpdatedDate: now(),
                     settings: {
                         pieceName: SENDGRID_PIECE,
-                        pieceVersion: '~0.2.0',
+                        pieceVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: '{{trigger.contact_email}}',
@@ -103,7 +114,7 @@ const TEMPLATES: any[] = [
                     lastUpdatedDate: now(),
                     settings: {
                         pieceName: SENDGRID_PIECE,
-                        pieceVersion: '~0.2.0',
+                        pieceVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: '{{trigger.contact_email}}',
@@ -152,7 +163,7 @@ const TEMPLATES: any[] = [
                     lastUpdatedDate: now(),
                     settings: {
                         pieceName: SLACK_PIECE,
-                        pieceVersion: '~0.8.0',
+                        pieceVersion: SLACK_VERSION,
                         actionName: 'send_channel_message',
                         input: {
                             text: 'New contact created in Xero: {{trigger.name}} ({{trigger.email}})',
@@ -199,7 +210,7 @@ const TEMPLATES: any[] = [
                     lastUpdatedDate: now(),
                     settings: {
                         pieceName: SLACK_PIECE,
-                        pieceVersion: '~0.8.0',
+                        pieceVersion: SLACK_VERSION,
                         actionName: 'send_channel_message',
                         input: {
                             text: 'Payment received: ${{trigger.amount}} from {{trigger.contact_name}} for invoice {{trigger.invoice_number}}',
@@ -246,7 +257,7 @@ const TEMPLATES: any[] = [
                     lastUpdatedDate: now(),
                     settings: {
                         pieceName: SENDGRID_PIECE,
-                        pieceVersion: '~0.2.0',
+                        pieceVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: 'accounts@example.com',
@@ -295,7 +306,7 @@ const TEMPLATES: any[] = [
                     lastUpdatedDate: now(),
                     settings: {
                         pieceName: SENDGRID_PIECE,
-                        pieceVersion: '~0.2.0',
+                        pieceVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: '{{trigger.contact_email}}',

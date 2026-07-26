@@ -1,5 +1,5 @@
-import { Template, TemplateType } from '@wippa/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { Template, TemplateType } from '@wippa/shared';
 import { t } from 'i18next';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'sonner';

@@ -1,5 +1,5 @@
-import { TriggerStatusReport } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
+import { TriggerStatusReport } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

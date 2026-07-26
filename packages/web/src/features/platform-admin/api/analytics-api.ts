@@ -1,7 +1,4 @@
-import {
-  AnalyticsTimePeriod,
-  PlatformAnalyticsReport,
-} from '@wippa/shared';
+import { AnalyticsTimePeriod, PlatformAnalyticsReport } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

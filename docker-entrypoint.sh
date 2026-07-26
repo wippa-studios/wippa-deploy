@@ -15,7 +15,7 @@ if [ -z "$AP_WORKER_TOKEN" ] && [ -n "$AP_JWT_SECRET" ]; then
         const token = jwt.sign(
             { id: crypto.randomUUID(), type: 'WORKER' },
             process.env.AP_JWT_SECRET,
-            { expiresIn: '100y', keyid: '1', algorithm: 'HS256', issuer: 'activepieces' }
+            { expiresIn: '100y', keyid: '1', algorithm: 'HS256', issuer: 'wippa' }
         );
         process.stdout.write(token);
     ")
@@ -27,7 +27,7 @@ APPS=""
 if [ "$AP_CONTAINER_TYPE" = "APP" ] || [ "$AP_CONTAINER_TYPE" = "WORKER_AND_APP" ]; then
     APPS="${APPS}
     {
-        name: 'activepieces-app',
+        name: 'wippa-app',
         script: 'packages/server/api/dist/src/bootstrap.js',
         node_args: '--enable-source-maps',
         instances: 1,
@@ -39,7 +39,7 @@ fi
 if [ "$AP_CONTAINER_TYPE" = "WORKER" ] || [ "$AP_CONTAINER_TYPE" = "WORKER_AND_APP" ]; then
     APPS="${APPS}
     {
-        name: 'activepieces-worker',
+        name: 'wippa-worker',
         script: 'packages/server/worker/dist/src/bootstrap.js',
         node_args: '--enable-source-maps',
         instances: 1,
@@ -54,5 +54,5 @@ module.exports = {
 };
 ENDOFFILE
 
-echo "Starting Activepieces with PM2 (${AP_CONTAINER_TYPE} mode)"
+echo "Starting Wippa with PM2 (${AP_CONTAINER_TYPE} mode)"
 pm2-runtime start /tmp/ecosystem.config.js

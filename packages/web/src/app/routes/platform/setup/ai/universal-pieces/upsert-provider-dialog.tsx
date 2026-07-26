@@ -1,3 +1,5 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
 import { AIProviderName, isNil } from '@wippa/core-utils';
 import {
   AIProviderConfig,
@@ -18,8 +20,6 @@ import {
   OpenAIProviderConfig,
   UpdateAIProviderRequest,
 } from '@wippa/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useMutation } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import { t } from 'i18next';
 import { useMemo, useState } from 'react';

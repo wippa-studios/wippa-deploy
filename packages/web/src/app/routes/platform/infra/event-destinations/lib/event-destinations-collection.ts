@@ -1,3 +1,6 @@
+import { queryCollectionOptions } from '@tanstack/query-db-collection';
+import { createCollection, useLiveQuery } from '@tanstack/react-db';
+import { QueryClient, useMutation } from '@tanstack/react-query';
 import { SeekPage } from '@wippa/core-utils';
 import {
   ApplicationEvent,
@@ -13,9 +16,6 @@ import {
   TestPlatformEventDestinationRequestBody,
   UpdatePlatformEventDestinationRequestBody,
 } from '@wippa/shared';
-import { queryCollectionOptions } from '@tanstack/query-db-collection';
-import { createCollection, useLiveQuery } from '@tanstack/react-db';
-import { QueryClient, useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 
 import { flowHooks, flowsApi, triggerEventsApi } from '@/features/flows';

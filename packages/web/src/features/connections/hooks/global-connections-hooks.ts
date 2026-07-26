@@ -1,8 +1,8 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import {
   AppConnectionWithoutSensitiveData,
   ListGlobalConnectionsRequestQuery,
 } from '@wippa/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { UseFormReturn } from 'react-hook-form';
 import { toast } from 'sonner';

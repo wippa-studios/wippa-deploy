@@ -1,12 +1,12 @@
-import { isNil } from '@wippa/core-utils'
-import { AIProviderModel, AIProviderModelType, BedrockProviderAuthConfig, BedrockProviderConfig } from '@wippa/shared'
-
 import {
     BedrockClient,
     ListFoundationModelsCommand,
     ListInferenceProfilesCommand,
     ModelModality,
 } from '@aws-sdk/client-bedrock'
+import { isNil } from '@wippa/core-utils'
+import { AIProviderModel, AIProviderModelType, BedrockProviderAuthConfig, BedrockProviderConfig } from '@wippa/shared'
+
 
 import { FastifyBaseLogger } from 'fastify'
 import { AIProviderStrategy } from './ai-provider'

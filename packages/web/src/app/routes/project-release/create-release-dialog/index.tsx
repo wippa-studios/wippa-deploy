@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   ConnectionOperationType,
   DiffReleaseRequest,
@@ -5,7 +6,6 @@ import {
   ProjectSyncPlan,
   TableOperationType,
 } from '@wippa/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { PencilIcon, Plus, TrashIcon } from 'lucide-react';
 import { useState } from 'react';

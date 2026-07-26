@@ -1,5 +1,5 @@
-import { PROJECT_COLOR_PALETTE } from '@wippa/shared';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { PROJECT_COLOR_PALETTE } from '@wippa/shared';
 import { t } from 'i18next';
 
 import { useEmbedding } from '@/components/providers/embed-provider';

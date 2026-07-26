@@ -1,9 +1,3 @@
-import { isNil } from '@wippa/core-utils';
-import {
-  FlowOperationType,
-  StepLocationRelativeToParent,
-  flowStructureUtil,
-} from '@wippa/shared';
 import {
   DndContext,
   DragEndEvent,
@@ -16,6 +10,12 @@ import {
   useSensors,
   PointerSensorOptions,
 } from '@dnd-kit/core';
+import { isNil } from '@wippa/core-utils';
+import {
+  FlowOperationType,
+  StepLocationRelativeToParent,
+  flowStructureUtil,
+} from '@wippa/shared';
 import { ReactFlowInstance, useReactFlow } from '@xyflow/react';
 import { t } from 'i18next';
 import type { PointerEvent } from 'react';

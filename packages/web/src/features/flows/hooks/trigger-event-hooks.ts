@@ -1,6 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import { SeekPage } from '@wippa/core-utils';
 import { TriggerEventWithPayload } from '@wippa/shared';
-import { useQuery } from '@tanstack/react-query';
 
 import { authenticationSession } from '@/lib/authentication-session';
 

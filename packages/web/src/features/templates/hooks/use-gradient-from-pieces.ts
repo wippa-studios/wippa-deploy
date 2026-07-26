@@ -1,10 +1,10 @@
+import { useQueries } from '@tanstack/react-query';
 import {
   FlowTrigger,
   FlowActionType,
   flowStructureUtil,
   PieceCategory,
 } from '@wippa/shared';
-import { useQueries } from '@tanstack/react-query';
 import { useMemo } from 'react';
 
 import { piecesHooks } from '@/features/pieces/hooks/pieces-hooks';

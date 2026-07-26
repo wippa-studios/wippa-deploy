@@ -1,36 +1,47 @@
 #!/bin/bash
 # Wippa deploy script — run on the VPS
 # Usage: bash scripts/deploy.sh
+#
+# Configure via environment variables:
+#   WIPPA_REPO_URL    Git repository containing compose files and .env.example
+#   WIPPA_IMAGE       Container image to pull (default: ghcr.io/wippa/wippa:latest)
 
 set -e
 
+WIPPA_REPO_URL="${WIPPA_REPO_URL:-https://github.com/wippa/wippa-deploy.git}"
+WIPPA_IMAGE="${WIPPA_IMAGE:-ghcr.io/wippa/wippa:latest}"
+
+REPO_DIR="${REPO_DIR:-$HOME/wippa-deploy}"
+
 echo "=== Wippa Deploy ==="
 
-# Check prerequisites
-if ! command -v docker &> /dev/null; then
-    echo "Installing Docker..."
-    curl -fsSL https://get.docker.com | bash
+# --- Docker Compose detection ---
+# Prefer the modern Docker plugin (docker compose) over the standalone binary.
+if docker compose version &>/dev/null; then
+    COMPOSE_CMD="docker compose"
+elif docker compose version 2>&1 | grep -q "Docker Compose"; then
+    COMPOSE_CMD="docker compose"
+elif command -v docker-compose &>/dev/null; then
+    COMPOSE_CMD="docker-compose"
+else
+    echo "Docker Compose not found. Please install Docker with the Compose plugin."
+    exit 1
 fi
 
-if ! command -v /tmp/docker-compose &> /dev/null && ! command -v docker-compose &> /dev/null; then
-    echo "Installing Docker Compose..."
-    curl -sL "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /tmp/docker-compose
-    chmod +x /tmp/docker-compose
-fi
+echo "Using compose command: $COMPOSE_CMD"
 
-# Clone or pull
-REPO_DIR="$HOME/wippa-deploy"
-if [ -d "$REPO_DIR" ]; then
-    echo "Updating existing deployment..."
+# --- Clone or update the deployment repository ---
+if [ -d "$REPO_DIR/.git" ]; then
+    echo "Updating existing deployment repository..."
     cd "$REPO_DIR"
     git pull
 else
-    echo "Cloning repository..."
-    git clone https://github.com/your-org/wippa-deploy.git "$REPO_DIR"
+    echo "Cloning deployment repository from $WIPPA_REPO_URL ..."
+    git clone "$WIPPA_REPO_URL" "$REPO_DIR"
     cd "$REPO_DIR"
 fi
 
-# Copy .env if not present
+# --- Copy .env if not present ---
 if [ ! -f .env ]; then
     echo "Creating .env from .env.example..."
     cp .env.example .env
@@ -39,14 +50,15 @@ if [ ! -f .env ]; then
     exit 1
 fi
 
-# Build and start
-echo "Building Docker image (first build takes 20-30 min)..."
-DOCKER_BUILDKIT=1 docker compose -f docker-compose.dev.yml build
+# --- Pull the prebuilt image (do NOT build on the VPS) ---
+echo "Pulling Wippa image: $WIPPA_IMAGE"
+docker pull "$WIPPA_IMAGE"
 
-echo "Starting services..."
-docker compose -f docker-compose.dev.yml up -d
+# --- Start services ---
+echo "Starting Wippa services..."
+WIPPA_IMAGE="$WIPPA_IMAGE" $COMPOSE_CMD -f docker-compose.yml up -d
 
 echo "=== Deploy complete ==="
-echo "Check status: docker compose -f docker-compose.dev.yml ps"
-echo "View logs: docker compose -f docker-compose.dev.yml logs -f app"
-echo "App should be available at http://<vps-ip>:8081"
+echo "App URL: http://<vps-ip>:8081"
+echo "Check status: $COMPOSE_CMD -f docker-compose.yml ps"
+echo "View logs: $COMPOSE_CMD -f docker-compose.yml logs -f app"

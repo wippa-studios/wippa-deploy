@@ -1,3 +1,5 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
 import {
   ApFlagId,
   PlatformWithoutSensitiveData,
@@ -6,8 +8,6 @@ import {
   SsoDomainVerificationStatus,
   UpdatePlatformRequestBody,
 } from '@wippa/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { CheckCircle, Loader2, TriangleAlert } from 'lucide-react';
 import { useState } from 'react';

@@ -1,5 +1,5 @@
-import { isNil } from '@wippa/core-utils';
 import { useSuspenseQuery } from '@tanstack/react-query';
+import { isNil } from '@wippa/core-utils';
 
 import { useEmbedding } from '@/components/providers/embed-provider';
 import { api } from '@/lib/api';

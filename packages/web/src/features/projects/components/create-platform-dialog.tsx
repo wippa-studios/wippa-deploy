@@ -1,5 +1,5 @@
-import { SAFE_STRING_PATTERN } from '@wippa/core-utils';
 import { useMutation } from '@tanstack/react-query';
+import { SAFE_STRING_PATTERN } from '@wippa/core-utils';
 import { t } from 'i18next';
 import { SubmitHandler, useForm } from 'react-hook-form';
 

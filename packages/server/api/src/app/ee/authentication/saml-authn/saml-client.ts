@@ -1,7 +1,7 @@
+import * as validator from '@authenio/samlify-node-xmllint'
 import { ActivepiecesError, ErrorCode, tryCatch } from '@wippa/core-utils'
 import { safeHttp } from '@wippa/server-utils'
 import { SAMLAttributeMapping, SAMLAuthnProviderConfig } from '@wippa/shared'
-import * as validator from '@authenio/samlify-node-xmllint'
 import * as saml from 'samlify'
 import { resolveSamlAttributes, SamlAttributes } from './saml-attributes'
 

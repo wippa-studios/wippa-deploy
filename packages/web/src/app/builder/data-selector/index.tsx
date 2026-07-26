@@ -1,3 +1,4 @@
+import { useQueries } from '@tanstack/react-query';
 import { LocalesEnum, isNil } from '@wippa/core-utils';
 import { PieceMetadataModel } from '@wippa/pieces-framework';
 import {
@@ -7,7 +8,6 @@ import {
   FlowTriggerType,
   flowStructureUtil,
 } from '@wippa/shared';
-import { useQueries } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Database, SearchXIcon, Variable } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

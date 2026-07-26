@@ -1,6 +1,4 @@
 // @vitest-environment jsdom
-import { PiecesFilterType, ProjectType } from '@wippa/shared';
-import type { ProjectWithLimits } from '@wippa/shared';
 import {
   and,
   createCollection,
@@ -10,6 +8,8 @@ import {
   localOnlyCollectionOptions,
   or,
 } from '@tanstack/react-db';
+import { PiecesFilterType, ProjectType } from '@wippa/shared';
+import type { ProjectWithLimits } from '@wippa/shared';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 vi.mock('@/lib/authentication-session', () => ({

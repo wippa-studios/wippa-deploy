@@ -1,6 +1,6 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { isNil, SeekPage } from '@wippa/core-utils';
 import { FlowRun, FlowRunStatus } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   Archive,

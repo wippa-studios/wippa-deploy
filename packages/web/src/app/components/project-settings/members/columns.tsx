@@ -1,10 +1,10 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { Permission } from '@wippa/core-utils';
 import {
   ProjectMemberWithUser,
   UserInvitation,
   UserWithMetaInformation,
 } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { Info, Trash2, User, Shield, ChevronDown } from 'lucide-react';
 import { toast } from 'sonner';

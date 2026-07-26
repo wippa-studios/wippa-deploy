@@ -1,3 +1,4 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
 import {
   isPieceVisible,
@@ -6,7 +7,6 @@ import {
   PieceSet,
   UpdatePieceSetRequestBody,
 } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   CheckIcon,

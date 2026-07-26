@@ -1,7 +1,4 @@
-import {
-  PopulatedMcpServer,
-  UpdateMcpServerRequest,
-} from '@wippa/shared';
+import { PopulatedMcpServer, UpdateMcpServerRequest } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

@@ -529,8 +529,8 @@
 
     --sidebar-background: theme('colors.neutral.50');
     --sidebar-foreground: theme('colors.neutral.950');
-    --sidebar-primary: 257 74% 57%;
-    --sidebar-primary-foreground: theme('colors.neutral.50');
+    --sidebar-primary: 44 76% 75%;
+    --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: color-mix(
       in srgb,
       theme('colors.neutral.200') 60%,

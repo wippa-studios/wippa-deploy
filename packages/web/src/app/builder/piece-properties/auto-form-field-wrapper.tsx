@@ -3,11 +3,7 @@ import {
   PieceProperty,
   PropertyType,
 } from '@wippa/pieces-framework';
-import {
-  FlowAction,
-  FlowTrigger,
-  PropertyExecutionType,
-} from '@wippa/shared';
+import { FlowAction, FlowTrigger, PropertyExecutionType } from '@wippa/shared';
 import { t } from 'i18next';
 import { Calendar, SquareFunction, File } from 'lucide-react';
 import React from 'react';

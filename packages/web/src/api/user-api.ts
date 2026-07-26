@@ -1,7 +1,4 @@
-import {
-  UpdateMeResponse,
-  UserWithMetaInformation,
-} from '@wippa/shared';
+import { UpdateMeResponse, UserWithMetaInformation } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

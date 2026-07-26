@@ -1,10 +1,5 @@
 import { isNil, Permission } from '@wippa/core-utils';
-import {
-  ApFlagId,
-  PlatformRole,
-  ProjectType,
-  UserStatus,
-} from '@wippa/shared';
+import { ApFlagId, PlatformRole, ProjectType, UserStatus } from '@wippa/shared';
 import { t } from 'i18next';
 import { UsersRound, Lock } from 'lucide-react';
 import { useState } from 'react';

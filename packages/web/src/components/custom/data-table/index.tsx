@@ -1,6 +1,5 @@
 'use client';
 
-import { apId, isNil, SeekPage } from '@wippa/core-utils';
 import {
   ColumnDef as TanstackColumnDef,
   flexRender,
@@ -12,6 +11,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { useVirtualizer } from '@tanstack/react-virtual';
+import { apId, isNil, SeekPage } from '@wippa/core-utils';
 import { t } from 'i18next';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useRef, useState, useEffect } from 'react';

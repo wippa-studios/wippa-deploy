@@ -1,5 +1,5 @@
-import { WorkerMachineWithStatus } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
+import { WorkerMachineWithStatus } from '@wippa/shared';
 
 import { workersApi, WorkerPoolCapacity } from '../api/workers-api';
 

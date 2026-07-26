@@ -1,10 +1,3 @@
-import {
-  ApFunction,
-  formulaEvaluator,
-  typeCheckTiptapDoc,
-} from '@wippa/core-formula';
-import { isNil } from '@wippa/core-utils';
-import { flowStructureUtil } from '@wippa/shared';
 import { Extensions } from '@tiptap/core';
 import { Document } from '@tiptap/extension-document';
 import { HardBreak } from '@tiptap/extension-hard-break';
@@ -17,6 +10,13 @@ import { Fragment } from '@tiptap/pm/model';
 import { TextSelection } from '@tiptap/pm/state';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import {
+  ApFunction,
+  formulaEvaluator,
+  typeCheckTiptapDoc,
+} from '@wippa/core-formula';
+import { isNil } from '@wippa/core-utils';
+import { flowStructureUtil } from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronRight, XCircle } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

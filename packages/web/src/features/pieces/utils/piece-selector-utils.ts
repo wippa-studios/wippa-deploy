@@ -351,8 +351,7 @@ const isMcpToolTrigger = (pieceName: string, triggerName: string) => {
 
 const isChatTrigger = (pieceName: string, triggerName: string) => {
   return (
-    pieceName === '@wippa/piece-forms' &&
-    triggerName === 'chat_submission'
+    pieceName === '@wippa/piece-forms' && triggerName === 'chat_submission'
   );
 };
 

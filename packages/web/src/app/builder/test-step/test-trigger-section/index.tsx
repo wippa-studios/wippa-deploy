@@ -1,9 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import {
-  FlowTrigger,
-  FlowTriggerType,
-  flowStructureUtil,
-} from '@wippa/shared';
+import { FlowTrigger, FlowTriggerType, flowStructureUtil } from '@wippa/shared';
 import { t } from 'i18next';
 import { Zap } from 'lucide-react';
 import React from 'react';

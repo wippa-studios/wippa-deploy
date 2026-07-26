@@ -1,7 +1,7 @@
+import { createMCPClient } from '@ai-sdk/mcp'
 import { tryCatch } from '@wippa/core-utils'
 import { chatAiUtils } from '@wippa/server-utils'
 import { chatToolPhases } from '@wippa/shared'
-import { createMCPClient } from '@ai-sdk/mcp'
 import { ToolExecutionOptions } from 'ai'
 import { FastifyBaseLogger } from 'fastify'
 import { chatWorkerTools } from './chat-worker-tools'

@@ -42,9 +42,7 @@ const ApiKeysPage = () => {
       featureKey="API"
       locked={!platform.plan.apiKeysEnabled}
       lockTitle={t('Enable API Keys')}
-      lockDescription={t(
-        'Create and manage API keys to access Wippa APIs.',
-      )}
+      lockDescription={t('Create and manage API keys to access Wippa APIs.')}
       lockVideoUrl="https://cdn.activepieces.com/videos/showcase/api-keys.mp4"
     >
       <CenteredPage

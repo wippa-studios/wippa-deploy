@@ -1,9 +1,9 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { Permission } from '@wippa/core-utils';
 import {
   AppConnectionStatus,
   AppConnectionWithoutSensitiveData,
 } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   CheckIcon,

@@ -68,6 +68,11 @@ COPY . .
 # Build frontend, engine, server API, and worker
 RUN npx turbo run build --filter=web --filter=@wippa/engine --filter=api --filter=worker --concurrency=2
 
+# Build all 724+ community pieces so they are resolvable at runtime. Each piece's
+# package.json points to ./dist/src/index.js, so the compiled dist must exist.
+RUN --mount=type=cache,target=/tmp/turbo \
+    npx turbo run build --filter=./packages/pieces/** --concurrency=4
+
 # The web build emits hidden source maps (vite build.sourcemap='hidden') used to
 # symbolicate production stack traces in Sentry/BetterStack error tracking. Upload
 # them here (cloud CI, guarded by a token) BEFORE stripping, then always remove the
@@ -92,6 +97,10 @@ RUN node -e "\
 # so we skip the lockfile regeneration here.
 RUN rm -rf packages/web packages/cli packages/tests-e2e packages/ee && \
     node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))"
+
+# Remove piece source TypeScript files from the runtime image. Only the compiled
+# dist/ and package.json are needed for dynamic piece loading at runtime.
+RUN find packages/pieces -type d -name src -prune -exec rm -rf {} + 2>/dev/null || true
 
 ### STAGE 2: Run ###
 FROM base AS run

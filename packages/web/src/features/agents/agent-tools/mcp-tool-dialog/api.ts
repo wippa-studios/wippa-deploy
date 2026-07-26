@@ -1,7 +1,4 @@
-import {
-  AgentMcpTool,
-  ValidateAgentMcpToolResponse,
-} from '@wippa/shared';
+import { AgentMcpTool, ValidateAgentMcpToolResponse } from '@wippa/shared';
 
 import { api } from '@/lib/api';
 

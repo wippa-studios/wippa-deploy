@@ -1,6 +1,6 @@
-import { ApFunction } from '@wippa/core-formula';
 import { Editor, Extension } from '@tiptap/core';
 import { JSONContent } from '@tiptap/react';
+import { ApFunction } from '@wippa/core-formula';
 
 import {
   FUNCTION_END_NODE_TYPE,

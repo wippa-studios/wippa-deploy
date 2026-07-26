@@ -1,8 +1,8 @@
+import { useQueryClient } from '@tanstack/react-query';
 import {
   UpdateAICreditsAutoTopUpParamsSchema,
   AiCreditsAutoTopUpState,
 } from '@wippa/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';
 import { useState } from 'react';

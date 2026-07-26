@@ -1,7 +1,7 @@
 'use client';
 
-import { isNil } from '@wippa/core-utils';
 import { useVirtualizer } from '@tanstack/react-virtual';
+import { isNil } from '@wippa/core-utils';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

@@ -1,9 +1,6 @@
-import {
-  AddSigningKeyRequestBody,
-  AddSigningKeyResponse,
-} from '@wippa/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
+import { AddSigningKeyRequestBody, AddSigningKeyResponse } from '@wippa/shared';
 import { t } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

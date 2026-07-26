@@ -1,6 +1,6 @@
+import { McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { isNil, Permission } from '@wippa/core-utils'
 import { FlowStatus, McpProperty, McpPropertyType, McpToolDefinition, mcpToolNameUtils, McpTrigger, PopulatedMcpServer, ProjectScopedMcpServer, TelemetryEventName } from '@wippa/shared'
-import { McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
 import { rejectedPromiseHandler } from '../helper/promise-handler'

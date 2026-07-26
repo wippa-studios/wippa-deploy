@@ -23,10 +23,8 @@ export const routesThatRequireProjectId = {
 export const CHAT_ROUTE = '/chat';
 
 export const determineDefaultRoute = ({
-  checkAccess,
   chatEnabled,
 }: {
-  checkAccess: (permission: Permission) => boolean;
   chatEnabled?: boolean;
 }) => {
   if (chatEnabled) {

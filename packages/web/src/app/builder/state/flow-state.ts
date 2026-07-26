@@ -1,3 +1,4 @@
+import { QueryClient } from '@tanstack/react-query';
 import { isNil, debounce } from '@wippa/core-utils';
 import {
   FlowOperationRequest,
@@ -10,7 +11,6 @@ import {
   StepSettings,
   FlowTriggerType,
 } from '@wippa/shared';
-import { QueryClient } from '@tanstack/react-query';
 import { StoreApi } from 'zustand';
 
 import { RightSideBarType } from '@/app/builder/types';

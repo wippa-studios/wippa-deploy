@@ -1,5 +1,5 @@
-import { ListVariablesRequestQuery } from '@wippa/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
+import { ListVariablesRequestQuery } from '@wippa/shared';
 import { t } from 'i18next';
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';

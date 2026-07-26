@@ -1,8 +1,4 @@
-import {
-  assertNotNullOrUndefined,
-  isNil,
-  apId,
-} from '@wippa/core-utils';
+import { assertNotNullOrUndefined, isNil, apId } from '@wippa/core-utils';
 import {
   CustomAuthProps,
   OIDCAuthProps,

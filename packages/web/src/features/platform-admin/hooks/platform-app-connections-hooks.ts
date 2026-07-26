@@ -1,5 +1,5 @@
-import { AppConnectionStatus } from '@wippa/shared';
 import { useQuery } from '@tanstack/react-query';
+import { AppConnectionStatus } from '@wippa/shared';
 import { useSearchParams } from 'react-router-dom';
 
 import {

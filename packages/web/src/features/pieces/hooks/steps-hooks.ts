@@ -1,3 +1,4 @@
+import { useQueries, useQuery } from '@tanstack/react-query';
 import { LocalesEnum, isNil } from '@wippa/core-utils';
 import {
   FlowAction,
@@ -6,7 +7,6 @@ import {
   SuggestionType,
   FlowTrigger,
 } from '@wippa/shared';
-import { useQueries, useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
 import { authenticationSession } from '@/lib/authentication-session';

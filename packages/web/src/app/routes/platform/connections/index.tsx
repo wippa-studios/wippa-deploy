@@ -1,10 +1,10 @@
+import { ColumnDef } from '@tanstack/react-table';
 import {
   AppConnectionScope,
   AppConnectionStatus,
   MAX_PLATFORM_APP_CONNECTION_OWNERS,
   PlatformAppConnectionsListItem,
 } from '@wippa/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   Activity,

@@ -1,8 +1,4 @@
-import {
-  FlowAction,
-  FlowTrigger,
-  flowStructureUtil,
-} from '@wippa/shared';
+import { FlowAction, FlowTrigger, flowStructureUtil } from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 

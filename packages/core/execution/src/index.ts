@@ -1,4 +1,4 @@
-// @activepieces/core-execution — the execution layer extracted from @activepieces/shared
+// @wippa/core-execution — the execution layer extracted from @wippa/shared
 // (flows, flow-run, engine operations, agents, workers). See SRE-163.
 
 export * from './lib/flows/actions/action'
