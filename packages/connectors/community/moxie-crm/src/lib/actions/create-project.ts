@@ -2,7 +2,7 @@ import {
   Property,
   createAction,
   PiecePropValueSchema,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { makeClient, reformatDate } from '../common';
 import { moxieCRMAuth } from '../auth';
 

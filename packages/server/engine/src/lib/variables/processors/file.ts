@@ -1,5 +1,5 @@
 import { isBase64, isNil, isString } from '@wippa/core-utils'
-import { ApFile } from '@wippa/pieces-framework'
+import { ApFile } from '@wippa/connectors-framework'
 import { ProcessorFn } from './types'
 
 export const fileProcessor: ProcessorFn = async (_property, urlOrBase64) => {

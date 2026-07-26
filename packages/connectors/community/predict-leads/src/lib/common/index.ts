@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { PredictLeadsAuth } from '../auth';
 import { PredictLeadsClient } from './client';
 

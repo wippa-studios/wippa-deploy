@@ -2,9 +2,9 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { openmicAiAuth } from '../common/auth';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 const webhookConfigDescription = `
 ## Post-call Webhook Configuration

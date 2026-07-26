@@ -1,9 +1,9 @@
-import { ApFile, Property } from '@wippa/pieces-framework';
+import { ApFile, Property } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 import FormData from 'form-data';
 import { linkedinAuth } from '../..';

@@ -1,5 +1,5 @@
 import { medullarAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { getUserSpaces } from '../common';
 
 export const listSpaces = createAction({

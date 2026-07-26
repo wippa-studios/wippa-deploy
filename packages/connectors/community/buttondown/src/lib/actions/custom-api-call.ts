@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { buttondownAuth } from '../common/auth';
 import { BUTTONDOWN_BASE_URL } from '../common/client';
 

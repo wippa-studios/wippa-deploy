@@ -3,7 +3,7 @@ import {
 	httpClient,
 	HttpRequest,
 	AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const API_URL = 'https://acuityscheduling.com/api/v1';
 

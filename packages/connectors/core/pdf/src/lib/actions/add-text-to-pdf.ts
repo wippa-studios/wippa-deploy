@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { PDFDocument, rgb, StandardFonts, PDFFont, degrees } from 'pdf-lib';
 import { getTargetPages, mapVisualToIntrinsic } from '../common';
 

@@ -1,8 +1,8 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createRowAction } from './lib/actions/create-row';
 import { deleteRowAction } from './lib/actions/delete-row';
 import { getRowAction } from './lib/actions/get-row';
@@ -41,7 +41,7 @@ async function buildCustomApiAuthHeader(auth: BaserowAuthValue): Promise<{ Autho
   return { Authorization: `Token ${token}` };
 }
 
-export const baserow = createPiece({
+export const baserow = createConnector({
   displayName: 'Baserow',
   description: 'Open-source online database tool, alternative to Airtable',
   auth: baserowAuth,

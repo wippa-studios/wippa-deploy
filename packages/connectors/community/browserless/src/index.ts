@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { browserlessAuth } from './lib/common/auth';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
 import { generatePdf } from './lib/actions/generate-pdf';
@@ -7,7 +7,7 @@ import { scrapeUrl } from './lib/actions/scrape-url';
 import { runBqlQuery } from './lib/actions/run-bql-query';
 import { getWebsitePerformance } from './lib/actions/get-website-performance';
 
-export const browserless = createPiece({
+export const browserless = createConnector({
     displayName: 'Browserless',
     minimumSupportedRelease: '0.36.1',
     logoUrl: 'https://cdn.activepieces.com/pieces/browserless.png',

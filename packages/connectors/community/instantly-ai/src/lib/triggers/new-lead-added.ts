@@ -2,14 +2,14 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { instantlyAiAuth } from '../auth';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { makeRequest } from '../common/client';
 import dayjs from 'dayjs';
 const polling: Polling<

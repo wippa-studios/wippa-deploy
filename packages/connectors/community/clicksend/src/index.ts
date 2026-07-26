@@ -1,9 +1,9 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { clicksendSendSmsAction } from './lib/action/send-sms';
 import { clicksendSendMms } from './lib/action/send-mms';
 import { clicksendCreateContactAction } from './lib/action/create-contact';
@@ -42,7 +42,7 @@ export const clicksendAuth = PieceAuth.BasicAuth({
   },
 });
 
-export const clicksend = createPiece({
+export const clicksend = createConnector({
   displayName: 'ClickSend SMS',
   description:
     'Cloud-based messaging platform for sending SMS, MMS, voice, email, and more.',

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { getLists } from '../api';
 import { sendyAuth } from '../auth';
 

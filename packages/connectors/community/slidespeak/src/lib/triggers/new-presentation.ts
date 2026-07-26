@@ -1,7 +1,7 @@
 import { slidespeakAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 import { BASE_URL } from '../common/constants';
 
 export const newPresentationTrigger = createTrigger({

@@ -1,10 +1,10 @@
-import { createTrigger } from '@wippa/pieces-framework';
-import { TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger } from '@wippa/connectors-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
 import { pipedriveApiCall, pipedriveCommon } from '../common';
 import { pipedriveAuth } from '../auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { LeadListResponse } from '../common/types';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 interface PipedriveActivityV2 {
 	id: number;

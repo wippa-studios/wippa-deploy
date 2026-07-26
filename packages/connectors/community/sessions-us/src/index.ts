@@ -2,10 +2,10 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createEvent } from './lib/actions/create-event';
 import { createSession } from './lib/actions/create-session';
 import { publishEvent } from './lib/actions/publish-event';
@@ -48,7 +48,7 @@ export const sessionAuth = PieceAuth.SecretText({
   },
 });
 
-export const sessionsUs = createPiece({
+export const sessionsUs = createConnector({
   displayName: 'Sessions.us',
   description: 'Video conferencing platform for businesses and professionals',
   auth: sessionAuth,

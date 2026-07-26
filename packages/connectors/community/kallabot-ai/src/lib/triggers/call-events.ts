@@ -2,8 +2,8 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 const webhookInstructions = `**Setup Instructions:**
 1. Copy the webhook URL below.

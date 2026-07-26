@@ -1,7 +1,7 @@
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { wrikeAuth } from './lib/common/auth';
 import { createTask } from './lib/actions/create-task';
 import { updateTask } from './lib/actions/update-task';
@@ -15,7 +15,7 @@ import { newTask } from './lib/triggers/new-task';
 import { newFolder } from './lib/triggers/new-folder';
 import { newSubtask } from './lib/triggers/new-subtask';
 
-export const wrike = createPiece({
+export const wrike = createConnector({
   displayName: "Wrike",
   auth: wrikeAuth,
   minimumSupportedRelease: '0.36.1',

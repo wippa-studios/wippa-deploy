@@ -1,10 +1,10 @@
-import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { smAuth } from '../..';
 
 export const smCommon = {

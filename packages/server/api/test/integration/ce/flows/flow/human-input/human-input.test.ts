@@ -1,9 +1,9 @@
 import { apId } from '@wippa/core-utils'
-import { FlowStatus, FlowTriggerType, FlowVersionState, PackageType, PieceType } from '@wippa/shared'
+import { FlowStatus, FlowTriggerType, FlowVersionState, PackageType, ConnectorType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../../../src/app/database/database-connection'
-import { pieceCache } from '../../../../../../src/app/pieces/metadata/piece-cache'
+import { connectorCache } from '../../../../../../src/app/pieces/metadata/piece-cache'
 import { db } from '../../../../../helpers/db'
 import {
     createMockFlow,
@@ -32,13 +32,13 @@ describe('Human Input API', () => {
 
             await databaseConnection().getRepository('piece_metadata').createQueryBuilder().delete().execute()
             const mockPiece = createMockPieceMetadata({
-                name: '@wippa/piece-forms',
+                name: '@wippa/connector-forms',
                 version: '0.2.0',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const mockFlow = createMockFlow({
                 projectId: ctx.project.id,
@@ -52,8 +52,8 @@ describe('Human Input API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@wippa/piece-forms',
-                        pieceVersion: '0.2.0',
+                        connectorName: '@wippa/connector-forms',
+                        connectorVersion: '0.2.0',
                         triggerName: 'form_submission',
                         input: {
                             inputs: [
@@ -133,13 +133,13 @@ describe('Human Input API', () => {
 
             await databaseConnection().getRepository('piece_metadata').createQueryBuilder().delete().execute()
             const mockPiece = createMockPieceMetadata({
-                name: '@wippa/piece-forms',
+                name: '@wippa/connector-forms',
                 version: '0.3.0',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const mockFlow = createMockFlow({
                 projectId: ctx.project.id,
@@ -153,8 +153,8 @@ describe('Human Input API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@wippa/piece-forms',
-                        pieceVersion: '0.3.0',
+                        connectorName: '@wippa/connector-forms',
+                        connectorVersion: '0.3.0',
                         triggerName: 'chat_submission',
                         input: {
                             botName: 'Test Bot',

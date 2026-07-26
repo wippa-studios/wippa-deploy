@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { GoogleAuth } from 'google-auth-library';
 import { vertexAiAuth, GoogleVertexAIAuthValue } from '../auth';
 

@@ -4,8 +4,8 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 const DEFAULT_API_VERSION = '2022.01';
 const BASE_URL = 'https://api.clicdata.com';

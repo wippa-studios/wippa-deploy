@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { microsoft365CopilotAuth } from '../common/auth';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from '../common/microsoft-cloud';
 
 export const retrieveGroundingData = createAction({

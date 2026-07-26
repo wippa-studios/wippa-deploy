@@ -2,18 +2,18 @@ import {
   httpClient,
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { aiAnswerConfig } from './lib/common/models';
 import { gmailGetListOfAgents } from './lib/actions/gmail-get-list-of-agents';
 import { createPhoneCall } from './lib/actions/create-phone-call';
 import { getCallDetails } from './lib/actions/get-call-details';
 import { scheduleCallAgent } from './lib/actions/schedule-call-agent';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getCallTranscript } from './lib/actions/get-call-transcript';
 import { aiAnswerAuth } from './lib/auth';
 
-export const aianswer = createPiece({
+export const aianswer = createConnector({
   displayName: 'AI Answer',
   auth: aiAnswerAuth,
   minimumSupportedRelease: '0.30.0',

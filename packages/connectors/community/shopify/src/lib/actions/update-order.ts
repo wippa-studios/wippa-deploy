@@ -1,11 +1,11 @@
 import {
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { shopifyAuth } from '../..';
 import { updateOrder } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const updateOrderAction = createAction({
   auth: shopifyAuth,

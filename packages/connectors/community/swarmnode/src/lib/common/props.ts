@@ -1,6 +1,6 @@
-import { Property } from "@wippa/pieces-framework";
+import { Property } from "@wippa/connectors-framework";
 import { swarmnodeAuth } from "./auth";
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
 import { BASE_URL } from "./constants";
 import { ListAgentResponse } from "./types";
 

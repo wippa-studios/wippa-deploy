@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { generateText } from './lib/actions/generate-text';
 import { cohereAuth } from './lib/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const cohere = createPiece({
+export const cohere = createConnector({
   displayName: 'Cohere',
   description: 'Generate text using Cohere AI language models',
   auth: cohereAuth,

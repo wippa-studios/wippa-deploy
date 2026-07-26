@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { askAvian } from './lib/actions/ask-avian';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { avianAuth } from './lib/auth';
 
-export const avian = createPiece({
+export const avian = createConnector({
   displayName: 'Avian',
   description: 'Integrate with Avian  to leverage its powerful language models for generating human-like text based on your prompts.',
   auth: avianAuth,

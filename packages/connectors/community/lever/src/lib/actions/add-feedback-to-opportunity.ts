@@ -2,14 +2,14 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { LeverAuth, leverAuth } from '../..';
 import { LEVER_BASE_URL } from '../..';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { LeverFieldMapping } from '../common';
 
 export const addFeedbackToOpportunity = createAction({

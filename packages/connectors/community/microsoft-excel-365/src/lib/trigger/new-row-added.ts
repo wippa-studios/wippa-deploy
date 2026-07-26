@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   Property,
   createTrigger,
-} from '@wippa/pieces-framework';
-import { TriggerStrategy } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
 import { excelCommon } from '../common/common';
 import { commonProps } from '../common/props';
 import { getDrivePath } from '../common/helpers';
@@ -11,8 +11,8 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 import { excelAuth } from '../auth';
 
 const polling: Polling<

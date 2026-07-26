@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, Property } from '@wippa/connectors-framework';
 import { Channel, Team } from '@microsoft/microsoft-graph-types';
 import { microsoftTeamsBotAuth } from '../auth';
 import { createGraphClient, getAppOnlyToken, GRAPH_DEFAULT_SCOPE, paginateGraphList } from './graph';

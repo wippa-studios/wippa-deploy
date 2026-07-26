@@ -9,7 +9,7 @@ const SyncPiecesButton = () => {
   const { data: piecesSyncMode } = flagsHooks.useFlag<string>(
     ApFlagId.PIECES_SYNC_MODE,
   );
-  const { mutate: syncPieces, isPending } =
+  const { mutate: syncConnectors, isPending } =
     platformPiecesMutations.useSyncPieces();
 
   return (
@@ -17,7 +17,7 @@ const SyncPiecesButton = () => {
       {piecesSyncMode === PieceSyncMode.OFFICIAL_AUTO && (
         <Button
           variant={'outline'}
-          onClick={() => syncPieces()}
+          onClick={() => syncConnectors()}
           loading={isPending}
           size={'sm'}
         >

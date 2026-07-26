@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createEntity } from "./lib/actions/create-entity";
 import { findOrCreateEntity } from "./lib/actions/find-or-create-entity";
 import { findEntity } from "./lib/actions/find-entity";
@@ -28,7 +28,7 @@ You can find these in your Base44 app settings or dashboard.`,
   },
 });
 
-export const base44 = createPiece({
+export const base44 = createConnector({
   displayName: "Base44",
   description: "Build and manage custom apps with databases and entities",
   auth: base44Auth,

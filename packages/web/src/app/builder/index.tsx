@@ -133,12 +133,12 @@ const BuilderPage = () => {
     setStepDataPanelOpen,
   ]);
   const {
-    pieceModel,
+    connectorModel,
     isNotFound: pieceModelNotFound,
     refetch: refetchPiece,
   } = piecesHooks.usePieceModelForStepSettings({
-    name: selectedStep?.settings.pieceName,
-    version: selectedStep?.settings.pieceVersion,
+    name: selectedStep?.settings.connectorName,
+    version: selectedStep?.settings.connectorVersion,
     enabled:
       selectedStep?.type === FlowActionType.PIECE ||
       selectedStep?.type === FlowTriggerType.PIECE,
@@ -224,13 +224,13 @@ const BuilderPage = () => {
             {rightSidebar === RightSideBarType.PIECE_SETTINGS &&
               selectedStep && (
                 <StepSettingsProvider
-                  pieceModel={pieceModel}
+                  connectorModel={connectorModel}
                   pieceModelNotFound={pieceModelNotFound}
                   selectedStep={selectedStep}
                   key={constructContainerKey({
                     flowVersionId: flowVersion.id,
                     step: selectedStep,
-                    hasPieceModelLoaded: !!pieceModel,
+                    hasPieceModelLoaded: !!connectorModel,
                   })}
                 >
                   <StepSettingsContainer />
@@ -264,13 +264,13 @@ function constructContainerKey({
     step?.type === FlowTriggerType.PIECE
       ? step?.settings.triggerName
       : step?.settings.actionName;
-  const pieceName =
+  const connectorName =
     step?.type === FlowTriggerType.PIECE || step?.type === FlowActionType.PIECE
-      ? step?.settings.pieceName
+      ? step?.settings.connectorName
       : undefined;
-  const pieceVersion =
+  const connectorVersion =
     step?.type === FlowTriggerType.PIECE || step?.type === FlowActionType.PIECE
-      ? step?.settings.pieceVersion
+      ? step?.settings.connectorVersion
       : undefined;
   //we need to re-render the step settings form when the step is skipped, so when the user edits the settings after setting it to skipped the changes are reflected in the update request
   const isSkipped =
@@ -278,8 +278,8 @@ function constructContainerKey({
     step?.type != FlowTriggerType.PIECE &&
     step?.skip;
   return `${flowVersionId}-${stepName ?? ''}-${triggerOrActionName ?? ''}-${
-    pieceName ?? ''
-  }-${pieceVersion ?? ''}-${'skipped-' + !!isSkipped}-${
+    connectorName ?? ''
+  }-${connectorVersion ?? ''}-${'skipped-' + !!isSkipped}-${
     hasPieceModelLoaded ? 'loaded' : 'not-loaded'
   }`;
 }

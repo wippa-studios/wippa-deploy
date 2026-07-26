@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createChatCompletionAction } from './lib/actions/create-chat-completion.action';
 import { perplexityAiAuth } from './lib/auth';
 
-export const perplexityAi = createPiece({
+export const perplexityAi = createConnector({
   displayName: 'Perplexity AI',
   auth: perplexityAiAuth,
   minimumSupportedRelease: '0.36.1',

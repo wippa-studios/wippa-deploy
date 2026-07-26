@@ -1,11 +1,11 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { wrikeAuth } from '../common/auth';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { wrikeCommon } from '../common/client';
 
 export const newTask = createTrigger({

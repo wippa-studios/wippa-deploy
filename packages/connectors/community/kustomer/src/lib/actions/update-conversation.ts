@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 import { kustomerAuth } from '../common/auth';
 import { kustomerClient } from '../common/client';

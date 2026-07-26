@@ -1,6 +1,6 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { zooAuth } from '../../auth'
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const getOrgBalanceAction = createAction({
   name: 'get_org_balance',

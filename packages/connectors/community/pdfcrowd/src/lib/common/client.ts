@@ -1,5 +1,5 @@
 import { pdfcrowdAuth } from './auth';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 export const BASE_URL = 'https://api.pdfcrowd.com/api';
 export const DEFAULT_CONVERTER_VERSION = '24.04';

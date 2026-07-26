@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, OAuth2PropertyValue, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, OAuth2PropertyValue, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createItemAction } from './lib/actions/items/create-item';
 import { deleteItemAction } from './lib/actions/items/delete-item';
 import { searchItemsAction } from './lib/actions/items/search-items';
@@ -16,7 +16,7 @@ import { sortItemsAction } from './lib/actions/items/sort-items';
 import { getCompanyInfoAction } from './lib/actions/company';
 import { weekdoneAuth } from './lib/auth';
 
-export const weekdone = createPiece({
+export const weekdone = createConnector({
   displayName: 'Weekdone',
   description:
     'Goal-setting and progress tracking software that helps teams align their objectives and key results (OKRs).',

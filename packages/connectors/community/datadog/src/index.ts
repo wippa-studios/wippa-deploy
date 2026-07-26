@@ -1,15 +1,15 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   constructDatadogBaseHeaders,
   constructDatadogBaseUrl,
 } from './lib/common/helpers';
 import { sendMultipleLogs } from './lib/actions/send-multiple-logs';
 import { sendOneLog } from './lib/actions/send-one-log';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { datadogAuth } from './lib/common/auth';
 
-export const datadog = createPiece({
+export const datadog = createConnector({
   displayName: 'Datadog',
   description: 'Cloud monitoring and analytics platform',
   auth: datadogAuth,

@@ -1,12 +1,12 @@
 import {
   ApFile,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { TwitterApi } from 'twitter-api-v2';
 import { twitterAuth } from '../..';
 import { twitterCommon } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 import mime from 'mime-types';
 
 export const createTweet = createAction({

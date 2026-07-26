@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, DynamicPropsValue, Property } from '@wippa/connectors-framework';
 
 import Onfleet from '@onfleet/node-onfleet';
 import { onfleetAuth } from '../..';

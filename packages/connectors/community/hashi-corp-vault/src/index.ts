@@ -1,10 +1,10 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, createCustomApiCallAction } from '@wippa/connectors-common';
 import { readSecret } from './lib/actions/read-secret';
 import { writeSecret } from './lib/actions/write-secret';
 import { deleteSecret } from './lib/actions/delete-secret';
@@ -19,7 +19,7 @@ Connect to HashiCorp Vault to securely manage secrets.
 - **AppRole**: Use Role ID and Secret ID for machine authentication
 `;
 
-export const hashiCorpVault = createPiece({
+export const hashiCorpVault = createConnector({
   displayName: 'HashiCorp Vault',
   description: 'Securely manage secrets and sensitive data with HashiCorp Vault',
   auth: hashiCorpVaultAuth,

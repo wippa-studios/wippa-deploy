@@ -25,10 +25,10 @@ const globalConnectionController: FastifyPluginAsyncZod = async (app) => {
             externalId: request.body.externalId ?? apId(),
             value: request.body.value,
             displayName: request.body.displayName,
-            pieceName: request.body.pieceName,
+            connectorName: request.body.connectorName,
             ownerId: await securityHelper.getUserIdFromRequest(request),
             scope: AppConnectionScope.PLATFORM,
-            pieceVersion: request.body.pieceVersion,
+            connectorVersion: request.body.connectorVersion,
             preSelectForNewProjects: request.body.preSelectForNewProjects,
         })
         applicationEvents(request.log).sendUserEvent(request, {
@@ -57,10 +57,10 @@ const globalConnectionController: FastifyPluginAsyncZod = async (app) => {
     })
 
     app.get('/', ListGlobalConnectionsRequest, async (request): Promise<SeekPage<AppConnectionWithoutSensitiveData>> => {
-        const { displayName, pieceName, status, cursor, limit } = request.query
+        const { displayName, connectorName, status, cursor, limit } = request.query
 
         const appConnections = await appConnectionService(request.log).list({
-            pieceName,
+            connectorName,
             displayName,
             status,
             platformId: request.principal.platform.id,

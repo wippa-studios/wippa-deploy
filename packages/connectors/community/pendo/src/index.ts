@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { pendoAuth } from './lib/auth';
 import { trackEvent } from './lib/actions/track-event';
 import { getVisitor } from './lib/actions/get-visitor';
 import { getAccount } from './lib/actions/get-account';
 import { listGuides } from './lib/actions/list-guides';
 
-export const pendo = createPiece({
+export const pendo = createConnector({
   displayName: 'Pendo',
   description: 'Product analytics and digital adoption platform',
   auth: pendoAuth,

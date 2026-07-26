@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { formSubmission } from './lib/triggers/form-submission';
 import { chatsistantAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const chatsistant = createPiece({
+export const chatsistant = createConnector({
   displayName: 'Chatsistant',
   auth: chatsistantAuth,
   minimumSupportedRelease: '0.36.1',

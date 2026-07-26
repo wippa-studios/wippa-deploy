@@ -1,5 +1,5 @@
-import { createAction, Property, DynamicPropsValue, InputPropertyMap, PieceAuth } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property, DynamicPropsValue, InputPropertyMap, PieceAuth } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { goodmemAuth } from '../../index';
 import { getBaseUrl, getCommonHeaders, extractAuthFromContext } from '../common';
 

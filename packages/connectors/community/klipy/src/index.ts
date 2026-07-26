@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { klipyAuth } from './lib/common/auth';
 import { searchGifsAction } from './lib/actions/search-gifs';
 import { searchStickersAction } from './lib/actions/search-stickers';
 import { searchClipsAction } from './lib/actions/search-clips';
 
-export const klipy = createPiece({
+export const klipy = createConnector({
   displayName: 'Klipy',
   description: 'Search and retrieve GIFs, stickers, and video clips from KLIPY\'s media library.',
   auth: klipyAuth,

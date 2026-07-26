@@ -1,5 +1,5 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { teamworkAuth } from "./lib/common/auth";
 import { createProject } from "./lib/actions/create-project";
 import { createTaskList } from "./lib/actions/create-task-list";
@@ -26,9 +26,9 @@ import { newMessage } from "./lib/triggers/new-message";
 import { newFile } from "./lib/triggers/new-file";
 import { newExpense } from "./lib/triggers/new-expense";
 import { newInvoice } from "./lib/triggers/new-invoice";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-  export const teamwork = createPiece({
+  export const teamwork = createConnector({
       displayName: "Teamwork",
       description: "Teamwork is a work and project management tool that helps teams improve collaboration, visibility, and accountability.",
       auth: teamworkAuth,

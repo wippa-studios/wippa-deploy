@@ -4,13 +4,13 @@ import { mkdir, readdir, writeFile } from 'fs/promises';
 import inquirer from 'inquirer';
 import path from 'node:path';
 
-const validatePieceName = async (pieceName: string) => {
+const validateConnectorName = async (connectorName: string) => {
   console.log(chalk.yellow('Validating piece name....'));
   const pieceNamePattern = /^(?![._])[a-z0-9-]{1,214}$/;
-  if (!pieceNamePattern.test(pieceName)) {
+  if (!pieceNamePattern.test(connectorName)) {
     console.log(
       chalk.red(
-        `🚨 Invalid piece name: ${pieceName}. Piece names can only contain lowercase letters, numbers, and hyphens.`
+        `🚨 Invalid piece name: ${connectorName}. Piece names can only contain lowercase letters, numbers, and hyphens.`
       )
     );
     process.exit(1);
@@ -30,8 +30,8 @@ const validatePackageName = async (packageName: string) => {
   }
 };
 
-const checkIfPieceExists = async (pieceName: string, pieceType: string) => {
-  const piecePath = path.resolve('packages', 'pieces', pieceType, pieceName);
+const checkIfPieceExists = async (connectorName: string, pieceType: string) => {
+  const piecePath = path.resolve('packages', 'pieces', pieceType, connectorName);
   try {
     await readdir(piecePath);
     console.log(chalk.red(`🚨 Piece already exists at ${piecePath}`));
@@ -46,11 +46,11 @@ function capitalizeFirstLetter(str: string): string {
 }
 
 const scaffoldPiece = async (
-  pieceName: string,
+  connectorName: string,
   packageName: string,
   pieceType: string
 ) => {
-  const baseDir = path.resolve('packages', 'pieces', pieceType, pieceName);
+  const baseDir = path.resolve('packages', 'pieces', pieceType, connectorName);
   const srcDir = path.join(baseDir, 'src');
   const libDir = path.join(srcDir, 'lib');
   const i18nDir = path.join(srcDir, 'i18n');
@@ -67,9 +67,9 @@ const scaffoldPiece = async (
     main: './dist/src/index.js',
     types: './dist/src/index.d.ts',
     dependencies: {
-      '@wippa/pieces-common': 'workspace:*',
-      '@wippa/pieces-framework': 'workspace:*',
-      '@wippa/core-piece-types': 'workspace:*',
+      '@wippa/connectors-common': 'workspace:*',
+      '@wippa/connectors-framework': 'workspace:*',
+      '@wippa/core-connector-types': 'workspace:*',
       '@wippa/core-utils': 'workspace:*',
     },
     devDependencies: {
@@ -160,7 +160,7 @@ const scaffoldPiece = async (
   );
 
   // Create index.ts
-  const pieceNameCamelCase = pieceName
+  const pieceNameCamelCase = connectorName
     .split('-')
     .map((s, i) => {
       if (i === 0) {
@@ -170,14 +170,14 @@ const scaffoldPiece = async (
     })
     .join('');
 
-  const indexTemplate = `import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+  const indexTemplate = `import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 
-export const ${pieceNameCamelCase} = createPiece({
-  displayName: '${capitalizeFirstLetter(pieceName)}',
+export const ${pieceNameCamelCase} = createConnector({
+  displayName: '${capitalizeFirstLetter(connectorName)}',
   description: '',
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/${pieceName}.png',
+  logoUrl: 'https://cdn.activepieces.com/pieces/${connectorName}.png',
   authors: [],
   actions: [],
   triggers: [],
@@ -187,19 +187,19 @@ export const ${pieceNameCamelCase} = createPiece({
   await writeFile(path.join(srcDir, 'index.ts'), indexTemplate);
 };
 
-export const createPiece = async (
-  pieceName: string,
+export const createConnector = async (
+  connectorName: string,
   packageName: string,
   pieceType: string
 ) => {
-  await validatePieceName(pieceName);
+  await validateConnectorName(connectorName);
   await validatePackageName(packageName);
-  await checkIfPieceExists(pieceName, pieceType);
-  await scaffoldPiece(pieceName, packageName, pieceType);
+  await checkIfPieceExists(connectorName, pieceType);
+  await scaffoldPiece(connectorName, packageName, pieceType);
   console.log(chalk.green('✨  Done!'));
   console.log(
     chalk.yellow(
-      `The piece has been generated at: packages/pieces/${pieceType}/${pieceName}`
+      `The piece has been generated at: packages/pieces/${pieceType}/${connectorName}`
     )
   );
 };
@@ -210,7 +210,7 @@ export const createPieceCommand = new Command('create')
     const questions = [
       {
         type: 'input',
-        name: 'pieceName',
+        name: 'connectorName',
         message: 'Enter the piece name:',
       },
       {
@@ -218,9 +218,9 @@ export const createPieceCommand = new Command('create')
         name: 'packageName',
         message: 'Enter the package name:',
         default: (answers: Record<string, string>) =>
-          `@wippa/piece-${answers.pieceName}`,
+          `@wippa/connector-${answers.connectorName}`,
         when: (answers: Record<string, string>) =>
-          answers.pieceName !== undefined,
+          answers.connectorName !== undefined,
       },
       {
         type: 'list',
@@ -232,5 +232,5 @@ export const createPieceCommand = new Command('create')
     ];
 
     const answers = await inquirer.prompt(questions);
-    createPiece(answers.pieceName, answers.packageName, answers.pieceType);
+    createConnector(answers.connectorName, answers.packageName, answers.pieceType);
   });

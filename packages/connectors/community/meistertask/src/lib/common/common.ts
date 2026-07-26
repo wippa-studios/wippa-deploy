@@ -1,7 +1,7 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { AuthenticationType } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { AuthenticationType } from '@wippa/connectors-common';
 import { meistertaskAuth } from '../auth';
 
 export const MEISTERTASK_API_URL = 'https://www.meistertask.com/api';

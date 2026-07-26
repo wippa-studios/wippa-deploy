@@ -1,6 +1,6 @@
 import { ActivepiecesError, ErrorCode, isNil, PlatformId, ProjectId } from '@wippa/core-utils'
-import { PieceMetadata, PieceMetadataModel } from '@wippa/pieces-framework'
-import { AddPieceRequestBody, EngineResponse, EngineResponseStatus, ExecuteExtractPieceMetadata, FileCompression, FileId, FileType, PackageType, PiecePackage, PieceType, WorkerJobType } from '@wippa/shared'
+import { ConnectorMetadata, PieceMetadataModel } from '@wippa/connectors-framework'
+import { AddPieceRequestBody, EngineResponse, EngineResponseStatus, ExecuteExtractPieceMetadata, FileCompression, FileId, FileType, PackageType, ConnectorPackage, ConnectorType, WorkerJobType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { fileService } from '../file/file.service'
 import { rejectedPromiseHandler } from '../helper/promise-handler'
@@ -9,20 +9,20 @@ import { toolSearchReindexJob } from '../tool-search/tool-search-reindex.job'
 import { userInteractionWatcher } from '../workers/user-interaction-watcher'
 import { pieceMetadataService } from './metadata/piece-metadata-service'
 
-export const pieceInstallService = (log: FastifyBaseLogger) => ({
-    async installPiece(
+export const connectorInstallService = (log: FastifyBaseLogger) => ({
+    async installConnector(
         platformId: string,
         params: AddPieceRequestBody,
     ): Promise<PieceMetadataModel> {
         try {
-            const piecePackage = await savePiecePackage(platformId, params, log)
+            const connectorPackage = await savePiecePackage(platformId, params, log)
             const pieceInformation = await extractPieceInformation({
-                ...piecePackage,
+                ...connectorPackage,
                 platformId,
             }, log)
-            const archiveId = piecePackage.packageType === PackageType.ARCHIVE ? piecePackage.archiveId : undefined
+            const archiveId = connectorPackage.packageType === PackageType.ARCHIVE ? connectorPackage.archiveId : undefined
             const savedPiece = await pieceMetadataService(log).create({
-                pieceMetadata: {
+                connectorMetadata: {
                     ...pieceInformation,
                     minimumSupportedRelease:
                         pieceInformation.minimumSupportedRelease ?? '0.0.0',
@@ -34,7 +34,7 @@ export const pieceInstallService = (log: FastifyBaseLogger) => ({
                 },
                 packageType: params.packageType,
                 platformId,
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 archiveId,
             })
             // Reconcile tool-search for this tenant only (async, never blocking the install) so the new
@@ -46,7 +46,7 @@ export const pieceInstallService = (log: FastifyBaseLogger) => ({
             return savedPiece
         }
         catch (error) {
-            log.error({ error }, '[pieceInstallService#add] Failed to add piece')
+            log.error({ error }, '[connectorInstallService#add] Failed to add piece')
 
             if (error instanceof ActivepiecesError && error.error.code === ErrorCode.VALIDATION) {
                 throw error
@@ -62,7 +62,7 @@ export const pieceInstallService = (log: FastifyBaseLogger) => ({
 })
 
 
-async function savePiecePackage(platformId: string | undefined, params: AddPieceRequestBody, log: FastifyBaseLogger): Promise<PiecePackage> {
+async function savePiecePackage(platformId: string | undefined, params: AddPieceRequestBody, log: FastifyBaseLogger): Promise<ConnectorPackage> {
 
     switch (params.packageType) {
         case PackageType.ARCHIVE: {
@@ -73,7 +73,7 @@ async function savePiecePackage(platformId: string | undefined, params: AddPiece
             }, log)
             return {
                 ...params,
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 archiveId,
                 platformId: platformId!,
                 packageType: params.packageType,
@@ -83,15 +83,15 @@ async function savePiecePackage(platformId: string | undefined, params: AddPiece
         case PackageType.REGISTRY: {
             return {
                 ...params,
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 platformId: platformId!,
             }
         }
     }
 }
 
-const extractPieceInformation = async (request: ExecuteExtractPieceMetadata, log: FastifyBaseLogger): Promise<PieceMetadata> => {
-    const engineResponse = await userInteractionWatcher.submitAndWaitForResponse<EngineResponse<PieceMetadata>>({
+const extractPieceInformation = async (request: ExecuteExtractPieceMetadata, log: FastifyBaseLogger): Promise<ConnectorMetadata> => {
+    const engineResponse = await userInteractionWatcher.submitAndWaitForResponse<EngineResponse<ConnectorMetadata>>({
         jobType: WorkerJobType.EXECUTE_EXTRACT_PIECE_INFORMATION,
         platformId: request.platformId,
         piece: request,

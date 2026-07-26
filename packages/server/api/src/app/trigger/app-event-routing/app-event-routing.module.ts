@@ -1,6 +1,6 @@
 import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, isNil } from '@wippa/core-utils'
-import { slack } from '@wippa/piece-slack'
-import { Piece, PieceAuthProperty } from '@wippa/pieces-framework'
+import { slack } from '@wippa/connector-slack'
+import { Piece, PieceAuthProperty } from '@wippa/connectors-framework'
 import { FlowStatus, LATEST_JOB_DATA_SCHEMA_VERSION, RunEnvironment, WorkerJobType } from '@wippa/shared'
 import { FastifyRequest } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
@@ -20,7 +20,7 @@ const appWebhooks: Record<string, Piece<PieceAuthProperty | PieceAuthProperty[] 
     slack,
 }
 const pieceNames: Record<string, string> = {
-    slack: '@wippa/piece-slack',
+    slack: '@wippa/connector-slack',
 }
 
 export const appEventRoutingModule: FastifyPluginAsyncZod = async (app) => {

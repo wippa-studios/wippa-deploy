@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { paperformCommonProps } from '../common/props';
 import { PaperformCreateCouponResponse } from '../common/types';
 

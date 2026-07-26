@@ -6,7 +6,7 @@ import {
     File,
     Flow,
     Folder,
-    PieceSet,
+    ConnectorSet,
     Platform,
     Project,
     Record,
@@ -35,7 +35,7 @@ type ProjectSchema = Project & {
     cells: Cell[]
     tableWebhooks: TableWebhook[]
     pool?: ConcurrencyPool | null
-    pieceSet?: PieceSet | null
+    connectorSet?: ConnectorSet | null
 }
 
 export const ProjectEntity = new EntitySchema<ProjectSchema>({
@@ -220,7 +220,7 @@ export const ProjectEntity = new EntitySchema<ProjectSchema>({
                 foreignKeyConstraintName: 'fk_project_pool_id',
             },
         },
-        pieceSet: {
+        connectorSet: {
             type: 'many-to-one',
             target: 'piece_set',
             onDelete: 'SET NULL',

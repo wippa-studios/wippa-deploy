@@ -1,6 +1,6 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { jiraCloudAuth } from '../../auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { sendJiraRequest } from '../common';
 import { getIssueIdDropdown, getProjectIdDropdown, getUsersDropdown } from '../common/props';
 

@@ -3,16 +3,16 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   httpClient,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { makeRequest } from '../common/client';
 import { cryptolensAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 interface ObjectLog {
   Id: number;

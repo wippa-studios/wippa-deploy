@@ -2,7 +2,7 @@ import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { mondayAuth } from '../auth';
 import { makeClient, mondayCommon } from '../common';
 import {

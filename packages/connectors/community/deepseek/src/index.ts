@@ -1,13 +1,13 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { baseUrl, unauthorizedMessage } from "./lib/common/common";
 import OpenAI from 'openai';
 import { askDeepseek } from "./lib/actions/ask-deepseek";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { deepseekAuth } from './lib/auth';
 
         
-    export const deepseek = createPiece({
+    export const deepseek = createConnector({
       displayName: "DeepSeek",
       auth: deepseekAuth,
       categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],

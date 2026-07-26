@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { addWorksheetAction } from './lib/actions/add-worksheet';
 import { appendRowAction } from './lib/actions/append-row';
@@ -48,7 +48,7 @@ import { getWorksheetColumnsAction } from './lib/actions/get-wroksheet-columns';
 import { excelCommon } from './lib/common/common';
 import { excelAuth } from './lib/auth';
 
-export const microsoftExcel = createPiece({
+export const microsoftExcel = createConnector({
 	displayName: 'Microsoft Excel 365',
 	description: 'Spreadsheet software by Microsoft',
 

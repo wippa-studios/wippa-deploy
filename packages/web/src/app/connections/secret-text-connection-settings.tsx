@@ -1,4 +1,4 @@
-import { SecretTextProperty } from '@wippa/pieces-framework';
+import { SecretTextProperty } from '@wippa/connectors-framework';
 import { UpsertSecretTextRequest } from '@wippa/shared';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';

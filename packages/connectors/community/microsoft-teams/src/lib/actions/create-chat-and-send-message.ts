@@ -1,9 +1,9 @@
 import { microsoftTeamsAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { microsoftTeamsCommon } from '../common';
 import { createGraphClient } from '../common/graph';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { Chat } from '@microsoft/microsoft-graph-types';
 
 export const createChatAndSendMessageAction = createAction({

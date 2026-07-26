@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { vtigerAuth } from '../..';
 import { instanceLogin, recordIdProperty } from '../common';
 import { elementTypeProperty } from '../common';

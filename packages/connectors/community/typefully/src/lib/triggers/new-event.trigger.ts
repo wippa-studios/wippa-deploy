@@ -1,5 +1,5 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { typefullyAuth } from '../auth';
 import { typefullyApiCall } from '../common/client';
 import { draftSampleData, instructionsMarkdown } from '../common/props';

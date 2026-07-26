@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { createConversationWithSingleAgent } from "./lib/actions/create-conversation-with-single-agent";
 import { sendMessageToExistingConversation } from "./lib/actions/send-message-to-existing-conversation";
 import { findMessage } from "./lib/actions/find-message";
@@ -8,10 +8,10 @@ import { findConversation } from "./lib/actions/find-conversation";
 import { newAgent } from "./lib/triggers/new-agent";
 import { newConversation } from "./lib/triggers/new-conversation";
 import { AgentXAuth } from "./lib/common/auth";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 
-export const agentx = createPiece({
+export const agentx = createConnector({
   displayName: "AgentX",
   auth: AgentXAuth,
   minimumSupportedRelease: '0.36.1',

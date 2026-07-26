@@ -3,7 +3,7 @@ import { isNil } from '@wippa/core-utils';
 import { Plus } from 'lucide-react';
 import React, { useState } from 'react';
 
-import { PieceSelector } from '@/app/builder/pieces-selector';
+import { ConnectorSelector } from '@/app/builder/pieces-selector';
 import { cn } from '@/lib/utils';
 
 import { useBuilderStateContext } from '../../builder-hooks';
@@ -82,7 +82,7 @@ const ApAddButton = React.memo((props: ApButtonData) => {
         </div>
       )}
       {!showDropIndicator && !readonly && (
-        <PieceSelector
+        <ConnectorSelector
           operation={flowCanvasUtils.createAddOperationFromAddButtonData(props)}
           id={props.edgeId}
         >
@@ -121,7 +121,7 @@ const ApAddButton = React.memo((props: ApButtonData) => {
               </div>
             </div>
           </div>
-        </PieceSelector>
+        </ConnectorSelector>
       )}
     </>
   );

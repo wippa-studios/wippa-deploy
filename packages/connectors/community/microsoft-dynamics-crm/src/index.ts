@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createRecordAction } from './lib/actions/create-record';
 import { deleteRecordAction } from './lib/actions/delete-record';
 import { getRecordAction } from './lib/actions/get-record';
@@ -14,7 +14,7 @@ export function getBaseUrl(host: string, proxyUrl?: string): string {
   return host;
 }
 
-export const microsoftDynamicsCrm = createPiece({
+export const microsoftDynamicsCrm = createConnector({
   displayName: 'Microsoft Dynamics CRM',
   auth: dynamicsCRMAuth,
   description:

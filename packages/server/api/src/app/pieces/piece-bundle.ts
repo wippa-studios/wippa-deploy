@@ -1,6 +1,6 @@
 import { isNil, tryCatch } from '@wippa/core-utils'
 import { apDayjs, safeHttp } from '@wippa/server-utils'
-import { FileType, PackageType, PieceType } from '@wippa/shared'
+import { FileType, PackageType, ConnectorType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { fileRepo } from '../file/file.service'
 import { s3Helper } from '../file/s3-helper'
@@ -15,7 +15,7 @@ import { pieceMetadataService } from './metadata/piece-metadata-service'
 // Official/registry pieces resolve to a signed-S3 object when cached, else to the npm tarball (and a
 // lazy SYSTEM job caches it for next time). Custom (ARCHIVE) pieces are served straight from the file
 // store. Always platform-scoped via the engine token's platformId.
-export const pieceBundle = (log: FastifyBaseLogger) => ({
+export const connectorBundle = (log: FastifyBaseLogger) => ({
     async resolve({ name, version, archiveId, platformId, projectId }: ResolveParams): Promise<PieceBundleResolution> {
         // ARCHIVE pieces are addressed by archiveId — they may not be registered in metadata yet
         // (e.g. during EXTRACT_PIECE_METADATA of a freshly uploaded .tgz). Scope to the token's
@@ -45,7 +45,7 @@ export const pieceBundle = (log: FastifyBaseLogger) => ({
             void tryCatch(() => enqueueBundleJob({ name, version, log }))
         }
         // CDN only mirrors official pieces — dev/custom/private registry pieces may 404 there, so fall back to npm.
-        if (metadata.pieceType === PieceType.OFFICIAL && system.getBoolean(AppSystemProp.USE_CDN_FOR_BUNDLES)) {
+        if (metadata.pieceType === ConnectorType.OFFICIAL && system.getBoolean(AppSystemProp.USE_CDN_FOR_BUNDLES)) {
             const cdnUrl = cdnTarballUrl({ name, version })
             if (await cdnBundleExists({ url: cdnUrl, log })) {
                 return { type: 'redirect', url: cdnUrl }
@@ -62,7 +62,7 @@ export const pieceBundle = (log: FastifyBaseLogger) => ({
             }
             const response = await safeHttp.retryingAxios.get<ArrayBuffer>(npmTarballUrl(data), { responseType: 'arraybuffer' })
             await s3.uploadFile(key, Buffer.from(response.data))
-            log.info({ piece: { name: data.name, version: data.version } }, '[pieceBundle] Cached piece tarball to S3')
+            log.info({ piece: { name: data.name, version: data.version } }, '[connectorBundle] Cached piece tarball to S3')
         })
     },
 })
@@ -91,7 +91,7 @@ async function cdnBundleExists({ url, log }: CdnBundleExistsParams): Promise<boo
         safeHttp.axios.head(url, { validateStatus: (status) => status < 500 }),
     )
     if (error !== null) {
-        log.warn({ error, url }, '[pieceBundle] CDN bundle HEAD check failed, falling back to npm')
+        log.warn({ error, url }, '[connectorBundle] CDN bundle HEAD check failed, falling back to npm')
         return false
     }
     const exists = response.status >= 200 && response.status < 300

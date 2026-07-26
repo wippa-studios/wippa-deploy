@@ -1,5 +1,5 @@
 import slugify from 'slugify';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 
 export const slugifyAction = createAction({
   audience: 'human',

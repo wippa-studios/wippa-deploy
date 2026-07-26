@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 
 export const zohoCrmAuth = PieceAuth.OAuth2({
   props: {

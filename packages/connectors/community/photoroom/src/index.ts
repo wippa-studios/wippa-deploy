@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { removeBackground } from './lib/actions/remove-background';
 
 export const photoroomAuth = PieceAuth.CustomAuth({
@@ -11,7 +11,7 @@ export const photoroomAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const photoroom = createPiece({
+export const photoroom = createConnector({
   displayName: 'Photoroom',
   auth: photoroomAuth,
   minimumSupportedRelease: '0.30.0',

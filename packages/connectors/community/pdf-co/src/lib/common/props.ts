@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 
 export const BASE_URL = 'https://api.pdf.co/v1';
 

@@ -1,9 +1,9 @@
 
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { organizationIdDropdown, videoaskIdDropdown } from '../common/props';
 import { videoaskAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 export const formTranscribed = createTrigger({
     auth: videoaskAuth,
     name: 'formTranscribed',

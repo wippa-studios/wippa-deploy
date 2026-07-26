@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { convertTextToJson } from "./lib/actions/convert-text-to-json";
 import { convertJsonToText } from "./lib/actions/convert-json-to-text";
 import { runJsonataQuery } from "./lib/actions/run-jsonata-query";
@@ -11,7 +11,7 @@ export const jsonAuth = PieceAuth.SecretText({
   description: 'Please use **test-key** as value for API Key',
 });
 
-export const json = createPiece({
+export const json = createConnector({
   displayName: "JSON",
   description: "Convert JSON to text and vice versa",
   auth: PieceAuth.None(),

@@ -37,7 +37,7 @@ string,
 async function getWebhookSecret(
     flowVersion: FlowVersion,
 ): Promise<string | Record<string, string> | undefined> {
-    const appName = flowVersion.trigger.settings.pieceName
+    const appName = flowVersion.trigger.settings.connectorName
     if (!appName) {
         return undefined
     }

@@ -42,8 +42,8 @@ const UpdatePieceVersionDialog: React.FC<UpdatePieceVersionDialogProps> = ({
   currentVersion,
 }) => {
   const [view, setView] = useState<DialogView | null>(null);
-  const pieceName = step.settings.pieceName;
-  const { pieceVersions, isLoading } = piecesHooks.usePieceVersions(pieceName);
+  const connectorName = step.settings.connectorName;
+  const { pieceVersions, isLoading } = piecesHooks.usePieceVersions(connectorName);
   const latestVersion = changeVersionUtils.getLatestVersion({
     currentVersion,
     versions: pieceVersions ?? [],
@@ -135,9 +135,9 @@ const AdvancedForm: React.FC<AdvancedFormProps> = ({
   onClose,
   onBack,
 }) => {
-  const pieceName = step.settings.pieceName;
+  const connectorName = step.settings.connectorName;
 
-  const { pieceVersions, isLoading } = piecesHooks.usePieceVersions(pieceName);
+  const { pieceVersions, isLoading } = piecesHooks.usePieceVersions(connectorName);
   const applyOperation = useBuilderStateContext(
     (state) => state.applyOperation,
   );

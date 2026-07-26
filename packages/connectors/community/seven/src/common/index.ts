@@ -2,7 +2,7 @@ import {
   type HttpResponse,
   type HttpRequest,
   httpClient
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const callSevenApi = async <T>(
   httpRequest: Omit<HttpRequest, 'url'>,

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { addGreet, addProfile } from '../api';
 import { bonjoroAuth, BonjoroAuthType } from '../auth';
 import {

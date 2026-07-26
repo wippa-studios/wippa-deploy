@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { downloadView } from './lib/actions/download-view';
 import { runExtractRefreshTask } from './lib/actions/run-extract-refresh-task';
 import { refreshWorkbook } from './lib/actions/refresh-workbook';
@@ -43,7 +43,7 @@ Choose **either** Username/Password **or** Personal Access Token:
 **Security Note:** Personal Access Tokens are recommended for production use as they provide better security and can be revoked individually.
 `;
 
-export const tableau = createPiece({
+export const tableau = createConnector({
   displayName: "Tableau",
   description: "Business intelligence and analytics platform for data visualization",
   auth: tableauAuth,

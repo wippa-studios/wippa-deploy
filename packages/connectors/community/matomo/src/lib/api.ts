@@ -3,7 +3,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { MatomoAuthType } from './auth';
 
 const matomoAPI = async (

@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { whatConvertsAuth, WhatConvertsAuth } from './auth';
 import { whatConvertsClient } from './client';
 

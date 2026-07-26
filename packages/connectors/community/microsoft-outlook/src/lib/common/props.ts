@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 import { PageCollection } from '@microsoft/microsoft-graph-client';
 import { MailFolder, Message } from '@microsoft/microsoft-graph-types';
 import { microsoftOutlookAuth } from './auth';

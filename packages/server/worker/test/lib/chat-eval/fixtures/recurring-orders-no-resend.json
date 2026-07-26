@@ -12,7 +12,7 @@
             "toolName": "ap_list_across_projects",
             "output": {
                 "connections": [
-                    { "externalId": "conn_gmail", "displayName": "Gmail", "pieceName": "@wippa/piece-gmail", "status": "ACTIVE", "scope": "PROJECT" }
+                    { "externalId": "conn_gmail", "displayName": "Gmail", "connectorName": "@wippa/connector-gmail", "status": "ACTIVE", "scope": "PROJECT" }
                 ],
                 "tables": [
                     { "id": "tbl_orders", "name": "Orders", "projectId": "eval-project" }

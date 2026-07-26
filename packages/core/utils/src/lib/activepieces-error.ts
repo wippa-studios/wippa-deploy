@@ -95,8 +95,8 @@ export type ApErrorParams =
 export type TriggerExecutionFailedParams = BaseErrorParams<ErrorCode.TRIGGER_EXECUTION_FAILED, {
     flowId: FlowId
     message?: string
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
 }>
 
 export type BaseErrorParams<T, V> = {
@@ -128,7 +128,7 @@ ErrorCode.INVITATION_ONLY_SIGN_UP,
 >
 
 export type InvalidClaimParams = BaseErrorParams<ErrorCode.INVALID_CLAIM, { redirectUrl: string, tokenUrl: string, clientId: string, message: string }>
-export type InvalidCloudClaimParams = BaseErrorParams<ErrorCode.INVALID_CLOUD_CLAIM, { pieceName: string }>
+export type InvalidCloudClaimParams = BaseErrorParams<ErrorCode.INVALID_CLOUD_CLAIM, { connectorName: string }>
 
 export type InvalidBearerTokenParams = BaseErrorParams<ErrorCode.INVALID_BEARER_TOKEN, {
     message?: string
@@ -224,8 +224,8 @@ ErrorCode.EXISTING_USER,
 export type TriggerFailedErrorParams = BaseErrorParams<
 ErrorCode.TRIGGER_FAILED,
 {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     triggerName: string
     error: string | undefined
 }
@@ -424,11 +424,11 @@ export type ProjectExternalIdAlreadyExistsParams = BaseErrorParams<ErrorCode.PRO
 }>
 
 export type McpPieceRequiresConnectionParams = BaseErrorParams<ErrorCode.MCP_PIECE_REQUIRES_CONNECTION, {
-    pieceName: string
+    connectorName: string
 }>
 
 export type McpPieceConnectionMismatchParams = BaseErrorParams<ErrorCode.MCP_PIECE_CONNECTION_MISMATCH, {
-    pieceName: string
+    connectorName: string
     connectionPieceName: string
     connectionId: string
 }>

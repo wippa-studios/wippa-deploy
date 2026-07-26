@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { influencersClubAuth } from './lib/common/auth';
 import { enrichCreatorByEmail } from './lib/actions/enrich-creator-by-email';
 import { enrichCreatorByHandle } from './lib/actions/enrich-creator-by-handle';
 import { findSimilarCreator } from './lib/actions/find-similar-creator';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const influencersClub = createPiece({
+export const influencersClub = createConnector({
   displayName: 'Influencers.club',
   auth: influencersClubAuth,
   minimumSupportedRelease: '0.36.1',

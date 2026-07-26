@@ -1,7 +1,7 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 import { copyAiAuth } from '../auth';
 
 

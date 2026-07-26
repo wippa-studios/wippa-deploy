@@ -3,7 +3,7 @@ import {
   InputProperty,
   InputPropertyMap,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { mcpClientAuth } from '../auth';
 import { mcpClient, McpToolInfo } from '../common/client';
 

@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
 import { createOrder } from "./lib/actions/create-order"
 import { createPaymentLink } from "./lib/actions/create-payment-link"
 import { createRefund } from "./lib/actions/create-refund"
@@ -12,7 +12,7 @@ import { deactivateCashgram } from "./lib/actions/deactivate-cashgram"
 import { cashfreePaymentsAuth } from "./lib/auth/cashgram-auth";
 
 
-export const cashfreeTriggers = createPiece({
+export const cashfreeTriggers = createConnector({
   displayName: "Cashfree Payments",
   description: 'Cashfree Payments integration for processing payments, refunds, and managing payment links and cashgrams.',
   auth: cashfreePaymentsAuth,

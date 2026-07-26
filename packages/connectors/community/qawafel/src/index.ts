@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   getQawafelBaseUrl,
   PRODUCTION_API_BASE_URL,
@@ -33,7 +33,7 @@ import { refundRequested } from './lib/triggers/refund-requested';
 
 export { qawafelAuth } from './lib/common/auth';
 
-export const qawafel = createPiece({
+export const qawafel = createConnector({
   displayName: 'Qawafel',
   description:
     "B2B marketplace and ZATCA-compliant document platform — sync products, orders, merchants and invoices with Saudi Arabia's leading wholesale network.",

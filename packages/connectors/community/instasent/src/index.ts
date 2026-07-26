@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { deleteContact } from './lib/actions/delete-contact';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';
 import { createEvent } from "./lib/actions/create-event";
 import { BASE_URL } from "./lib/common/constants";
 import { InstasentAuthType } from './lib/common/types';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { instasentAuth } from './lib/auth';
 
 export const getBaseUrl = (auth: { projectId: string, datasourceId: string }) => {
@@ -20,7 +20,7 @@ const authDescriptionMarkdown = `
 4. Copy the auth parameters and paste them in the fields below
 `;
 
-export const instasent = createPiece({
+export const instasent = createConnector({
     displayName: "Instasent",
     minimumSupportedRelease: '0.30.0',
     logoUrl: "https://cdn.activepieces.com/pieces/instasent.jpg",

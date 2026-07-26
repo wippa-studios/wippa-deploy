@@ -4,12 +4,12 @@
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@googleapis/calendar": "15.0.0",
     "dayjs": "1.11.9",
     "google-auth-library": "10.5.0",
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {

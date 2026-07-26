@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 
 import { getresponseAuth, GetResponseAuthValue } from './auth';
 import { listGetResponseCampaigns, listGetResponseFromFields } from './client';

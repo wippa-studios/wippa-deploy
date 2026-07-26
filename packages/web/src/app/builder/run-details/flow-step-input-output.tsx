@@ -89,14 +89,14 @@ export const FlowStepInputOutput = () => {
   const stepPieceName =
     selectedStep?.type === FlowActionType.PIECE ||
     selectedStep?.type === FlowTriggerType.PIECE
-      ? selectedStep.settings.pieceName
+      ? selectedStep.settings.connectorName
       : undefined;
   const stepPieceVersion =
     selectedStep?.type === FlowActionType.PIECE ||
     selectedStep?.type === FlowTriggerType.PIECE
-      ? selectedStep.settings.pieceVersion
+      ? selectedStep.settings.connectorVersion
       : undefined;
-  const { pieceModel } = piecesHooks.usePiece({
+  const { connectorModel } = piecesHooks.usePiece({
     name: stepPieceName ?? '',
     version: stepPieceVersion,
     enabled: !isNil(stepPieceName),
@@ -198,24 +198,24 @@ export const FlowStepInputOutput = () => {
       ? (selectedStep.settings.input as Record<string, unknown> | undefined)
       : undefined;
   const pieceSchema =
-    pieceModel?.actions[stepName ?? '']?.outputSchema ??
-    pieceModel?.triggers[stepName ?? '']?.outputSchema ??
+    connectorModel?.actions[stepName ?? '']?.outputSchema ??
+    connectorModel?.triggers[stepName ?? '']?.outputSchema ??
     null;
   const explanationContext: ErrorExplanationContext = {
-    pieceName: stepPieceName,
-    pieceVersion: stepPieceVersion,
-    pieceDisplayName: pieceModel?.displayName,
-    pieceAuthType: stepPropertiesSnapshotUtils.findAuthType(pieceModel),
+    connectorName: stepPieceName,
+    connectorVersion: stepPieceVersion,
+    connectorDisplayName: connectorModel?.displayName,
+    pieceAuthType: stepPropertiesSnapshotUtils.findAuthType(connectorModel),
     stepKind,
     stepName,
     stepDisplayName: selectedStep.displayName,
     stepDescription: stepPropertiesSnapshotUtils.findDescription({
-      pieceModel,
+      connectorModel,
       stepKind,
       stepName,
     }),
     stepProperties: stepPropertiesSnapshotUtils.build({
-      pieceModel,
+      connectorModel,
       stepKind,
       stepName,
       input: stepInput,
@@ -279,7 +279,7 @@ export const FlowStepInputOutput = () => {
               <FriendlyErrorView
                 error={friendlyError}
                 explanationContext={explanationContext}
-                pieceDisplayName={pieceModel?.displayName}
+                connectorDisplayName={connectorModel?.displayName}
               />
             ) : status === 'success' ? (
               <SmartOutputViewer

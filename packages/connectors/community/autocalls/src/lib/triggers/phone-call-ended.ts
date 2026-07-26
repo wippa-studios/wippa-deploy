@@ -1,5 +1,5 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { autocallsAuth } from '../..';
 import { baseApiUrl } from '../..';
 

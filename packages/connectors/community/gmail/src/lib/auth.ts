@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { oauth2 as googleOauth2 } from '@googleapis/oauth2';
 import { JWT, OAuth2Client } from 'google-auth-library';
 

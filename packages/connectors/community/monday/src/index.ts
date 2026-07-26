@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createColumnAction } from './lib/actions/create-column';
 import { createGroupAction } from './lib/actions/create-group';
 import { createItemAction } from './lib/actions/create-item';
@@ -20,7 +20,7 @@ const markdown = `
 4.Go to the **API** section.\n
 5.Copy your personal token`;
 
-export const monday = createPiece({
+export const monday = createConnector({
   displayName: 'monday.com',
   description: 'Work operating system for businesses',
 

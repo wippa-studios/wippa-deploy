@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { kudosityAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const getSmsInfo = createAction({
   auth: kudosityAuth,

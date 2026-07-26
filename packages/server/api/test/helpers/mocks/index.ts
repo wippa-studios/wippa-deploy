@@ -1,7 +1,7 @@
 import { AIProviderName, apId, assertNotNullOrUndefined, ProjectRole, RoleType } from '@wippa/core-utils'
-import { LATEST_CONTEXT_VERSION, PieceMetadata } from '@wippa/pieces-framework'
+import { LATEST_CONTEXT_VERSION, ConnectorMetadata } from '@wippa/connectors-framework'
 import { apDayjs } from '@wippa/server-utils'
-import { AiCreditsAutoTopUpState, AIProvider, ApiKey, AppConnection, AppConnectionScope, AppConnectionStatus, AppConnectionType, ApplicationEvent, ApplicationEventName, Cell, ColorName, EventDestinationScope, Field, FieldType, File, FileCompression, FileLocation, FileType, Flow, FlowOperationStatus, FlowRun, FlowRunStatus, FlowStatus, FlowTriggerType, FlowVersion, FlowVersionState, Folder, GitBranchType, GitRepo, InvitationStatus, InvitationType, KeyAlgorithm, LATEST_FLOW_SCHEMA_VERSION, OAuthApp, OtpModel, OtpState, OtpType, PackageType, PiecesFilterType, PieceType, Platform, PlatformPlan, PlatformRole, Project, ProjectIcon, ProjectMember, ProjectPlan, ProjectRelease, ProjectReleaseType, ProjectType, Record, RunEnvironment, SigningKey, Table, TeamProjectsLimit, Template, TemplateStatus, TemplateType, User, UserIdentity, UserIdentityProvider, UserInvitation, UserStatus } from '@wippa/shared'
+import { AiCreditsAutoTopUpState, AIProvider, ApiKey, AppConnection, AppConnectionScope, AppConnectionStatus, AppConnectionType, ApplicationEvent, ApplicationEventName, Cell, ColorName, EventDestinationScope, Field, FieldType, File, FileCompression, FileLocation, FileType, Flow, FlowOperationStatus, FlowRun, FlowRunStatus, FlowStatus, FlowTriggerType, FlowVersion, FlowVersionState, Folder, GitBranchType, GitRepo, InvitationStatus, InvitationType, KeyAlgorithm, LATEST_FLOW_SCHEMA_VERSION, OAuthApp, OtpModel, OtpState, OtpType, PackageType, PiecesFilterType, ConnectorType, Platform, PlatformPlan, PlatformRole, Project, ProjectIcon, ProjectMember, ProjectPlan, ProjectRelease, ProjectReleaseType, ProjectType, Record, RunEnvironment, SigningKey, Table, TeamProjectsLimit, Template, TemplateStatus, TemplateType, User, UserIdentity, UserIdentityProvider, UserInvitation, UserStatus } from '@wippa/shared'
 import { faker } from '@faker-js/faker'
 import bcrypt from 'bcrypt'
 import dayjs from 'dayjs'
@@ -57,7 +57,7 @@ export const createMockOAuthApp = async (
         created: oAuthApp?.created ?? faker.date.recent().toISOString(),
         updated: oAuthApp?.updated ?? faker.date.recent().toISOString(),
         platformId: oAuthApp?.platformId ?? apId(),
-        pieceName: oAuthApp?.pieceName ?? faker.lorem.word(),
+        connectorName: oAuthApp?.connectorName ?? faker.lorem.word(),
         clientId: oAuthApp?.clientId ?? apId(),
         clientSecret: await encryptUtils.encryptString(faker.lorem.word()),
     }
@@ -312,32 +312,32 @@ export const createMockSigningKey = (
 
 
 export const createMockPieceMetadata = (
-    pieceMetadata?: Partial<Omit<PieceMetadataSchema, 'project'>>,
+    connectorMetadata?: Partial<Omit<PieceMetadataSchema, 'project'>>,
 ): Omit<PieceMetadataSchema, 'project'> => {
     return {
-        id: pieceMetadata?.id ?? apId(),
+        id: connectorMetadata?.id ?? apId(),
         projectUsage: 0,
-        created: pieceMetadata?.created ?? faker.date.recent().toISOString(),
-        updated: pieceMetadata?.updated ?? faker.date.recent().toISOString(),
-        name: pieceMetadata?.name ?? faker.lorem.word(),
-        displayName: pieceMetadata?.displayName ?? faker.lorem.word(),
-        logoUrl: pieceMetadata?.logoUrl ?? faker.image.urlPlaceholder(),
-        description: pieceMetadata?.description ?? faker.lorem.sentence(),
-        directoryPath: pieceMetadata?.directoryPath,
-        auth: pieceMetadata?.auth,
-        authors: pieceMetadata?.authors ?? [],
-        platformId: pieceMetadata?.platformId,
-        version: pieceMetadata?.version ?? faker.system.semver(),
-        minimumSupportedRelease: pieceMetadata?.minimumSupportedRelease ?? '0.0.0',
-        maximumSupportedRelease: pieceMetadata?.maximumSupportedRelease ?? '9.9.9',
-        actions: pieceMetadata?.actions ?? {},
-        triggers: pieceMetadata?.triggers ?? {},
-        pieceType: pieceMetadata?.pieceType ?? faker.helpers.enumValue(PieceType),
+        created: connectorMetadata?.created ?? faker.date.recent().toISOString(),
+        updated: connectorMetadata?.updated ?? faker.date.recent().toISOString(),
+        name: connectorMetadata?.name ?? faker.lorem.word(),
+        displayName: connectorMetadata?.displayName ?? faker.lorem.word(),
+        logoUrl: connectorMetadata?.logoUrl ?? faker.image.urlPlaceholder(),
+        description: connectorMetadata?.description ?? faker.lorem.sentence(),
+        directoryPath: connectorMetadata?.directoryPath,
+        auth: connectorMetadata?.auth,
+        authors: connectorMetadata?.authors ?? [],
+        platformId: connectorMetadata?.platformId,
+        version: connectorMetadata?.version ?? faker.system.semver(),
+        minimumSupportedRelease: connectorMetadata?.minimumSupportedRelease ?? '0.0.0',
+        maximumSupportedRelease: connectorMetadata?.maximumSupportedRelease ?? '9.9.9',
+        actions: connectorMetadata?.actions ?? {},
+        triggers: connectorMetadata?.triggers ?? {},
+        pieceType: connectorMetadata?.pieceType ?? faker.helpers.enumValue(ConnectorType),
         packageType:
-            pieceMetadata?.packageType ?? faker.helpers.enumValue(PackageType),
-        archiveId: pieceMetadata?.archiveId,
-        categories: pieceMetadata?.categories ?? [],
-        contextInfo: pieceMetadata?.contextInfo ?? { version: LATEST_CONTEXT_VERSION },
+            connectorMetadata?.packageType ?? faker.helpers.enumValue(PackageType),
+        archiveId: connectorMetadata?.archiveId,
+        categories: connectorMetadata?.categories ?? [],
+        contextInfo: connectorMetadata?.contextInfo ?? { version: LATEST_CONTEXT_VERSION },
     }
 }
 
@@ -448,7 +448,7 @@ export const createMockConnection = (connection: Partial<AppConnection>, ownerId
         updated: connection?.updated ?? faker.date.recent().toISOString(),
         platformId: connection?.platformId ?? apId(),
         projectIds: connection?.projectIds ?? [],
-        pieceName: connection?.pieceName ?? faker.lorem.word(),
+        connectorName: connection?.connectorName ?? faker.lorem.word(),
         displayName: connection?.displayName ?? faker.lorem.word(),
         type: AppConnectionType.SECRET_TEXT,
         scope: AppConnectionScope.PROJECT,
@@ -461,7 +461,7 @@ export const createMockConnection = (connection: Partial<AppConnection>, ownerId
         metadata: connection?.metadata ?? {},
         externalId: connection?.externalId ?? apId(),
         owner: null,
-        pieceVersion: connection?.pieceVersion ?? '0.0.0',
+        connectorVersion: connection?.connectorVersion ?? '0.0.0',
         preSelectForNewProjects: connection?.preSelectForNewProjects ?? false,
     }
 }
@@ -705,7 +705,7 @@ export const mockAndSaveAIProvider = async (params?: Partial<AIProvider>): Promi
     return mockAIProvider
 }
 
-export const mockPieceMetadata = async (mockLog: FastifyBaseLogger): Promise<PieceMetadata> => {
+export const mockPieceMetadata = async (mockLog: FastifyBaseLogger): Promise<ConnectorMetadata> => {
     const { mockPlatform } = await mockAndSaveBasicSetup()
     const mockPieceMetadata = createMockPieceMetadata({
         platformId: mockPlatform.id,

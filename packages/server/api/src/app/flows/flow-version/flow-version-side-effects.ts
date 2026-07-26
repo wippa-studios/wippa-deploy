@@ -44,7 +44,7 @@ async function handleSampleDataDeletion(projectId: ProjectId, flowVersion: FlowV
             const stepToDelete = flowStructureUtil.getStepOrThrow(operation.request.name, flowVersion.trigger)
             const triggerChanged = operation.type === FlowOperationType.UPDATE_TRIGGER && (flowVersion.trigger.type !== operation.request.type
                     || flowVersion.trigger.settings.triggerName !== operation.request.settings.triggerName
-                    || flowVersion.trigger.settings.pieceName !== operation.request.settings.pieceName)
+                    || flowVersion.trigger.settings.connectorName !== operation.request.settings.connectorName)
             const sampleDataExists = !isNil(stepToDelete?.settings.sampleData?.sampleDataFileId)
             if (triggerChanged && sampleDataExists) {
                 await sampleDataService(log).deleteForStep({

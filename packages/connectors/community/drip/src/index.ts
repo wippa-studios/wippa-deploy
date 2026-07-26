@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { dripAddSubscriberToCampaign } from './lib/actions/add-subscriber-to-campaign.action';
 import { dripApplyTagToSubscriber } from './lib/actions/apply-tag-to-subscriber.action';
 import { dripUpsertSubscriberAction } from './lib/actions/upsert-subscriber.action';
@@ -8,7 +8,7 @@ import { dripNewSubscriberEvent } from './lib/trigger/new-subscriber.trigger';
 import { dripTagAppliedEvent } from './lib/trigger/new-tag.trigger';
 import { dripAuth } from './lib/auth';
 
-export const drip = createPiece({
+export const drip = createConnector({
   displayName: 'Drip',
   description: 'E-commerce CRM for B2B marketers',
   minimumSupportedRelease: '0.30.0',

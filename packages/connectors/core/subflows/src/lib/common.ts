@@ -1,5 +1,5 @@
-import { FlowTriggerType, isNil, PopulatedFlow } from "@wippa/pieces-framework";
-import { FlowsContext, ListFlowsContextParams } from "@wippa/pieces-framework";
+import { FlowTriggerType, isNil, PopulatedFlow } from "@wippa/connectors-framework";
+import { FlowsContext, ListFlowsContextParams } from "@wippa/connectors-framework";
 
 
 export const callableFlowKey = (runId: string) => `callableFlow_${runId}`;
@@ -25,8 +25,8 @@ export async function listFlowsWithSubflowTrigger({
     const flows = allFlows.filter(
         (flow) =>
             flow.version.trigger.type === FlowTriggerType.PIECE &&
-            flow.version.trigger.settings.pieceName ==
-            '@wippa/piece-subflows'
+            flow.version.trigger.settings.connectorName ==
+            '@wippa/connector-subflows'
     );
     return flows;
 }

@@ -1,5 +1,5 @@
-import { Property, createTrigger } from '@wippa/pieces-framework';
-import { TriggerStrategy } from '@wippa/pieces-framework';
+import { Property, createTrigger } from '@wippa/connectors-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
 
 import { googlePubsubAuth } from '../..';
 import { common } from '../common';

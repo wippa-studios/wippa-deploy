@@ -94,7 +94,7 @@ function extractPieces(payload: ExternalTokenPayload) {
         return {
             piecesFilterType: undefined,
             piecesTags: undefined,
-            pieceSetKey: payload.pieceSet,
+            pieceSetKey: payload.connectorSet,
         }
     }
     if ('version' in payload && payload.version === 'v3') {
@@ -156,7 +156,7 @@ function externalTokenPayload() {
 
     const v4 = v2.omit({ pieces: true }).extend({
         version: z.literal('v4'),
-        pieceSet: z.string(),
+        connectorSet: z.string(),
     })
 
     // Most-specific first: v2 strips unknown keys, so it would match a v3/v4

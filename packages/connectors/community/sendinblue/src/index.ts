@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createOrUpdateContact } from './lib/actions/create-or-update-contact';
 
 export const sendinblueAuth = PieceAuth.SecretText({
@@ -9,7 +9,7 @@ export const sendinblueAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const sendinblue = createPiece({
+export const sendinblue = createConnector({
   displayName: 'Brevo',
   description:
     'Formerly Sendinblue, is a SaaS solution for relationship marketing',

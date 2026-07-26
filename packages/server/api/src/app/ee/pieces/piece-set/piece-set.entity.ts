@@ -1,4 +1,4 @@
-import { PieceSelectionMode, PieceSet, Platform } from '@wippa/shared'
+import { PieceSelectionMode, ConnectorSet, Platform } from '@wippa/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,
@@ -7,7 +7,7 @@ import {
 
 type PieceSetSchema = {
     platform: Platform
-} & PieceSet
+} & ConnectorSet
 
 export const PieceSetEntity = new EntitySchema<PieceSetSchema>({
     name: 'piece_set',

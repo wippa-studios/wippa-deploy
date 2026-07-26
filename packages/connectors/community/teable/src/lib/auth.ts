@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { TeableClient } from './common/client';
 import { TEABLE_CLOUD_URL } from './common/constants';
 

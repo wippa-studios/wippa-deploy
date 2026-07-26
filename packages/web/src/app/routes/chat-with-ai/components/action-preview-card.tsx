@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { PieceIconWithPieceName } from '@/features/pieces/components/piece-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
 
 import { normalizePieceName } from '../lib/message-parsers';
 
@@ -23,7 +23,7 @@ export function ActionPreviewCard({
   onCancel: () => void;
   onDismiss: () => void;
 }) {
-  const pieceName = normalizePieceName(preview.pieceName);
+  const connectorName = normalizePieceName(preview.connectorName);
   const inputParams = buildInputParams(preview.input);
 
   const batchSamples = preview.batchSamples ?? [];
@@ -42,10 +42,10 @@ export function ActionPreviewCard({
           : preview.actionDisplayName
       }
     >
-      {preview.pieceName && preview.connectionLabel && (
+      {preview.connectorName && preview.connectionLabel && (
         <div className="flex items-center gap-2 pb-3">
           <PieceIconWithPieceName
-            pieceName={pieceName}
+            connectorName={connectorName}
             size="sm"
             border={false}
             showTooltip={false}

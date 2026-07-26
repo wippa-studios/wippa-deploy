@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { mailjetAuth } from './lib/auth';
 
-export const mailjet = createPiece({
+export const mailjet = createConnector({
   displayName: 'Mailjet',
   description: 'Email delivery service for sending transactional and marketing emails',
   auth: mailjetAuth,

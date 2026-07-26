@@ -1,10 +1,10 @@
 import {
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { common, OnfleetWebhookTriggers } from '../common';
 import { onfleetAuth } from '../..';
-import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/connectors-framework';
 export const taskAssigned = createTrigger({
   auth: onfleetAuth,
   name: 'task_assigned',

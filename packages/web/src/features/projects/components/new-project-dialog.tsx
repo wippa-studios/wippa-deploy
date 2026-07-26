@@ -11,7 +11,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { DefaultTag } from '@/components/custom/global-connection-utils';
-import { MultiSelectPieceProperty } from '@/components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '@/components/custom/multi-select-piece-property';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -186,7 +186,7 @@ const NewProjectForm = ({
               render={({ field }) => (
                 <FormItem className="grid space-y-2">
                   <Label>{t('Global Connections')}</Label>
-                  <MultiSelectPieceProperty
+                  <MultiSelectConnectorProperty
                     placeholder={t('Select global connections')}
                     options={
                       globalConnections.map((connection) => ({

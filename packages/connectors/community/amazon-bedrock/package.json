@@ -5,15 +5,15 @@
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@aws-crypto/sha256-js": "5.2.0",
     "@aws-sdk/client-bedrock": "^3.987.0",
     "@aws-sdk/client-bedrock-runtime": "^3.987.0",
     "@aws-sdk/client-sts": "3.974.0",
     "@smithy/protocol-http": "5.3.8",
     "@smithy/signature-v4": "5.3.8",
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {

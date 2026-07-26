@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { createDocumentFromTemplate } from './lib/actions/create-document-from-template';
 import { createAttachment } from './lib/actions/create-attachment';
@@ -14,9 +14,9 @@ import { documentStateChanged } from './lib/triggers/document-state-changed';
 import { documentUpdated } from './lib/triggers/document-updated';
 
 import { pandadocAuth } from './lib/common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const pandadoc = createPiece({
+export const pandadoc = createConnector({
   displayName: 'PandaDoc',
   auth: pandadocAuth,
   minimumSupportedRelease: '0.36.1',

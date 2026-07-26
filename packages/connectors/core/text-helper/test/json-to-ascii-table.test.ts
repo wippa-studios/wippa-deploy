@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { jsonToAsciiTable } from '../src/lib/actions/json-to-ascii-table';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('jsonToAsciiTable action', () => {
   test('converts array of objects to table', async () => {

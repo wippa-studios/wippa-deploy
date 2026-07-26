@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { cancelSubscription } from './lib/actions/cancel-subscription';
 import { createCustomer } from './lib/actions/create-customer';
@@ -20,7 +20,7 @@ import { subscriptionChanged } from './lib/triggers/subscription-changed';
 import { subscriptionCreated } from './lib/triggers/subscription-created';
 import { subscriptionRenewed } from './lib/triggers/subscription-renewed';
 
-export const chargebee = createPiece({
+export const chargebee = createConnector({
   displayName: 'Chargebee',
   description:
     'Subscription billing and revenue operations platform for managing customers and subscriptions.',

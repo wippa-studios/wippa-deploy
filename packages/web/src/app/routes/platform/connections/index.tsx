@@ -71,7 +71,7 @@ export default function PlatformConnectionsPage() {
     {
       type: 'select',
       title: t('Piece'),
-      accessorKey: 'pieceName',
+      accessorKey: 'connectorName',
       icon: Puzzle,
       options: (pieces ?? []).map((piece) => ({
         label: piece.displayName,
@@ -120,7 +120,7 @@ export default function PlatformConnectionsPage() {
         >
           <div className="flex items-center gap-2 w-fit min-w-0">
             <PieceIconWithPieceName
-              pieceName={row.original.pieceName}
+              connectorName={row.original.connectorName}
               showTooltip={false}
               size="sm"
             />

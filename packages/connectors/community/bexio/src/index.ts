@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { BexioClient } from './lib/common/client';
 import { createManualEntryAction } from './lib/actions/create-manual-entry';
 import { createCompanyAction } from './lib/actions/create-company';
@@ -37,7 +37,7 @@ import { newProjectTrigger } from './lib/triggers/new-project';
 import { newQuoteTrigger } from './lib/triggers/new-quote';
 import { bexioAuth } from './lib/auth';
 
-export const bexio = createPiece({
+export const bexio = createConnector({
   displayName: 'Bexio',
   description: 'Swiss business software for accounting, invoicing, and project management',
   auth: bexioAuth,

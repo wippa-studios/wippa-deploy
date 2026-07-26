@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { getCurrentUserAction } from './lib/actions/get-current-user';
 import { listEventsAction } from './lib/actions/list-events';
@@ -24,7 +24,7 @@ import { workflowActionTriggeredTrigger } from './lib/triggers/workflow-action-t
 import { savvyCalAuth, getToken } from './lib/auth';
 import { SAVVYCAL_BASE_URL } from './lib/common';
 
-export const savvyCal = createPiece({
+export const savvyCal = createConnector({
   displayName: 'SavvyCal',
   description: 'Scheduling tool that lets invitees overlay their calendar when picking a time.',
   minimumSupportedRelease: '0.36.1',

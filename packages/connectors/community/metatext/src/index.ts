@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { extractText } from './lib/actions/extract-text';
 import { classifyText } from './lib/actions/classify-text';
 import { finetuneModel } from './lib/actions/finetune-model';
 import { metatextAuth } from './lib/auth';
 
-export const metatext = createPiece({
+export const metatext = createConnector({
   displayName: 'Metatext',
   description: 'AI content moderation and safety guard API',
   auth: metatextAuth,

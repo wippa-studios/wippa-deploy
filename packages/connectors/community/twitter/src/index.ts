@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { TwitterApi } from 'twitter-api-v2';
 import { createTweet } from './lib/actions/create-tweet';
 import { createReply } from './lib/actions/create-reply';
@@ -81,7 +81,7 @@ export const twitterAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const twitter = createPiece({
+export const twitter = createConnector({
   displayName: 'Twitter',
   description: 'Social media platform with over 500 million user',
   minimumSupportedRelease: '0.36.1',

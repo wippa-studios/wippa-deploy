@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 
 const BILLPLZ_API_URL = 'https://www.billplz.com/api';
 const BILLPLZ_SANDBOX_API_URL = 'https://www.billplz-sandbox.com/api';

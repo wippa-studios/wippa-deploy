@@ -2,9 +2,9 @@ import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { API_ENDPOINTS, BASE_URL } from './constants';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { lemlistAuth } from './constants';
 
 async function fireHttpRequest({

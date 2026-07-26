@@ -92,8 +92,8 @@ export const PredefinedInputsStructure = z.object({
 export type PredefinedInputsStructure = z.infer<typeof PredefinedInputsStructure>
 
 export const AgentPieceToolMetadata = z.object({
-    pieceName: z.string(),
-    pieceVersion: z.string(),
+    connectorName: z.string(),
+    connectorVersion: z.string(),
     actionName: z.string(),
     predefinedInput: z.optional(PredefinedInputsStructure),
 })
@@ -102,7 +102,7 @@ export type AgentPieceToolMetadata = z.infer<typeof AgentPieceToolMetadata>
 export const AgentPieceTool = z.object({
     type: z.literal(AgentToolType.PIECE),
     toolName: z.string().check(z.minLength(1)),
-    pieceMetadata: AgentPieceToolMetadata,
+    connectorMetadata: AgentPieceToolMetadata,
 })
 export type AgentPieceTool = z.infer<typeof AgentPieceTool>
 
@@ -198,8 +198,8 @@ export const ToolCallContentBlock = z.discriminatedUnion('toolCallType', [
     z.object({
         ...toolCallBaseShape,
         toolCallType: z.literal(ToolCallType.PIECE),
-        pieceName: z.string(),
-        pieceVersion: z.string(),
+        connectorName: z.string(),
+        connectorVersion: z.string(),
         actionName: z.string(),
     }),
     z.object({
@@ -272,11 +272,11 @@ function createToolName(name: string): string {
     return `${prefix}_${hash}_mcp`
 }
 
-function createPieceToolName(pieceName: string, actionName: string): string {
+function createPieceToolName(connectorName: string, actionName: string): string {
     const PIECE_NAME_PREFIX = 'piece-'
-    const idx = pieceName.indexOf(PIECE_NAME_PREFIX)
+    const idx = connectorName.indexOf(PIECE_NAME_PREFIX)
     const shortPieceName =
-        idx >= 0 ? pieceName.substring(idx + PIECE_NAME_PREFIX.length) : pieceName
+        idx >= 0 ? connectorName.substring(idx + PIECE_NAME_PREFIX.length) : connectorName
     return createToolName(`${shortPieceName}-${actionName}`)
 }
 

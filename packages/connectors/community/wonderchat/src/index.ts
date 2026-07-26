@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { askQuestion } from './lib/actions/ask-question';
 import { addPage } from './lib/actions/add-page';
 import { addTag } from './lib/actions/add-tag';
@@ -18,7 +18,7 @@ export const wonderchatAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const wonderchat = createPiece({
+export const wonderchat = createConnector({
   displayName: 'Wonderchat',
   description:
     'Wonderchat is a no-code chatbot platform that lets you deploy AI-powered chatbots for websites quickly.',

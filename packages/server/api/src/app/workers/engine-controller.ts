@@ -9,7 +9,7 @@ import { fileService } from '../file/file.service'
 import { flowService } from '../flows/flow/flow.service'
 import { engineRunCallbackService } from '../flows/flow-run/engine-run-callback-service'
 import { flowVersionService } from '../flows/flow-version/flow-version.service'
-import { pieceBundle } from '../pieces/piece-bundle'
+import { connectorBundle } from '../pieces/piece-bundle'
 
 export const flowEngineWorker: FastifyPluginAsyncZod = async (app) => {
 
@@ -45,7 +45,7 @@ export const flowEngineWorker: FastifyPluginAsyncZod = async (app) => {
         if (request.principal.type !== PrincipalType.ENGINE) {
             return reply.status(StatusCodes.UNAUTHORIZED).send()
         }
-        const resolution = await pieceBundle(request.log).resolve({
+        const resolution = await connectorBundle(request.log).resolve({
             name: request.query.name,
             version: request.query.version,
             archiveId: request.query.archiveId,

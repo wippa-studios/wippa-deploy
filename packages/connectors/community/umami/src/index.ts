@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { umamiAuth, UmamiAuthValue, getAuthHeaders, getBaseUrl } from './lib/auth';
 import { getWebsiteStats } from './lib/actions/get-website-stats';
 import { getWebsiteMetrics } from './lib/actions/get-website-metrics';
@@ -11,7 +11,7 @@ import { listWebsites } from './lib/actions/list-websites';
 import { newEvent } from './lib/triggers/new-event';
 import { newSession } from './lib/triggers/new-session';
 
-export const umami = createPiece({
+export const umami = createConnector({
   displayName: 'Umami',
   description: 'Privacy-focused, open-source web analytics.',
   minimumSupportedRelease: '0.86.0',

@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 
 const markdownDescription = `
 Follow these instructions to get your OpenAI API Key:

@@ -1,5 +1,5 @@
-import { TriggerStrategy } from '@wippa/pieces-framework';
-import { createTrigger, Property } from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
+import { createTrigger, Property } from '@wippa/connectors-framework';
 import {
   DAY_HOURS,
   validateWeekDays,

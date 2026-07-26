@@ -18,7 +18,7 @@ export const McpProperty = z.object({
 export type McpProperty = z.infer<typeof McpProperty>
 
 export const McpTrigger = z.object({
-    pieceName: z.string(),
+    connectorName: z.string(),
     triggerName: z.string(),
     input: z.object({
         toolName: z.string(),

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { systemeIoAuth } from '../common/auth';
 import { systemeIoCommon } from '../common/client';
 

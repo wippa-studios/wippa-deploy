@@ -1,5 +1,5 @@
 import { intercomAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { commonProps, intercomClient } from '../common';
 import { ticketIdProp, ticketPropertiesProp, ticketTypeIdProp } from '../common/props';
 import { UpdateTicketRequest } from 'intercom-client/api';

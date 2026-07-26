@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { createPersonAction } from './lib/actions/create-person';
 import { createCompanyAction } from './lib/actions/create-company';
 import { createProjectAction } from './lib/actions/create-project';
@@ -10,7 +10,7 @@ import { createMultipleTimeEntriesAction } from './lib/actions/create-multiple-t
 import { deleteMultipleTimeEntriesAction } from './lib/actions/delete-multiple-time-entries';
 import { beeboleAuth } from './lib/common/auth';
 
-export const beebole = createPiece({
+export const beebole = createConnector({
   displayName: 'Beebole',
   description:
     'Time tracking and project management. Create companies, projects, people, and log time entries.',

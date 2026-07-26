@@ -2,10 +2,10 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { phantombusterAuth } from '../common/auth';
 import { agentIdDropdown } from '../common/props';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 export const newOutput = createTrigger({
   auth: phantombusterAuth,

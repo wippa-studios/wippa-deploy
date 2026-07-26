@@ -2,15 +2,15 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import Anthropic from '@anthropic-ai/sdk';
 import mime from 'mime-types';
 import { claudeAuth } from '../auth';
 import { TextBlock } from '@anthropic-ai/sdk/resources';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
-import { spreadIfDefined } from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
+import { spreadIfDefined } from '@wippa/connectors-framework';
 import { billingIssueMessage, modelDropdown, unauthorizedMessage } from '../common/common';
 import { askClaudeActionOutputSchema } from '../output-schemas';
 const DEFAULT_TOKENS_FOR_THINKING_MODE = 1024;

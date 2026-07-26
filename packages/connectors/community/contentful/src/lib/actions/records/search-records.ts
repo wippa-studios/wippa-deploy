@@ -1,11 +1,11 @@
 import {
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { ContentfulAuth, PropertyKeys, makeClient } from '../../common';
 import { ContentfulProperty } from '../../properties';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const ContentfulSearchRecordsAction = createAction({
   name: 'contentful_record_search',

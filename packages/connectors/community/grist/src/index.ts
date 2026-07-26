@@ -1,18 +1,18 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { gristCreateRecordAction } from './lib/actions/create-record.action';
 import { gristUpdateRecordAction } from './lib/actions/update-record.action';
 import { gristUploadAttachmentsToDocumnetAction } from './lib/actions/upload-attachments-to-document.action';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { gristNewRecordTrigger } from './lib/triggers/new-record.trigger';
 import { gristUpdatedRecordTrigger } from './lib/triggers/updated-record.trigger';
 import { gristSearchRecordAction } from './lib/actions/search-record.action';
 import { GristAPIClient } from './lib/common/helpers';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 export const gristAuth = PieceAuth.CustomAuth({
   required: true,
@@ -54,7 +54,7 @@ export const gristAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const grist = createPiece({
+export const grist = createConnector({
   displayName: 'Grist',
   auth: gristAuth,
   minimumSupportedRelease: '0.30.0',

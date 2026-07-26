@@ -2,9 +2,9 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { discordAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { discordCommon } from '../common';
 
 export const discordCreateGuildRole = createAction({

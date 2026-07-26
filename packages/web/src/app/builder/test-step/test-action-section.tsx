@@ -63,18 +63,18 @@ const TestStepSectionImplementation = React.memo(
     const isTesting = runner?.isTesting ?? false;
     const { isLoadingDynamicProperties } = useContext(DynamicPropertiesContext);
 
-    const pieceName =
+    const connectorName =
       currentStep.type === FlowActionType.PIECE
-        ? currentStep.settings.pieceName
+        ? currentStep.settings.connectorName
         : undefined;
-    const pieceVersion =
+    const connectorVersion =
       currentStep.type === FlowActionType.PIECE
-        ? currentStep.settings.pieceVersion
+        ? currentStep.settings.connectorVersion
         : undefined;
-    const { pieceModel } = piecesHooks.usePiece({
-      name: pieceName ?? '',
-      version: pieceVersion,
-      enabled: !isNil(pieceName),
+    const { connectorModel } = piecesHooks.usePiece({
+      name: connectorName ?? '',
+      version: connectorVersion,
+      enabled: !isNil(connectorName),
     });
     const stepKind = 'action';
     const stepName =
@@ -86,20 +86,20 @@ const TestStepSectionImplementation = React.memo(
         ? (currentStep.settings.input as Record<string, unknown> | undefined)
         : undefined;
     const explanationContext: ErrorExplanationContext = {
-      pieceName,
-      pieceVersion,
-      pieceDisplayName: pieceModel?.displayName,
-      pieceAuthType: stepPropertiesSnapshotUtils.findAuthType(pieceModel),
+      connectorName,
+      connectorVersion,
+      connectorDisplayName: connectorModel?.displayName,
+      pieceAuthType: stepPropertiesSnapshotUtils.findAuthType(connectorModel),
       stepKind,
       stepName,
       stepDisplayName: currentStep.displayName,
       stepDescription: stepPropertiesSnapshotUtils.findDescription({
-        pieceModel,
+        connectorModel,
         stepKind,
         stepName,
       }),
       stepProperties: stepPropertiesSnapshotUtils.build({
-        pieceModel,
+        connectorModel,
         stepKind,
         stepName,
         input: stepInput,
@@ -156,9 +156,9 @@ const TestStepSectionImplementation = React.memo(
             errorMessage={errorMessage}
             consoleLogs={consoleLogs}
             explanationContext={explanationContext}
-            pieceDisplayName={pieceModel?.displayName}
+            connectorDisplayName={connectorModel?.displayName}
             pieceSchema={
-              pieceModel?.actions[stepName ?? '']?.outputSchema ?? null
+              connectorModel?.actions[stepName ?? '']?.outputSchema ?? null
             }
             onCancelTesting={() => {
               removeStepTestListener(currentStep.name);

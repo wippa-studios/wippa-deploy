@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy, Property, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, Property, PiecePropValueSchema } from '@wippa/connectors-framework';
 import { teamworkAuth } from '../common/auth';
 import { teamworkRequest } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const newExpense = createTrigger({
 	name: 'new_expense',

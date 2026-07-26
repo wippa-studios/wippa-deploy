@@ -2,13 +2,13 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { lokaliseAuth } from '../common/auth';
 import { projectDropdown } from '../common/props';
 import { makeRequest } from '../common/client';

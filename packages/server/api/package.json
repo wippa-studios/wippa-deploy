@@ -6,8 +6,8 @@
   "dependencies": {
     "@1password/sdk": "0.4.0",
     "@wippa/engine": "workspace:*",
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@wippa/server-utils": "workspace:*",
     "@wippa/shared": "workspace:*",
     "@ai-sdk/amazon-bedrock": "3.0.97",
@@ -107,13 +107,13 @@
     "zod": "4.3.6",
     "@wippa/core-utils": "workspace:*",
     "@wippa/core-formula": "workspace:*",
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "@wippa/core-execution": "workspace:*"
   },
   "devDependencies": {
-    "@wippa/piece-slack": "workspace:*",
-    "@wippa/piece-xero": "workspace:*",
-    "@wippa/piece-sendgrid": "workspace:*",
+    "@wippa/connector-slack": "workspace:*",
+    "@wippa/connector-xero": "workspace:*",
+    "@wippa/connector-sendgrid": "workspace:*",
     "@faker-js/faker": "8.2.0",
     "@types/bcrypt": "5.0.0",
     "@types/content-disposition": "0.5.9",

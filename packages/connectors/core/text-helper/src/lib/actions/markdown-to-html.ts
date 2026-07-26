@@ -1,6 +1,6 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { Converter, Flavor } from 'showdown';
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 import { z, type ZodTypeAny } from 'zod';
 
 export const markdownToHTML = createAction({

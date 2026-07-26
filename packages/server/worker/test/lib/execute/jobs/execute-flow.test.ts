@@ -26,8 +26,8 @@ function makeFlowVersion(): FlowVersion {
             lastUpdatedDate: '2024-01-01T00:00:00Z',
             type: FlowTriggerType.PIECE,
             settings: {
-                pieceName: '@wippa/piece-gmail',
-                pieceVersion: '~0.1.0',
+                connectorName: '@wippa/connector-gmail',
+                connectorVersion: '~0.1.0',
                 triggerName: 'new_email',
                 input: {},
                 propertySettings: {},
@@ -39,8 +39,8 @@ function makeFlowVersion(): FlowVersion {
                 lastUpdatedDate: '2024-01-01T00:00:00Z',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@wippa/piece-slack',
-                    pieceVersion: '~0.2.0',
+                    connectorName: '@wippa/connector-slack',
+                    connectorVersion: '~0.2.0',
                     actionName: 'send_message',
                     input: {},
                     propertySettings: {},
@@ -191,7 +191,7 @@ describe('executeFlowJob', () => {
         })
 
         it('marks run as FAILED and completes the job (OK) when the flow is disabled', async () => {
-            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @wippa/piece-http@1.0.0 is not installed' }
+            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @wippa/connector-http@1.0.0 is not installed' }
             const ctx = makeMockContext({ resolveResult: { kind: 'disabled', failedStep } })
             const data = makeResumeJobData({ executionType: ExecutionType.BEGIN })
 

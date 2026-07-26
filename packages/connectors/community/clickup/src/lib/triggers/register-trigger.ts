@@ -1,10 +1,10 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpRequest,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { callClickupGetTask, clickupCommon } from '../common';
 import { ClickupEventType, ClickupWebhookPayload } from '../common/models';
 import { clickupAuth } from '../auth';

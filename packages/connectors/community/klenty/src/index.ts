@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { addProspectToCampaignAction } from './lib/actions/add-prospect-to-campaign';
 import { createProspectAction } from './lib/actions/create-prospect';
@@ -9,7 +9,7 @@ import { updateProspectAction } from './lib/actions/update-prospect';
 import { klentyAuth } from './lib/auth';
 import { getKlentyBaseUrl } from './lib/common/client';
 
-export const klenty = createPiece({
+export const klenty = createConnector({
   displayName: 'Klenty',
   description:
     'Sales engagement platform for managing prospects and adding them to outreach cadences.',

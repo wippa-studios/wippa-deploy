@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { mindeePredictDocumentAction } from './lib/actions/predict-document';
 
 export const mindeeAuth = PieceAuth.SecretText({
@@ -14,7 +14,7 @@ export const mindeeAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const mindee = createPiece({
+export const mindee = createConnector({
   displayName: 'Mindee',
   description: 'Document automation API',
 

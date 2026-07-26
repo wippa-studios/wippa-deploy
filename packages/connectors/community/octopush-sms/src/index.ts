@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { octopushAuth } from './lib/common/auth';
 import { addContact } from './lib/actions/add-contact';
 import { sendANewSms } from './lib/actions/send-a-new-sms';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const octopushSms = createPiece({
+export const octopushSms = createConnector({
   displayName: 'Octopush SMS',
   auth: octopushAuth,
   minimumSupportedRelease: '0.36.1',

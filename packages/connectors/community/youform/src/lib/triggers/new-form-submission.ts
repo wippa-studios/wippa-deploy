@@ -1,14 +1,14 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { youformAuth } from '../common/auth';
 import { formIdDropdown } from '../common/props';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { BASE_URL } from '../common/constants';
 import { CreateWebhookResponse } from '../common/types';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 const TRIGGER_KEY = 'youform-new-submission-trigger';
 

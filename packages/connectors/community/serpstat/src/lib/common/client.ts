@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 
 export const BASE_URL = 'https://api.serpstat.com/v4';
 

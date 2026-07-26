@@ -1,5 +1,5 @@
-import { TriggerHookContext, TriggerStrategy, SecretTextProperty } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from "@wippa/pieces-common";
+import { TriggerHookContext, TriggerStrategy, SecretTextProperty } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from "@wippa/connectors-common";
 
 interface ActionPayloadProps {
   unique_identifier?: string;

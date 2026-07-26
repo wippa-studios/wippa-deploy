@@ -1,9 +1,9 @@
 import { productboardAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
     TriggerStrategy,
     createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { productboardCommon } from '../common/client';
 
 export const newFeature = createTrigger({

@@ -4,7 +4,7 @@ import {
   HttpResponse,
   QueryParams,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   ShopifyAuth,
   ShopifyCheckout,

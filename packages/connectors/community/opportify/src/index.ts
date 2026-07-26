@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { opportifyAuth } from './lib/common/auth';
 import { analyzeEmailAction } from './lib/actions/analyze-email';
 import { analyzeIpAddressAction } from './lib/actions/analyze-ip-address';
 
-export const opportify = createPiece({
+export const opportify = createConnector({
   displayName: 'Opportify',
   auth: opportifyAuth,
   minimumSupportedRelease: '0.36.1',

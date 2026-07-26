@@ -3,8 +3,8 @@ import {
   PieceAuth,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 const liveMarkdown = `**Live URL:**
 \`\`\`text

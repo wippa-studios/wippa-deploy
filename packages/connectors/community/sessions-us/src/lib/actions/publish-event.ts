@@ -1,7 +1,7 @@
 import { baseUrl, getEvents } from '../common';
 import { sessionAuth } from '../..';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { Property, createAction } from '@wippa/connectors-framework';
 
 export const publishEvent = createAction({
   auth: sessionAuth,

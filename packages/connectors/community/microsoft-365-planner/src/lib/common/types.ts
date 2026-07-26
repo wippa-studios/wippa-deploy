@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 import {
   Group,
   PlannerBucket,

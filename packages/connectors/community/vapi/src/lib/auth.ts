@@ -1,9 +1,9 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const VAPI_BASE_URL = 'https://api.vapi.ai';
 

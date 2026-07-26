@@ -11,16 +11,16 @@ import { usePieceToolsDialogStore } from '../../stores/pieces-tools';
 
 interface PiecesContentProps {
   isPiecesLoading: boolean;
-  pieceMetadata: PieceStepMetadataWithSuggestions[];
+  connectorMetadata: PieceStepMetadataWithSuggestions[];
 }
 
 export const PiecesList: React.FC<PiecesContentProps> = ({
   isPiecesLoading,
-  pieceMetadata,
+  connectorMetadata,
 }) => {
   const { searchQuery, setSearchQuery, handlePieceSelect } =
     usePieceToolsDialogStore();
-  const isEmpty = !isPiecesLoading && pieceMetadata.length === 0;
+  const isEmpty = !isPiecesLoading && connectorMetadata.length === 0;
 
   return (
     <div className="flex flex-col h-full">
@@ -49,7 +49,7 @@ export const PiecesList: React.FC<PiecesContentProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-3 gap-4">
-            {pieceMetadata.map((piece, index) => (
+            {connectorMetadata.map((piece, index) => (
               <div
                 key={index}
                 onClick={() => handlePieceSelect(piece)}

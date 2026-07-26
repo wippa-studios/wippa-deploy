@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { defaultValue } from '../src/lib/actions/default-value';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('defaultValue action', () => {
   test('returns value when not empty', async () => {

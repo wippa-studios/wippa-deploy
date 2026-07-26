@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export const OAuthApp = z.object({
     ...BaseModelSchema,
-    pieceName: z.string(),
+    connectorName: z.string(),
     platformId: z.string(),
     clientId: z.string(),
 })
@@ -11,7 +11,7 @@ export const OAuthApp = z.object({
 export type OAuthApp = z.infer<typeof OAuthApp>
 
 export const UpsertOAuth2AppRequest = z.object({
-    pieceName: z.string(),
+    connectorName: z.string(),
     clientId: z.string(),
     clientSecret: z.string(),
 })

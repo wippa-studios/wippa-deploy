@@ -1,5 +1,5 @@
-import { HttpMethod, QueryParams } from '@wippa/pieces-common';
-import { DropdownOption, Property } from '@wippa/pieces-framework';
+import { HttpMethod, QueryParams } from '@wippa/connectors-common';
+import { DropdownOption, Property } from '@wippa/connectors-framework';
 import { makeRequest } from './client';
 import { instantlyAiAuth } from '../auth';
 

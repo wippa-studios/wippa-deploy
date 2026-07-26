@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
 import { cursorAuth } from '../common/auth';
 import crypto from 'crypto';
 

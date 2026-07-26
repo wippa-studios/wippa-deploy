@@ -1,6 +1,6 @@
 import {logsnagAuth} from "../../";
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
 
 // since LogSnag doesn't expose an endpoint to GET data 
 // by polling or an endpoint to register webhooks,

@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpMessageBody } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, HttpMessageBody } from '@wippa/connectors-common';
 
 export const OMNISEND_API_BASE = 'https://api.omnisend.com/api';
 

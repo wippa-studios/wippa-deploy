@@ -1,6 +1,6 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { phantombusterAuth } from './auth';
 
 export const agentIdDropdown = Property.Dropdown({

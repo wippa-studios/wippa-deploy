@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
-} from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { analyzeSentiment } from './lib/actions/analyze-sentiment';
 import { askAssistant } from './lib/actions/ask-assistant';
 import { askOpenAI } from './lib/actions/send-prompt';
@@ -24,7 +24,7 @@ import { visionPrompt } from './lib/actions/vision-prompt';
 import { openaiAuth } from './lib/auth';
 import { baseUrl } from './lib/common/common';
 
-export const openai = createPiece({
+export const openai = createConnector({
   displayName: 'OpenAI',
   description: 'Use the many tools ChatGPT has to offer.',
   minimumSupportedRelease: '0.63.0',

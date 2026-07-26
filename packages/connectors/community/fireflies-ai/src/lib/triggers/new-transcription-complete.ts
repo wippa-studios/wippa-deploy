@@ -1,6 +1,6 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { firefliesAiAuth } from '../auth';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { getTranscript } from '../common/queries';
 import { BASE_URL } from '../common';
 

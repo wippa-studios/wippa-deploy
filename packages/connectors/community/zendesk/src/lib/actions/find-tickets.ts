@@ -1,11 +1,11 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { zendeskAuth } from '../..';
-import { isEmpty } from '@wippa/pieces-framework';
+import { isEmpty } from '@wippa/connectors-framework';
 import dayjs from 'dayjs'
 
 export const findTicketsAction = createAction({

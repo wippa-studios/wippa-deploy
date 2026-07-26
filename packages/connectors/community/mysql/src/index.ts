@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import actions from './lib/actions';
 
 export const mysqlAuth = PieceAuth.CustomAuth({
@@ -38,7 +38,7 @@ export const mysqlAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const mysql = createPiece({
+export const mysql = createConnector({
   displayName: 'MySQL',
   description: "The world's most popular open-source database",
 

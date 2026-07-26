@@ -7,7 +7,7 @@ import { createHash } from 'node:crypto'
  * test possible and cheap.
  */
 export type RetrievalDocInput = {
-    pieceDisplayName: string
+    connectorDisplayName: string
     objectDisplayName: string
     objectKind: 'action' | 'trigger'
     /** The raw piece description (fallback). */
@@ -30,7 +30,7 @@ export type RetrievalDocInput = {
 export function buildRetrievalDoc(input: RetrievalDocInput): string {
     const description = (input.aiDescription ?? input.description)?.trim()
     const lines = [
-        `${input.pieceDisplayName} · ${input.objectDisplayName}`,
+        `${input.connectorDisplayName} · ${input.objectDisplayName}`,
         ...(description ? [description] : []),
         `[kind: ${input.objectKind}]`,
     ]

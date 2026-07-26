@@ -1,13 +1,13 @@
-import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, OAuth2Props, PieceAuth, PiecePropValueSchema, Property, ShortTextProperty, StaticPropsValue } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, OAuth2Props, PieceAuth, PiecePropValueSchema, Property, ShortTextProperty, StaticPropsValue } from '@wippa/connectors-framework';
 import {
 	httpClient,
 	HttpMethod,
 	AuthenticationType,
 	HttpRequest,
-} from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
-import { isString } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
+import { isString } from '@wippa/connectors-framework';
 import { JWT, OAuth2Client } from 'google-auth-library';
 import { mapRowsToColumnLabels } from '../triggers/helpers';
 

@@ -1,13 +1,13 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { extractDataFromDocumentAction } from './lib/actions/extract-data-from-document';
 import { uploadDocumentAction } from './lib/actions/upload-document-for-parsing';
 import { airparserApiCall } from './lib/common';
 import { documentParsedTrigger } from './lib/triggers/document-parsed';
 import { airparserAuth } from './lib/auth';
 
-export const airparser = createPiece({
+export const airparser = createConnector({
 	displayName: 'Airparser',
 	description: 'Extract structured data from emails, PDFs, or documents with Airparser.',
 	auth: airparserAuth,

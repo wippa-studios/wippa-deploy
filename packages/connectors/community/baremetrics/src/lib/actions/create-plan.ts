@@ -1,10 +1,10 @@
 import { 
   createAction, 
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { baremetricsApiCall, BaremetricsAuth } from '../common/client';
 import { baremetricsAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const createPlan = createAction({
   name: 'create_plan',

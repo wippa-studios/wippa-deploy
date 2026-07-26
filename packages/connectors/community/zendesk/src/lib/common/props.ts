@@ -1,9 +1,9 @@
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { zendeskAuth } from '../..';
 
 interface ZendeskTicket {

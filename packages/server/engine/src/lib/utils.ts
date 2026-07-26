@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import { inspect } from 'node:util'
 import path from 'path'
 import { formatPieceError, Result, tryCatch } from '@wippa/core-utils'
-import { ConnectionsManager, ContextVersion, RespondHookParams, StopHookParams } from '@wippa/pieces-framework'
+import { ConnectionsManager, ContextVersion, RespondHookParams, StopHookParams } from '@wippa/connectors-framework'
 import { ExecutionError, ExecutionErrorType, RespondResponse } from '@wippa/shared'
 import { createConnectionResolver } from './piece-context/connection-resolver'
 

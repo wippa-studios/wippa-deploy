@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { OAuth2GrantType } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { OAuth2GrantType } from '@wippa/connectors-framework';
 
 export const lightfunnelsAuth = PieceAuth.OAuth2({
   grantType: OAuth2GrantType.AUTHORIZATION_CODE,

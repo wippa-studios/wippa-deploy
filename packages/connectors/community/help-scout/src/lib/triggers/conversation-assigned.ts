@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { helpScoutAuth } from '../common/auth';
 import { helpScoutApiRequest, verifyWebhookSignature } from '../common/api';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import crypto from 'crypto';
 import { mailboxIdDropdown, userIdDropdown } from '../common/props';
 

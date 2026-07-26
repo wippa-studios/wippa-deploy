@@ -116,8 +116,8 @@ function makeFlowVersionWithTwoApprovals(): FlowVersion {
         valid: true,
         settings: {
             input: {},
-            pieceName: '@wippa/piece-approval',
-            pieceVersion: '1.0.0',
+            connectorName: '@wippa/connector-approval',
+            connectorVersion: '1.0.0',
             actionName: 'wait_for_approval',
             propertySettings: {},
         },
@@ -130,8 +130,8 @@ function makeFlowVersionWithTwoApprovals(): FlowVersion {
         valid: true,
         settings: {
             input: {},
-            pieceName: '@wippa/piece-approval',
-            pieceVersion: '1.0.0',
+            connectorName: '@wippa/connector-approval',
+            connectorVersion: '1.0.0',
             actionName: 'wait_for_approval',
             propertySettings: {},
             errorHandlingOptions: {

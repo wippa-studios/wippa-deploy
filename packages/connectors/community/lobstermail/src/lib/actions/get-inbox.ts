@@ -1,9 +1,9 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { lobstermailCommon, inboxIdDropdown } from '../common';
 import { lobstermailAuth } from '../..';
 

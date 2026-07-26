@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { getQuestion } from './lib/actions/get-question';
 import { getQuestionPngPreview } from './lib/actions/get-png-rendering';
 import { getDashboardQuestions } from './lib/actions/get-dashboard';
@@ -11,10 +11,10 @@ import {
   createCustomApiCallAction,
   HttpMethod,
   is_chromium_installed,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { getGraphQuestion } from './lib/actions/get-graph-question';
 import { embedQuestion } from './lib/actions/embed-question';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 const baseProps = {
   baseUrl: Property.ShortText({
@@ -70,7 +70,7 @@ export const metabaseAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const metabase = createPiece({
+export const metabase = createConnector({
   displayName: 'Metabase',
   description: 'The simplest way to ask questions and learn from data',
 

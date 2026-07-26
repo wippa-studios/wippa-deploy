@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { kudosityAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { makeRequest } from '../common/client';
 
 export const addUpdateContact = createAction({

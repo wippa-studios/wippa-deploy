@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/connectors-framework';
 import { AppConnectionWithoutSensitiveData } from '@wippa/shared';
 import { t } from 'i18next';
 import React, { useState } from 'react';

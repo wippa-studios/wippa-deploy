@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { blueskyAuth } from './lib/common/auth';
 import { createPost } from './lib/actions/create-post';
 import { likePost } from './lib/actions/like-post';
@@ -13,7 +13,7 @@ import { newPost } from './lib/triggers/new-post';
 export { blueskyAuth } from './lib/common/auth';
 export { createBlueskyAgent } from './lib/common/client';
 
-export const bluesky = createPiece({
+export const bluesky = createConnector({
   displayName: 'Bluesky',
   auth: blueskyAuth,
   minimumSupportedRelease: '0.36.1',

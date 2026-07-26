@@ -8,7 +8,7 @@ import { join } from 'node:path';
 
 function createActionTemplate(displayName: string, description: string) {
   const camelCase = displayNameToCamelCase(displayName)
-  const actionTemplate = `import { createAction, Property } from '@wippa/pieces-framework';
+  const actionTemplate = `import { createAction, Property } from '@wippa/connectors-framework';
 
 export const ${camelCase} = createAction({
   // auth: check https://www.activepieces.com/docs/developers/piece-reference/authentication,
@@ -31,10 +31,10 @@ const checkIfActionExists = async (actionPath: string) => {
     process.exit(1);
   }
 }
-const createAction = async (pieceName: string, displayActionName: string, actionDescription: string) => {
+const createAction = async (connectorName: string, displayActionName: string, actionDescription: string) => {
   const actionTemplate = createActionTemplate(displayActionName, actionDescription)
   const actionName = displayNameToKebabCase(displayActionName)
-  const pieceFolder = await findPiece(pieceName);
+  const pieceFolder = await findPiece(connectorName);
   assertPieceExists(pieceFolder)
   console.log(chalk.blue(`Piece path: ${pieceFolder}`))
   const actionsFolder = join(pieceFolder, 'src', 'lib', 'actions')
@@ -53,7 +53,7 @@ export const createActionCommand = new Command('create')
     const questions = [
       {
         type: 'input',
-        name: 'pieceName',
+        name: 'connectorName',
         message: 'Enter the piece folder name:',
         placeholder: 'google-drive',
       },
@@ -70,5 +70,5 @@ export const createActionCommand = new Command('create')
     ];
 
     const answers = await inquirer.prompt(questions);
-    createAction(answers.pieceName, answers.actionName, answers.actionDescription);
+    createAction(answers.connectorName, answers.actionName, answers.actionDescription);
   });

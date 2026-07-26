@@ -3,7 +3,7 @@ import {
   createTrigger,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { quickbooksAuth } from '../lib/auth';
 import {
   DedupeStrategy,
@@ -11,7 +11,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { quickbooksCommon, QuickbooksEntityResponse } from '../lib/common';
 import dayjs from 'dayjs';
 import { QuickbooksCustomer } from '../lib/types';

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';
@@ -10,7 +10,7 @@ import { incomingCallCompleted } from './lib/triggers/incoming-call-completed';
 import { incomingMessageReceived } from './lib/triggers/incoming-message-received';
 import { openPhoneAuth } from './lib/auth';
 
-export const openPhone = createPiece({
+export const openPhone = createConnector({
   displayName: 'OpenPhone',
   auth: openPhoneAuth,
   minimumSupportedRelease: '0.36.1',

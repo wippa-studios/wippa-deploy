@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { makeRequest } from '../common/client';
 import { quadernoAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const createInvoice = createAction({
   auth: quadernoAuth,

@@ -8,13 +8,13 @@ import { getAppWebhookUrl, getWebhookUrl } from '../utils/webhook-url'
 
 function getAppWebhookDetails(flowVersion: FlowVersion, publicApiUrl: string, appWebhookSecretsJson: string): { appWebhookUrl?: string, webhookSecret?: string | Record<string, string> } {
     const trigger = flowVersion.trigger as PieceTrigger
-    const pieceName = trigger?.settings?.pieceName
-    if (isNil(pieceName)) {
+    const connectorName = trigger?.settings?.connectorName
+    if (isNil(connectorName)) {
         return {}
     }
     const secrets = parseToJsonIfPossible(appWebhookSecretsJson) as Record<string, { webhookSecret: string | Record<string, string> }> | undefined
-    const webhookSecret = secrets?.[pieceName]?.webhookSecret
-    const pieceUrlName = pieceName.replace('@wippa/piece-', '')
+    const webhookSecret = secrets?.[connectorName]?.webhookSecret
+    const pieceUrlName = connectorName.replace('@wippa/connector-', '')
     return {
         appWebhookUrl: getAppWebhookUrl(publicApiUrl, pieceUrlName),
         webhookSecret,

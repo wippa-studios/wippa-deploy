@@ -2,13 +2,13 @@ import {
   Property,
   DynamicPropsValue,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { bannerbearAuth } from '../auth';
 
 export const bannerbearCreateImageAction = createAction({

@@ -4,8 +4,8 @@ import {
     slackSendMessage,
     textToSectionBlocks,
 } from './utils';
-import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
-import { ExecutionType } from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/connectors-framework';
+import { ExecutionType } from '@wippa/connectors-framework';
 import { ChatPostMessageResponse } from '@slack/web-api';
 import { getBotToken, SlackAuthValue } from './auth-helpers';
 

@@ -18,10 +18,10 @@ export const platformPiecesMutations = {
   }) => {
     const queryClient = useQueryClient();
     return useMutation({
-      mutationFn: async (pieceName: string) => {
-        const newPinnedPieces = pinnedPieces.includes(pieceName)
-          ? pinnedPieces.filter((name) => name !== pieceName)
-          : [...pinnedPieces, pieceName];
+      mutationFn: async (connectorName: string) => {
+        const newPinnedPieces = pinnedPieces.includes(connectorName)
+          ? pinnedPieces.filter((name) => name !== connectorName)
+          : [...pinnedPieces, connectorName];
         await platformApi.update({ pinnedPieces: newPinnedPieces }, platformId);
         await refetch();
       },

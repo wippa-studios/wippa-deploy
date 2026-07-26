@@ -1,7 +1,7 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { fetchCryptoPairPrice } from './lib/actions/fetch-pair-price';
 
-export const binance = createPiece({
+export const binance = createConnector({
   displayName: 'Binance',
   description: 'Fetch the price of a crypto pair from Binance',
   minimumSupportedRelease: '0.30.0',

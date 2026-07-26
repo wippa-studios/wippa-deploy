@@ -1,13 +1,13 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import Odoo from './commom/index';
 import actions from './lib/actions';
 import { odooAuth } from './lib/auth';
 
-export const odoo = createPiece({
+export const odoo = createConnector({
   displayName: 'Odoo',
   description: 'Open source all-in-one management software',
   auth: odooAuth,

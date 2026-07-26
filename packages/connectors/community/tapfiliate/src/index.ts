@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
-} from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { createAffiliateAction } from './lib/actions/create-affiliate';
 import { createConversionAction } from './lib/actions/create-conversion';
@@ -11,7 +11,7 @@ import { listAffiliatesAction } from './lib/actions/list-affiliates';
 import { tapfiliateAuth } from './lib/common/auth';
 import { TAPFILIATE_BASE_URL } from './lib/common/tapfiliate.client';
 
-export const tapfiliate = createPiece({
+export const tapfiliate = createConnector({
   displayName: 'Tapfiliate',
   description: 'Affiliate tracking and conversion management platform.',
   minimumSupportedRelease: '0.30.0',

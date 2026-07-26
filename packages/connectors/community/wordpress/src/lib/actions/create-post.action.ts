@@ -2,13 +2,13 @@ import {
   createAction,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { wordpressCommon, WordPressMedia } from '../common';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import FormData from 'form-data';
 import { wordpressAuth } from '../..';
 

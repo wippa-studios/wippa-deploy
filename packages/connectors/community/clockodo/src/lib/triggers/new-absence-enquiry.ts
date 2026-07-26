@@ -1,9 +1,9 @@
-import { AppConnectionValueForAuthProperty, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { currentYear } from '../common';
 import { ClockodoClient } from '../common/client';
 import { clockodoAuth } from '../auth';

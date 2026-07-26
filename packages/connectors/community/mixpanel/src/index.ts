@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { trackEvent } from './lib/actions/track-event';
 import { mixpanelAuth } from './lib/auth';
 
-export const mixpanel = createPiece({
+export const mixpanel = createConnector({
   displayName: 'Mixpanel',
   description: 'Simple and powerful product analytics that helps everyone make better decisions',
   minimumSupportedRelease: '0.30.0',

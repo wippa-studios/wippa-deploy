@@ -1,5 +1,5 @@
-import { TriggerStrategy, createTrigger, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { TriggerStrategy, createTrigger, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { microsoftToDoAuth } from '../auth';
 import { TodoTaskList } from '@microsoft/microsoft-graph-types';
 import { createTodoClient } from '../common';

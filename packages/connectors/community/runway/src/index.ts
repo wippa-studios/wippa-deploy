@@ -1,13 +1,13 @@
 
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { runwayAuth } from "./lib/common/auth";
 import { generateImageFromText } from "./lib/actions/generate-image-from-text";
 import { generateVideoFromImage } from "./lib/actions/generate-video-from-image";
 import { getTaskDetails } from "./lib/actions/get-task-details";
 import { cancelOrDeleteTask } from "./lib/actions/cancel-or-delete-task";
 
-export const runway = createPiece({
+export const runway = createConnector({
   displayName: "Runway",
   description: "AI-powered content generation platform for creating high-quality images and videos using text prompts",
   auth: runwayAuth,

@@ -1,5 +1,5 @@
-import { HttpError, HttpMethod, httpClient } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { HttpError, HttpMethod, httpClient } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
 import { getChatActionOutputSchema } from '../output-schemas';

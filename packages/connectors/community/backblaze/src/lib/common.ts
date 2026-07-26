@@ -1,4 +1,4 @@
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { S3 } from '@aws-sdk/client-s3';
 
 export function createBackBlazeS3(auth: {

@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { autocallsAuth } from '../..';
 import { baseApiUrl } from '../..';
 import dayjs from 'dayjs';

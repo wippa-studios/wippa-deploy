@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newTicketInView } from './lib/trigger/new-ticket-in-view';
 import { newTicket } from './lib/trigger/new-ticket';
 import { updatedTicket } from './lib/trigger/updated-ticket';
@@ -63,7 +63,7 @@ export const zendeskAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const zendesk = createPiece({
+export const zendesk = createConnector({
   displayName: 'Zendesk',
   description: 'Customer service software and support ticket system',
 

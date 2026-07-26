@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 import { hashiCorpVaultAuth } from '../auth';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 export interface VaultAuthResult {
   token: string;

@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL, cometApiAuth } from './lib/common/auth';
 import { askCometApiAction } from './lib/actions/ask-cometapi';
 
-export const cometapi = createPiece({
+export const cometapi = createConnector({
   displayName: 'CometAPI',
   description:
     'Access multiple AI models through CometAPI - unified interface for GPT, Claude, Gemini, and more.',

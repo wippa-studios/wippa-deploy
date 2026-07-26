@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   OAuth2PropertyValue,
   createTrigger
-} from '@wippa/pieces-framework';
-import { TriggerStrategy } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
 import { excelCommon } from '../common/common';
 import { commonProps } from '../common/props';
 import { getDrivePath, createMSGraphClient } from '../common/helpers';
@@ -12,7 +12,7 @@ import {
   Polling,
   pollingHelper,
   DedupeStrategy
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 interface Worksheet {
   id: string;

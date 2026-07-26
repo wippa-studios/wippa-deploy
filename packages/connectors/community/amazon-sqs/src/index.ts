@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
 import { ListQueuesCommand, SQS } from '@aws-sdk/client-sqs';
 import { sendMessage } from "./lib/actions/send-message";
 
@@ -166,7 +166,7 @@ export const amazonSqsAuth = PieceAuth.CustomAuth({
 });
 
 
-export const awsSqs = createPiece({
+export const awsSqs = createConnector({
   displayName: "Amazon SQS",
   auth: amazonSqsAuth,
   minimumSupportedRelease: '0.30.0',

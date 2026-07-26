@@ -1,4 +1,4 @@
-import { createPiece } from "@wippa/pieces-framework"
+import { createConnector } from "@wippa/connectors-framework"
 import { paperformAuth } from "./lib/common/auth"
 
 import { newPartialFormSubmission } from './lib/triggers/new-partial-form-submission';
@@ -18,11 +18,11 @@ import { updateSpace } from './lib/actions/update-space';
 import { findFormProduct } from './lib/actions/find-form-product';
 import { findForm } from './lib/actions/find-form';
 import { findSpace } from './lib/actions/find-space';
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { paperformCommon } from "./lib/common/client";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const paperform = createPiece({
+export const paperform = createConnector({
   displayName: "Paperform",
   auth: paperformAuth,
   categories:[PieceCategory.FORMS_AND_SURVEYS],

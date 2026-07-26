@@ -15,7 +15,7 @@ import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
 import { FROM_QUERY_PARAM } from '@/lib/navigation-utils';
 
-import { PieceIconList } from '../../pieces/components/piece-icon-list';
+import { ConnectorIconList } from '../../pieces/components/connector-icon-list';
 
 const TemplateViewer = ({ template }: { template: Template }) => {
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ const TemplateViewer = ({ template }: { template: Template }) => {
                 {t('Steps in this flow')}
               </span>
               {template.flows?.[0]?.trigger && (
-                <PieceIconList
+                <ConnectorIconList
                   trigger={template.flows[0].trigger}
                   maxNumberOfIconsToShow={5}
                 />

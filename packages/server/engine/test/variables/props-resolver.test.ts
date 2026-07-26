@@ -1,5 +1,5 @@
 import { formulaEvaluator } from '@wippa/core-formula'
-import { ApFile, LATEST_CONTEXT_VERSION, PieceAuth, Property } from '@wippa/pieces-framework'
+import { ApFile, LATEST_CONTEXT_VERSION, PieceAuth, Property } from '@wippa/connectors-framework'
 import { FlowActionType, FlowTriggerType, GenericStepOutput, PropertyExecutionType, PropertySettings, StepOutputStatus } from '@wippa/shared'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { StepExecutionPath } from '../../src/lib/handler/context/step-execution-path'

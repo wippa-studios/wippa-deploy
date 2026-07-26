@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 import { runQuery } from './lib/actions/run-query';
 import { newRow } from './lib/triggers/new-row';
 import { pgClient } from './lib/common';
@@ -83,7 +83,7 @@ export const postgresAuth = PieceAuth.CustomAuth({
   }
 });
 
-export const postgres = createPiece({
+export const postgres = createConnector({
   displayName: 'Postgres',
   description: "The world's most advanced open-source relational database",
   minimumSupportedRelease: '0.30.0',

@@ -1,21 +1,21 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createTask } from './lib/actions/create-task';
 import { updateTask } from './lib/actions/update-task';
 import { createProject } from './lib/actions/create-project';
 import { getTask } from './lib/actions/get-task';
 import { taskCreated } from './lib/triggers/task-created';
 import { moveTask } from './lib/actions/move-task';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { findTask } from './lib/actions/find-task';
 import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/props';
 import { motionAuth } from './lib/auth';
 
-export const motion = createPiece({
+export const motion = createConnector({
   displayName: 'Motion',
   logoUrl: 'https://cdn.activepieces.com/pieces/motion.png',
   categories: [PieceCategory.PRODUCTIVITY],

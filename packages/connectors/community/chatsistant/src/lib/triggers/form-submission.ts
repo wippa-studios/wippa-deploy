@@ -2,7 +2,7 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { chatsistantAuth } from '../common/auth';
 
 export const formSubmission = createTrigger({

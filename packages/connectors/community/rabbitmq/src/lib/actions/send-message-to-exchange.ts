@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { rabbitmqAuth } from '../auth';
 import { rabbitmqConnect } from '../common';
 

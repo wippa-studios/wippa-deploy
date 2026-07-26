@@ -3,11 +3,11 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { teamleaderCommon } from '../common/client';
 
 export const newCompany = createTrigger({

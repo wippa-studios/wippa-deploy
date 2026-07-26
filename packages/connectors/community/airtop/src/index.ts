@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { createSessionAction } from './lib/actions/create-session';
 import { terminateSessionAction } from './lib/actions/terminate-session';
 import { createNewBrowserWindowAction } from './lib/actions/create-new-browser-window';
@@ -14,7 +14,7 @@ import { hoverElementAction } from './lib/actions/hover-on-an-element';
 import { airtopAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 
-export const airtop = createPiece({
+export const airtop = createConnector({
 	displayName: 'Airtop',
 	auth: airtopAuth,
 	minimumSupportedRelease: '0.36.1',

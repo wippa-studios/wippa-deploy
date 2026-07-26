@@ -2,7 +2,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { BettermodeAuthType } from './auth';
 
 type KeyValuePair = { [key: string]: string | boolean | object | undefined };

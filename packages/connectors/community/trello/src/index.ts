@@ -3,9 +3,9 @@ import {
   HttpRequest,
   createCustomApiCallAction,
   httpClient,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createCard } from './lib/actions/card/create-card';
 import { getCard } from './lib/actions/card/get-card';
 import { updateCard } from './lib/actions/card/update-card';
@@ -72,7 +72,7 @@ export const trelloAuth = PieceAuth.BasicAuth({
   },
 });
 
-export const trello = createPiece({
+export const trello = createConnector({
   displayName: 'Trello',
   description: 'Project management tool for teams',
   minimumSupportedRelease: '0.85.5',

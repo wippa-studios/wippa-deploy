@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { folkAuth } from './auth';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 export const folkClient = {
   baseUrl: 'https://api.folk.app',

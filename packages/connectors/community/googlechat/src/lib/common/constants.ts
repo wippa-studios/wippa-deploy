@@ -1,4 +1,4 @@
-import { PieceAuth } from "@wippa/pieces-framework";
+import { PieceAuth } from "@wippa/connectors-framework";
 
 export const googleChatApiAuth = PieceAuth.OAuth2({
   authUrl: 'https://accounts.google.com/o/oauth2/auth',

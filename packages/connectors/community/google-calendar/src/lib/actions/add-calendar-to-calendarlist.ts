@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { calendar as googleCalendar } from '@googleapis/calendar';
 import { googleCalendarCommon, googleCalendarAuth, createGoogleClient } from '../common';
 

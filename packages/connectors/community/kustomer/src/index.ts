@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { createConversationAction } from './lib/actions/create-conversation';
 import { createCustomerAction } from './lib/actions/create-customer';
@@ -10,7 +10,7 @@ import { updateConversationAction } from './lib/actions/update-conversation';
 import { kustomerAuth } from './lib/common/auth';
 import { KUSTOMER_API_BASE_URL, kustomerClient } from './lib/common/client';
 
-export const kustomer = createPiece({
+export const kustomer = createConnector({
   displayName: 'Kustomer',
   description:
     'Create and manage Kustomer customers, conversations, and custom objects.',

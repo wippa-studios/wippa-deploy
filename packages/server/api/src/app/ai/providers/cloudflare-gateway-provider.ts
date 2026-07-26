@@ -1,6 +1,6 @@
 import { createGoogleGenerativeAI } from '@ai-sdk/google'
 import { isNil } from '@wippa/core-utils'
-import { httpClient, HttpMethod } from '@wippa/pieces-common'
+import { httpClient, HttpMethod } from '@wippa/connectors-common'
 import { AIProviderModel, AIProviderModelType, CloudflareGatewayProviderAuthConfig, CloudflareGatewayProviderConfig, splitCloudflareGatewayModelId } from '@wippa/shared'
 import { generateText } from 'ai'
 import { FastifyBaseLogger } from 'fastify'

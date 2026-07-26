@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { fragmentAuth } from './lib/common';
 import { createTask } from './lib/actions/create-task';
 import { updateTask } from './lib/actions/update-task';
@@ -9,7 +9,7 @@ import { customApiCall } from './lib/actions/custom-api-call';
 import { newTaskTrigger } from './lib/triggers/new-task';
 import { taskUpdatedTrigger } from './lib/triggers/task-updated';
 
-export const fragment = createPiece({
+export const fragment = createConnector({
   displayName: 'Fragment',
   auth: fragmentAuth,
   minimumSupportedRelease: '0.36.1',

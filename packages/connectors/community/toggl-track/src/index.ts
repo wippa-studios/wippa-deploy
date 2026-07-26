@@ -1,6 +1,6 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { createClient } from './lib/actions/create-client';
 import { createProject } from './lib/actions/create-project';
 import { createTask } from './lib/actions/create-task';
@@ -56,7 +56,7 @@ export const togglTrackAuth = PieceAuth.SecretText({
   validate: validateAuth,
 });
 
-export const togglTrack = createPiece({
+export const togglTrack = createConnector({
   displayName: 'Toggl Track',
   description: 'Toggl Track is a time tracking application that allows users to track their daily activities across different platforms.',
   auth: togglTrackAuth,

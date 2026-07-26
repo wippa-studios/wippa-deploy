@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { convertAttachment, parseStream, zohoMailApiCall } from '../common';
 import { zohoMailAuth } from '../common/auth';
 import { accountId, folderId, messageId } from '../common/props';

@@ -1,6 +1,6 @@
-import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/connectors-framework';
 import { todoistAuth } from '../..';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { todoistRestClient } from '../common/client/rest-client';
 
 export const todoistMarkTaskCompletedAction = createAction({

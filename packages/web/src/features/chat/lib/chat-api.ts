@@ -114,13 +114,13 @@ async function submitMessageFeedback({
 
 async function getPickerConnections({
   conversationId,
-  pieceName,
+  connectorName,
 }: {
   conversationId: string;
-  pieceName: string;
+  connectorName: string;
 }): Promise<ConnectionOption[]> {
   return api.get(`/v1/chat/conversations/${conversationId}/connections`, {
-    pieceName,
+    connectorName,
   });
 }
 

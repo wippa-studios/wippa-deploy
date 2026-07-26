@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const markdownDescription = `
 To use Fireflies.ai, you need to get an API key:

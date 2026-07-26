@@ -1,8 +1,8 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { jiraDataCenterAuth } from '../../auth';
 import { issueIdOrKeyProp, issueLinkTypeIdProp } from '../common/props';
-import { isNil } from '@wippa/pieces-framework';
-import { HttpError, HttpMethod } from '@wippa/pieces-common';
+import { isNil } from '@wippa/connectors-framework';
+import { HttpError, HttpMethod } from '@wippa/connectors-common';
 import { jiraApiCall } from '../common';
 
 export const linkIssuesAction = createAction({

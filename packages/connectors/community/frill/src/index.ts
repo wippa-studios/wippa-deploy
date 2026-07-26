@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { frillAuth } from './lib/auth';
 import { createIdea } from './lib/actions/create-idea';
@@ -14,7 +14,7 @@ import { getComments } from './lib/actions/get-comments';
 import { newIdeaTrigger } from './lib/triggers/new-idea';
 import { newCommentTrigger } from './lib/triggers/new-comment';
 
-export const frill = createPiece({
+export const frill = createConnector({
   displayName: 'Frill',
   description: 'Collect feedback, manage ideas, and publish announcements with Frill.',
   minimumSupportedRelease: '0.36.1',

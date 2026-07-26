@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { outsetaAuth } from '../auth';
 import { OutsetaClient } from '../common/client';
 

@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import z from 'zod';
 import { docsbotAuth, docsbotCommon } from '../common';
 import { createSourceParams } from '../common/types';

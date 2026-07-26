@@ -5,13 +5,13 @@ import {
   StaticPropsValue,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { googleTasksAuth } from '../auth';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { getTasks, googleTasksCommon } from '../common';
 
 const props = {

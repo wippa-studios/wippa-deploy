@@ -32,7 +32,7 @@ describe('flow waitpoint response propagation', () => {
 
         const action = buildPieceAction({
             name: 'http',
-            pieceName: '@wippa/piece-webhook',
+            connectorName: '@wippa/connector-webhook',
             actionName: 'return_response_and_wait_for_next_webhook',
             input: {
                 responseType: 'json',
@@ -48,7 +48,7 @@ describe('flow waitpoint response propagation', () => {
             action,
             executionState: FlowExecutorContext.empty(),
             constants: generateMockEngineConstants({
-                triggerPieceName: '@wippa/piece-webhook',
+                triggerPieceName: '@wippa/connector-webhook',
                 workerHandlerId: 'test-handler-id',
                 httpRequestId: 'test-request-id',
             }),
@@ -76,7 +76,7 @@ describe('flow waitpoint response propagation', () => {
     it('should not call sendFlowResponse when triggerPieceName does not match', async () => {
         const action = buildPieceAction({
             name: 'http',
-            pieceName: '@wippa/piece-webhook',
+            connectorName: '@wippa/connector-webhook',
             actionName: 'return_response_and_wait_for_next_webhook',
             input: {
                 responseType: 'json',

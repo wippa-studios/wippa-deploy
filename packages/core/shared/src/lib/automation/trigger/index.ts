@@ -48,8 +48,8 @@ export const TriggerSource = z.object({
     triggerName: z.string(),
     schedule: Nullable(ScheduleOptions),
     flowVersionId: z.string(),
-    pieceName: z.string(),
-    pieceVersion: z.string(),
+    connectorName: z.string(),
+    connectorVersion: z.string(),
     deleted: Nullable(z.string()),
     simulate: z.boolean(),
 })

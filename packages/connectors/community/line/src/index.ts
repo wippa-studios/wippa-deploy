@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { pushMessage } from './lib/actions/push-message';
 import { newMessage } from './lib/trigger/new-message';
 
@@ -9,7 +9,7 @@ export const lineAuth2 = PieceAuth.SecretText({
   required: true,
 });
 
-export const line = createPiece({
+export const line = createConnector({
   displayName: 'Line Bot',
   description: 'Build chatbots for LINE',
 

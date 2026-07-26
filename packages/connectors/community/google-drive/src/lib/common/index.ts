@@ -3,8 +3,8 @@ import {
   HttpMethod,
   AuthenticationType,
   HttpRequest,
-} from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { drive as googleDrive } from '@googleapis/drive';
 import { googleDriveAuth, GoogleDriveAuthValue, getAccessToken, createGoogleClient } from '../auth';

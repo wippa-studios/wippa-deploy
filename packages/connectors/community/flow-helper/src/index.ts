@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { getRunId } from "./lib/actions/get-run-id";
 import { failFlow } from "./lib/actions/fail-flow";
 import { stopFlow } from "./lib/actions/stop-flow";
 
-export const flowHelper = createPiece({
+export const flowHelper = createConnector({
   displayName: "Flow Helper",
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.36.1',

@@ -4,7 +4,7 @@ import {
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { makeClient } from './client';
 import { ACTION_ENTITY_DROPDOWN_OPTIONS } from './constants';
 import { customersEntityProps } from './props/customers.entity';

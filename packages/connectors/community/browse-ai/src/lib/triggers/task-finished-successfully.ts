@@ -1,6 +1,6 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { browseAiAuth } from '../common/auth';
 import { browseAiApiCall } from '../common/client';
 import { robotIdDropdown } from '../common/props';

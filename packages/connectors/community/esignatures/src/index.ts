@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { esignaturesAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createContract } from './lib/actions/create-contract';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const esignatures = createPiece({
+export const esignatures = createConnector({
   displayName: 'eSignatures',
   auth: esignaturesAuth,
   minimumSupportedRelease: '0.36.1',

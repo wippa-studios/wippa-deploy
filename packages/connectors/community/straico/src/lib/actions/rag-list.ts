@@ -1,10 +1,10 @@
 import { straicoAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { baseUrlv0 } from '../common/common';
 
 export const listRags = createAction({

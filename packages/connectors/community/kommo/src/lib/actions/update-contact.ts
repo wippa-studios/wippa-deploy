@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { kommoAuth } from '../auth';
 import { makeRequest } from '../common';
 import { contactDropdown, userDropdown } from '../common/props';

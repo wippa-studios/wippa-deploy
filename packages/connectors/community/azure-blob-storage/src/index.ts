@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { listContainers } from './lib/actions/list-containers';
 import { listBlobs } from './lib/actions/list-blobs';
 import { createBlob } from './lib/actions/create-blob';
@@ -15,7 +15,7 @@ import { deleteContainer } from './lib/actions/delete-container';
 import { BlobServiceClient } from '@azure/storage-blob';
 import { azureBlobStorageAuth } from './lib/auth';
 
-export const azureBlobStorage = createPiece({
+export const azureBlobStorage = createConnector({
   displayName: 'Azure Blob Storage',
   auth: azureBlobStorageAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
 	areSheetIdsValid,
 	googleSheetsCommon,
@@ -7,7 +7,7 @@ import {
 } from '../common/common';
 import { googleSheetsAuth } from '../common/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 import { columnNameProp, commonProps } from '../common/props';
 import { findRowsActionOutputSchema } from '../output-schemas';
 

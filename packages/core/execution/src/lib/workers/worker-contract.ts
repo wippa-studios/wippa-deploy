@@ -62,7 +62,7 @@ export type UploadFlowBundleRequest = {
 
 export type RecordTriggerRunRequest = {
     platformId: string
-    pieceName: string
+    connectorName: string
     status: TriggerRunStatus
 }
 
@@ -73,7 +73,7 @@ export type WorkerToApiContract = {
     submitPayloads(input: SubmitPayloadsRequest): Promise<FlowRun[]>
     savePayloads(input: SavePayloadRequest): Promise<void>
     getFlowVersion(input: GetFlowVersionForWorkerRequest): Promise<FlowVersion | null>
-    getPiece(input: GetPieceRequest): Promise<unknown>
+    getConnector(input: GetPieceRequest): Promise<unknown>
     getPrewarmData(input: PrewarmDataRequest): Promise<PrewarmDataResponse>
     getPieceArchive(input: { archiveId: string }): Promise<Buffer>
     getFlowBundle(input: GetFlowBundleRequest): Promise<GetFlowBundleResponse | null>

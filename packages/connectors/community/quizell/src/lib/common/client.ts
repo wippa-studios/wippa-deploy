@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@wippa/connectors-common';
 
 const BASE_URL = 'https://api.quizell.com/api/v1';
 

@@ -1,6 +1,6 @@
 import { hubspotAuth } from '../auth';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 export const removeEmailSubscriptionAction = createAction({
 	auth: hubspotAuth,

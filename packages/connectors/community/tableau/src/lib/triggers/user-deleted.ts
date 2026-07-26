@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { tableauAuth } from '../auth';
 import { createWebhook, deleteWebhook, WebhookData } from '../common';
 

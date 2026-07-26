@@ -1,11 +1,11 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { billplzAuth } from "./lib/common/auth";
 import { createBill } from "./lib/actions/create-bill";
 import { getBill } from "./lib/actions/get-bill";
 import { getCollectionsTrigger } from "./lib/triggers/get-collections.trigger";
 
-    export const billplz = createPiece({
+    export const billplz = createConnector({
       displayName: "Billplz",
       description: "Create and manage bills and collections with Billplz API",
       auth: billplzAuth,

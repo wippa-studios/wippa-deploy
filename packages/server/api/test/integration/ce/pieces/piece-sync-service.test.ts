@@ -1,6 +1,6 @@
 import {
     PackageType,
-    PieceType,
+    ConnectorType,
 } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
@@ -29,7 +29,7 @@ describe('Piece Metadata Create', () => {
         const service = pieceMetadataService(mockLog)
 
         await service.create({
-            pieceMetadata: {
+            connectorMetadata: {
                 name: 'piece-a',
                 displayName: 'Piece A',
                 version: '1.0.0',
@@ -41,7 +41,7 @@ describe('Piece Metadata Create', () => {
                 logoUrl: 'https://example.com/logo.png',
             },
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
             publishCacheRefresh: false,
         })
 
@@ -55,7 +55,7 @@ describe('Piece Metadata Create', () => {
         const service = pieceMetadataService(mockLog)
 
         await service.create({
-            pieceMetadata: {
+            connectorMetadata: {
                 name: 'piece-dup',
                 displayName: 'Piece Dup',
                 version: '1.0.0',
@@ -67,12 +67,12 @@ describe('Piece Metadata Create', () => {
                 logoUrl: 'https://example.com/logo.png',
             },
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
             publishCacheRefresh: false,
         })
 
         await expect(service.create({
-            pieceMetadata: {
+            connectorMetadata: {
                 name: 'piece-dup',
                 displayName: 'Piece Dup',
                 version: '1.0.0',
@@ -84,7 +84,7 @@ describe('Piece Metadata Create', () => {
                 logoUrl: 'https://example.com/logo.png',
             },
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
             publishCacheRefresh: false,
         })).rejects.toThrow()
     })
@@ -93,7 +93,7 @@ describe('Piece Metadata Create', () => {
         const service = pieceMetadataService(mockLog)
 
         await service.create({
-            pieceMetadata: {
+            connectorMetadata: {
                 name: 'delete-me',
                 displayName: 'Delete Me',
                 version: '1.0.0',
@@ -105,12 +105,12 @@ describe('Piece Metadata Create', () => {
                 logoUrl: 'https://example.com/logo.png',
             },
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
             publishCacheRefresh: false,
         })
 
         await service.create({
-            pieceMetadata: {
+            connectorMetadata: {
                 name: 'keep-me',
                 displayName: 'Keep Me',
                 version: '1.0.0',
@@ -122,7 +122,7 @@ describe('Piece Metadata Create', () => {
                 logoUrl: 'https://example.com/logo.png',
             },
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
             publishCacheRefresh: false,
         })
 

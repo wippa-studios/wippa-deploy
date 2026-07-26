@@ -7,7 +7,7 @@ import { bundlePieceUtils } from './bundle-piece-utils'
 function copyPackageJson({ piecePath, distPath }: PieceDistPaths): void {
     const srcPackageJson = join(piecePath, 'package.json')
     if (!existsSync(srcPackageJson)) {
-        throw new Error(`[preparePiece] no package.json at ${srcPackageJson}`)
+        throw new Error(`[prepareConnector] no package.json at ${srcPackageJson}`)
     }
     copyFileSync(srcPackageJson, join(distPath, 'package.json'))
 }
@@ -31,7 +31,7 @@ async function preparePieceDistForPublish(piecePath: string): Promise<void> {
     const distPath = join(piecePath, 'dist')
 
     if (!existsSync(distPath)) {
-        throw new Error(`[preparePiece] no dist output at ${distPath} for ${piecePath}`)
+        throw new Error(`[prepareConnector] no dist output at ${distPath} for ${piecePath}`)
     }
 
     const repoRoot = findRepoRoot(piecePath)
@@ -39,14 +39,14 @@ async function preparePieceDistForPublish(piecePath: string): Promise<void> {
     copyPackageJson(paths)
     copyI18nAssets(paths)
 
-    const { bundleBytes, rawBytes, external } = await bundlePieceUtils.bundlePiece({ ...paths, repoRoot })
+    const { bundleBytes, rawBytes, external } = await bundlePieceUtils.bundleConnector({ ...paths, repoRoot })
 
     rewriteManifestForBundle({ distPath, external, repoRoot })
     pruneDistToPublishedFiles({ distPath })
 
     const ratio = rawBytes > 0 ? (rawBytes / bundleBytes).toFixed(1) : '—'
     const extNote = external.length ? ` external=[${external.join(', ')}]` : ''
-    console.info(`[preparePiece] bundled ${piecePath} → ${(bundleBytes / 1024).toFixed(0)} KB (${ratio}x smaller than ${(rawBytes / 1024).toFixed(0)} KB raw inputs)${extNote}`)
+    console.info(`[prepareConnector] bundled ${piecePath} → ${(bundleBytes / 1024).toFixed(0)} KB (${ratio}x smaller than ${(rawBytes / 1024).toFixed(0)} KB raw inputs)${extNote}`)
 }
 
 // The published artifact inlines @wippa/* workspace code AND third-party deps into the
@@ -64,7 +64,7 @@ function rewriteManifestForBundle({ distPath, external, repoRoot }: { distPath: 
     for (const dep of external) {
         const version = resolvedDeps[dep] ?? resolveInstalledVersion({ dep, repoRoot })
         if (version === undefined) {
-            throw new Error(`[preparePiece] external dependency "${dep}" has no resolvable version (not a direct dependency and not found under node_modules); publishing it would crash at runtime with a missing module`)
+            throw new Error(`[prepareConnector] external dependency "${dep}" has no resolvable version (not a direct dependency and not found under node_modules); publishing it would crash at runtime with a missing module`)
         }
         externalDeps[dep] = version
     }

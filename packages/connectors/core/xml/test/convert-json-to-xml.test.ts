@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { convertJsonToXml } from '../src/lib/actions/convert-json-to-xml';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('convertJsonToXml', () => {
   test('converts simple object to XML', async () => {

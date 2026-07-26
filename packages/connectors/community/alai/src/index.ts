@@ -1,14 +1,14 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { alaiAuth } from './lib/common/auth';
 import { generatePresentation } from './lib/actions/generate-presentation';
 import { getGeneration } from './lib/actions/get-generation';
 import { exportPresentation } from './lib/actions/export-presentation';
 import { addSlide } from './lib/actions/add-slide';
 import { deletePresentation } from './lib/actions/delete-presentation';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const alai = createPiece({
+export const alai = createConnector({
   displayName: 'Alai',
   auth: alaiAuth,
   minimumSupportedRelease: '0.36.1',

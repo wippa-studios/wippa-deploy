@@ -1,7 +1,7 @@
 
 
-import { createAction, Property, DynamicPropsValue, PieceAuth } from "@wippa/pieces-framework";
-import { httpClient, HttpMethod } from "@wippa/pieces-common";
+import { createAction, Property, DynamicPropsValue, PieceAuth } from "@wippa/connectors-framework";
+import { httpClient, HttpMethod } from "@wippa/connectors-common";
 import { uscreenAuth } from "../common/auth";
 import { uscreenApiUrl, UscreenClient } from "../common/client"; 
 

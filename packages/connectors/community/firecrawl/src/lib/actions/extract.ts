@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, pollingHelper } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, pollingHelper } from '@wippa/connectors-common';
 import { firecrawlAuth } from '../auth';
 import { forJsonOutputFormat, polling, FIRECRAWL_API_BASE_URL } from '../common/common';
 

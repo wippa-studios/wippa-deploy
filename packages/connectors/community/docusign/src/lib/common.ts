@@ -1,5 +1,5 @@
 import { ApiClient } from 'docusign-esign';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { docusignAuth } from './auth';
 
 function normalizePrivateKey(key: string): string {

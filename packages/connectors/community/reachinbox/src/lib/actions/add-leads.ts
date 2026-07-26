@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   fetchCampaigns,
   addLeadsToCampaign,
@@ -6,7 +6,7 @@ import {
 } from '../common/index';
 import { ReachinboxAuth } from '../..';
 import { reachinbox } from '../..';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 // Define the structure for custom variables
 interface CustomVariable {

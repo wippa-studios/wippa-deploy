@@ -1,9 +1,9 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@wippa/pieces-framework";
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@wippa/connectors-framework";
 import { fellowAuth, getBaseUrl } from "../common/auth";
-import { DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from "@wippa/pieces-common";
+import { DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from "@wippa/connectors-common";
 import dayjs from 'dayjs';
 import { ListRecordingsResponse } from "../common/types";
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof fellowAuth>, Record<string, never>> = {
     strategy: DedupeStrategy.TIMEBASED,

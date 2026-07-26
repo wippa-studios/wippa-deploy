@@ -6,7 +6,7 @@ import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
   PropertyType,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   ApFlagId,
   AppConnectionScope,
@@ -100,7 +100,7 @@ function CreateOrEditConnectionSection({
           auth: selectedAuth.authProperty,
           suggestedExternalId: externalId,
           suggestedDisplayName: displayName,
-          pieceName: piece.name,
+          connectorName: piece.name,
           oauth2App: selectedAuth.oauth2App,
           grantType: selectedAuth.grantType,
           redirectUrl: redirectUrl ?? '',
@@ -109,7 +109,7 @@ function CreateOrEditConnectionSection({
         ...(isGlobalConnection ? { scope: AppConnectionScope.PLATFORM } : {}),
         projectIds: reconnectConnection?.projectIds ?? [],
         preSelectForNewProjects: false,
-        pieceVersion: piece.version,
+        connectorVersion: piece.version,
       },
     },
     mode: 'onChange',
@@ -388,7 +388,7 @@ function CreateOrEditConnectionDialogContent(
       )}
       {showMultiAuthList && hasMultipleAuth && piece.auth && selectedAuth && (
         <MutliAuthList
-          pieceName={piece.name}
+          connectorName={piece.name}
           piecesOAuth2AppsMap={props.piecesOAuth2AppsMap}
           selectedItem={selectedAuth}
           pieceAuth={Array.isArray(piece.auth) ? piece.auth : [piece.auth]}
@@ -522,7 +522,7 @@ function getInitiallySelectedAuthListItem(
   auth: PieceAuthProperty[] | PieceAuthProperty,
   reconnectConnection: AppConnectionWithoutSensitiveData | null,
   piecesOAuth2AppsMap: PiecesOAuth2AppsMap,
-  pieceName: string,
+  connectorName: string,
 ): AuthListItem | null {
   const authProperty = getInitallySelectedAuthProperty(
     auth,
@@ -537,7 +537,7 @@ function getInitiallySelectedAuthListItem(
       grantType: oauth2Utils.getGrantType(authProperty),
       oauth2App: oauth2Utils.getPredefinedOAuth2App(
         piecesOAuth2AppsMap,
-        pieceName,
+        connectorName,
       ) ?? {
         oauth2Type: AppConnectionType.OAUTH2,
         clientId: null,

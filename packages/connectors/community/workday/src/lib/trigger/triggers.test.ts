@@ -1,4 +1,4 @@
-import { HttpResponse, httpClient } from '@wippa/pieces-common';
+import { HttpResponse, httpClient } from '@wippa/connectors-common';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { newOrUpdatedBusinessObject } from './new-or-updated-business-object';
 import { newOrUpdatedBusinessObjectBatch } from './new-or-updated-business-object-batch';

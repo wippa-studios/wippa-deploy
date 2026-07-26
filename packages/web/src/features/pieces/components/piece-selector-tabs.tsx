@@ -3,8 +3,8 @@ import { Tabs, TabsTrigger, TabsList } from '@/components/ui/tabs';
 import {
   PieceSelectorTabType,
   usePieceSelectorTabs,
-} from '../stores/piece-selector-tabs-provider';
-import { ResolvedPieceSelectorTab } from '../utils/piece-selector-customization';
+} from '../stores/connector-selector-tabs-provider';
+import { ResolvedPieceSelectorTab } from '../utils/connector-selector-customization';
 
 export const PieceSelectorTabs = ({
   tabs,

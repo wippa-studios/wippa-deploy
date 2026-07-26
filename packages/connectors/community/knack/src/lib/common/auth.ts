@@ -1,7 +1,7 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 import { knackApiCall } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export const knackAuth = PieceAuth.CustomAuth({
   props: {

@@ -1,6 +1,6 @@
-import { createAction, Property, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { createAction, Property, PiecePropValueSchema } from '@wippa/connectors-framework';
 import { teamworkAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { teamworkRequest } from '../common/client';
 
 export const createTaskList = createAction({

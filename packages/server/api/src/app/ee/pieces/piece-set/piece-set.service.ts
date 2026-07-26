@@ -1,5 +1,5 @@
 import { ActivepiecesError, apId, ErrorCode, isNil, kebabCase, SeekPage, spreadIfDefined, tryCatch } from '@wippa/core-utils'
-import { CreatePieceSetRequestBody, PieceSet, PieceSetConfig, UpdatePieceSetRequestBody } from '@wippa/shared'
+import { CreatePieceSetRequestBody, ConnectorSet, PieceSetConfig, UpdatePieceSetRequestBody } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EntityManager, In, QueryFailedError } from 'typeorm'
 import { repoFactory } from '../../../core/db/repo-factory'
@@ -8,7 +8,7 @@ import { distributedLock } from '../../../database/redis-connections'
 import { pieceSetConfig } from './piece-set-config'
 import { PieceSetEntity } from './piece-set.entity'
 
-export const pieceSetRepo = repoFactory<PieceSet>(PieceSetEntity)
+export const pieceSetRepo = repoFactory<ConnectorSet>(PieceSetEntity)
 
 const MAX_PIECE_SET_PAGE_SIZE = 100
 
@@ -43,7 +43,7 @@ type DeleteParams = {
 }
 
 type AssignProjectParams = {
-    pieceSet: PieceSet
+    connectorSet: ConnectorSet
     projectId: string
     entityManager?: EntityManager
 }
@@ -56,7 +56,7 @@ type AssignProjectsParams = {
 }
 
 export const pieceSetService = (log: FastifyBaseLogger) => ({
-    async getOrCreateDefaultPieceSet(platformId: string): Promise<PieceSet> {
+    async getOrCreateDefaultPieceSet(platformId: string): Promise<ConnectorSet> {
         const existing = await pieceSetRepo().findOneBy({ platformId, isDefault: true })
         if (!isNil(existing)) return existing
 
@@ -73,7 +73,7 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
         })
     },
 
-    async list({ platformId, cursor, limit = 10 }: ListParams): Promise<SeekPage<PieceSet>> {
+    async list({ platformId, cursor, limit = 10 }: ListParams): Promise<SeekPage<ConnectorSet>> {
         const boundedLimit = Math.min(limit, MAX_PIECE_SET_PAGE_SIZE)
         const qb = pieceSetRepo()
             .createQueryBuilder('ps')
@@ -100,18 +100,18 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
         }
     },
 
-    async getOne({ id, platformId }: GetOneParams): Promise<PieceSet> {
+    async getOne({ id, platformId }: GetOneParams): Promise<ConnectorSet> {
         const set = await pieceSetRepo().findOneBy({ id, platformId })
         if (isNil(set)) {
             throw new ActivepiecesError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
-                params: { entityType: 'PieceSet', entityId: id },
+                params: { entityType: 'ConnectorSet', entityId: id },
             })
         }
         return set
     },
 
-    async create({ platformId, name, key, isDefault = false, generatedForProjectId = null, config }: CreateParams): Promise<PieceSet> {
+    async create({ platformId, name, key, isDefault = false, generatedForProjectId = null, config }: CreateParams): Promise<ConnectorSet> {
         const id = apId()
         const { error } = await tryCatch(() => pieceSetRepo().save({
             id,
@@ -128,7 +128,7 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
         return pieceSetRepo().findOneByOrFail({ id })
     },
 
-    async update({ id, platformId, request }: UpdateParams): Promise<PieceSet> {
+    async update({ id, platformId, request }: UpdateParams): Promise<ConnectorSet> {
         const existing = await this.getOne({ id, platformId })
 
         const updatedConfig = pieceSetConfig.applyUpdate({ current: existing.config, request })
@@ -170,7 +170,7 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
         })
     },
 
-    async duplicate({ id, platformId, name }: GetOneParams & { name: string }): Promise<PieceSet> {
+    async duplicate({ id, platformId, name }: GetOneParams & { name: string }): Promise<ConnectorSet> {
         const original = await this.getOne({ id, platformId })
         return this.create({
             platformId,
@@ -183,12 +183,12 @@ export const pieceSetService = (log: FastifyBaseLogger) => ({
     },
 
     // Takes the fetched set (not an id) so hot paths like managed-authn skip a redundant validation query
-    async assignProject({ pieceSet, projectId, entityManager }: AssignProjectParams): Promise<void> {
+    async assignProject({ connectorSet, projectId, entityManager }: AssignProjectParams): Promise<void> {
         const repo = entityManager
             ? entityManager.getRepository('project')
             : pieceSetRepo().manager.getRepository('project')
 
-        await repo.update({ id: projectId, platformId: pieceSet.platformId }, { pieceSetId: pieceSet.id })
+        await repo.update({ id: projectId, platformId: connectorSet.platformId }, { pieceSetId: connectorSet.id })
     },
 
     async assignProjects({ pieceSetId, platformId, projectIds, entityManager }: AssignProjectsParams): Promise<void> {

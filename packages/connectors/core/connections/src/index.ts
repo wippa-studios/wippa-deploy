@@ -1,8 +1,8 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { readConnection } from './lib/actions/read-connection';
 
-export const connections = createPiece({
+export const connections = createConnector({
   displayName: 'Connections',
   description: 'Read connections dynamically',
   minimumSupportedRelease: '0.36.1',

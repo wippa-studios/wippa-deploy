@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { letmepostAuth } from './lib/common/auth';
 import { publishPost } from './lib/actions/publish-post';
 import { getPost } from './lib/actions/get-post';
@@ -9,7 +9,7 @@ import { listMedia } from './lib/actions/list-media';
 import { newPublishedPost } from './lib/triggers/new-published-post';
 import { postEvent } from './lib/triggers/post-event';
 
-export const letmepost = createPiece({
+export const letmepost = createConnector({
   displayName: 'Letmepost',
   description:
     'Publish and schedule posts to Bluesky, X, LinkedIn, Instagram, Threads, Facebook, Pinterest, and TikTok through one API',

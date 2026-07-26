@@ -1,6 +1,6 @@
-import { HttpMethod, QueryParams, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@wippa/connectors-common';
 import { wedofAuth } from '../../auth';
-import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { createAction, DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 

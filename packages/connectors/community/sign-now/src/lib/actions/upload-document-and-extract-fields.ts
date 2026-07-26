@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import FormData from 'form-data';
 import { signNowAuth, getSignNowBearerToken } from '../common/auth';
 

@@ -1,5 +1,5 @@
 import { ensureTrailingSlash, PlatformId, ProjectId } from '@wippa/core-utils'
-import { ContextVersion } from '@wippa/pieces-framework'
+import { ContextVersion } from '@wippa/connectors-framework'
 import { BeginExecuteFlowOperation, DEFAULT_MCP_DATA, EngineGenericError, ExecutePropsOptions, ExecuteToolOperation, ExecuteTriggerOperation, ExecutionState, ExecutionType, flowStructureUtil, FlowVersionState, Project, ResumeExecuteFlowOperation, ResumePayload, RunEnvironment, StreamStepProgress, TriggerHookType } from '@wippa/shared'
 import { createPropsResolver, PropsResolver } from '../../variables/props-resolver'
 
@@ -121,7 +121,7 @@ export class EngineConstants {
             flowId: input.flowVersion.flowId,
             flowVersionId: input.flowVersion.id,
             flowVersionState: input.flowVersion.state,
-            triggerPieceName: input.flowVersion.trigger.settings.pieceName,
+            triggerPieceName: input.flowVersion.trigger.settings.connectorName,
             flowRunId: input.flowRunId,
             publicApiUrl: input.publicApiUrl,
             internalApiUrl: input.internalApiUrl,
@@ -165,12 +165,12 @@ export class EngineConstants {
         })
     }
 
-    public static fromExecutePropertyInput(input: Omit<ExecutePropsOptions, 'piece'> & { pieceName: string, pieceVersion: string }): EngineConstants {
+    public static fromExecutePropertyInput(input: Omit<ExecutePropsOptions, 'piece'> & { connectorName: string, connectorVersion: string }): EngineConstants {
         return new EngineConstants({
             flowId: input.flowVersion?.flowId ?? DEFAULT_MCP_DATA.flowId,
             flowVersionId: input.flowVersion?.id ?? DEFAULT_MCP_DATA.flowVersionId,
             flowVersionState: input.flowVersion?.state ?? DEFAULT_MCP_DATA.flowVersionState,
-            triggerPieceName: input.flowVersion?.trigger?.settings.pieceName ?? DEFAULT_MCP_DATA.triggerPieceName,
+            triggerPieceName: input.flowVersion?.trigger?.settings.connectorName ?? DEFAULT_MCP_DATA.triggerPieceName,
             flowRunId: DEFAULT_EXECUTE_PROPERTY,
             publicApiUrl: input.publicApiUrl,
             internalApiUrl: ensureTrailingSlash(input.internalApiUrl),
@@ -194,7 +194,7 @@ export class EngineConstants {
             flowId: input.flowVersion.flowId,
             flowVersionId: input.flowVersion.id,
             flowVersionState: input.flowVersion.state,
-            triggerPieceName: input.flowVersion.trigger.settings.pieceName,
+            triggerPieceName: input.flowVersion.trigger.settings.connectorName,
             flowRunId: DEFAULT_TRIGGER_EXECUTION,
             publicApiUrl: input.publicApiUrl,
             internalApiUrl: ensureTrailingSlash(input.internalApiUrl),

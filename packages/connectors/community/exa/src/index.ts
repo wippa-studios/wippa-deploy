@@ -1,16 +1,16 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getContentsAction } from './lib/actions/get-contents';
 import { generateAnswerAction } from './lib/actions/generate-answer';
 import { performSearchAction } from './lib/actions/perform-search';
 import { findSimilarLinksAction } from './lib/actions/find-similar-links';
-import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
+import { createCustomApiCallAction, HttpMethod } from '@wippa/connectors-common';
 import { makeRequest } from './lib/common';
 import { exaAuth } from './lib/auth';
 
 const markdownDescription = `Obtain your API key from [Dashboard Setting](https://dashboard.exa.ai/api-keys).`;
 
-export const exa = createPiece({
+export const exa = createConnector({
   displayName: 'Exa',
   description: 'AI-powered search and content extraction from the web.',
   auth: exaAuth,

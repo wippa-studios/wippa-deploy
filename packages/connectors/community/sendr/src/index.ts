@@ -1,6 +1,6 @@
-﻿import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+﻿import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendrAuth } from './lib/auth';
 import { BASE_URL } from './lib/common';
 
@@ -30,7 +30,7 @@ import { pageRenderUpdated } from './lib/triggers/page-render-updated';
 import { contactPageEngagementCreated } from './lib/triggers/contact-page-engagement-created';
 import { contactPageEngagementUpdated } from './lib/triggers/contact-page-engagement-updated';
 
-export const sendr = createPiece({
+export const sendr = createConnector({
   displayName: 'Sendr',
   description: 'Create personalized landing pages, dynamic audio, video, and manage campaigns with Sendr.',
   minimumSupportedRelease: '0.36.1',

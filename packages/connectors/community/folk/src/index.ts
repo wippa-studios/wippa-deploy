@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { folkAuth } from './lib/common/auth';
 import { companyAdded } from './lib/triggers/company-added';
 import { companyRemoved } from './lib/triggers/company-removed';
@@ -18,7 +18,7 @@ import { getCompany } from './lib/actions/get-company';
 import { findPerson } from './lib/actions/find-person';
 import { getPerson } from './lib/actions/get-person';
 
-export const folk = createPiece({
+export const folk = createConnector({
   displayName: 'Folk',
   auth: folkAuth,
   minimumSupportedRelease: '0.36.1',

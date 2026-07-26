@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { bexioAuth } from '../auth';
 import { BexioClient } from '../common/client';
 

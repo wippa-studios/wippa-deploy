@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { closeApiCall } from './common/client';
 
 export const closeAuth = PieceAuth.SecretText({

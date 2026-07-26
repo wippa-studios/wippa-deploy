@@ -1,10 +1,10 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { clarifaiAuth } from '../auth';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const clarifaiAskLLM = createAction({
   name: 'ask-llm',

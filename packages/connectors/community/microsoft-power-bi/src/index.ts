@@ -1,15 +1,15 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getMicrosoftCloudFromAuth, getPowerBiBaseUrl } from './lib/common/microsoft-cloud';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createDatasetAction } from './lib/actions/create-dataset';
 import { pushRowsToDatasetTableAction } from './lib/actions/push-rows-to-table';
 import { microsoftPowerBiAuth } from './lib/auth';
 
-export const microsoftPowerBi = createPiece({
+export const microsoftPowerBi = createConnector({
   displayName: 'Microsoft Power BI',
   description: 'Create and manage Power BI datasets and push data to them',
   minimumSupportedRelease: '0.36.1',

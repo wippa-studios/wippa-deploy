@@ -27,9 +27,9 @@ const ReconnectButtonDialog = ({
   hasPermission,
 }: ReconnectButtonDialogProps) => {
   const [open, setOpen] = useState(false);
-  const { pieceModel, isLoading } = piecesHooks.usePiece({
-    name: connection.pieceName,
-    version: connection.pieceVersion,
+  const { connectorModel, isLoading } = piecesHooks.usePiece({
+    name: connection.connectorName,
+    version: connection.connectorVersion,
     enabled: open,
   });
 
@@ -55,11 +55,11 @@ const ReconnectButtonDialog = ({
           )}
         </TooltipContent>
       </Tooltip>
-      {open && !isLoading && pieceModel && (
+      {open && !isLoading && connectorModel && (
         <CreateOrEditConnectionDialog
           reconnectConnection={connection}
           isGlobalConnection={connection.scope === AppConnectionScope.PLATFORM}
-          piece={pieceModel}
+          piece={connectorModel}
           open={open}
           key={`CreateOrEditConnectionDialog-open-${open}`}
           setOpen={(open, connection) => {

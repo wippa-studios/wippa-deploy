@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { chatwootAuth } from '../auth';
 
 export interface ChatwootWebhookSender {

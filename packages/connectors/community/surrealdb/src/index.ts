@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { runQuery } from './lib/actions/run-query';
 import { newRow } from './lib/triggers/new-row';
 import surrealClient from './lib/common';
@@ -56,7 +56,7 @@ export const surrealdbAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const surrealdb = createPiece({
+export const surrealdb = createConnector({
   displayName: 'SurrealDB',
   description: "Multi Model Database",
   minimumSupportedRelease: '0.30.0',

@@ -45,11 +45,11 @@ export const AgentPieceToolComponent = ({
     );
   }, [metadata]);
 
-  const pieceMetadata = piecesMetadata?.find(
-    (p) => p.pieceName === tools[0].pieceMetadata.pieceName,
+  const connectorMetadata = piecesMetadata?.find(
+    (p) => p.connectorName === tools[0].connectorMetadata.connectorName,
   );
 
-  if (!pieceMetadata) {
+  if (!connectorMetadata) {
     return (
       <div className="flex  w-full items-center justify-between px-3 h-12  border-b last:border-0 py-2">
         <div className="flex items-center gap-3">
@@ -68,17 +68,17 @@ export const AgentPieceToolComponent = ({
 
   return (
     <AccordionItem
-      value={pieceMetadata.pieceName}
+      value={connectorMetadata.connectorName}
       className="border-b last:border-0"
     >
       <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-accent transition-all">
         <div className="flex w-full items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded-md bg-muted flex items-center justify-center">
-              {pieceMetadata.logoUrl ? (
+              {connectorMetadata.logoUrl ? (
                 <img
-                  src={pieceMetadata.logoUrl}
-                  alt={pieceMetadata.displayName}
+                  src={connectorMetadata.logoUrl}
+                  alt={connectorMetadata.displayName}
                   className="h-5 w-5 object-contain"
                 />
               ) : (
@@ -87,7 +87,7 @@ export const AgentPieceToolComponent = ({
             </div>
 
             <span className="text-sm font-medium">
-              {pieceMetadata.displayName}
+              {connectorMetadata.displayName}
             </span>
           </div>
         </div>
@@ -95,10 +95,10 @@ export const AgentPieceToolComponent = ({
       <AccordionContent className="px-4 py-2">
         <div className="flex flex-wrap gap-2">
           {tools.map((tool) => {
-            const toolName = pieceMetadata.suggestedActions?.find(
+            const toolName = connectorMetadata.suggestedActions?.find(
               (action) =>
                 mcpToolNameUtils.createPieceToolName(
-                  pieceMetadata.pieceName,
+                  connectorMetadata.connectorName,
                   action.name,
                 ) === tool.toolName,
             )?.displayName;
@@ -152,7 +152,7 @@ export const AgentPieceToolComponent = ({
           onClick={() =>
             openAddPieceToolDialog({
               page: 'actions-list',
-              piece: pieceMetadata,
+              piece: connectorMetadata,
             })
           }
         >

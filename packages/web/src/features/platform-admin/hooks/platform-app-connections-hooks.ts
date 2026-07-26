@@ -33,7 +33,7 @@ export const platformAppConnectionsQueries = {
           cursor: cursor ?? undefined,
           limit: limit ? parseInt(limit) : undefined,
           displayName: searchParams.get('displayName') ?? undefined,
-          pieceName: searchParams.get('pieceName') ?? undefined,
+          connectorName: searchParams.get('connectorName') ?? undefined,
           status: status.length > 0 ? status : undefined,
           projectIds: projectIds.length > 0 ? projectIds : undefined,
           ownerIds: ownerIds.length > 0 ? ownerIds : undefined,

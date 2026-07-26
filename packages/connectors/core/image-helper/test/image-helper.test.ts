@@ -6,7 +6,7 @@ import { cropImage } from '../src/lib/actions/crop-image.action';
 import { rotateImage } from '../src/lib/actions/rotate-image.action';
 import { resizeImage } from '../src/lib/actions/resize-Image.action';
 import { compressImage } from '../src/lib/actions/compress-image.actions';
-import { createMockActionContext, ApFile } from '@wippa/pieces-framework';
+import { createMockActionContext, ApFile } from '@wippa/connectors-framework';
 
 async function createTestImage(width = 10, height = 10): Promise<ApFile> {
   const image = new jimp(width, height, 0xff0000ff);

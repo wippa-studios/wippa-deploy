@@ -1,11 +1,11 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { giftbitAuth } from "./lib/common/auth";
 import { sendReward } from "./lib/actions/send-reward";
 
 export { giftbitAuth };
 
-export const giftbit = createPiece({
+export const giftbit = createConnector({
   displayName: "Giftbit",
   description: "Send digital gift cards and rewards to recipients via email.",
   auth: giftbitAuth,

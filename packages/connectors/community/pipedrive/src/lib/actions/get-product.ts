@@ -1,11 +1,11 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
 	pipedriveTransformCustomFields,
 } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { GetField } from '../common/types';
 
 export const getProductAction = createAction({

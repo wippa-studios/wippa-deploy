@@ -3,11 +3,11 @@ import {
   HttpRequest,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { cloudconvertAuth, cloudconvertCommon } from '../common';
 
 export const jobFinished = createTrigger({

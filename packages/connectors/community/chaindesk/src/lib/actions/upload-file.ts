@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { chaindeskAuth } from '../common/auth';
 import { datastoreIdDropdown } from '../common/props';
 import FormData from 'form-data';
@@ -6,7 +6,7 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { BASE_URL } from '../common/constants';
 
 export const uploadFileAction = createAction({

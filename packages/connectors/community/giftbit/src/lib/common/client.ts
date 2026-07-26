@@ -1,4 +1,4 @@
-import { HttpMethod, AuthenticationType, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, AuthenticationType, httpClient } from '@wippa/connectors-common';
 
 export const TESTBED_URL = 'https://api-testbed.giftbit.com/papi/v1';
 export const PRODUCTION_URL = 'https://api.giftbit.com/papi/v1';

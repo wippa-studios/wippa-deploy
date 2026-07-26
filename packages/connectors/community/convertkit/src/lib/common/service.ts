@@ -22,7 +22,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const fetchBroadcasts = async (auth: string, page: number) => {
   const url = BROADCASTS_API_ENDPOINT;

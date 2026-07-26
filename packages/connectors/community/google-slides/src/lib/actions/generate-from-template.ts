@@ -1,5 +1,5 @@
 import { googleSlidesAuth } from '../auth';
-import { createAction, DynamicPropsValue, Property } from "@wippa/pieces-framework";
+import { createAction, DynamicPropsValue, Property } from "@wippa/connectors-framework";
 import { getSlide, PageElement, batchUpdate, TableCell, TextElement } from '../commons/common';
 import { drive as googleDrive } from '@googleapis/drive';
 import { OAuth2Client } from 'google-auth-library';

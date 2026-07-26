@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import * as actions from './lib/actions';
 import { assemblyaiAuth } from './lib/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const assemblyai = createPiece({
+export const assemblyai = createConnector({
   displayName: 'AssemblyAI',
   auth: assemblyaiAuth,
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],

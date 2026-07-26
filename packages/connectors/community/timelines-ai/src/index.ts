@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { closeChat } from './lib/actions/close-chat';
 import { findChat } from './lib/actions/find-chat';
 import { findMessage } from './lib/actions/find-message';
@@ -18,9 +18,9 @@ import { newReceivedMessage } from './lib/triggers/new-received-message';
 import { newSentMessage } from './lib/triggers/new-sent-message';
 import { newUploadedFile } from './lib/triggers/new-uploaded-file';
 import { newWhatsappAccount } from './lib/triggers/new-whatsapp-account';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const timelinesAi = createPiece({
+export const timelinesAi = createConnector({
   displayName: 'TimelinesAI',
   auth: timelinesAiAuth,
   minimumSupportedRelease: '0.36.1',

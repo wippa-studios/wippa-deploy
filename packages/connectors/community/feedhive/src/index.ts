@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { feedhiveAuth } from './lib/common/auth';
 import { postNotificationTrigger } from './lib/triggers/post-notification';
 import { commentNotificationTrigger } from './lib/triggers/comment-notification';
@@ -14,7 +14,7 @@ import { fireWorkflowTriggerAction } from './lib/actions/fire-workflow-trigger';
 
 export { feedhiveAuth };
 
-export const feedhive = createPiece({
+export const feedhive = createConnector({
   displayName: 'FeedHive',
   description: 'Schedule, manage and publish social media content with FeedHive.',
   minimumSupportedRelease: '0.36.1',

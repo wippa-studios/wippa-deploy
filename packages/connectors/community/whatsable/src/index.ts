@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { sendMessage } from './lib/actions/send-message';
 
 export const whatsableAuth = PieceAuth.SecretText({
@@ -7,7 +7,7 @@ export const whatsableAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const whatsable = createPiece({
+export const whatsable = createConnector({
   displayName: 'Whatsable',
   description: 'Manage your WhatsApp business account',
   auth: whatsableAuth,

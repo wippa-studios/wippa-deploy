@@ -1,4 +1,4 @@
-import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { createAction, DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { JiraDataCenterAuth, jiraDataCenterAuth } from '../../auth';
 import {
 	getProjectIdDropdown,
@@ -9,8 +9,8 @@ import {
 } from '../common/props';
 import { jiraApiCall, jiraPaginatedApiCall } from '../common';
 import { IssueFieldMetaData, VALID_CUSTOM_FIELD_TYPES } from '../common/types';
-import { HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 function normalizeFields(fields: any[]): IssueFieldMetaData[] {
 	return fields.map((field) => ({

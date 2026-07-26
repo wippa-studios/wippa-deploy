@@ -1,5 +1,5 @@
 import { microsoftSharePointAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { microsoftSharePointCommon } from '../common';
 import { Client } from '@microsoft/microsoft-graph-client';

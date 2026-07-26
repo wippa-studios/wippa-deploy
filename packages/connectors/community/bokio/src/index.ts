@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { bokioAuth } from './lib/common/auth';
 import { createCustomer } from './lib/actions/create-customer';
 import { createInvoice } from './lib/actions/create-invoice';
@@ -10,10 +10,10 @@ import { findCustomer } from './lib/actions/find-customer';
 import { getDraftInvoiceByCustomerName } from './lib/actions/get-draft-invoice-by-customer-name';
 import { getAnInvoice } from './lib/actions/get-an-invoice';
 import { getAJournalEntry } from './lib/actions/get-a-journal-entry';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const bokio = createPiece({
+export const bokio = createConnector({
   displayName: 'Bokio',
   auth: bokioAuth,
   minimumSupportedRelease: '0.36.1',

@@ -2,8 +2,8 @@ import {
   DynamicPropsValue,
   DropdownState,
   Property,
-} from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { snowflakeAuth } from '../auth';
 import snowflake from 'snowflake-sdk';
 

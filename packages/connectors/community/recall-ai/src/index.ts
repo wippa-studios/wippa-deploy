@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { recallAiAuth } from './lib/common/auth';
 import { createBot } from './lib/actions/create-bot';
 import { retrieveBot } from './lib/actions/retrieve-bot';
 import { sendChatMessage } from './lib/actions/send-chat-message';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const recallAi = createPiece({
+export const recallAi = createConnector({
   displayName: 'Recall.ai',
   auth: recallAiAuth,
   minimumSupportedRelease: '0.36.1',

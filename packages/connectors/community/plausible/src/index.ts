@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getRealtimeVisitors } from './lib/actions/get-realtime-visitors.action';
 import { getAggregateStats } from './lib/actions/get-aggregate-stats.action';
 import { getBreakdown } from './lib/actions/get-breakdown.action';
@@ -54,7 +54,7 @@ export const plausibleAuth = PieceAuth.SecretText({
   },
 });
 
-export const plausible = createPiece({
+export const plausible = createConnector({
   displayName: 'Plausible Analytics',
   description: 'Privacy-friendly website analytics',
   auth: plausibleAuth,

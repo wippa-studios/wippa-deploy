@@ -3,9 +3,9 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createCharge } from './lib/actions/create-charge';
 import { createCustomer } from './lib/actions/create-customer';
 
@@ -38,7 +38,7 @@ export const saasticAuth = PieceAuth.SecretText({
   },
 });
 
-export const saastic = createPiece({
+export const saastic = createConnector({
   displayName: 'Saastic',
   description: 'Revenue and churn analytics for Stripe',
 

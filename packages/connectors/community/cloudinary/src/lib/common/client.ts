@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { BasicAuthConnectionValue, CustomAuthConnectionValue } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { BasicAuthConnectionValue, CustomAuthConnectionValue } from '@wippa/connectors-framework';
 import { cloudinaryAuth } from './auth';
 
 export const BASE_URL = 'https://api.cloudinary.com/v1_1';

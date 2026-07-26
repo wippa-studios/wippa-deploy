@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getGraphBaseUrl } from './lib/common/microsoft-cloud';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { createFolderAction } from './lib/actions/create-folder';
 import { createListAction } from './lib/actions/create-list';
@@ -33,7 +33,7 @@ import { newOrUpdatedFolderTrigger } from './lib/triggers/new-or-updated-folder'
 import { newOrUpdatedListTrigger } from './lib/triggers/new-or-updated-list';
 import { updatedListItemTrigger } from './lib/triggers/updated-list-item';
 
-export const microsoftSharePoint = createPiece({
+export const microsoftSharePoint = createConnector({
   displayName: 'Microsoft SharePoint',
   auth: microsoftSharePointAuth,
   minimumSupportedRelease: '0.78.0',

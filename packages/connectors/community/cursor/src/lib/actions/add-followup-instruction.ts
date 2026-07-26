@@ -1,5 +1,5 @@
-import { createAction, Property, ApFile } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property, ApFile } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { cursorAuth } from '../common/auth';
 import { makeCursorRequest } from '../common/client';
 import { agentDropdown } from '../common/props';

@@ -8,13 +8,13 @@ const StepNodeDisplayName = ({
   stepDisplayName,
   stepIndex,
   isSkipped,
-  pieceDisplayName,
+  connectorDisplayName,
   stepName,
 }: {
   stepDisplayName: string;
   stepIndex: number;
   isSkipped: boolean;
-  pieceDisplayName: string;
+  connectorDisplayName: string;
   stepName: string;
 }) => {
   const canvasOrientation = useBuilderStateContext(
@@ -47,7 +47,7 @@ const StepNodeDisplayName = ({
       </div>
       <StepNodeRunDurationAndPieceName
         stepName={stepName}
-        pieceDisplayName={pieceDisplayName}
+        connectorDisplayName={connectorDisplayName}
       />
     </div>
   );

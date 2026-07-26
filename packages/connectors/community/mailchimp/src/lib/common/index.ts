@@ -1,11 +1,11 @@
-import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import mailchimp from '@mailchimp/mailchimp_marketing';
-import { AuthenticationType } from '@wippa/pieces-common';
+import { AuthenticationType } from '@wippa/connectors-common';
 import crypto from 'crypto';
 import { mailchimpAuth } from '../..';
 

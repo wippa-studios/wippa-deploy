@@ -1,9 +1,9 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { vertexAiAuth } from "./lib/auth";
 import { generateContent, generateImage, customApiCall } from "./lib/actions";
 
-export const googleVertexai = createPiece({
+export const googleVertexai = createConnector({
   displayName: "Google Vertex AI",
   description: "Generate content and images using Gemini and Imagen models on Google Vertex AI.",
   auth: vertexAiAuth,

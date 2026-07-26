@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const BASE_URL = 'https://api.timeops.dk/api/v1';
 

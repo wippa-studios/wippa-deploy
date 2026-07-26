@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { parserExpertAuth } from '../common/auth';
 import { parserExpertCommon } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import FormData from 'form-data';
 
 export const uploadDocument = createAction({

@@ -1,7 +1,7 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getGraphBaseUrl } from './lib/common/microsoft-cloud';
-import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, OAuth2PropertyValue } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addLabelToEmailAction } from './lib/actions/add-label-to-email';
 import { createDraftEmailAction } from './lib/actions/create-draft-email';
 import { downloadAttachmentAction } from './lib/actions/download-email-attachment';
@@ -18,7 +18,7 @@ import { newEmailInFolderTrigger } from './lib/triggers/new-email-in-folder';
 import { newEmailTrigger } from './lib/triggers/new-email';
 import { requestApprovalInMail } from './lib/actions/request-approval-send-email';
 
-export const microsoftOutlook = createPiece({
+export const microsoftOutlook = createConnector({
 	displayName: 'Microsoft Outlook',
 	auth: microsoftOutlookAuth,
 	minimumSupportedRelease: '0.87.0',

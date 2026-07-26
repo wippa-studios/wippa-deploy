@@ -2,12 +2,12 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { azureAdAuth } from '../auth';
 import { fetchGraphDeltaChanges } from '../common';

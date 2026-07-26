@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 
 import { PaddleAuthType } from '../auth';
 

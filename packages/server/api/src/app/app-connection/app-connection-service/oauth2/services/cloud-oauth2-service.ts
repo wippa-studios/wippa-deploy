@@ -1,6 +1,6 @@
 
 import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
-import { OAuth2AuthorizationMethod } from '@wippa/pieces-framework'
+import { OAuth2AuthorizationMethod } from '@wippa/connectors-framework'
 import { safeHttp } from '@wippa/server-utils'
 import { AppConnectionType, CloudOAuth2ConnectionValue } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
@@ -13,12 +13,12 @@ import {
 
 export const cloudOAuth2Service = (log: FastifyBaseLogger): OAuth2Service<CloudOAuth2ConnectionValue> => ({
     refresh: async ({
-        pieceName,
+        connectorName,
         connectionValue,
     }: RefreshOAuth2Request<CloudOAuth2ConnectionValue>): Promise<CloudOAuth2ConnectionValue> => {
         const requestBody = {
             refreshToken: connectionValue.refresh_token,
-            pieceName,
+            connectorName,
             clientId: connectionValue.client_id,
             edition: system.getEdition(),
             authorizationMethod: connectionValue.authorization_method,
@@ -38,7 +38,7 @@ export const cloudOAuth2Service = (log: FastifyBaseLogger): OAuth2Service<CloudO
     },
     claim: async ({
         request,
-        pieceName,
+        connectorName,
     }: ClaimOAuth2Request): Promise<CloudOAuth2ConnectionValue> => {
         try {
             const cloudRequest: ClaimWithCloudRequest = {
@@ -47,7 +47,7 @@ export const cloudOAuth2Service = (log: FastifyBaseLogger): OAuth2Service<CloudO
                 authorizationMethod: request.authorizationMethod,
                 clientId: request.clientId,
                 tokenUrl: request.tokenUrl,
-                pieceName,
+                connectorName,
                 edition: system.getEdition(),
             }
             const value = (
@@ -70,7 +70,7 @@ export const cloudOAuth2Service = (log: FastifyBaseLogger): OAuth2Service<CloudO
             throw new ActivepiecesError({
                 code: ErrorCode.INVALID_CLOUD_CLAIM,
                 params: {
-                    pieceName,
+                    connectorName,
                 },
             })
         }
@@ -78,7 +78,7 @@ export const cloudOAuth2Service = (log: FastifyBaseLogger): OAuth2Service<CloudO
 })
 
 type ClaimWithCloudRequest = {
-    pieceName: string
+    connectorName: string
     code: string
     codeVerifier: string | undefined
     authorizationMethod: OAuth2AuthorizationMethod | undefined

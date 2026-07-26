@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
 
 export const meetingRescheduled = createTrigger({
   name: 'meeting_rescheduled',

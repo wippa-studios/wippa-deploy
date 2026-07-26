@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { opportifyAuth } from '../common/auth';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const analyzeIpAddressAction = createAction({
   displayName: 'Analyze IP Address',

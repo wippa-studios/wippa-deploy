@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, createTrigger, StaticPropsValue, TriggerStrategy } from "@wippa/pieces-framework";
+import { AppConnectionValueForAuthProperty, createTrigger, StaticPropsValue, TriggerStrategy } from "@wippa/connectors-framework";
 import { quickbaseAuth } from '../auth';
-import { DedupeStrategy, Polling, pollingHelper } from "@wippa/pieces-common";
+import { DedupeStrategy, Polling, pollingHelper } from "@wippa/connectors-common";
 import { QuickbaseClient } from "../common/client";
 import { QuickbaseRecordResponse, QuickbaseField } from "../common/types";
 import { appIdProp, tableIdProp } from "../common/props";

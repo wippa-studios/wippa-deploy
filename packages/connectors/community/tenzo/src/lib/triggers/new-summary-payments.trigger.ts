@@ -3,13 +3,13 @@ import {
   TriggerStrategy,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { tenzoAuth } from '../../lib/common/auth';
 import { tenzoApiCall } from '../../lib/common/client';
 import { tenzoCommon } from '../../lib/common/props';

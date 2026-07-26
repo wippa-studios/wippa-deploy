@@ -33,19 +33,19 @@ export const webhookHandshake = {
     },
     async getWebhookHandshakeConfiguration(params: GetWebhookHandshakeConfigurationParams): Promise<WebhookHandshakeConfiguration | null> {
         const { triggerSource, logger } = params
-        if (isNil(triggerSource) || isNil(triggerSource.pieceName) || isNil(triggerSource.pieceVersion) || isNil(triggerSource.triggerName) || isNil(triggerSource.projectId)) {
+        if (isNil(triggerSource) || isNil(triggerSource.connectorName) || isNil(triggerSource.connectorVersion) || isNil(triggerSource.triggerName) || isNil(triggerSource.projectId)) {
             return null
         }
-        const pieceTrigger = await triggerUtils(logger).getPieceTriggerByName({
-            pieceName: triggerSource.pieceName,
-            pieceVersion: triggerSource.pieceVersion,
+        const connectorTrigger = await triggerUtils(logger).getPieceTriggerByName({
+            connectorName: triggerSource.connectorName,
+            connectorVersion: triggerSource.connectorVersion,
             triggerName: triggerSource.triggerName,
             projectId: triggerSource.projectId,
         })
-        if (isNil(pieceTrigger)) {
+        if (isNil(connectorTrigger)) {
             return null
         }
-        return pieceTrigger?.handshakeConfiguration ?? null
+        return connectorTrigger?.handshakeConfiguration ?? null
     },
 }
 

@@ -1,5 +1,5 @@
 import { gristAuth } from '../..';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { commonProps } from '../common/props';
 import { GristAPIClient, transformTableColumnValues } from '../common/helpers';
 

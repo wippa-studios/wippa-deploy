@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { checkoutComAuth } from './lib/common/auth';
 import { createCustomerAction } from './lib/actions/create-customer';
 import { updateCustomerAction } from './lib/actions/update-customer';
@@ -10,7 +10,7 @@ import { getPaymentActionsAction } from './lib/actions/get-payment-actions';
 import { paymentEventsTrigger } from './lib/triggers/payment-events';
 import { disputeEventsTrigger } from './lib/triggers/dispute-events';
 
-export const checkout = createPiece({
+export const checkout = createConnector({
   displayName: 'Checkout.com',
   auth: checkoutComAuth,
   minimumSupportedRelease: '0.36.1',

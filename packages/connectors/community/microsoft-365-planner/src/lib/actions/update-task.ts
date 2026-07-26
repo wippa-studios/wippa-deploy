@@ -2,7 +2,7 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { microsoft365PlannerAuth, microsoft365PlannerCommon } from '../common';
 import { PlanDropdown, TaskDropdown } from '../common/properties';
 

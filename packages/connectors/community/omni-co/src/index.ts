@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { omniAuth } from './lib/common/auth';
 import { createADocument } from './lib/actions/create-a-document';
 import { createASchedule } from './lib/actions/create-a-schedule';
@@ -9,9 +9,9 @@ import { moveDocument } from './lib/actions/move-document';
 import { runQuery } from './lib/actions/run-query';
 import { editSchedule } from './lib/actions/edit-schedule';
 import { generateQuery } from './lib/actions/generate-query';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const omniCo = createPiece({
+export const omniCo = createConnector({
   displayName: 'Omni',
   auth: omniAuth,
   minimumSupportedRelease: '0.36.1',

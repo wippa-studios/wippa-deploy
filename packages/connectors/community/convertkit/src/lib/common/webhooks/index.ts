@@ -1,4 +1,4 @@
-import { Property, DynamicPropsValue } from '@wippa/pieces-framework';
+import { Property, DynamicPropsValue } from '@wippa/connectors-framework';
 import { EventType, EventOption } from '../types';
 import { fetchTags, fetchForms, fetchSequences } from '../service';
 import { convertkitAuth } from '../../..';

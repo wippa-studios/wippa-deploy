@@ -1,5 +1,5 @@
-import { Property, DropdownOption, createAction } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, HttpError } from '@wippa/pieces-common';
+import { Property, DropdownOption, createAction } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, HttpError } from '@wippa/connectors-common';
 import {
 	PdfCoSuccessResponse,
 	PdfCoErrorResponse,

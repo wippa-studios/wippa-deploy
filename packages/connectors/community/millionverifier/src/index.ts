@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { millionVerifierAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { verifyEmail } from './lib/actions/verify-email';
 
-export const millionverifier = createPiece({
+export const millionverifier = createConnector({
   displayName: 'MillionVerifier',
   auth: millionVerifierAuth,
   minimumSupportedRelease: '0.36.1',

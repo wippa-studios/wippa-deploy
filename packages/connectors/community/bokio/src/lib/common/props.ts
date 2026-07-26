@@ -1,7 +1,7 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { makeRequest } from './client';
 import { bokioAuth } from './auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const invoiceIdDropdown = Property.Dropdown({
   auth: bokioAuth,

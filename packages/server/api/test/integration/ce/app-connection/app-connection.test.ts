@@ -1,5 +1,5 @@
 import { apId } from '@wippa/core-utils'
-import { AppConnectionScope, AppConnectionStatus, AppConnectionType, PackageType, PieceType, PLACEHOLDER_CONNECTION_TYPE } from '@wippa/shared'
+import { AppConnectionScope, AppConnectionStatus, AppConnectionType, PackageType, ConnectorType, PLACEHOLDER_CONNECTION_TYPE } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { pieceMetadataService } from '../../../../src/app/pieces/metadata/piece-metadata-service'
@@ -32,7 +32,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -40,20 +40,20 @@ describe('AppConnection CE API', () => {
             const response = await ctx.post('/v1/app-connections', {
                 externalId: 'test-secret-connection',
                 displayName: 'Test Secret Connection',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
                     type: AppConnectionType.SECRET_TEXT,
                     secret_text: 'my-secret',
                 },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
 
             expect(response?.statusCode).toBe(StatusCodes.CREATED)
             const body = response?.json()
             expect(body.displayName).toBe('Test Secret Connection')
-            expect(body.pieceName).toBe(mockPiece.name)
+            expect(body.connectorName).toBe(mockPiece.name)
             expect(body.externalId).toBe('test-secret-connection')
             expect(body.value).toBeUndefined()
         })
@@ -64,7 +64,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -72,13 +72,13 @@ describe('AppConnection CE API', () => {
             const response = await ctx.post('/v1/app-connections', {
                 externalId: 'test-no-auth-connection',
                 displayName: 'Test No Auth',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.NO_AUTH,
                 value: {
                     type: AppConnectionType.NO_AUTH,
                 },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
 
             expect(response?.statusCode).toBe(StatusCodes.CREATED)
@@ -92,7 +92,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -100,10 +100,10 @@ describe('AppConnection CE API', () => {
             const response = await ctx.post('/v1/app-connections', {
                 externalId: 'test-placeholder-connection',
                 displayName: 'Placeholder Slack',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: PLACEHOLDER_CONNECTION_TYPE,
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
 
             expect(response?.statusCode).toBe(StatusCodes.CREATED)
@@ -111,7 +111,7 @@ describe('AppConnection CE API', () => {
             expect(body.displayName).toBe('Placeholder Slack')
             expect(body.type).toBe(AppConnectionType.NO_AUTH)
             expect(body.status).toBe(AppConnectionStatus.MISSING)
-            expect(body.pieceName).toBe(mockPiece.name)
+            expect(body.connectorName).toBe(mockPiece.name)
             expect(body.externalId).toBe('test-placeholder-connection')
         })
 
@@ -121,7 +121,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -129,14 +129,14 @@ describe('AppConnection CE API', () => {
             const active = await ctx.post('/v1/app-connections', {
                 externalId: 'placeholder-no-clobber',
                 displayName: 'Active Secret',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
                     type: AppConnectionType.SECRET_TEXT,
                     secret_text: 'real-secret',
                 },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             expect(active?.statusCode).toBe(StatusCodes.CREATED)
             const activeBody = active?.json()
@@ -146,10 +146,10 @@ describe('AppConnection CE API', () => {
             const placeholder = await ctx.post('/v1/app-connections', {
                 externalId: 'placeholder-no-clobber',
                 displayName: 'Should Not Win',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: PLACEHOLDER_CONNECTION_TYPE,
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             expect(placeholder?.statusCode).toBe(StatusCodes.CREATED)
             const placeholderBody = placeholder?.json()
@@ -165,7 +165,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -173,10 +173,10 @@ describe('AppConnection CE API', () => {
             const placeholder = await ctx.post('/v1/app-connections', {
                 externalId: 'placeholder-fill-in',
                 displayName: 'Pending',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: PLACEHOLDER_CONNECTION_TYPE,
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             expect(placeholder?.statusCode).toBe(StatusCodes.CREATED)
             const placeholderId = placeholder?.json().id
@@ -184,14 +184,14 @@ describe('AppConnection CE API', () => {
             const filled = await ctx.post('/v1/app-connections', {
                 externalId: 'placeholder-fill-in',
                 displayName: 'Filled In',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
                     type: AppConnectionType.SECRET_TEXT,
                     secret_text: 'real-secret',
                 },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             expect(filled?.statusCode).toBe(StatusCodes.CREATED)
             const filledBody = filled?.json()
@@ -207,7 +207,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -215,14 +215,14 @@ describe('AppConnection CE API', () => {
             const createPayload = {
                 externalId: 'upsert-test-connection',
                 displayName: 'First Name',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
                     type: AppConnectionType.SECRET_TEXT,
                     secret_text: 'secret1',
                 },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             }
 
             const first = await ctx.post('/v1/app-connections', createPayload)
@@ -251,7 +251,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -259,14 +259,14 @@ describe('AppConnection CE API', () => {
             const createResponse = await ctx.post('/v1/app-connections', {
                 externalId: 'update-test-connection',
                 displayName: 'Original Name',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
                     type: AppConnectionType.SECRET_TEXT,
                     secret_text: 'my-secret',
                 },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             const connectionId = createResponse?.json().id
 
@@ -297,7 +297,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -305,14 +305,14 @@ describe('AppConnection CE API', () => {
             await ctx.post('/v1/app-connections', {
                 externalId: 'list-test-connection',
                 displayName: 'Test Connection',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
                     type: AppConnectionType.SECRET_TEXT,
                     secret_text: 'my-secret',
                 },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
 
             const response = await ctx.get('/v1/app-connections', {
@@ -324,20 +324,20 @@ describe('AppConnection CE API', () => {
             expect(body.data.length).toBeGreaterThanOrEqual(1)
         })
 
-        it('should filter by pieceName', async () => {
+        it('should filter by connectorName', async () => {
             const ctx = await setup()
 
             const mockPieceA = createMockPieceMetadata({
                 name: 'piece-a-filter',
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             const mockPieceB = createMockPieceMetadata({
                 name: 'piece-b-filter',
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', [mockPieceA, mockPieceB])
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPieceA)
@@ -345,11 +345,11 @@ describe('AppConnection CE API', () => {
             await ctx.post('/v1/app-connections', {
                 externalId: 'filter-a',
                 displayName: 'Connection A',
-                pieceName: mockPieceA.name,
+                connectorName: mockPieceA.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: { type: AppConnectionType.SECRET_TEXT, secret_text: 's' },
-                pieceVersion: mockPieceA.version,
+                connectorVersion: mockPieceA.version,
             })
 
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPieceB)
@@ -357,22 +357,22 @@ describe('AppConnection CE API', () => {
             await ctx.post('/v1/app-connections', {
                 externalId: 'filter-b',
                 displayName: 'Connection B',
-                pieceName: mockPieceB.name,
+                connectorName: mockPieceB.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: { type: AppConnectionType.SECRET_TEXT, secret_text: 's' },
-                pieceVersion: mockPieceB.version,
+                connectorVersion: mockPieceB.version,
             })
 
             const response = await ctx.get('/v1/app-connections', {
                 projectId: ctx.project.id,
-                pieceName: mockPieceA.name,
+                connectorName: mockPieceA.name,
             })
 
             expect(response?.statusCode).toBe(StatusCodes.OK)
             const body = response?.json()
             expect(body.data).toHaveLength(1)
-            expect(body.data[0].pieceName).toBe(mockPieceA.name)
+            expect(body.data[0].connectorName).toBe(mockPieceA.name)
         })
     })
 
@@ -383,7 +383,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -391,11 +391,11 @@ describe('AppConnection CE API', () => {
             const createResponse = await ctx.post('/v1/app-connections', {
                 externalId: 'get-by-id-test',
                 displayName: 'Get Me',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: { type: AppConnectionType.SECRET_TEXT, secret_text: 'my-secret' },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             const connectionId = createResponse?.json().id
 
@@ -426,7 +426,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx1.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -434,11 +434,11 @@ describe('AppConnection CE API', () => {
             await ctx1.post('/v1/app-connections', {
                 externalId: 'isolation-test',
                 displayName: 'Project 1 Connection',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx1.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: { type: AppConnectionType.SECRET_TEXT, secret_text: 's' },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
 
             const response = await ctx2.get('/v1/app-connections', {
@@ -458,7 +458,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx1.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -466,11 +466,11 @@ describe('AppConnection CE API', () => {
             const createResponse = await ctx1.post('/v1/app-connections', {
                 externalId: 'cross-project-get',
                 displayName: 'Project 1 Connection',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx1.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: { type: AppConnectionType.SECRET_TEXT, secret_text: 's' },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             const connectionId = createResponse?.json().id
 
@@ -487,7 +487,7 @@ describe('AppConnection CE API', () => {
             const mockPiece = createMockPieceMetadata({
                 platformId: ctx.platform.id,
                 packageType: PackageType.REGISTRY,
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPiece)
             pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(mockPiece)
@@ -495,11 +495,11 @@ describe('AppConnection CE API', () => {
             const createResponse = await ctx.post('/v1/app-connections', {
                 externalId: 'delete-test',
                 displayName: 'Delete Me',
-                pieceName: mockPiece.name,
+                connectorName: mockPiece.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: { type: AppConnectionType.SECRET_TEXT, secret_text: 's' },
-                pieceVersion: mockPiece.version,
+                connectorVersion: mockPiece.version,
             })
             const connectionId = createResponse?.json().id
 

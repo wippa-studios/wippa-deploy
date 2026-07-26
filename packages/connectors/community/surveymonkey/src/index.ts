@@ -1,11 +1,11 @@
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newResponse } from './lib/triggers/new-response';
 
 export const smAuth = PieceAuth.OAuth2({
@@ -21,7 +21,7 @@ export const smAuth = PieceAuth.OAuth2({
   ],
 });
 
-export const surveymonkey = createPiece({
+export const surveymonkey = createConnector({
   displayName: 'SurveyMonkey',
   description: 'Receive survey responses from SurveyMonkey',
   auth: smAuth,

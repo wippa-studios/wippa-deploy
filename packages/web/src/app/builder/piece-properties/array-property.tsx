@@ -2,7 +2,7 @@ import {
   ArrayProperty,
   ArraySubProps,
   PropertyType,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { t } from 'i18next';
 import { Plus, TrashIcon } from 'lucide-react';
 import { nanoid } from 'nanoid';

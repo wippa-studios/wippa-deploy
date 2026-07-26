@@ -2,17 +2,17 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { getNotionToken, NotionAuthValue, notionCommon } from '../common';
 import { Client } from '@notionhq/client';
 import { notionAuth } from '../auth';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { newDatabaseItemTriggerOutputSchema } from '../output-schemas';
 
 export const newDatabaseItem = createTrigger({

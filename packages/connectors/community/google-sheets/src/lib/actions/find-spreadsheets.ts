@@ -1,10 +1,10 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
 	httpClient,
 	HttpMethod,
 	AuthenticationType,
 	HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { googleSheetsAuth } from '../common/common';
 import { includeTeamDrivesProp } from '../common/props';
 import { getAccessToken } from '../common/common';

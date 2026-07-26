@@ -4,8 +4,8 @@ import {
   HttpRequest,
   HttpMessageBody,
   QueryParams,
-} from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { knackAuth } from './auth';
 
 export type KnackAuthProps = {

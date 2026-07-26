@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { twilioSendSms } from './lib/action/send-sms';
 import { twilioNewIncomingSms } from './lib/trigger/new-incoming-sms';
 import { twilioPhoneNumberLookup } from './lib/action/phone-number-lookup';
@@ -26,7 +26,7 @@ export const twilioAuth = PieceAuth.BasicAuth({
   },
 });
 
-export const twilio = createPiece({
+export const twilio = createConnector({
   displayName: 'Twilio',
   description:
     'Cloud communications platform for building SMS, Voice & Messaging applications',

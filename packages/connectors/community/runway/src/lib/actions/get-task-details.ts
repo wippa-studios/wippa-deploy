@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@wippa/connectors-common';
 import { runwayAuth } from '../common';
 import RunwayML from '@runwayml/sdk';
 import * as z from 'zod/mini'

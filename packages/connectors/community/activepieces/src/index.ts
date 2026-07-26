@@ -1,12 +1,12 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { createProject } from './lib/actions/create-project';
 import { listProject } from './lib/actions/list-project';
 import { updateProject } from './lib/actions/update-project';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { activePieceAuth } from './lib/auth';
 
 const markdown = `
@@ -17,7 +17,7 @@ Activepieces Platform API is available under the Platform Edition.
 
 `;
 
-export const activepieces = createPiece({
+export const activepieces = createConnector({
   displayName: 'Activepieces Platform',
   description: 'Open source no-code business automation',
   auth: activePieceAuth,

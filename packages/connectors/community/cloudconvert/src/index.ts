@@ -1,7 +1,7 @@
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { cloudconvertAuth } from './lib/common/auth';
 import { newJob } from './lib/triggers/new-job';
 import { jobFinished } from './lib/triggers/job-finished';
@@ -13,7 +13,7 @@ import { downloadFile } from './lib/actions/download-file';
 import { archiveFile } from './lib/actions/archive-file';
 import { optimizeFile } from './lib/actions/optimize-file';
 
-export const cloudconvert = createPiece({
+export const cloudconvert = createConnector({
     displayName: 'CloudConvert',
     description: 'File conversion and processing platform supporting 200+ formats',
     minimumSupportedRelease: '0.36.1',

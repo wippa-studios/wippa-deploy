@@ -1,5 +1,5 @@
-import { Property, Store } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { Property, Store } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 import { azureAdAuth } from './auth';
 
 const GRAPH_BASE = 'https://graph.microsoft.com/v1.0';

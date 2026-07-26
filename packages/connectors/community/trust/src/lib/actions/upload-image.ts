@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, AuthenticationType, httpClient } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, AuthenticationType, httpClient } from '@wippa/connectors-common';
 import FormData from 'form-data';
 import { trustAuth } from '../auth';
 

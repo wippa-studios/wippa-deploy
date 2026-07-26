@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 
 const markdown = `
 Activepieces Platform API is available under the Platform Edition.

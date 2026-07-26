@@ -1,7 +1,7 @@
-import { DynamicPropsValue, PieceAuth, Property, StoreScope, createAction } from '@wippa/pieces-framework';
+import { DynamicPropsValue, PieceAuth, Property, StoreScope, createAction } from '@wippa/connectors-framework';
 import { callableFlowKey, CallableFlowResponse, MOCK_CALLBACK_IN_TEST_FLOW_URL } from '../common';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 export const response = createAction({
   audience: 'human',

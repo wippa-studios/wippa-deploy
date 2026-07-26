@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { CopperAuth } from '../common/constants';
 import { CopperApiService } from '../common/requests';
 

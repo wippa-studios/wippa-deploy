@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createBrand } from './lib/actions/Brand/create-brand';
 import { deleteBrand } from './lib/actions/Brand/delete-brand';
 import { getBrandById } from './lib/actions/Brand/get-brand-by-id';
@@ -52,7 +52,7 @@ export const vtexAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const vtex = createPiece({
+export const vtex = createConnector({
   displayName: 'VTEX',
   description: 'Unified commerce platform',
   minimumSupportedRelease: '0.30.0',

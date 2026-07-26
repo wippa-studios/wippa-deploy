@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { renderTemplate } from './lib/actions/renderTemplate.action';
 import { generatebannersAuth } from './lib/auth';
 
@@ -12,7 +12,7 @@ To obtain your GenerateBanners public and secret API Keys, you can follow the st
 4. The public and secret API keys are now displayed, copy them one by one into the right Activepieces fields.
 `;
 
-export const generatebanners = createPiece({
+export const generatebanners = createConnector({
   displayName: 'GenerateBanners',
   description: 'Image generation API for banners and social media posts',
 

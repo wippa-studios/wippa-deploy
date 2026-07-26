@@ -1,14 +1,14 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { browseAiAuth } from './lib/common/auth';
 import { getTaskDetailsAction } from './lib/actions/get-task-details';
 import { listRobotsAction } from './lib/actions/list-robots';
 import { runRobotAction } from './lib/actions/run-robot';
 import { taskFinishedWithErrorTrigger } from './lib/triggers/task-finished-with-error';
 import { taskFinishedSuccessfullyTrigger } from './lib/triggers/task-finished-successfully';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const browseAi = createPiece({
+export const browseAi = createConnector({
   displayName: 'Browse AI',
   auth: browseAiAuth,
   minimumSupportedRelease: '0.36.1',

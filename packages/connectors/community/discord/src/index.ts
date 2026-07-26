@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { discordAddRoleToMember } from './lib/actions/add-role-to-member';
 import { discordFindChannel } from './lib/actions/find-channel';
 import { discordFindGuildMemberByUsername } from './lib/actions/find-guild-member';
@@ -28,7 +28,7 @@ To obtain a token, follow these steps:
 4. Copy the token
 `;
 
-export const discord = createPiece({
+export const discord = createConnector({
   displayName: 'Discord',
   description: 'Instant messaging and VoIP social platform',
   minimumSupportedRelease: '0.87.0',

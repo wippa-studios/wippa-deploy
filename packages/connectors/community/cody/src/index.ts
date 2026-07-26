@@ -1,13 +1,13 @@
-import { PieceAuth, createPiece } from "@wippa/pieces-framework";
+import { PieceAuth, createConnector } from "@wippa/connectors-framework";
 import { createDocumentFromText } from "./lib/actions/create-document-from-text";
 import { uploadFileAction } from "./lib/actions/upload-file";
 import { sendMessageAction } from "./lib/actions/send-message";
 import { createConversationAction } from "./lib/actions/create-conversation";
 import { findBotAction } from "./lib/actions/find-bot";
 import { findConversationAction } from "./lib/actions/find-conversation";
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { codyClient } from "./lib/common/client";
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 // Define the authentication property using PieceAuth.SecretText
 // This will create a secure text input field in the UI for the user's API key.
@@ -41,7 +41,7 @@ export const codyAuth = PieceAuth.SecretText({
     },
 });
 
-export const cody = createPiece({
+export const cody = createConnector({
     displayName: "Cody",
     auth: codyAuth,
     minimumSupportedRelease: '0.36.1',

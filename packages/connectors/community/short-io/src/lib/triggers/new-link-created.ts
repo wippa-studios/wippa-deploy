@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { shortIoAuth } from '../common/auth';
 import { shortIoApiCall } from '../common/client';
 import { domainIdDropdown } from '../common/props';

@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { qdrantAuth } from '../..';
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { collectionName } from '../common';

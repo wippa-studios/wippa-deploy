@@ -1,9 +1,9 @@
  import {
       PieceAuth,
       Property,
-      createPiece,
-    } from '@wippa/pieces-framework';
-    import { PieceCategory } from '@wippa/pieces-framework';
+      createConnector,
+    } from '@wippa/connectors-framework';
+    import { PieceCategory } from '@wippa/connectors-framework';
     import { createUser } from './lib/actions/createUser';
 
     export const aminosAuth = PieceAuth.CustomAuth({
@@ -35,7 +35,7 @@
       required: true
   });
 
-    export const aminos = createPiece({
+    export const aminos = createConnector({
       displayName: "Aminos",
       auth: aminosAuth,
       categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],

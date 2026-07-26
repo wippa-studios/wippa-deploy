@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { isEmpty } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { isEmpty } from '@wippa/connectors-framework';
 
 export const defaultValue = createAction({
   audience: 'human',

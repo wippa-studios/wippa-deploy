@@ -1,9 +1,9 @@
-import { ApFile, createAction, Property } from '@wippa/pieces-framework';
+import { ApFile, createAction, Property } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { discordAuth } from '../auth';
 import { discordCommon } from '../common';
 import FormData from 'form-data';

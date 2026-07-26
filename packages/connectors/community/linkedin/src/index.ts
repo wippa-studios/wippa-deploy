@@ -1,13 +1,13 @@
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createCompanyUpdate } from './lib/actions/create-company-update';
 import { createShareUpdate } from './lib/actions/create-share-update';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { linkedinCommon } from './lib/common';
 
 export const linkedinAuth = PieceAuth.OAuth2({
@@ -24,7 +24,7 @@ export const linkedinAuth = PieceAuth.OAuth2({
   ],
 });
 
-export const linkedin = createPiece({
+export const linkedin = createConnector({
   displayName: 'LinkedIn',
   description: 'Connect and network with professionals',
 

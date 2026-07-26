@@ -1,7 +1,7 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { swarmnodeAuth } from "../common/auth";
 import { agentIdDropdown } from "../common/props";
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
 import { BASE_URL } from "../common/constants";
 import { ListExecutionResponse } from "../common/types";
 

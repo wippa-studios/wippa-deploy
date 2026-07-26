@@ -1,5 +1,5 @@
 
-    import { createPiece } from "@wippa/pieces-framework";
+    import { createConnector } from "@wippa/connectors-framework";
     import { capsuleCrmAuth } from "../src/lib/common/auth";
     import { createContactAction } from "../src/lib/actions/create-contact";
     import { updateContactAction } from "../src/lib/actions/update-contact";
@@ -16,7 +16,7 @@
     import { newTaskTrigger } from "../src/lib/triggers/new-task";
     import { newProjectTrigger } from "../src/lib/triggers/new-project";
 
-    export const capsuleCrm = createPiece({
+    export const capsuleCrm = createConnector({
       displayName: 'Capsule CRM',
       auth: capsuleCrmAuth,
       minimumSupportedRelease: '0.36.1',

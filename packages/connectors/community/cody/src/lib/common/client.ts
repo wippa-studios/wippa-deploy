@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from "@wippa/pieces-common";
-import { AppConnectionValueForAuthProperty } from "@wippa/pieces-framework";
+import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from "@wippa/connectors-common";
+import { AppConnectionValueForAuthProperty } from "@wippa/connectors-framework";
 import { codyAuth } from "../..";
 
 export const CODY_BASE_URL = "https://getcody.ai/api/v1";

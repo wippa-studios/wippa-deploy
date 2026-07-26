@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { lemonSqueezyAuth } from '../common/auth';
 import { subscribeWebhook, unsubscribeWebhook, createStoreDropdownProperty, generateWebhookSecret, createWebhookTriggerKey } from '../common/webhook';
 

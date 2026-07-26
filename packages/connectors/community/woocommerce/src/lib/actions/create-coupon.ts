@@ -1,14 +1,14 @@
 import {
   createAction,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
   AuthenticationType,
   propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import * as z from 'zod/mini'
 
 import { wooAuth } from '../auth';

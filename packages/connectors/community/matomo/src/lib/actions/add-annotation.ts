@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { addAnnotation } from '../api';
 import { matomoAuth } from '../auth';
 

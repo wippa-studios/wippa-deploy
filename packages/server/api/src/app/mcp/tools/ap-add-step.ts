@@ -13,7 +13,7 @@ const addStepInput = z.object({
     branchIndex: z.number().optional(),
     stepType: z.enum([FlowActionType.CODE, FlowActionType.PIECE, FlowActionType.LOOP_ON_ITEMS, FlowActionType.ROUTER]),
     displayName: z.string(),
-    pieceName: z.string().optional(),
+    connectorName: z.string().optional(),
     actionName: z.string().optional(),
     input: z.record(z.string(), z.unknown()).optional(),
     auth: z.string().optional(),
@@ -36,7 +36,7 @@ export const apAddStepTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogge
             branchIndex: z.number().optional().describe('Branch index (required when stepLocationRelativeToParent is INSIDE_BRANCH)'),
             stepType: z.enum([FlowActionType.CODE, FlowActionType.PIECE, FlowActionType.LOOP_ON_ITEMS, FlowActionType.ROUTER]).describe('The type of step to add. Prefer PIECE over CODE — only use CODE when no piece fits and the logic can\'t be done with an inline formula expression (in a free-text/value input) or a router condition.'),
             displayName: z.string().describe('Display name for the step'),
-            pieceName: z.string().optional().describe('For PIECE steps: the piece name (e.g. "@wippa/piece-gmail"). Use ap_research_pieces to get valid values.'),
+            connectorName: z.string().optional().describe('For PIECE steps: the piece name (e.g. "@wippa/connector-gmail"). Use ap_research_pieces to get valid values.'),
             actionName: z.string().optional().describe('For PIECE steps: the action name within the piece. Use ap_research_pieces with includeActions=true to get valid values.'),
             input: z.record(z.string(), z.unknown()).optional().describe(`For PIECE/CODE steps: input config (key-value pairs). ${mcpUtils.STEP_REFERENCE_HINT}`),
             auth: z.string().optional().describe('Connection externalId from ap_list_connections. Auto-wrapped as {{connections[\'externalId\']}}.'),
@@ -48,7 +48,7 @@ export const apAddStepTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogge
         },
         annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
         execute: async (args) => {
-            const { flowId, parentStepName, stepLocationRelativeToParent, branchIndex, stepType, displayName, pieceName, actionName, input, auth, sourceCode, packageJson, loopItems, continueOnFailure, retryOnFailure } = addStepInput.parse(args)
+            const { flowId, parentStepName, stepLocationRelativeToParent, branchIndex, stepType, displayName, connectorName, actionName, input, auth, sourceCode, packageJson, loopItems, continueOnFailure, retryOnFailure } = addStepInput.parse(args)
 
             const [flow, project] = await Promise.all([
                 flowService(log).getOnePopulated({ id: flowId, projectId: mcp.projectId }),
@@ -91,21 +91,21 @@ export const apAddStepTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogge
                     }
                     break
                 case FlowActionType.PIECE: {
-                    if (!pieceName) {
+                    if (!connectorName) {
                         return {
                             content: [{
                                 type: 'text',
-                                text: '❌ pieceName is required for PIECE steps. Use ap_research_pieces to get valid values.',
+                                text: '❌ connectorName is required for PIECE steps. Use ap_research_pieces to get valid values.',
                             }],
                         }
                     }
-                    const versionResult = await mcpUtils.resolveLatestPieceVersion({ pieceName, projectId: mcp.projectId, platformId: project.platformId, log })
+                    const versionResult = await mcpUtils.resolveLatestPieceVersion({ connectorName, projectId: mcp.projectId, platformId: project.platformId, log })
                     if (versionResult.error) {
                         return versionResult.error
                     }
                     const pieceSettings: Record<string, unknown> = {
-                        pieceName: versionResult.normalizedPieceName,
-                        pieceVersion: versionResult.pieceVersion,
+                        connectorName: versionResult.normalizedPieceName,
+                        connectorVersion: versionResult.connectorVersion,
                         actionName: actionName ?? '',
                         input: resolvedInput,
                         propertySettings: {},
@@ -114,7 +114,7 @@ export const apAddStepTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogge
                     if (input !== undefined) {
                         await mcpUtils.fillDefaultsForMissingOptionalProps({ settings: pieceSettings, platformId: project.platformId, log })
                         if (typeof actionName === 'string' && actionName.length > 0) {
-                            const unknownPropsError = await mcpUtils.rejectUnknownInputProps({ pieceName: versionResult.normalizedPieceName, pieceVersion: versionResult.pieceVersion, componentName: actionName, componentType: 'action', input: pieceSettings.input, platformId: project.platformId, log })
+                            const unknownPropsError = await mcpUtils.rejectUnknownInputProps({ connectorName: versionResult.normalizedPieceName, connectorVersion: versionResult.connectorVersion, componentName: actionName, componentType: 'action', input: pieceSettings.input, platformId: project.platformId, log })
                             if (unknownPropsError) {
                                 return unknownPropsError
                             }

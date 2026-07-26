@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
 import {
 	attestationApiActions,
 	deviceDefinitionApiActions,
@@ -20,7 +20,7 @@ import {
 } from './lib/triggers';
 import { dimoAuth } from './lib/auth';
 
-export const dimo = createPiece({
+export const dimo = createConnector({
 	displayName: 'DIMO',
 	description:
 		'DIMO is an open protocol using blockchain to establish universal digital vehicle identity, permissions, data transmission, vehicle control, and payments. Developers use DIMO to build apps based on connected vehicles around the world while the vehicle owners benefit from monetizing their vehicle data.',

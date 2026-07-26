@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { enrichlayerAuth } from '../auth';
 import { ENDPOINTS } from '../common/constants';
 import { enrichlayerApiCall } from '../common/client';

@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { bigCommerceAuth, GET_BASE_URL } from './constants';
 
 async function fireHttpRequest({

@@ -1,6 +1,6 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { foreplayCoApiCall } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { findBoards as findBoardsProperties } from '../properties';
 import { findBoardsSchema } from '../schemas';
 import { foreplayCoAuth } from '../..';

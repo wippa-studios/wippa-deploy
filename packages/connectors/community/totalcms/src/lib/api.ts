@@ -3,7 +3,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { TotalCMSAuthType } from './auth';
 import FormData from 'form-data';
 

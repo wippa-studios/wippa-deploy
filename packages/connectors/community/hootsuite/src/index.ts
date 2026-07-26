@@ -1,7 +1,7 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createMessageAction } from './lib/actions/create-message';
 import { getMessageAction } from './lib/actions/get-message';
 import { deleteMessageAction } from './lib/actions/delete-message';
@@ -9,7 +9,7 @@ import { newScheduledPostTrigger } from './lib/triggers/new-scheduled-post';
 import { newPublishedPostTrigger } from './lib/triggers/new-published-post';
 import { hootsuiteAuth } from './lib/auth';
 
-export const hootsuite = createPiece({
+export const hootsuite = createConnector({
   displayName: 'Hootsuite',
   description: 'Social media management — schedule posts and manage multiple networks from one dashboard.',
   minimumSupportedRelease: '0.36.1',

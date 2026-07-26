@@ -32,7 +32,7 @@ const removeAuthFromProps = (
 
 const PieceSettings = React.memo((props: PieceSettingsProps) => {
   const {
-    pieceModel,
+    connectorModel,
     pieceModelNotFound,
     selectedStep,
     updateFormSchema,
@@ -41,11 +41,11 @@ const PieceSettings = React.memo((props: PieceSettingsProps) => {
 
   const actionName = (props.step.settings as PieceActionSettings).actionName;
   const selectedAction = actionName
-    ? pieceModel?.actions[actionName]
+    ? connectorModel?.actions[actionName]
     : undefined;
   const triggerName = (props.step.settings as PieceTriggerSettings).triggerName;
   const selectedTrigger = triggerName
-    ? pieceModel?.triggers[triggerName]
+    ? connectorModel?.triggers[triggerName]
     : undefined;
 
   const actionPropsWithoutAuth = removeAuthFromProps(
@@ -80,18 +80,18 @@ const PieceSettings = React.memo((props: PieceSettingsProps) => {
     !isNil(selectedAction) && (selectedAction.requireAuth ?? true);
   const showAuthForTrigger =
     !isNil(selectedTrigger) && (selectedTrigger.requireAuth ?? true);
-  if (!pieceModel && pieceModelNotFound) {
+  if (!connectorModel && pieceModelNotFound) {
     return (
       <PieceNotAvailableAlert
-        pieceName={props.step.settings.pieceName}
-        pieceVersion={props.step.settings.pieceVersion}
+        connectorName={props.step.settings.connectorName}
+        connectorVersion={props.step.settings.connectorVersion}
       />
     );
   }
 
   return (
     <div className="flex flex-col gap-4 w-full">
-      {!pieceModel && (
+      {!connectorModel && (
         <div className="space-y-3">
           {Array.from({ length: 5 }).map((_, index) => (
             <div className="space-y-2" key={index}>
@@ -105,12 +105,12 @@ const PieceSettings = React.memo((props: PieceSettingsProps) => {
         </div>
       )}
 
-      {pieceModel && (
+      {connectorModel && (
         <>
-          {pieceModel.auth && (showAuthForAction || showAuthForTrigger) && (
+          {connectorModel.auth && (showAuthForAction || showAuthForTrigger) && (
             <ConnectionSelect
               isTrigger={!isNil(selectedTrigger)}
-              piece={pieceModel}
+              piece={connectorModel}
               disabled={props.readonly}
             ></ConnectionSelect>
           )}
@@ -124,8 +124,8 @@ const PieceSettings = React.memo((props: PieceSettingsProps) => {
               useMentionTextInput={true}
               markdownVariables={markdownVariables}
               dynamicPropsInfo={{
-                pieceName: pieceModel.name,
-                pieceVersion: pieceModel.version,
+                connectorName: connectorModel.name,
+                connectorVersion: connectorModel.version,
                 actionOrTriggerName: selectedAction.name,
                 placedInside: 'stepSettings',
                 updateFormSchema,
@@ -136,8 +136,8 @@ const PieceSettings = React.memo((props: PieceSettingsProps) => {
           {selectedTrigger && (
             <GenericPropertiesForm
               dynamicPropsInfo={{
-                pieceName: pieceModel.name,
-                pieceVersion: pieceModel.version,
+                connectorName: connectorModel.name,
+                connectorVersion: connectorModel.version,
                 actionOrTriggerName: selectedTrigger.name,
                 placedInside: 'stepSettings',
                 updateFormSchema,

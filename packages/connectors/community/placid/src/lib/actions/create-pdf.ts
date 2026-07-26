@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { placidAuth } from '../auth';
 import { PlacidClient } from '../common/client';
 import {
@@ -8,7 +8,7 @@ import {
 	passthroughProperty,
 	templateLayersProperty,
 } from '../common/props';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { PlacidCreatePdfRequest } from '../common';
 
 export const createPdf = createAction({

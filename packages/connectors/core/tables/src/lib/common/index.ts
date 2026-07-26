@@ -1,6 +1,6 @@
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
-import { DynamicPropsValue, PieceAuth, Property } from "@wippa/pieces-framework";
-import { assertNotNullOrUndefined, CreateTableWebhookRequest, Field, FieldType, MarkdownVariant, PopulatedRecord, SeekPage, StaticDropdownEmptyOption, Table, TableWebhookEventType, ListTablesRequest } from "@wippa/pieces-framework";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
+import { DynamicPropsValue, PieceAuth, Property } from "@wippa/connectors-framework";
+import { assertNotNullOrUndefined, CreateTableWebhookRequest, Field, FieldType, MarkdownVariant, PopulatedRecord, SeekPage, StaticDropdownEmptyOption, Table, TableWebhookEventType, ListTablesRequest } from "@wippa/connectors-framework";
 import * as z from 'zod/mini'
 import qs from 'qs';
 

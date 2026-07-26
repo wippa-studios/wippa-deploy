@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import actions from './lib/actions';
 
 const markdownDescription = `
@@ -34,7 +34,7 @@ export const pastebinAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const pastebin = createPiece({
+export const pastebin = createConnector({
   displayName: 'Pastebin',
   description: 'Simple and secure text sharing',
 

@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import {
 	searchAndReplaceText,
 	addTextToPdf,
@@ -9,10 +9,10 @@ import {
 	extractTablesFromPdf,
 	addBarcodeToPdf,
 } from './lib/actions';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { pdfCoAuth } from './lib/auth';
 
-export const pdfCo = createPiece({
+export const pdfCo = createConnector({
 	displayName: 'PDF.co',
 	description: 'Automate PDF conversion, editing, extraction',
 	categories: [PieceCategory.PRODUCTIVITY, PieceCategory.CONTENT_AND_FILES],

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { wayfrontAuth } from '../auth';
 import {
   flattenOrder,

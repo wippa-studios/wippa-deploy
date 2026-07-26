@@ -1,10 +1,10 @@
 import { ColumnDef } from '@tanstack/react-table';
-import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/connectors-framework';
 import {
   isPieceVisible,
   PieceSelection,
   PieceSelectionMode,
-  PieceSet,
+  ConnectorSet,
   UpdatePieceSetRequestBody,
 } from '@wippa/shared';
 import { t } from 'i18next';
@@ -32,7 +32,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { pieceSetMutations } from '@/features/piece-sets';
-import { PieceIcon, piecesHooks } from '@/features/pieces';
+import { ConnectorIcon, piecesHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
 import { PieceComponentVisibilitySheet } from '../piece-component-visibility-sheet';
@@ -68,16 +68,16 @@ function setPiecesVisible(
 }
 
 type PieceSetPiecesTabProps = {
-  pieceSet: PieceSet;
+  connectorSet: ConnectorSet;
 };
 
 const BulkPieceSetActions = ({
-  pieceSet,
-  selectedPieces,
+  connectorSet,
+  selectedConnectors,
   resetSelection,
 }: {
-  pieceSet: PieceSet;
-  selectedPieces: PieceMetadataModelSummary[];
+  connectorSet: ConnectorSet;
+  selectedConnectors: PieceMetadataModelSummary[];
   resetSelection: () => void;
 }) => {
   const {
@@ -86,12 +86,12 @@ const BulkPieceSetActions = ({
     variables,
   } = pieceSetMutations.useUpdatePieceSet();
 
-  const selectedNames = selectedPieces.map((p) => p.name);
-  const allIncluded = selectedPieces.every((p) =>
-    isPieceVisible({ pieces: pieceSet.config.pieces, name: p.name }),
+  const selectedNames = selectedConnectors.map((p) => p.name);
+  const allIncluded = selectedConnectors.every((p) =>
+    isPieceVisible({ pieces: connectorSet.config.pieces, name: p.name }),
   );
-  const allExcluded = selectedPieces.every(
-    (p) => !isPieceVisible({ pieces: pieceSet.config.pieces, name: p.name }),
+  const allExcluded = selectedConnectors.every(
+    (p) => !isPieceVisible({ pieces: connectorSet.config.pieces, name: p.name }),
   );
 
   const pendingRequest = (variables as { request: UpdatePieceSetRequestBody })
@@ -107,10 +107,10 @@ const BulkPieceSetActions = ({
         onClick={() =>
           updateSet(
             {
-              id: pieceSet.id,
+              id: connectorSet.id,
               request: {
                 pieces: setPiecesVisible(
-                  pieceSet.config.pieces,
+                  connectorSet.config.pieces,
                   selectedNames,
                   true,
                 ),
@@ -131,10 +131,10 @@ const BulkPieceSetActions = ({
         onClick={() =>
           updateSet(
             {
-              id: pieceSet.id,
+              id: connectorSet.id,
               request: {
                 pieces: setPiecesVisible(
-                  pieceSet.config.pieces,
+                  connectorSet.config.pieces,
                   selectedNames,
                   false,
                 ),
@@ -151,7 +151,7 @@ const BulkPieceSetActions = ({
   );
 };
 
-export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
+export const PieceSetPiecesTab = ({ connectorSet }: PieceSetPiecesTabProps) => {
   const { pieces, isLoading } = piecesHooks.usePieces({
     includeHidden: true,
     isTableQuery: true,
@@ -165,19 +165,19 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
   >(null);
 
   const togglePiece = useCallback(
-    (pieceName: string, currentlyIncluded: boolean) => {
+    (connectorName: string, currentlyIncluded: boolean) => {
       updateSet({
-        id: pieceSet.id,
+        id: connectorSet.id,
         request: {
           pieces: setPieceVisible(
-            pieceSet.config.pieces,
-            pieceName,
+            connectorSet.config.pieces,
+            connectorName,
             !currentlyIncluded,
           ),
         },
       });
     },
-    [updateSet, pieceSet.id, pieceSet.config.pieces],
+    [updateSet, connectorSet.id, connectorSet.config.pieces],
   );
 
   const filteredPieces = useMemo(() => {
@@ -185,12 +185,12 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
     if (selectedStatuses.size === 0) return allPieces;
     return allPieces.filter((piece) => {
       const included = isPieceVisible({
-        pieces: pieceSet.config.pieces,
+        pieces: connectorSet.config.pieces,
         name: piece.name,
       });
       return selectedStatuses.has(included ? 'enabled' : 'disabled');
     });
-  }, [pieces, pieceSet, selectedStatuses]);
+  }, [pieces, connectorSet, selectedStatuses]);
 
   const columns: ColumnDef<RowDataWithActions<PieceMetadataModelSummary>>[] =
     useMemo(
@@ -207,7 +207,7 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
           ),
           cell: ({ row }) => (
             <div className="flex items-center gap-2">
-              <PieceIcon
+              <ConnectorIcon
                 size={'sm'}
                 border={true}
                 displayName={row.original.displayName}
@@ -260,16 +260,16 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
           ),
           cell: ({ row }) => {
             const included = isPieceVisible({
-              pieces: pieceSet.config.pieces,
+              pieces: connectorSet.config.pieces,
               name: row.original.name,
             });
             const selectedActions =
-              pieceSet.config.selectedActions[row.original.name];
+              connectorSet.config.selectedActions[row.original.name];
             const selectedTriggers =
-              pieceSet.config.selectedTriggers[row.original.name];
+              connectorSet.config.selectedTriggers[row.original.name];
             const curated =
-              row.original.name in pieceSet.config.selectedActions ||
-              row.original.name in pieceSet.config.selectedTriggers;
+              row.original.name in connectorSet.config.selectedActions ||
+              row.original.name in connectorSet.config.selectedTriggers;
             const total = row.original.actions + row.original.triggers;
             const selectedCount =
               (selectedActions?.length ?? row.original.actions) +
@@ -309,7 +309,7 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
           size: 80,
           cell: ({ row }) => {
             const included = isPieceVisible({
-              pieces: pieceSet.config.pieces,
+              pieces: connectorSet.config.pieces,
               name: row.original.name,
             });
             return (
@@ -326,7 +326,7 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
           },
         },
       ],
-      [pieceSet, togglePiece, isPending],
+      [connectorSet, togglePiece, isPending],
     );
 
   const managingPieceDisplayName = useMemo(
@@ -379,8 +379,8 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
           {
             render: (selectedRows, resetSelection) => (
               <BulkPieceSetActions
-                pieceSet={pieceSet}
-                selectedPieces={selectedRows}
+                connectorSet={connectorSet}
+                selectedConnectors={selectedRows}
                 resetSelection={resetSelection}
               />
             ),
@@ -392,13 +392,13 @@ export const PieceSetPiecesTab = ({ pieceSet }: PieceSetPiecesTabProps) => {
       />
       {managingComponentsPiece && (
         <PieceComponentVisibilitySheet
-          pieceName={managingComponentsPiece}
-          pieceDisplayName={managingPieceDisplayName}
+          connectorName={managingComponentsPiece}
+          connectorDisplayName={managingPieceDisplayName}
           open={true}
           onOpenChange={(open) => {
             if (!open) setManagingComponentsPiece(null);
           }}
-          pieceSet={pieceSet}
+          connectorSet={connectorSet}
         />
       )}
     </>

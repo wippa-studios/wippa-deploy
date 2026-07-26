@@ -1,6 +1,6 @@
-import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { formStackAuth } from './auth';
 
 export const formIdDropdown = Property.Dropdown({

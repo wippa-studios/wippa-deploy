@@ -4,7 +4,7 @@ import {
   DropdownState,
   InputPropertyMap,
   PropertyContext,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { EmailOctopusClient } from './client';
 import { emailOctopusAuth } from './auth';
 

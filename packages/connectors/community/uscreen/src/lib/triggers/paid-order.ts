@@ -1,9 +1,9 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { uscreenAuth } from '../common/auth';
 import { UscreenClient, UscreenInvoice } from '../common/client';
 

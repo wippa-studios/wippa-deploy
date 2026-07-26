@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { braveWebSearchAction } from './lib/actions/web-search';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { braveSearchAuth } from './lib/auth';
 
-export const braveSearch = createPiece({
+export const braveSearch = createConnector({
   displayName: 'Brave Search',
   description: 'Privacy-preserving search engine',
   auth: braveSearchAuth,

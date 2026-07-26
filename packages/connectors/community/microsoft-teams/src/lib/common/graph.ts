@@ -1,5 +1,5 @@
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
-import { tryCatch } from '@wippa/pieces-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 import { getGraphBaseUrl } from './microsoft-cloud';
 
 type GraphRetryOptions = {

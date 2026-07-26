@@ -2,12 +2,12 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   createKeyForFormInput,
   MarkdownVariant,
   USE_DRAFT_QUERY_PARAM_NAME,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 
 const markdown = `**Published Form URL:**

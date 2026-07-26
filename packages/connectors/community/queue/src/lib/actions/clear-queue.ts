@@ -2,7 +2,7 @@ import {
     Property,
     StoreScope,
     createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { constructQueueName } from '../common';
 
 

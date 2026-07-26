@@ -50,9 +50,9 @@ import { authenticationSession } from '@/lib/authentication-session';
 import { piecesApi } from '../api/pieces-api';
 const FormSchema = z.object({
   packageType: z.nativeEnum(PackageType),
-  pieceName: z.string().optional(),
+  connectorName: z.string().optional(),
   scope: z.nativeEnum(PieceScope),
-  pieceVersion: z.string().optional(),
+  connectorVersion: z.string().optional(),
   pieceArchive: z.unknown().optional(),
 });
 
@@ -92,8 +92,8 @@ const InstallPieceDialog = ({
           /package\.json.*?{[^}]*"name"\s*:\s*"([^"]+)".*?"version"\s*:\s*"([^"]+)"/s,
         );
         if (packageJsonMatch) {
-          form.setValue('pieceName', packageJsonMatch[1]);
-          form.setValue('pieceVersion', packageJsonMatch[2]);
+          form.setValue('connectorName', packageJsonMatch[1]);
+          form.setValue('connectorVersion', packageJsonMatch[2]);
         } else {
           form.setError('pieceArchive', {
             message: t('package.json not found in archive'),
@@ -117,17 +117,17 @@ const InstallPieceDialog = ({
       form.clearErrors();
 
       if (data.packageType === PackageType.REGISTRY) {
-        if (!data.pieceName) {
-          form.setError('pieceName', {
+        if (!data.connectorName) {
+          form.setError('connectorName', {
             message: t('Piece name is required for NPM Registry'),
           });
         }
-        if (!data.pieceVersion) {
-          form.setError('pieceVersion', {
+        if (!data.connectorVersion) {
+          form.setError('connectorVersion', {
             message: t('Piece version is required for NPM Registry'),
           });
         }
-        if (!data.pieceName || !data.pieceVersion) {
+        if (!data.connectorName || !data.connectorVersion) {
           throw new Error('Validation failed');
         }
       }
@@ -210,8 +210,8 @@ const InstallPieceDialog = ({
                     onValueChange={(value) => {
                       field.onChange(value);
                       if (value === PackageType.ARCHIVE) {
-                        form.setValue('pieceName', undefined);
-                        form.setValue('pieceVersion', undefined);
+                        form.setValue('connectorName', undefined);
+                        form.setValue('connectorVersion', undefined);
                       }
                       form.clearErrors();
                     }}
@@ -242,19 +242,19 @@ const InstallPieceDialog = ({
             {form.watch('packageType') === PackageType.REGISTRY && (
               <>
                 <FormField
-                  name="pieceName"
+                  name="connectorName"
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="pieceName">
+                      <FormLabel htmlFor="connectorName">
                         {t('Piece Name')}
                       </FormLabel>
                       <Input
                         {...field}
                         value={field.value || ''}
-                        id="pieceName"
+                        id="connectorName"
                         type="text"
-                        placeholder="@wippa/piece-name"
+                        placeholder="@wippa/connector-name"
                         className="rounded-sm"
                       />
                       <FormMessage />
@@ -262,17 +262,17 @@ const InstallPieceDialog = ({
                   )}
                 />
                 <FormField
-                  name="pieceVersion"
+                  name="connectorVersion"
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="pieceVersion">
+                      <FormLabel htmlFor="connectorVersion">
                         {t('Piece Version')}
                       </FormLabel>
                       <Input
                         {...field}
                         value={field.value || ''}
-                        id="pieceVersion"
+                        id="connectorVersion"
                         type="text"
                         placeholder="0.0.1"
                         className="rounded-sm"

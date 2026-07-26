@@ -3,8 +3,8 @@ import { ApErrorParams, ErrorCode, isNil } from '@wippa/core-utils';
 import {
   PieceMetadataModelSummary,
   PropertyType,
-} from '@wippa/pieces-framework';
-import { OAuth2GrantType, PieceScope, PieceType } from '@wippa/shared';
+} from '@wippa/connectors-framework';
+import { OAuth2GrantType, PieceScope, ConnectorType } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   CheckIcon,
@@ -22,7 +22,7 @@ import { toast } from 'sonner';
 import { DashboardPageHeader } from '@/app/components/dashboard-page-header';
 import { RequestTrial } from '@/app/components/request-trial';
 import { CustomizeSelectorDialog } from '@/app/routes/platform/setup/pieces/customize-selector-dialog';
-import { PieceActions } from '@/app/routes/platform/setup/pieces/piece-actions';
+import { ConnectorActions } from '@/app/routes/platform/setup/pieces/piece-actions';
 import { SyncPiecesButton } from '@/app/routes/platform/setup/pieces/sync-pieces';
 import { ConfigurePieceOAuth2Dialog } from '@/app/routes/platform/setup/pieces/update-oauth2-dialog';
 import { DataTable, RowDataWithActions } from '@/components/custom/data-table';
@@ -34,7 +34,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { oauthAppsQueries } from '@/features/connections';
 import {
   InstallPieceDialog,
-  PieceIcon,
+  ConnectorIcon,
   piecesApi,
   piecesHooks,
 } from '@/features/pieces';
@@ -79,7 +79,7 @@ const PiecesListTab = () => {
           cell: ({ row }) => {
             return (
               <div className="flex items-center gap-2">
-                <PieceIcon
+                <ConnectorIcon
                   size={'sm'}
                   border={true}
                   displayName={row.original.displayName}
@@ -129,7 +129,7 @@ const PiecesListTab = () => {
               <div className="flex justify-end">
                 {shouldShowOauth2SettingForPiece(row.original) && (
                   <ConfigurePieceOAuth2Dialog
-                    pieceName={row.original.name}
+                    connectorName={row.original.name}
                     onConfigurationDone={() => {
                       refetchPieces();
                       refetchPiecesOAuth2AppsMap();
@@ -137,11 +137,11 @@ const PiecesListTab = () => {
                     isEnabled={isEnabled}
                   />
                 )}
-                <PieceActions
-                  pieceName={row.original.name}
+                <ConnectorActions
+                  connectorName={row.original.name}
                   isEnabled={isEnabled}
                 />
-                {row.original.pieceType === PieceType.CUSTOM && (
+                {row.original.pieceType === ConnectorType.CUSTOM && (
                   <ConfirmationDeleteDialog
                     title={t('Delete {name}', { name: row.original.name })}
                     entityName={t('Piece')}

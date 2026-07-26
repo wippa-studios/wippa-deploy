@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { assembledCommon } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { assembledAuth } from '../common/auth';
 
 export const newTimeOffRequest = createTrigger({

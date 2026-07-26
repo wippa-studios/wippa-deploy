@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
 import { paperformCommonProps } from '../common/props';

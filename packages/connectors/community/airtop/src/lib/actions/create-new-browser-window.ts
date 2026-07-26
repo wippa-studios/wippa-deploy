@@ -1,5 +1,5 @@
-import { HttpMethod, propsValidation } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod, propsValidation } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { airtopAuth } from '../common/auth';
 import { airtopApiCall } from '../common/client';
 import { sessionId } from '../common/props';

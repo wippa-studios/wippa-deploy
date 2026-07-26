@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { xeroCreateContact } from './lib/actions/create-contact';
 import { xeroCreateInvoice } from './lib/actions/create-invoice';
 import { xeroAllocateCreditNoteToInvoice } from './lib/actions/allocate-credit-note-to-invoice';
@@ -71,7 +71,7 @@ export const xeroAuth = PieceAuth.OAuth2({
   ],
 });
 
-export const xero = createPiece({
+export const xero = createConnector({
   displayName: 'Xero',
   description: 'Beautiful accounting software',
 

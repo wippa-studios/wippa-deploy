@@ -3,7 +3,7 @@ import {
   DynamicPropsValue,
   Property,
   StoreScope,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   ContentBlock,
   ConverseCommand,

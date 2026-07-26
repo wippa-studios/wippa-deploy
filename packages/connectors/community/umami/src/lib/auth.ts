@@ -1,10 +1,10 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 const selfHostedAuth = PieceAuth.CustomAuth({
   displayName: 'Self-hosted (Username & Password)',

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { codyAuth } from '../..';
 import { codyClient } from '../common/client';
 

@@ -1,5 +1,5 @@
 import { squareAuth } from '../auth';
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 
 const triggerData = [
   {

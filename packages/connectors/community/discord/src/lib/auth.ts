@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const markdown = `
 To obtain a token, follow these steps:

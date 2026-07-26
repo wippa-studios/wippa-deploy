@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, DynamicPropsValue, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, DynamicPropsValue, PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { tarventAuth } from '../auth';
 import { TarventClient } from './client';
 

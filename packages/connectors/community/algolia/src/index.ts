@@ -1,13 +1,13 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { browseRecordsAction } from './lib/actions/browse-records';
 import { deleteRecordsAction } from './lib/actions/delete-records';
 import { saveRecordsAction } from './lib/actions/save-records';
 import { algoliaAuth } from './lib/common/auth';
 
-export const algolia = createPiece({
+export const algolia = createConnector({
   displayName: 'Algolia',
   description:
     'Manage your Algolia search indices — add, browse, and delete records.',

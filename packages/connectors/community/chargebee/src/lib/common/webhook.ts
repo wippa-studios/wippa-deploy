@@ -1,4 +1,4 @@
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 import { chargebeeRequest } from './client';
 

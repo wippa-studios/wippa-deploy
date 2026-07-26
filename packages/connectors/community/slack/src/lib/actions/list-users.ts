@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { UsersListResponse, WebClient } from '@slack/web-api';
 import { slackAuth } from '../auth';
 import { Member } from '@slack/web-api/dist/types/response/UsersListResponse';

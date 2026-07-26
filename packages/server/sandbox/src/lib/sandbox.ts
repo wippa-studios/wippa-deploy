@@ -1,6 +1,6 @@
 import { ActivepiecesError, ErrorCode, isNil, tryCatch } from '@wippa/core-utils'
 import { type ApLogger, wideEvent } from '@wippa/server-utils'
-import { PiecePackage } from '@wippa/shared'
+import { ConnectorPackage } from '@wippa/shared'
 import { localExecutionCache } from './cache/local-execution-cache'
 import { createResolver } from './resolver'
 import { createSandboxManager, SandboxManager } from './sandbox-manager'
@@ -110,7 +110,7 @@ export function createSandboxRuntime({ concurrency = 1, basePath, getSettings }:
                     flow,
                 })
                 const resolver = createResolver({ apiClient, basePath, getSettings, log })
-                const pieces: PiecePackage[] = []
+                const pieces: ConnectorPackage[] = []
                 const codeSteps: CodeArtifact[] = []
                 for (const flow of flows) {
                     const { data: resolved, error: flowError } = await tryCatch(() => resolver.resolve({ flow, platformId, publicApiUrl, engineToken }))

@@ -1,5 +1,5 @@
 import { apId } from '@wippa/core-utils'
-import { FileCompression, FileLocation, FileType, PackageType, PieceType, Principal, PrincipalType } from '@wippa/shared'
+import { FileCompression, FileLocation, FileType, PackageType, ConnectorType, Principal, PrincipalType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../helpers/auth'
@@ -37,22 +37,22 @@ function bundleRequest(name: string, version: string, token: string) {
 
 describe('Piece Bundle Endpoint', () => {
     it('rejects an invalid engine token with 401', async () => {
-        const response = await app!.inject(bundleRequest('@wippa/piece-anything', '1.0.0', 'not-a-real-token'))
+        const response = await app!.inject(bundleRequest('@wippa/connector-anything', '1.0.0', 'not-a-real-token'))
         expect(response.statusCode).toBe(StatusCodes.UNAUTHORIZED)
     })
 
     it('redirects an official piece to the npm tarball when S3 is not configured', async () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@wippa/piece-bundle-official',
+            name: '@wippa/connector-bundle-official',
             version: '1.2.3',
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
             platformId: undefined,
         }))
         const token = await engineToken(mockProject.id, mockPlatform.id)
 
-        const response = await app!.inject(bundleRequest('@wippa/piece-bundle-official', '1.2.3', token))
+        const response = await app!.inject(bundleRequest('@wippa/connector-bundle-official', '1.2.3', token))
 
         expect(response.statusCode).toBe(StatusCodes.TEMPORARY_REDIRECT)
         expect(response.headers.location).toContain('registry.npmjs.org')
@@ -77,7 +77,7 @@ describe('Piece Bundle Endpoint', () => {
             name: '@acme/piece-private',
             version: '0.0.1',
             packageType: PackageType.ARCHIVE,
-            pieceType: PieceType.CUSTOM,
+            pieceType: ConnectorType.CUSTOM,
             platformId: platformA.mockPlatform.id,
             archiveId,
         }))

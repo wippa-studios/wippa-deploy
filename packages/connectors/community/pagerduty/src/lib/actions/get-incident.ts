@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { pagerDutyAuth } from '../auth';
 import { pagerDutyApiCall } from '../common/client';
 import { incidentIdProp } from '../common/props';

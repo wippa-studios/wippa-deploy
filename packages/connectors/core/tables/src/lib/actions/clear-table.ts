@@ -1,6 +1,6 @@
-import { createAction, PieceAuth } from '@wippa/pieces-framework';
+import { createAction, PieceAuth } from '@wippa/connectors-framework';
 import { tablesCommon } from '../common';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const clearTable = createAction({
   audience: 'human',

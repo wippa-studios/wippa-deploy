@@ -6,14 +6,14 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { hubspotAuth } from '../auth';
 import {
 	createTrigger,
 
 	Property,
 	TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 
 type Props = {
@@ -28,7 +28,7 @@ type ListBlogPostsResponse = {
 		};
 	};
 };
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof hubspotAuth>, Props> = {
 	strategy: DedupeStrategy.TIMEBASED,

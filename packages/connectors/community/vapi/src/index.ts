@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { vapiAuth, VAPI_BASE_URL } from './lib/auth';
 import { createCall } from './lib/actions/create-call';
 import { getCall } from './lib/actions/get-call';
 import { updateAssistant } from './lib/actions/update-assistant';
 
-export const vapi = createPiece({
+export const vapi = createConnector({
   displayName: 'Vapi',
   description:
     'AI voice agent platform. Create outbound calls, manage assistants, and retrieve call details.',

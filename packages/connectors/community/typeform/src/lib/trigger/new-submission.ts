@@ -1,7 +1,7 @@
 import { typeformCommon, formsDropdown } from '../common';
 import { nanoid } from 'nanoid';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { getAccessTokenOrThrow } from '@wippa/connectors-common';
 import { typeformAuth } from '../..';
 
 export const typeformNewSubmission = createTrigger({

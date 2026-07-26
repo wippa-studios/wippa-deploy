@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const parserExpertAuth = PieceAuth.SecretText({
   displayName: 'API Key',

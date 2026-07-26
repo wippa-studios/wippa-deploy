@@ -1,9 +1,9 @@
-import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import qs from 'qs';
 import { clickupAuth } from '../../auth';
 import { callClickUpApi, clickupCommon, listTags } from '../../common';

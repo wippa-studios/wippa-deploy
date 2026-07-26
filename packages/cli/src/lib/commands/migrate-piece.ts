@@ -6,7 +6,7 @@ import { findPiece, findPieces, piecesPath } from '../utils/piece-utils'
 import { migratePieceUtils } from '../utils/migrate-piece-utils'
 
 function reportMigration({ pieceFolder, label, dryRun }: { pieceFolder: string, label: string, dryRun: boolean }): void {
-    const report = migratePieceUtils.migratePiece({ piecePath: pieceFolder, dryRun })
+    const report = migratePieceUtils.migrateConnector({ piecePath: pieceFolder, dryRun })
     const changes = report.repointedFiles.length + (report.manifestChanged ? 1 : 0) + (report.eslintChanged ? 1 : 0)
     if (changes === 0) {
         console.info(chalk.gray(`• ${label} — already conformant`))
@@ -14,7 +14,7 @@ function reportMigration({ pieceFolder, label, dryRun }: { pieceFolder: string, 
     }
     console.info(chalk.green(`${dryRun ? '[dry run] ' : ''}✓ ${label}`))
     if (report.repointedFiles.length > 0) {
-        console.info(`    repointed imports in ${report.repointedFiles.length} file(s) → @wippa/pieces-framework`)
+        console.info(`    repointed imports in ${report.repointedFiles.length} file(s) → @wippa/connectors-framework`)
     }
     if (report.manifestChanged) {
         console.info('    updated package.json (dropped shared, added core build deps, moved tslib to devDependencies, added bundle script)')
@@ -24,13 +24,13 @@ function reportMigration({ pieceFolder, label, dryRun }: { pieceFolder: string, 
     }
 }
 
-async function migrateByName({ pieceName, dryRun }: { pieceName: string, dryRun: boolean }): Promise<void> {
-    const pieceFolder = await findPiece(pieceName)
+async function migrateByName({ connectorName, dryRun }: { connectorName: string, dryRun: boolean }): Promise<void> {
+    const pieceFolder = await findPiece(connectorName)
     if (!pieceFolder) {
-        console.error(chalk.red(`🚨 Piece '${pieceName}' not found under packages/pieces`))
+        console.error(chalk.red(`🚨 Piece '${connectorName}' not found under packages/pieces`))
         process.exit(1)
     }
-    reportMigration({ pieceFolder, label: pieceName, dryRun })
+    reportMigration({ pieceFolder, label: connectorName, dryRun })
 }
 
 async function migrateAll({ dryRun }: { dryRun: boolean }): Promise<void> {
@@ -42,9 +42,9 @@ async function migrateAll({ dryRun }: { dryRun: boolean }): Promise<void> {
 }
 
 export const migratePieceCommand = new Command('migrate')
-    .description('Migrate a piece to the self-contained bundle model: repoint imports to @wippa/pieces-framework, fix package.json, and add the import-boundary lint rule')
+    .description('Migrate a piece to the self-contained bundle model: repoint imports to @wippa/connectors-framework, fix package.json, and add the import-boundary lint rule')
     .argument('[name]', 'name of the piece to migrate')
-    .option('--name <pieceName>', 'name of the piece to migrate')
+    .option('--name <connectorName>', 'name of the piece to migrate')
     .option('--all', 'migrate every piece under packages/pieces')
     .option('--dry-run', 'report the changes without writing them')
     .action(async (positionalName, options) => {
@@ -53,10 +53,10 @@ export const migratePieceCommand = new Command('migrate')
             await migrateAll({ dryRun })
         }
         else {
-            const pieceName = positionalName ?? options.name ?? (await inquirer.prompt([
+            const connectorName = positionalName ?? options.name ?? (await inquirer.prompt([
                 { type: 'input', name: 'name', message: 'Enter the piece folder name' },
             ])).name
-            await migrateByName({ pieceName, dryRun })
+            await migrateByName({ connectorName, dryRun })
         }
         if (!dryRun) {
             console.info(chalk.yellow('\nNext: build the piece to verify, e.g. `npm run build-piece <name>`'))

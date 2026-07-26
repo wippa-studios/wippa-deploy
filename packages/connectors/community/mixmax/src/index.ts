@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { createCodeSnippet } from './lib/actions/create-code-snippet';
 import { createContact } from './lib/actions/create-contact';
@@ -11,7 +11,7 @@ import { mixmaxAuth } from './lib/auth';
 
 export { mixmaxAuth } from './lib/auth';
 
-export const mixmax = createPiece({
+export const mixmax = createConnector({
   displayName: 'Mixmax',
   description:
     'Email productivity and automation platform for Gmail — sequences, tracking, templates, and integrations',

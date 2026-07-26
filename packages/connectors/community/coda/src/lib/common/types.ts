@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from "@wippa/pieces-common";
-import { AppConnectionValueForAuthProperty } from "@wippa/pieces-framework";
+import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from "@wippa/connectors-common";
+import { AppConnectionValueForAuthProperty } from "@wippa/connectors-framework";
 import { codaAuth } from '../auth';
 
 export const CODA_BASE_URL = "https://coda.io/apis/v1";

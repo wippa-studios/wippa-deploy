@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { extractaAiAuth } from '../common/auth';
 import crypto from 'crypto';
 

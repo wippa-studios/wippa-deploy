@@ -1,11 +1,11 @@
-import { PiecePropertyMap } from ".";
+import { ConnectorPropertyMap } from ".";
 import { PieceAuthProperty } from "./authentication";
 import { PropertyType } from "./input/property-type";
 import * as z from "zod/mini";
 import { isEmpty, isNil } from "@wippa/core-utils";
-import { AUTHENTICATION_PROPERTY_NAME } from "@wippa/core-piece-types";
+import { AUTHENTICATION_PROPERTY_NAME } from "@wippa/core-connector-types";
 
-function buildSchema(props: PiecePropertyMap, auth: PieceAuthProperty | PieceAuthProperty[] | undefined, requireAuth: boolean | undefined = true) {
+function buildSchema(props: ConnectorPropertyMap, auth: PieceAuthProperty | PieceAuthProperty[] | undefined, requireAuth: boolean | undefined = true) {
     const entries = Object.entries(props);
     const propsSchema: Record<string, z.ZodMiniType> = {};
     for (const [name, property] of entries) {

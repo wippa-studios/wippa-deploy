@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { microsoftCloudProperty, getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createEventAction } from './lib/actions/create-event';
 import { deleteEventAction } from './lib/actions/delete-event';
 import { listEventsAction } from './lib/actions/list-events';
@@ -30,7 +30,7 @@ export const outlookCalendarAuth = PieceAuth.OAuth2({
   prompt: 'omit',
 });
 
-export const microsoftOutlookCalendar = createPiece({
+export const microsoftOutlookCalendar = createConnector({
   displayName: 'Microsoft Outlook Calendar',
   description: 'Calendar software by Microsoft',
   auth: outlookCalendarAuth,

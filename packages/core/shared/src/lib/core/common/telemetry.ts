@@ -125,8 +125,8 @@ type UserInvited = {
 type TriggerFailuresExceeded = {
     projectId: string
     flowId: string
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
 }
 type AiProviderConfiguredOrUsed = {
     provider: string

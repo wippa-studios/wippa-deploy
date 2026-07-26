@@ -6,13 +6,13 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
 	AppConnectionValueForAuthProperty,
 	StaticPropsValue,
 	TriggerStrategy,
 	createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { BASE_URL } from '../common/client';
 import { NinoxAuth } from '../common/auth';
 import { teamidDropdown, databaseIdDropdown, tableIdDropdown } from '../common/props';

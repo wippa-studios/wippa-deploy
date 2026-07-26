@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { validateEmail } from "./lib/actions/validate-email";
 
 export const zerobounceAuth = PieceAuth.SecretText({
@@ -7,7 +7,7 @@ export const zerobounceAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const zerobounce = createPiece({
+export const zerobounce = createConnector({
   displayName: "ZeroBounce",
   auth: zerobounceAuth,
   description: "ZeroBounce is an email validation service that helps you reduce bounces, improve email deliverability and increase email marketing ROI.",

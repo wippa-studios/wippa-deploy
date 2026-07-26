@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { renderDocumentAction } from './lib/actions/render-document';
 import { uploadTemplateAction } from './lib/actions/upload-template';
 import { deleteTemplateAction } from './lib/actions/delete-template';
@@ -11,7 +11,7 @@ import { listTagsAction } from './lib/actions/list-tags';
 import { carboneAuth } from './lib/auth';
 import { CARBONE_API_URL } from './lib/common/constants';
 
-export const carbone = createPiece({
+export const carbone = createConnector({
   displayName: 'Carbone',
   description:
     'Generate documents (PDF, DOCX, XLSX, ODS, and more) from templates and JSON data using the Carbone report generator.',

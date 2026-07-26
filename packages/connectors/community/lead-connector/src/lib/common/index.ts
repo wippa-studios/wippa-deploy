@@ -2,8 +2,8 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 import jwt from 'jsonwebtoken';
 
 export const baseUrl = 'https://services.leadconnectorhq.com';

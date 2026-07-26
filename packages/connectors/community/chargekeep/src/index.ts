@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addOrUpdateContactExtended } from './lib/actions/add-or-update-contact-extended';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';
 import { addOrUpdateSubscription } from './lib/actions/add-or-update-subscription';
@@ -22,7 +22,7 @@ const markdownDescription = `
   2. Once on the website, locate and click on the admin to obtain your chargekeep API Key.
 `;
 
-export const chargekeep = createPiece({
+export const chargekeep = createConnector({
   displayName: 'ChargeKeep',
   description: 'Easy-to-use recurring and one-time payments software for Stripe & PayPal',
   auth: chargekeepAuth,

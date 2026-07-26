@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 
 import { tallyAuth } from '../auth';
 import { tallyApiClient } from '../common/client';

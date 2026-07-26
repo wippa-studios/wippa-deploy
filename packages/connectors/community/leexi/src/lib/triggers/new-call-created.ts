@@ -1,10 +1,10 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@wippa/pieces-framework";
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@wippa/connectors-framework";
 import { leexiAuth } from "../common/auth";
-import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper, QueryParams } from "@wippa/pieces-common";
+import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper, QueryParams } from "@wippa/connectors-common";
 import dayjs from 'dayjs';
 import { BASE_URL } from "../common/constants";
 import { ListCallResponse } from "../common/types";
-import { isEmpty } from '@wippa/pieces-framework';
+import { isEmpty } from '@wippa/connectors-framework';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof leexiAuth>, Record<string, never>> = {
     strategy: DedupeStrategy.TIMEBASED,

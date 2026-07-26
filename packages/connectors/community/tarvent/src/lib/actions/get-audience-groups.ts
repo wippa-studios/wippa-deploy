@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { tarventAuth } from '../auth';
 import { makeClient, tarventCommon } from '../common';
 

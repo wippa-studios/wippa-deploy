@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { attioApiCall } from '../common/client';
 import { attioAuth } from '../auth';
 import { callRecordingIdDropdown, meetingIdDropdown } from '../common/props';

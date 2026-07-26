@@ -2,10 +2,10 @@ import {
     createTrigger,
     Property,
     TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { videoaskAuth } from '../common/auth';
 import { organizationIdDropdown, videoaskIdDropdown } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { makeRequest } from '../common/client';
 
 export const newFormAuthorResponse = createTrigger({

@@ -1,12 +1,12 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { vadooAiAuth } from '../auth';
 import {
   httpClient,
   HttpMethod,
   propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { generateAiCaptionsSchema } from '../schemas';
-import { isEmpty } from '@wippa/pieces-framework';
+import { isEmpty } from '@wippa/connectors-framework';
 
 export const generateAiCaptions = createAction({
   auth: vadooAiAuth,

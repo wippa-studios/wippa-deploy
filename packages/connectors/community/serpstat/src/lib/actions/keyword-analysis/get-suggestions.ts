@@ -1,5 +1,5 @@
-import { Property, createAction } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { randomUUID } from 'crypto';
 import { SEARCH_ENGINE_OPTIONS } from '../../common/search-engines';
 import { serpstatApiCall } from '../../common/client';

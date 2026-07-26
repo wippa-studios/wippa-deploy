@@ -4,8 +4,8 @@ import {
   PiecePropValueSchema,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { rabbitmqAuth } from '../auth';
 import { rabbitmqConnect } from '../common';
 import dayjs from 'dayjs';

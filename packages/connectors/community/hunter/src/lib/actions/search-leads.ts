@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { HttpMethod, QueryParams } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { HttpMethod, QueryParams } from '@wippa/connectors-common';
 import { hunterApiCall } from '../common';
 import { hunterAuth } from '../auth';
 import {

@@ -2,12 +2,12 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { stripeCommon } from '../common';
 import { StripeWebhookInformation } from '../common/types';
 import { stripeAuth } from '../..';
-import { isEmpty } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { isEmpty } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 type StripeWebhookPayload = {
   data: {

@@ -3,11 +3,11 @@ import { AppConnectionStatus } from '@wippa/shared';
 import { ChatUIMessage } from '@/features/chat/lib/chat-types';
 
 export function normalizePieceName(piece: string): string {
-  if (piece.startsWith('@wippa/piece-')) {
+  if (piece.startsWith('@wippa/connector-')) {
     return piece;
   }
   const shortName = piece.replace(/[^a-z0-9-]/gi, '');
-  return `@wippa/piece-${shortName}`;
+  return `@wippa/connector-${shortName}`;
 }
 
 export function isConnectionHealthy(status: string): boolean {

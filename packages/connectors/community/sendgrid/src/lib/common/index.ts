@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const sendgridCommon = {
   baseUrl: (residency = 'US'): string => {

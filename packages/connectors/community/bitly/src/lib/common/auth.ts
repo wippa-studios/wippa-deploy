@@ -1,6 +1,6 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { bitlyApiCall } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const bitlyAuth = PieceAuth.CustomAuth({
   description: `

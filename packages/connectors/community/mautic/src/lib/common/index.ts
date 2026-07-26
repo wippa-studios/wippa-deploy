@@ -1,10 +1,10 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { getFields } from './helper';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const mauticCommon = {
   contactFields: { ...getFields('contact'), ...getFields('lead') },

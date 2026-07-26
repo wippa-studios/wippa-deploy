@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { savvyCalApiCall, flattenEvent, buildTeamOptions, buildLinkOptions, verifyWebhookSignature, SavvyCalEvent } from '../common';
 import { savvyCalAuth, getToken } from '../auth';
 

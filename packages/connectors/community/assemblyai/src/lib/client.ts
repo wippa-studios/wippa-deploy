@@ -1,7 +1,7 @@
 import {
   ActionContext,
   SecretTextProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { AssemblyAI } from 'assemblyai';
 import packageJson from '../../package.json';
 

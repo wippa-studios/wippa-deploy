@@ -5,9 +5,9 @@ import {
 	HttpMessageBody,
 	HttpMethod,
 	HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { GetField, PaginatedV2Response, PaginatedV1Response, RequestParams } from './types';
-import { isEmpty, isNil } from '@wippa/pieces-framework';
+import { isEmpty, isNil } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 
 type FlexibleQueryParams = Record<

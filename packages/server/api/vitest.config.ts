@@ -19,8 +19,8 @@ export default defineConfig({
     alias: {
       'isolated-vm': path.resolve(__dirname, '__mocks__/isolated-vm.js'),
       '@wippa/shared': path.resolve(__dirname, '../../../packages/core/shared/src/index.ts'),
-      '@wippa/pieces-framework': path.resolve(__dirname, '../../../packages/pieces/framework/src/index.ts'),
-      '@wippa/pieces-common': path.resolve(__dirname, '../../../packages/pieces/common/src/index.ts'),
+      '@wippa/connectors-framework': path.resolve(__dirname, '../../../packages/pieces/framework/src/index.ts'),
+      '@wippa/connectors-common': path.resolve(__dirname, '../../../packages/pieces/common/src/index.ts'),
       '@wippa/server-utils': path.resolve(__dirname, '../../../packages/server/utils/src/index.ts'),
 
     },

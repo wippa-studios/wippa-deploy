@@ -1,9 +1,9 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { convertkitAuth } from '../..';
 import { fieldsArray, label, new_label } from '../common/custom-fields';
 import { CustomField } from '../common/types';

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 
 import { cloneTask } from './lib/actions/clone-task';
 import { completeTask } from './lib/actions/complete-task';
@@ -33,8 +33,8 @@ import { updateTask } from './lib/actions/update-task';
 import { updateTeam } from './lib/actions/update-team';
 import { updateWorker } from './lib/actions/update-worker';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { autoDispatchCompleted } from './lib/triggers/auto-dispatch-completed';
 import { smsRecipientOptOut } from './lib/triggers/sms-recipient-opt-out';
 import { smsRecipientResponseMissed } from './lib/triggers/sms-recipient-response-missed';
@@ -67,7 +67,7 @@ export const onfleetAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const onfleet = createPiece({
+export const onfleet = createConnector({
   displayName: 'Onfleet',
   description: 'Last mile delivery software',
 

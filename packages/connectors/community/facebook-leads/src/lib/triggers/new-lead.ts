@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { facebookLeadsCommon } from '../common';
 import { facebookLeadsAuth } from '../auth';
 import { FacebookTriggerPayloadBody, FacebookPageDropdown } from '../common/types';

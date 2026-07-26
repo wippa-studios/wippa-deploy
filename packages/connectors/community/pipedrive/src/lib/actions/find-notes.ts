@@ -1,8 +1,8 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {  pipedrivePaginatedV1ApiCall } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 export const findNotesAction = createAction({
     auth: pipedriveAuth,

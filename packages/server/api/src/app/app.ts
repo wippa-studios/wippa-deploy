@@ -2,7 +2,7 @@ import replyFrom from '@fastify/reply-from'
 import swagger from '@fastify/swagger'
 import { createAdapter } from '@socket.io/redis-adapter'
 import { isNil, spreadIfDefined } from '@wippa/core-utils'
-import { PieceMetadata } from '@wippa/pieces-framework'
+import { ConnectorMetadata } from '@wippa/connectors-framework'
 import { apVersionUtil, onCallService, UNKNOWN_VERSION, wideEvent } from '@wippa/server-utils'
 import { AddAllowedEmbedOriginsRequestBody, ApEnvironment, AppConnectionWithoutSensitiveData, ApplicationEventName, ConnectionDeletedEvent, ConnectionUpsertedEvent, Flow, FlowActivatedEvent, FlowCreatedEvent, FlowDeactivatedEvent, FlowDeletedEvent, FlowPublishedEvent, FlowRun, FlowRunFinishedEvent, FlowRunRetriedEvent, FlowRunStartedEvent, FlowUpdatedEvent, Folder, FolderCreatedEvent, FolderDeletedEvent, FolderUpdatedEvent, GitRepoWithoutSensitiveData, ProjectMember, ProjectRelease, ProjectReleaseEvent, ProjectRoleEvent, ProjectWithLimits, SigningKeyEvent, SignUpEvent, Template, UserEmailVerifiedEvent, UserInvitation, UserPasswordResetEvent, UserSignedInEvent, UserWithMetaInformation } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance, FastifyRequest, HTTPMethods } from 'fastify'
@@ -95,7 +95,7 @@ import { mcpOAuthApproveController } from './mcp/oauth/code/mcp-oauth-approve.co
 import { startDevPieceWatcher } from './pieces/dev-piece-watcher'
 import { pieceModule } from './pieces/metadata/piece-metadata-controller'
 import { pieceMetadataService } from './pieces/metadata/piece-metadata-service'
-import { pieceSyncService } from './pieces/piece-sync-service'
+import { connectorSyncService } from './pieces/piece-sync-service'
 import { platformBackgroundJobs } from './platform/platform-jobs'
 import { platformModule } from './platform/platform.module'
 import { projectHooks } from './project/project-hooks'
@@ -217,7 +217,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
     await app.register(storeEntryModule)
     await app.register(teamsBotModule)
     await app.register(folderModule)
-    await pieceSyncService(app.log).setup()
+    await connectorSyncService(app.log).setup()
     toolSearchReindexJob(app.log).register()
     // Boot backfill: build the tool-search index if the flag is on but it is empty or only partially
     // embedded (a populated deployment fires no sync delta, and a build that failed midway leaves rows
@@ -481,7 +481,7 @@ function registerOpenApiSchemas() {
     globalRegistry.add(Flow, { id: 'flow' })
     globalRegistry.add(FlowRun, { id: 'flow-run' })
     globalRegistry.add(AppConnectionWithoutSensitiveData, { id: 'app-connection' })
-    globalRegistry.add(PieceMetadata, { id: 'piece' })
+    globalRegistry.add(ConnectorMetadata, { id: 'piece' })
     globalRegistry.add(GitRepoWithoutSensitiveData, { id: 'git-repo' })
     globalRegistry.add(ProjectRelease, { id: 'project-release' })
     globalRegistry.add(AddAllowedEmbedOriginsRequestBody, { id: 'embedding' })

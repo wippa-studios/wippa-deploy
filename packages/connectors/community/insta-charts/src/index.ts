@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { instaChartsGenerateChartImageAction } from "./lib/actions/generate-chart-image";
 import { instaChartsAuth } from './lib/auth';
 
-export const instaCharts = createPiece({
+export const instaCharts = createConnector({
   displayName: "InstaCharts",
   description: "Chart creation and visualization platform",
   minimumSupportedRelease: '0.36.1',

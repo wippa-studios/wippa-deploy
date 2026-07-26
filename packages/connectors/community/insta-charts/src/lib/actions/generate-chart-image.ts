@@ -1,9 +1,9 @@
 import { instaChartsAuth } from '../auth';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 import {
   createAction,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const instaChartsGenerateChartImageAction = createAction({
   auth: instaChartsAuth,

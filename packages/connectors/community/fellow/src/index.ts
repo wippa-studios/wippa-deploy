@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { fellowAuth, getBaseUrl } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getNoteAction } from './lib/actions/get-note';
 import { newRecordingTrigger } from './lib/triggers/new-recording';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const fellow = createPiece({
+export const fellow = createConnector({
   displayName: 'Fellow.ai',
   description: 'AI Meeting Assistant and Notetaker',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE, PieceCategory.PRODUCTIVITY],

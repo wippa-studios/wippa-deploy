@@ -1,4 +1,4 @@
-import { HttpMessageBody } from '@wippa/pieces-common';
+import { HttpMessageBody } from '@wippa/connectors-common';
 
 export interface MeetingRegistrant {
   first_name: string;

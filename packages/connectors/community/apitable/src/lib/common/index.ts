@@ -1,4 +1,4 @@
-import { DynamicPropsValue, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { DynamicPropsValue, PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { APITableAuth } from '../auth';
 import { AITableClient } from './client';
 import { AITableFieldType, AITableNumericFieldTypes } from './constants';

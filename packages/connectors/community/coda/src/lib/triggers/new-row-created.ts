@@ -2,8 +2,8 @@ import {
 	AppConnectionValueForAuthProperty,
 	TriggerStrategy,
 	createTrigger,
-} from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { codaAuth } from '../auth';
 import { CodaRow, codaClient } from '../common/types';
 import dayjs from 'dayjs';

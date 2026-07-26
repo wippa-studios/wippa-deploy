@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { CreateListItem } from './lib/actions/create-list-item';
 import { deleteListItem } from './lib/actions/delete-list-item';
 import { downloadCustomExportInItsOriginalFormat } from './lib/actions/download-custom-export-in-its-original-format';
@@ -29,7 +29,7 @@ export const kizeoFormsAuth = PieceAuth.SecretText({
   description: markdownDescription,
 });
 
-export const kizeoForms = createPiece({
+export const kizeoForms = createConnector({
   displayName: 'Kizeo Forms',
   description: 'Create custom mobile forms',
 

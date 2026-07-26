@@ -13,7 +13,7 @@ import {
   chatPartUtils,
 } from '@/features/chat/lib/chat-types';
 import { chatUtils } from '@/features/chat/lib/chat-utils';
-import { PieceIconWithPieceName } from '@/features/pieces/components/piece-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
 
 export function CardSkeleton({
   cardKind,
@@ -113,7 +113,7 @@ function ActionReceiptCardSkeleton({
   const input = isObject(part.input)
     ? (part.input as Record<string, unknown>)
     : undefined;
-  const pieceName = chatPartUtils.extractPieceNames(input)[0];
+  const connectorName = chatPartUtils.extractPieceNames(input)[0];
 
   return (
     <motion.div
@@ -124,9 +124,9 @@ function ActionReceiptCardSkeleton({
     >
       <div className="px-3.5 pb-2.5 pt-3">
         <div className="flex items-center gap-2.5 min-w-0">
-          {pieceName ? (
+          {connectorName ? (
             <PieceIconWithPieceName
-              pieceName={pieceName}
+              connectorName={connectorName}
               size="xs"
               border={false}
               showTooltip={false}

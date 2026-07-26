@@ -1,10 +1,10 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { attioApiCall, verifyWebhookSignature } from '../common/client';
 import { attioAuth } from '../auth';
 import { listIdDropdown } from '../common/props';
 import { ListWebhookPayload, WebhookResponse } from '../common/types';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 const TRIGGER_KEY = 'new-list-entry-trigger';
 

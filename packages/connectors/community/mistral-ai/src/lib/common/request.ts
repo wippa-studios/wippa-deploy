@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import type { mistralAuth } from './auth';
 
 export type MistralAuthValue = AppConnectionValueForAuthProperty<typeof mistralAuth>;

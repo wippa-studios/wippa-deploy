@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { deftformAuth } from './lib/auth';
 import { getWorkspaceDetails } from './lib/actions/get-workspace';
 import { getAllForms } from './lib/actions/get-all-forms';
@@ -13,7 +13,7 @@ import { newFormResponseTrigger } from './lib/triggers/new-form-response';
 
 export { deftformAuth };
 
-export const deftform = createPiece({
+export const deftform = createConnector({
     displayName: 'Deftform',
     description: 'Build powerful forms and automate your workflow with Deftform.',
     minimumSupportedRelease: '0.36.1',

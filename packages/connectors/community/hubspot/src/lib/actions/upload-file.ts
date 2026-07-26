@@ -4,7 +4,7 @@ import {
 	DropdownOption,
 	PiecePropValueSchema,
 	Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { Client } from '@hubspot/api-client';
 
 export const uploadFileAction = createAction({

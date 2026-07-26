@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { getDeliveryStats } from './lib/actions/get-delivery-stats';
 import { getEmailBounces } from './lib/actions/get-bounces';
@@ -8,7 +8,7 @@ import { sendEmail } from './lib/actions/send-email';
 import { sendEmailWithTemplate } from './lib/actions/send-email-with-template';
 import { postmarkAuth } from './lib/auth';
 
-export const postmark = createPiece({
+export const postmark = createConnector({
   displayName: 'Postmark',
   description:
     'Transactional email platform for sending email, templates, and retrieving delivery and bounce insights.',

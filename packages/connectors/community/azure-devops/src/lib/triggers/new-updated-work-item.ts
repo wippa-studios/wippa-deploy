@@ -2,8 +2,8 @@ import {
   createTrigger,
   TriggerStrategy,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/connectors-common';
 import {
   azureDevOpsAuth,
   AzureDevOpsAuth,

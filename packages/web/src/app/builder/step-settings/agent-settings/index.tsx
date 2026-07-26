@@ -27,23 +27,23 @@ type AgentSettingsProps = {
 
 export const AgentSettings = (props: AgentSettingsProps) => {
   const {
-    pieceModel,
+    connectorModel,
     pieceModelNotFound,
     updateFormSchema,
     updatePropertySettingsSchema,
   } = useStepSettingsContext();
   const form = useFormContext();
 
-  if (isNil(pieceModel) && pieceModelNotFound) {
+  if (isNil(connectorModel) && pieceModelNotFound) {
     return (
       <PieceNotAvailableAlert
-        pieceName={props.step.settings.pieceName}
-        pieceVersion={props.step.settings.pieceVersion}
+        connectorName={props.step.settings.connectorName}
+        connectorVersion={props.step.settings.connectorVersion}
       />
     );
   }
 
-  if (isNil(pieceModel)) {
+  if (isNil(connectorModel)) {
     return (
       <div className="space-y-3">
         {Array.from({ length: 5 }).map((_, index) => (
@@ -61,7 +61,7 @@ export const AgentSettings = (props: AgentSettingsProps) => {
 
   const actionName = (props.step.settings as PieceActionSettings)
     .actionName as string;
-  const selectedAction = pieceModel.actions[actionName];
+  const selectedAction = connectorModel.actions[actionName];
   const properties = (({ auth: _auth, ...rest }) => rest)(selectedAction.props);
 
   return (
@@ -86,8 +86,8 @@ export const AgentSettings = (props: AgentSettingsProps) => {
                   disabled: props.readonly,
                   form: form,
                   dynamicPropsInfo: {
-                    pieceName: props.step.settings.pieceName,
-                    pieceVersion: props.step.settings.pieceVersion,
+                    connectorName: props.step.settings.connectorName,
+                    connectorVersion: props.step.settings.connectorVersion,
                     actionOrTriggerName: actionName,
                     placedInside: 'stepSettings',
                     updateFormSchema,

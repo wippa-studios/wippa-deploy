@@ -1,9 +1,9 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { housecallProAuth, makeHousecallProRequest } from "../common";
-import { HttpMethod } from "@wippa/pieces-common";
+import { HttpMethod } from "@wippa/connectors-common";
 import * as z from 'zod/mini'
-import { propsValidation } from "@wippa/pieces-common";
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { propsValidation } from "@wippa/connectors-common";
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 export const createCustomer = createAction({
   auth: housecallProAuth,

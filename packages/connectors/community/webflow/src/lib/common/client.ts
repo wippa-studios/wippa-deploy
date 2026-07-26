@@ -4,7 +4,7 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export class WebflowApiClient {
 	constructor(private accessToken: string) {}

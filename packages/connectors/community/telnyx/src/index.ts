@@ -1,12 +1,12 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { telnyxAuth } from './lib/auth';
 import { sendSmsAction } from './lib/actions/send-sms';
 import { makeCallAction } from './lib/actions/make-call';
 import { messageReceivedTrigger } from './lib/triggers/message-received';
 
-export const telnyx = createPiece({
+export const telnyx = createConnector({
   displayName: 'Telnyx',
   description:
     'Telecom API platform for SMS messaging, voice calls, and messaging webhooks.',

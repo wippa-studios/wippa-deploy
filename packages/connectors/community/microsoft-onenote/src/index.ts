@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, OAuth2PropertyValue } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getGraphBaseUrl } from './lib/common/microsoft-cloud';
 import { appendNote } from './lib/actions/append-note';
 import { createImageNote } from './lib/actions/create-image-note';
@@ -11,7 +11,7 @@ import { createSection } from './lib/actions/create-section';
 import { oneNoteAuth } from './lib/auth';
 import { newNoteInSectionTrigger } from './lib/triggers/new-note-in-section';
 
-export const microsoftOnenote = createPiece({
+export const microsoftOnenote = createConnector({
   displayName: 'Microsoft OneNote',
   description:
     'Microsoft OneNote is a note-taking app that allows you to create, edit, and share notes with others.',

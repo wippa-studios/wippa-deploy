@@ -1,4 +1,4 @@
-import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { createAction, DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { commonProps, intercomClient } from '../common';
 import { intercomAuth } from '../auth';
 

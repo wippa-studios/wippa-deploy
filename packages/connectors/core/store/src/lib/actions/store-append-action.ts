@@ -5,11 +5,11 @@ import {
   Property,
   ShortTextProperty,
   StaticDropdownProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { common, getScopeAndKey, PieceStoreScope } from './common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 async function executeStorageAppend(context: ActionContext<PieceAuthProperty | undefined, {
   key: ShortTextProperty<true>;

@@ -1,6 +1,6 @@
 import { SecretsManagerClient } from '@aws-sdk/client-secrets-manager';
 import { AssumeRoleWithWebIdentityCommand, STSClient } from '@aws-sdk/client-sts';
-import { ServerContext } from '@wippa/pieces-framework';
+import { ServerContext } from '@wippa/connectors-framework';
 import { SecretsAuthProps, SecretsOidcAuthProps } from './auth';
 
 const AWS_STS_AUDIENCE = 'sts.amazonaws.com';

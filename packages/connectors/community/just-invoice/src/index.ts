@@ -1,9 +1,9 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { justInvoiceAuth } from "./lib/common/auth";
 import * as actions from "./lib/actions/index";
 
-export const justInvoice = createPiece({
+export const justInvoice = createConnector({
   displayName: "JustInvoice",
   description: "Create and manage invoices with JustInvoice API",
   auth: justInvoiceAuth,

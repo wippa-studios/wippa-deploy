@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { imageToBase64 } from './lib/actions/image-to-base64.action';
 import { getMetaData } from './lib/actions/get-metadata.action';
 import { cropImage } from './lib/actions/crop-image.action';
@@ -8,7 +8,7 @@ import { resizeImage } from './lib/actions/resize-Image.action';
 import { compressImage } from './lib/actions/compress-image.actions';
 import { convertImageFormat } from './lib/actions/convert-image.action';
 
-export const imageHelper = createPiece({
+export const imageHelper = createConnector({
   displayName: 'Image Helper',
   description: 'Tools for image manipulations',
 

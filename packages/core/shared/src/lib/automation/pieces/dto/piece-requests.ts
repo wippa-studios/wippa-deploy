@@ -83,8 +83,8 @@ export type GetPieceRequestQuery = z.infer<typeof GetPieceRequestQuery>
 
 export const PieceOptionRequest = z.object({
     projectId: z.string(),
-    pieceName: z.string(),
-    pieceVersion: VersionType,
+    connectorName: z.string(),
+    connectorVersion: VersionType,
     actionOrTriggerName: z.string(),
     propertyName: z.string(),
     flowId: z.string(),
@@ -103,15 +103,15 @@ export const AddPieceRequestBody = z.union([
     z.object({
         packageType: z.literal(PackageType.ARCHIVE),
         scope: z.literal(PieceScope.PLATFORM),
-        pieceName: z.string().min(1),
-        pieceVersion: ExactVersionType,
+        connectorName: z.string().min(1),
+        connectorVersion: ExactVersionType,
         pieceArchive: ApMultipartFile,
     }).describe('Private Piece'),
     z.object({
         packageType: z.literal(PackageType.REGISTRY),
         scope: z.literal(PieceScope.PLATFORM),
-        pieceName: z.string().min(1),
-        pieceVersion: ExactVersionType,
+        connectorName: z.string().min(1),
+        connectorVersion: ExactVersionType,
     }).describe('NPM Piece'),
 ])
 

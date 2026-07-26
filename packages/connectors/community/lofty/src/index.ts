@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { loftyAuth } from './lib/common/auth';
 import { createLead } from './lib/actions/create-lead';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createTransaction } from './lib/actions/create-transaction';
 import { updateLead } from './lib/actions/update-lead';
 import { updateTransaction } from './lib/actions/update-transaction';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const lofty = createPiece({
+export const lofty = createConnector({
   displayName: 'Lofty',
   auth: loftyAuth,
   minimumSupportedRelease: '0.36.1',

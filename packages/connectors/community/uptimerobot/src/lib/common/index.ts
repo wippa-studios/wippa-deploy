@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 import { uptimeRobotAuth } from '../auth';
 import { toFormUrlEncoded } from './form';
 

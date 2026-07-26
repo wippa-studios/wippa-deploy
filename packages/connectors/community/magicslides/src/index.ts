@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createPptFromTopic } from './lib/actions/create-ppt-from-topic';
 import { createPptFromSummary } from './lib/actions/create-ppt-from-summary';
 import { createPptFromYoutubeVideo } from './lib/actions/create-ppt-from-youtube-video';
 import { MagicSlidesAuth } from './lib/common/auth';
 
-export const magicslides = createPiece({
+export const magicslides = createConnector({
   displayName: 'MagicSlides',
   auth: MagicSlidesAuth,
   description: 'Create PowerPoint presentations from topics, summaries, or YouTube videos using AI.',

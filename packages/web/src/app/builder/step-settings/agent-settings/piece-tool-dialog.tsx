@@ -38,12 +38,12 @@ type AgentToolsDialogProps = {
 };
 
 const excludedPieces = [
-  '@wippa/piece-ai',
-  '@wippa/piece-mcp',
-  '@wippa/piece-openai',
-  '@wippa/piece-claude',
-  '@wippa/piece-google-gemini',
-  '@wippa/piece-grok-xai',
+  '@wippa/connector-ai',
+  '@wippa/connector-mcp',
+  '@wippa/connector-openai',
+  '@wippa/connector-claude',
+  '@wippa/connector-google-gemini',
+  '@wippa/connector-grok-xai',
 ];
 
 export function AgentPieceDialog({
@@ -74,29 +74,29 @@ export function AgentPieceDialog({
       type: 'action',
     });
 
-  const pieceMetadata = useMemo(() => {
+  const connectorMetadata = useMemo(() => {
     return (
       metadata
         ?.filter(
           (m): m is PieceStepMetadataWithSuggestions =>
             'suggestedActions' in m && 'suggestedTriggers' in m,
         )
-        .filter((piece) => !excludedPieces.includes(piece.pieceName)) ?? []
+        .filter((piece) => !excludedPieces.includes(piece.connectorName)) ?? []
     );
   }, [metadata]);
 
   useEffect(() => {
     if (!showAddPieceDialog) return;
-    if (!isNil(editingPieceTool) && pieceMetadata.length > 0) {
-      const piece = pieceMetadata.find(
-        (p) => p.pieceName === editingPieceTool.pieceMetadata.pieceName,
+    if (!isNil(editingPieceTool) && connectorMetadata.length > 0) {
+      const piece = connectorMetadata.find(
+        (p) => p.connectorName === editingPieceTool.connectorMetadata.connectorName,
       );
 
       if (piece) {
         handlePieceSelect(piece);
         const action = piece.suggestedActions?.find((a) => {
           return (
-            mcpToolNameUtils.createPieceToolName(piece.pieceName, a.name) ===
+            mcpToolNameUtils.createPieceToolName(piece.connectorName, a.name) ===
             editingPieceTool.toolName
           );
         });
@@ -105,7 +105,7 @@ export function AgentPieceDialog({
         }
       }
     }
-  }, [showAddPieceDialog, editingPieceTool, pieceMetadata]);
+  }, [showAddPieceDialog, editingPieceTool, connectorMetadata]);
 
   const authIsSetValue = isPieceAuthSet();
 
@@ -139,7 +139,7 @@ export function AgentPieceDialog({
         return (
           <PiecesList
             isPiecesLoading={isPiecesLoading}
-            pieceMetadata={pieceMetadata}
+            connectorMetadata={connectorMetadata}
           />
         );
       }

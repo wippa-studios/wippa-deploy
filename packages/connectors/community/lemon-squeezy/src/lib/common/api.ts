@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const LEMON_SQUEEZY_API_BASE = 'https://api.lemonsqueezy.com/v1';
 

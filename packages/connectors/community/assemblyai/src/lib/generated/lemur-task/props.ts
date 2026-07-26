@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 export const props = {
   prompt: Property.ShortText({
     displayName: 'Prompt',

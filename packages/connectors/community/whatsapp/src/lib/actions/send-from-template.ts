@@ -1,6 +1,6 @@
 import { whatsappAuth } from '../auth';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { commonProps } from '../common/utils';
 
 export const sendTemplateMessageAction = createAction({

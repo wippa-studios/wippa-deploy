@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { villageAuth, VILLAGE_API_BASE_URL } from '../../common/auth';
 
 export const getCompanyPaths = createAction({

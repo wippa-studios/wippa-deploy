@@ -1,5 +1,5 @@
-import { Property } from '@wippa/pieces-framework';
-import { HttpMethod, HttpResponse } from '@wippa/pieces-common';
+import { Property } from '@wippa/connectors-framework';
+import { HttpMethod, HttpResponse } from '@wippa/connectors-common';
 import { productboardCommon } from './client';
 import { productboardAuth } from './auth';
 

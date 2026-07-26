@@ -35,7 +35,7 @@ function flipSelectionMode({
 const PieceSetDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { data: pieceSet, isLoading } = pieceSetQueries.usePieceSet(id ?? '');
+  const { data: connectorSet, isLoading } = pieceSetQueries.usePieceSet(id ?? '');
   const { pieces, isLoading: piecesLoading } = piecesHooks.usePieces({
     includeHidden: true,
     isTableQuery: true,
@@ -45,12 +45,12 @@ const PieceSetDetailsPage = () => {
     pieceSetMutations.useUpdatePieceSet();
 
   const handleToggle = (value: boolean) => {
-    if (!pieceSet || !pieces) return;
+    if (!connectorSet || !pieces) return;
     updateSet({
-      id: pieceSet.id,
+      id: connectorSet.id,
       request: {
         pieces: flipSelectionMode({
-          current: pieceSet.config.pieces,
+          current: connectorSet.config.pieces,
           include: value,
           knownPieceNames: pieces.map((p) => p.name),
         }),
@@ -58,7 +58,7 @@ const PieceSetDetailsPage = () => {
     });
   };
 
-  if (isLoading || !pieceSet) {
+  if (isLoading || !connectorSet) {
     return (
       <div className="flex items-center justify-center flex-1">
         <Loader2 className="size-6 animate-spin text-muted-foreground" />
@@ -80,8 +80,8 @@ const PieceSetDetailsPage = () => {
               <ArrowLeft className="size-4" />
             </Button>
             <Layers className="size-5" />
-            <span>{pieceSet.name}</span>
-            {pieceSet.isDefault && (
+            <span>{connectorSet.name}</span>
+            {connectorSet.isDefault && (
               <Badge variant="secondary">{t('Default')}</Badge>
             )}
           </div>
@@ -98,7 +98,7 @@ const PieceSetDetailsPage = () => {
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                 {t('Assigned')}
               </span>
-              <PieceSetProjectsDialog pieceSet={pieceSet} />
+              <PieceSetProjectsDialog connectorSet={connectorSet} />
             </div>
 
             <div className="self-stretch w-px bg-border" />
@@ -110,7 +110,7 @@ const PieceSetDetailsPage = () => {
               <AutoIncludePill
                 label={t('New pieces')}
                 checked={
-                  pieceSet.config.pieces.mode === PieceSelectionMode.INCLUDE_ALL
+                  connectorSet.config.pieces.mode === PieceSelectionMode.INCLUDE_ALL
                 }
                 disabled={isPending || piecesLoading}
                 onCheckedChange={handleToggle}
@@ -126,7 +126,7 @@ const PieceSetDetailsPage = () => {
         </div>
 
         <div className="flex-1 min-h-0 flex flex-col">
-          <PieceSetPiecesTab pieceSet={pieceSet} />
+          <PieceSetPiecesTab connectorSet={connectorSet} />
         </div>
       </div>
     </>

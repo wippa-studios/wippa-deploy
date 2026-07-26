@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getEmployeeSystemId } from './lib/actions/get-employee-system-id';
 import { getEmployeeInfo } from './lib/actions/get-employee-info';
 import { getEmployeeOrganizationalChart } from './lib/actions/get-employee-organizational-chart';
@@ -8,7 +8,7 @@ import { getDirectReports } from './lib/actions/get-direct-reports';
 import { generateReport } from './lib/actions/generate-report';
 import { omnihrAuth } from './lib/auth';
 
-export const omnihr = createPiece({
+export const omnihr = createConnector({
   displayName: 'Omni HR',
   description:
     'Smart, all-in-one HR platform for managing employees, time tracking, and HR workflows',

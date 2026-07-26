@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { PieceType } from '../pieces/piece'
+import { ConnectorType } from '../pieces/piece'
 import { ConnectionState, FolderState, ProjectState, TableState } from './project-state'
 
 export const PROJECT_REPLACE_SCHEMA_VERSION = 1
@@ -7,7 +7,7 @@ export const PROJECT_REPLACE_SCHEMA_VERSION = 1
 export const RequiredPiece = z.object({
     name: z.string(),
     version: z.string(),
-    pieceType: z.nativeEnum(PieceType),
+    pieceType: z.nativeEnum(ConnectorType),
 })
 export type RequiredPiece = z.infer<typeof RequiredPiece>
 
@@ -37,7 +37,7 @@ export const ProjectReplacePreflightError = z.discriminatedUnion('kind', [
     }),
     z.object({
         kind: z.literal(ProjectReplaceErrorKind.PIECE_VERSION_MISMATCH),
-        pieceName: z.string(),
+        connectorName: z.string(),
         sourceVersion: z.string(),
         destVersion: z.string(),
     }),
@@ -51,9 +51,9 @@ export const ProjectReplacePreflightError = z.discriminatedUnion('kind', [
 export type ProjectReplacePreflightError = z.infer<typeof ProjectReplacePreflightError>
 
 export const PieceInstallFailure = z.object({
-    pieceName: z.string(),
+    connectorName: z.string(),
     version: z.string(),
-    pieceType: z.nativeEnum(PieceType),
+    pieceType: z.nativeEnum(ConnectorType),
     message: z.string(),
 })
 export type PieceInstallFailure = z.infer<typeof PieceInstallFailure>
@@ -105,7 +105,7 @@ export type ProjectReplaceApplied = z.infer<typeof ProjectReplaceApplied>
 
 export const ConnectionAwaitingAuthorization = z.object({
     externalId: z.string(),
-    pieceName: z.string(),
+    connectorName: z.string(),
     displayName: z.string(),
 })
 export type ConnectionAwaitingAuthorization = z.infer<typeof ConnectionAwaitingAuthorization>
@@ -113,7 +113,7 @@ export type ConnectionAwaitingAuthorization = z.infer<typeof ConnectionAwaitingA
 export const InstalledPiece = z.object({
     name: z.string(),
     version: z.string(),
-    pieceType: z.nativeEnum(PieceType),
+    pieceType: z.nativeEnum(ConnectorType),
 })
 export type InstalledPiece = z.infer<typeof InstalledPiece>
 

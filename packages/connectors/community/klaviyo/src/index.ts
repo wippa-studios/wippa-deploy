@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import {
   klaviyoAuth,
@@ -21,7 +21,7 @@ import { subscribeProfile } from './lib/actions/subscribe-profile';
 import { unsubscribeProfile } from './lib/actions/unsubscribe-profile';
 import { profileAddedToListOrSegmentTrigger } from './lib/triggers/profile-added-to-list-segment';
 
-export const klaviyo = createPiece({
+export const klaviyo = createConnector({
   displayName: 'Klaviyo',
   auth: klaviyoAuth,
   minimumSupportedRelease: '0.36.1',

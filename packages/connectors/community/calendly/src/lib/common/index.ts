@@ -1,9 +1,9 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 interface CalendlyUser {
   /**User uri */

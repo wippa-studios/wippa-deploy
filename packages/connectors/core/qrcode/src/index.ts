@@ -1,9 +1,9 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-    import { PieceCategory } from '@wippa/pieces-framework';
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+    import { PieceCategory } from '@wippa/connectors-framework';
     import { outputQrcodeAction } from './lib/actions/output-qrcode-action'
     
-    export const qrcode = createPiece({
+    export const qrcode = createConnector({
       displayName: 'QR Code',
       auth: PieceAuth.None(),
       minimumSupportedRelease: '0.30.0',

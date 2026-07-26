@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import {
   optionalTimeFormats,
   timeFormat,
@@ -8,7 +8,7 @@ import {
   apDayjs,
 } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const firstDayOfPreviousMonthAction = createAction({
   audience: 'human',

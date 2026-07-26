@@ -3,9 +3,9 @@ import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { askGroq } from './lib/actions/ask-groq';
 import { transcribeAudio } from './lib/actions/transcribe-audio';
 import { translateAudio } from './lib/actions/translate-audio';
@@ -40,7 +40,7 @@ export const groqAuth = PieceAuth.SecretText({
   },
 });
 
-export const groq = createPiece({
+export const groq = createConnector({
   displayName: 'Groq',
   description: 'Use Groq\'s fast language models and audio processing capabilities.',
   minimumSupportedRelease: '0.9.0',

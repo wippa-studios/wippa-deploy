@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { catchWebhook } from './lib/triggers/catch-hook';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { returnResponse } from './lib/actions/return-response';
 import { returnResponseAndWaitForNextWebhook } from './lib/actions/return-response-and-wait-for-next-webhook';
 
-export const webhook = createPiece({
+export const webhook = createConnector({
   displayName: 'Webhook',
   description: 'Receive HTTP requests and trigger flows using unique URLs.',
   auth: PieceAuth.None(),

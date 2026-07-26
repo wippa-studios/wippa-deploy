@@ -94,11 +94,11 @@ function buildCapabilitiesNote({ currentDate, searchAvailable, fetchAvailable, s
 }
 
 function pieceShortName(fullName: string): string {
-    return fullName.replace('@wippa/piece-', '')
+    return fullName.replace('@wippa/connector-', '')
 }
 
 function buildConnectionInventoryNote({ connections, truncated }: {
-    connections: { displayName: string, pieceName: string, status: string }[]
+    connections: { displayName: string, connectorName: string, status: string }[]
     truncated: boolean
 }): string {
     const lines: string[] = ['\n\n## Your connected apps (this project)']
@@ -110,7 +110,7 @@ function buildConnectionInventoryNote({ connections, truncated }: {
     }
 
     for (const c of connections) {
-        lines.push(`- ${c.displayName} — ${pieceShortName(c.pieceName)} (${c.status})`)
+        lines.push(`- ${c.displayName} — ${pieceShortName(c.connectorName)} (${c.status})`)
     }
     lines.push('A connection shown as ERROR or MISSING is connected but broken — offer to reconnect it inline (`ap_show_connection_required` / `ap_show_mcp_reconnect`); do not treat it as absent.')
     if (truncated) {
@@ -204,14 +204,14 @@ export const chatRpcHandlers = (log: FastifyBaseLogger) => ({
 
         // Inject an inventory of the project's existing connections into context so the agent
         // never has to *guess* an app name to find out what's connected. Without this, discovery
-        // is reactive and name-keyed (ap_discover_action_auth filters by an exact pieceName the
+        // is reactive and name-keyed (ap_discover_action_auth filters by an exact connectorName the
         // model inferred from the message), so a vague request ("my CRM") could miss a connection
         // that is right there. Best-effort: a lookup failure must not block the turn.
         const inventoryResult = (!dryRun && !isNil(selectedProjectId))
             ? await tryCatch(() => appConnectionService(log).list({
                 projectId: selectedProjectId,
                 platformId,
-                pieceName: undefined,
+                connectorName: undefined,
                 displayName: undefined,
                 status: undefined,
                 cursorRequest: null,
@@ -478,11 +478,11 @@ export const chatRpcHandlers = (log: FastifyBaseLogger) => ({
             return { result: { success: true } }
         }
         if (input.toolName === '__store_selected_connection') {
-            const { pieceName, connectionExternalId, label, projectId } = input.toolInput
-            if (typeof input.conversationId === 'string' && typeof pieceName === 'string' && typeof connectionExternalId === 'string') {
+            const { connectorName, connectionExternalId, label, projectId } = input.toolInput
+            if (typeof input.conversationId === 'string' && typeof connectorName === 'string' && typeof connectionExternalId === 'string') {
                 await chatApprovalGate.storeSelectedConnection({
                     conversationId: input.conversationId,
-                    pieceName,
+                    connectorName,
                     externalId: connectionExternalId,
                     label: typeof label === 'string' ? label : connectionExternalId,
                     projectId: typeof projectId === 'string' ? projectId : '',
@@ -512,9 +512,9 @@ export const chatRpcHandlers = (log: FastifyBaseLogger) => ({
             return { result: { hasWrites: writeSteps.length > 0, flowName: flow.version.displayName, writeSteps } }
         }
         if (input.toolName === '__get_available_connections') {
-            const { pieceName } = input.toolInput
-            if (typeof input.conversationId === 'string' && typeof pieceName === 'string') {
-                const connections = await chatApprovalGate.getAvailableConnections({ conversationId: input.conversationId, pieceName })
+            const { connectorName } = input.toolInput
+            if (typeof input.conversationId === 'string' && typeof connectorName === 'string') {
+                const connections = await chatApprovalGate.getAvailableConnections({ conversationId: input.conversationId, connectorName })
                 return { result: connections }
             }
             return { result: [] }

@@ -284,7 +284,7 @@ function traverseStep(
     isNil(step.settings.sampleData?.lastTestDate) &&
     (step.type !== FlowTriggerType.PIECE ||
       !pieceSelectorUtils.isManualTrigger({
-        pieceName: step.settings.pieceName,
+        connectorName: step.settings.connectorName,
         triggerName: step.settings.triggerName ?? '',
       }));
   if (stepNeedsTesting) {

@@ -72,7 +72,7 @@ const TestStepCTAButton = () => {
   if (isPieceTrigger(currentStep)) {
     if (
       pieceSelectorUtils.isManualTrigger({
-        pieceName: currentStep.settings.pieceName,
+        connectorName: currentStep.settings.connectorName,
         triggerName: currentStep.settings.triggerName ?? '',
       })
     ) {

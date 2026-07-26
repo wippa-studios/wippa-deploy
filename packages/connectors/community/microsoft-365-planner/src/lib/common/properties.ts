@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 import { microsoft365PlannerAuth, microsoft365PlannerCommon } from '.';
 
 export const groupDropdown = ({ required = true }) =>

@@ -3,8 +3,8 @@ import {
   CreateWaitpointResult,
   createAction,
   Property,
-} from '@wippa/pieces-framework';
-import { ExecutionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { ExecutionType } from '@wippa/connectors-framework';
 import { TranscriptParams } from 'assemblyai';
 import { assemblyaiAuth } from '../../auth';
 import { getAssemblyAIClient } from '../../client';

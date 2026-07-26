@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getGraphBaseUrl } from './lib/common/microsoft-cloud';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createChannelAction } from './lib/actions/create-channel';
 import { createChatAndSendMessageAction } from './lib/actions/create-chat-and-send-message';
 import { createPrivateChannelAction } from './lib/actions/create-private-channel';
@@ -26,7 +26,7 @@ import { newChannelMessageTrigger } from './lib/triggers/new-channel-message';
 import { newChatTrigger } from './lib/triggers/new-chat';
 import { newChatMessageTrigger } from './lib/triggers/new-chat-message';
 
-export const microsoftTeams = createPiece({
+export const microsoftTeams = createConnector({
   displayName: 'Microsoft Teams',
   auth: microsoftTeamsAuth,
   minimumSupportedRelease: '0.87.0',

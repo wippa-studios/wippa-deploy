@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { telegramAnswerCallbackQueryAction } from './lib/action/answer-callback-query.action';
 import { telegramCreateInviteLinkAction } from './lib/action/create-invite-link';
 import { telegramDeleteMessageAction } from './lib/action/delete-message.action';
@@ -40,7 +40,7 @@ export const telegramBotAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const telegramBot = createPiece({
+export const telegramBot = createConnector({
   displayName: 'Telegram Bot',
   description: 'Build chatbots for Telegram',
   minimumSupportedRelease: '0.87.0',

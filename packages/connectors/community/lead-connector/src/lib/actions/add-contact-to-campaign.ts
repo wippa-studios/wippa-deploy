@@ -1,4 +1,4 @@
-import { createAction, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { createAction, OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 import { addContactToCampaign, getCampaigns, getContacts } from '../common';
 import { leadConnectorAuth } from '../..';
 

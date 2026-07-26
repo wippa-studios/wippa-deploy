@@ -10,7 +10,7 @@
     "paths": {
       "@wippa/shared": ["packages/core/shared/src/index.ts"],
       "@wippa/server-utils": ["packages/server/utils/src/index.ts"],
-      "@wippa/pieces-framework": ["packages/pieces/framework/src/index.ts"]
+      "@wippa/connectors-framework": ["packages/pieces/framework/src/index.ts"]
     }
   }
 }

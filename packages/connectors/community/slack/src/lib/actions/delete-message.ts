@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { slackAuth } from '../auth';
 import { singleSelectChannelInfo, slackChannel } from '../common/props';
 import { processMessageTimestamp } from '../common/utils';

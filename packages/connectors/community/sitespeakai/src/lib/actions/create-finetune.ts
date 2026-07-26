@@ -1,7 +1,7 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { SiteSpeakAuth } from "../common/auth";
 import { makeRequest } from "../common/client";
-import { HttpMethod } from "@wippa/pieces-common";
+import { HttpMethod } from "@wippa/connectors-common";
 import { chatbotIdDropdown } from "../common/dropdown";
 
 export const createFinetune = createAction({

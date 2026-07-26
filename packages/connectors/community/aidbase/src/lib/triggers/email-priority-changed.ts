@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { aidbaseAuth } from '../common/auth';
 import { emailInboxDropdown } from '../common/props';
 

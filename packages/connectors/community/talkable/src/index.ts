@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   anonymizePerson,
   createEvent,
@@ -45,7 +45,7 @@ export const talkableAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const talkable = createPiece({
+export const talkable = createConnector({
   displayName: 'Talkable',
   description: 'Referral marketing programs that drive revenue',
 

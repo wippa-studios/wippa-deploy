@@ -1,4 +1,4 @@
-import { HttpMethod } from "@wippa/pieces-common";
+import { HttpMethod } from "@wippa/connectors-common";
 
 export type VehicleEventsParams = {
   webhookId?: string;

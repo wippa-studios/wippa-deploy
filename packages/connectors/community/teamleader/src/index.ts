@@ -1,7 +1,7 @@
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { teamleaderAuth } from './lib/common/auth';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';
@@ -21,7 +21,7 @@ import { newDeal } from './lib/triggers/new-deal';
 import { dealAccepted } from './lib/triggers/deal-accepted';
 import { newInvoice } from './lib/triggers/new-invoice';
 
-export const teamleader = createPiece({
+export const teamleader = createConnector({
     displayName: 'Teamleader',
     minimumSupportedRelease: '0.36.1',
     logoUrl: 'https://cdn.activepieces.com/pieces/teamleader.png',

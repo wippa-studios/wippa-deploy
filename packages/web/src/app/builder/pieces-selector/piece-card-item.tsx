@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { CardListItem } from '@/components/custom/card-list';
 import {
-  PieceIcon,
+  ConnectorIcon,
   PieceSelectorOperation,
   StepMetadataWithSuggestions,
   PIECE_SELECTOR_ELEMENTS_HEIGHTS,
@@ -13,17 +13,17 @@ import { cn } from '@/lib/utils';
 
 import { useBuilderStateContext } from '../builder-hooks';
 
-import { PieceActionsOrTriggersList } from './piece-actions-or-triggers-list';
+import { PieceActionsOrTriggersList } from './connector-actions-or-triggers-list';
 
 type PieceCardListItemProps = {
-  pieceMetadata: StepMetadataWithSuggestions;
+  connectorMetadata: StepMetadataWithSuggestions;
   searchQuery: string;
   operation: PieceSelectorOperation;
   isTemporaryDisabledUntilNextCursorMove: boolean;
 };
 
 const PieceCardListItem = ({
-  pieceMetadata,
+  connectorMetadata,
   searchQuery,
   operation,
   isTemporaryDisabledUntilNextCursorMove,
@@ -38,7 +38,7 @@ const PieceCardListItem = ({
     isMouseOver.current = true;
     await wait(250);
     if (isMouseOver.current) {
-      setSelectedPieceMetadataInPieceSelector(pieceMetadata);
+      setSelectedPieceMetadataInPieceSelector(connectorMetadata);
     }
   };
   const [
@@ -58,31 +58,31 @@ const PieceCardListItem = ({
         style={{ height: `${itemHeight}px`, maxHeight: `${itemHeight}px` }}
         selected={
           selectedPieceMetadataInPieceSelector?.displayName ===
-            pieceMetadata.displayName && searchQuery.length === 0
+            connectorMetadata.displayName && searchQuery.length === 0
         }
         interactive={!showSuggestions}
         onMouseEnter={selectPieceMetatdata}
         onMouseMove={selectPieceMetatdata}
         onClick={() => {
           if (!showSuggestions) {
-            setSelectedPieceMetadataInPieceSelector(pieceMetadata);
+            setSelectedPieceMetadataInPieceSelector(connectorMetadata);
           }
         }}
         onMouseLeave={() => {
           isMouseOver.current = false;
         }}
-        id={pieceMetadata.displayName}
-        data-testid={pieceMetadata.displayName}
+        id={connectorMetadata.displayName}
+        data-testid={connectorMetadata.displayName}
       >
         <div className="flex gap-2 items-center h-full">
-          <PieceIcon
-            logoUrl={pieceMetadata.logoUrl}
-            displayName={pieceMetadata.displayName}
+          <ConnectorIcon
+            logoUrl={connectorMetadata.logoUrl}
+            displayName={connectorMetadata.displayName}
             showTooltip={false}
             size={'sm'}
           />
           <div className="grow h-full flex items-center justify-left text-sm">
-            {pieceMetadata.displayName}
+            {connectorMetadata.displayName}
           </div>
         </div>
       </CardListItem>
@@ -90,7 +90,7 @@ const PieceCardListItem = ({
       {showSuggestions && (
         <div>
           <PieceActionsOrTriggersList
-            stepMetadataWithSuggestions={pieceMetadata}
+            stepMetadataWithSuggestions={connectorMetadata}
             hidePieceIconAndDescription={true}
             operation={operation}
           />

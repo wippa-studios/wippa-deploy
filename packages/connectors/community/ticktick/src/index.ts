@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, OAuth2PropertyValue, PieceAuth } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, OAuth2PropertyValue, PieceAuth } from '@wippa/connectors-framework';
 import { completeTaskAction } from './lib/actions/complete-task';
 import { createTaskAction } from './lib/actions/create-task';
 import { deleteTaskAction } from './lib/actions/delete-task';
@@ -10,7 +10,7 @@ import { updateTaskAction } from './lib/actions/update-task';
 import { newTaskCreatedTrigger } from './lib/triggers/new-task-created';
 import { ticktickAuth } from './lib/auth';
 
-export const ticktick = createPiece({
+export const ticktick = createConnector({
 	displayName: 'TickTick',
 	logoUrl: 'https://cdn.activepieces.com/pieces/ticktick.png',
 	auth: ticktickAuth,

@@ -105,7 +105,7 @@ async function listMcpFlows(projectId: string, logger: FastifyBaseLogger): Promi
         versionState: FlowVersionState.DRAFT,
         includeTriggerSource: false,
     })
-    return flows.data.filter((flow) => flow.version.trigger.type === FlowTriggerType.PIECE && flow.version.trigger.settings.pieceName === MCP_TRIGGER_PIECE_NAME)
+    return flows.data.filter((flow) => flow.version.trigger.type === FlowTriggerType.PIECE && flow.version.trigger.settings.connectorName === MCP_TRIGGER_PIECE_NAME)
 }
 
 type UpdateParams = {

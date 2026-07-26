@@ -1,10 +1,10 @@
 import { isNil } from '@wippa/core-utils';
-import { PieceMetadataModel } from '@wippa/pieces-framework';
+import { PieceMetadataModel } from '@wippa/connectors-framework';
 
 import { StepPropertySnapshot } from './explanation-prompt';
 
 type BuildStepPropertiesSnapshotParams = {
-  pieceModel: PieceMetadataModel | undefined;
+  connectorModel: PieceMetadataModel | undefined;
   stepKind: 'action' | 'trigger';
   stepName: string | undefined;
   input: Record<string, unknown> | undefined;
@@ -13,18 +13,18 @@ type BuildStepPropertiesSnapshotParams = {
 const MAX_PROPERTIES = 25;
 
 const toSnapshot = ({
-  pieceModel,
+  connectorModel,
   stepKind,
   stepName,
   input,
 }: BuildStepPropertiesSnapshotParams): StepPropertySnapshot[] => {
-  if (isNil(pieceModel) || isNil(stepName)) {
+  if (isNil(connectorModel) || isNil(stepName)) {
     return [];
   }
   const stepDefinition =
     stepKind === 'trigger'
-      ? pieceModel.triggers?.[stepName]
-      : pieceModel.actions?.[stepName];
+      ? connectorModel.triggers?.[stepName]
+      : connectorModel.actions?.[stepName];
   if (isNil(stepDefinition) || isNil(stepDefinition.props)) {
     return [];
   }
@@ -47,33 +47,33 @@ const toSnapshot = ({
 };
 
 const findStepDescription = ({
-  pieceModel,
+  connectorModel,
   stepKind,
   stepName,
 }: {
-  pieceModel: PieceMetadataModel | undefined;
+  connectorModel: PieceMetadataModel | undefined;
   stepKind: 'action' | 'trigger';
   stepName: string | undefined;
 }): string | undefined => {
-  if (isNil(pieceModel) || isNil(stepName)) {
+  if (isNil(connectorModel) || isNil(stepName)) {
     return undefined;
   }
   const definition =
     stepKind === 'trigger'
-      ? pieceModel.triggers?.[stepName]
-      : pieceModel.actions?.[stepName];
+      ? connectorModel.triggers?.[stepName]
+      : connectorModel.actions?.[stepName];
   return definition?.description;
 };
 
 const findPieceAuthType = (
-  pieceModel: PieceMetadataModel | undefined,
+  connectorModel: PieceMetadataModel | undefined,
 ): string | undefined => {
-  if (isNil(pieceModel) || isNil(pieceModel.auth)) {
+  if (isNil(connectorModel) || isNil(connectorModel.auth)) {
     return undefined;
   }
-  const auth = Array.isArray(pieceModel.auth)
-    ? pieceModel.auth[0]
-    : pieceModel.auth;
+  const auth = Array.isArray(connectorModel.auth)
+    ? connectorModel.auth[0]
+    : connectorModel.auth;
   return auth?.type;
 };
 

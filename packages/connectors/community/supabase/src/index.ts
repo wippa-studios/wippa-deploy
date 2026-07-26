@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { createClient } from '@supabase/supabase-js';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { uploadFile } from './lib/actions/upload-file';
 import { createRow } from './lib/actions/create-row';
 import { deleteRows } from './lib/actions/delete-rows';
@@ -42,7 +42,7 @@ Choose the appropriate key based on your use case:
 Find your keys in **Settings** → **API** → **Project API keys**
 `;
 
-export const supabase = createPiece({
+export const supabase = createConnector({
   displayName: 'Supabase',
   description: 'The open-source Firebase alternative',
   auth: supabaseAuth,

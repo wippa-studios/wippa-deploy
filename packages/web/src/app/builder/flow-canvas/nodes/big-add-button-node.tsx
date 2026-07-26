@@ -4,7 +4,7 @@ import { Handle, Position } from '@xyflow/react';
 import { Plus } from 'lucide-react';
 import React, { useId, useState } from 'react';
 
-import { PieceSelector } from '@/app/builder/pieces-selector';
+import { ConnectorSelector } from '@/app/builder/pieces-selector';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -84,7 +84,7 @@ const ApBigAddButtonCanvasNode = React.memo(
                     })}
                   >
                     {!isShowingDropIndicator && (
-                      <PieceSelector
+                      <ConnectorSelector
                         operation={flowCanvasUtils.createAddOperationFromAddButtonData(
                           data,
                         )}
@@ -104,7 +104,7 @@ const ApBigAddButtonCanvasNode = React.memo(
                             />
                           </Button>
                         </span>
-                      </PieceSelector>
+                      </ConnectorSelector>
                     )}
                   </div>
                   {isShowingDropIndicator && (

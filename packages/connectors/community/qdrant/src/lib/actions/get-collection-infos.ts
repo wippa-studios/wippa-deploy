@@ -1,6 +1,6 @@
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { qdrantAuth } from '../..';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { collectionName } from '../common';
 
 export const collectionInfos = createAction({

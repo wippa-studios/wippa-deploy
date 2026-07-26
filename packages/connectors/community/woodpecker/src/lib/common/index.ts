@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient, HttpRequest } from '@wippa/pieces-common';
-import { Property, TriggerStrategy } from '@wippa/pieces-framework';
-import { TriggerHookContext } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient, HttpRequest } from '@wippa/connectors-common';
+import { Property, TriggerStrategy } from '@wippa/connectors-framework';
+import { TriggerHookContext } from '@wippa/connectors-framework';
 import { woodpeckerAuth } from '../..';
 
 export const API_BASE_URL = 'https://api.woodpecker.co/rest';

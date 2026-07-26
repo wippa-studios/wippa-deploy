@@ -1,6 +1,6 @@
 import { wedofAuth } from '../auth';
-import {createAction} from '@wippa/pieces-framework';
-import {HttpMethod, httpClient} from '@wippa/pieces-common';
+import {createAction} from '@wippa/connectors-framework';
+import {HttpMethod, httpClient} from '@wippa/connectors-common';
 import {wedofCommon} from '../common/wedof';
 
 export const myOrganism = createAction({

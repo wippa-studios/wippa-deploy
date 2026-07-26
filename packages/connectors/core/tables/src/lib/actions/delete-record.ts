@@ -1,6 +1,6 @@
-import { createAction, PieceAuth, Property } from '@wippa/pieces-framework';
+import { createAction, PieceAuth, Property } from '@wippa/connectors-framework';
 import { tablesCommon } from '../common';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const deleteRecord = createAction({
   audience: 'human',

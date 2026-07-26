@@ -1,10 +1,10 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { RegistrationResponse } from '../common/models';
 import { getRegistarantProps } from '../common/props';
 import { zoomAuth } from '../..';

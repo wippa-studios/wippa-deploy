@@ -1,9 +1,9 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { microsoftTeamsAuth } from '../auth';
 import { microsoftTeamsCommon } from '../common';
 import { createGraphClient } from '../common/graph';
-import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
-import { ExecutionType } from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/connectors-framework';
+import { ExecutionType } from '@wippa/connectors-framework';
 
 export const requestApprovalDirectMessage = createAction({
   auth: microsoftTeamsAuth,

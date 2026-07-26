@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { documergeAuth } from '../common/auth';
 
 export const newMergedDocument = createTrigger({

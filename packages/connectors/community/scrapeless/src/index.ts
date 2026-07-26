@@ -1,15 +1,15 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { ScrapelessValidator } from './lib/utils/validator';
 import { googleSearchApi } from './lib/actions/google-search-api';
 import { crawlScrapeApi } from './lib/actions/crawl-scrape';
 import { crawlCrawlApi } from './lib/actions/crawl-crawl';
 import { googleTrendsApi } from './lib/actions/google-trends-api';
 import { universalScrapingApi } from './lib/actions/universal-scraping-api';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { scrapelessApiAuth } from './lib/auth';
 
-export const scrapeless = createPiece({
+export const scrapeless = createConnector({
   displayName: 'Scrapeless',
   description:
     'Scrapeless is an all-in-one and highly scalable web scraping toolkit for enterprises and developers.',

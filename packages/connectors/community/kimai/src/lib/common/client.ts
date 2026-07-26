@@ -3,7 +3,7 @@ import {
   HttpMessageBody,
   httpClient,
   HttpResponse,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 type PingResponse = {
   message: string;

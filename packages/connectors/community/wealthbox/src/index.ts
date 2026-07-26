@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createContact,
   createNote,
@@ -24,7 +24,7 @@ export const wealthboxAuth = PieceAuth.SecretText({
   description: 'Enter your Wealthbox API access token. Get it from Settings → API Access Tokens in your Wealthbox account.',
   required: true,
 });
-    export const wealthbox = createPiece({
+    export const wealthbox = createConnector({
       displayName: "Wealthbox",
       auth: wealthboxAuth,
       minimumSupportedRelease: '0.36.1',

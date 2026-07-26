@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { LINKUPAPI_BASE_URL, linkupAuth } from './lib/common';
 // actions
 import { listAccounts } from './lib/actions/list-accounts';
@@ -16,9 +16,9 @@ import { checkInvitationStatus } from './lib/actions/check-invitation-status';
 // triggers
 import { newMessageReceived } from './lib/triggers/new-message-received';
 import { invitationAccepted } from './lib/triggers/invitation-accepted';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const linkupapi = createPiece({
+export const linkupapi = createConnector({
   displayName: 'LinkupAPI',
   description:
     'LinkupAPI lets agents send messages, manage conversations, and automate outreach across every channel, for sales and recruitment.',

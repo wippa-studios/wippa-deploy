@@ -4,8 +4,8 @@ import React from 'react';
 
 import { TagWithBright } from '@/components/custom/tag-with-bright';
 import { Card, CardContent } from '@/components/ui/card';
-import { PieceIconList } from '@/features/pieces';
-import { useGradientFromPieces } from '@/features/templates';
+import { ConnectorIconList } from '@/features/pieces';
+import { useGradientFromConnectors } from '@/features/templates';
 
 type TemplateCardProps = {
   template: Template;
@@ -16,7 +16,7 @@ export const ExploreTemplateCard = React.memo(
   ({ template, onTemplateSelect }: TemplateCardProps) => {
     const displayTags = template.tags.slice(0, 2);
     const hasFlows = template.flows && template.flows.length > 0;
-    const { gradient } = useGradientFromPieces(
+    const { gradient } = useGradientFromConnectors(
       hasFlows ? template.flows![0]?.trigger : undefined,
     );
 
@@ -68,7 +68,7 @@ export const ExploreTemplateCard = React.memo(
           }}
         >
           {hasFlows && template.flows![0]?.trigger && (
-            <PieceIconList
+            <ConnectorIconList
               trigger={template.flows![0]?.trigger}
               maxNumberOfIconsToShow={4}
               size="md"

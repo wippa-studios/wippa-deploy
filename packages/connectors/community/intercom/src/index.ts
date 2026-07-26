@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getIntercomRegion, getIntercomToken, IntercomAuthValue } from './lib/common';
 import { sendMessageAction } from './lib/actions/send-message.action';
 import crypto from 'node:crypto';
@@ -52,7 +52,7 @@ import { findOrCreateLeadAction } from './lib/actions/find-or-create-lead';
 import { updatedTicketTrigger } from './lib/triggers/updated-ticket';
 import { newUnsubscriptionTrigger } from './lib/triggers/new-unsubscription';
 
-export const intercom = createPiece({
+export const intercom = createConnector({
 	displayName: 'Intercom',
 	description: 'Customer messaging platform for sales, marketing, and support',
 	minimumSupportedRelease: '0.79.0',

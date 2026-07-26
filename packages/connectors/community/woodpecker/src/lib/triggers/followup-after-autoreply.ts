@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { woodpeckerAuth } from '../..';
 import { WEBHOOK_EVENTS, subscribeWebhook, unsubscribeWebhook } from '../common';
 

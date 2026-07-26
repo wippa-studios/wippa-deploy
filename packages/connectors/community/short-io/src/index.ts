@@ -1,7 +1,7 @@
 import {
   createCustomApiCallAction
-} from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { shortIoAuth } from './lib/common/auth';
 import { createCountryTargetingRuleAction } from './lib/actions/create-country-targeting-for-a-link';
 import { createShortLinkAction } from './lib/actions/create-short-link';
@@ -14,7 +14,7 @@ import { listLinksAction } from './lib/actions/list-links';
 import { updateShortLinkAction } from './lib/actions/update-short-link';
 import { newLinkCreatedTrigger } from './lib/triggers/new-link-created';
 
-export const shortIo = createPiece({
+export const shortIo = createConnector({
   displayName: 'Short.io',
   auth: shortIoAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
 import { promotekitAuth } from '../..';
 import { promotekitApiCall, promotekitCommon } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 const AFFILIATE_EVENT_OPTIONS = [
   { label: 'Affiliate Created', value: 'affiliate.created' },

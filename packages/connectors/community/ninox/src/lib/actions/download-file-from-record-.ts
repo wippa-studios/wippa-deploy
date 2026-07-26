@@ -1,7 +1,7 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { NinoxAuth } from '../common/auth';
 import { BASE_URL, makeRequest } from '../common/client';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 import {
 	teamidDropdown,
 	databaseIdDropdown,

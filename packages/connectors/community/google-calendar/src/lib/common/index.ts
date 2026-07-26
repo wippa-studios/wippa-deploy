@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { getCalendars, getColors, getEventsForDropdown } from './helper';
 import { googleCalendarAuth, GoogleCalendarAuthValue, getAccessToken } from '../auth';
 

@@ -3,8 +3,8 @@ import {
   TriggerStrategy,
   Property,
   WebhookRenewStrategy,
-} from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import {
   googleCalendarCommon,
   googleCalendarAuth,

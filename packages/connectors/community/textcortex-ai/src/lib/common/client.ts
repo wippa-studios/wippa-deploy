@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
+import { HttpMethod, httpClient, AuthenticationType } from '@wippa/connectors-common';
 import { baseUrl } from './common';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { textcortexAuth } from './auth';
 
 export interface TextCortexAuth {

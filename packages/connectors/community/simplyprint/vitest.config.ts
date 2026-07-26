@@ -11,8 +11,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@wippa/shared': path.resolve(repoRoot, 'packages/core/shared/src/index.ts'),
-      '@wippa/pieces-framework': path.resolve(repoRoot, 'packages/pieces/framework/src/index.ts'),
-      '@wippa/pieces-common': path.resolve(repoRoot, 'packages/pieces/common/src/index.ts'),
+      '@wippa/connectors-framework': path.resolve(repoRoot, 'packages/pieces/framework/src/index.ts'),
+      '@wippa/connectors-common': path.resolve(repoRoot, 'packages/pieces/common/src/index.ts'),
     },
   },
 });

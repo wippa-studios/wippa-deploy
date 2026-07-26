@@ -1,5 +1,5 @@
-import { ActionBase, TriggerBase } from '@wippa/pieces-framework';
-import { PieceSet } from '@wippa/shared';
+import { ActionBase, TriggerBase } from '@wippa/connectors-framework';
+import { ConnectorSet } from '@wippa/shared';
 import { t } from 'i18next';
 import { ChevronDown, ChevronRight, Loader2 } from 'lucide-react';
 import { useMemo, useState } from 'react';
@@ -25,11 +25,11 @@ import { piecesHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
 type PieceComponentVisibilitySheetProps = {
-  pieceName: string;
-  pieceDisplayName: string;
+  connectorName: string;
+  connectorDisplayName: string;
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  pieceSet: PieceSet;
+  connectorSet: ConnectorSet;
 };
 
 type ComponentItem =
@@ -39,22 +39,22 @@ type ComponentItem =
 type VisibilityMode = 'all' | 'selected';
 
 export const PieceComponentVisibilitySheet = ({
-  pieceName,
-  pieceDisplayName,
+  connectorName,
+  connectorDisplayName,
   open,
   onOpenChange,
-  pieceSet,
+  connectorSet,
 }: PieceComponentVisibilitySheetProps) => {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="w-[600px] sm:max-w-[600px] flex flex-col p-0">
         <PieceComponentVisibilitySheetContent
-          key={`${pieceName}:${open}`}
-          pieceName={pieceName}
-          pieceDisplayName={pieceDisplayName}
+          key={`${connectorName}:${open}`}
+          connectorName={connectorName}
+          connectorDisplayName={connectorDisplayName}
           open={open}
           onOpenChange={onOpenChange}
-          pieceSet={pieceSet}
+          connectorSet={connectorSet}
         />
       </SheetContent>
     </Sheet>
@@ -64,29 +64,29 @@ export const PieceComponentVisibilitySheet = ({
 PieceComponentVisibilitySheet.displayName = 'PieceComponentVisibilitySheet';
 
 function PieceComponentVisibilitySheetContent({
-  pieceName,
-  pieceDisplayName,
+  connectorName,
+  connectorDisplayName,
   open,
   onOpenChange,
-  pieceSet,
+  connectorSet,
 }: PieceComponentVisibilitySheetProps) {
-  const { pieceModel, isLoading } = piecesHooks.usePiece({
-    name: pieceName,
+  const { connectorModel, isLoading } = piecesHooks.usePiece({
+    name: connectorName,
     enabled: open,
   });
 
   const allActionNames = useMemo(
-    () => (pieceModel ? Object.keys(pieceModel.actions) : []),
-    [pieceModel],
+    () => (connectorModel ? Object.keys(connectorModel.actions) : []),
+    [connectorModel],
   );
   const allTriggerNames = useMemo(
-    () => (pieceModel ? Object.keys(pieceModel.triggers) : []),
-    [pieceModel],
+    () => (connectorModel ? Object.keys(connectorModel.triggers) : []),
+    [connectorModel],
   );
 
   const originalMode: VisibilityMode =
-    pieceName in pieceSet.config.selectedActions ||
-    pieceName in pieceSet.config.selectedTriggers
+    connectorName in connectorSet.config.selectedActions ||
+    connectorName in connectorSet.config.selectedTriggers
       ? 'selected'
       : 'all';
 
@@ -94,17 +94,17 @@ function PieceComponentVisibilitySheetContent({
     if (originalMode !== 'selected') {
       return [];
     }
-    const selected = pieceSet.config.selectedActions[pieceName] ?? [];
+    const selected = connectorSet.config.selectedActions[connectorName] ?? [];
     return allActionNames.filter((n) => !selected.includes(n));
-  }, [pieceSet, pieceName, originalMode, allActionNames]);
+  }, [connectorSet, connectorName, originalMode, allActionNames]);
 
   const originalHiddenTriggers = useMemo(() => {
     if (originalMode !== 'selected') {
       return [];
     }
-    const selected = pieceSet.config.selectedTriggers[pieceName] ?? [];
+    const selected = connectorSet.config.selectedTriggers[connectorName] ?? [];
     return allTriggerNames.filter((n) => !selected.includes(n));
-  }, [pieceSet, pieceName, originalMode, allTriggerNames]);
+  }, [connectorSet, connectorName, originalMode, allTriggerNames]);
 
   const [mode, setMode] = useState<VisibilityMode>(originalMode);
   const [touchedHiddenActions, setTouchedHiddenActions] = useState<
@@ -137,20 +137,20 @@ function PieceComponentVisibilitySheetContent({
   const isMutating = isPieceSetPending;
 
   const allActions = useMemo<ComponentItem[]>(() => {
-    if (!pieceModel) return [];
-    return Object.values(pieceModel.actions).map((a) => ({
+    if (!connectorModel) return [];
+    return Object.values(connectorModel.actions).map((a) => ({
       type: 'action' as const,
       data: a,
     }));
-  }, [pieceModel]);
+  }, [connectorModel]);
 
   const allTriggers = useMemo<ComponentItem[]>(() => {
-    if (!pieceModel) return [];
-    return Object.values(pieceModel.triggers).map((tr) => ({
+    if (!connectorModel) return [];
+    return Object.values(connectorModel.triggers).map((tr) => ({
       type: 'trigger' as const,
       data: tr,
     }));
-  }, [pieceModel]);
+  }, [connectorModel]);
 
   const visibleActionCount = allActions.filter(
     (item) => !localHiddenActions.includes(item.data.name),
@@ -207,10 +207,10 @@ function PieceComponentVisibilitySheetContent({
     if (mode === 'all') {
       updatePieceSet(
         {
-          id: pieceSet.id,
+          id: connectorSet.id,
           request: {
-            actions: { [pieceName]: { mode: 'all' } },
-            triggers: { [pieceName]: { mode: 'all' } },
+            actions: { [connectorName]: { mode: 'all' } },
+            triggers: { [connectorName]: { mode: 'all' } },
           },
         },
         { onSuccess: () => onOpenChange(false) },
@@ -227,13 +227,13 @@ function PieceComponentVisibilitySheetContent({
 
     updatePieceSet(
       {
-        id: pieceSet.id,
+        id: connectorSet.id,
         request: {
           actions: {
-            [pieceName]: { mode: 'selected', selected: selectedActionNames },
+            [connectorName]: { mode: 'selected', selected: selectedActionNames },
           },
           triggers: {
-            [pieceName]: {
+            [connectorName]: {
               mode: 'selected',
               selected: selectedTriggerNames,
             },
@@ -251,7 +251,7 @@ function PieceComponentVisibilitySheetContent({
       <SheetHeader className="px-6 py-4 border-b shrink-0">
         <SheetTitle className="text-base">{t('Actions & triggers')}</SheetTitle>
         <SheetDescription>
-          {t('For {name} in this piece set', { name: pieceDisplayName })}
+          {t('For {name} in this piece set', { name: connectorDisplayName })}
         </SheetDescription>
       </SheetHeader>
 

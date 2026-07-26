@@ -1,14 +1,14 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { pdfmonkeyAuth } from './lib/common/auth';
 import { generateDocumentAction } from './lib/actions/generate-document';
 import { deleteDocumentAction } from './lib/actions/delete-document';
 import { findDocumentAction } from './lib/actions/find-document';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 import { documentGeneratedTrigger } from './lib/triggers/document-generated';
 
-export const pdfmonkey = createPiece({
+export const pdfmonkey = createConnector({
 	displayName: 'PDFMonkey',
 	auth: pdfmonkeyAuth,
 	minimumSupportedRelease: '0.36.1',

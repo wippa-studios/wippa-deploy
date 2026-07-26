@@ -5,9 +5,9 @@ import {
     HttpRequest,
     HttpResponse,
     HttpMessageBody, 
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { zendeskSellAuth } from './auth';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 
 export const ZENDESK_SELL_API_URL = 'https://api.getbase.com';

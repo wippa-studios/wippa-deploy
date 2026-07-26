@@ -16,7 +16,7 @@ import {
 } from '@wippa/shared';
 
 const SCHEMA_VERSION = '20';
-const WEBHOOK_PIECE_NAME = '@wippa/piece-webhook';
+const WEBHOOK_PIECE_NAME = '@wippa/connector-webhook';
 const WEBHOOK_PIECE_VERSION = '0.1.33';
 const WEBHOOK_TRIGGER_NAME = 'catch_webhook';
 const EVENT_FIELD_PATH = "{{trigger['body']['action']}}";
@@ -71,8 +71,8 @@ export const handlerFlowBuilder = {
             displayName: labels.webhookTriggerDisplayName,
             lastUpdatedDate,
             settings: {
-              pieceName: WEBHOOK_PIECE_NAME,
-              pieceVersion: WEBHOOK_PIECE_VERSION,
+              connectorName: WEBHOOK_PIECE_NAME,
+              connectorVersion: WEBHOOK_PIECE_VERSION,
               triggerName: WEBHOOK_TRIGGER_NAME,
               input: { authType: 'none', authFields: {} },
               propertySettings: {

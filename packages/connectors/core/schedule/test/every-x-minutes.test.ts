@@ -1,6 +1,6 @@
 /// <reference types="vitest/globals" />
 
-import { createMockPollingTriggerContext } from '@wippa/pieces-framework';
+import { createMockPollingTriggerContext } from '@wippa/connectors-framework';
 import { everyXMinutesTrigger } from '../src/lib/triggers/every-x-minutes.trigger';
 
 describe('everyXMinutesTrigger', () => {

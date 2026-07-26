@@ -1,5 +1,5 @@
-import { createAction, Property, DynamicPropsValue, InputPropertyMap } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property, DynamicPropsValue, InputPropertyMap } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { firecrawlAuth } from '../auth';
 import { FIRECRAWL_API_BASE_URL } from '../common/common';
 

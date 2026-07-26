@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { concat } from './lib/actions/concat';
 import { find } from './lib/actions/find';
 import { findAll } from './lib/actions/find-all';
@@ -13,7 +13,7 @@ import { defaultValue } from './lib/actions/default-value';
 import { jsonToAsciiTable } from './lib/actions/json-to-ascii-table';
 import { extractFromHtml } from './lib/actions/extract-from-html';
 
-export const textHelper = createPiece({
+export const textHelper = createConnector({
   displayName: 'Text Helper',
   description: 'Tools for text processing',
   auth: PieceAuth.None(),

@@ -1,11 +1,11 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { googleContactsCommon } from '../common';
 import { googleContactsAuth } from '../auth';
 

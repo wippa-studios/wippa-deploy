@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { simplyprintAuth } from './lib/auth';
 
@@ -85,7 +85,7 @@ import { customApiCallAction } from './lib/actions/custom-api-call';
 // Triggers — full catalog of webhook events (see lib/trigger/catalog.ts).
 import { allTriggers } from './lib/trigger/catalog';
 
-export const simplyprint = createPiece({
+export const simplyprint = createConnector({
   displayName: 'SimplyPrint',
   description:
     '3D printer fleet management: monitor printers, manage the print queue, track filament, and automate print jobs.',

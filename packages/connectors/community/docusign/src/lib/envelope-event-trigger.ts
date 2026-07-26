@@ -6,7 +6,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 type StoredConfig = { connectId: string };
 

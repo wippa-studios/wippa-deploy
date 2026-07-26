@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { cyberarkAuth } from '../auth';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
   
 export interface CyberArkAuth {
   serverUrl: string;

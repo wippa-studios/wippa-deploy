@@ -1,4 +1,4 @@
-import { createAction, Property, ApFile } from '@wippa/pieces-framework';
+import { createAction, Property, ApFile } from '@wippa/connectors-framework';
 import {
   GenerateContentConfig,
   GoogleGenAI,

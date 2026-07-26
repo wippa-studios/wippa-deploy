@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { documentQuestionAnswering } from './lib/actions/document-question-answering';
 import { languageTranslation } from './lib/actions/language-translation';
 import { textClassification } from './lib/actions/text-classification';
@@ -10,7 +10,7 @@ import { objectDetection } from './lib/actions/object-detection';
 import { imageClassification } from './lib/actions/image-classification';
 import { huggingFaceAuth } from './lib/auth';
 
-export const huggingface = createPiece({
+export const huggingface = createConnector({
   displayName: 'Hugging Face',
   description:
     'Run inference on 100,000+ open ML models for NLP, vision, and audio tasks',

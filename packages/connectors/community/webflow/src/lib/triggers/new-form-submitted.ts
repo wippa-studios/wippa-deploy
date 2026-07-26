@@ -1,6 +1,6 @@
 import { webflowCommon } from '../common/common';
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
-import { getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
+import { getAccessTokenOrThrow } from '@wippa/connectors-common';
 import { webflowAuth } from '../..';
 import { webflowProps } from '../common/props';
 

@@ -1,10 +1,10 @@
 import { apId } from '@wippa/core-utils'
-import { ActionBase } from '@wippa/pieces-framework'
-import { DefaultProjectRole, FlowTriggerType, PackageType, PieceType, PrincipalType } from '@wippa/shared'
+import { ActionBase } from '@wippa/connectors-framework'
+import { DefaultProjectRole, FlowTriggerType, PackageType, ConnectorType, PrincipalType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
-import { pieceCache } from '../../../../src/app/pieces/metadata/piece-cache'
+import { connectorCache } from '../../../../src/app/pieces/metadata/piece-cache'
 import { pieceMetadataService } from '../../../../src/app/pieces/metadata/piece-metadata-service'
 import { generateMockToken } from '../../../helpers/auth'
 import { db } from '../../../helpers/db'
@@ -58,12 +58,12 @@ describe('Piece Metadata CE API', () => {
         it('should list pieces', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'ce-list-test-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'CE List Test',
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,
@@ -88,18 +88,18 @@ describe('Piece Metadata CE API', () => {
         it('should filter pieces by searchQuery', async () => {
             const mockPieceA = createMockPieceMetadata({
                 name: 'searchable-unique-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'Searchable Unique Piece',
                 packageType: PackageType.REGISTRY,
             })
             const mockPieceB = createMockPieceMetadata({
                 name: 'other-piece-xyz',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'Other Piece XYZ',
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', [mockPieceA, mockPieceB])
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,
@@ -125,12 +125,12 @@ describe('Piece Metadata CE API', () => {
         it('should get piece by name', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'ce-get-test-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'CE Get Test',
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,
@@ -152,7 +152,7 @@ describe('Piece Metadata CE API', () => {
         })
 
         it('should return 404 for non-existent piece', async () => {
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,
@@ -177,12 +177,12 @@ describe('Piece Metadata CE API', () => {
 
             const mockPiece = createMockPieceMetadata({
                 name: '@wippa/ce-scoped-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'CE Scoped Test',
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.get(`/v1/pieces/@wippa/ce-scoped-piece?projectId=${ctx.project.id}`)
 
@@ -206,26 +206,26 @@ describe('Piece Metadata CE API', () => {
     describe('release-compatibility fallback', () => {
         it('GET /v1/pieces/:scope/:name falls back to the newest compatible version when latest requires a newer release', async () => {
             const compatible = createMockPieceMetadata({
-                name: '@wippa/piece-release-test',
-                pieceType: PieceType.OFFICIAL,
+                name: '@wippa/connector-release-test',
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.32',
                 minimumSupportedRelease: '0.0.0',
                 maximumSupportedRelease: '99999.99999.9999',
             })
             const incompatible = createMockPieceMetadata({
-                name: '@wippa/piece-release-test',
-                pieceType: PieceType.OFFICIAL,
+                name: '@wippa/connector-release-test',
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.33',
                 minimumSupportedRelease: '99.0.0',
                 maximumSupportedRelease: '99999.99999.9999',
             })
             await db.save('piece_metadata', [compatible, incompatible])
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const ctx = await createTestContext(app!)
-            const response = await ctx.get('/v1/pieces/@wippa/piece-release-test')
+            const response = await ctx.get('/v1/pieces/@wippa/connector-release-test')
 
             expect(response?.statusCode).toBe(StatusCodes.OK)
             expect(response?.json().version).toBe('0.1.32')
@@ -234,7 +234,7 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces returns the newest compatible version in list when latest is incompatible', async () => {
             const compatible = createMockPieceMetadata({
                 name: 'list-release-test-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.32',
                 minimumSupportedRelease: '0.0.0',
@@ -242,14 +242,14 @@ describe('Piece Metadata CE API', () => {
             })
             const incompatible = createMockPieceMetadata({
                 name: 'list-release-test-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.33',
                 minimumSupportedRelease: '99.0.0',
                 maximumSupportedRelease: '99999.99999.9999',
             })
             await db.save('piece_metadata', [compatible, incompatible])
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,
@@ -269,18 +269,18 @@ describe('Piece Metadata CE API', () => {
 
         it('GET /v1/pieces/:scope/:name returns 404 when all versions are incompatible', async () => {
             const incompatible = createMockPieceMetadata({
-                name: '@wippa/piece-all-incompatible',
-                pieceType: PieceType.OFFICIAL,
+                name: '@wippa/connector-all-incompatible',
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.33',
                 minimumSupportedRelease: '99.0.0',
                 maximumSupportedRelease: '99999.99999.9999',
             })
             await db.save('piece_metadata', incompatible)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const ctx = await createTestContext(app!)
-            const response = await ctx.get('/v1/pieces/@wippa/piece-all-incompatible')
+            const response = await ctx.get('/v1/pieces/@wippa/connector-all-incompatible')
 
             expect(response?.statusCode).toBe(StatusCodes.NOT_FOUND)
         })
@@ -291,13 +291,13 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/deletable-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
                 version: '0.1.0',
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${mockPiece.id}`)
 
@@ -308,7 +308,7 @@ describe('Piece Metadata CE API', () => {
 
         it('should return 404 for a non-existent piece id', async () => {
             const ctx = await createTestContext(app!)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${apId()}`)
 
@@ -319,20 +319,20 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
             const versionOne = createMockPieceMetadata({
                 name: '@custom/multi-version-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
                 version: '0.1.0',
             })
             const versionTwo = createMockPieceMetadata({
                 name: '@custom/multi-version-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
                 version: '0.2.0',
             })
             await db.save('piece_metadata', [versionOne, versionTwo])
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${versionTwo.id}`)
 
@@ -345,13 +345,13 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
                 name: '@wippa/official-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
                 version: '0.1.0',
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${mockPiece.id}`)
 
@@ -367,13 +367,13 @@ describe('Piece Metadata CE API', () => {
             })
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/member-cannot-delete',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: ownerCtx.platform.id,
                 version: '0.1.0',
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await memberCtx.delete(`/v1/pieces/${mockPiece.id}`)
 
@@ -386,13 +386,13 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/other-platform-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: apId(),
                 version: '0.1.0',
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${mockPiece.id}`)
 
@@ -405,7 +405,7 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/in-use-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
                 version: '0.1.0',
@@ -421,8 +421,8 @@ describe('Piece Metadata CE API', () => {
                     type: FlowTriggerType.PIECE,
                     name: 'trigger',
                     settings: {
-                        pieceName: mockPiece.name,
-                        pieceVersion: mockPiece.version,
+                        connectorName: mockPiece.name,
+                        connectorVersion: mockPiece.version,
                         input: {},
                         propertySettings: {},
                         triggerName: 'sample_trigger',
@@ -432,7 +432,7 @@ describe('Piece Metadata CE API', () => {
                 },
             })
             await db.save('flow_version', mockFlowVersion)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${mockPiece.id}`)
 
@@ -446,7 +446,7 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/stale-version-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
                 version: '0.1.0',
@@ -462,8 +462,8 @@ describe('Piece Metadata CE API', () => {
                     type: FlowTriggerType.PIECE,
                     name: 'trigger',
                     settings: {
-                        pieceName: mockPiece.name,
-                        pieceVersion: mockPiece.version,
+                        connectorName: mockPiece.name,
+                        connectorVersion: mockPiece.version,
                         input: {},
                         propertySettings: {},
                         triggerName: 'sample_trigger',
@@ -478,7 +478,7 @@ describe('Piece Metadata CE API', () => {
                 created: '2024-01-01T00:00:00.000Z',
             })
             await db.save('flow_version', [staleVersion, latestVersion])
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${mockPiece.id}`)
 
@@ -492,7 +492,7 @@ describe('Piece Metadata CE API', () => {
             const otherCtx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/cross-platform-usage-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId: ctx.platform.id,
                 version: '0.1.0',
@@ -507,8 +507,8 @@ describe('Piece Metadata CE API', () => {
                     type: FlowTriggerType.PIECE,
                     name: 'trigger',
                     settings: {
-                        pieceName: mockPiece.name,
-                        pieceVersion: mockPiece.version,
+                        connectorName: mockPiece.name,
+                        connectorVersion: mockPiece.version,
                         input: {},
                         propertySettings: {},
                         triggerName: 'sample_trigger',
@@ -518,7 +518,7 @@ describe('Piece Metadata CE API', () => {
                 },
             })
             await db.save('flow_version', otherFlowVersion)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.delete(`/v1/pieces/${mockPiece.id}`)
 
@@ -533,13 +533,13 @@ describe('Piece Metadata CE API', () => {
             const platformId = apId()
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/my-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId,
                 version: '0.1.0',
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const result = await pieceMetadataService(mockLog).get({
                 name: '@custom/my-piece',
@@ -552,13 +552,13 @@ describe('Piece Metadata CE API', () => {
             const platformId = apId()
             const mockPiece = createMockPieceMetadata({
                 name: '@custom/my-piece',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 packageType: PackageType.REGISTRY,
                 platformId,
                 version: '0.1.0',
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const result = await pieceMetadataService(mockLog).get({
                 name: '@custom/my-piece',
@@ -581,12 +581,12 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces/:name hides audience:ai by default and keeps both + untagged', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'audience-detail-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({ type: PrincipalType.UNKNOWN, id: apId() })
             const response = await app?.inject({
@@ -604,12 +604,12 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces/:name?audience=all returns every action', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'audience-detail-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({ type: PrincipalType.UNKNOWN, id: apId() })
             const response = await app?.inject({
@@ -626,12 +626,12 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces/:name?audience=ai hides human-only and keeps ai + both + untagged', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'audience-detail-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({ type: PrincipalType.UNKNOWN, id: apId() })
             const response = await app?.inject({
@@ -650,12 +650,12 @@ describe('Piece Metadata CE API', () => {
             const ctx = await createTestContext(app!)
             const mockPiece = createMockPieceMetadata({
                 name: '@wippa/audience-scoped-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await ctx.get('/v1/pieces/@wippa/audience-scoped-piece')
 
@@ -668,12 +668,12 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces hides audience:ai from suggestedActions and recomputes the count by default', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'audience-list-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({ type: PrincipalType.UNKNOWN, id: apId() })
             const response = await app?.inject({
@@ -693,12 +693,12 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces?audience=all keeps every action and the full count', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'audience-list-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({ type: PrincipalType.UNKNOWN, id: apId() })
             const response = await app?.inject({
@@ -718,12 +718,12 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces (no suggestionType) reports an audience-filtered action count by default', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'audience-bare-list-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({ type: PrincipalType.UNKNOWN, id: apId() })
             const response = await app?.inject({
@@ -742,12 +742,12 @@ describe('Piece Metadata CE API', () => {
         it('GET /v1/pieces?audience=all (no suggestionType) reports the full action count', async () => {
             const mockPiece = createMockPieceMetadata({
                 name: 'audience-bare-list-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: buildActions(),
             })
             await db.save('piece_metadata', mockPiece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({ type: PrincipalType.UNKNOWN, id: apId() })
             const response = await app?.inject({

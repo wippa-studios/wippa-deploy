@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { hedyAuth } from '../auth';
 import { createClient } from './client';
 import { PaginatedResponse, Topic } from './types';

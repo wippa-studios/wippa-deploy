@@ -1,4 +1,4 @@
-import { ApFile } from '@wippa/pieces-framework';
+import { ApFile } from '@wippa/connectors-framework';
 
 // Common Types
 export interface AuthenticationParams {

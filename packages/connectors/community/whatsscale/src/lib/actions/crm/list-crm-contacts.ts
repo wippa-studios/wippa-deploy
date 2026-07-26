@@ -2,8 +2,8 @@ import {
   createAction,
   Property,
   DropdownState,
-} from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { whatsscaleAuth } from '../../auth';
 import { whatsscaleClient } from '../../common/client';
 

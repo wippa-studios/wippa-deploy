@@ -91,7 +91,7 @@ const buildMapper = ({ name, mapping, skip, nextAction }: {
         name,
         input: { mapping: mapping ?? {} },
         skip,
-        pieceName: '@wippa/piece-data-mapper',
+        connectorName: '@wippa/connector-data-mapper',
         actionName: 'advanced_mapping',
     }),
     nextAction,

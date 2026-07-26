@@ -2,7 +2,7 @@ import {
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const BASE_URL = 'https://api.createsend.com/api/v3.3';
 

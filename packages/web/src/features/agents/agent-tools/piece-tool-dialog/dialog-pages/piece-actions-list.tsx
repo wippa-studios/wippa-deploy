@@ -70,7 +70,7 @@ export const PieceActionsList: React.FC<PieceActionsDialogProps> = ({
         {filteredActions.map((action) => {
           const isDisabled = selectedActionNames.has(
             mcpToolNameUtils.createPieceToolName(
-              selectedPiece.pieceName,
+              selectedPiece.connectorName,
               action.name,
             ),
           );

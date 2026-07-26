@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 export const zohoBooksAuth = PieceAuth.OAuth2({
   props: {
@@ -50,7 +50,7 @@ export const zohoBooksAuth = PieceAuth.OAuth2({
   required: true,
 });
 
-export const zohoBooks = createPiece({
+export const zohoBooks = createConnector({
   displayName: "Zoho Books",
   description: 'Comprehensive online accounting software for small businesses.',
   logoUrl: "https://cdn.activepieces.com/pieces/zoho-books.png",

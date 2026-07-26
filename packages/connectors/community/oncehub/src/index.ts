@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { oncehubAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { findContact } from './lib/actions/find-contact';
 import { createContact } from './lib/actions/create-contact';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { bookingCanceled } from './lib/triggers/booking-canceled';
 import { bookingCanceledThenRescheduled } from './lib/triggers/booking-canceled-then-rescheduled';
 import { bookingCompleted } from './lib/triggers/booking-completed';
@@ -14,7 +14,7 @@ import { conversationAbandoned } from './lib/triggers/conversation-abandoned';
 import { conversationClosed } from './lib/triggers/conversation-closed';
 import { conversationStarted } from './lib/triggers/conversation-started';
 
-export const oncehub = createPiece({
+export const oncehub = createConnector({
   displayName: 'Oncehub',
   auth: oncehubAuth,
   minimumSupportedRelease: '0.36.1',

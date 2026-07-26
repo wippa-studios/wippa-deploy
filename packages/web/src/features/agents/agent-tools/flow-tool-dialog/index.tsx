@@ -53,7 +53,7 @@ export function AgentFlowToolDialog({
     return data?.data.filter(
       (flow) =>
         flow.version.trigger.type === FlowTriggerType.PIECE &&
-        flow.version.trigger.settings.pieceName === '@wippa/piece-mcp',
+        flow.version.trigger.settings.connectorName === '@wippa/connector-mcp',
     );
   }, [data]);
 

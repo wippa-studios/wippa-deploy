@@ -1,7 +1,7 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createOrUpdateSubscriber } from './lib/actions/create-or-update-subscription';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { triggers } from './triggers/triggers';
 import { addSubscriberToGroupAction } from './lib/actions/add-subscriber-to-group';
 import { removeSubscriberFromGroupAction } from './lib/actions/remove-subscriber-from-group';
@@ -22,7 +22,7 @@ export const mailerLiteAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const mailerLite = createPiece({
+export const mailerLite = createConnector({
   displayName: 'MailerLite',
   description: 'Email marketing software',
 

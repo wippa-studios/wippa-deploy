@@ -1,8 +1,8 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { rssNewItemTrigger } from './lib/triggers/new-item-trigger';
 import { rssNewItemListTrigger } from './lib/triggers/new-item-list-triggers';
 
-export const rssFeed = createPiece({
+export const rssFeed = createConnector({
   displayName: 'RSS Feed',
   description: 'Stay updated with RSS feeds',
   authors: ["Abdallah-Alwarawreh","kishanprmr","khaledmashaly","abuaboud", "Kevinyu-alan"],

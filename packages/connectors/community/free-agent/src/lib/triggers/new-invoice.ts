@@ -3,7 +3,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   DedupeStrategy,
@@ -11,7 +11,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { freeAgentAuth } from '../auth';
 
 const props = {

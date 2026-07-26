@@ -14,7 +14,7 @@
       "@wippa/core-utils": [
         "../utils/dist/index.d.ts"
       ],
-      "@wippa/core-piece-types": [
+      "@wippa/core-connector-types": [
         "../piece-types/dist/index.d.ts"
       ]
     }

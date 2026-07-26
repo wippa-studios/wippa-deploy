@@ -43,7 +43,7 @@ export type PopulatedFlow = {
         trigger: {
             type: FlowTriggerType
             settings: {
-                pieceName?: string
+                connectorName?: string
                 input: {
                     exampleData?: unknown
                 } & Record<string, unknown>

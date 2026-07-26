@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { baserowAuth, baserowAuthHelpers } from '../auth';
 import { makeClient } from '../common';
 

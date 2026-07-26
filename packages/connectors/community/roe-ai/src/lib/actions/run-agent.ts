@@ -1,9 +1,9 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { roeAiAuth } from '../common/auth';
 import {
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { agentIdDropdown } from '../common/props';
 export const runAgent = createAction({
   auth: roeAiAuth,

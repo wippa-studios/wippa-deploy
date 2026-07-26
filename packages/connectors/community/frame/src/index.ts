@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { triggers } from './lib/triggers';
 
 const markdownPropertyDescription = `
@@ -20,7 +20,7 @@ export const frameAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const frame = createPiece({
+export const frame = createConnector({
   displayName: 'Frame',
   description: 'Collaborative workspace platform',
 

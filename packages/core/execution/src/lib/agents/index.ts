@@ -91,8 +91,8 @@ export const ToolCallContentBlock = z.discriminatedUnion('toolCallType', [
     z.object({
         ...ToolCallBaseSchema.shape,
         toolCallType: z.literal(ToolCallType.PIECE),
-        pieceName: z.string(),
-        pieceVersion: z.string(),
+        connectorName: z.string(),
+        connectorVersion: z.string(),
         actionName: z.string(),
     }),
     z.object({

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   DeleteSecretCommand,
 } from '@aws-sdk/client-secrets-manager';

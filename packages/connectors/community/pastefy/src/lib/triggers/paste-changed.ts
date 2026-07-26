@@ -3,7 +3,7 @@ import {
   Property,
   StoreScope,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { makeClient } from '../common';
 import { createHash } from 'crypto';
 import { pastefyAuth } from '../..';

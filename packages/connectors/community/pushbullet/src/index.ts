@@ -1,15 +1,15 @@
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { bushbulletAuth } from './lib/common/auth';
 import { sendALink } from './lib/actions/send-a-link';
 import { sendANote } from './lib/actions/send-a-note';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const pushbullet = createPiece({
+export const pushbullet = createConnector({
   displayName: 'Pushbullet',
   description: 'Cross-device notification service',
   categories: [PieceCategory.COMMUNICATION],

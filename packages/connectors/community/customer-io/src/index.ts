@@ -1,13 +1,13 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { createEvent } from './lib/actions/create_event';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { customerIOCommon } from './lib/common';
 import { Buffer } from 'buffer';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { customerIOAuth } from './lib/auth';
 
 const markdown = `
@@ -32,7 +32,7 @@ type CustomerIOAuth = {
   track_api_key: string;
   api_bearer_token: string;
 };
-export const customerIo: any = createPiece({
+export const customerIo: any = createConnector({
   displayName: 'customer.io',
   auth: customerIOAuth,
   description:

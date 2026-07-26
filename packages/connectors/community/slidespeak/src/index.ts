@@ -1,19 +1,19 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/constants';
 import { uploadDocumentAction } from './lib/actions/upload-document';
 import { createPresentationAction } from './lib/actions/create-presentation';
 import { editPresentationAction } from './lib/actions/edit-presentation';
 import { getTaskStatusAction } from './lib/actions/get-task-status';
 import { newPresentationTrigger } from './lib/triggers/new-presentation';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { slidespeakAuth } from './lib/auth';
 
-export const slidespeak = createPiece({
+export const slidespeak = createConnector({
   displayName: 'SlideSpeak',
   auth: slidespeakAuth,
   minimumSupportedRelease: '0.36.1',

@@ -2,9 +2,9 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { stripeCreateCustomer } from './lib/actions/create-customer';
 import { stripeCreateInvoice } from './lib/actions/create-invoice';
 import { stripeRetrieveCustomer } from './lib/actions/retrieve-customer';
@@ -62,7 +62,7 @@ export const stripeAuth = PieceAuth.SecretText({
   },
 });
 
-export const stripe = createPiece({
+export const stripe = createConnector({
   displayName: 'Stripe',
   description: 'Online payment processing for internet businesses',
 

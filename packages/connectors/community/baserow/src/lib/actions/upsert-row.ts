@@ -2,7 +2,7 @@ import {
   Property,
   createAction,
   DropdownState,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { baserowAuth } from '../auth';
 import {
   baserowCommon,

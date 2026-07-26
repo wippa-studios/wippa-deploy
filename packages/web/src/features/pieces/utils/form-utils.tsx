@@ -3,12 +3,12 @@ import {
   piecePropertiesUtils,
   OAuth2Props,
   PieceAuthProperty,
-  PieceMetadata,
+  ConnectorMetadata,
   PieceMetadataModel,
-  PieceProperty,
-  PiecePropertyMap,
+  ConnectorProperty,
+  ConnectorPropertyMap,
   PropertyType,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AppConnectionScope,
   AppConnectionType,
@@ -58,7 +58,7 @@ function buildClassicSchema(
 
 function buildInputSchemaForStep(
   type: FlowActionType | FlowTriggerType,
-  piece: PieceMetadata | null,
+  piece: ConnectorMetadata | null,
   actionNameOrTriggerName: string,
 ): ZodType {
   switch (type) {
@@ -99,7 +99,7 @@ function getDefaultPropertyValue({
   property,
   dynamicInputModeToggled,
 }: {
-  property: PieceProperty;
+  property: ConnectorProperty;
   dynamicInputModeToggled: boolean;
 }) {
   switch (property.type) {
@@ -173,7 +173,7 @@ function getDefaultValueForProperties({
   existingInput,
   propertySettings,
 }: {
-  props: PiecePropertyMap | OAuth2Props;
+  props: ConnectorPropertyMap | OAuth2Props;
   existingInput: Record<string, unknown>;
   propertySettings?: Record<string, PropertySettings>;
 }): Record<string, unknown> {
@@ -217,7 +217,7 @@ function displayNameSchema(required: boolean) {
 }
 
 const PROJECT_FORM_EXTRAS_SCHEMA = z.object({
-  pieceVersion: z.string().optional(),
+  connectorVersion: z.string().optional(),
   projectIds: z.array(z.string()),
   preSelectForNewProjects: z.boolean(),
 });

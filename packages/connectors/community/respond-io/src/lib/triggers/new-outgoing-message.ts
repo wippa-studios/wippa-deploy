@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { respondIoAuth } from '../common/auth';
 
 export const newOutgoingMessageTrigger = createTrigger({

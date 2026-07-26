@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { NinoxAuth } from './lib/common/auth';
 import { createRecord } from './lib/actions/create-record';
 import { updateRecord } from './lib/actions/update-record';
@@ -8,10 +8,10 @@ import { downloadFileFromRecord } from './lib/actions/download-file-from-record-
 import { findRecord } from './lib/actions/find-record';
 import { listFilesFromRecord } from './lib/actions/list-files-from-record';
 import { newRecord } from './lib/triggers/new-record';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 
-export const ninox = createPiece({
+export const ninox = createConnector({
 	displayName: 'Ninox',
 	auth: NinoxAuth,
 	minimumSupportedRelease: '0.36.1',

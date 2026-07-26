@@ -1,5 +1,5 @@
-import { createAction, DynamicPropsValue, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { createAction, DynamicPropsValue, OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 import { WorkbookRange } from '@microsoft/microsoft-graph-types';
 import {
 	createMSGraphClient,

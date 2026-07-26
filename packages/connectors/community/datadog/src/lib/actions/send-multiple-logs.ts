@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { v2 } from '@datadog/datadog-api-client';
 import { getDatadogConfiguration } from '../common/helpers';
 import { z } from 'zod';

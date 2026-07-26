@@ -1,8 +1,8 @@
 import {
   PropertyType,
-  PiecePropertyMap,
-  PieceProperty,
-} from '@wippa/pieces-framework';
+  ConnectorPropertyMap,
+  ConnectorProperty,
+} from '@wippa/connectors-framework';
 import { FlowTrigger, McpPropertyType } from '@wippa/shared';
 import { t } from 'i18next';
 import { useForm, useFormContext } from 'react-hook-form';
@@ -114,17 +114,17 @@ function McpToolTestingDialog({
   }
 
   const pieceProps = formProps.reduce((acc, field: McpFormField) => {
-    const pieceProperty = {
+    const connectorProperty = {
       displayName: field.name,
       description: field.description || '',
       required: field.required,
       type: mapMcpTypeToPropertyType(field.type),
       defaultValue: field.defaultValue,
-    } as PieceProperty;
+    } as ConnectorProperty;
 
-    acc[field.name] = pieceProperty;
+    acc[field.name] = connectorProperty;
     return acc;
-  }, {} as PiecePropertyMap);
+  }, {} as ConnectorPropertyMap);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

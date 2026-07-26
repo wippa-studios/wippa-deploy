@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { kudosityAuth } from '../common/auth';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { stat } from 'fs';
 export const smsSent = createTrigger({
   auth: kudosityAuth,

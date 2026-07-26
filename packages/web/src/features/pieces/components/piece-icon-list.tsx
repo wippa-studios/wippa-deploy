@@ -17,7 +17,7 @@ import { piecesHooks } from '../hooks/pieces-hooks';
 import { StepMetadata } from '../types';
 import { extractPieceNamesAndCoreMetadata } from '../utils/step-utils';
 
-import { PieceIcon } from './piece-icon';
+import { ConnectorIcon } from './connector-icon';
 
 const extraIconVariants = cva(
   'flex items-center justify-center rounded-md bg-background border border-solid text-xs select-none',
@@ -35,7 +35,7 @@ const extraIconVariants = cva(
   },
 );
 
-export function PieceIconList({
+export function ConnectorIconList({
   maxNumberOfIconsToShow,
   trigger,
   size,
@@ -62,7 +62,7 @@ export function PieceIconList({
   });
 
   const stepsMetadata: StepMetadata[] = useMemo(() => {
-    const pieceMetadata: StepMetadata[] = summaries
+    const connectorMetadata: StepMetadata[] = summaries
       .filter(
         (piece) =>
           !excludeCore || !piece.categories?.includes(PieceCategory.CORE),
@@ -73,13 +73,13 @@ export function PieceIconList({
         description: piece.description,
         type: FlowActionType.PIECE as const,
         pieceType: piece.pieceType,
-        pieceName: piece.name,
-        pieceVersion: piece.version,
+        connectorName: piece.name,
+        connectorVersion: piece.version,
         categories: piece.categories ?? [],
         packageType: piece.packageType,
         auth: piece.auth,
       }));
-    return [...coreMetadata, ...pieceMetadata];
+    return [...coreMetadata, ...connectorMetadata];
   }, [summaries, coreMetadata, excludeCore]);
 
   const uniqueMetadata: StepMetadata[] = stepsMetadata.filter(
@@ -95,7 +95,7 @@ export function PieceIconList({
   return (
     <div className={className || 'flex gap-0.5 '}>
       {visibleMetadata.map((metadata) => (
-        <PieceIcon
+        <ConnectorIcon
           logoUrl={metadata.logoUrl}
           showTooltip={true}
           size={size ?? 'md'}

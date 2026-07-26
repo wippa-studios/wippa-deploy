@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
 
 export interface PageElement {
     objectId: string;

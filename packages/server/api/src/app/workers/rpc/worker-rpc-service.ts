@@ -156,7 +156,7 @@ export function createHandlers(log: FastifyBaseLogger, assignment: WorkerGroupAs
             return flowVersion
         },
 
-        async getPiece(input) {
+        async getConnector(input) {
             return pieceMetadataService(log).get({
                 name: input.name,
                 version: input.version,

@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { advancedMapping } from '../src/lib/actions/advanced-mapping';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('advancedMapping', () => {
   test('returns simple object mapping as-is', async () => {

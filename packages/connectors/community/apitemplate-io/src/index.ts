@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { ApitemplateAuth } from './lib/common/auth';
 import { createImage } from './lib/actions/create-image';
 import { createPdf } from './lib/actions/create-pdf';
@@ -7,11 +7,11 @@ import { deleteObject } from './lib/actions/delete-object';
 import { listObjects } from './lib/actions/list-objects';
 import { createPdfFromHtml } from './lib/actions/create-pdf-from-html';
 import { createPdfFromUrl } from './lib/actions/create-pdf-from-url';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { ApitemplateAuthConfig, ApitemplateRegion, getRegionalBaseUrl } from './lib/common/client';
 
-export const apitemplateIo = createPiece({
+export const apitemplateIo = createConnector({
   displayName: 'APITemplate.io',
   auth: ApitemplateAuth,
   minimumSupportedRelease: '0.36.1',

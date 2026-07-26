@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addTag } from './lib/add-tag';
 
-export const tags = createPiece({
+export const tags = createConnector({
   displayName: 'Tags',
   description: 'Add custom tags to your run for filtration',
   auth: PieceAuth.None(),

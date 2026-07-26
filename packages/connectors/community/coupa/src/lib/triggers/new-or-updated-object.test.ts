@@ -2,7 +2,7 @@ import {
   HttpRequest,
   HttpResponse,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { newOrUpdatedObject } from './new-or-updated-object';
 

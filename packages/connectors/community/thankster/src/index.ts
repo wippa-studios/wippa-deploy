@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
     import { sendCards } from './lib/actions/send-cards';
 
     export const thanksterAuth = PieceAuth.SecretText({
@@ -8,7 +8,7 @@
       description: 'Go My Profile page to find your API Key at the bottom.',
     });
 
-    export const thankster = createPiece({
+    export const thankster = createConnector({
       displayName: "Thankster",
       auth: thanksterAuth,
       minimumSupportedRelease: '0.36.1',

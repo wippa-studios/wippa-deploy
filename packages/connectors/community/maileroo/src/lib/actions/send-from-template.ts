@@ -1,6 +1,6 @@
-import { ApFile, createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { spreadIfDefined } from '@wippa/pieces-framework';
+import { ApFile, createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { spreadIfDefined } from '@wippa/connectors-framework';
 
 import { mailerooAuth } from '../auth';
 import { buildAttachmentList, toEmailObjects } from '../common';

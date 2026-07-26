@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { assemblyaiAuth } from '../auth';
 
 export const customApiCall = createCustomApiCallAction({

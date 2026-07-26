@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { pagerDutyAuth } from '../auth';
 import { instructionProp } from '../common/props';
 export const newIncident = createTrigger({

@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { launchWorkflow } from './lib/actions/launch-workflow';
 import { getJobResults } from './lib/actions/get-job-results';
 
@@ -28,7 +28,7 @@ export type CaptainDataAuthType = {
   projectId: string;
 };
 
-export const captainData = createPiece({
+export const captainData = createConnector({
   displayName: 'Captain-data',
   auth: captainDataAuth,
   minimumSupportedRelease: '0.30.0',

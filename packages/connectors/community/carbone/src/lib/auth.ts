@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { CARBONE_API_URL, CARBONE_VERSION } from './common/constants';
 
 export const carboneAuth = PieceAuth.SecretText({

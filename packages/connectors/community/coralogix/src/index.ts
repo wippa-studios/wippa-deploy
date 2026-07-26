@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { coralogixAuth } from './lib/common/auth';
 import { sendLogs } from './lib/actions/send-logs';
 import { listIncidents } from './lib/actions/list-incidents';
@@ -9,11 +9,11 @@ import { assignIncidents } from './lib/actions/assign-incidents';
 import { getIncidentById } from './lib/actions/get-incident-by-id';
 import { getIncidentEvents } from './lib/actions/get-incident-events';
 import { setAlertActive } from './lib/actions/set-alert-active';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { newAlertEvent } from './lib/triggers/new-alert-event';
 import { newIncident } from './lib/triggers/new-incident';
 
-export const coralogix = createPiece({
+export const coralogix = createConnector({
   displayName: 'Coralogix',
   auth: coralogixAuth,
   minimumSupportedRelease: '0.36.1',

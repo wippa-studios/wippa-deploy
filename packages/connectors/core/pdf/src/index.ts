@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { extractText } from './lib/actions/extract-text';
 import { convertToImage } from './lib/actions/convert-to-image';
 import { textToPdf } from './lib/actions/text-to-pdf';
@@ -10,7 +10,7 @@ import { mergePdfs } from './lib/actions/merge-pdfs';
 import { addTextToPdf } from './lib/actions/add-text-to-pdf';
 import { addImageToPdf } from './lib/actions/add-image-to-pdf';
 
-export const PDF = createPiece({
+export const PDF = createConnector({
   displayName: 'PDF',
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.34.2',

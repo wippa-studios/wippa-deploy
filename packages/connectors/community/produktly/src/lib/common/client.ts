@@ -1,5 +1,5 @@
-import { AuthenticationType, HttpMessageBody, HttpMethod, HttpResponse, QueryParams, httpClient } from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AuthenticationType, HttpMessageBody, HttpMethod, HttpResponse, QueryParams, httpClient } from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { produktlyAuth } from './auth';
 
 export async function produktlyApiCall<T extends HttpMessageBody>({

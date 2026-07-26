@@ -228,7 +228,7 @@ describe('Managed Authentication API', () => {
             expect(project?.pieceSetId).toBe(tagSet.id)
         })
 
-        it('Assigns the named piece set referenced by a v4 token pieceSet field', async () => {
+        it('Assigns the named piece set referenced by a v4 token connectorSet field', async () => {
             // arrange
             const { mockPlatform } = await mockAndSaveBasicSetup({
                 plan: { managePiecesEnabled: true },

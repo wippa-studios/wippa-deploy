@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addUsersToGroup } from './lib/actions/add-users-to-group.action';
 import { changeUserTrustLevel } from './lib/actions/change-trust-level.action';
 import { createPost } from './lib/actions/create-post.action';
@@ -12,7 +12,7 @@ import { createTopic } from './lib/actions/create-topic.action';
 import { sendPrivateMessage } from './lib/actions/send-private-message.action';
 import { discourseAuth } from './lib/auth';
 
-export const discourse = createPiece({
+export const discourse = createConnector({
   displayName: 'Discourse',
   description: 'Modern open source forum software',
   auth: discourseAuth,

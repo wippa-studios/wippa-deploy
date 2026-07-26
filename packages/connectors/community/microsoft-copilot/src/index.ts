@@ -1,14 +1,14 @@
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { microsoft365CopilotAuth } from './lib/common/auth';
 import { chatWithCopilot } from './lib/actions/chat-with-copilot';
 import { searchCopilot } from './lib/actions/search-copilot';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
 
-export const microsoft365Copilot = createPiece({
+export const microsoft365Copilot = createConnector({
   displayName: 'Microsoft 365 Copilot',
   auth: microsoft365CopilotAuth,
   minimumSupportedRelease: '0.36.1',

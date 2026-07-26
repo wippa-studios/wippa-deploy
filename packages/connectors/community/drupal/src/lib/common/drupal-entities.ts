@@ -1,10 +1,10 @@
 import {
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { DrupalAuthType, makeJsonApiRequest } from './jsonapi';
 
 

@@ -1,5 +1,5 @@
-import { createAction, Property } from "@wippa/pieces-framework";
-import { HttpMethod } from "@wippa/pieces-common";
+import { createAction, Property } from "@wippa/connectors-framework";
+import { HttpMethod } from "@wippa/connectors-common";
 import { createHash } from "crypto";
 import { emailOctopusAuth } from "../common/auth";
 import { EmailOctopusClient } from "../common/client";

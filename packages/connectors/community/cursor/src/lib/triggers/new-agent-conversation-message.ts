@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/connectors-common';
 import { cursorAuth } from '../common/auth';
 import { makeCursorRequest } from '../common/client';
 import { agentDropdown } from '../common/props';

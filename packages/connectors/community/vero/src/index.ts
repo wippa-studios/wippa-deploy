@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { veroAuth } from './lib/common/auth';
 import { aliasAUser } from './lib/actions/alias-a-user';
 import { createOrUpdateUser } from './lib/actions/create-or-update-user';
@@ -20,7 +20,7 @@ import { updateUser } from './lib/triggers/update-user';
 import { unsubscribeUser } from './lib/triggers/unsubscribe-user';
 import { resubscribeUserTrigger } from './lib/triggers/resubscribe-user';
 
-export const vero = createPiece({
+export const vero = createConnector({
   displayName: 'Vero',
   auth: veroAuth,
   minimumSupportedRelease: '0.36.1',

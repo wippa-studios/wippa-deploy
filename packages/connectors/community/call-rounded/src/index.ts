@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 export const callRoundedAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -7,7 +7,7 @@ export const callRoundedAuth = PieceAuth.SecretText({
   description: 'Please enter the API Key obtained from Call Rounded.',
 });
 
-export const callRounded = createPiece({
+export const callRounded = createConnector({
   displayName: "Call-rounded",
   auth: callRoundedAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { datastoreSearch } from './lib/actions/datastore-search';
 
 const markdownDescription = `
@@ -28,7 +28,7 @@ export const llmrailsAuth = PieceAuth.SecretText({
   },
 });
 
-export const llmrails = createPiece({
+export const llmrails = createConnector({
   displayName: 'LLMRails',
   description: 'LLM Rails Platform',
 

@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const markdownDescription = `
 Please follow [Generate Long Live Token](https://developers.kommo.com/docs/long-lived-token) guide for generating token.

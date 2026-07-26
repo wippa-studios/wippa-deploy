@@ -2,10 +2,10 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { oktaAuth, makeOktaRequest } from '../common/common';
-import { HttpMethod } from '@wippa/pieces-common';
-import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { WebhookHandshakeStrategy } from '@wippa/connectors-framework';
 
 export const newEventTrigger = createTrigger({
   auth: oktaAuth,

@@ -1,9 +1,9 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { makeRequest } from './lib/common';
 import { sendMessage } from './lib/actions/send-message';
 import { createChatbot } from './lib/actions/create-chatbot';
@@ -21,7 +21,7 @@ To obtain your API key:
 5. Copy the key (it's only shown once)
 `;
 
-export const chatling = createPiece({
+export const chatling = createConnector({
   displayName: 'Chatling',
   description: 'Build AI chatbots trained on your data.',
   auth: chatlingAuth,

@@ -4,7 +4,7 @@ import {
     FlowStatus,
     FlowTriggerType,
     PackageType,
-    PieceType,
+    ConnectorType,
     TriggerStrategy,
     TriggerTestStrategy,
 } from '@wippa/shared'
@@ -39,7 +39,7 @@ async function setupFlowWithScheduleTrigger(ctx: TestContext) {
     await db.save('flow', mockFlow)
 
     const mockPieceMetadata = createMockPieceMetadata({
-        name: '@wippa/piece-schedule',
+        name: '@wippa/connector-schedule',
         version: '0.1.5',
         triggers: {
             every_hour: {
@@ -53,7 +53,7 @@ async function setupFlowWithScheduleTrigger(ctx: TestContext) {
                 testStrategy: TriggerTestStrategy.TEST_FUNCTION,
             },
         },
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
         packageType: PackageType.REGISTRY,
     })
     await db.save('piece_metadata', mockPieceMetadata)
@@ -65,8 +65,8 @@ async function setupFlowWithScheduleTrigger(ctx: TestContext) {
             type: FlowTriggerType.PIECE,
             name: 'trigger',
             settings: {
-                pieceName: '@wippa/piece-schedule',
-                pieceVersion: '0.1.5',
+                connectorName: '@wippa/connector-schedule',
+                connectorVersion: '0.1.5',
                 input: {},
                 propertySettings: {},
                 triggerName: 'every_hour',

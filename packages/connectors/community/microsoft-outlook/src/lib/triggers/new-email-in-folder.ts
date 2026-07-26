@@ -1,10 +1,10 @@
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import {
 	AppConnectionValueForAuthProperty,
 	PiecePropValueSchema,
 	TriggerStrategy,
 	createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { PageCollection } from '@microsoft/microsoft-graph-client';
 import { Message } from '@microsoft/microsoft-graph-types';
 import dayjs from 'dayjs';

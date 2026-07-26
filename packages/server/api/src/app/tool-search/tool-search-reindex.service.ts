@@ -84,7 +84,7 @@ function scopeMatches(record: DesiredRecord, scope: ReindexScope): boolean {
 }
 
 /**
- * Delete every row at the current model_version whose (pieceName, objectKind, objectName) key is not
+ * Delete every row at the current model_version whose (connectorName, objectKind, objectName) key is not
  * in the desired set — i.e. deleted pieces, removed actions/triggers, and versions superseded by a
  * newer one. Rows at OTHER model_versions are left untouched (a model swap keeps them serving reads
  * until cutover). The desired keys are passed as parallel arrays so the statement is parameter-bounded
@@ -93,7 +93,7 @@ function scopeMatches(record: DesiredRecord, scope: ReindexScope): boolean {
 async function deleteRemovedRows(desired: DesiredRecord[], modelVersion: string, scope: ReindexScope): Promise<number> {
     const params: unknown[] = [
         modelVersion,
-        desired.map((record) => record.pieceName),
+        desired.map((record) => record.connectorName),
         desired.map((record) => record.objectKind),
         desired.map((record) => record.objectName),
     ]
@@ -106,7 +106,7 @@ async function deleteRemovedRows(desired: DesiredRecord[], modelVersion: string,
     const deleted = await databaseConnection().query(
         `DELETE FROM "tool_search_index"
          WHERE "modelVersion" = $1${scopeClause}
-           AND ("pieceName", "objectKind", "objectName") NOT IN (
+           AND ("connectorName", "objectKind", "objectName") NOT IN (
                SELECT * FROM unnest($2::text[], $3::text[], $4::text[])
            )
          RETURNING "id"`,
@@ -235,7 +235,7 @@ function explodePiece(piece: PieceMetadataSchema, modelVersion: string): Desired
 
 function buildRecord(params: BuildRecordParams): DesiredRecord {
     const retrievalDoc = buildRetrievalDoc({
-        pieceDisplayName: params.piece.displayName,
+        connectorDisplayName: params.piece.displayName,
         objectDisplayName: params.displayName,
         objectKind: params.objectKind,
         description: params.description,
@@ -243,8 +243,8 @@ function buildRecord(params: BuildRecordParams): DesiredRecord {
     })
     return {
         objectKind: params.objectKind,
-        pieceName: params.piece.name,
-        pieceVersion: params.piece.version,
+        connectorName: params.piece.name,
+        connectorVersion: params.piece.version,
         objectName: params.objectName,
         displayName: params.displayName,
         retrievalDoc,
@@ -283,8 +283,8 @@ async function upsertDesired(desired: DesiredRecord[], modelVersion: string): Pr
     }
 }
 
-const SHARED_CONFLICT_TARGET = '("pieceName", "objectKind", "objectName", "modelVersion") WHERE "platformId" IS NULL'
-const TENANT_CONFLICT_TARGET = '("pieceName", "objectKind", "objectName", "platformId", "modelVersion") WHERE "platformId" IS NOT NULL'
+const SHARED_CONFLICT_TARGET = '("connectorName", "objectKind", "objectName", "modelVersion") WHERE "platformId" IS NULL'
+const TENANT_CONFLICT_TARGET = '("connectorName", "objectKind", "objectName", "platformId", "modelVersion") WHERE "platformId" IS NOT NULL'
 
 /**
  * Upsert one chunk of same-tenancy rows in a single statement. Per-row behaviour is identical to a
@@ -302,8 +302,8 @@ async function upsertBatch(records: DesiredRecord[], modelVersion: string, confl
         const columns = [
             apId(),
             record.objectKind,
-            record.pieceName,
-            record.pieceVersion,
+            record.connectorName,
+            record.connectorVersion,
             record.objectName,
             record.displayName,
             record.retrievalDoc,
@@ -322,13 +322,13 @@ async function upsertBatch(records: DesiredRecord[], modelVersion: string, confl
     })
     await databaseConnection().query(
         `INSERT INTO "tool_search_index" AS tsi (
-            "id", "objectKind", "pieceName", "pieceVersion", "objectName", "displayName",
+            "id", "objectKind", "connectorName", "connectorVersion", "objectName", "displayName",
             "retrievalDoc", "audience", "requiresConnection", "categories", "modelVersion",
             "embeddingInputHash", "platformId"
         ) VALUES ${valueTuples.join(', ')}
         ON CONFLICT ${conflictTarget}
         DO UPDATE SET
-            "pieceVersion" = EXCLUDED."pieceVersion",
+            "connectorVersion" = EXCLUDED."connectorVersion",
             "displayName" = EXCLUDED."displayName",
             "retrievalDoc" = EXCLUDED."retrievalDoc",
             "audience" = EXCLUDED."audience",
@@ -338,7 +338,7 @@ async function upsertBatch(records: DesiredRecord[], modelVersion: string, confl
             "embedding" = CASE WHEN tsi."embeddingInputHash" IS DISTINCT FROM EXCLUDED."embeddingInputHash"
                 THEN NULL ELSE tsi."embedding" END,
             "updated" = now()
-        WHERE tsi."pieceVersion" IS DISTINCT FROM EXCLUDED."pieceVersion"
+        WHERE tsi."connectorVersion" IS DISTINCT FROM EXCLUDED."connectorVersion"
            OR tsi."displayName" IS DISTINCT FROM EXCLUDED."displayName"
            OR tsi."retrievalDoc" IS DISTINCT FROM EXCLUDED."retrievalDoc"
            OR tsi."audience" IS DISTINCT FROM EXCLUDED."audience"
@@ -392,8 +392,8 @@ type PendingRow = {
 
 type DesiredRecord = {
     objectKind: 'action' | 'trigger'
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     objectName: string
     displayName: string
     retrievalDoc: string

@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { lemlistAuth } from '../common/constants';
 import { lemlistApiService } from '../common/requests';
 

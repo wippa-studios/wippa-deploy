@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { retableCreateProjectAction } from './lib/actions/create-project';
 import { retableCreateWorkspaceAction } from './lib/actions/create-workspace';
 import { retableGetAllProjectsAction } from './lib/actions/get-all-projects';
@@ -31,7 +31,7 @@ export const retableAuth = PieceAuth.SecretText({
     };
   },
 });
-export const retable = createPiece({
+export const retable = createConnector({
   displayName: 'Retable',
   description: 'Turn your spreadsheets into smart database apps',
 

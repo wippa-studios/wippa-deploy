@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from "@wippa/pieces-framework";
+import { AppConnectionValueForAuthProperty } from "@wippa/connectors-framework";
 import { shopifyAuth } from "../..";
 
 export type ShopifyAuth = AppConnectionValueForAuthProperty<typeof shopifyAuth>;

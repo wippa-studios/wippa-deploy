@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { addUpdateSubscriberAction } from './lib/actions/add-subscriber';
 import { createSubscriberListAction } from './lib/actions/create-subscriber-list';
 import { unsubscribeAction } from './lib/actions/unsubscribe-subscriber';
@@ -8,7 +8,7 @@ import { searchSubscriberAction } from './lib/actions/search-subscriber';
 import { removeSubscribeAction } from './lib/actions/delete-subscriber';
 import { acumbamailAuth } from './lib/auth';
 
-export const acumbamail = createPiece({
+export const acumbamail = createConnector({
   displayName: 'Acumbamail',
   description: 'Easily send email and SMS campaigns and boost your business',
   auth: acumbamailAuth,

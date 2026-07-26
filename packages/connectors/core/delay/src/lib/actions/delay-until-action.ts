@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { ExecutionType } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { ExecutionType } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { markdownDescription } from '../common';
 

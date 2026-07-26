@@ -1,14 +1,14 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { peekshotAuth } from './lib/auth';
 
-export const peekshot = createPiece({
+export const peekshot = createConnector({
   displayName: 'PeekShot',
   auth: peekshotAuth,
   minimumSupportedRelease: '0.36.1',

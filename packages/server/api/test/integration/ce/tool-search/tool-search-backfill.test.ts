@@ -17,7 +17,7 @@ let app: FastifyInstance
 async function seedRow({ embedding }: { embedding: string | null }): Promise<void> {
     await databaseConnection().query(
         `INSERT INTO "tool_search_index" (
-            "id", "objectKind", "pieceName", "pieceVersion", "objectName", "displayName",
+            "id", "objectKind", "connectorName", "connectorVersion", "objectName", "displayName",
             "retrievalDoc", "requiresConnection", "modelVersion", "embeddingInputHash", "embedding"
         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11::vector)`,
         [apId(), 'action', 'seed-piece', '0.0.1', 'seed_action', 'Seed Action', 'seed doc', false, OPENAI_3_SMALL_MODEL_VERSION, 'seed-hash', embedding],

@@ -18,10 +18,10 @@ const StepNodeRunDuration = ({ duration }: { duration: number }) => {
 
 const StepNodeRunDurationAndPieceName = ({
   stepName,
-  pieceDisplayName,
+  connectorDisplayName,
 }: {
   stepName: string;
-  pieceDisplayName: string;
+  connectorDisplayName: string;
 }) => {
   const [run, loopIndexes, flowVersion, canvasOrientation] =
     useBuilderStateContext((state) => [
@@ -45,8 +45,8 @@ const StepNodeRunDurationAndPieceName = ({
       })}
     >
       <TextWithTooltip
-        tooltipMessage={pieceDisplayName}
-        key={pieceDisplayName + selectedStepOutput?.duration}
+        tooltipMessage={connectorDisplayName}
+        key={connectorDisplayName + selectedStepOutput?.duration}
       >
         <div
           className={cn('text-xs text-muted-foreground truncate grow shrink', {
@@ -54,7 +54,7 @@ const StepNodeRunDurationAndPieceName = ({
             'text-center': isHorizontal,
           })}
         >
-          {pieceDisplayName}
+          {connectorDisplayName}
         </div>
       </TextWithTooltip>
       {selectedStepOutput && (

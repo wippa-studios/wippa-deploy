@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const authHelpDescription = `
 1. Login to your Pushbullet Dashboard.

@@ -69,8 +69,8 @@ function buildPieceAction({
         displayName: name,
         lastUpdatedDate: '2026-05-02T00:00:00.000Z',
         settings: {
-            pieceName: '@wippa/piece-store',
-            pieceVersion: '0.0.1',
+            connectorName: '@wippa/connector-store',
+            connectorVersion: '0.0.1',
             actionName: 'get',
             input: {},
             propertySettings: {},
@@ -425,8 +425,8 @@ describe('Continue-on-Failure branches', () => {
                     displayName: 'step_1 (renamed)',
                     valid: true,
                     settings: {
-                        pieceName: '@wippa/piece-store',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-store',
+                        connectorVersion: '0.0.1',
                         actionName: 'put',
                         input: { changed: true },
                         propertySettings: {},
@@ -485,8 +485,8 @@ describe('Continue-on-Failure branches', () => {
                     displayName: 'step_1',
                     valid: true,
                     settings: {
-                        pieceName: '@wippa/piece-store',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-store',
+                        connectorVersion: '0.0.1',
                         actionName: 'get',
                         input: {},
                         propertySettings: {},

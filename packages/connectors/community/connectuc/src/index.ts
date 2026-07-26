@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, OAuth2PropertyValue } from "@wippa/pieces-framework";
-import { httpClient, HttpMethod, AuthenticationType } from "@wippa/pieces-common";
+import { createConnector, PieceAuth, OAuth2PropertyValue } from "@wippa/connectors-framework";
+import { httpClient, HttpMethod, AuthenticationType } from "@wippa/connectors-common";
 import { newRecording } from "./lib/triggers/new-recording";
 import { newCallTranscription } from "./lib/triggers/new-call-transcription";
 import { newCallSummary } from "./lib/triggers/new-call-summary";
@@ -56,7 +56,7 @@ export const connectucAuth = PieceAuth.OAuth2({
   },
 });
 
-export const connectuc = createPiece({
+export const connectuc = createConnector({
   displayName: "ConnectUC",
   auth: connectucAuth,
   minimumSupportedRelease: '0.36.1',

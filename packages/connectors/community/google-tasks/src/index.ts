@@ -1,16 +1,16 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { googleTasksAddNewTaskAction } from './lib/actions/new-task';
 import { googleTasksCommon } from './lib/common';
 import { newTaskTrigger } from './lib/triggers/new-task';
 import { googleTasksAuth } from './lib/auth';
 
-export const googleTasks = createPiece({
+export const googleTasks = createConnector({
   minimumSupportedRelease: '0.30.0',
   logoUrl: 'https://cdn.activepieces.com/pieces/google-tasks.png',
   categories: [PieceCategory.PRODUCTIVITY],

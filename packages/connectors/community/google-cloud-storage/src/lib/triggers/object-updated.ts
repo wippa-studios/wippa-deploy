@@ -1,8 +1,8 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
 import { googleCloudStorageAuth } from '../common/auth';
 import { gcsCommon } from '../common/client';
 import { bucketDropdown, projectIdProperty } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 interface TriggerData {
   topicName: string;

@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 export const KNOCK_API_BASE_URL = 'https://api.knock.app/v1';
 

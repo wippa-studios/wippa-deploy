@@ -1,6 +1,6 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { raiaAiAuth } from "../common/auth";
-import { httpClient, HttpMethod } from "@wippa/pieces-common";
+import { httpClient, HttpMethod } from "@wippa/connectors-common";
 import { BASE_URL } from "../common/constants";
 import FormData from 'form-data';
 

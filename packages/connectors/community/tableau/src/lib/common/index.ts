@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 function ensureString(body: any): string {
   if (typeof body === 'string') {

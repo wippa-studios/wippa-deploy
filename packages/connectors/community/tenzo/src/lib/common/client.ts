@@ -4,8 +4,8 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 const BASE_URL = 'https://api.gotenzo.com/v1.0';
 

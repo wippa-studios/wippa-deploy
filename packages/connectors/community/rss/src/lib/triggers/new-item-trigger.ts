@@ -4,17 +4,17 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Store,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { rssFeedUrl } from '../common/props';
 import FeedParser from 'feedparser';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { getId } from '../common/getId';
 import { sampleData } from '../common/sampleData';

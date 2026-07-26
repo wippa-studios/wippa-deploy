@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getPersonProfileAction } from './lib/actions/get-person-profile';
 import { getCompanyProfileAction } from './lib/actions/get-company-profile';
 import { searchPeopleAction } from './lib/actions/search-people';
@@ -22,7 +22,7 @@ export const proxycurlAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const proxycurl = createPiece({
+export const proxycurl = createConnector({
   displayName: 'Proxycurl',
   description: 'Enrich LinkedIn people and company profiles with Proxycurl.',
   auth: proxycurlAuth,

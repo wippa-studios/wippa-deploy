@@ -1,5 +1,5 @@
-import { createAction, PieceAuth, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, PieceAuth, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { MEMPOOL_API_BASE_URL } from '../../common';
 
 export const getTransactionOutspends = createAction({

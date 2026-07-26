@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addFileAttachment } from './lib/actions/add-file-attachment';
 import { cancelPurchaseOrder } from './lib/actions/cancel-purchase-order';
 import { closePurchaseOrder } from './lib/actions/close-purchase-order';
@@ -18,7 +18,7 @@ import { CoupaClient } from './lib/common/client';
 import { normalizeInstanceUrl } from './lib/common/utils';
 import { newOrUpdatedObject } from './lib/triggers/new-or-updated-object';
 
-export const coupa = createPiece({
+export const coupa = createConnector({
   displayName: 'Coupa',
   description:
     'Business spend management — automate procurement, approvals, purchase orders, and ERP integrations with the Coupa Core API.',

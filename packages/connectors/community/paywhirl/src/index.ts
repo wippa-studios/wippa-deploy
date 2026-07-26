@@ -1,15 +1,15 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { paywhirlAuth } from './lib/common/auth';
 import { cancelSubscription } from './lib/actions/cancel-subscription';
 import { createCustomer } from './lib/actions/create-customer';
 import { getCustomer } from './lib/actions/get-customer';
 import { subscribeCustomer } from './lib/actions/subscribe-customer';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { searchCustomersSubscription } from './lib/actions/search-customers-subscription';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const paywhirl = createPiece({
+export const paywhirl = createConnector({
   displayName: 'Paywhirl',
   auth: paywhirlAuth,
   minimumSupportedRelease: '0.36.1',

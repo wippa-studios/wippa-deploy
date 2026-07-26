@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient, HttpMessageBody, QueryParams } from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient, HttpMessageBody, QueryParams } from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/connectors-framework';
 import { linkupAuth } from './auth';
 
 const BASE_URL = 'https://api.linkup.so';

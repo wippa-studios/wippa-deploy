@@ -1,8 +1,8 @@
 import {
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
-import { isEmpty } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { isEmpty } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { MondayColumnType } from './constants';
 import { ColumnValue, MondayColumn } from './models';

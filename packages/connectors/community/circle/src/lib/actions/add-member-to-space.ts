@@ -1,5 +1,5 @@
-import { Property, createAction } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { circleAuth } from '../common/auth';
 import { BASE_URL, spaceIdDropdown } from '../common';
 

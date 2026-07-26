@@ -1,5 +1,5 @@
-import { MarkdownVariant } from '@wippa/pieces-framework';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { Client } from '@hubspot/api-client';
 import { hubspotAuth } from '../auth';
 import { getDefaultPropertiesForObject, standardObjectPropertiesDropdown } from '../common/props';

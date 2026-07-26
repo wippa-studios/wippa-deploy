@@ -1,12 +1,12 @@
 import qs from 'qs';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { leverAuth } from '../..';
 import { LEVER_BASE_URL } from '../..';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const getOpportunity = createAction({
   name: 'getOpportunity',

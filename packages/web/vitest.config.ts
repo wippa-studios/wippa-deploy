@@ -14,7 +14,7 @@ export default defineConfig({
         __dirname,
         '../../packages/core/shared/src',
       ),
-      '@wippa/pieces-framework': path.resolve(
+      '@wippa/connectors-framework': path.resolve(
         __dirname,
         '../../packages/pieces/framework/src',
       ),
@@ -26,7 +26,7 @@ export default defineConfig({
         __dirname,
         '../../packages/core/formula/src',
       ),
-      '@wippa/core-piece-types': path.resolve(
+      '@wippa/core-connector-types': path.resolve(
         __dirname,
         '../../packages/core/piece-types/src',
       ),

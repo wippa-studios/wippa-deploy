@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
 import { createSNS } from './lib/common';
 import { ListTopicsCommand } from '@aws-sdk/client-sns';
 import { sendMessageAction } from './lib/actions/send-message';
@@ -171,7 +171,7 @@ export const amazonSnsAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const amazonSns = createPiece({
+export const amazonSns = createConnector({
   displayName: "Amazon SNS",
   auth: amazonSnsAuth,
   minimumSupportedRelease: '0.36.1',

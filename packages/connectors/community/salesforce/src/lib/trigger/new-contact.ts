@@ -3,13 +3,13 @@ import {
     HttpMethod,
     Polling,
     pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
     AppConnectionValueForAuthProperty,
     OAuth2PropertyValue,
     TriggerStrategy,
     createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { querySalesforceApi } from '../common';
 
 import dayjs from 'dayjs';

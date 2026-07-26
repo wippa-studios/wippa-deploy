@@ -3,8 +3,8 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/connectors-framework';
 import { CalendarObject, WeblingCalendarEvent, WeblingChanges } from './types';
 
 export async function callApi<Type>(

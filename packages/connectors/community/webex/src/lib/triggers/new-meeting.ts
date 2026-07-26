@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { makeRequest } from '../common/client';
 import { webexAuth } from '../common/auth';
 export const newMeeting = createTrigger({

@@ -1,13 +1,13 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createContact } from './lib/actions/create-contact';
 import { createExpense } from './lib/actions/create-expence';
 import { createInvoice } from './lib/actions/create-invoice';
 import { findContact } from './lib/actions/find-contact';
 import { quadernoAuth } from './lib/common/auth';
 
-export const quaderno = createPiece({
+export const quaderno = createConnector({
   displayName: 'Quaderno',
   auth: quadernoAuth,
   minimumSupportedRelease: '0.36.1',

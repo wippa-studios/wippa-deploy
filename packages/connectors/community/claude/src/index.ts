@@ -1,12 +1,12 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { askClaude } from './lib/actions/send-prompt';
 import { baseUrl } from './lib/common/common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { extractStructuredDataAction } from './lib/actions/extract-structured-data';
 import { claudeAuth } from './lib/auth';
 
-export const claude = createPiece({
+export const claude = createConnector({
   displayName: 'Anthropic Claude',
   auth: claudeAuth,
   minimumSupportedRelease: '0.63.0',

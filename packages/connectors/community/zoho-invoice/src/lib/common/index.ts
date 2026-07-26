@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 
 export const common = {
   baseUrl: (region: string) => {

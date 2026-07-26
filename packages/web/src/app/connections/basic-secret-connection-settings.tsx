@@ -1,4 +1,4 @@
-import { BasicAuthProperty } from '@wippa/pieces-framework';
+import { BasicAuthProperty } from '@wippa/connectors-framework';
 import { UpsertBasicAuthRequest } from '@wippa/shared';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';

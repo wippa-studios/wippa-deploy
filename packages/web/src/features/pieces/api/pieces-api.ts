@@ -5,7 +5,7 @@ import {
   PropertyType,
   ExecutePropsResult,
   InputPropertyMap,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AddPieceRequestBody,
   ApEdition,
@@ -77,8 +77,8 @@ export const piecesApi = {
   async install(params: AddPieceRequestBody) {
     const formData = new FormData();
     formData.set('packageType', params.packageType);
-    formData.set('pieceName', params.pieceName);
-    formData.set('pieceVersion', params.pieceVersion);
+    formData.set('connectorName', params.connectorName);
+    formData.set('connectorVersion', params.connectorVersion);
     formData.set('scope', params.scope);
     if (params.packageType === PackageType.ARCHIVE) {
       const buffer = await (

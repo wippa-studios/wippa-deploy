@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { captureCarbon } from './lib/actions/capture-carbon';
 import { cleanOcean } from './lib/actions/clean-ocean';
 import { donateMoney } from './lib/actions/donate-money';
 import { plantTrees } from './lib/actions/plant-trees';
 import { oneclickimpactAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const oneclickimpact = createPiece({
+export const oneclickimpact = createConnector({
   displayName: '1ClickImpact',
   auth: oneclickimpactAuth,
   minimumSupportedRelease: '0.36.1',

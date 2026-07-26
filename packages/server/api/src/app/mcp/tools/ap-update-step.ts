@@ -133,9 +133,9 @@ export const apUpdateStepTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLo
                     log,
                 })
 
-                const { pieceName, pieceVersion, actionName: resolvedActionName } = updatedSettings
-                if (typeof pieceName === 'string' && typeof pieceVersion === 'string' && typeof resolvedActionName === 'string') {
-                    const unknownPropsError = await mcpUtils.rejectUnknownInputProps({ pieceName, pieceVersion, componentName: resolvedActionName, componentType: 'action', input: updatedSettings.input, platformId: project.platformId, log })
+                const { connectorName, connectorVersion, actionName: resolvedActionName } = updatedSettings
+                if (typeof connectorName === 'string' && typeof connectorVersion === 'string' && typeof resolvedActionName === 'string') {
+                    const unknownPropsError = await mcpUtils.rejectUnknownInputProps({ connectorName, connectorVersion, componentName: resolvedActionName, componentType: 'action', input: updatedSettings.input, platformId: project.platformId, log })
                     if (unknownPropsError) {
                         return unknownPropsError
                     }
@@ -180,7 +180,7 @@ export const apUpdateStepTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLo
                         : null
                     const hint = (diagnosis || null)
                         ?? (step.type === FlowActionType.PIECE
-                            ? 'Use ap_research_pieces to verify pieceName, pieceVersion, actionName and required inputs, then retry.'
+                            ? 'Use ap_research_pieces to verify connectorName, connectorVersion, actionName and required inputs, then retry.'
                             : 'Check the step settings and retry.')
                     return {
                         content: [{
@@ -205,22 +205,22 @@ async function diagnoseMissingInputs({ settings, platformId, log }: {
     platformId: string
     log: FastifyBaseLogger
 }): Promise<string | null> {
-    const { pieceName, pieceVersion, actionName } = settings
+    const { connectorName, connectorVersion, actionName } = settings
     if (isNil(actionName)) {
         return 'Missing actionName.'
     }
     try {
-        const piece = await pieceMetadataService(log).getOrThrow({ platformId, name: pieceName, version: pieceVersion })
+        const piece = await pieceMetadataService(log).getOrThrow({ platformId, name: connectorName, version: connectorVersion })
         const action = piece.actions[actionName]
         if (isNil(action)) {
-            return `Action "${actionName}" not found in piece "${pieceName}". Use ap_research_pieces with includeActions=true to get valid action names.`
+            return `Action "${actionName}" not found in piece "${connectorName}". Use ap_research_pieces with includeActions=true to get valid action names.`
         }
         const input = settings.input ?? {}
         const { parts } = mcpUtils.diagnosePieceProps({ props: action.props, input, pieceAuth: piece.auth, requireAuth: action.requireAuth, componentType: 'action' })
         return parts.join(' ')
     }
     catch (err) {
-        log.warn({ error: err, piece: { name: pieceName }, actionName }, 'diagnoseMissingInputs: failed to fetch piece metadata')
+        log.warn({ error: err, piece: { name: connectorName }, actionName }, 'diagnoseMissingInputs: failed to fetch piece metadata')
         return null
     }
 }

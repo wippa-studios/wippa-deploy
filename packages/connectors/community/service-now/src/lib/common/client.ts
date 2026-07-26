@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import * as fs from 'fs';
 import FormData from 'form-data';
 import {

@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 
 import { simplyprintSession } from '../auth';
 import { BASE_URL } from './base-url';

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { acknowledgeIncident } from './lib/actions/acknowledge-incident';
 import { createIncident } from './lib/actions/create-incident';
 import { getIncident } from './lib/actions/get-incident';
@@ -12,7 +12,7 @@ import { incidentAcknowledged } from './lib/triggers/incident-acknowledged';
 import { incidentResolved } from './lib/triggers/incident-resolved';
 import { newIncident } from './lib/triggers/new-incident';
 
-export const pagerduty = createPiece({
+export const pagerduty = createConnector({
   displayName: 'PagerDuty',
   description: 'Incident management workflows for PagerDuty REST API v2.',
   auth: pagerDutyAuth,

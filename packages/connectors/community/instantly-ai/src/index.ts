@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { createCampaignAction } from './lib/actions/create-campaign';
 import { createLeadListAction } from './lib/actions/create-lead-list';
@@ -8,7 +8,7 @@ import { searchCampaignsAction } from './lib/actions/search-campaigns';
 import { searchLeadsAction } from './lib/actions/search-leads';
 import { campaignStatusChangedTrigger } from './lib/triggers/campaign-status-changed';
 import { newLeadAddedTrigger } from './lib/triggers/new-lead-added';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 import { instantlyAiAuth } from './lib/auth';
 
@@ -16,7 +16,7 @@ const markdownDescription = `
 You can obtain an API key from **Settings->Integrations->API Keys**.
 `;
 
-export const instantlyAi = createPiece({
+export const instantlyAi = createConnector({
   displayName: 'Instantly.ai',
   description: 'Powerful cold email outreach and lead engagement platform.',
   auth: instantlyAiAuth,

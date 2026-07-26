@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { vercelAuth } from '../common/auth';
 import { vercelApiCall } from '../common/client';
 import { vercelProjectDropdown } from '../common/props';

@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { backBlazeS3Auth } from '../..';
 import { createBackBlazeS3 } from '../common';
 import { ObjectCannedACL } from '@aws-sdk/client-s3';

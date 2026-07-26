@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { useinboxClient } from './client';
 
 export const useinboxAuth = PieceAuth.BasicAuth({

@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createTaskAction } from './lib/actions/create-task.action';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { completeTaskAction } from './lib/actions/complete-task.action';
 import { deleteTaskAction } from './lib/actions/delete-task.action';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { taskadeAuth } from './lib/auth';
 
-export const taskade = createPiece({
+export const taskade = createConnector({
 	displayName: 'Taskade',
 	auth: taskadeAuth,
 	minimumSupportedRelease: '0.30.0',

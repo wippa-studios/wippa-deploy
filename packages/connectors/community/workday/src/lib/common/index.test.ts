@@ -3,8 +3,8 @@ import {
 	HttpRequest,
 	HttpResponse,
 	httpClient,
-} from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
 	escapeWql,

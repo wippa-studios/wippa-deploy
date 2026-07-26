@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { promises as fs } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';

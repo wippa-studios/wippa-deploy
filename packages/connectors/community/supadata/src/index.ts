@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { getTranscriptAction } from './lib/actions/get-transcript';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { supadataConfig } from './lib/config';
 
 const markdownDescription = `
@@ -33,7 +33,7 @@ export const supadataAuth = PieceAuth.SecretText({
   },
 });
 
-export const supadata = createPiece({
+export const supadata = createConnector({
   displayName: 'Supadata',
   auth: supadataAuth,
   minimumSupportedRelease: '0.30.0',

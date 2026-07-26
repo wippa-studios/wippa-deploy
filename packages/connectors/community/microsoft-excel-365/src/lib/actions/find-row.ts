@@ -2,12 +2,12 @@ import {
   createAction,
   Property,
   OAuth2PropertyValue
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { excelAuth } from '../auth';
 import { commonProps } from '../common/props';
 import { getDrivePath, createMSGraphClient } from '../common/helpers';

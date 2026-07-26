@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { Buffer } from 'buffer';
 
 import { gorgiasAuth, getGorgiasBaseUrl } from './lib/auth';
@@ -11,7 +11,7 @@ import { listTicketsAction } from './lib/actions/list-tickets';
 import { createMessageAction } from './lib/actions/create-message';
 import { getCustomerAction } from './lib/actions/get-customer';
 
-export const gorgias = createPiece({
+export const gorgias = createConnector({
   displayName: 'Gorgias',
   description: 'Helpdesk platform for ecommerce teams to manage tickets, customers, and support conversations.',
   minimumSupportedRelease: '0.36.1',

@@ -2,16 +2,16 @@ import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 import { letsCalendarAuth } from '../common/auth';
 import { getAccessToken, makeRequest } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 interface Campaign {
   campaign_id: string;

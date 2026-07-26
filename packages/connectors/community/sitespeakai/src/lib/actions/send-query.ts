@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { SiteSpeakAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { makeRequest } from '../common/client';
 import { chatbotIdDropdown, conversationIdDropdown } from '../common/dropdown';
 

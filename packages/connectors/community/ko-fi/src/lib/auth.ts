@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 /** Authenticate Ko-fi webhook payloads using the per-creator verification token. */
 export const koFiAuth = PieceAuth.SecretText({

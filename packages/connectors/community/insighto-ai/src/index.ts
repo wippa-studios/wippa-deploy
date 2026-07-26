@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
     import { addTextBlobAction } from "./lib/actions/add-text-blob-action";
     import { upsertContactAction } from "./lib/actions/upsert-contact-action";
     import { makeOutboundCallAction } from "./lib/actions/make-outbound-call-action";
@@ -7,14 +7,14 @@
     import { newCapturedForm } from "./lib/triggers/new-captured-form";
     import { newConversation } from "./lib/triggers/new-conversation";
     import { newContact } from "./lib/triggers/new-contact";
-    import { PieceCategory } from '@wippa/pieces-framework';
+    import { PieceCategory } from '@wippa/connectors-framework';
 
     export const insightoAuth = PieceAuth.SecretText({
       displayName: "API Key",
       description: "Your Insighto.ai API key",
       required: true,
     });
-    export const insightoAi = createPiece({
+    export const insightoAi = createConnector({
       displayName: "Insighto.ai",
       description: "AI-powered platform for capturing forms, conversations, and data sources with automated processing and outbound communications",
       auth: insightoAuth,

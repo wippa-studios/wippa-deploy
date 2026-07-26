@@ -1,6 +1,6 @@
-import { createAction, Property, StoreScope } from '@wippa/pieces-framework';
+import { createAction, Property, StoreScope } from '@wippa/connectors-framework';
 import { groqAuth } from '../..';
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 import { askAiActionOutputSchema } from '../output-schemas';
 
 export const askGroq = createAction({

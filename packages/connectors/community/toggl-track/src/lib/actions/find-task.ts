@@ -1,9 +1,9 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   httpClient,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { togglTrackAuth } from '../..';
 import { togglCommon } from '../common';
 

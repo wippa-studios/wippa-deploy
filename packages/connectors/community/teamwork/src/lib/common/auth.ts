@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
-import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const teamworkAuth = PieceAuth.CustomAuth({
 	description: `

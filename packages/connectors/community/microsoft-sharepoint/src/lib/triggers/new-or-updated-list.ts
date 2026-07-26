@@ -3,8 +3,8 @@ import {
 	createTrigger,
 	TriggerStrategy,
 	AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { microsoftSharePointCommon } from '../common';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';

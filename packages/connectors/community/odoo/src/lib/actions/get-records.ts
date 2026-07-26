@@ -1,8 +1,8 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import Odoo from "../../commom/index";
 import { odooAuth } from '../auth';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export default createAction({
     name: 'get_records',

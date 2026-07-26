@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { gmailSendEmailAction } from './lib/actions/send-email-action';
 import { gmailReplyToEmailAction } from './lib/actions/reply-to-email-action';
 import { gmailCreateDraftReplyAction } from './lib/actions/create-draft-reply-action';
@@ -20,7 +20,7 @@ export {
   createGoogleClient,
 } from './lib/auth';
 
-export const gmail = createPiece({
+export const gmail = createConnector({
   minimumSupportedRelease: '0.87.0',
   logoUrl: 'https://cdn.activepieces.com/pieces/gmail.png',
   categories: [

@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import { DropdownState, PropertyType } from '@wippa/pieces-framework';
+import { DropdownState, PropertyType } from '@wippa/connectors-framework';
 import { AUTHENTICATION_PROPERTY_NAME } from '@wippa/shared';
 import deepEqual from 'deep-equal';
 import { t } from 'i18next';
@@ -11,7 +11,7 @@ import { SearchableSelect } from '@/components/custom/searchable-select';
 import { piecesHooks } from '@/features/pieces';
 import { authenticationSession } from '@/lib/authentication-session';
 
-import { MultiSelectPieceProperty } from '../../../components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '../../../components/custom/multi-select-piece-property';
 
 import { DynamicPropertiesErrorBoundary } from './dynamic-piece-properties-error-boundary';
 import { DynamicPropertiesContext } from './dynamic-properties-context';
@@ -77,8 +77,8 @@ const DynamicDropdownPiecePropertyImplementation = React.memo(
         {
           request: {
             projectId: authenticationSession.getProjectId()!,
-            pieceName: props.pieceName,
-            pieceVersion: props.pieceVersion,
+            connectorName: props.connectorName,
+            connectorVersion: props.connectorVersion,
             propertyName: props.propertyName,
             actionOrTriggerName: props.actionOrTriggerName,
             input,
@@ -118,7 +118,7 @@ const DynamicDropdownPiecePropertyImplementation = React.memo(
     }));
     const isDisabled = dropdownState.disabled || props.disabled;
     return props.multiple ? (
-      <MultiSelectPieceProperty
+      <MultiSelectConnectorProperty
         placeholder={dropdownState.placeholder ?? t('Select an option')}
         options={selectOptions}
         loading={isPending}
@@ -180,8 +180,8 @@ type DynamicDropdownProps = {
   showDeselect?: boolean;
   shouldRefreshOnSearch?: boolean;
   actionOrTriggerName: string;
-  pieceName: string;
-  pieceVersion: string;
+  connectorName: string;
+  connectorVersion: string;
   form: UseFormReturn;
   placedInside: 'stepSettings' | 'predefinedAgentInputs';
 };

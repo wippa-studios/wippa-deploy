@@ -1,11 +1,11 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { wooCreateCoupon } from './lib/actions/create-coupon';
 import { wooCreateCustomer } from './lib/actions/create-customer';
 import { wooCreateProduct } from './lib/actions/create-product';
@@ -25,7 +25,7 @@ To generate your API credentials, follow the steps below:
 Note that the base URL of your WooCommerce instance needs to be on a secure (HTTPS) connection, or the piece will not work even on local instances on the same device.
 `;
 
-export const woocommerce = createPiece({
+export const woocommerce = createConnector({
   displayName: 'WooCommerce',
   description: 'E-commerce platform built on WordPress',
 

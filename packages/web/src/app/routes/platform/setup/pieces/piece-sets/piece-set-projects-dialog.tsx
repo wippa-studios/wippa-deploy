@@ -1,6 +1,6 @@
 import {
   isNil,
-  PieceSet,
+  ConnectorSet,
   PROJECT_COLOR_PALETTE,
   ProjectWithLimits,
   tryCatch,
@@ -33,29 +33,29 @@ import { pieceSetMutations } from '@/features/piece-sets';
 import { projectHooks } from '@/features/projects';
 
 type PieceSetProjectsDialogProps = {
-  pieceSet: PieceSet;
+  connectorSet: ConnectorSet;
 };
 
 const isAssignedToSet = ({
-  pieceSet,
+  connectorSet,
   project,
 }: {
-  pieceSet: PieceSet;
+  connectorSet: ConnectorSet;
   project: ProjectWithLimits;
 }) => {
-  if (pieceSet.isDefault) {
-    return project.pieceSetId === pieceSet.id || isNil(project.pieceSetId);
+  if (connectorSet.isDefault) {
+    return project.pieceSetId === connectorSet.id || isNil(project.pieceSetId);
   }
-  return project.pieceSetId === pieceSet.id;
+  return project.pieceSetId === connectorSet.id;
 };
 
 const AssignProjectsForm = ({
-  pieceSet,
+  connectorSet,
   allProjects,
   serverAssignedIds,
   onOpenChange,
 }: {
-  pieceSet: PieceSet;
+  connectorSet: ConnectorSet;
   allProjects: ProjectWithLimits[];
   serverAssignedIds: string[];
   onOpenChange: (open: boolean) => void;
@@ -78,7 +78,7 @@ const AssignProjectsForm = ({
     const serverSet = new Set(serverAssignedIds);
     const draftSet = new Set(selected);
     const added = selected.filter((id) => !serverSet.has(id));
-    const removed = pieceSet.isDefault
+    const removed = connectorSet.isDefault
       ? []
       : serverAssignedIds.filter((id) => !draftSet.has(id));
 
@@ -90,12 +90,12 @@ const AssignProjectsForm = ({
     const promises: Promise<unknown>[] = [];
     if (added.length > 0) {
       promises.push(
-        assignMutation.mutateAsync({ id: pieceSet.id, projectIds: added }),
+        assignMutation.mutateAsync({ id: connectorSet.id, projectIds: added }),
       );
     }
     if (removed.length > 0) {
       promises.push(
-        removeMutation.mutateAsync({ id: pieceSet.id, projectIds: removed }),
+        removeMutation.mutateAsync({ id: connectorSet.id, projectIds: removed }),
       );
     }
 
@@ -123,7 +123,7 @@ const AssignProjectsForm = ({
             {allProjects.map((project) => {
               const checked = selected.includes(project.id);
               const locked =
-                pieceSet.isDefault && isAssignedToSet({ pieceSet, project });
+                connectorSet.isDefault && isAssignedToSet({ connectorSet, project });
               return (
                 <CommandItem
                   key={project.id}
@@ -157,7 +157,7 @@ const AssignProjectsForm = ({
 };
 
 export const PieceSetProjectsDialog = ({
-  pieceSet,
+  connectorSet,
 }: PieceSetProjectsDialogProps) => {
   const [open, setOpen] = useState(false);
   const { data: platformsData, isLoading } =
@@ -170,8 +170,8 @@ export const PieceSetProjectsDialog = ({
 
   const assignedProjects = useMemo(
     () =>
-      allProjects.filter((project) => isAssignedToSet({ pieceSet, project })),
-    [allProjects, pieceSet],
+      allProjects.filter((project) => isAssignedToSet({ connectorSet, project })),
+    [allProjects, connectorSet],
   );
 
   const serverAssignedIds = useMemo(
@@ -223,7 +223,7 @@ export const PieceSetProjectsDialog = ({
       <DialogContent>
         <AssignProjectsForm
           key={open ? 'open' : 'closed'}
-          pieceSet={pieceSet}
+          connectorSet={connectorSet}
           allProjects={allProjects}
           serverAssignedIds={serverAssignedIds}
           onOpenChange={setOpen}

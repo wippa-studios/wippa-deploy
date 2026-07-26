@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { metabaseAuth } from '../..';
 import jwt from 'jsonwebtoken';
 import { chromium } from 'playwright';

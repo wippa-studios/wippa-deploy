@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { makeRequest, transformCustomFields } from '../common/client';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { campaignMonitorAuth } from '../auth';
 import { clientId, listId } from '../common/props';
 

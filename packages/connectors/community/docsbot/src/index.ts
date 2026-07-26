@@ -1,14 +1,14 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { askQuestion } from './lib/actions/ask-question';
 import { createBot } from './lib/actions/create-bot';
 import { createSource } from './lib/actions/create-source';
 import { findBot } from './lib/actions/find-bot';
 import { uploadSourceFile } from './lib/actions/upload-source-file';
 import { docsbotAuth, docsbotCommon } from './lib/common';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const docsbot = createPiece({
+export const docsbot = createConnector({
   displayName: 'DocsBot',
   description:
     'DocsBot AI allows you to build AI-powered chatbots that pull answers from your existing documentation and content. This integration enables workflows to ask DocsBot questions and update its training sources dynamically.',

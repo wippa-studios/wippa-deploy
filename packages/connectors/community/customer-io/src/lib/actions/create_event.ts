@@ -1,7 +1,7 @@
-import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { createAction, DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { customerIOAuth } from '../auth';
 import { customerIOCommon } from '../common';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const createEvent = createAction({
   auth: customerIOAuth,

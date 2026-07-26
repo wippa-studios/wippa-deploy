@@ -1,8 +1,8 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { umamiAuth, UmamiAuthValue } from '../auth';
 import { umamiCommon } from '../common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export const sendEvent = createAction({
   auth: umamiAuth,

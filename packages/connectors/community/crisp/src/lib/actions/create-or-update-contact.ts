@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
-import { HttpError, HttpMethod } from '@wippa/pieces-common';
+import { HttpError, HttpMethod } from '@wippa/connectors-common';
 import { crispAuth } from '../common/auth';
 import { websiteIdProp } from '../common/props';
 import { crispApiCall } from '../common/client';

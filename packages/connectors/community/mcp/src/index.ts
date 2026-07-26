@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { replyToMcpClient } from "./lib/actions/reply-to-mcp-client";
 import { mcpTool } from "./lib/triggers/mcp-tool";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const mcp = createPiece({
+export const mcp = createConnector({
   displayName: "MCP",
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.50.2',

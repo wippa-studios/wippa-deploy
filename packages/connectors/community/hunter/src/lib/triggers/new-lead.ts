@@ -1,6 +1,6 @@
 import { hunterAuth } from '../auth';
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/connectors-common';
 import { hunterApiCall } from '../common';
 import { Lead } from '../common/types';
 

@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { getLettaClient } from './client';
 import { lettaAuth, type LettaAuthType } from './auth';
 

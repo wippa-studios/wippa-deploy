@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { livesessionAuth } from './lib/common/auth';
 import { sessionEvent } from './lib/triggers/session-event';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const livesession = createPiece({
+export const livesession = createConnector({
   displayName: 'LiveSession',
   auth: livesessionAuth,
   minimumSupportedRelease: '0.36.1',

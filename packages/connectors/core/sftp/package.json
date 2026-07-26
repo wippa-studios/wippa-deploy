@@ -4,14 +4,14 @@
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "basic-ftp": "5.3.1",
     "dayjs": "1.11.9",
     "ssh2": "1.16.0",
     "ssh2-sftp-client": "9.1.0",
     "zod": "4.3.6",
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {

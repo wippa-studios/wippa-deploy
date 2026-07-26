@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { Pinecone, type PineconeConfiguration } from '@pinecone-database/pinecone';
 import { pineconeAuth } from '../auth';
 

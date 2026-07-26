@@ -1,5 +1,5 @@
 import { hubspotAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { fromObjectTypeAssociationDropdown } from '../common/props';
 import { OBJECT_TYPE } from '../common/constants';
 import { Client } from '@hubspot/api-client';

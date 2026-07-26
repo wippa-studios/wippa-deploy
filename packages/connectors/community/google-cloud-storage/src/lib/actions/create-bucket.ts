@@ -1,8 +1,8 @@
-import { createAction, Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { createAction, Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { googleCloudStorageAuth } from '../common/auth';
 import { gcsCommon } from '../common/client';
 import { projectIdProperty, bucketNameProperty, locationProperty, storageClassProperty } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const createBucket = createAction({
   auth: googleCloudStorageAuth,

@@ -7,7 +7,7 @@ import {
 } from '../../../../src/app/tool-search/retrieval-doc'
 
 const fullInput = (): RetrievalDocInput => ({
-    pieceDisplayName: 'Slack',
+    connectorDisplayName: 'Slack',
     objectDisplayName: 'Send Channel Message',
     objectKind: 'action',
     description: 'Send a message to a Slack channel',
@@ -37,7 +37,7 @@ describe('buildRetrievalDoc', () => {
 
     it('omits the description line entirely when no description is available', () => {
         const doc = buildRetrievalDoc({
-            pieceDisplayName: 'Slack',
+            connectorDisplayName: 'Slack',
             objectDisplayName: 'Send Channel Message',
             objectKind: 'action',
         })
@@ -71,7 +71,7 @@ describe('extractRetrievalDocDescription', () => {
 
     it('returns undefined when the doc has no description line', () => {
         const doc = buildRetrievalDoc({
-            pieceDisplayName: 'Slack',
+            connectorDisplayName: 'Slack',
             objectDisplayName: 'Send Channel Message',
             objectKind: 'action',
         })
@@ -80,7 +80,7 @@ describe('extractRetrievalDocDescription', () => {
 
     it('round-trips a multi-line description (header + kind line stripped only)', () => {
         const doc = buildRetrievalDoc({
-            pieceDisplayName: 'Slack',
+            connectorDisplayName: 'Slack',
             objectDisplayName: 'Send Channel Message',
             objectKind: 'action',
             description: 'line one\nline two',

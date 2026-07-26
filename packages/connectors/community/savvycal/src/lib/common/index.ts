@@ -1,6 +1,6 @@
 import * as crypto from 'crypto';
-import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@wippa/pieces-common';
-import { DropdownOption } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@wippa/connectors-common';
+import { DropdownOption } from '@wippa/connectors-framework';
 
 export const SAVVYCAL_BASE_URL = 'https://api.savvycal.com/v1';
 

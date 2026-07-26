@@ -1,14 +1,14 @@
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendPrompt } from './lib/actions/send-prompt';
 import { generateContentFromImage } from './lib/actions/generate-content-from-image';
 import { generateImage } from './lib/actions/generate-image';
 import { generateEmbeddings } from './lib/actions/generate-embeddings';
 import { awsBedrockCombinedAuth } from './lib/auth';
 
-export const awsBedrock = createPiece({
+export const awsBedrock = createConnector({
   displayName: 'AWS Bedrock (Deprecated)',
   description: 'Build generative AI applications with foundation models',
   auth: awsBedrockCombinedAuth,

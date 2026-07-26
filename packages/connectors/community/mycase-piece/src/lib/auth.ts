@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const mycaseAuthDescription = `
 ## MyCase OAuth 2.0 Setup

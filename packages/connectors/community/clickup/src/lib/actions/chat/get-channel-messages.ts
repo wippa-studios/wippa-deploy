@@ -1,13 +1,13 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   getAccessTokenOrThrow,
   propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { callClickUpApi3, clickupCommon } from '../../common';
 import { clickupAuth } from '../../auth';
 import * as z from 'zod/mini'
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { channelMessagesOutputSchema } from '../../output-schemas';
 
 export const getClickupChannelMessages = createAction({

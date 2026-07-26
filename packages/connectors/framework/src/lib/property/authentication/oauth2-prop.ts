@@ -1,4 +1,4 @@
-import { BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE, OAuth2GrantType } from '@wippa/core-piece-types';
+import { BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE, OAuth2GrantType } from '@wippa/core-connector-types';
 import * as z from "zod/mini";
 import { ShortTextProperty } from '../input/text-property';
 import { SecretTextProperty } from './secret-text-property';

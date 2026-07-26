@@ -561,22 +561,22 @@ const GREETING_HEADLINES: GreetingHeadline[] = [
 ];
 
 const FEATURED_APP_NAMES = [
-  '@wippa/piece-gmail',
-  '@wippa/piece-slack',
-  '@wippa/piece-microsoft-outlook',
-  '@wippa/piece-notion',
-  '@wippa/piece-hubspot',
-  '@wippa/piece-salesforce',
-  '@wippa/piece-google-sheets',
-  '@wippa/piece-stripe',
-  '@wippa/piece-microsoft-teams',
-  '@wippa/piece-google-drive',
-  '@wippa/piece-shopify',
-  '@wippa/piece-zendesk',
-  '@wippa/piece-github',
-  '@wippa/piece-jira-cloud',
-  '@wippa/piece-airtable',
-  '@wippa/piece-openai',
+  '@wippa/connector-gmail',
+  '@wippa/connector-slack',
+  '@wippa/connector-microsoft-outlook',
+  '@wippa/connector-notion',
+  '@wippa/connector-hubspot',
+  '@wippa/connector-salesforce',
+  '@wippa/connector-google-sheets',
+  '@wippa/connector-stripe',
+  '@wippa/connector-microsoft-teams',
+  '@wippa/connector-google-drive',
+  '@wippa/connector-shopify',
+  '@wippa/connector-zendesk',
+  '@wippa/connector-github',
+  '@wippa/connector-jira-cloud',
+  '@wippa/connector-airtable',
+  '@wippa/connector-openai',
 ];
 
 const EXAMPLE_CARDS: ExampleCardData[] = [

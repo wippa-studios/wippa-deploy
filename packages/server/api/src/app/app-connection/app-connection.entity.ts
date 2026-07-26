@@ -36,7 +36,7 @@ export const AppConnectionEntity = new EntitySchema<AppConnectionSchema>({
             type: String,
             nullable: false,
         },
-        pieceName: {
+        connectorName: {
             type: String,
         },
         ownerId: {
@@ -58,7 +58,7 @@ export const AppConnectionEntity = new EntitySchema<AppConnectionSchema>({
             type: 'jsonb',
             nullable: true,
         },
-        pieceVersion: {
+        connectorVersion: {
             type: String,
         },
         preSelectForNewProjects: {

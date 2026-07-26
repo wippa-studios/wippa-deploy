@@ -5,14 +5,14 @@ import {
   Polling,
   httpClient,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   PiecePropValueSchema,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { vtigerAuth } from '../..';
 import {
   elementTypeProperty,

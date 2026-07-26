@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { cambaiAuth } from '../auth';
 import { API_BASE_URL, MAX_POLLING_ATTEMPTS, POLLING_INTERVAL_MS } from '../common';
 import { listFoldersDropdown } from '../common';

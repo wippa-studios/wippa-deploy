@@ -1,6 +1,6 @@
-import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, OAuth2PropertyValue } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { weekdoneAuth } from './lib/auth';
 import { createItemAction } from './lib/actions/create-item';
 import { updateItemAction } from './lib/actions/update-item';
@@ -9,7 +9,7 @@ import { updateObjectiveAction } from './lib/actions/update-objective';
 import { newItemTrigger } from './lib/triggers/new-item';
 import { newObjectiveTrigger } from './lib/triggers/new-objective';
 
-export const weekdone = createPiece({
+export const weekdone = createConnector({
   displayName: 'Weekdone',
   description: 'OKR & weekly status reporting tool for teams.',
   auth: weekdoneAuth,

@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { createDocument } from './lib/actions/create-document';
 import { createDocumentFromFile } from './lib/actions/create-document-from-file';
 import { findDocument } from './lib/actions/find-document';
@@ -12,7 +12,7 @@ import { newDocumentProcessed } from './lib/triggers/new-document-processed';
 import { newMailbox } from './lib/triggers/new-mailbox';
 import { newTableFieldProcessed } from './lib/triggers/new-table-field-processed';
 
-export const parseur = createPiece({
+export const parseur = createConnector({
   displayName: 'Parseur',
   description:
     'Parseur is a document/email parsing tool that extracts structured data from emails, attachments, PDFs, invoices, forms, etc. It supports dynamic templates and table fields, and delivers parsed output to integrations (e.g. via webhook or API). This integration enables reactive workflows based on new processed documents, failed processing, mailbox changes, and more.',

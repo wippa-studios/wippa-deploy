@@ -2,12 +2,12 @@ import {
   createAction,
   Property,
   StoreScope,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import OpenAI from 'openai';
 import { openaiAuth } from '../auth';
 import { sleep } from '../common/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const askAssistant = createAction({
   audience: 'human',

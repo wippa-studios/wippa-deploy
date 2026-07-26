@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { smartsheetAuth } from '../auth';
 import { smartsheetCommon, addRowToSmartsheet } from '../common';
 

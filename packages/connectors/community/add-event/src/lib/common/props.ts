@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { addEventAuth } from '../auth';
 import { addEventApi } from './client';
 import {

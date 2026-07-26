@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { WebhookHandshakeStrategy } from '@wippa/connectors-framework';
 import { pandadocAuth } from '../common';
 
 export const documentStateChanged = createTrigger({

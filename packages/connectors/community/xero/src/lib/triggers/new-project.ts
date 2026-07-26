@@ -4,7 +4,7 @@ import {
   PiecePropValueSchema,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { xeroAuth } from '../..';
 import {
   DedupeStrategy,
@@ -12,7 +12,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { props } from '../common/props';
 
 const polling: Polling<

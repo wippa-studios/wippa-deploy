@@ -1,5 +1,5 @@
-import { Property } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 
 import { paddleAuth } from '../auth';
 import { paddleClient } from './client';

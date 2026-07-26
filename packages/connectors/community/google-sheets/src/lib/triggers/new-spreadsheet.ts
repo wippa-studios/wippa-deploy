@@ -2,9 +2,9 @@ import {
 	AppConnectionValueForAuthProperty,
 	createTrigger,
 	TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { googleSheetsAuth } from '../common/common';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 
 import dayjs from 'dayjs';
 import { drive as googleDrive, drive_v3 } from '@googleapis/drive';

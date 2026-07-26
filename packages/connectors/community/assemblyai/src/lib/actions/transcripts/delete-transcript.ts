@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { assemblyaiAuth } from '../../auth';
 import { getAssemblyAIClient } from '../../client';
 import { transcriptIdProp } from './shared-props';

@@ -1,6 +1,6 @@
 
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { googleCloudStorageAuth } from "./lib/common/auth";
 import { createBucket } from "./lib/actions/create-bucket";
 import { deleteEmptyBucket } from "./lib/actions/delete-empty-bucket";
@@ -17,7 +17,7 @@ import { deleteBucketDefaultObjectAcl } from "./lib/actions/delete-bucket-defaul
 import { newObjectCreated } from "./lib/triggers/new-object-created";
 import { objectUpdated } from "./lib/triggers/object-updated";
 
-export const googleCloudStorage = createPiece({
+export const googleCloudStorage = createConnector({
   displayName: "Google Cloud Storage",
   description: "Automate file storage operations with Google Cloud Storage. Upload, download, manage buckets, set permissions, and monitor changes with real-time triggers.",
   auth: googleCloudStorageAuth,

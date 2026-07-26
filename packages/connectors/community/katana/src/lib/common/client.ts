@@ -2,7 +2,7 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { BASE_URL } from './constants';
 
 export async function katanaApiCall<T>(

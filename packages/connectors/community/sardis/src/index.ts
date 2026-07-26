@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sardisAuth } from './lib/auth';
 import { sendPaymentAction } from './lib/actions/send-payment';
 import { checkBalanceAction } from './lib/actions/check-balance';
@@ -8,7 +8,7 @@ import { checkPolicyAction } from './lib/actions/check-policy';
 import { setSpendingPolicyAction } from './lib/actions/set-policy';
 import { listTransactionsAction } from './lib/actions/list-transactions';
 
-export const sardis = createPiece({
+export const sardis = createConnector({
   displayName: 'Sardis',
   description: 'Policy-controlled payments for AI agents.',
   minimumSupportedRelease: '0.30.0',

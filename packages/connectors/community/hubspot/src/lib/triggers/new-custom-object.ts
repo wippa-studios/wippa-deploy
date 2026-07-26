@@ -1,14 +1,14 @@
 import { hubspotAuth } from '../auth';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import {
 	createTrigger,
 	DynamicPropsValue,
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 import { customObjectDropdown, customObjectPropertiesDropdown } from '../common/props';
 import { Client } from '@hubspot/api-client';
 import { FilterOperatorEnum } from '../common/types';
@@ -20,7 +20,7 @@ type Props = {
 	additionalPropertiesToRetrieve?: DynamicPropsValue;
 };
 
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 const polling: Polling<AppConnectionValueForAuthProperty<typeof hubspotAuth>, Props> = {
 	strategy: DedupeStrategy.TIMEBASED,
 	async items({ auth, propsValue, lastFetchEpochMS }) {

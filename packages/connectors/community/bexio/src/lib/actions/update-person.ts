@@ -1,4 +1,4 @@
-import { createAction, Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { createAction, Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { bexioAuth } from '../auth';
 import { BexioClient } from '../common/client';
 

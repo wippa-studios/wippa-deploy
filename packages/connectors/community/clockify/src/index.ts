@@ -1,5 +1,5 @@
-import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createCustomApiCallAction, HttpMethod } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createTaskAction } from './lib/actions/create-task';
 import { createTimeEntryAction } from './lib/actions/create-time-entry';
 import { findRunningTimerAction } from './lib/actions/find-running-timer';
@@ -13,7 +13,7 @@ import { newTimeEntryTrigger } from './lib/triggers/new-time-entry';
 import { newTimerStartedTrigger } from './lib/triggers/new-timer-started';
 import { clockifyAuth } from './lib/auth';
 
-export const clockify = createPiece({
+export const clockify = createConnector({
 	displayName: 'Clockify',
 	auth: clockifyAuth,
 	minimumSupportedRelease: '0.36.1',

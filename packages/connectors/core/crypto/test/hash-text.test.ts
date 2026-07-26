@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { hashText } from '../src/lib/actions/hash-text';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('hashText', () => {
   test('hashes with MD5', async () => {

@@ -1,14 +1,14 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpMethod,
   httpClient,
   createCustomApiCallAction
-} from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { CognosClient } from './lib/common/cognos-client';
 import { createDataSourceAction } from './lib/actions/create-data-source';
 import { updateDataSourceAction } from './lib/actions/update-data-source';
@@ -20,7 +20,7 @@ import { moveContentObjectAction } from './lib/actions/move-content-object';
 import { copyContentObjectAction } from './lib/actions/copy-content-object';
 import { ibmCognoseAuth } from './lib/auth';
 
-export const ibmCognose = createPiece({
+export const ibmCognose = createConnector({
   displayName: 'IBM Cognos Analytics',
   description:
     'Business intelligence and performance management suite for data analysis and reporting',

@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 
 import { simplyprintAuth, simplyprintSession } from '../auth';
 

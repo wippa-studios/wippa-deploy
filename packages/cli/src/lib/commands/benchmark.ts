@@ -418,7 +418,7 @@ async function describeFlow({ client, flowId, projectId }: DescribeFlowParams): 
         return { displayName: null, pieces: [] };
     }
     const version = res.data.version;
-    const pieces = unique([...JSON.stringify(version).matchAll(/"pieceName"\s*:\s*"([^"]+)"/g)].map((m) => m[1]));
+    const pieces = unique([...JSON.stringify(version).matchAll(/"connectorName"\s*:\s*"([^"]+)"/g)].map((m) => m[1]));
     return { displayName: typeof version.displayName === 'string' ? version.displayName : null, pieces };
 }
 
@@ -546,8 +546,8 @@ function buildImportRequest({ webhookVersion, mapperVersion }: { webhookVersion:
             displayName: 'Catch Webhook',
             type: 'PIECE_TRIGGER',
             settings: {
-                pieceName: WEBHOOK_PIECE,
-                pieceVersion: webhookVersion,
+                connectorName: WEBHOOK_PIECE,
+                connectorVersion: webhookVersion,
                 triggerName: 'catch_webhook',
                 input: { authType: 'none', authFields: {} },
                 propertySettings: {},
@@ -560,8 +560,8 @@ function buildImportRequest({ webhookVersion, mapperVersion }: { webhookVersion:
                 valid: true,
                 displayName: 'Advanced Mapping',
                 settings: {
-                    pieceName: DATA_MAPPER_PIECE,
-                    pieceVersion: mapperVersion,
+                    connectorName: DATA_MAPPER_PIECE,
+                    connectorVersion: mapperVersion,
                     actionName: 'advanced_mapping',
                     input: { mapping: { echo: '{{trigger.body}}' } },
                     propertySettings: {},
@@ -575,8 +575,8 @@ function buildImportRequest({ webhookVersion, mapperVersion }: { webhookVersion:
                     valid: true,
                     displayName: 'Return Response',
                     settings: {
-                        pieceName: WEBHOOK_PIECE,
-                        pieceVersion: webhookVersion,
+                        connectorName: WEBHOOK_PIECE,
+                        connectorVersion: webhookVersion,
                         actionName: 'return_response',
                         input: { fields: { body: '{{step_1}}', status: 200, headers: {} }, respond: 'stop', responseType: 'json' },
                         propertySettings: {},
@@ -905,8 +905,8 @@ function log(config: BenchmarkConfig, message: string): void {
     if (!config.json) console.error(chalk.gray(message));
 }
 
-const WEBHOOK_PIECE = '@wippa/piece-webhook';
-const DATA_MAPPER_PIECE = '@wippa/piece-data-mapper';
+const WEBHOOK_PIECE = '@wippa/connector-webhook';
+const DATA_MAPPER_PIECE = '@wippa/connector-data-mapper';
 const DEFAULT_CONCURRENCY = 10;
 const EPHEMERAL_PROJECT_MAX_CONCURRENCY = 1000;
 const NETWORK_PROBES = 20;

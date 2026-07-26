@@ -3,13 +3,13 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { coupaAuth } from '../auth';
 import { CoupaClient } from '../common/client';

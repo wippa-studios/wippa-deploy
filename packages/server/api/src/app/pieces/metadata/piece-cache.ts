@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils'
-import { ApEnvironment, PieceType } from '@wippa/shared'
+import { ApEnvironment, ConnectorType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../../core/db/repo-factory'
 import { pubsub } from '../../helper/pubsub'
@@ -15,15 +15,15 @@ const isTestingEnvironment = environment === ApEnvironment.TESTING
 let cachedRegistry: PieceRegistryEntry[] | null = null
 let registryGeneration = 0
 
-export const pieceCache = (log: FastifyBaseLogger) => {
+export const connectorCache = (log: FastifyBaseLogger) => {
     return {
         async setup(): Promise<void> {
-            log.info('[pieceCache] Registry cache initialized')
+            log.info('[connectorCache] Registry cache initialized')
             if (!isTestingEnvironment) {
                 await pubsub.subscribe(PIECE_REGISTRY_INVALIDATION_CHANNEL, () => {
                     cachedRegistry = null
                     registryGeneration++
-                    log.debug('[pieceCache] Registry invalidated via pubsub')
+                    log.debug('[connectorCache] Registry invalidated via pubsub')
                 })
             }
         },
@@ -82,7 +82,7 @@ export const PIECE_REGISTRY_INVALIDATION_CHANNEL = 'piece-registry-invalidation'
 
 export type PieceRegistryEntry = {
     platformId?: string
-    pieceType: PieceType
+    pieceType: ConnectorType
     name: string
     version: string
     minimumSupportedRelease?: string

@@ -1,8 +1,8 @@
-import { createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { createAction, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { googleCloudStorageAuth } from '../common/auth';
 import { gcsCommon } from '../common/client';
 import { bucketDropdown, projectIdProperty } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const deleteEmptyBucket = createAction({
   auth: googleCloudStorageAuth,

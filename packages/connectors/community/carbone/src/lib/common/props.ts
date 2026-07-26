@@ -1,5 +1,5 @@
-import { Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { carboneAuth } from '../auth';
 import { CARBONE_API_URL, CARBONE_VERSION } from './constants';
 

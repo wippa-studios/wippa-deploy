@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 
 import { simplyprintClient } from './client';
 import { Filament } from './types';

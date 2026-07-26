@@ -1,9 +1,9 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { fetchAllLists, getApiKey, getBaseUrl, sendgridAuth } from '../common';
 
 export const createOrUpdateContact = createAction({

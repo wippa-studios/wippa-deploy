@@ -35,7 +35,7 @@ export const toolSearchService = (log: FastifyBaseLogger) => ({
     /**
      * Trigger search — the same retrieval engine over `objectKind = 'trigger'` rows (mirrors
      * {@link searchActions}). Triggers carry no `audience`, so the audience filter is a no-op for them;
-     * tenant isolation, the optional `pieceName` scope, the enabled-piece filter, the τ gate and the
+     * tenant isolation, the optional `connectorName` scope, the enabled-piece filter, the τ gate and the
      * keyword floor all apply identically. τ is the same per-model constant — calibrated over the full
      * mixed-kind corpus, and a trigger-only query searches a strict subset, so junk rejection is at
      * least as strong (E6 note, plan Phase 6).
@@ -73,7 +73,7 @@ async function semanticSearch({ objectKind, query, opts, embedder, log }: Semant
 
     // Build the candidate query filter-by-filter so each clause is parameter-bound. The query vector is
     // $1 (referenced by the cosine SELECT + ORDER BY); every other value is appended via params.push.
-    // Tenant isolation, audience exclusion and the optional pieceName scope are all expressible in SQL.
+    // Tenant isolation, audience exclusion and the optional connectorName scope are all expressible in SQL.
     const params: unknown[] = [`[${queryVector.join(',')}]`]
     const where = [
         '"embedding" IS NOT NULL',
@@ -81,8 +81,8 @@ async function semanticSearch({ objectKind, query, opts, embedder, log }: Semant
         `"objectKind" = $${params.push(objectKind)}`,
         `("platformId" IS NULL OR "platformId" = $${params.push(opts.platformId ?? null)})`,
     ]
-    if (!isNil(opts.pieceName)) {
-        where.push(`"pieceName" = $${params.push(opts.pieceName)}`)
+    if (!isNil(opts.connectorName)) {
+        where.push(`"connectorName" = $${params.push(opts.connectorName)}`)
     }
     // Audience exclusion (default all). Expressed as the complement — exclude the audiences the
     // caller did NOT ask for — over COALESCE(audience,'both'), never an `IN (...)` inclusion list:
@@ -98,7 +98,7 @@ async function semanticSearch({ objectKind, query, opts, embedder, log }: Semant
         }
     }
     const rows = await databaseConnection().query(
-        `SELECT "pieceName", "objectName", "displayName", "retrievalDoc", "requiresConnection",
+        `SELECT "connectorName", "objectName", "displayName", "retrievalDoc", "requiresConnection",
                 1 - ("embedding" <=> $1::vector) AS cosine
          FROM "tool_search_index"
          WHERE ${where.join(' AND ')}
@@ -108,7 +108,7 @@ async function semanticSearch({ objectKind, query, opts, embedder, log }: Semant
     )
 
     let candidates: ToolSearchObjectResult[] = rows.map((row: SearchRow): ToolSearchObjectResult => ({
-        pieceName: row.pieceName,
+        connectorName: row.connectorName,
         objectName: row.objectName,
         displayName: row.displayName,
         oneLineDescription: extractRetrievalDocDescription(row.retrievalDoc),
@@ -122,7 +122,7 @@ async function semanticSearch({ objectKind, query, opts, embedder, log }: Semant
     // (no tenant context, or resolution failed → fail open rather than hide the whole catalog).
     const enabledPieceNames = opts.enabledPieceNames ?? await resolveEnabledPieceNames(opts, log)
     if (!isNil(enabledPieceNames)) {
-        candidates = candidates.filter((row) => enabledPieceNames.has(row.pieceName))
+        candidates = candidates.filter((row) => enabledPieceNames.has(row.connectorName))
     }
 
     // τ no-match gate on the filtered candidates (top-1 decides abstention), then take the top-k.
@@ -134,7 +134,7 @@ async function semanticSearch({ objectKind, query, opts, embedder, log }: Semant
     const connectedPieceNames = opts.connectedPieceNames ?? await resolveConnectedPieceNames(opts, log)
     if (!isNil(connectedPieceNames)) {
         for (const row of results) {
-            row.connected = connectedPieceNames.has(row.pieceName)
+            row.connected = connectedPieceNames.has(row.connectorName)
         }
     }
     return { results, mode: 'semantic' }
@@ -158,17 +158,17 @@ async function keywordSearch({ objectKind, query, opts, log, degradeReason }: Ke
         audience: PieceAudienceFilter.ALL,
     })
 
-    // Honor the caller's pieceName scope in the keyword floor too. `pieceMetadataService.list`
-    // searches the whole catalog, so without this the semantic path's pieceName restriction would
+    // Honor the caller's connectorName scope in the keyword floor too. `pieceMetadataService.list`
+    // searches the whole catalog, so without this the semantic path's connectorName restriction would
     // silently vanish on degrade — a piece-scoped query would return arbitrary other pieces' rows.
-    const scopedPieces = isNil(opts.pieceName)
+    const scopedPieces = isNil(opts.connectorName)
         ? pieces
-        : pieces.filter((piece) => piece.name === opts.pieceName)
+        : pieces.filter((piece) => piece.name === opts.connectorName)
 
     const results = scopedPieces.flatMap((piece) => {
         const suggestions = objectKind === 'action' ? (piece.suggestedActions ?? []) : (piece.suggestedTriggers ?? [])
         return suggestions.map((object): ToolSearchObjectResult => ({
-            pieceName: piece.name,
+            connectorName: piece.name,
             objectName: object.name,
             displayName: object.displayName,
             oneLineDescription: object.description,
@@ -222,7 +222,7 @@ async function resolveConnectedPieceNames(opts: ToolSearchParams, log: FastifyBa
         cursorRequest: null,
         scope: undefined,
         displayName: undefined,
-        pieceName: undefined,
+        connectorName: undefined,
         externalIds: undefined,
         limit: CONNECTION_LOOKUP_CAP,
     }))
@@ -230,7 +230,7 @@ async function resolveConnectedPieceNames(opts: ToolSearchParams, log: FastifyBa
         log.warn({ error, projectId }, '[toolSearchService] Connection-status resolution failed — connected flag left unset.')
         return undefined
     }
-    return new Set(connections.data.map((connection) => connection.pieceName))
+    return new Set(connections.data.map((connection) => connection.connectorName))
 }
 
 function toActionResult(row: ToolSearchObjectResult): ToolSearchActionResult {
@@ -248,7 +248,7 @@ type ToolSearchParams = {
     projectId?: string
     limit?: number
     /** Restrict results to a single piece's objects (exact, fully-qualified piece name). */
-    pieceName?: string
+    connectorName?: string
     /**
      * Audiences the caller wants to see. Omit (or pass all of `human`/`ai`/`both`) for no filtering.
      * Passing a subset excludes the others while keeping NULL-audience rows (treated as 'both').
@@ -287,7 +287,7 @@ type KeywordSearchParams = {
 }
 
 type SearchRow = {
-    pieceName: string
+    connectorName: string
     objectName: string
     displayName: string
     retrievalDoc: string
@@ -297,7 +297,7 @@ type SearchRow = {
 
 /** Internal, object-kind-agnostic result row (keyed by generic `objectName`). */
 type ToolSearchObjectResult = {
-    pieceName: string
+    connectorName: string
     objectName: string
     displayName: string
     oneLineDescription: string | undefined

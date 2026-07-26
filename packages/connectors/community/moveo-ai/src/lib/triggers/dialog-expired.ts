@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { moveoAuth } from '../auth';
 
 export const dialogExpired = createTrigger({

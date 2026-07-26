@@ -1,9 +1,9 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { query } from "./lib/actions/query";
-import { PieceCategory } from "@wippa/pieces-framework";
+import { PieceCategory } from "@wippa/connectors-framework";
     
-    export const graphql = createPiece({
+    export const graphql = createConnector({
       displayName: "GraphQL",
       auth: PieceAuth.None(),
       minimumSupportedRelease: '0.30.0',

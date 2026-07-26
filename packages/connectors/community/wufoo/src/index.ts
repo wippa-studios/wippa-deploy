@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty, createPiece, PieceAuth } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty, createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { wufooApiCall } from './lib/common/client';
 import { createFormEntryAction } from './lib/actions/create-form-entry';
 import { findFormAction } from './lib/actions/find-form';
@@ -10,10 +10,10 @@ import { findSubmissionByFieldAction } from './lib/actions/find-submission-by-fi
 import { getEntryDetailsAction } from './lib/actions/get-entry-details';
 import { newFormEntryTrigger } from './lib/triggers/new-form-entry';
 import { newFormTrigger } from './lib/triggers/new-form';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { wufooAuth } from './lib/auth';
 
-export const wufoo = createPiece({
+export const wufoo = createConnector({
   displayName: 'Wufoo',
   auth: wufooAuth,
   minimumSupportedRelease: '0.36.1',

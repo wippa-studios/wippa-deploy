@@ -1,10 +1,10 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { parserExpertAuth } from "./lib/common/auth";
 import { uploadDocument } from "./lib/actions/upload-document";
 import { getExtractedData } from "./lib/actions/get-extracted-data";
 
-export const parserExpert = createPiece({
+export const parserExpert = createConnector({
   displayName: "Parser Expert",
   auth: parserExpertAuth,
   minimumSupportedRelease: '0.36.1',

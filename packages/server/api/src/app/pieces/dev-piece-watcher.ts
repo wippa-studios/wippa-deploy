@@ -13,24 +13,24 @@ import { invalidateDevPieceCache } from './metadata/utils/piece-cache-utils'
 
 const PIECES_BUILDER_MUTEX_KEY = 'pieces-builder'
 
-async function buildPieces(app: FastifyInstance, piecesInfo: PieceInfo[]): Promise<void> {
+async function buildPieces(app: FastifyInstance, piecesInfo: ConnectorInfo[]): Promise<void> {
     if (piecesInfo.length === 0) return
 
     for (const piece of piecesInfo) {
-        if (!/^[A-Za-z0-9-]+$/.test(piece.pieceName)) {
-            throw new Error(`Piece package name contains invalid character: ${piece.pieceName}`)
+        if (!/^[A-Za-z0-9-]+$/.test(piece.connectorName)) {
+            throw new Error(`Piece package name contains invalid character: ${piece.connectorName}`)
         }
     }
 
     const pieceFilters = piecesInfo.map(p => `--filter=${p.packageName}`)
     const filterArgs = [
-        '--filter=@wippa/pieces-framework',
-        '--filter=@wippa/pieces-common',
+        '--filter=@wippa/connectors-framework',
+        '--filter=@wippa/connectors-common',
         '--filter=@wippa/shared',
         ...pieceFilters,
         '--force',
     ]
-    app.log.info(`Building ${piecesInfo.length} piece(s): ${piecesInfo.map(p => p.pieceName).join(',')}...`)
+    app.log.info(`Building ${piecesInfo.length} piece(s): ${piecesInfo.map(p => p.connectorName).join(',')}...`)
 
     const lock = await memoryLock.acquire(PIECES_BUILDER_MUTEX_KEY)
     try {
@@ -69,16 +69,16 @@ export async function startDevPieceWatcher(app: FastifyInstance): Promise<void> 
     const piecesNames = [...new Set(devPiecesConfig.split(',').map(n => n.trim()))]
     const utils = filePiecesUtils(app.log)
 
-    const resolvedInfos = await Promise.all(piecesNames.map(async (pieceName) => {
-        const pieceDirectory = await utils.findSourcePiecePathByPieceName(pieceName)
+    const resolvedInfos = await Promise.all(piecesNames.map(async (connectorName) => {
+        const pieceDirectory = await utils.findSourcePiecePathByPieceName(connectorName)
         if (isNil(pieceDirectory)) {
-            app.log.warn(`Piece directory not found for: ${pieceName}`)
+            app.log.warn(`Piece directory not found for: ${connectorName}`)
             return null
         }
         const packageName = await utils.getPackageNameFromFolderPath(pieceDirectory)
-        return { pieceName, pieceDirectory, packageName }
+        return { connectorName, pieceDirectory, packageName }
     }))
-    const pieceInfos: PieceInfo[] = resolvedInfos.filter((info): info is PieceInfo => info !== null)
+    const pieceInfos: ConnectorInfo[] = resolvedInfos.filter((info): info is ConnectorInfo => info !== null)
 
     if (pieceInfos.length === 0) return
 
@@ -91,34 +91,34 @@ export async function startDevPieceWatcher(app: FastifyInstance): Promise<void> 
         join(p.pieceDirectory, 'package.json'),
     ])
 
-    const triggerBuild = async (pieceInfo: PieceInfo) => {
-        rebuilding.add(pieceInfo.pieceName)
+    const triggerBuild = async (connectorInfo: ConnectorInfo) => {
+        rebuilding.add(connectorInfo.connectorName)
         try {
-            await buildPieces(app, [pieceInfo])
+            await buildPieces(app, [connectorInfo])
         }
         finally {
-            rebuilding.delete(pieceInfo.pieceName)
+            rebuilding.delete(connectorInfo.connectorName)
         }
-        if (pendingRebuild.has(pieceInfo.pieceName)) {
-            pendingRebuild.delete(pieceInfo.pieceName)
-            void triggerBuild(pieceInfo)
+        if (pendingRebuild.has(connectorInfo.connectorName)) {
+            pendingRebuild.delete(connectorInfo.connectorName)
+            void triggerBuild(connectorInfo)
         }
     }
 
     const watcher = chokidar.watch(watchPaths, { ignoreInitial: true })
 
     watcher.on('all', (_event, filePath) => {
-        const pieceInfo = pieceInfos.find(p => filePath.startsWith(p.pieceDirectory))
-        if (!pieceInfo) return
+        const connectorInfo = pieceInfos.find(p => filePath.startsWith(p.pieceDirectory))
+        if (!connectorInfo) return
 
-        clearTimeout(debounceTimers.get(pieceInfo.pieceName))
-        debounceTimers.set(pieceInfo.pieceName, setTimeout(() => {
-            debounceTimers.delete(pieceInfo.pieceName)
-            if (rebuilding.has(pieceInfo.pieceName)) {
-                pendingRebuild.add(pieceInfo.pieceName)
+        clearTimeout(debounceTimers.get(connectorInfo.connectorName))
+        debounceTimers.set(connectorInfo.connectorName, setTimeout(() => {
+            debounceTimers.delete(connectorInfo.connectorName)
+            if (rebuilding.has(connectorInfo.connectorName)) {
+                pendingRebuild.add(connectorInfo.connectorName)
                 return
             }
-            void triggerBuild(pieceInfo)
+            void triggerBuild(connectorInfo)
         }, 300))
     })
 
@@ -126,8 +126,8 @@ export async function startDevPieceWatcher(app: FastifyInstance): Promise<void> 
         app.log.error({ error }, 'File watcher error')
     })
 
-    for (const pieceInfo of pieceInfos) {
-        app.log.info(`Watching for changes: ${pieceInfo.pieceName}`)
+    for (const connectorInfo of pieceInfos) {
+        app.log.info(`Watching for changes: ${connectorInfo.connectorName}`)
     }
 
     const cleanup = async () => {
@@ -175,8 +175,8 @@ async function copyI18nToDist(sourceDir: string): Promise<void> {
     }
 }
 
-type PieceInfo = {
+type ConnectorInfo = {
     packageName: string
-    pieceName: string
+    connectorName: string
     pieceDirectory: string
 }

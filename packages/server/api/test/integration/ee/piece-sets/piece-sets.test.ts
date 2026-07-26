@@ -1,5 +1,5 @@
 import { apId } from '@wippa/core-utils'
-import { PieceSelectionMode, PieceSet, PrincipalType } from '@wippa/shared'
+import { PieceSelectionMode, ConnectorSet, PrincipalType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
@@ -100,7 +100,7 @@ describe('Piece Sets API', () => {
                 body: { name: 'Engineering' },
             })
             expect(response.statusCode).toBe(StatusCodes.CREATED)
-            const body = response.json<PieceSet>()
+            const body = response.json<ConnectorSet>()
             expect(body.name).toBe('Engineering')
             expect(body.isDefault).toBe(false)
             expect(body.config).toEqual(emptyConfig)
@@ -115,7 +115,7 @@ describe('Piece Sets API', () => {
                 body: { name: 'Sales', key: 'sales-set' },
             })
             expect(response.statusCode).toBe(StatusCodes.CREATED)
-            expect(response.json<PieceSet>().key).toBe('sales-set')
+            expect(response.json<ConnectorSet>().key).toBe('sales-set')
         })
 
         it('auto-generates a key from the name when none is provided', async () => {
@@ -127,7 +127,7 @@ describe('Piece Sets API', () => {
                 body: { name: 'Sales Team' },
             })
             expect(response.statusCode).toBe(StatusCodes.CREATED)
-            expect(response.json<PieceSet>().key).toMatch(/^sales-team-[a-zA-Z0-9]+$/)
+            expect(response.json<ConnectorSet>().key).toMatch(/^sales-team-[a-zA-Z0-9]+$/)
         })
     })
 
@@ -150,14 +150,14 @@ describe('Piece Sets API', () => {
                 headers: { authorization: `Bearer ${token}` },
                 body: { name: 'Finance' },
             })
-            const id = created.json<PieceSet>().id
+            const id = created.json<ConnectorSet>().id
             const response = await app!.inject({
                 method: 'GET',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
-            expect(response.json<PieceSet>().id).toBe(id)
+            expect(response.json<ConnectorSet>().id).toBe(id)
         })
     })
 
@@ -170,21 +170,21 @@ describe('Piece Sets API', () => {
                 headers: { authorization: `Bearer ${token}` },
                 body: { name: 'Ops' },
             })
-            const id = created.json<PieceSet>().id
+            const id = created.json<ConnectorSet>().id
 
             const response = await app!.inject({
                 method: 'POST',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
                 body: {
-                    pieces: { mode: PieceSelectionMode.INCLUDE_ALL, exceptions: ['@wippa/piece-gmail'] },
+                    pieces: { mode: PieceSelectionMode.INCLUDE_ALL, exceptions: ['@wippa/connector-gmail'] },
                 },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
-            const body = response.json<PieceSet>()
+            const body = response.json<ConnectorSet>()
             expect(body.config.pieces.mode).toBe(PieceSelectionMode.INCLUDE_ALL)
-            expect(body.config.pieces.exceptions).toContain('@wippa/piece-gmail')
-            expect(body.config.pieces.exceptions).not.toContain('@wippa/piece-slack')
+            expect(body.config.pieces.exceptions).toContain('@wippa/connector-gmail')
+            expect(body.config.pieces.exceptions).not.toContain('@wippa/connector-slack')
 
             const reenabledResponse = await app!.inject({
                 method: 'POST',
@@ -195,7 +195,7 @@ describe('Piece Sets API', () => {
                 },
             })
             expect(reenabledResponse.statusCode).toBe(StatusCodes.OK)
-            expect(reenabledResponse.json<PieceSet>().config.pieces.exceptions).not.toContain('@wippa/piece-gmail')
+            expect(reenabledResponse.json<ConnectorSet>().config.pieces.exceptions).not.toContain('@wippa/connector-gmail')
         })
 
         it('switching to exclude_all preserves the exceptions list', async () => {
@@ -206,17 +206,17 @@ describe('Piece Sets API', () => {
                 headers: { authorization: `Bearer ${token}` },
                 body: { name: 'Toggle Test' },
             })
-            const id = created.json<PieceSet>().id
+            const id = created.json<ConnectorSet>().id
 
             const response = await app!.inject({
                 method: 'POST',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
-                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@wippa/piece-slack'] } },
+                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@wippa/connector-slack'] } },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
-            const body = response.json<PieceSet>()
-            expect(body.config.pieces).toEqual({ mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@wippa/piece-slack'] })
+            const body = response.json<ConnectorSet>()
+            expect(body.config.pieces).toEqual({ mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@wippa/connector-slack'] })
         })
 
         it('selecting actions on a piece stores the allow-list; other component maps stay empty', async () => {
@@ -227,19 +227,19 @@ describe('Piece Sets API', () => {
                 headers: { authorization: `Bearer ${token}` },
                 body: { name: 'Action Toggle' },
             })
-            const id = created.json<PieceSet>().id
+            const id = created.json<ConnectorSet>().id
 
             const response = await app!.inject({
                 method: 'POST',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
                 body: {
-                    actions: { '@wippa/piece-slack': { mode: 'selected', selected: ['send-message'] } },
+                    actions: { '@wippa/connector-slack': { mode: 'selected', selected: ['send-message'] } },
                 },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
-            const body = response.json<PieceSet>()
-            expect(body.config.selectedActions['@wippa/piece-slack']).toEqual(['send-message'])
+            const body = response.json<ConnectorSet>()
+            expect(body.config.selectedActions['@wippa/connector-slack']).toEqual(['send-message'])
             expect(body.config.selectedTriggers).toEqual({})
         })
 
@@ -250,7 +250,7 @@ describe('Piece Sets API', () => {
                 url: '/api/v1/piece-sets',
                 headers: { authorization: `Bearer ${token}` },
                 body: { name },
-            })).json<PieceSet>()
+            })).json<ConnectorSet>()
 
             const updateKey = (id: string) => app!.inject({
                 method: 'POST',
@@ -267,8 +267,8 @@ describe('Piece Sets API', () => {
 
             expect(firstResponse.statusCode).toBe(StatusCodes.OK)
             expect(secondResponse.statusCode).toBe(StatusCodes.OK)
-            const firstKey = firstResponse.json<PieceSet>().key
-            const secondKey = secondResponse.json<PieceSet>().key
+            const firstKey = firstResponse.json<ConnectorSet>().key
+            const secondKey = secondResponse.json<ConnectorSet>().key
             expect(firstKey).not.toBe('')
             expect(secondKey).not.toBe('')
             expect(firstKey).not.toBe(secondKey)
@@ -281,7 +281,7 @@ describe('Piece Sets API', () => {
                 url: '/api/v1/piece-sets',
                 headers: { authorization: `Bearer ${token}` },
                 body: { name, key },
-            })).json<PieceSet>()
+            })).json<ConnectorSet>()
 
             await makeSet('Taken', 'shared-key')
             const other = await makeSet('Other', 'other-key')
@@ -303,14 +303,14 @@ describe('Piece Sets API', () => {
                 headers: { authorization: `Bearer ${token}` },
                 body: { name: 'Reopen' },
             })
-            const id = created.json<PieceSet>().id
+            const id = created.json<ConnectorSet>().id
 
             await app!.inject({
                 method: 'POST',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
                 body: {
-                    actions: { '@wippa/piece-slack': { mode: 'selected', selected: ['send-message'] } },
+                    actions: { '@wippa/connector-slack': { mode: 'selected', selected: ['send-message'] } },
                 },
             })
 
@@ -318,10 +318,10 @@ describe('Piece Sets API', () => {
                 method: 'POST',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
-                body: { actions: { '@wippa/piece-slack': { mode: 'all' } } },
+                body: { actions: { '@wippa/connector-slack': { mode: 'all' } } },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
-            const body = response.json<PieceSet>()
+            const body = response.json<ConnectorSet>()
             expect(body.config.selectedActions).toEqual({})
             expect(body.config.selectedTriggers).toEqual({})
         })
@@ -365,7 +365,7 @@ describe('Piece Sets API', () => {
                 url: '/api/v1/piece-sets',
                 headers: { authorization: `Bearer ${token}` },
                 body: { name: 'Other' },
-            })).json<PieceSet>()
+            })).json<ConnectorSet>()
 
             await databaseConnection().getRepository('project').update(
                 { id: mockProject.id },
@@ -394,13 +394,13 @@ describe('Piece Sets API', () => {
                 body: {
                     name: 'Original',
                 },
-            })).json<PieceSet>()
+            })).json<ConnectorSet>()
 
             await app!.inject({
                 method: 'POST',
                 url: `/api/v1/piece-sets/${original.id}`,
                 headers: { authorization: `Bearer ${token}` },
-                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@wippa/piece-slack'] } },
+                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@wippa/connector-slack'] } },
             })
 
             const response = await app!.inject({
@@ -410,7 +410,7 @@ describe('Piece Sets API', () => {
                 body: { name: 'Original (Copy)' },
             })
             expect(response.statusCode).toBe(StatusCodes.CREATED)
-            const clone = response.json<PieceSet>()
+            const clone = response.json<ConnectorSet>()
             expect(clone.name).toBe('Original (Copy)')
             expect(clone.isDefault).toBe(false)
             // A clone gets its own auto-generated key rather than inheriting the original's.
@@ -419,7 +419,7 @@ describe('Piece Sets API', () => {
             expect(clone.generatedForProjectId).toBeNull()
             expect(clone.id).not.toBe(original.id)
             expect(clone.config.pieces.mode).toBe(PieceSelectionMode.EXCLUDE_ALL)
-            expect(clone.config.pieces.exceptions).toContain('@wippa/piece-slack')
+            expect(clone.config.pieces.exceptions).toContain('@wippa/connector-slack')
         })
     })
 
@@ -450,7 +450,7 @@ describe('Piece Sets API', () => {
                 method: 'POST',
                 url: '/api/v1/projects',
                 headers: { authorization: `Bearer ${token}` },
-                body: { displayName: 'No PieceSet Project', externalId: null, metadata: null, maxConcurrentJobs: null },
+                body: { displayName: 'No ConnectorSet Project', externalId: null, metadata: null, maxConcurrentJobs: null },
             })
             expect(createResponse.statusCode).toBe(StatusCodes.CREATED)
             const project = createResponse.json<{ id: string }>()
@@ -468,7 +468,7 @@ describe('Piece Sets API', () => {
                 url: '/api/v1/piece-sets',
                 headers: { authorization: `Bearer ${token}` },
                 body: { name: 'Assign Test' },
-            })).json<PieceSet>()
+            })).json<ConnectorSet>()
 
             const response = await app!.inject({
                 method: 'POST',

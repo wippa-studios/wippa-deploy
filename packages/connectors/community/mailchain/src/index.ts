@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { mailchainCommon } from './lib/common/common';
 import { getAuthenticatedUser } from './lib/actions/get-authenticated-user';
 import { sendEmail } from './lib/actions/send-email';
 
-export const mailchain = createPiece({
+export const mailchain = createConnector({
   displayName: 'Mailchain',
   description:
     'Mailchain is a simple, secure, and decentralized communications protocol that enables blockchain-based email.',

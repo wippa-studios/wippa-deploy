@@ -1,8 +1,8 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createEvent } from './lib/actions/create-event';
 import { createQuickCalendarEvent } from './lib/actions/create-quick-event';
 import { deleteEventAction } from './lib/actions/delete-event.action';
@@ -22,7 +22,7 @@ import { newCalendar } from './lib/triggers/new-calendar';
 
 export { googleCalendarAuth, getAccessToken, GoogleCalendarAuthValue, createGoogleClient } from './lib/common';
 
-export const googleCalendar = createPiece({
+export const googleCalendar = createConnector({
   minimumSupportedRelease: '0.30.0',
   logoUrl: 'https://cdn.activepieces.com/pieces/google-calendar.png',
   categories: [PieceCategory.PRODUCTIVITY],

@@ -3,7 +3,7 @@ import { findPieces, publishPieceFromFolder } from '../utils/piece-utils';
 import chalk from "chalk";
 import { join } from "path";
 
-async function syncPieces(
+async function syncConnectors(
   params:
   {apiUrl: string,
   apiKey: string,
@@ -34,7 +34,7 @@ export const syncPieceCommand = new Command('sync')
             console.error(chalk.red('AP_API_KEY environment variable is required'));
             process.exit(1);
         }
-        await syncPieces({
+        await syncConnectors({
           apiUrl: options.apiUrl.replace(/\/$/, ''),
           apiKey,
           pieces,

@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newFeedbackTrigger } from './lib/triggers/new-feedback';
 import { newSurveyResponseTrigger } from './lib/triggers/new-survey-response';
 
@@ -33,7 +33,7 @@ export const uxsniffAuth = PieceAuth.SecretText({
   },
 });
 
-export const uxsniff = createPiece({
+export const uxsniff = createConnector({
   displayName: 'UXsniff',
   description:
     'AI-powered UX analytics: session recordings, heatmaps, feedback widgets, and surveys for your website.',

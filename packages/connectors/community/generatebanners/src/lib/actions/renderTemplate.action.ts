@@ -2,13 +2,13 @@ import {
   createAction,
   Property,
   BasicAuthPropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { generatebannersAuth } from '../auth';
 
 export const renderTemplate = createAction({

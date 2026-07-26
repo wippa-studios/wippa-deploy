@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { signrequestAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendSignrequest } from './lib/actions/send-signrequest';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const signrequest = createPiece({
+export const signrequest = createConnector({
   displayName: 'Signrequest',
   auth: signrequestAuth,
   minimumSupportedRelease: '0.36.1',

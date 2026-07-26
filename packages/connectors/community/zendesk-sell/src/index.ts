@@ -1,6 +1,6 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { Buffer } from 'buffer'; 
 
 // Auth
@@ -30,7 +30,7 @@ import { updatedDeal } from "./lib/triggers/updated_deal";
 import { dealEntersStage } from "./lib/triggers/deal_enters_stage";
 import { newNote } from "./lib/triggers/new_note";
 
-export const zendeskSell = createPiece({
+export const zendeskSell = createConnector({
   displayName: "Zendesk-sell",
   description: "Sales CRM for pipeline management, lead tracking, and contact organization.",
   auth: zendeskSellAuth,

@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
 import actions from './lib/actions';
 import triggers from './lib/triggers';
 
@@ -27,7 +27,7 @@ export const pastefyAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const pastefy = createPiece({
+export const pastefy = createConnector({
   displayName: 'Pastefy',
   description: 'Sharing code snippets platform',
   minimumSupportedRelease: '0.30.0',

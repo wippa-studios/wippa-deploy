@@ -1,5 +1,5 @@
-import { createAction, Property, OAuth2PropertyValue } from "@wippa/pieces-framework";
-import { httpClient, HttpMethod } from "@wippa/pieces-common";
+import { createAction, Property, OAuth2PropertyValue } from "@wippa/connectors-framework";
+import { httpClient, HttpMethod } from "@wippa/connectors-common";
 import { netlifyAuth } from "../common/auth";
 
 export const startDeploy = createAction({

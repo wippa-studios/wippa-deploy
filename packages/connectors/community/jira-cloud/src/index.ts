@@ -1,7 +1,7 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { JiraAuth, jiraCloudAuth } from './auth';
 import { createIssueAction } from './lib/actions/create-issue';
 import { searchIssues } from './lib/actions/search-issues';
@@ -29,7 +29,7 @@ import { newIssueType } from './lib/triggers/new-issue-type';
 import { newProject } from './lib/triggers/new-project';
 import { newPriority } from './lib/triggers/new-priority';
 
-export const jiraCloud = createPiece({
+export const jiraCloud = createConnector({
 	displayName: 'Jira Cloud',
 	description: 'Issue tracking and project management',
 

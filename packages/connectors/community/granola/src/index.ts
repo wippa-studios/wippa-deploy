@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { listNotesAction } from './lib/actions/list-notes';
 import { getNoteAction } from './lib/actions/get-note';
 import { newNoteTrigger } from './lib/triggers/new-note';
@@ -34,7 +34,7 @@ export const granolaAuth = PieceAuth.SecretText({
   },
 });
 
-export const granola = createPiece({
+export const granola = createConnector({
   displayName: 'Granola',
   description:
     'AI-powered meeting notes — automatically captures and summarizes your meetings.',

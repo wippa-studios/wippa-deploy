@@ -1,6 +1,6 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { oktaAuth, makeOktaRequest, userIdDropdown, groupIdDropdown } from '../common/common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 
 

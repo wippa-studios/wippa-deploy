@@ -1,4 +1,4 @@
-import { ContextVersion } from '@wippa/pieces-framework'
+import { ContextVersion } from '@wippa/connectors-framework'
 import { AppConnection, AppConnectionStatus, AppConnectionType, AppConnectionValue, ConnectionExpiredError, ConnectionLoadingError, ConnectionNotFoundError, ExecutionError, FetchError } from '@wippa/shared'
 import { utils } from '../utils'
 

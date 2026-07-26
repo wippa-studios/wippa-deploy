@@ -134,16 +134,16 @@ const AUTH_INJECTABLE_TOOLS = new Set(['ap_get_piece_props', 'ap_resolve_propert
 function injectSelectedAuth({ name, args, getSelectedAuth }: {
     name: string
     args: unknown
-    getSelectedAuth?: (params: { pieceName: string }) => string | undefined
+    getSelectedAuth?: (params: { connectorName: string }) => string | undefined
 }): unknown {
     if (getSelectedAuth === undefined || !AUTH_INJECTABLE_TOOLS.has(name) || !isObject(args)) {
         return args
     }
-    const pieceName = args['pieceName']
-    if (typeof pieceName !== 'string') {
+    const connectorName = args['connectorName']
+    if (typeof connectorName !== 'string') {
         return args
     }
-    const externalId = getSelectedAuth({ pieceName: chatWorkerTools.normalizePieceName(pieceName) })
+    const externalId = getSelectedAuth({ connectorName: chatWorkerTools.normalizePieceName(connectorName) })
     if (externalId === undefined || args['auth'] === externalId) {
         return args
     }
@@ -182,7 +182,7 @@ async function maybeOffloadMcpResult({ result, toolName, saveLargeResult }: {
 function withToolTimeouts({ mcpToolSet, brokenConnectors, getSelectedAuth, saveLargeResult }: {
     mcpToolSet: Record<string, unknown>
     brokenConnectors: Set<string>
-    getSelectedAuth?: (params: { pieceName: string }) => string | undefined
+    getSelectedAuth?: (params: { connectorName: string }) => string | undefined
     saveLargeResult?: (args: { json: string, fileName: string }) => Promise<string | null>
 }): Record<string, unknown> {
     const result: Record<string, unknown> = {}

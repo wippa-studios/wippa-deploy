@@ -1,5 +1,5 @@
 import { segmentAuth } from '../../.';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { Analytics } from '@segment/analytics-node'
 
 export const identifyUser = createAction({

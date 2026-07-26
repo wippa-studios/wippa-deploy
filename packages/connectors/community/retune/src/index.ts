@@ -2,13 +2,13 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { askChatbot } from './lib/actions/ask-chatbot';
 import { retuneAuth } from './lib/auth';
 
@@ -23,7 +23,7 @@ e.g from this: https://retune.so/chat/acewocwe-123123-123123-123123/ your chat I
 5. Scroll to the bottom to find "Re:tune API Keys" and copy your key below
 `;
 
-export const retune = createPiece({
+export const retune = createConnector({
   displayName: 're:tune',
   description:
     'Everything you need to transform your business with AI, from custom chatbots to autonomous agents.',

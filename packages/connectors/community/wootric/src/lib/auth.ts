@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { OAuth2GrantType } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { OAuth2GrantType } from '@wippa/connectors-framework';
 
 const WOOTRIC_API_URL = 'https://api.wootric.com';
 

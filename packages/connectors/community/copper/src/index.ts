@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   PiecePropValueSchema,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { BASE_URL, CopperAuth } from './lib/common/constants';
 import { newPerson } from './lib/triggers/new-person';
 import { newLead } from './lib/triggers/new-lead';
@@ -34,10 +34,10 @@ import { searchForACompany } from './lib/actions/search-for-a-company';
 import { searchForAnOpportunity } from './lib/actions/search-for-an-opportunity';
 import { searchForAProject } from './lib/actions/search-for-a-project';
 import { newActivity } from './lib/triggers/new-activity';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const copper = createPiece({
+export const copper = createConnector({
   displayName: 'Copper',
   auth: CopperAuth,
   minimumSupportedRelease: '0.36.1',

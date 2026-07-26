@@ -4,10 +4,10 @@
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "@wippa/core-utils": "workspace:*",
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@joplin/turndown": "4.0.85",
     "@joplin/turndown-plugin-gfm": "1.0.67",
     "jsdom": "^24.0.0",

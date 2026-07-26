@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendText } from './lib/actions/send/text';
 import { send_iMessage } from './lib/actions/send/imessage';
 
@@ -10,7 +10,7 @@ export const contiguityAuth = PieceAuth.SecretText({
   description: 'Authenticate with the Contiguity API using a revocable key. Create one at console.contiguity.com/dashboard/tokens',
 });
 
-export const contiguity = createPiece({
+export const contiguity = createConnector({
   displayName: 'Contiguity',
   description: 'Communications for what you\'re building',
   auth: contiguityAuth,

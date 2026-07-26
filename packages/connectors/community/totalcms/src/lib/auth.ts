@@ -1,8 +1,8 @@
-import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/connectors-framework';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 import { saveContent } from './api';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export type TotalCMSAuthType = AppConnectionValueForAuthProperty<typeof cmsAuth>;
 

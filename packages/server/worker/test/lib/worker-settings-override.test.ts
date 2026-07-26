@@ -79,7 +79,7 @@ function buildMinimalHandlers(): WorkerToApiContract {
         submitPayloads: vi.fn(),
         savePayloads: vi.fn(),
         getFlowVersion: vi.fn(),
-        getPiece: vi.fn(),
+        getConnector: vi.fn(),
         getPieceArchive: vi.fn(),
         extendLock: vi.fn(),
         recordTriggerRun: vi.fn(),

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction} from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction} from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { scrape } from './lib/actions/scrape';
 import { extract } from './lib/actions/extract';
 import { crawl } from './lib/actions/crawl';
@@ -10,7 +10,7 @@ import { FIRECRAWL_API_BASE_URL } from './lib/common/common';
 import { firecrawlAuth } from './lib/auth';
 
 
-export const firecrawl = createPiece({
+export const firecrawl = createConnector({
   displayName: 'Firecrawl',
   description: 'Extract structured data from websites using AI with natural language prompts',
   minimumSupportedRelease: '0.30.0',

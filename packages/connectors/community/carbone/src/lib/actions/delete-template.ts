@@ -1,9 +1,9 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { CARBONE_API_URL, CARBONE_VERSION } from '../common/constants';
 import { carboneAuth } from '../auth';
 import { carboneProps } from '../common/props';

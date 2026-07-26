@@ -3,13 +3,13 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpMessageBody,
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
 import FormData from 'form-data';

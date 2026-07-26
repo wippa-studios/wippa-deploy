@@ -4,12 +4,12 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   CustomAuthProps,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { metabaseAuth } from '..';
 
 export async function queryMetabaseApi(

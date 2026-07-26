@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newLead } from './lib/triggers/new-lead';
 import { facebookLeadsAuth } from './lib/auth';
 import crypto from 'node:crypto';
 
 
-export const facebookLeads = createPiece({
+export const facebookLeads = createConnector({
 	displayName: 'Facebook Leads',
 	description: 'Capture leads from Facebook',
 	minimumSupportedRelease: '0.30.0',

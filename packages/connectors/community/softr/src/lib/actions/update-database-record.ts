@@ -1,9 +1,9 @@
-import { createAction } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { SoftrAuth } from '../common/auth';
 import { makeRequest, transformRecordFields } from '../common/client';
 import { databaseIdDropdown, recordIdField, tableFields, tableIdDropdown } from '../common/props';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { TableField } from '../common/types';
 
 export const updateDatabaseRecord = createAction({

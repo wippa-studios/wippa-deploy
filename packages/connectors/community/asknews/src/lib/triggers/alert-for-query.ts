@@ -2,10 +2,10 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { asknewsAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 export const alertForQuery = createTrigger({
   auth: asknewsAuth,
   name: 'alertForQuery',

@@ -15,7 +15,7 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 let app: FastifyInstance | null = null
 
 const upsertRequest: UpsertOAuth2AppRequest = {
-    pieceName: faker.lorem.word(),
+    connectorName: faker.lorem.word(),
     clientId: faker.lorem.word(),
     clientSecret: faker.lorem.word(),
 }
@@ -39,7 +39,7 @@ describe('OAuth App API', () => {
             expect(response?.statusCode).toBe(StatusCodes.OK)
             expect(responseBody.id).toHaveLength(21)
             expect(responseBody.platformId).toBe(ctx.platform.id)
-            expect(responseBody.pieceName).toBe(upsertRequest.pieceName)
+            expect(responseBody.connectorName).toBe(upsertRequest.connectorName)
             expect(responseBody.clientId).toBe(upsertRequest.clientId)
             expect(responseBody.clientSecret).toBeUndefined()
         })

@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { uscreenAuth } from '../common/auth';
 import { uscreenProps } from '../common/props';
 

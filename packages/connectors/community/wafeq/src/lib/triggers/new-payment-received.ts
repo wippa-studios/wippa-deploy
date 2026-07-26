@@ -1,10 +1,10 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { WafeqAuth, wafeqAuth } from '../common/auth';
 import { wafeqApiCall, WafeqPaginatedResponse } from '../common/client';
 

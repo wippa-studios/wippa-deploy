@@ -2,13 +2,13 @@ import {
   DropdownOption,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { wordpressAuth } from '../..';
 export type WordPressMedia = { id: string; title: { rendered: string } };
 

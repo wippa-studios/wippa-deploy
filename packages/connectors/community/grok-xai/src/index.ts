@@ -1,14 +1,14 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { grokAuth } from './lib/common/auth';
 import { askGrok } from './lib/actions/ask-grok';
 import { extractDataFromText } from './lib/actions/extract-data';
 import { categorizeText } from './lib/actions/categorize-text';
 import { generateImage } from './lib/actions/generate-image';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { XAI_BASE_URL } from './lib/common/constants';
 
-export const grokXai = createPiece({
+export const grokXai = createConnector({
   displayName: 'Grok by xAI',
   description: 'AI chatbot by xAI that answers questions, generates text, extracts data, and provides real-time insights.',
   auth: grokAuth,

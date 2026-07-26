@@ -1,8 +1,8 @@
-import { createPiece, PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceCategory } from '@wippa/connectors-framework';
 import { callTool } from './lib/actions/call-tool';
 import { mcpClientAuth } from './lib/auth';
 
-export const mcpClient = createPiece({
+export const mcpClient = createConnector({
   displayName: 'MCP Client',
   description: 'Call tools on an external MCP server deterministically, without an LLM.',
   auth: mcpClientAuth,

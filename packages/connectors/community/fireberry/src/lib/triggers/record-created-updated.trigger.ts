@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { fireberryAuth } from '../auth';
 import { objectTypeDropdown } from '../common/props';
 import { FireberryClient } from '../common/client';

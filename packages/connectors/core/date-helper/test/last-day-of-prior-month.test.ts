@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { lastDayOfPreviousMonthAction } from '../src/lib/actions/last-day-of-prior-month';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('lastDayOfPreviousMonth', () => {
   beforeEach(() => {

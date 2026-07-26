@@ -2,7 +2,7 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   getContacts,
   getTask,

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { calendlyCommon } from './lib/common';
 import { calendlyInviteeCanceled } from './lib/trigger/invitee-canceled.trigger';
 import { calendlyInviteeCreated } from './lib/trigger/invitee-created.trigger';
@@ -12,7 +12,7 @@ const markdown = `
 2. Click on "Create New Token"
 3. Copy the token and paste it in the field below
 `;
-export const calendly = createPiece({
+export const calendly = createConnector({
   displayName: 'Calendly',
   description: 'Simple, modern scheduling',
   minimumSupportedRelease: '0.30.0',

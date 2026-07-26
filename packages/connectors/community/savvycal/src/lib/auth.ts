@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 import { SAVVYCAL_BASE_URL } from './common';
 
 export const savvyCalAuth = [

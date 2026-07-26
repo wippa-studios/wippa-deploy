@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { makeClient, mondayCommon } from '../common';
 import { MondayColumnType } from '../common/constants';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import FormData from 'form-data';
 import { mondayAuth } from '../auth';
 

@@ -1,14 +1,14 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { matchPerson } from './lib/actions/match-person';
 import { enrichCompany } from './lib/actions/enrich-company';
 import { newsArticlesSearch } from './lib/actions/news-articles-search';
 import { organizationJobPostings } from './lib/actions/organization-job-postings';
 import { organizationSearch } from './lib/actions/organization-search';
 import { peopleSearch } from './lib/actions/people-search';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { apolloAuth } from './lib/auth';
 
-export const apollo = createPiece({
+export const apollo = createConnector({
   displayName: 'Apollo',
   auth: apolloAuth,
   description:

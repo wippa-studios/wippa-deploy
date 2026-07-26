@@ -1,7 +1,7 @@
 import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, isNil, LocalesEnum, PlatformId } from '@wippa/core-utils'
-import { PieceMetadata, PieceMetadataModel, PieceMetadataModelSummary, PiecePackageInformation, pieceTranslation } from '@wippa/pieces-framework'
+import { ConnectorMetadata, PieceMetadataModel, PieceMetadataModelSummary, PiecePackageInformation, pieceTranslation } from '@wippa/connectors-framework'
 import { apVersionUtil } from '@wippa/server-utils'
-import { EXACT_VERSION_REGEX, flowPieceUtil, PackageType, PieceAudienceFilter, PieceCategory, PieceOrderBy, PiecePackage, PieceSortBy, PieceType, PrivatePiecePackage, PublicPiecePackage, SuggestionType } from '@wippa/shared'
+import { EXACT_VERSION_REGEX, flowPieceUtil, PackageType, PieceAudienceFilter, PieceCategory, PieceOrderBy, ConnectorPackage, PieceSortBy, ConnectorType, PrivatePiecePackage, PublicPiecePackage, SuggestionType } from '@wippa/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import semVer from 'semver'
@@ -10,7 +10,7 @@ import { repoFactory } from '../../core/db/repo-factory'
 import { resolveVisibility } from '../../ee/pieces/filters/piece-filtering-utils'
 import { flowVersionRepo } from '../../flows/flow-version/flow-version.service'
 import { projectService } from '../../project/project-service'
-import { pieceCache, PieceRegistryEntry } from './piece-cache'
+import { connectorCache, PieceRegistryEntry } from './piece-cache'
 import { PieceMetadataEntity, PieceMetadataSchema } from './piece-metadata-entity'
 import { filterActionsByAudience, filterPieceBasedOnType, isNewerVersion, isSupportedRelease, lastVersionOfEachPiece, loadDevPiecesIfEnabled, pieceListUtils } from './utils'
 
@@ -19,7 +19,7 @@ export const pieceRepos = repoFactory(PieceMetadataEntity)
 export const pieceMetadataService = (log: FastifyBaseLogger) => {
     return {
         async setup(): Promise<void> {
-            await pieceCache(log).setup()
+            await connectorCache(log).setup()
         },
         async list(params: ListParams): Promise<PieceMetadataModelSummary[]> {
             const locale = params.locale ?? LocalesEnum.ENGLISH
@@ -58,7 +58,7 @@ export const pieceMetadataService = (log: FastifyBaseLogger) => {
                 return undefined
             }
             const piece = await dedupe(`piece:${bestMatch.name}:${bestMatch.version}:${bestMatch.platformId ?? ''}`, () => fetchPieceVersion({
-                pieceName: bestMatch.name,
+                connectorName: bestMatch.name,
                 version: bestMatch.version,
                 platformId: bestMatch.platformId,
                 log,
@@ -83,7 +83,7 @@ export const pieceMetadataService = (log: FastifyBaseLogger) => {
                 throw new ActivepiecesError({
                     code: ErrorCode.ENTITY_NOT_FOUND,
                     params: {
-                        message: `piece_metadata_not_found pieceName=${name}`,
+                        message: `piece_metadata_not_found connectorName=${name}`,
                     },
                 })
             }
@@ -109,16 +109,16 @@ export const pieceMetadataService = (log: FastifyBaseLogger) => {
                 return version
             }
 
-            const pieceMetadata = await this.getOrThrow({
+            const connectorMetadata = await this.getOrThrow({
                 name,
                 version,
                 platformId,
             })
 
-            return pieceMetadata.version
+            return connectorMetadata.version
         },
         async create({
-            pieceMetadata,
+            connectorMetadata,
             platformId,
             packageType,
             pieceType,
@@ -126,20 +126,20 @@ export const pieceMetadataService = (log: FastifyBaseLogger) => {
             publishCacheRefresh = true,
         }: CreateParams): Promise<PieceMetadataSchema> {
             const existingMetadata = await pieceRepos().findOneBy({
-                name: pieceMetadata.name,
-                version: pieceMetadata.version,
+                name: connectorMetadata.name,
+                version: connectorMetadata.version,
                 platformId: platformId ?? IsNull(),
             })
             if (!isNil(existingMetadata)) {
                 throw new ActivepiecesError({
                     code: ErrorCode.VALIDATION,
                     params: {
-                        message: `piece_metadata_already_exists name=${pieceMetadata.name} version=${pieceMetadata.version}`,
+                        message: `piece_metadata_already_exists name=${connectorMetadata.name} version=${connectorMetadata.version}`,
                     },
                 })
             }
             const createdDate = await findOldestCreatedDate({
-                name: pieceMetadata.name,
+                name: connectorMetadata.name,
                 platformId,
             })
             const savedPiece = await pieceRepos().save({
@@ -149,10 +149,10 @@ export const pieceMetadataService = (log: FastifyBaseLogger) => {
                 archiveId,
                 platformId,
                 created: createdDate,
-                ...pieceMetadata,
+                ...connectorMetadata,
             })
             if (publishCacheRefresh) {
-                await pieceCache(log).invalidate()
+                await connectorCache(log).invalidate()
             }
             return savedPiece
         },
@@ -163,7 +163,7 @@ export const pieceMetadataService = (log: FastifyBaseLogger) => {
             ))
             const anyDeleted = results.some((result) => !isNil(result.affected) && result.affected > 0)
             if (anyDeleted) {
-                await pieceCache(log).invalidate()
+                await connectorCache(log).invalidate()
             }
         },
 
@@ -175,26 +175,26 @@ export const pieceMetadataService = (log: FastifyBaseLogger) => {
                     params: { entityType: 'piece', entityId: id },
                 })
             }
-            if (piece.pieceType !== PieceType.CUSTOM) {
+            if (piece.pieceType !== ConnectorType.CUSTOM) {
                 throw new ActivepiecesError({
                     code: ErrorCode.AUTHORIZATION,
                     params: { message: 'Only custom pieces can be deleted' },
                 })
             }
-            const flowsUsingPiece = await findFlowsUsingPiece({ pieceName: piece.name, platformId, log })
+            const flowsUsingPiece = await findFlowsUsingPiece({ connectorName: piece.name, platformId, log })
             if (flowsUsingPiece.length > 0) {
                 throw new ActivepiecesError({
                     code: ErrorCode.VALIDATION,
                     params: { message: buildPieceInUseMessage(flowsUsingPiece) },
                 })
             }
-            await pieceRepos().delete({ name: piece.name, platformId, pieceType: PieceType.CUSTOM })
-            await pieceCache(log).invalidate()
+            await pieceRepos().delete({ name: piece.name, platformId, pieceType: ConnectorType.CUSTOM })
+            await connectorCache(log).invalidate()
         },
     }
 }
 
-async function findFlowsUsingPiece({ pieceName, platformId, log }: FindFlowsUsingPieceParams): Promise<string[]> {
+async function findFlowsUsingPiece({ connectorName, platformId, log }: FindFlowsUsingPieceParams): Promise<string[]> {
     const projectIds = await projectService(log).getProjectIdsByPlatform(platformId)
     if (projectIds.length === 0) {
         return []
@@ -209,13 +209,13 @@ async function findFlowsUsingPiece({ pieceName, platformId, log }: FindFlowsUsin
     const candidates = await flowVersionRepo().createQueryBuilder('flow_version')
         .innerJoin('flow_version.flow', 'flow')
         .where('flow."projectId" IN (:...projectIds)', { projectIds })
-        .andWhere('flow_version.trigger::text LIKE :needle', { needle: `%"${pieceName}"%` })
+        .andWhere('flow_version.trigger::text LIKE :needle', { needle: `%"${connectorName}"%` })
         .andWhere(`(flow_version.id = flow."publishedVersionId" OR flow_version.id = (${latestVersionSubquery.getQuery()}))`)
         .getMany()
 
     const flowNamesById = new Map<string, string>()
     for (const flowVersion of candidates) {
-        if (!flowNamesById.has(flowVersion.flowId) && flowPieceUtil.getUsedPieces(flowVersion.trigger).includes(pieceName)) {
+        if (!flowNamesById.has(flowVersion.flowId) && flowPieceUtil.getUsedPieces(flowVersion.trigger).includes(connectorName)) {
             flowNamesById.set(flowVersion.flowId, flowVersion.displayName)
         }
     }
@@ -237,44 +237,44 @@ export const getPiecePackageWithoutArchive = async (
     log: FastifyBaseLogger,
     platformId: PlatformId | undefined,
     pkg: Omit<PublicPiecePackage, 'directoryPath' | 'pieceType' | 'packageType'> | Omit<PrivatePiecePackage, 'archiveId' | 'archive' | 'pieceType' | 'packageType'>,
-): Promise<PiecePackage> => {
-    const pieceMetadata = await pieceMetadataService(log).getOrThrow({
-        name: pkg.pieceName,
-        version: pkg.pieceVersion,
+): Promise<ConnectorPackage> => {
+    const connectorMetadata = await pieceMetadataService(log).getOrThrow({
+        name: pkg.connectorName,
+        version: pkg.connectorVersion,
         platformId,
     })
-    switch (pieceMetadata.packageType) {
+    switch (connectorMetadata.packageType) {
         case PackageType.ARCHIVE:
-            assertNotNullOrUndefined(pieceMetadata.platformId, 'platformId is required')
+            assertNotNullOrUndefined(connectorMetadata.platformId, 'platformId is required')
             return {
-                pieceName: pieceMetadata.name,
-                pieceVersion: pieceMetadata.version,
-                pieceType: pieceMetadata.pieceType,
-                packageType: pieceMetadata.packageType,
-                archiveId: pieceMetadata.archiveId!,
-                platformId: pieceMetadata.platformId,
+                connectorName: connectorMetadata.name,
+                connectorVersion: connectorMetadata.version,
+                pieceType: connectorMetadata.pieceType,
+                packageType: connectorMetadata.packageType,
+                archiveId: connectorMetadata.archiveId!,
+                platformId: connectorMetadata.platformId,
             }
         case PackageType.REGISTRY: {
-            const piecePlatformId = pieceMetadata.platformId
-            if (pieceMetadata.pieceType === PieceType.CUSTOM) {
+            const piecePlatformId = connectorMetadata.platformId
+            if (connectorMetadata.pieceType === ConnectorType.CUSTOM) {
                 assertNotNullOrUndefined(piecePlatformId, 'platformId is required')
                 return {
-                    pieceName: pieceMetadata.name,
-                    pieceVersion: pieceMetadata.version,
-                    packageType: pieceMetadata.packageType,
-                    pieceType: pieceMetadata.pieceType,
+                    connectorName: connectorMetadata.name,
+                    connectorVersion: connectorMetadata.version,
+                    packageType: connectorMetadata.packageType,
+                    pieceType: connectorMetadata.pieceType,
                     platformId: piecePlatformId,
                 }
             }
             return {
-                pieceName: pieceMetadata.name,
-                pieceVersion: pieceMetadata.version,
-                packageType: pieceMetadata.packageType,
-                pieceType: pieceMetadata.pieceType,
+                connectorName: connectorMetadata.name,
+                connectorVersion: connectorMetadata.version,
+                packageType: connectorMetadata.packageType,
+                pieceType: connectorMetadata.pieceType,
             }
         }
         default: {
-            throw new Error(`Unhandled packageType: ${(pieceMetadata as { packageType: string }).packageType}`)
+            throw new Error(`Unhandled packageType: ${(connectorMetadata as { packageType: string }).packageType}`)
         }
     }
 }
@@ -424,16 +424,16 @@ async function fetchLatestPieces({ platformId, locale = LocalesEnum.ENGLISH, log
     return lastVersionOfEachPiece(merged)
 }
 
-async function fetchPieceVersion({ pieceName, version, platformId, log }: FetchPieceVersionParams): Promise<PieceMetadataSchema | null> {
+async function fetchPieceVersion({ connectorName, version, platformId, log }: FetchPieceVersionParams): Promise<PieceMetadataSchema | null> {
     const devPieces = await loadDevPiecesIfEnabled(log)
-    const devPiece = devPieces.find((p) => p.name === pieceName && p.version === version)
+    const devPiece = devPieces.find((p) => p.name === connectorName && p.version === version)
     if (!isNil(devPiece)) {
         return devPiece
     }
 
     const foundPiece = await pieceRepos().findOne({
         where: {
-            name: pieceName,
+            name: connectorName,
             version,
             platformId: platformId ?? IsNull(),
         },
@@ -494,7 +494,7 @@ function dedupe<T>(key: string, fn: () => Promise<T>): Promise<T> {
 }
 
 function loadRegistry(log: FastifyBaseLogger): Promise<PieceRegistryEntry[]> {
-    return dedupe('registry-load', () => pieceCache(log).loadRegistry())
+    return dedupe('registry-load', () => connectorCache(log).loadRegistry())
 }
 
 function filterRegistry(registry: PieceRegistryEntry[], params: { release: string | undefined, platformId: string | undefined }): PieceRegistryEntry[] {
@@ -533,17 +533,17 @@ type DeleteParams = {
 }
 
 type FindFlowsUsingPieceParams = {
-    pieceName: string
+    connectorName: string
     platformId: string
     log: FastifyBaseLogger
 }
 
 type CreateParams = {
-    pieceMetadata: PieceMetadata
+    connectorMetadata: ConnectorMetadata
     platformId?: string
     projectId?: string
     packageType: PackageType
-    pieceType: PieceType
+    pieceType: ConnectorType
     archiveId?: string
     publishCacheRefresh?: boolean
 }
@@ -571,7 +571,7 @@ type FetchLatestPiecesParams = {
 }
 
 type FetchPieceVersionParams = {
-    pieceName: string
+    connectorName: string
     version: string
     platformId?: string
     log: FastifyBaseLogger

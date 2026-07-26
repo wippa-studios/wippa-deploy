@@ -37,16 +37,16 @@ const setupPlatformWithGlobalConnections = async () => {
 async function createGlobalConnection(
     token: string,
     params: {
-        pieceName: string
-        pieceVersion: string
+        connectorName: string
+        connectorVersion: string
         projectIds: string[]
         displayName?: string
     },
 ): Promise<{ id: string, externalId: string, projectIds: string[] }> {
     const body: UpsertGlobalConnectionRequestBody = {
         displayName: params.displayName ?? `conn-${apId()}`,
-        pieceName: params.pieceName,
-        pieceVersion: params.pieceVersion,
+        connectorName: params.connectorName,
+        connectorVersion: params.connectorVersion,
         projectIds: params.projectIds,
         scope: AppConnectionScope.PLATFORM,
         type: AppConnectionType.SECRET_TEXT,
@@ -85,18 +85,18 @@ describe('Platform Project Global Connections', () => {
             const { ctx, mockPieceMetadata } = await setupPlatformWithGlobalConnections()
 
             const conn1 = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
             const conn2 = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
             const connNotSelected = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
 
@@ -128,8 +128,8 @@ describe('Platform Project Global Connections', () => {
             const { ctx, mockPieceMetadata } = await setupPlatformWithGlobalConnections()
 
             const conn = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
 
@@ -173,13 +173,13 @@ describe('Platform Project Global Connections', () => {
             const { ctx, mockPieceMetadata } = await setupPlatformWithGlobalConnections()
 
             const conn1 = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
             const conn2 = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
 
@@ -214,8 +214,8 @@ describe('Platform Project Global Connections', () => {
             const { ctx, mockPieceMetadata } = await setupPlatformWithGlobalConnections()
 
             const conn = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
 
@@ -256,20 +256,20 @@ describe('Platform Project Global Connections', () => {
             const { ctx, mockPieceMetadata } = await setupPlatformWithGlobalConnections()
 
             const connA = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
                 displayName: 'Connection A',
             })
             const connB = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
                 displayName: 'Connection B',
             })
             const connC = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
                 displayName: 'Connection C',
             })
@@ -312,8 +312,8 @@ describe('Platform Project Global Connections', () => {
             const { ctx, mockPieceMetadata } = await setupPlatformWithGlobalConnections()
 
             const conn = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
 
@@ -351,8 +351,8 @@ describe('Platform Project Global Connections', () => {
 
             // Create a connection on platform2 with the same externalId pattern
             const connOnPlatform2 = await createGlobalConnection(platform2.ctx.token, {
-                pieceName: platform2.mockPieceMetadata.name,
-                pieceVersion: platform2.mockPieceMetadata.version,
+                connectorName: platform2.mockPieceMetadata.name,
+                connectorVersion: platform2.mockPieceMetadata.version,
                 projectIds: [platform2.ctx.project.id],
             })
 
@@ -378,8 +378,8 @@ describe('Platform Project Global Connections', () => {
             const { ctx, mockPieceMetadata } = await setupPlatformWithGlobalConnections()
 
             const conn = await createGlobalConnection(ctx.token, {
-                pieceName: mockPieceMetadata.name,
-                pieceVersion: mockPieceMetadata.version,
+                connectorName: mockPieceMetadata.name,
+                connectorVersion: mockPieceMetadata.version,
                 projectIds: [ctx.project.id],
             })
 

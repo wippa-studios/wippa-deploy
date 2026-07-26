@@ -2,11 +2,11 @@ import {
   createTrigger,
   TriggerStrategy,
   WebhookResponse,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { sendpulseAuth } from '../common/auth';
 import { sendpulseApiCall } from '../common/client';
 import { mailingListDropdown } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const newUnsubscriberTrigger = createTrigger({
   auth: sendpulseAuth,

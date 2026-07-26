@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 
 // Actions
 import { createContact } from './lib/actions/create-contact';
@@ -138,7 +138,7 @@ export const ninjapipeAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const ninjapipe = createPiece({
+export const ninjapipe = createConnector({
   displayName: 'NinjaPipe',
   description: 'NinjaPipe CRM integration with contacts, companies, deals, tasks (under projects), pipelines, products, budgets, projects, orders, lists, and Databin webhook delivery.',
   minimumSupportedRelease: '0.36.1',

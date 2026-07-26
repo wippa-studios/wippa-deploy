@@ -1,10 +1,10 @@
-import { PieceMetadataModel } from '@wippa/pieces-framework'
+import { PieceMetadataModel } from '@wippa/connectors-framework'
 import { AddPieceRequestBody, PrincipalType } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { securityAccess } from '../core/security/authorization/fastify-security'
 import { attachMultipartFieldsToBody } from '../helper/multipart-body'
-import { pieceInstallService } from './piece-install-service'
+import { connectorInstallService } from './piece-install-service'
 
 export const communityPiecesModule: FastifyPluginAsyncZod = async (app) => {
     await app.register(communityPiecesController, { prefix: '/v1/pieces' })
@@ -24,11 +24,11 @@ const communityPiecesController: FastifyPluginAsyncZod = async (app) => {
         },
         async (req, res): Promise<PieceMetadataModel> => {
             const platformId = req.principal.platform.id
-            const pieceMetadata = await pieceInstallService(req.log).installPiece(
+            const connectorMetadata = await connectorInstallService(req.log).installConnector(
                 platformId,
                 req.body,
             )
-            return res.code(StatusCodes.CREATED).send(pieceMetadata)
+            return res.code(StatusCodes.CREATED).send(connectorMetadata)
         },
     )
 }

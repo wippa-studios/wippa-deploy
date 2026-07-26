@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newSubmissionTrigger } from './lib/triggers/new-submission.trigger';
 
-export const formspark = createPiece({
+export const formspark = createConnector({
   displayName: 'Formspark',
   auth: PieceAuth.None(),
   categories: [PieceCategory.FORMS_AND_SURVEYS],

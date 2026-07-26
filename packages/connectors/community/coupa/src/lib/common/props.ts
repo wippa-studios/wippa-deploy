@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { CoupaClient } from './client';
 import { coupaAuth } from '../auth';
 import { CoupaModule, isRecord } from './utils';

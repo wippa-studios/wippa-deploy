@@ -19,7 +19,7 @@ function aiAction({ name, actionName, input }: { name: string, actionName: strin
         name,
         type: FlowActionType.PIECE,
         settings: {
-            pieceName: AI_PIECE_NAME,
+            connectorName: AI_PIECE_NAME,
             actionName,
             input: input ?? {},
         },

@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addPointsToCollection } from './lib/actions/add-points';
 import { deleteCollection } from './lib/actions/delete-collection';
 import { deletePoints } from './lib/actions/delete-points';
@@ -40,7 +40,7 @@ export const qdrantAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const qdrant = createPiece({
+export const qdrant = createConnector({
   displayName: 'Qdrant',
   description: 'Make any action on your qdrant vector database',
   auth: qdrantAuth,

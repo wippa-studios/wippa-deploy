@@ -111,15 +111,15 @@ const applyProjectPieceAccess = async ({ platformId, projectId, pieceSetKey, pie
         : await pieceSetRepo().findOneBy({ platformId, key: targetKey })
 
     if (!isNil(set)) {
-        await pieceSetService(log).assignProject({ pieceSet: set, projectId })
+        await pieceSetService(log).assignProject({ connectorSet: set, projectId })
         return
     }
 
     if (!isNil(targetKey)) {
-        log.warn({ platform: { id: platformId }, project: { id: projectId } }, `[managedAuthn] pieceSet key "${targetKey}" not found — falling back to default`)
+        log.warn({ platform: { id: platformId }, project: { id: projectId } }, `[managedAuthn] connectorSet key "${targetKey}" not found — falling back to default`)
     }
     const defaultSet = await pieceSetService(log).getOrCreateDefaultPieceSet(platformId)
-    await pieceSetService(log).assignProject({ pieceSet: defaultSet, projectId })
+    await pieceSetService(log).assignProject({ connectorSet: defaultSet, projectId })
 }
 
 const getOrCreateUser = async (

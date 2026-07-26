@@ -2,7 +2,7 @@ import { Permission, isNil } from '@wippa/core-utils';
 import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AppConnectionScope,
   AppConnectionStatus,
@@ -59,10 +59,10 @@ function ConnectionSelect(params: ConnectionSelectProps) {
   const [reconnectConnection, setReconnectConnection] =
     useState<AppConnectionWithoutSensitiveData | null>(null);
   //in case of reconnection we need to use the piece version from the connection
-  const { pieceModel: pieceWithCorrectVersion, isLoading: isLoadingPiece } =
+  const { connectorModel: pieceWithCorrectVersion, isLoading: isLoadingPiece } =
     piecesHooks.usePiece({
       name: params.piece.name,
-      version: reconnectConnection?.pieceVersion ?? params.piece.version,
+      version: reconnectConnection?.connectorVersion ?? params.piece.version,
     });
   const form = useFormContext<PieceAction | PieceTrigger>();
   const hasPermissionToCreateConnection = useAuthorization().checkAccess(
@@ -74,7 +74,7 @@ function ConnectionSelect(params: ConnectionSelectProps) {
     refetch,
   } = appConnectionsQueries.useAppConnections({
     request: {
-      pieceName: params.piece.name,
+      connectorName: params.piece.name,
       projectId: authenticationSession.getProjectId()!,
       limit: 1000,
     },

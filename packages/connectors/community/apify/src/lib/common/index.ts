@@ -8,7 +8,7 @@ import {
   WebhookCondition,
   WebhookEventType
 } from 'apify-client';
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { createHash } from 'crypto';
 import { apifyAuth } from '../..';
 

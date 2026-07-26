@@ -1,9 +1,9 @@
 import { apId } from '@wippa/core-utils'
-import { PieceType, PlatformRole, PrincipalType } from '@wippa/shared'
+import { ConnectorType, PlatformRole, PrincipalType } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
-import { pieceCache } from '../../../../src/app/pieces/metadata/piece-cache'
+import { connectorCache } from '../../../../src/app/pieces/metadata/piece-cache'
 import { generateMockToken } from '../../../helpers/auth'
 import { db } from '../../../helpers/db'
 import {
@@ -36,11 +36,11 @@ describe('Piece Metadata API', () => {
             // arrange
             const mockPieceMetadata = createMockPieceMetadata({
                 name: '@wippa/a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             await db.save('piece_metadata', mockPieceMetadata)
 
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const ctx = await createTestContext(app!, {
             })
@@ -59,12 +59,12 @@ describe('Piece Metadata API', () => {
             // arrange
             const mockPieceMetadata = createMockPieceMetadata({
                 name: '@wippa/a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
             })
             await db.save('piece_metadata', mockPieceMetadata)
 
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,
                 id: apId(),
@@ -126,24 +126,24 @@ describe('Piece Metadata API', () => {
             // arrange
             const mockPieceMetadataA = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 platformId: mockPlatform.id,
                 displayName: 'a',
             })
             const mockPieceMetadataB = createMockPieceMetadata({
                 name: 'b',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'b',
             })
             const mockPieceMetadataC = createMockPieceMetadata({
                 name: 'c',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 platformId: mockPlatform2.id,
                 displayName: 'c',
             })
             const mockPieceMetadataD = createMockPieceMetadata({
                 name: 'd',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 platformId: mockPlatform.id,
                 displayName: 'd',
             })
@@ -154,7 +154,7 @@ describe('Piece Metadata API', () => {
                 mockPieceMetadataD,
             ])
 
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.USER,
@@ -200,20 +200,20 @@ describe('Piece Metadata API', () => {
 
             const officialPieceA = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
                 version: '1.0.0',
             })
             const customPieceA = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.CUSTOM,
+                pieceType: ConnectorType.CUSTOM,
                 platformId: platformA.id,
                 displayName: 'a',
                 version: '2.0.0',
             })
             await db.save('piece_metadata', [officialPieceA, customPieceA])
 
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const tokenA = await generateMockToken({
                 type: PrincipalType.USER,
@@ -251,39 +251,39 @@ describe('Piece Metadata API', () => {
             expect(bodyA).toHaveLength(1)
             expect(bodyA?.[0].name).toBe('a')
             expect(bodyA?.[0].version).toBe('2.0.0')
-            expect(bodyA?.[0].pieceType).toBe(PieceType.CUSTOM)
+            expect(bodyA?.[0].pieceType).toBe(ConnectorType.CUSTOM)
 
             const bodyB = responseB?.json()
             expect(responseB?.statusCode).toBe(StatusCodes.OK)
             expect(bodyB).toHaveLength(1)
             expect(bodyB?.[0].name).toBe('a')
             expect(bodyB?.[0].version).toBe('1.0.0')
-            expect(bodyB?.[0].pieceType).toBe(PieceType.OFFICIAL)
+            expect(bodyB?.[0].pieceType).toBe(ConnectorType.OFFICIAL)
         })
 
         it('Should list correct version by piece name', async () => {
             // arrange
             const mockPieceMetadataA = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
                 version: '0.0.1',
             })
             const mockPieceMetadataB = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
                 version: '0.0.2',
             })
             const mockPieceMetadataC = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
                 version: '0.1.0',
             })
             const mockPieceMetadataD = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
                 version: '0.1.1',
             })
@@ -293,7 +293,7 @@ describe('Piece Metadata API', () => {
                 type: PrincipalType.UNKNOWN,
                 id: apId(),
             })
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             // act
             const exactVersionResponse = await app?.inject({
@@ -343,19 +343,19 @@ describe('Piece Metadata API', () => {
             // arrange
             const mockPieceMetadataA = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
                 version: '0.31.0',
             })
             const mockPieceMetadataB = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
                 version: '1.0.0',
             })
             await db.save('piece_metadata', [mockPieceMetadataA, mockPieceMetadataB])
 
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,
@@ -384,17 +384,17 @@ describe('Piece Metadata API', () => {
             // arrange
             const mockPieceMetadataA = createMockPieceMetadata({
                 name: 'a',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'a',
             })
             const mockPieceMetadataB = createMockPieceMetadata({
                 name: 'b',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 displayName: 'b',
             })
             await db.save('piece_metadata', [mockPieceMetadataA, mockPieceMetadataB])
 
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const testToken = await generateMockToken({
                 type: PrincipalType.UNKNOWN,

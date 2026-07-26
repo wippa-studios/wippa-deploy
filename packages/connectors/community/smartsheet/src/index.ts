@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { HttpMethod, HttpRequest, httpClient } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { HttpMethod, HttpRequest, httpClient } from '@wippa/connectors-common';
 
 // Actions
 import { addRowToSheet } from './lib/actions/add-row-to-sheet';
@@ -30,7 +30,7 @@ To obtain your Smartsheet access token:
 8. Copy the access token and paste it into the connection field.
 `;
 
-export const smartsheet = createPiece({
+export const smartsheet = createConnector({
 	displayName: 'Smartsheet',
 	description:
 		'Dynamic work execution platform for teams to plan, capture, manage, automate, and report on work at scale.',

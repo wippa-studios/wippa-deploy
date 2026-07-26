@@ -3,8 +3,8 @@ import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { listProjects } from './lib/actions/list-projects';
 import { getProjectHead } from './lib/actions/get-project-head';
 import { runPrompt } from './lib/actions/run-prompt';
@@ -34,7 +34,7 @@ export const prompthubAuth = PieceAuth.SecretText({
   },
 });
 
-export const prompthub = createPiece({
+export const prompthub = createConnector({
   displayName: 'PromptHub',
   description:
     'Integrate with PromptHub projects, retrieve heads, and run prompts.',

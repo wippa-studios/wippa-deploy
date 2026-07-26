@@ -1,4 +1,4 @@
-import { ContextVersion } from '@wippa/pieces-framework'
+import { ContextVersion } from '@wippa/connectors-framework'
 import { AppConnectionStatus, AppConnectionType, ConnectionExpiredError, ConnectionLoadingError, ConnectionNotFoundError, FetchError } from '@wippa/shared'
 import { createConnectionResolver } from '../../src/lib/piece-context/connection-resolver'
 

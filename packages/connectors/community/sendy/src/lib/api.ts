@@ -2,7 +2,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { SendyAuthType } from './auth';
 
 type KeyValuePair = { [key: string]: string | boolean | undefined };

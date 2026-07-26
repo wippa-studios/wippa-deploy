@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { STEP_NAME_REGEX } from '@wippa/core-utils'
-import { VersionType } from '@wippa/core-piece-types'
+import { VersionType } from '@wippa/core-connector-types'
 import { CodeActionSettings, LoopOnItemsActionSettings, PieceActionSettings, RouterActionSettings } from '../actions/action'
 import { PropertySettings } from '../properties'
 import { SampleDataSetting } from '../sample-data'
@@ -12,8 +12,8 @@ const pieceTriggerSettingsFields = {
     sampleData: SampleDataSetting.optional(),
     propertySettings: z.record(z.string(), PropertySettings),
     customLogoUrl: z.string().optional(),
-    pieceName: z.string(),
-    pieceVersion: VersionType,
+    connectorName: z.string(),
+    connectorVersion: VersionType,
     triggerName: z.string().optional(),
     input: z.record(z.string(), z.any()),
 }

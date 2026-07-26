@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { createConnector, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { createBucket } from './lib/actions/create-bucket';
 import { createPlan } from './lib/actions/create-plan';
 import { createTask } from './lib/actions/create-task';
@@ -14,10 +14,10 @@ import { microsoft365PlannerAuth } from './lib/common';
 import { newPlanCreated } from './lib/triggers/new-plan-created';
 import { newTaskAssignedToUser } from './lib/triggers/new-task-assigned-to-user';
 import { newTaskCreated } from './lib/triggers/new-task-created';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
 
-export const microsoft365Planner = createPiece({
+export const microsoft365Planner = createConnector({
   displayName: 'Microsoft 365 Planner',
   description:
     'Microsoft 365 Planner is part of the Microsoft 365 suite, offering lightweight task and bucket-based planning for teams. This integration supports creating plans, buckets, tasks, fetching them, deleting them, and custom API calls.',

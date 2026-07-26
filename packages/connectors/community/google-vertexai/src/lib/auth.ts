@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/connectors-framework';
 
 export const vertexAiAuth = PieceAuth.CustomAuth({
   description: `

@@ -1,5 +1,5 @@
-import { DropdownOption, Property } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+import { DropdownOption, Property } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 
 import { tallyAuth } from '../auth';
 import { tallyApiClient } from './client';

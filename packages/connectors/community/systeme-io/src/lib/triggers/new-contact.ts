@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { systemeIoAuth } from '../common/auth';
 import { systemeIoCommon } from '../common/client';
 import { randomBytes } from 'crypto';

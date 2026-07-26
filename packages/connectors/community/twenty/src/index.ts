@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { twentyAuth } from './lib/auth';
 import { createContact } from './lib/actions/create-contact';
 import { createCompany } from './lib/actions/create-company';
@@ -14,7 +14,7 @@ import { newCompany } from './lib/triggers/new-company';
 
 export { twentyAuth };
 
-export const twenty = createPiece({
+export const twenty = createConnector({
   displayName: 'Twenty',
   description: 'Open-source CRM platform.',
   auth: twentyAuth,

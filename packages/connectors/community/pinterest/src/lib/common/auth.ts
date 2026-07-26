@@ -1,7 +1,7 @@
 import {
   PieceAuth,
   OAuth2AuthorizationMethod,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const pinterestAuth = PieceAuth.OAuth2({
   description: 'Connect your Pinterest Business Account',

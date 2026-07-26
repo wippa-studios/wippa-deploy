@@ -1,18 +1,18 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { griptapeAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createAssistantRun } from './lib/actions/create-assistant-run';
 import { createStructureRun } from './lib/actions/create-structure-run';
 import { getAssistantRun } from './lib/actions/get-assistant-run';
 import { getStructureRun } from './lib/actions/get-structure-run';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 import { assistantRunCompletes } from './lib/triggers/assistant-run-completes';
 import { assistantRunSucceedes } from './lib/triggers/assistant-run-succeedes';
 import { structureRunCompletes } from './lib/triggers/structure-run-completes';
 import { structureRunSucceeds } from './lib/triggers/structure-run-succeeds';
 
-export const griptape = createPiece({
+export const griptape = createConnector({
   displayName: 'Griptape Cloud',
   auth: griptapeAuth,
   minimumSupportedRelease: '0.36.1',

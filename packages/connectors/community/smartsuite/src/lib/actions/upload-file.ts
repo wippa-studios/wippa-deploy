@@ -3,8 +3,8 @@ import {
 	PiecePropValueSchema,
 	Property,
 	createAction,
-} from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { smartsuiteAuth } from '../auth';
 import { smartsuiteCommon, transformRecordFields } from '../common/props';
 import { smartSuiteApiCall, TableStucture } from '../common';

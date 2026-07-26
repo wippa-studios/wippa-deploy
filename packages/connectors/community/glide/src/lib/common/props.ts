@@ -1,5 +1,5 @@
-import { Property } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 
 import { glideAuth } from '../auth';
 import { listGlideTables } from './client';

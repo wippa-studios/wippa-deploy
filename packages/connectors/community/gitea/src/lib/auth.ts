@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 
 export const giteaAuth = PieceAuth.OAuth2({
   description: 'To connect Gitea, create an OAuth2 application in your Gitea instance: **Settings → Applications → Manage OAuth2 Applications → Create Application**. Set the redirect URI to the one provided by Activepieces, then copy the Client ID and Client Secret here.',

@@ -1,17 +1,17 @@
 import { microsoftTeamsAuth } from '../auth';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import {
 	createTrigger,
 	AppConnectionValueForAuthProperty,
 	TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { microsoftTeamsCommon } from '../common';
 import { createGraphClient, withGraphRetry } from '../common/graph';
 import { PageCollection } from '@microsoft/microsoft-graph-client';
 import { ChatMessage } from '@microsoft/microsoft-graph-types';
 import dayjs from 'dayjs';
 
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 type Props = {
 	chatId: string;

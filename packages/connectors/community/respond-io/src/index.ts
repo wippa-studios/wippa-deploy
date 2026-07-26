@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { respondIoAuth } from './lib/common/auth';
 import { addCommentToConversation } from './lib/actions/add-comment-to-conversation';
 import { addTagToContact } from './lib/actions/add-tag-to-contact';
@@ -17,7 +17,7 @@ import { newContactTrigger } from './lib/triggers/new-contact';
 import { newIncomingMessageTrigger } from './lib/triggers/new-incoming-message';
 import { newOutgoingMessageTrigger } from './lib/triggers/new-outgoing-message';
 
-export const respondIo = createPiece({
+export const respondIo = createConnector({
   displayName: 'Respond.io',
   auth: respondIoAuth,
   minimumSupportedRelease: '0.36.1',

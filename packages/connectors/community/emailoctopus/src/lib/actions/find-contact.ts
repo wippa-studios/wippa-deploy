@@ -1,6 +1,6 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 // 👇 1. Remove `isAxiosError` and import `HttpError` instead
-import { HttpError, HttpMethod } from "@wippa/pieces-common";
+import { HttpError, HttpMethod } from "@wippa/connectors-common";
 import { createHash } from "crypto";
 import { emailOctopusAuth } from "../common/auth";
 import { EmailOctopusClient } from "../common/client";

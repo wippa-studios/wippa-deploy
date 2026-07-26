@@ -1,7 +1,7 @@
 import { staticListsDropdown } from '../common/props';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { hubspotAuth } from '../auth';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const hubSpotListsAddContactAction = createAction({
 	auth: hubspotAuth,

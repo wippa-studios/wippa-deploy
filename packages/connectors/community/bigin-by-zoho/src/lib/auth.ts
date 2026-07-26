@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 import { biginApiService } from './common/request';
 import { DATA_CENTER_REGIONS } from './common/constants';
 import { getZohoBiginAccountAuthorizationUrl } from './common/helpers';

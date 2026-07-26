@@ -3,7 +3,7 @@ import {
   ErrorHandlingOptionsParam,
   PieceMetadataModel,
   PieceMetadataModelSummary,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   FlowAction,
   FlowActionType,
@@ -66,15 +66,15 @@ export const stepUtils = {
   ): (string | undefined)[] {
     const isPieceStep =
       step.type === FlowActionType.PIECE || step.type === FlowTriggerType.PIECE;
-    const pieceName = isPieceStep ? step.settings.pieceName : undefined;
-    const pieceVersion = isPieceStep ? step.settings.pieceVersion : undefined;
+    const connectorName = isPieceStep ? step.settings.connectorName : undefined;
+    const connectorVersion = isPieceStep ? step.settings.connectorVersion : undefined;
     const customLogoUrl = isPieceStep
       ? 'customLogoUrl' in step
         ? (step.customLogoUrl as string)
         : undefined
       : undefined;
 
-    return [pieceName, pieceVersion, customLogoUrl, locale, step.type];
+    return [connectorName, connectorVersion, customLogoUrl, locale, step.type];
   },
   async getMetadata(
     step: FlowAction | FlowTrigger,
@@ -96,12 +96,12 @@ export const stepUtils = {
       case FlowActionType.PIECE:
       case FlowTriggerType.PIECE: {
         const piece = await piecesApi.get({
-          name: step.settings.pieceName,
-          version: step.settings.pieceVersion,
+          name: step.settings.connectorName,
+          version: step.settings.connectorVersion,
           locale,
         });
         const latestPieceVersion = await piecesApi.get({
-          name: step.settings.pieceName,
+          name: step.settings.connectorName,
           version: undefined,
           locale,
         });
@@ -140,8 +140,8 @@ export const stepUtils = {
       description: piece.description,
       type: type === 'action' ? FlowActionType.PIECE : FlowTriggerType.PIECE,
       pieceType: piece.pieceType,
-      pieceName: piece.name,
-      pieceVersion: piece.version,
+      connectorName: piece.name,
+      connectorVersion: piece.version,
       categories: piece.categories ?? [],
       packageType: piece.packageType,
       auth: piece.auth,
@@ -170,7 +170,7 @@ export function extractPieceNamesAndCoreMetadata(
       step.type === FlowActionType.PIECE ||
       step.type === FlowTriggerType.PIECE
     ) {
-      pieceNamesSet.add(step.settings.pieceName);
+      pieceNamesSet.add(step.settings.connectorName);
     } else if (!excludeCore) {
       const coreMeta =
         CORE_STEP_METADATA[step.type as keyof typeof CORE_STEP_METADATA];

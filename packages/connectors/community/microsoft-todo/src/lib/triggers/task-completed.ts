@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, Property, TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { getTaskListsDropdown, createTodoClient } from '../common';
 import { microsoftToDoAuth } from '../auth';
 import dayjs from 'dayjs';

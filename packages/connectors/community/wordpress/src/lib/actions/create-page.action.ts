@@ -1,11 +1,11 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { wordpressCommon } from '../common';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { wordpressAuth } from '../..';
 
 export const createWordPressPage = createAction({

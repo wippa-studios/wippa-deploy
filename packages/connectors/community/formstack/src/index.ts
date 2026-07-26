@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { formStackAuth } from './lib/common/auth';
 
 import { createSubmission } from './lib/actions/create-submission';
@@ -14,7 +14,7 @@ import { newSubmission } from './lib/triggers/new-submission';
 import { newForm } from './lib/triggers/new-form';
 import { BASE_URL } from './lib/common/client';
 
-export const formstack = createPiece({
+export const formstack = createConnector({
   displayName: 'Formstack',
   auth: formStackAuth,
   minimumSupportedRelease: '0.36.1',

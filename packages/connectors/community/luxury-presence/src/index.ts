@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { newLead } from './lib/triggers/new-lead';
 import { luxuryPresenceAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const luxuryPresence = createPiece({
+export const luxuryPresence = createConnector({
   displayName: 'Luxury Presence',
   auth: luxuryPresenceAuth,
   minimumSupportedRelease: '0.36.1',

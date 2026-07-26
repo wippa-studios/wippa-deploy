@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { bolnaaiAuth } from './lib/common/auth';
 import { makePhoneCall } from './lib/actions/make-phone-call';
 import { callCompletionReport } from './lib/triggers/call-completion-report';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const bolna = createPiece({
+export const bolna = createConnector({
   displayName: 'Bolna AI',
   auth: bolnaaiAuth,
   minimumSupportedRelease: '0.36.1',

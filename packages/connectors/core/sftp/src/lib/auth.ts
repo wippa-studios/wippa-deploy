@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 import Client from 'ssh2-sftp-client';
 import { Client as FTPClient } from 'basic-ftp';
 import { getClient, getProtocolBackwardCompatibility, endClient } from './common';

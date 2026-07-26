@@ -1,5 +1,5 @@
-import { TriggerStrategy } from '@wippa/pieces-framework';
-import { createTrigger, Property } from '@wippa/pieces-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
+import { createTrigger, Property } from '@wippa/connectors-framework';
 
 export const everyHourTrigger = createTrigger({
   name: 'every_hour',

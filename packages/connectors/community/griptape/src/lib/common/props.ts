@@ -1,6 +1,6 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { griptapeAuth } from './auth';
 
 export const assistantIdDropdown = Property.Dropdown({

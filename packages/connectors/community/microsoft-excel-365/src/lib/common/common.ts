@@ -1,12 +1,12 @@
-import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import {
 	httpClient,
 	HttpMethod,
 	AuthenticationType,
 	HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { getGraphBaseUrl } from './microsoft-cloud';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { excelAuth } from '../auth';
 import { getDrivePath } from './helpers';
 

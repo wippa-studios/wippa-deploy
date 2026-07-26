@@ -1,5 +1,5 @@
-import { BasicAuthPropertyValue, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpRequest, HttpMethod } from '@wippa/pieces-common';
+import { BasicAuthPropertyValue, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpRequest, HttpMethod } from '@wippa/connectors-common';
 import { trelloAuth } from '../..';
 
 export interface WebhookInformation {

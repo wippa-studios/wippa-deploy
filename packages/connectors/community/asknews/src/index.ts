@@ -1,17 +1,17 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { asknewsAuth } from './lib/common/auth';
 import { searchNews } from './lib/actions/search-news';
 import { generateNewsKnowledgeGraph } from './lib/actions/generate-news-knowledge-graph';
 import { getArticleById } from './lib/actions/get-article-by-id';
 import { asknewsChatCompletion } from './lib/actions/asknews-chat-completion';
 import { searchStories } from './lib/actions/search-stories';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { createANewsletter } from './lib/actions/create-a-newsletter';
 import { updateANewsletter } from './lib/actions/update-a-newsletter';
 import { alertForQuery } from './lib/triggers/alert-for-query';
 
-export const asknews = createPiece({
+export const asknews = createConnector({
   displayName: 'AskNews',
   auth: asknewsAuth,
   minimumSupportedRelease: '0.36.1',

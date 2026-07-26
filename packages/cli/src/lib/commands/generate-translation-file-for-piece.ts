@@ -5,7 +5,7 @@ import { buildPackage, findPiece, findPieces } from '../utils/piece-utils';
 import { makeFolderRecursive, readPackageJson } from '../utils/files';
 import { join } from 'node:path';
 import { exec } from '../utils/exec';
-import { pieceTranslation } from '@wippa/pieces-framework';
+import { pieceTranslation } from '@wippa/connectors-framework';
 import { MAX_KEY_LENGTH_FOR_CORWDIN } from '@wippa/shared';
 
 const findPieceInModule= async (pieceOutputFile: string) => {
@@ -64,8 +64,8 @@ const generateTranslationFileFromPiece = (piece: Record<string, unknown>) => { c
 
 
 
-const generateTranslationFile = async (pieceName: string) => {
-  const pieceRoot = await findPiece(pieceName)
+const generateTranslationFile = async (connectorName: string) => {
+  const pieceRoot = await findPiece(connectorName)
   const packageJson = await readPackageJson(pieceRoot)
   await buildPackage(packageJson.name)
   try{
@@ -77,16 +77,16 @@ const generateTranslationFile = async (pieceName: string) => {
     await writeFile(join(i18nFolder, 'translation.json'), JSON.stringify(i18n, null, 2));
     console.log(chalk.yellow('✨'), `Translation file for piece created in ${i18nFolder}`);
   } catch (error) {
-    console.error(chalk.red('❌'), `Error generating translation file for piece ${pieceName}, make sure you built the piece`,error);
+    console.error(chalk.red('❌'), `Error generating translation file for piece ${connectorName}, make sure you built the piece`,error);
   }
 };
 
 
 export const generateTranslationFileForPieceCommand = new Command('generate-translation-file')
   .description('Generate i18n for a piece')
-  .argument('<pieceName>', 'The name of the piece to generate i18n for')
-  .action(async (pieceName: string) => {
-    await generateTranslationFile(pieceName);
+  .argument('<connectorName>', 'The name of the piece to generate i18n for')
+  .action(async (connectorName: string) => {
+    await generateTranslationFile(connectorName);
   });
   export const generateTranslationFileForAllPiecesCommand = new Command('generate-translation-file-for-all-pieces')
   .description('Generate i18n for all pieces')

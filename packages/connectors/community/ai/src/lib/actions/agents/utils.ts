@@ -1,7 +1,7 @@
-import { isNil, SeekPage, PopulatedFlowSummary } from '@wippa/pieces-framework';
-import { AgentOutputField, AgentOutputFieldType, TASK_COMPLETION_TOOL_NAME, PopulatedFlow, McpTrigger, ExecuteToolResponse, ExecutionToolStatus, McpProperty, McpPropertyType, AgentFlowTool, mcpToolNameUtils, RAW_PAYLOAD_HEADER } from '@wippa/pieces-framework';
+import { isNil, SeekPage, PopulatedFlowSummary } from '@wippa/connectors-framework';
+import { AgentOutputField, AgentOutputFieldType, TASK_COMPLETION_TOOL_NAME, PopulatedFlow, McpTrigger, ExecuteToolResponse, ExecutionToolStatus, McpProperty, McpPropertyType, AgentFlowTool, mcpToolNameUtils, RAW_PAYLOAD_HEADER } from '@wippa/connectors-framework';
 import { z, ZodObject } from 'zod';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { Tool } from 'ai';
 
 export const agentUtils = {

@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { calculateAverage } from './lib/actions/calculate-average';
 import { calculateSum } from './lib/actions/calculate-sum';
 import { countUniques } from './lib/actions/count-uniques';
 import { getMinMax } from './lib/actions/get-min-max';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const dataSummarizer = createPiece({
+export const dataSummarizer = createConnector({
   displayName: 'Data Summarizer',
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.30.0',

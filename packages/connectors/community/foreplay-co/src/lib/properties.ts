@@ -1,6 +1,6 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { foreplayCoApiCall } from './common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { foreplayCoAuth } from '..';
 
 // Common dropdown options (keeping existing functionality)

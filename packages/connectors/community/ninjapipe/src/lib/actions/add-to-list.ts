@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { ninjapipeAuth } from '../../';
 import { ninjapipeApiCall, flattenCustomFields, getAuth, ninjapipeCommon } from '../common';
 

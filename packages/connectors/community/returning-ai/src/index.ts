@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { replyMessage } from './lib/actions/reply-message';
 import { sendMessage } from './lib/actions/send-message';
 import { reactMessage } from './lib/actions/react-message';
 import { returningAiAuth } from './lib/auth';
 
-export const returningAi = createPiece({
+export const returningAi = createConnector({
   displayName: 'Returning AI',
   auth: returningAiAuth,
   minimumSupportedRelease: '0.36.1',

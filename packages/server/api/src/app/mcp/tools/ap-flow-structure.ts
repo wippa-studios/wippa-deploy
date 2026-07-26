@@ -208,7 +208,7 @@ function formatFlowStructure(
         if (step.relationship === 'trigger') {
             let triggerDetail = ''
             if (fullStep && fullStep.type === FlowTriggerType.PIECE) {
-                triggerDetail = ` (piece: ${fullStep.settings.pieceName}, trigger: ${fullStep.settings.triggerName ?? 'not set'})`
+                triggerDetail = ` (piece: ${fullStep.settings.connectorName}, trigger: ${fullStep.settings.triggerName ?? 'not set'})`
             }
             lines.push(`- [TRIGGER] ${step.name} | ${step.type} | "${step.displayName}"${triggerDetail} | parent: — | ${step.configStatus}${sampleLabel}${skipLabel}${canvasLabel}`)
             if (fullStep) {
@@ -221,8 +221,8 @@ function formatFlowStructure(
 
         let stepDetail = ''
         if (step.type === FlowActionType.PIECE) {
-            const s = fullStep?.settings as { pieceName?: string, actionName?: string } | undefined
-            if (s?.pieceName) stepDetail = ` (piece: ${s.pieceName}, action: ${s.actionName ?? 'not set'})`
+            const s = fullStep?.settings as { connectorName?: string, actionName?: string } | undefined
+            if (s?.connectorName) stepDetail = ` (piece: ${s.connectorName}, action: ${s.actionName ?? 'not set'})`
         }
 
         lines.push(`- ${step.name} | ${step.type} | "${step.displayName}"${stepDetail} | parent: ${step.parentName} | ${rel} | ${step.configStatus}${sampleLabel}${skipLabel}${canvasLabel}`)

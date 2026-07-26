@@ -3,7 +3,7 @@ import {
   HttpMethod,
   AuthenticationType,
   HttpResponse,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { marked } from 'marked';
 
 export async function getRoomId(

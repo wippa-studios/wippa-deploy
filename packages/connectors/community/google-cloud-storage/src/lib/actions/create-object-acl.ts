@@ -2,7 +2,7 @@ import {
   createAction,
   Property,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { googleCloudStorageAuth } from '../common/auth';
 import { gcsCommon } from '../common/client';
 import {
@@ -12,7 +12,7 @@ import {
   objectAclRoleProperty,
   projectIdProperty,
 } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const createObjectAcl = createAction({
   auth: googleCloudStorageAuth,

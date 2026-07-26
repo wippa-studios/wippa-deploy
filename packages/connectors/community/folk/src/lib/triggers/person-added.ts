@@ -2,12 +2,12 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpRequest,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { folkAuth } from '../common/auth';
 import { folkClient } from '../common/client';
 import { folkProps } from '../common/props';

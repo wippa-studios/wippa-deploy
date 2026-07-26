@@ -1,10 +1,10 @@
 import { googleDocsAuth, createGoogleClient } from '../auth';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import {
 	AppConnectionValueForAuthProperty,
 	createTrigger,
 	TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { folderIdProp } from '../common/props';
 import { newDocumentTriggerOutputSchema } from '../output-schemas';
 import dayjs from 'dayjs';

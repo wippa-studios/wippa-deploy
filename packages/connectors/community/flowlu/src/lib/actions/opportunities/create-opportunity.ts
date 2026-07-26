@@ -2,7 +2,7 @@ import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { flowluAuth } from '../../auth';
 import { makeClient } from '../../common';
 import { flowluProps } from '../../common/props';

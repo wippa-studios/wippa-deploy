@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { descriptAgentEditAction } from './lib/actions/agent-edit';
 import { descriptGetJobStatusAction } from './lib/actions/get-job-status';
 import { descriptGetProjectAction } from './lib/actions/get-project';
@@ -12,7 +12,7 @@ import { descriptJobCompletedTrigger } from './lib/triggers/job-completed';
 
 export { descriptAuth };
 
-export const descript = createPiece({
+export const descript = createConnector({
   displayName: 'Descript',
   description:
     'AI-powered video and podcast editor. Import media, run AI edits with Underlord, and publish.',

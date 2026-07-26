@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { enrichlayerApiCall } from './common/client';
 import { ENDPOINTS } from './common/constants';
 

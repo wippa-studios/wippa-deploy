@@ -3,12 +3,12 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { dynamicsCRMAuth } from '../auth';
 import { getBaseUrl } from '../../';
 import { DynamicsCRMClient } from './client';

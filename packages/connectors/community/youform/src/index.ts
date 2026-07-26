@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { youformAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newSubmissionTrigger } from './lib/triggers/new-form-submission';
 
-export const youform = createPiece({
+export const youform = createConnector({
   displayName: 'Youform',
   auth: youformAuth,
   minimumSupportedRelease: '0.36.1',

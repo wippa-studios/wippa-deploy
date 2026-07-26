@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addGreetAction } from './lib/actions/add-greet';
 import { bonjoroAuth } from './lib/auth';
 
-export const bonjoro = createPiece({
+export const bonjoro = createConnector({
   displayName: 'Bonjoro',
   description: 'Send personal video messages to delight customers',
   auth: bonjoroAuth,

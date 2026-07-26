@@ -5,9 +5,9 @@ import {
 } from '@wippa/core-utils';
 import {
   PieceAuthProperty,
-  PiecePropertyMap,
+  ConnectorPropertyMap,
   piecePropertiesUtils,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   FlowAction,
   FlowActionType,
@@ -43,9 +43,9 @@ const defaultCode = `export const code = async (inputs) => {
 };`;
 
 const removeHiddenActions = (
-  pieceMetadata: PieceStepMetadataWithSuggestions,
+  connectorMetadata: PieceStepMetadataWithSuggestions,
 ) => {
-  const actions = Object.values(pieceMetadata.suggestedActions ?? {});
+  const actions = Object.values(connectorMetadata.suggestedActions ?? {});
   return actions;
 };
 
@@ -65,7 +65,7 @@ const isPieceStepInputValid = ({
   input,
   requireAuth,
 }: {
-  props: PiecePropertyMap;
+  props: ConnectorPropertyMap;
   auth: PieceAuthProperty | PieceAuthProperty[] | undefined;
   input: Record<string, unknown>;
   requireAuth: boolean;
@@ -93,7 +93,7 @@ const isStepInitiallyValid = (
       const input = overridingInput ?? getInitalStepInput(pieceSelectorItem);
       return isPieceStepInputValid({
         props: pieceSelectorItem.actionOrTrigger.props,
-        auth: pieceSelectorItem.pieceMetadata.auth,
+        auth: pieceSelectorItem.connectorMetadata.auth,
         input,
         requireAuth: pieceSelectorItem.actionOrTrigger.requireAuth,
       });
@@ -239,9 +239,9 @@ const getDefaultStepValues = ({
         {
           type: FlowActionType.PIECE,
           settings: overrideDefaultSettings ?? {
-            pieceName: pieceSelectorItem.pieceMetadata.pieceName,
+            connectorName: pieceSelectorItem.connectorMetadata.connectorName,
             actionName: pieceSelectorItem.actionOrTrigger.name,
-            pieceVersion: pieceSelectorItem.pieceMetadata.pieceVersion,
+            connectorVersion: pieceSelectorItem.connectorMetadata.connectorVersion,
             input,
             errorHandlingOptions,
             propertySettings: Object.fromEntries(
@@ -268,9 +268,9 @@ const getDefaultStepValues = ({
         {
           type: FlowTriggerType.PIECE,
           settings: overrideDefaultSettings ?? {
-            pieceName: pieceSelectorItem.pieceMetadata.pieceName,
+            connectorName: pieceSelectorItem.connectorMetadata.connectorName,
             triggerName: pieceSelectorItem.actionOrTrigger.name,
-            pieceVersion: pieceSelectorItem.pieceMetadata.pieceVersion,
+            connectorVersion: pieceSelectorItem.connectorMetadata.connectorVersion,
             input,
             propertySettings: Object.fromEntries(
               Object.entries(input).map(([key]) => [
@@ -345,13 +345,13 @@ export const PIECE_SELECTOR_ELEMENTS_HEIGHTS = {
   CATEGORY_ITEM_HEIGHT,
 };
 
-const isMcpToolTrigger = (pieceName: string, triggerName: string) => {
-  return pieceName === '@wippa/piece-mcp' && triggerName === 'mcp_tool';
+const isMcpToolTrigger = (connectorName: string, triggerName: string) => {
+  return connectorName === '@wippa/connector-mcp' && triggerName === 'mcp_tool';
 };
 
-const isChatTrigger = (pieceName: string, triggerName: string) => {
+const isChatTrigger = (connectorName: string, triggerName: string) => {
   return (
-    pieceName === '@wippa/piece-forms' && triggerName === 'chat_submission'
+    connectorName === '@wippa/connector-forms' && triggerName === 'chat_submission'
   );
 };
 

@@ -1,15 +1,15 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendTransactionalEmail } from './lib/actions/send-email';
 import { trackEvent } from './lib/actions/track-event';
 import { getContacts } from './lib/actions/get-contacts';
 import { getContact } from './lib/actions/get-contact';
 import { PLUNK_BASE_URL, plunkAuth } from './lib/auth';
 
-export const plunk = createPiece({
+export const plunk = createConnector({
   displayName: 'Plunk',
   description:
     'Open-source email platform for transactional emails, marketing campaigns, and contact management.',

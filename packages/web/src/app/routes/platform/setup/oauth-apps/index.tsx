@@ -48,7 +48,7 @@ export default function OAuthAppsPage() {
       <Card className="p-4">
         <DataTable
           columns={[
-            { accessorKey: 'pieceName', header: t('Connector') },
+            { accessorKey: 'connectorName', header: t('Connector') },
             { accessorKey: 'clientId', header: t('Client ID') },
             {
               id: 'actions',
@@ -72,14 +72,14 @@ export default function OAuthAppsPage() {
 
 function AddOAuthAppDialog({ onSuccess }: { onSuccess: () => void }) {
   const [open, setOpen] = useState(false);
-  const [pieceName, setPieceName] = useState('');
+  const [connectorName, setPieceName] = useState('');
   const [clientId, setClientId] = useState('');
   const [clientSecret, setClientSecret] = useState('');
 
   const upsertMutation = useMutation({
     mutationFn: () =>
       oauthAppsApi.upsert({
-        pieceName,
+        connectorName,
         clientId,
         clientSecret,
       }),
@@ -107,7 +107,7 @@ function AddOAuthAppDialog({ onSuccess }: { onSuccess: () => void }) {
           <div>
             <Label>{t('Connector Name')}</Label>
             <Input
-              value={pieceName}
+              value={connectorName}
               onChange={(e) => setPieceName(e.target.value)}
               placeholder="@wippa/connector-slack"
             />
@@ -127,7 +127,7 @@ function AddOAuthAppDialog({ onSuccess }: { onSuccess: () => void }) {
               type="password"
             />
           </div>
-          <Button onClick={() => upsertMutation.mutate()} disabled={!pieceName || !clientId}>
+          <Button onClick={() => upsertMutation.mutate()} disabled={!connectorName || !clientId}>
             {t('Save')}
           </Button>
         </div>

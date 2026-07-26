@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { identifyUser } from "./lib/actions/identify-user";
 
 export const segmentAuth = PieceAuth.SecretText({
@@ -9,7 +9,7 @@ export const segmentAuth = PieceAuth.SecretText({
 });
 
 
-export const segment = createPiece({
+export const segment = createConnector({
   displayName: "Segment",
   auth: segmentAuth,
   minimumSupportedRelease: '0.30.0',

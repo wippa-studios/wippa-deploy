@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, FilesService, ServerContext, Store } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, FilesService, ServerContext, Store } from '@wippa/connectors-framework';
 import { isNil } from '@wippa/core-utils';
 
 

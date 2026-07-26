@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { simplybookAuth, makeJsonRpcCall, SimplybookAuth, clientDropdown, serviceDropdown, providerDropdown } from '../common';
 
 export const findBooking = createAction({

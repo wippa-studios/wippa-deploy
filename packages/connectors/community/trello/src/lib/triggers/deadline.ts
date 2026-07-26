@@ -1,6 +1,6 @@
 import { trelloAuth } from '../..';
-import { TriggerStrategy, createTrigger, PiecePropValueSchema, Property, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { TriggerStrategy, createTrigger, PiecePropValueSchema, Property, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 import { trelloCommon, getCardsInBoard, getCardsInList } from '../common';
 

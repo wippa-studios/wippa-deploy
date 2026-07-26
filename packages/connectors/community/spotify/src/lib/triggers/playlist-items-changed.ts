@@ -2,7 +2,7 @@ import {
   createTrigger,
   StoreScope,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { spotifyCommon, makeClient } from '../common';
 import { createHash } from 'crypto';
 

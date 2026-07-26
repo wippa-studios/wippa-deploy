@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { smartSuiteApiCall } from './common';
 
 export const smartsuiteAuth = PieceAuth.CustomAuth({

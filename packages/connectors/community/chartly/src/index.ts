@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { chartlyAuth } from "./lib/common/auth";
 import { createChartAction } from "./lib/actions/create-chart";
 import { getChartAction } from "./lib/actions/get-chart";
 
-export const chartly = createPiece({
+export const chartly = createConnector({
   displayName: "Chartly",
   description: "Instant chart images. Zero servers. Transform any Chart.js configuration into cached PNG or SVG images via a simple REST API.",
   auth: chartlyAuth,

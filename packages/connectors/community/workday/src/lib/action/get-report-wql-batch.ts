@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { workdayAuth } from '../auth';
 import { workdayWqlRequestAll } from '../common';
 import { flattenRecord } from '../common/fields';

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { searchCompanies } from "./lib/actions/companies/search";
 import { enrichCompanies } from "./lib/actions/companies/enrich";
 
@@ -9,7 +9,7 @@ export const lushaAuth = PieceAuth.SecretText({
   description: 'Please enter the API Key obtained from Lusha.',
 });
 
-export const lusha = createPiece({
+export const lusha = createConnector({
   displayName: "Lusha",
   auth: lushaAuth,
   minimumSupportedRelease: '0.36.1',

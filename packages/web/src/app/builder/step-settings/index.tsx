@@ -20,7 +20,7 @@ import {
   stepsHooks,
   pieceSelectorUtils,
   formUtils,
-  PieceIcon,
+  ConnectorIcon,
   PieceStepMetadata,
 } from '@/features/pieces';
 import { projectCollectionUtils } from '@/features/projects';
@@ -47,7 +47,7 @@ import { useStepSettingsContext } from './step-settings-context';
 import { UpdatePieceVersionDialog } from './update-piece-version-dialog/update-piece-version-dialog';
 
 const StepSettingsContainer = () => {
-  const { selectedStep, pieceModel, formSchema } = useStepSettingsContext();
+  const { selectedStep, connectorModel, formSchema } = useStepSettingsContext();
   const { project } = projectCollectionUtils.useCurrentProject();
   const [
     readonly,
@@ -103,7 +103,7 @@ const StepSettingsContainer = () => {
       cleanedNewValues.valid = valid;
       if (
         cleanedNewValues.type === FlowTriggerType.EMPTY ||
-        (isNil(pieceModel) &&
+        (isNil(connectorModel) &&
           (cleanedNewValues.type === FlowActionType.PIECE ||
             cleanedNewValues.type === FlowTriggerType.PIECE))
       ) {
@@ -145,7 +145,7 @@ const StepSettingsContainer = () => {
   const isManualTrigger =
     modifiedStep.type === FlowTriggerType.PIECE &&
     pieceSelectorUtils.isManualTrigger({
-      pieceName: modifiedStep.settings.pieceName,
+      connectorName: modifiedStep.settings.connectorName,
       triggerName: modifiedStep.settings.triggerName ?? '',
     });
   const isEmptyTrigger = modifiedStep.type === FlowTriggerType.EMPTY;
@@ -162,7 +162,7 @@ const StepSettingsContainer = () => {
     ) && !isNil(stepMetadata);
 
   const runAgentStep =
-    modifiedStep.settings.pieceName === '@wippa/piece-ai' &&
+    modifiedStep.settings.connectorName === '@wippa/connector-ai' &&
     modifiedStep.settings.actionName === 'run_agent';
 
   useEffect(() => {
@@ -248,7 +248,7 @@ const StepSettingsContainer = () => {
             onClose={() => exitStepSettings()}
             leadingIcon={
               stepMetadata ? (
-                <PieceIcon
+                <ConnectorIcon
                   logoUrl={stepMetadata.logoUrl}
                   displayName={stepMetadata.displayName}
                   showTooltip={false}
@@ -260,12 +260,12 @@ const StepSettingsContainer = () => {
             actions={
               <div className="flex items-center gap-1">
                 {isPieceMetadata(stepMetadata) &&
-                  stepMetadata.pieceVersion &&
+                  stepMetadata.connectorVersion &&
                   (modifiedStep.type === FlowActionType.PIECE ||
                     modifiedStep.type === FlowTriggerType.PIECE) && (
                     <PieceVersionInHeader
                       step={modifiedStep}
-                      pieceVersion={stepMetadata.pieceVersion}
+                      connectorVersion={stepMetadata.connectorVersion}
                       readonly={readonly}
                     />
                   )}
@@ -314,9 +314,9 @@ const StepSettingsContainer = () => {
                 stepMetadata?.actionOrTriggerOrAgentDescription ||
                 stepMetadata?.description
               }
-              pieceVersion={
+              connectorVersion={
                 isPieceMetadata(stepMetadata)
-                  ? stepMetadata.pieceVersion
+                  ? stepMetadata.connectorVersion
                   : undefined
               }
             ></EditableStepName>
@@ -422,16 +422,16 @@ const StepSettingsLayout = ({
 
 type PieceVersionInHeaderProps = {
   step: FlowAction | FlowTrigger;
-  pieceVersion: string;
+  connectorVersion: string;
   readonly: boolean;
 };
 
 const PieceVersionInHeader = ({
   step,
-  pieceVersion,
+  connectorVersion,
   readonly,
 }: PieceVersionInHeaderProps) => {
-  const exactVersion = flowPieceUtil.getExactVersion(pieceVersion);
+  const exactVersion = flowPieceUtil.getExactVersion(connectorVersion);
   const showSwitcher =
     !readonly &&
     (step.type === FlowActionType.PIECE || step.type === FlowTriggerType.PIECE);

@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { teamhoodAuth, TeamhoodAuth } from './lib/common';
 import { createItemAction } from './lib/actions/create-item';
 import { updateItemAction } from './lib/actions/update-item';
@@ -15,7 +15,7 @@ import { completedItemTrigger } from './lib/triggers/completed-item';
 
 export { teamhoodAuth } from './lib/common';
 
-export const teamhood = createPiece({
+export const teamhood = createConnector({
   displayName: 'Teamhood',
   description:
     'Visual project management for boards, tasks, and timelogs in Teamhood.',

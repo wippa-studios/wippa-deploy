@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { smtpCommon } from './lib/common';
 
@@ -82,7 +82,7 @@ export const smtpAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const smtp = createPiece({
+export const smtp = createConnector({
   displayName: 'SMTP',
   description: 'Send emails using Simple Mail Transfer Protocol',
   minimumSupportedRelease: '0.30.0',

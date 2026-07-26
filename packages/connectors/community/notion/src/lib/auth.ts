@@ -2,11 +2,11 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   OAuth2AuthorizationMethod,
   PieceAuth,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const notionOAuth2Auth = PieceAuth.OAuth2({
   authUrl: 'https://api.notion.com/v1/oauth/authorize',

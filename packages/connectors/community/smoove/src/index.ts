@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { smooveAuth } from "./lib/common/auth";
 import { addOrUpdateSubscriber } from "./lib/actions/add-or-update-subscriber";
 import { createAList } from "./lib/actions/create-a-list";
@@ -9,9 +9,9 @@ import { newListCreated } from "./lib/triggers/new-list-created";
 import { newSubscriber } from "./lib/triggers/new-subscriber";
 import { newFormCreated } from "./lib/triggers/new-form-created";
 import { newLeadSubmitted } from "./lib/triggers/new-lead-submitted";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const smoove = createPiece({
+export const smoove = createConnector({
   displayName: "Smoove",
   auth: smooveAuth,
   description: "Smoove is a platform for creating and managing your email list and sending emails to your subscribers.",

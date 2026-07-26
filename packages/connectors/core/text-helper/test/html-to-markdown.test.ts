@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { htmlToMarkdown } from '../src/lib/actions/html-to-markdown';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('htmlToMarkdown action', () => {
   test('converts basic HTML to markdown', async () => {

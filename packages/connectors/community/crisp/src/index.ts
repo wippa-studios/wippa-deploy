@@ -1,7 +1,7 @@
-import { createPiece, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { createConnector, PiecePropValueSchema } from '@wippa/connectors-framework';
 import { crispAuth } from './lib/common/auth';
 import { createConversationAction } from './lib/actions/create-conversation';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 import { addNoteToConversationAction } from './lib/actions/add-note-to-conversation';
 import { createOrUpdateContactAction } from './lib/actions/create-or-update-contact';
@@ -10,9 +10,9 @@ import { updateConversationStateAction } from './lib/actions/update-conversation
 import { findConversationAction } from './lib/actions/find-conversation';
 import { newContactTrigger } from './lib/triggers/new-contact';
 import { newConversationTrigger } from './lib/triggers/new-conversation';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const crisp = createPiece({
+export const crisp = createConnector({
 	displayName: 'Crisp',
 	auth: crispAuth,
 	minimumSupportedRelease: '0.36.1',

@@ -1,10 +1,10 @@
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { baremetricsApiCall } from './client';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 const BAREMETRICS_SCOPES = [
   'read',

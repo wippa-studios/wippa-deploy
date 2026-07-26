@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/connectors-framework';
 
 import { moxieCRMAuth } from '../auth';
 import { MoxieCRMClient } from './client';

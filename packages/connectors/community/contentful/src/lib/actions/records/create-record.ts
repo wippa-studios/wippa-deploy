@@ -2,7 +2,7 @@ import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { ContentfulAuth, PropertyKeys, makeClient } from '../../common';
 import { ContentfulProperty } from '../../properties';
 import { FieldProcessors } from '../../properties/processors';

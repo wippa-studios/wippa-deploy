@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { SignNowAuthValue, getSignNowBearerToken } from './auth';
 
 export async function getUserId(token: string): Promise<string> {

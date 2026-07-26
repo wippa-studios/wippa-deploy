@@ -2,11 +2,11 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { getLists } from './api';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export type SendyAuthType = AppConnectionValueForAuthProperty<typeof sendyAuth>;
 

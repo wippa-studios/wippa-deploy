@@ -1,9 +1,9 @@
 import { setAtPath } from '@wippa/core-utils';
 import {
   PieceMetadataModel,
-  PiecePropertyMap,
+  ConnectorPropertyMap,
   piecePropertiesUtils,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { FlowAction, FlowTrigger, PropertyExecutionType } from '@wippa/shared';
 import {
   createContext,
@@ -36,12 +36,12 @@ const createUpdatedSchemaKey = (propertyKey: string) => {
 
 export type StepSettingsContextState = {
   selectedStep: FlowAction | FlowTrigger;
-  pieceModel: PieceMetadataModel | undefined;
+  connectorModel: PieceMetadataModel | undefined;
   pieceModelNotFound: boolean;
   formSchema: ZodObject<any>;
-  updateFormSchema: (key: string, newFieldSchema: PiecePropertyMap) => void;
+  updateFormSchema: (key: string, newFieldSchema: ConnectorPropertyMap) => void;
   updatePropertySettingsSchema: (
-    schema: PiecePropertyMap,
+    schema: ConnectorPropertyMap,
     propertyName: string,
     form: UseFormReturn,
   ) => void;
@@ -49,7 +49,7 @@ export type StepSettingsContextState = {
 
 export type StepSettingsProviderProps = {
   selectedStep: FlowAction | FlowTrigger;
-  pieceModel: PieceMetadataModel | undefined;
+  connectorModel: PieceMetadataModel | undefined;
   pieceModelNotFound: boolean;
   children: ReactNode;
 };
@@ -60,7 +60,7 @@ const StepSettingsContext = createContext<StepSettingsContextState | undefined>(
 
 export const StepSettingsProvider = ({
   selectedStep,
-  pieceModel,
+  connectorModel,
   pieceModelNotFound,
   children,
 }: StepSettingsProviderProps) => {
@@ -73,14 +73,14 @@ export const StepSettingsProvider = ({
     const schema = formUtils.buildPieceSchema(
       selectedStep.type,
       selectedStep.settings.actionName ?? selectedStep.settings.triggerName,
-      pieceModel ?? null,
+      connectorModel ?? null,
     );
     formSchemaInitializedRef.current = true;
     setFormSchema(schema as ZodObject<any>);
   }
 
   const updateFormSchema = useCallback(
-    (key: string, newFieldPropertyMap: PiecePropertyMap) => {
+    (key: string, newFieldPropertyMap: ConnectorPropertyMap) => {
       setFormSchema((prevSchema) => {
         const newFieldSchema = piecePropertiesUtils.buildSchema(
           newFieldPropertyMap,
@@ -98,7 +98,7 @@ export const StepSettingsProvider = ({
     [],
   );
   const updatePropertySettingsSchema = (
-    schema: PiecePropertyMap,
+    schema: ConnectorPropertyMap,
     propertyName: string,
     form: UseFormReturn,
   ) => {
@@ -117,7 +117,7 @@ export const StepSettingsProvider = ({
     <StepSettingsContext.Provider
       value={{
         selectedStep,
-        pieceModel,
+        connectorModel,
         pieceModelNotFound,
         formSchema,
         updateFormSchema,

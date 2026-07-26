@@ -20,7 +20,7 @@ function flowVersionHasAiStep(flowVersion: FlowVersion): boolean {
 }
 
 function isAiPieceStep(step: Step): boolean {
-    return step.type === FlowActionType.PIECE && step.settings.pieceName === AI_PIECE_NAME
+    return step.type === FlowActionType.PIECE && step.settings.connectorName === AI_PIECE_NAME
 }
 
 function buildAiStepsByName(flowVersion: FlowVersion): Map<string, AiStepConfig> {

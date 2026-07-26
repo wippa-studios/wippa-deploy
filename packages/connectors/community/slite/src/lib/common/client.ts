@@ -4,7 +4,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { SliteChildrenResponse, SliteNote } from './types';
 
 const BASE_URL = 'https://api.slite.com/v1';

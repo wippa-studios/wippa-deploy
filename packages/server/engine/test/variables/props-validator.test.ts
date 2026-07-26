@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework'
+import { PieceAuth, Property } from '@wippa/connectors-framework'
 import { propsProcessor } from '../../src/lib/variables/props-processor'
 describe('Property Validation', () => {
     describe('required properties', () => {

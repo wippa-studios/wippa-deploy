@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { pdf4meAuth } from './lib/auth';
 import { pdf4meCommon } from './lib/common';
 import { convertToPdfAction } from './lib/actions/convert-to-pdf';
@@ -13,7 +13,7 @@ import { pdfToImageAction } from './lib/actions/pdf-to-image';
 
 export { pdf4meAuth };
 
-export const pdf4me = createPiece({
+export const pdf4me = createConnector({
   displayName: 'PDF4me',
   description: 'Convert, merge, split, compress, and protect PDF documents.',
   minimumSupportedRelease: '0.36.1',

@@ -2,9 +2,9 @@ import {
   DynamicPropsValue,
   OAuth2PropertyValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { helpScoutApiRequest } from './api';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { helpScoutAuth } from './auth';
 
 export const customerIdDropdown = Property.Dropdown({

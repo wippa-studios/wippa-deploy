@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { visibleActions } from './lib/actions';
 
 export const visibleAuth = PieceAuth.SecretText({
@@ -7,7 +7,7 @@ export const visibleAuth = PieceAuth.SecretText({
   description: 'Enter your Visible access token.',
 });
 
-export const visible = createPiece({
+export const visible = createConnector({
   displayName: 'Visible',
   auth: visibleAuth,
   minimumSupportedRelease: '0.36.1',

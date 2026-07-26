@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 import { githubAuth } from '../auth';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { githubAuthHelpers, GithubAuthValue } from '../common/auth-helpers';
 
 export const githubRawGraphqlQuery = createAction({

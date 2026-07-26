@@ -4,14 +4,14 @@
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "exifreader": "4.40.1",
     "heic-convert": "2.1.0",
     "jimp": "^0.22.12",
     "sharp": "^0.35.2",
     "mime-types": "2.1.35",
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "@wippa/core-utils": "workspace:*"
   },
   "bundleDeps": false,

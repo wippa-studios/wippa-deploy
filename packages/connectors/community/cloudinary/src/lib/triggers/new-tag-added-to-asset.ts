@@ -4,7 +4,7 @@ import {
     HttpMethod,
     Polling,
     pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
     AppConnectionValueForAuthProperty,
     PiecePropValueSchema,
@@ -12,7 +12,7 @@ import {
     StaticPropsValue,
     TriggerStrategy,
     createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { cloudinaryAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import dayjs from 'dayjs';

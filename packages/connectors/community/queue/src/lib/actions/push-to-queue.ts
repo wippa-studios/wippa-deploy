@@ -3,7 +3,7 @@ import {
   Store,
   StoreScope,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { constructQueueName, formatStorageError } from '../common';
 
 const notes = `**Note:**

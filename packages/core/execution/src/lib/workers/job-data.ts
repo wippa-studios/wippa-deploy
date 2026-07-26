@@ -6,7 +6,7 @@ import { ExecutionType } from '../flow-run/execution/execution-output'
 import { RunEnvironment } from '../flow-run/flow-run'
 import { FlowVersion } from '../flows/flow-version'
 import { FlowTriggerType } from '../flows/triggers/trigger'
-import { AppConnectionValue, PiecePackage } from '@wippa/core-piece-types'
+import { AppConnectionValue, ConnectorPackage } from '@wippa/core-connector-types'
 
 export const LATEST_JOB_DATA_SCHEMA_VERSION = 10
 
@@ -170,7 +170,7 @@ export const ExecuteValidateAuthJobData = z.object({
     jobType: z.literal(WorkerJobType.EXECUTE_VALIDATION),
     projectId: z.string().optional(),
     platformId: z.string(),
-    piece: PiecePackage,
+    piece: ConnectorPackage,
     schemaVersion: z.number(),
     connectionValue: z.unknown(),
     requestId: z.string(),
@@ -182,7 +182,7 @@ export const ExecuteTokenRefreshJobData = z.object({
     jobType: z.literal(WorkerJobType.EXECUTE_TOKEN_REFRESH),
     projectId: z.string().optional(),
     platformId: z.string(),
-    piece: PiecePackage,
+    piece: ConnectorPackage,
     schemaVersion: z.number(),
     connectionValue: z.custom<AppConnectionValue>(),
     requestId: z.string(),
@@ -212,7 +212,7 @@ export const ExecutePropertyJobData = z.object({
     schemaVersion: z.number(),
     flowVersion: FlowVersion.optional(),
     propertyName: z.string(),
-    piece: PiecePackage,
+    piece: ConnectorPackage,
     actionOrTriggerName: z.string(),
     input: z.record(z.string(), z.unknown()),
     sampleData: z.record(z.string(), z.unknown()),
@@ -227,7 +227,7 @@ export const ExecuteExtractPieceMetadataJobData = z.object({
     jobType: z.literal(WorkerJobType.EXECUTE_EXTRACT_PIECE_INFORMATION),
     projectId: z.undefined(),
     platformId: z.string(),
-    piece: PiecePackage,
+    piece: ConnectorPackage,
     requestId: z.string(),
     webserverId: z.string(),
 })

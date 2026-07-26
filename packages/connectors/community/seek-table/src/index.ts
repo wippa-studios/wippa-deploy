@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { seekTableAuth } from "./lib/common/auth";
 import { newCsvCubeTrigger } from "./lib/triggers/new-csv-cube.trigger";
 import { newReportTrigger } from "./lib/triggers/new-report.trigger";
@@ -8,7 +8,7 @@ import { shareReportEmailAction } from "./lib/actions/share-report-email.action"
 
 export { seekTableAuth };
 
-export const seekTable = createPiece({
+export const seekTable = createConnector({
   displayName: "SeekTable",
   description: "Generate and automate reports from SeekTable.",
   auth: seekTableAuth,

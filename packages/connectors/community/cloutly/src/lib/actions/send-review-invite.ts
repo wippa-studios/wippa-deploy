@@ -1,6 +1,6 @@
 import { cloutlyAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const sendReviewInvite = createAction({
   auth:cloutlyAuth,

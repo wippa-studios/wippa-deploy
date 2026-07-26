@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { slackAuth } from '../auth';
-import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/connectors-framework';
 import {
   profilePicture,
   text,

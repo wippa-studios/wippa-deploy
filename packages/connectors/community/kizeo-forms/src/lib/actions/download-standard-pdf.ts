@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { endpoint, kizeoFormsCommon } from '../common';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { kizeoFormsAuth } from '../..';
 
 export const downloadStandardPDF = createAction({

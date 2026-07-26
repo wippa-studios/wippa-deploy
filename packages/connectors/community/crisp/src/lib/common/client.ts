@@ -6,8 +6,8 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@wippa/connectors-framework';
 import { crispAuth } from './auth';
 
 

@@ -3,13 +3,13 @@ import {
   TriggerStrategy,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { mollieCommon } from '../common';
 import { mollieAuth } from '../auth';
 import dayjs from 'dayjs';

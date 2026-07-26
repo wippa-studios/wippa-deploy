@@ -1,5 +1,5 @@
-import { createAction, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction, OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { getPowerBiBaseUrl, getMicrosoftCloudFromAuth } from '../common/microsoft-cloud';
 import { microsoftPowerBiAuth } from '../auth';
 

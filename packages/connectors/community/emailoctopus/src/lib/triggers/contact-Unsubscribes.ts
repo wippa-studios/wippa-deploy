@@ -1,7 +1,7 @@
-import { Property, createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { Property, createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { emailOctopusAuth } from '../common/auth';
 import { emailOctopusProps } from '../common/props';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 interface EmailOctopusEvent {
   type: string;

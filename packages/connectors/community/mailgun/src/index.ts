@@ -3,10 +3,10 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
-import { PieceAuth, Property, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, Property, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { validateEmail } from './lib/actions/validate-email';
 import { addMailingListMember } from './lib/actions/add-mailing-list-member';
@@ -78,7 +78,7 @@ export const mailgunAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const mailgun = createPiece({
+export const mailgun = createConnector({
   displayName: 'Mailgun',
   description:
     'Email delivery service for sending, receiving, and tracking emails',

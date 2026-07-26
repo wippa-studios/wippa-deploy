@@ -1,4 +1,4 @@
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { pinchPaymentsAuth } from "./lib/common/auth";
 import { createOrUpdatePayerAction } from "./lib/actions/create-or-update-payer";
 import { createRealtimePaymentAction } from "./lib/actions/create-realtime-payment";
@@ -22,9 +22,9 @@ import { scheduledProcessTrigger } from "./lib/triggers/scheduled-process";
 import { transferTrigger } from "./lib/triggers/transfer";
 import { disputeCreatedTrigger } from "./lib/triggers/dispute-created";
 import { disputeUpdatedTrigger } from "./lib/triggers/dispute-updated";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const pinchPayments = createPiece({
+export const pinchPayments = createConnector({
   displayName: "Pinch Payments",
   description: "Australian payment processing platform for direct debits, credit cards, and recurring payments. Create payers, process payments, manage subscriptions, and handle payment sources with comprehensive webhook support.",
   auth: pinchPaymentsAuth,

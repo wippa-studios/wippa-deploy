@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 import { SoftrAuth } from '../common/auth';
 import { makeRequest, transformRecordFields } from '../common/client';

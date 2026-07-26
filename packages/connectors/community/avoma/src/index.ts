@@ -1,5 +1,5 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { newNote } from "./lib/triggers/new-note";
 import { createCall } from "./lib/actions/create-call";
 import { getMeetingTranscription } from "./lib/actions/get-meeting-transcription";
@@ -9,7 +9,7 @@ import { meetingRescheduled } from "./lib/triggers/meeting-rescheduled";
 import { meetingCancelled } from "./lib/triggers/meeting-cancelled";
 import { avomaCommon } from "./lib/common";
 
-    export const avoma = createPiece({
+    export const avoma = createConnector({
       displayName: 'Avoma',
       description:
         'Avoma is an AI Meeting Assistant that automatically records, transcribes, and summarizes your meetings.',

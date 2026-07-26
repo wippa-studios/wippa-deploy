@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, createAction, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, createAction, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { fountainAuth } from '../auth';
 import { getAuthHeaders, getApiUrl } from '../common/auth';
 

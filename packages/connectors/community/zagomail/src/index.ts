@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addedSubscriber } from './lib/triggers/added-subscriber';
 import { unsubscribedSubscriber } from './lib/triggers/unsubscribed-subscriber';
 import { taggedSubscriber } from './lib/triggers/tagged-subscriber';
@@ -12,7 +12,7 @@ import { getCampaignDetails } from './lib/actions/get-campaign-details';
 import { zagoMailApiService } from './lib/common/request';
 import { zagomailAuth } from './lib/auth';
 
-export const zagomail = createPiece({
+export const zagomail = createConnector({
 	displayName: 'Zagomail',
 	description: 'All-in-one email marketing and automation platform',
 	logoUrl: 'https://cdn.activepieces.com/pieces/zagomail.png',

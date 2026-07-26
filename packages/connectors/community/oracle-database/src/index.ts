@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { oracleDbAuth } from './lib/common/auth';
 import { insertRowAction } from './lib/actions/insert-row';
 import { insertRowsAction } from './lib/actions/insert-rows';
@@ -9,7 +9,7 @@ import { deleteRowAction } from './lib/actions/delete-row';
 import { findRowAction } from './lib/actions/find-row';
 import { newRowTrigger } from './lib/triggers/new-row';
 
-export const oracleDatabase = createPiece({
+export const oracleDatabase = createConnector({
   displayName: 'Oracle Database',
   description: 'Enterprise-grade relational database',
   auth: oracleDbAuth,

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 
 import { replyIoAuth } from '../auth';
 import { extractCollection, replyIoRequest } from './client';

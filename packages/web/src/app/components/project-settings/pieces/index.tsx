@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { isNil } from '@wippa/core-utils';
-import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/connectors-framework';
 import { t } from 'i18next';
 import { Info, Package, Puzzle, Tag, Hash, GitBranch } from 'lucide-react';
 import { useMemo, useState } from 'react';
@@ -13,7 +13,7 @@ import { LockedAlert } from '@/components/custom/locked-alert';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { pieceSetQueries } from '@/features/piece-sets';
-import { PieceIcon, piecesHooks } from '@/features/pieces';
+import { ConnectorIcon, piecesHooks } from '@/features/pieces';
 import { projectCollectionUtils } from '@/features/projects';
 import { platformHooks } from '@/hooks/platform-hooks';
 
@@ -26,7 +26,7 @@ const columns: ColumnDef<RowDataWithActions<PieceMetadataModelSummary>>[] = [
     cell: ({ row }) => {
       return (
         <div className="text-left">
-          <PieceIcon
+          <ConnectorIcon
             size={'sm'}
             border={true}
             displayName={row.original.displayName}
@@ -87,7 +87,7 @@ const PiecesSettings = () => {
     isTableQuery: true,
   });
 
-  const { data: pieceSet } = pieceSetQueries.usePieceSet(
+  const { data: connectorSet } = pieceSetQueries.usePieceSet(
     project.pieceSetId ?? '',
   );
 
@@ -126,9 +126,9 @@ const PiecesSettings = () => {
             {t(
               "This project's pieces are controlled by a Piece Set. Contact a platform admin to change it.",
             )}
-            {!isNil(pieceSet) && (
+            {!isNil(connectorSet) && (
               <Badge variant="outline" className="ml-1 font-medium">
-                {pieceSet.name}
+                {connectorSet.name}
               </Badge>
             )}
           </AlertDescription>

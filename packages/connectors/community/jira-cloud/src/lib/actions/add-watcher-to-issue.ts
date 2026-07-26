@@ -1,9 +1,9 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { jiraCloudAuth } from '../../auth';
 import { getUsersDropdown, issueIdOrKeyProp } from '../common/props';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { jiraApiCall } from '../common';
-import { HttpError, HttpMethod } from '@wippa/pieces-common';
+import { HttpError, HttpMethod } from '@wippa/connectors-common';
 
 export const addWatcherToIssueAction = createAction({
 	auth: jiraCloudAuth,

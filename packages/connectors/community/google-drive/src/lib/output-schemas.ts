@@ -1,4 +1,4 @@
-import { OutputSchema } from '@wippa/pieces-framework';
+import { OutputSchema } from '@wippa/connectors-framework';
 
 export const createNewGdriveFolderActionOutputSchema: OutputSchema = {
   fields: [

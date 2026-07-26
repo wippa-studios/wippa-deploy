@@ -2,12 +2,12 @@ import {
     DedupeStrategy,
     Polling,
     pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
     AppConnectionValueForAuthProperty,
     createTrigger,
     TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { microsoft365PeopleAuth } from '../common/auth';
 import { microsoft365PeopleCommon } from '../common/common';

@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { BexioClient } from './common/client';
 
 export const bexioAuth = PieceAuth.OAuth2({

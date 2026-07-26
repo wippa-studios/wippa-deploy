@@ -25,7 +25,7 @@ interface EditableStepNameProps {
   setSelectedBranchIndex: (index: number | null) => void;
   tooltipTitle?: string;
   tooltipDescription?: string;
-  pieceVersion?: string;
+  connectorVersion?: string;
   stepIndex?: number;
 }
 
@@ -41,14 +41,14 @@ const EditableStepName: React.FC<EditableStepNameProps> = ({
   setSelectedBranchIndex,
   tooltipTitle,
   tooltipDescription,
-  pieceVersion,
+  connectorVersion,
   stepIndex,
 }) => {
   const inBranchView = !isNil(selectedBranchIndex);
   const showActionTooltip =
     !inBranchView &&
     !isEditingStepOrBranchName &&
-    (!!tooltipTitle || !!tooltipDescription || !!pieceVersion);
+    (!!tooltipTitle || !!tooltipDescription || !!connectorVersion);
   const handleStartEditing = () => {
     if (!readonly) {
       setIsEditingStepOrBranchName(true);
@@ -131,16 +131,16 @@ const EditableStepName: React.FC<EditableStepNameProps> = ({
                       <span className="font-medium text-sm">
                         {tooltipTitle}
                       </span>
-                      {pieceVersion && (
+                      {connectorVersion && (
                         <span className="text-[11px] font-mono text-background/90">
-                          (v{pieceVersion})
+                          (v{connectorVersion})
                         </span>
                       )}
                     </div>
                   )}
-                  {!tooltipTitle && pieceVersion && (
+                  {!tooltipTitle && connectorVersion && (
                     <span className="text-[11px] font-mono text-background/90">
-                      (v{pieceVersion})
+                      (v{connectorVersion})
                     </span>
                   )}
                   {tooltipDescription && (

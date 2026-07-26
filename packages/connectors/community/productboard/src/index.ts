@@ -1,5 +1,5 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { productboardAuth } from "./lib/common/auth";
 import { createFeature } from "./lib/actions/create-feature";
 import { createNote } from "./lib/actions/create-note";
@@ -8,9 +8,9 @@ import { getFeature } from "./lib/actions/get-feature";
 import { newFeature } from "./lib/triggers/new-feature";
 import { newNote } from "./lib/triggers/new-note";
 import { updatedFeature } from "./lib/triggers/updated-feature";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const productboard = createPiece({
+export const productboard = createConnector({
     displayName: "Productboard",
     auth: productboardAuth,
     description: "Productboard is a product management tool that helps you manage your product roadmap and features.",

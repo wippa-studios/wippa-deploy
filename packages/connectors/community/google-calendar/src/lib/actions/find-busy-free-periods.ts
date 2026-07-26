@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpRequest, HttpMethod, AuthenticationType, httpClient } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpRequest, HttpMethod, AuthenticationType, httpClient } from '@wippa/connectors-common';
 import { googleCalendarCommon, googleCalendarAuth, getAccessToken, GoogleCalendarAuthValue } from '../common';
 import { getCalendars } from '../common/helper';
 import dayjs from 'dayjs';

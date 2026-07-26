@@ -1,5 +1,5 @@
 import { googleDriveAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { downloadFileFromDrive } from '../common/get-file-content';
 import { readFileActionOutputSchema } from '../output-schemas';
 

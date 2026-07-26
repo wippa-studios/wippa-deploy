@@ -1,5 +1,5 @@
-import { Property, createAction } from '@wippa/pieces-framework';
-import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/connectors-framework';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/connectors-common';
 import { callClickUpApi } from '../../common';
 import { clickupAuth } from '../../auth';
 import { taskOutputSchema } from '../../output-schemas';

@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { cancelJob } from './lib/actions/cancel-job';
 import { estimateJob } from './lib/actions/estimate-job';
 import { getArtifactDownloadUrl } from './lib/actions/get-artifact-download-url';
@@ -10,9 +10,9 @@ import { listArtifacts } from './lib/actions/list-artifacts';
 import { listJobs } from './lib/actions/list-jobs';
 import { submitJob } from './lib/actions/submit-job';
 import { jungleGridAuth } from './lib/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const jungleGrid = createPiece({
+export const jungleGrid = createConnector({
   displayName: 'Jungle Grid',
   description:
     'Submit async compute jobs, monitor status and logs, and retrieve artifacts from Jungle Grid.',

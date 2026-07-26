@@ -23,7 +23,7 @@ import {
     FlowVersionState,
     PackageType,
     PieceScope,
-    PieceType,
+    ConnectorType,
     RunEnvironment,
     StepOutputType,
     StreamStepProgress,
@@ -71,18 +71,18 @@ async function setupSubflowFixtures() {
     const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
     const webhookPiece = createMockPieceMetadata({
-        name: '@wippa/piece-webhook',
+        name: '@wippa/connector-webhook',
         version: '0.1.29',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
     })
     const subflowsPiece = createMockPieceMetadata({
-        name: '@wippa/piece-subflows',
+        name: '@wippa/connector-subflows',
         version: '0.4.11',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
     })
     await databaseConnection().getRepository('piece_metadata').save([webhookPiece, subflowsPiece])
 
@@ -93,8 +93,8 @@ async function setupSubflowFixtures() {
         displayName: 'Return Response',
         valid: true,
         settings: {
-            pieceName: '@wippa/piece-subflows',
-            pieceVersion: '0.4.11',
+            connectorName: '@wippa/connector-subflows',
+            connectorVersion: '0.4.11',
             actionName: 'returnResponse',
             input: {
                 mode: 'simple',
@@ -148,8 +148,8 @@ async function setupSubflowFixtures() {
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@wippa/piece-subflows',
-                pieceVersion: '0.4.11',
+                connectorName: '@wippa/connector-subflows',
+                connectorVersion: '0.4.11',
                 triggerName: 'callableFlow',
                 input: {
                     mode: 'simple',
@@ -177,8 +177,8 @@ async function setupSubflowFixtures() {
         displayName: 'Call Flow',
         valid: true,
         settings: {
-            pieceName: '@wippa/piece-subflows',
-            pieceVersion: '0.4.11',
+            connectorName: '@wippa/connector-subflows',
+            connectorVersion: '0.4.11',
             actionName: 'callFlow',
             input: {
                 flow: {
@@ -218,8 +218,8 @@ async function setupSubflowFixtures() {
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@wippa/piece-webhook',
-                pieceVersion: '0.1.29',
+                connectorName: '@wippa/connector-webhook',
+                connectorVersion: '0.1.29',
                 triggerName: 'catch_webhook',
                 input: { authType: 'none' },
                 propertySettings: {},
@@ -236,18 +236,18 @@ async function setupSubflowWithWebhookResponseFixtures() {
     const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
     const webhookPiece = createMockPieceMetadata({
-        name: '@wippa/piece-webhook',
+        name: '@wippa/connector-webhook',
         version: '0.1.29',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
     })
     const subflowsPiece = createMockPieceMetadata({
-        name: '@wippa/piece-subflows',
+        name: '@wippa/connector-subflows',
         version: '0.4.11',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
     })
     await databaseConnection().getRepository('piece_metadata').save([webhookPiece, subflowsPiece])
 
@@ -258,8 +258,8 @@ async function setupSubflowWithWebhookResponseFixtures() {
         displayName: 'Return Response',
         valid: true,
         settings: {
-            pieceName: '@wippa/piece-subflows',
-            pieceVersion: '0.4.11',
+            connectorName: '@wippa/connector-subflows',
+            connectorVersion: '0.4.11',
             actionName: 'returnResponse',
             input: {
                 mode: 'simple',
@@ -289,8 +289,8 @@ async function setupSubflowWithWebhookResponseFixtures() {
             displayName: 'Callable Flow',
             valid: true,
             settings: {
-                pieceName: '@wippa/piece-subflows',
-                pieceVersion: '0.4.11',
+                connectorName: '@wippa/connector-subflows',
+                connectorVersion: '0.4.11',
                 triggerName: 'callableFlow',
                 input: {
                     mode: 'simple',
@@ -318,8 +318,8 @@ async function setupSubflowWithWebhookResponseFixtures() {
         displayName: 'Return Response',
         valid: true,
         settings: {
-            pieceName: '@wippa/piece-webhook',
-            pieceVersion: '0.1.29',
+            connectorName: '@wippa/connector-webhook',
+            connectorVersion: '0.1.29',
             actionName: 'return_response',
             input: {
                 responseType: 'json',
@@ -341,8 +341,8 @@ async function setupSubflowWithWebhookResponseFixtures() {
         displayName: 'Call Flow',
         valid: true,
         settings: {
-            pieceName: '@wippa/piece-subflows',
-            pieceVersion: '0.4.11',
+            connectorName: '@wippa/connector-subflows',
+            connectorVersion: '0.4.11',
             actionName: 'callFlow',
             input: {
                 flow: {
@@ -383,8 +383,8 @@ async function setupSubflowWithWebhookResponseFixtures() {
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@wippa/piece-webhook',
-                pieceVersion: '0.1.29',
+                connectorName: '@wippa/connector-webhook',
+                connectorVersion: '0.1.29',
                 triggerName: 'catch_webhook',
                 input: { authType: 'none' },
                 propertySettings: {},
@@ -429,18 +429,18 @@ describe('Execute Flow E2E', () => {
 
         // Save piece metadata records
         const webhookPiece = createMockPieceMetadata({
-            name: '@wippa/piece-webhook',
+            name: '@wippa/connector-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         const dataMapperPiece = createMockPieceMetadata({
-            name: '@wippa/piece-data-mapper',
+            name: '@wippa/connector-data-mapper',
             version: '0.3.15',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         await databaseConnection().getRepository('piece_metadata').save([webhookPiece, dataMapperPiece])
 
@@ -474,8 +474,8 @@ describe('Execute Flow E2E', () => {
             displayName: 'Map Data',
             valid: true,
             settings: {
-                pieceName: '@wippa/piece-data-mapper',
-                pieceVersion: '0.3.15',
+                connectorName: '@wippa/connector-data-mapper',
+                connectorVersion: '0.3.15',
                 actionName: 'advanced_mapping',
                 input: {
                     mapping: {
@@ -504,8 +504,8 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@wippa/piece-webhook',
-                    pieceVersion: '0.1.29',
+                    connectorName: '@wippa/connector-webhook',
+                    connectorVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
                     propertySettings: {},
@@ -580,8 +580,8 @@ describe('Execute Flow E2E', () => {
             new Blob([customPieceArchive], { type: 'application/gzip' }),
             'e2e-custom-echo-0.0.1.tgz',
         )
-        formData.append('pieceName', CUSTOM_PIECE_NAME)
-        formData.append('pieceVersion', CUSTOM_PIECE_VERSION)
+        formData.append('connectorName', CUSTOM_PIECE_NAME)
+        formData.append('connectorVersion', CUSTOM_PIECE_VERSION)
         formData.append('packageType', PackageType.ARCHIVE)
         formData.append('scope', PieceScope.PLATFORM)
 
@@ -595,11 +595,11 @@ describe('Execute Flow E2E', () => {
         expect(installResponse.statusCode, installResponse.body).toBe(StatusCodes.CREATED)
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@wippa/piece-webhook',
+            name: '@wippa/connector-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         await databaseConnection().getRepository('piece_metadata').save([webhookPiece])
 
@@ -609,8 +609,8 @@ describe('Execute Flow E2E', () => {
             displayName: 'Echo Message',
             valid: true,
             settings: {
-                pieceName: CUSTOM_PIECE_NAME,
-                pieceVersion: CUSTOM_PIECE_VERSION,
+                connectorName: CUSTOM_PIECE_NAME,
+                connectorVersion: CUSTOM_PIECE_VERSION,
                 actionName: 'echo',
                 input: {},
                 propertySettings: {},
@@ -631,8 +631,8 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@wippa/piece-webhook',
-                    pieceVersion: '0.1.29',
+                    connectorName: '@wippa/connector-webhook',
+                    connectorVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
                     propertySettings: {},
@@ -669,11 +669,11 @@ describe('Execute Flow E2E', () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@wippa/piece-webhook',
+            name: '@wippa/connector-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         await databaseConnection().getRepository('piece_metadata').save([webhookPiece])
 
@@ -709,8 +709,8 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@wippa/piece-webhook',
-                    pieceVersion: '0.1.29',
+                    connectorName: '@wippa/connector-webhook',
+                    connectorVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
                     propertySettings: {},
@@ -815,18 +815,18 @@ describe('Execute Flow E2E', () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@wippa/piece-webhook',
+            name: '@wippa/connector-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         const delayPiece = createMockPieceMetadata({
-            name: '@wippa/piece-delay',
+            name: '@wippa/connector-delay',
             version: '0.3.26',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         await databaseConnection().getRepository('piece_metadata').save([webhookPiece, delayPiece])
 
@@ -853,8 +853,8 @@ describe('Execute Flow E2E', () => {
             displayName: 'Delay For',
             valid: true,
             settings: {
-                pieceName: '@wippa/piece-delay',
-                pieceVersion: '0.3.26',
+                connectorName: '@wippa/connector-delay',
+                connectorVersion: '0.3.26',
                 actionName: 'delayFor',
                 input: {
                     unit: 'seconds',
@@ -881,8 +881,8 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@wippa/piece-webhook',
-                    pieceVersion: '0.1.29',
+                    connectorName: '@wippa/connector-webhook',
+                    connectorVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
                     propertySettings: {},
@@ -918,18 +918,18 @@ describe('Execute Flow E2E', () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@wippa/piece-webhook',
+            name: '@wippa/connector-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         const delayPiece = createMockPieceMetadata({
-            name: '@wippa/piece-delay',
+            name: '@wippa/connector-delay',
             version: '0.3.26',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         await databaseConnection().getRepository('piece_metadata').save([webhookPiece, delayPiece])
 
@@ -959,8 +959,8 @@ describe('Execute Flow E2E', () => {
             displayName: 'Delay For',
             valid: true,
             settings: {
-                pieceName: '@wippa/piece-delay',
-                pieceVersion: '0.3.26',
+                connectorName: '@wippa/connector-delay',
+                connectorVersion: '0.3.26',
                 actionName: 'delayFor',
                 input: {
                     unit: 'seconds',
@@ -1003,8 +1003,8 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@wippa/piece-webhook',
-                    pieceVersion: '0.1.29',
+                    connectorName: '@wippa/connector-webhook',
+                    connectorVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
                     propertySettings: {},

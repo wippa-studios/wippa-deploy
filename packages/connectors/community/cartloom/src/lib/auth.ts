@@ -1,7 +1,7 @@
 import {
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { getProducts } from './api';
 
 export type CartloomAuthType = { apiKey: string; domain: string };

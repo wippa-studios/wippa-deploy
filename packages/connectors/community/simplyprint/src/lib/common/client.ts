@@ -3,8 +3,8 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 
 import { simplyprintSession } from '../auth';
 import { BASE_URL } from './base-url';

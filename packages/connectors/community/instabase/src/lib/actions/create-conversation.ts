@@ -1,5 +1,5 @@
-import { createAction, Property, ApFile } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { createAction, Property, ApFile } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { instabaseAuth } from '../auth';
 import FormData from 'form-data';
 

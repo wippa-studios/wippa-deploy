@@ -1,7 +1,7 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { callSevenApi } from '../common';
 import { sevenAuth } from '../lib/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 interface SubscribeHookResponse {
   id: number | null;

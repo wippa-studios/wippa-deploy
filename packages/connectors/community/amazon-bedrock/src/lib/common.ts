@@ -14,7 +14,7 @@ import {
   VideoFormat,
 } from '@aws-sdk/client-bedrock-runtime';
 import { AssumeRoleWithWebIdentityCommand, STSClient } from '@aws-sdk/client-sts';
-import { ApFile, ServerContext } from '@wippa/pieces-framework';
+import { ApFile, ServerContext } from '@wippa/connectors-framework';
 import { BedrockAuthProps, BedrockOidcAuthProps } from './auth';
 
 const AWS_STS_AUDIENCE = 'sts.amazonaws.com';

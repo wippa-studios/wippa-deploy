@@ -1,10 +1,10 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { calltidycalapi } from '../common';
 import { tidyCalAuth } from '../auth';
 import dayjs from 'dayjs';

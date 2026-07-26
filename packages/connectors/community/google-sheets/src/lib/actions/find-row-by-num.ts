@@ -1,5 +1,5 @@
-import { Property, createAction } from '@wippa/pieces-framework';
-import { HttpError } from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/connectors-framework';
+import { HttpError } from '@wippa/connectors-common';
 import { areSheetIdsValid, googleSheetsCommon, mapRowsToHeaderNames } from '../common/common';
 import { googleSheetsAuth } from '../common/common';
 import { commonProps } from '../common/props';

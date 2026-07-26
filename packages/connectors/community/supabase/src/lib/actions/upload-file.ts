@@ -1,5 +1,5 @@
 import { supabaseAuth } from '../auth';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { createClient } from '@supabase/supabase-js';
 import { uploadFileActionOutputSchema } from '../output-schemas';
 

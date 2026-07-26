@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createRecordAction } from './lib/actions/create-record';
 import { findRecordsAction } from './lib/actions/find-records';
 import { findRecordAction } from './lib/actions/find-record';
@@ -14,7 +14,7 @@ import {
   getTeableBaseUrl,
 } from './lib/auth';
 
-export const teable = createPiece({
+export const teable = createConnector({
   displayName: 'Teable',
   auth: TeableAuth,
   description: 'No-code database built on PostgreSQL',

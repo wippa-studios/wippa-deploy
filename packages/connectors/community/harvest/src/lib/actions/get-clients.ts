@@ -1,11 +1,11 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { harvestAuth } from '../..';
 import {
   getAccessTokenOrThrow,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { callHarvestApi, filterDynamicFields } from '../common';
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 import * as z from 'zod/mini'
 
 export const getClients = createAction({

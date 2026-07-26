@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
-import { HttpError } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
+import { HttpError } from '@wippa/connectors-common';
 import { dimoAuth } from '../../auth';
-import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/connectors-framework';
 import { DimoClient, getNumberExpression } from '../../common/helpers';
 import { CreateWebhookParams, WebhookInfo, WebhookPayload } from '../../common/types';
 import { TriggerField } from '../../common/constants';

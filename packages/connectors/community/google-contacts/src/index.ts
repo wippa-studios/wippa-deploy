@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { googleContactsAddContactAction } from './lib/action/create-contact';
 import { googleContactsUpdateContactAction } from './lib/action/update-contact';
 import { googleContactsSearchContactsAction } from './lib/action/search-contact';
@@ -12,7 +12,7 @@ import { googleContactsCommon } from './lib/common';
 import { googleContactNewOrUpdatedContact } from './lib/trigger/new-contact';
 import { googleContactsAuth } from './lib/auth';
 
-export const googleContacts = createPiece({
+export const googleContacts = createConnector({
   minimumSupportedRelease: '0.30.0',
   logoUrl: 'https://cdn.activepieces.com/pieces/google-contacts.png',
   categories: [PieceCategory.SALES_AND_CRM],

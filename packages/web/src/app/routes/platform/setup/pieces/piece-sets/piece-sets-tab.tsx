@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table';
-import { PieceSelectionMode, PieceSet } from '@wippa/shared';
+import { PieceSelectionMode, ConnectorSet } from '@wippa/shared';
 import { t } from 'i18next';
 import {
   CheckIcon,
@@ -32,8 +32,8 @@ import { EditPieceSetDialog } from './edit-piece-set-dialog';
 
 export const PieceSetsTab = () => {
   const navigate = useNavigate();
-  const [duplicatingSet, setDuplicatingSet] = useState<PieceSet | null>(null);
-  const [editingSet, setEditingSet] = useState<PieceSet | null>(null);
+  const [duplicatingSet, setDuplicatingSet] = useState<ConnectorSet | null>(null);
+  const [editingSet, setEditingSet] = useState<ConnectorSet | null>(null);
 
   const {
     data: pieceSetsPage,
@@ -44,7 +44,7 @@ export const PieceSetsTab = () => {
 
   const pieceSets = useMemo(() => pieceSetsPage?.data ?? [], [pieceSetsPage]);
 
-  const columns: ColumnDef<RowDataWithActions<PieceSet>>[] = useMemo(
+  const columns: ColumnDef<RowDataWithActions<ConnectorSet>>[] = useMemo(
     () => [
       {
         accessorKey: 'name',

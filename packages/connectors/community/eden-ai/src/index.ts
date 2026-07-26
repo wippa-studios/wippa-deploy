@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
     import { generateTextAction } from './lib/actions/generate-text';
     import { summarizeTextAction } from './lib/actions/summarize-text';
     import { extractKeywordsAction } from './lib/actions/extract-keywords';
@@ -13,8 +13,8 @@
     import { ocrImageAction } from './lib/actions/ocr-image';
     import { imageGenerationAction } from './lib/actions/image-generation';
     import { textToSpeechAction } from './lib/actions/text-to-speech';
-    import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+    import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
     export const edenAiAuth = PieceAuth.SecretText({
       displayName: 'Eden AI API Key',
@@ -43,7 +43,7 @@ import { PieceCategory } from '@wippa/pieces-framework';
       },
     });
 
-    export const edenAi = createPiece({
+    export const edenAi = createConnector({
       displayName: "Eden AI",
       auth: edenAiAuth,
       minimumSupportedRelease: '0.36.1',

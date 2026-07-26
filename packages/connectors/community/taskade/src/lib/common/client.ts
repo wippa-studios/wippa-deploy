@@ -5,7 +5,7 @@ import {
 	httpClient,
 	HttpRequest,
 	AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
 	CreateTaskDateParams,
 	CreateTaskParams,

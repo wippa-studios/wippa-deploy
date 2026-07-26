@@ -1,12 +1,12 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { generateAltTextAction } from "./lib/actions/generate-alt-text";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { altTextAiAuth } from "./lib/common/auth";
 import { BASE_URL } from "./lib/common/constants";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-    export const altTextAi = createPiece({
+    export const altTextAi = createConnector({
       displayName: "AltText.ai",
       categories:[PieceCategory.ARTIFICIAL_INTELLIGENCE],
       auth: altTextAiAuth,

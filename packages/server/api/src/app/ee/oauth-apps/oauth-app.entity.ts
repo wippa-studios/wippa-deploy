@@ -20,7 +20,7 @@ export const OAuthAppEntity = new EntitySchema<OAuthAppSchema>({
     name: 'oauth_app',
     columns: {
         ...BaseColumnSchemaPart,
-        pieceName: {
+        connectorName: {
             type: String,
         },
         platformId: ApIdSchema,
@@ -34,7 +34,7 @@ export const OAuthAppEntity = new EntitySchema<OAuthAppSchema>({
     indices: [
         {
             name: 'idx_oauth_app_platformId_pieceName',
-            columns: ['platformId', 'pieceName'],
+            columns: ['platformId', 'connectorName'],
             unique: true,
         },
     ],

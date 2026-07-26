@@ -1,9 +1,9 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import {
   createTrigger,
   Trigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { shopifyAuth } from '../..';
 
 export const createShopifyWebhookTrigger = ({

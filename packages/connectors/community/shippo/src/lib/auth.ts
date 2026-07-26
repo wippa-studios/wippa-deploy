@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 export const shippoAuth = PieceAuth.SecretText({
   displayName: 'API Token',

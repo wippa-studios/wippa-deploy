@@ -1,7 +1,7 @@
 import {
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { mycaseAuth } from '../auth';
 import { createMyCaseApi } from '../common/mycase-api';
 

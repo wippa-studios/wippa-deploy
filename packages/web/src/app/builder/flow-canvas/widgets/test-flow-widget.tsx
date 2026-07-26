@@ -46,11 +46,11 @@ const TestFlowWidget = () => {
     !isNil(flowVersion.trigger.settings.sampleData?.lastTestDate);
 
   const isChatTrigger = pieceSelectorUtils.isChatTrigger(
-    flowVersion.trigger.settings.pieceName,
+    flowVersion.trigger.settings.connectorName,
     flowVersion.trigger.settings.triggerName,
   );
   const isManualTrigger = pieceSelectorUtils.isManualTrigger({
-    pieceName: flowVersion.trigger.settings.pieceName,
+    connectorName: flowVersion.trigger.settings.connectorName,
     triggerName: flowVersion.trigger.settings.triggerName,
   });
 

@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { scanFile } from './lib/actions/scan-file';
 import { scanText } from './lib/actions/scan-text';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { gptzeroDetectAiAuth } from './lib/common/auth';
 
-export const gptzeroDetectAi = createPiece({
+export const gptzeroDetectAi = createConnector({
   displayName: 'GPTZero',
   auth: gptzeroDetectAiAuth,
   minimumSupportedRelease: '0.36.1',

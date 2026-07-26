@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { Buffer } from 'buffer';
 import { createTicket } from './lib/actions/create-ticket';
 import { addNoteToTicket } from './lib/actions/add-note-to-ticket';
@@ -21,7 +21,7 @@ import { newChange } from './lib/triggers/new-change';
 import { updatedChange } from './lib/triggers/updated-change';
 import { newChangeTask } from './lib/triggers/new-change-task';
 import { updatedChangeTask } from './lib/triggers/updated-change-task';
-import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
+import { HttpMethod, httpClient, AuthenticationType } from '@wippa/connectors-common';
 
 export const freshserviceAuth = PieceAuth.CustomAuth({
   description: `
@@ -68,7 +68,7 @@ For the domain, enter only the subdomain. For example, if your URL is **mycompan
   },
 });
 
-export const freshservice = createPiece({
+export const freshservice = createConnector({
   displayName: 'Freshservice',
   description: 'IT service management software for ticketing, asset management, and IT operations.',
   minimumSupportedRelease: '0.36.1',

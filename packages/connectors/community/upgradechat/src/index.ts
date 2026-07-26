@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { addOrUpdateContactExtended } from './lib/actions/add-or-update-contact-extended';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';
 import { addOrUpdateSubscription } from './lib/actions/add-or-update-subscription';
@@ -12,7 +12,7 @@ import { getContactDetails } from './lib/actions/get-contact-details';
 import { newLead } from './lib/triggers/new-lead';
 import { newPayment } from './lib/triggers/new-payment';
 import { newSubscription } from './lib/triggers/new-subscription';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { upgradechatAuth } from './lib/auth';
 
 const markdownDescription = `
@@ -22,7 +22,7 @@ const markdownDescription = `
   2. Once on the website, locate and click on the admin to obtain your Upgrade.chat API Key.
 `;
 
-export const upgradechat = createPiece({
+export const upgradechat = createConnector({
   displayName: 'Upgrade.chat',
   description:
     'Supercharge your Discord or Telegram communities with subscription payments and membership tools.',

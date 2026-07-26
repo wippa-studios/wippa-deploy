@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { cloudinaryAuth } from '../common/auth';
 import { resourceTypeDropdown, publicIdsDropdown } from '../common/props';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const transformResource = createAction({
   auth: cloudinaryAuth,

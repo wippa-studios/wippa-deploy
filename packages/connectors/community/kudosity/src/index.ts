@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { kudosityAuth } from './lib/common/auth';
 import { addUpdateContact } from './lib/actions/add-update-contact';
 import { deleteContact } from './lib/actions/delete-contact';
@@ -9,10 +9,10 @@ import { getSmsInfo } from './lib/actions/get-sms-info';
 import { linkHit } from './lib/triggers/link-hit';
 import { smsReceived } from './lib/triggers/sms-received';
 import { smsSent } from './lib/triggers/sms-sent';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const kudosity = createPiece({
+export const kudosity = createConnector({
   displayName: 'Kudosity',
   auth: kudosityAuth,
   minimumSupportedRelease: '0.36.1',

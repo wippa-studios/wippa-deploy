@@ -4,8 +4,8 @@ import {
   HttpMethod,
   httpClient,
   HttpRequest,
-} from '@wippa/pieces-common';
-import { Property, createAction } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { Property, createAction } from '@wippa/connectors-framework';
 
 export const createEvent = createAction({
   auth: sessionAuth,

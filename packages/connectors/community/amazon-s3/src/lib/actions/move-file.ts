@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { amazonS3CombinedAuth, S3AuthProps } from '../auth';
 import { resolveS3Client } from '../common';
 

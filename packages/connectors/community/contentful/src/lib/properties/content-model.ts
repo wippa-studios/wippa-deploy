@@ -1,6 +1,6 @@
-import { DropdownOption, Property } from '@wippa/pieces-framework';
+import { DropdownOption, Property } from '@wippa/connectors-framework';
 import { ContentfulAuth, makeClient } from '../common';
-import { isEmpty } from '@wippa/pieces-framework';
+import { isEmpty } from '@wippa/connectors-framework';
 
 const ContentModel = Property.Dropdown({
   auth: ContentfulAuth,

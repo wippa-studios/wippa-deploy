@@ -1,6 +1,6 @@
 
 
-import { httpClient, HttpMethod, HttpRequest, QueryParams } from "@wippa/pieces-common";
+import { httpClient, HttpMethod, HttpRequest, QueryParams } from "@wippa/connectors-common";
 
 export const uscreenApiUrl = 'https://api.uscreen.io/v1';
 

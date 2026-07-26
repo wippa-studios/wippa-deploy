@@ -1,8 +1,8 @@
 import { meistertaskAuth } from '../auth';
 import { meisterTaskCommon, makeRequest } from '../common/common';
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
-import { Project } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Project } from '@wippa/connectors-framework';
 
 export const updateTask = createAction({
   auth: meistertaskAuth,

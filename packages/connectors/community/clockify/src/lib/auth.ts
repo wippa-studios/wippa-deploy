@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { clockifyApiCall } from './common/client';
 
 export const clockifyAuth = PieceAuth.SecretText({

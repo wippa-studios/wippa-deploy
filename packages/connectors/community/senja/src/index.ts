@@ -3,9 +3,9 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { listTestimonialsAction } from './lib/actions/list-testimonials';
 import { getTestimonialAction } from './lib/actions/get-testimonial';
@@ -40,7 +40,7 @@ export const senjaAuth = PieceAuth.SecretText({
   },
 });
 
-export const senja = createPiece({
+export const senja = createConnector({
   displayName: 'Senja',
   description: 'Collect, manage, and share testimonials with Senja.',
   minimumSupportedRelease: '0.36.1',

@@ -2,15 +2,15 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   TriggerStrategy,
   createTrigger,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { bambooHrAuth } from '../common/auth';
-import { isEmpty, isNil } from '@wippa/pieces-framework';
+import { isEmpty, isNil } from '@wippa/connectors-framework';
 
 async function getReportById(
   companyDomain: string,

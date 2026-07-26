@@ -83,7 +83,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { PieceIconWithPieceName } from '@/features/pieces/components/piece-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
 import { cn } from '@/lib/utils';
 
 import { normalizePieceName } from '../../lib/message-parsers';
@@ -198,7 +198,7 @@ export function OptionIcon({
   if (piece) {
     return (
       <PieceIconWithPieceName
-        pieceName={normalizePieceName(piece)}
+        connectorName={normalizePieceName(piece)}
         size={variant === 'grid' ? 'lg' : 'sm'}
         border={false}
         showTooltip={false}

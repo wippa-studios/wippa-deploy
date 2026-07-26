@@ -1,7 +1,7 @@
-import { createAction } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { krispcallAuth } from '../auth';
-import { Property, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { Property, PiecePropValueSchema } from '@wippa/connectors-framework';
 
 interface Item {
   name: string;

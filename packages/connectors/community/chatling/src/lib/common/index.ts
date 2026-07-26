@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const chatlingCommon = {
   baseUrl: 'https://api.chatling.ai/v2',

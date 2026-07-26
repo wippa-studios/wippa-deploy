@@ -3,15 +3,15 @@ import { FlowTrigger, FlowTriggerType } from '../triggers/trigger'
 import { flowStructureUtil } from '../util/flow-structure-util'
 
 export const flowPieceUtil = {
-    getExactVersion(pieceVersion: string): string {
-        if (pieceVersion.startsWith('^') || pieceVersion.startsWith('~')) {
-            return pieceVersion.slice(1)
+    getExactVersion(connectorVersion: string): string {
+        if (connectorVersion.startsWith('^') || connectorVersion.startsWith('~')) {
+            return connectorVersion.slice(1)
         }
-        return pieceVersion
+        return connectorVersion
     },
     getUsedPieces(trigger: FlowTrigger): string[] {
         return flowStructureUtil.getAllSteps(trigger)
             .filter((step) => step.type === FlowActionType.PIECE || step.type === FlowTriggerType.PIECE)
-            .map((step) => step.settings.pieceName)
+            .map((step) => step.settings.connectorName)
     },
 }

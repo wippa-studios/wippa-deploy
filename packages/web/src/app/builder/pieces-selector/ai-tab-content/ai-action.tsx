@@ -2,7 +2,7 @@ import { FlowActionType, FlowTriggerType } from '@wippa/shared';
 
 import { CardListItem } from '@/components/custom/card-list';
 import {
-  PieceIcon,
+  ConnectorIcon,
   PieceSelectorItem,
   StepMetadataWithSuggestions,
 } from '@/features/pieces';
@@ -44,7 +44,7 @@ const AIActionItem = ({
     >
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-center">
-          <PieceIcon
+          <ConnectorIcon
             logoUrl={stepMetadataWithSuggestions.logoUrl}
             displayName={stepMetadataWithSuggestions.displayName}
             showTooltip={false}

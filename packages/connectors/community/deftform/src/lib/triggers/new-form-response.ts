@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
 import { deftformAuth } from '../auth';
 
 const setupMarkdown = `

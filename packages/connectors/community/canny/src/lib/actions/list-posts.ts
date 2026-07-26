@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 import { cannyAuth } from '../auth';
 import { cannyRequest, cleanBody } from '../common/client';

@@ -1,5 +1,5 @@
 import { isNil, isObject, isString } from '@wippa/core-utils'
-import { Action, DropdownOption, ExecutePropsResult, PieceProperty, PropertyType } from '@wippa/pieces-framework'
+import { Action, DropdownOption, ExecutePropsResult, ConnectorProperty, PropertyType } from '@wippa/connectors-framework'
 import { AgentPieceTool, ExecuteToolOperation, ExecuteToolResponse, ExecutionToolStatus, FieldControlMode, FlowActionType, PieceAction, PropertyExecutionType, StepOutputStatus } from '@wippa/shared'
 import { generateText, JSONParseError, LanguageModel, NoObjectGeneratedError, Output, Tool, zodSchema } from 'ai'
 import dayjs from 'dayjs'
@@ -7,22 +7,22 @@ import { z } from 'zod'
 import { EngineConstants } from '../handler/context/engine-constants'
 import { FlowExecutorContext } from '../handler/context/flow-execution-context'
 import { flowExecutor } from '../handler/flow-executor'
-import { pieceHelper } from '../helper/piece-helper'
-import { pieceLoader } from '../helper/piece-loader'
+import { connectorHelper } from '../helper/piece-helper'
+import { connectorLoader } from '../helper/piece-loader'
 import { tsort } from './tsort'
 
 export const agentTools = {
     async tools({ engineConstants, tools, model }: ConstructToolParams): Promise<Record<string, Tool>> {
         const piecesTools = await Promise.all(tools.map(async (tool) => {
-            const { pieceAction } = await pieceLoader.getPieceAndActionOrThrow({
-                pieceName: tool.pieceMetadata.pieceName,
-                pieceVersion: tool.pieceMetadata.pieceVersion,
-                actionName: tool.pieceMetadata.actionName,
+            const { connectorAction } = await connectorLoader.getPieceAndActionOrThrow({
+                connectorName: tool.connectorMetadata.connectorName,
+                connectorVersion: tool.connectorMetadata.connectorVersion,
+                actionName: tool.connectorMetadata.actionName,
                 devPieces: EngineConstants.DEV_PIECES,
             })
             return {
                 name: tool.toolName,
-                description: pieceAction.description,
+                description: connectorAction.description,
                 inputSchema: z.object({
                     instruction: z.string().describe('The instruction to the tool'),
                 }),
@@ -30,10 +30,10 @@ export const agentTools = {
                     execute({
                         ...engineConstants,
                         instruction,
-                        pieceName: tool.pieceMetadata.pieceName,
-                        pieceVersion: tool.pieceMetadata.pieceVersion,
-                        actionName: tool.pieceMetadata.actionName,
-                        predefinedInput: tool.pieceMetadata.predefinedInput,
+                        connectorName: tool.connectorMetadata.connectorName,
+                        connectorVersion: tool.connectorMetadata.connectorVersion,
+                        actionName: tool.connectorMetadata.actionName,
+                        predefinedInput: tool.connectorMetadata.predefinedInput,
                         model,
                     }),
             }
@@ -146,14 +146,14 @@ async function resolveProperties(
 
 async function execute(operation: ExecuteToolOperationWithModel): Promise<ExecuteToolResponse> {
     try {
-        const { pieceAction } = await pieceLoader.getPieceAndActionOrThrow({
-            pieceName: operation.pieceName,
-            pieceVersion: operation.pieceVersion,
+        const { connectorAction } = await connectorLoader.getPieceAndActionOrThrow({
+            connectorName: operation.connectorName,
+            connectorVersion: operation.connectorVersion,
             actionName: operation.actionName,
             devPieces: EngineConstants.DEV_PIECES,
         })
-        const depthToPropertyMap = tsort.sortPropertiesByDependencies(pieceAction.props)
-        const resolvedInput = await resolveProperties(depthToPropertyMap, operation.instruction, pieceAction, operation.model, operation)
+        const depthToPropertyMap = tsort.sortPropertiesByDependencies(connectorAction.props)
+        const resolvedInput = await resolveProperties(depthToPropertyMap, operation.instruction, connectorAction, operation.model, operation)
         
         const step: PieceAction = {
             name: operation.actionName,
@@ -163,8 +163,8 @@ async function execute(operation: ExecuteToolOperationWithModel): Promise<Execut
             settings: {
                 input: resolvedInput,
                 actionName: operation.actionName,
-                pieceName: operation.pieceName,
-                pieceVersion: operation.pieceVersion,
+                connectorName: operation.connectorName,
+                connectorVersion: operation.connectorVersion,
                 propertySettings: Object.fromEntries(Object.entries(resolvedInput).map(([key]) => [key, {
                     type: PropertyExecutionType.MANUAL,
                     schema: undefined,
@@ -248,7 +248,7 @@ type ExecuteToolOperationWithModel = ExecuteToolOperation & {
     model: LanguageModel
 }
 
-async function propertyToSchema(propertyName: string, property: PieceProperty, operation: ExecuteToolOperation, resolvedInput: Record<string, unknown>): Promise<z.ZodTypeAny> {
+async function propertyToSchema(propertyName: string, property: ConnectorProperty, operation: ExecuteToolOperation, resolvedInput: Record<string, unknown>): Promise<z.ZodTypeAny> {
     let schema: z.ZodTypeAny
 
     switch (property.type) {
@@ -311,7 +311,7 @@ async function propertyToSchema(propertyName: string, property: PieceProperty, o
     return property.required ? schema : schema.nullable()
 }
 
-async function buildObjectSchemaFromProperties(properties: Record<string, PieceProperty>, operation: ExecuteToolOperation, resolvedInput: Record<string, unknown>): Promise<z.ZodTypeAny> {
+async function buildObjectSchemaFromProperties(properties: Record<string, ConnectorProperty>, operation: ExecuteToolOperation, resolvedInput: Record<string, unknown>): Promise<z.ZodTypeAny> {
     const entries = Object.entries(properties)
     const schemas = await Promise.all(entries.map(([key, value]) =>
         propertyToSchema(key, value, operation, resolvedInput),
@@ -324,7 +324,7 @@ async function buildObjectSchemaFromProperties(properties: Record<string, PieceP
 }
 
 async function buildDynamicSchema(propertyName: string, operation: ExecuteToolOperation, resolvedInput: Record<string, unknown>): Promise<z.ZodTypeAny> {
-    const response = await pieceHelper.executeProps({
+    const response = await connectorHelper.executeProps({
         ...operation,
         propertyName,
         actionOrTriggerName: operation.actionName,
@@ -343,7 +343,7 @@ type PropertyDetail = {
     defaultValue?: unknown
 }
 
-async function buildPropertyDetail(propertyName: string, property: PieceProperty, operation: ExecuteToolOperation, input: Record<string, unknown>): Promise<PropertyDetail | null> {
+async function buildPropertyDetail(propertyName: string, property: ConnectorProperty, operation: ExecuteToolOperation, input: Record<string, unknown>): Promise<PropertyDetail | null> {
     const baseDetail: PropertyDetail = {
         name: propertyName,
         type: property.type,
@@ -367,13 +367,13 @@ async function buildPropertyDetail(propertyName: string, property: PieceProperty
     return baseDetail
 }
 
-async function loadOptions(propertyName: string, property: PieceProperty, operation: ExecuteToolOperation, input: Record<string, unknown>): Promise<DropdownOption<unknown>[]> {
+async function loadOptions(propertyName: string, property: ConnectorProperty, operation: ExecuteToolOperation, input: Record<string, unknown>): Promise<DropdownOption<unknown>[]> {
     if (property.type === PropertyType.STATIC_DROPDOWN || property.type === PropertyType.STATIC_MULTI_SELECT_DROPDOWN) {
         const staticProperty = property as { options: { options: DropdownOption<unknown>[] } }
         return staticProperty.options.options
     }
     
-    const response = await pieceHelper.executeProps({
+    const response = await connectorHelper.executeProps({
         ...operation,
         propertyName,
         actionOrTriggerName: operation.actionName,

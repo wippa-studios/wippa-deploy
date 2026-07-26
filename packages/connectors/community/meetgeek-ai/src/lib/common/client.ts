@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const MEETGEEKAI_BASE_URL = 'https://api.meetgeek.ai/v1';
 

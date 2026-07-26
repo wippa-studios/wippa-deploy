@@ -1,5 +1,5 @@
 import { fathomAuth, getFathomClient } from '../common/auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { GetRecordingTranscriptRequest } from 'fathom-typescript/dist/esm/sdk/models/operations';
 
 export const getRecordingTranscript = createAction({

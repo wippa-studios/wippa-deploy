@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { ScrapelessValidator } from './utils/validator';
 
 export const scrapelessApiAuth = PieceAuth.SecretText({

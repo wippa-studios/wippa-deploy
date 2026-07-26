@@ -4,9 +4,9 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { SMARTSUITE_API_URL } from './constants';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 export type SmartSuiteApiCallParams = {
   apiKey: string;

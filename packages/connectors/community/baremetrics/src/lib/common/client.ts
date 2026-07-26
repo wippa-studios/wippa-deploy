@@ -3,8 +3,8 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export type BaremetricsAuth =
   | {

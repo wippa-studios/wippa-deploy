@@ -3,7 +3,7 @@ import {
   HttpMethod,
   HttpMessageBody,
   HttpHeaders,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 /**
  * Single entry point for every FileToPDF call. Sends the API key in the

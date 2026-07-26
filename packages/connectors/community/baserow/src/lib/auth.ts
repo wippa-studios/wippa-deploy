@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 const description = `Connect to Baserow using either a Database Token (recommended) or your Email & Password. Fill in only the fields for your chosen method — leave the other section blank.`;
 

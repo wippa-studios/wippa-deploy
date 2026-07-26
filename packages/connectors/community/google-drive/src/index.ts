@@ -1,9 +1,9 @@
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addPermission } from './lib/action/add-permission.action';
 import { googleDriveCreateNewFolder } from './lib/action/create-new-folder';
 import { googleDriveCreateNewTextFile } from './lib/action/create-new-text-file';
@@ -25,7 +25,7 @@ import { googleDriveAuth, getAccessToken, GoogleDriveAuthValue } from './lib/aut
 
 export { googleDriveAuth, getAccessToken, GoogleDriveAuthValue, createGoogleClient } from './lib/auth';
 
-export const googleDrive = createPiece({
+export const googleDrive = createConnector({
   minimumSupportedRelease: '0.5.6',
   logoUrl: 'https://cdn.activepieces.com/pieces/google-drive.png',
   categories: [PieceCategory.CONTENT_AND_FILES],

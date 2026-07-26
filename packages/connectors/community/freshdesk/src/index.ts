@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getContactFromID } from './lib/actions/get-contact-from-id';
 import { getTicketStatus } from './lib/actions/get-ticket-status';
 import { getTickets } from './lib/actions/get-tickets';
@@ -28,7 +28,7 @@ export const freshdeskAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const freshdesk = createPiece({
+export const freshdesk = createConnector({
   displayName: 'Freshdesk',
   description: 'Customer support software',
 

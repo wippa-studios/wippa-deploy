@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { freshSalesCreateContact } from './lib/actions/create-contact';
 import { freshsalesAuth } from './lib/auth';
 
@@ -18,7 +18,7 @@ To obtain your API key and bundle alias, follow these steps:
 5. Copy the alias e.g **https://<alias>.myfreshworks.com**
 `;
 
-export const freshsales = createPiece({
+export const freshsales = createConnector({
   displayName: 'Freshsales',
   description: 'Sales CRM software',
 

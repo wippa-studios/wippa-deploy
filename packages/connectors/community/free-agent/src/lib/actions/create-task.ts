@@ -2,8 +2,8 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 import { freeAgentAuth } from '../auth';
 
 export const freeAgentCreateTask = createAction({

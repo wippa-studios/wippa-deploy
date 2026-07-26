@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { clearSheetAction } from './lib/actions/clear-sheet';
 import { deleteRowAction } from './lib/actions/delete-row.action';
 import { findRowByNumAction } from './lib/actions/find-row-by-num';
@@ -38,7 +38,7 @@ import { clearRowsAction } from './lib/actions/clear-rows';
 import { readDataRangeAction } from './lib/actions/read-data-range';
 import { deleteMultipleRowsAction } from './lib/actions/delete-multiple-rows';
 
-export const googleSheets = createPiece({
+export const googleSheets = createConnector({
 	minimumSupportedRelease: '0.71.4',
 	logoUrl: 'https://cdn.activepieces.com/pieces/google-sheets.png',
 	categories: [PieceCategory.PRODUCTIVITY],

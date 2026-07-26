@@ -1,5 +1,5 @@
 import MailerLite from '@mailerlite/mailerlite-nodejs';
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { mailerLiteAuth } from '..';
 
 const subscriberSample = {

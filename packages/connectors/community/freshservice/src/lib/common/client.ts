@@ -5,9 +5,9 @@ import {
   HttpRequest,
   HttpResponse,
   HttpMessageBody,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { freshserviceAuth } from '../../';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 type FreshserviceAuth = AppConnectionValueForAuthProperty<
   typeof freshserviceAuth

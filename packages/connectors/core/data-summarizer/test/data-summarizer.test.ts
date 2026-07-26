@@ -4,7 +4,7 @@ import { calculateAverage } from '../src/lib/actions/calculate-average';
 import { calculateSum } from '../src/lib/actions/calculate-sum';
 import { countUniques } from '../src/lib/actions/count-uniques';
 import { getMinMax } from '../src/lib/actions/get-min-max';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('calculateAverage', () => {
   test('calculates average of numbers', async () => {

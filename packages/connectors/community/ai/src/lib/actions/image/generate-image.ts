@@ -5,7 +5,7 @@ import {
   InputPropertyMap,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   GeneratedFile,
   generateText,
@@ -16,10 +16,10 @@ import {
 } from 'ai';
 import { generateImage } from 'ai';
 import mime from 'mime-types';
-import { isNil } from '@wippa/pieces-framework';
-import { getEffectiveProviderAndModel } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
+import { getEffectiveProviderAndModel } from '@wippa/connectors-framework';
 import { createAIModel } from '../../common/ai-sdk';
-import { AIProviderName } from '@wippa/pieces-framework';
+import { AIProviderName } from '@wippa/connectors-framework';
 import { aiProps } from '../../common/props';
 
 export const generateImageAction = createAction({

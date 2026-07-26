@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { searchAction } from './lib/actions/search';
 import { extractAction } from './lib/actions/extract';
 import { tavilyAuth } from './lib/auth';
 
-export const tavily = createPiece({
+export const tavily = createConnector({
 	displayName: 'Tavily',
 	description: 'Search engine tailored for AI agents.',
 	minimumSupportedRelease: '0.30.0',

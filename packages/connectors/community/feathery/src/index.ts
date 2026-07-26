@@ -1,5 +1,5 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { featheryAuth } from "./lib/common/auth";
 import { createFormAction } from "./lib/actions/create-form";
 import { updateFormAction } from "./lib/actions/update-form";
@@ -10,7 +10,7 @@ import { newSubmissionTrigger } from "./lib/triggers/new-submission";
 import { formCompletedTrigger } from "./lib/triggers/form-completed";
 import { fileSubmittedTrigger } from "./lib/triggers/file-submitted";
 
-export const feathery = createPiece({
+export const feathery = createConnector({
   displayName: "Feathery",
   description: "Build powerful forms, workflows, and document automation.",
   auth: featheryAuth,

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './lib/common/microsoft-cloud';
-import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { createConnector, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { createContact } from './lib/actions/create-contact';
 import { createContactFolder } from './lib/actions/create-contact-folder';
 import { deleteContact } from './lib/actions/delete-contact';
@@ -10,7 +10,7 @@ import { updateContact } from './lib/actions/update-contact';
 import { microsoft365PeopleAuth } from './lib/common/auth';
 import { newOrUpdatedContact } from './lib/triggers/new-or-updated-contact';
 
-export const microsoft365People = createPiece({
+export const microsoft365People = createConnector({
   displayName: 'Microsoft 365 People',
   description: 'Manage contacts in Microsoft 365 People',
   auth: microsoft365PeopleAuth,

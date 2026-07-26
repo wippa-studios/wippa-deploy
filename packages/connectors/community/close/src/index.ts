@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { createLead } from './lib/actions/create-lead';
 import { findLead } from './lib/actions/find-lead';
 import { newLeadAdded } from './lib/triggers/new-lead-added';
@@ -14,7 +14,7 @@ import { CLOSE_API_URL, closeApiCall } from './lib/common/client';
 import { newOpportunityAdded } from './lib/triggers/new-opportunity';
 import { closeAuth } from './lib/auth';
 
-export const close = createPiece({
+export const close = createConnector({
   displayName: 'Close',
   description: 'Sales automation and CRM integration for Close',
   auth: closeAuth,

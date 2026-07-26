@@ -1,4 +1,4 @@
-import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const BASE_URL = `https://api.aircall.io/v1`;
 

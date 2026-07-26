@@ -1,4 +1,4 @@
-import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/connectors-framework';
 import { t } from 'i18next';
 import React, { useState } from 'react';
 
@@ -42,7 +42,7 @@ export const ConnectionDropdown = React.memo(
       isRefetching: isRefetchingConnections,
     } = appConnectionsQueries.useAppConnections({
       request: {
-        pieceName: piece?.name || '',
+        connectorName: piece?.name || '',
         projectId: authenticationSession.getProjectId()!,
         limit: 1000,
       },

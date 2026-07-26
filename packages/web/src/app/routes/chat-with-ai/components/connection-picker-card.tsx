@@ -15,7 +15,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { chatApi } from '@/features/chat/lib/chat-api';
 import { appConnectionsApi } from '@/features/connections/api/app-connections';
 import { piecesHooks } from '@/features/pieces';
-import { PieceIconWithPieceName } from '@/features/pieces/components/piece-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
 import { authenticationSession } from '@/lib/authentication-session';
 import { cn } from '@/lib/utils';
 
@@ -40,11 +40,11 @@ function connectionStatusLabel(status: AppConnectionStatus): string | null {
 }
 
 function SelectedState({
-  pieceName,
+  connectorName,
   connection,
   displayName,
 }: {
-  pieceName: string;
+  connectorName: string;
   connection: PickerConnection;
   displayName: string;
 }) {
@@ -58,7 +58,7 @@ function SelectedState({
       <div className="p-4 flex items-center gap-3">
         <div className="relative">
           <PieceIconWithPieceName
-            pieceName={pieceName}
+            connectorName={connectorName}
             size="sm"
             border={false}
             showTooltip={false}
@@ -80,11 +80,11 @@ function SelectedState({
 
 function useLiveConnections({
   connections,
-  pieceName,
+  connectorName,
   enabled,
 }: {
   connections: ConnectionPickerData['connections'];
-  pieceName: string;
+  connectorName: string;
   enabled: boolean;
 }): {
   statuses: Record<string, AppConnectionStatus>;
@@ -121,7 +121,7 @@ function useLiveConnections({
         if (!effectiveProjectId) return [];
         const result = await appConnectionsApi.list({
           projectId: effectiveProjectId,
-          pieceName,
+          connectorName,
           limit: 100,
         });
         return result.data;
@@ -148,7 +148,7 @@ function useLiveConnections({
     return () => {
       cancelled = true;
     };
-  }, [projectIdsKey, pieceName, enabled]);
+  }, [projectIdsKey, connectorName, enabled]);
 
   return { statuses, fullConnections: fullConnectionsRef.current, isLoading };
 }
@@ -163,16 +163,16 @@ export function ConnectionPickerCard({
 }: ConnectionPickerCardProps) {
   const queryClient = useQueryClient();
   const conversationId = useConversationId();
-  const pieceName = normalizePieceName(picker.piece);
+  const connectorName = normalizePieceName(picker.piece);
   const shouldFetch =
     !picker.connections?.length && !!conversationId && isInteractive;
   const { data: fetchedConnections, isLoading: isFetchingConnections } =
     useQuery({
-      queryKey: ['chat-picker-connections', conversationId, pieceName],
+      queryKey: ['chat-picker-connections', conversationId, connectorName],
       queryFn: async () => {
         const conns = await chatApi.getPickerConnections({
           conversationId: conversationId!,
-          pieceName,
+          connectorName,
         });
         return conns.map((c) => ({
           ...c,
@@ -191,8 +191,8 @@ export function ConnectionPickerCard({
     );
     return { ...picker, connections: filtered };
   }, [picker, resolvedConnections, selectedProjectId]);
-  const { pieceModel, isLoading: isPieceLoading } = piecesHooks.usePiece({
-    name: pieceName,
+  const { connectorModel, isLoading: isPieceLoading } = piecesHooks.usePiece({
+    name: connectorName,
   });
   const [connectDialogOpen, setConnectDialogOpen] = useState(false);
   const [reconnectConnection, setReconnectConnection] =
@@ -209,7 +209,7 @@ export function ConnectionPickerCard({
     isLoading: isLoadingStatuses,
   } = useLiveConnections({
     connections: filteredPicker.connections,
-    pieceName,
+    connectorName,
     enabled: isInteractive && !selectedConnection,
   });
 
@@ -271,7 +271,7 @@ export function ConnectionPickerCard({
   if (selectedConnection) {
     return (
       <SelectedState
-        pieceName={pieceName}
+        connectorName={connectorName}
         connection={selectedConnection}
         displayName={filteredPicker.displayName}
       />
@@ -286,7 +286,7 @@ export function ConnectionPickerCard({
     const historyLabel = selectedConnectionLabel ?? filteredPicker.displayName;
     return (
       <SelectedState
-        pieceName={pieceName}
+        connectorName={connectorName}
         connection={{
           label: historyLabel,
           project: '',
@@ -341,7 +341,7 @@ export function ConnectionPickerCard({
                   />
                 ) : (
                   <PieceIconWithPieceName
-                    pieceName={pieceName}
+                    connectorName={connectorName}
                     size="sm"
                     border={false}
                     showTooltip={false}
@@ -444,9 +444,9 @@ export function ConnectionPickerCard({
         )}
       </InteractiveCardShell>
 
-      {pieceModel && (
+      {connectorModel && (
         <CreateOrEditConnectionDialog
-          piece={pieceModel}
+          piece={connectorModel}
           open={connectDialogOpen}
           projectId={selectedProjectId}
           setOpen={(open, createdConnection) => {

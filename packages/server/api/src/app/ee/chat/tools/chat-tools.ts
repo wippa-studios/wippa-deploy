@@ -42,20 +42,20 @@ function toFlowRunStatus(value?: string): FlowRunStatus | undefined {
 }
 
 function pieceShortName(fullName: string): string {
-    return fullName.replace('@wippa/piece-', '')
+    return fullName.replace('@wippa/connector-', '')
 }
 
 function pieceDisplayLabel(shortName: string): string {
     return shortName.charAt(0).toUpperCase() + shortName.slice(1)
 }
 
-async function findConnectionsForPiece({ pieceName, projects, platformId, log }: {
-    pieceName: string
+async function findConnectionsForPiece({ connectorName, projects, platformId, log }: {
+    connectorName: string
     projects: Project[]
     platformId: string
     log: FastifyBaseLogger
 }): Promise<FindConnectionsResult> {
-    const normalizedPiece = mcpUtils.normalizePieceName(pieceName) ?? pieceName
+    const normalizedPiece = mcpUtils.normalizePieceName(connectorName) ?? connectorName
 
     const projectId = projects[0]?.id
     let requiredScopes: string[] = []
@@ -82,7 +82,7 @@ async function findConnectionsForPiece({ pieceName, projects, platformId, log }:
             const result = await appConnectionService(log).list({
                 projectId: project.id,
                 platformId,
-                pieceName: normalizedPiece,
+                connectorName: normalizedPiece,
                 cursorRequest: null,
                 displayName: undefined,
                 status: undefined,
@@ -157,7 +157,7 @@ async function listConnectionsAcrossProjects({ projects, platformId, log }: {
             const result = await appConnectionService(log).list({
                 projectId: project.id,
                 platformId,
-                pieceName: undefined,
+                connectorName: undefined,
                 cursorRequest: null,
                 displayName: undefined,
                 status: undefined,
@@ -165,7 +165,7 @@ async function listConnectionsAcrossProjects({ projects, platformId, log }: {
                 scope: undefined,
                 externalIds: undefined,
             })
-            return result.data.map((c) => `- ${c.displayName} (${pieceShortName(c.pieceName)}, ${c.status}) — ${chatPrompt.projectDisplayName(project)}`)
+            return result.data.map((c) => `- ${c.displayName} (${pieceShortName(c.connectorName)}, ${c.status}) — ${chatPrompt.projectDisplayName(project)}`)
         }),
     )
 
@@ -243,11 +243,11 @@ async function executeCrossProjectTool({ toolName, toolInput, platformId, userId
             return { remembered: true }
         }
         case 'ap_discover_action_auth': {
-            const normalizedPiece = mcpUtils.normalizePieceName(toolInput.pieceName as string) ?? (toolInput.pieceName as string)
+            const normalizedPiece = mcpUtils.normalizePieceName(toolInput.connectorName as string) ?? (toolInput.connectorName as string)
             // Sticky connection: if the user already chose a connection for this piece this
             // conversation, reuse it instead of popping another picker for the next action.
             if (conversationId) {
-                const selected = await chatApprovalGate.getSelectedConnection({ conversationId, pieceName: normalizedPiece })
+                const selected = await chatApprovalGate.getSelectedConnection({ conversationId, connectorName: normalizedPiece })
                 if (selected) {
                     return {
                         alreadyConnected: true,
@@ -258,12 +258,12 @@ async function executeCrossProjectTool({ toolName, toolInput, platformId, userId
                     }
                 }
             }
-            const discoveryResult = await findConnectionsForPiece({ pieceName: toolInput.pieceName as string, projects, platformId, log })
+            const discoveryResult = await findConnectionsForPiece({ connectorName: toolInput.connectorName as string, projects, platformId, log })
 
             if (conversationId && 'pickConnection' in discoveryResult && discoveryResult.pickConnection) {
                 await chatApprovalGate.storeAvailableConnections({
                     conversationId,
-                    pieceName: normalizedPiece,
+                    connectorName: normalizedPiece,
                     connections: discoveryResult.connections,
                 })
                 return {
@@ -355,10 +355,10 @@ async function executeCrossProjectTool({ toolName, toolInput, platformId, userId
 // A large successful read (e.g. a 1.4MB Attio query) is persisted as a .json file and replaced in
 // the model context with a compact shape preview + the fileId. The agent then processes the FULL
 // data in ap_run_code (inputFileIds → inputs.data) — the blob never floods the context.
-function buildAdhocOffload({ projectId, platformId, pieceName, actionName, log }: {
+function buildAdhocOffload({ projectId, platformId, connectorName, actionName, log }: {
     projectId: string
     platformId?: string
-    pieceName: string
+    connectorName: string
     actionName: string
     log: FastifyBaseLogger
 }): AdhocOffload | undefined {
@@ -369,7 +369,7 @@ function buildAdhocOffload({ projectId, platformId, pieceName, actionName, log }
         thresholdBytes: LARGE_RESULT_OFFLOAD_BYTES,
         handle: async ({ payload, byteSize, label, statusNote }) => {
             const json = JSON.stringify(payload, null, 2)
-            const fileName = `${pieceName.replace('@wippa/piece-', '')}-${actionName}.json`
+            const fileName = `${connectorName.replace('@wippa/connector-', '')}-${actionName}.json`
             const { data: saved, error } = await tryCatch(() => fileService(log).save({
                 projectId,
                 platformId,
@@ -381,7 +381,7 @@ function buildAdhocOffload({ projectId, platformId, pieceName, actionName, log }
                 metadata: { mimetype: 'application/json' },
             }))
             if (error || isNil(saved)) {
-                log.warn({ error, pieceName, actionName }, '[chat] large-result offload failed; falling back to inline truncation')
+                log.warn({ error, connectorName, actionName }, '[chat] large-result offload failed; falling back to inline truncation')
                 return null
             }
             return chatAiUtils.buildLargeResultPreview({ payload, byteSize, fileId: saved.id, label, statusNote })
@@ -399,15 +399,15 @@ async function runChatAdhocAction({ toolInput, projects, availableProjectIds, co
     requireWritePermission?: boolean
     log: FastifyBaseLogger
 }): Promise<unknown> {
-    const pieceName = toolInput.pieceName as string
+    const connectorName = toolInput.connectorName as string
     const actionName = toolInput.actionName as string
 
-    const normalizedPiece = mcpUtils.normalizePieceName(pieceName) ?? pieceName
+    const normalizedPiece = mcpUtils.normalizePieceName(connectorName) ?? connectorName
     let connectionExternalId: string | undefined
     let connectionLabel: string | undefined
     let connectionProjectId: string | undefined
     if (conversationId) {
-        const selected = await chatApprovalGate.getSelectedConnection({ conversationId, pieceName: normalizedPiece })
+        const selected = await chatApprovalGate.getSelectedConnection({ conversationId, connectorName: normalizedPiece })
         if (selected) {
             connectionExternalId = selected.externalId
             connectionLabel = selected.label
@@ -438,11 +438,11 @@ async function runChatAdhocAction({ toolInput, projects, availableProjectIds, co
     }
     const result = await executeAdhocAction({
         projectId: resolvedProjectId,
-        pieceName,
+        connectorName,
         actionName,
         input: parsedInput as Record<string, unknown> | undefined,
         connectionExternalId,
-        ...spreadIfDefined('offload', buildAdhocOffload({ projectId: resolvedProjectId, platformId, pieceName: normalizedPiece, actionName, log })),
+        ...spreadIfDefined('offload', buildAdhocOffload({ projectId: resolvedProjectId, platformId, connectorName: normalizedPiece, actionName, log })),
         log,
     })
 
@@ -458,7 +458,7 @@ async function runChatAdhocAction({ toolInput, projects, availableProjectIds, co
             _meta: {
                 ...spreadIfDefined('connectionLabel', connectionLabel),
                 ...spreadIfDefined('errorSummary', errorSummary),
-                pieceName: normalizedPiece,
+                connectorName: normalizedPiece,
             },
         }
     }

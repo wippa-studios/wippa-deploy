@@ -227,7 +227,7 @@
   "The sample data can be used in the next steps.": " يمكن استخدام بيانات العينة هذه في الخطوات التالية ",
   "Testing Trigger": "اختبار المشغّل",
   "Action Required": "Action Required",
-  "testPieceWebhookTriggerNote": "الرجاء الذَّهاب إلى {pieceName} وتشغيل {triggerName}.",
+  "testPieceWebhookTriggerNote": "الرجاء الذَّهاب إلى {connectorName} وتشغيل {triggerName}.",
   "Send Data to the webhook URL to generate sample data to use in the next steps": "Send Data to the webhook URL to generate sample data to use in the next steps",
   "Test Trigger": "اختبر المشغّل ",
   "Use Mock Data": "Use Mock Data",

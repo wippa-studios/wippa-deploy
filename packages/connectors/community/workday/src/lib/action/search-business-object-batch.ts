@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { QueryParams } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { QueryParams } from '@wippa/connectors-common';
 import { workdayAuth } from '../auth';
 import { fetchAllPages } from '../common';
 import { formatWorkdayOutputs } from '../common/fields';

@@ -2,12 +2,12 @@ import {
   HttpMethod,
   httpClient,
   getAccessTokenOrThrow,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 const markdown = `
 To Obtain the following credentials:

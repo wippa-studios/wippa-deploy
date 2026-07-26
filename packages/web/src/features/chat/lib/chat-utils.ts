@@ -134,8 +134,8 @@ function extractToolContext({
   if (!input) return null;
   const parts: string[] = [];
 
-  if (typeof input.pieceName === 'string') {
-    parts.push(humanizePieceName(input.pieceName));
+  if (typeof input.connectorName === 'string') {
+    parts.push(humanizePieceName(input.connectorName));
   }
   if (typeof input.actionName === 'string' && input.actionName) {
     parts.push(formatUtils.convertEnumToHumanReadable(input.actionName));
@@ -155,10 +155,10 @@ function extractToolContext({
   }
   if (
     isObject(input.settings) &&
-    typeof input.settings.pieceName === 'string' &&
+    typeof input.settings.connectorName === 'string' &&
     parts.length === 0
   ) {
-    parts.push(humanizePieceName(input.settings.pieceName));
+    parts.push(humanizePieceName(input.settings.connectorName));
   }
 
   return parts.length > 0 ? parts.join(' ') : null;

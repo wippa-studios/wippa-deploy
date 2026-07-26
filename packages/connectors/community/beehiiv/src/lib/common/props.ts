@@ -1,6 +1,6 @@
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { BeehiivPaginatedApiCall } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { beehiivAuth } from './auth';
 
 export const publicationId = Property.Dropdown({

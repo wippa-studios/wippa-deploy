@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { clockodoCommon, makeClient, reformatDateTime } from '../../common';
 import { TimeRecordEntry } from '../../common/models/entry';
 import { clockodoAuth } from '../../auth';

@@ -1,6 +1,6 @@
-import { Property, createAction } from "@wippa/pieces-framework";
+import { Property, createAction } from "@wippa/connectors-framework";
 import { BASE_URL } from "../common";
-import { httpClient, HttpMethod } from "@wippa/pieces-common";
+import { httpClient, HttpMethod } from "@wippa/connectors-common";
 import { circleAuth } from "../common/auth";
 import { CommunityMemberDetails } from "../common/types";
 

@@ -1,8 +1,8 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { gravityFormsNewSubmission } from './lib/triggers/new-submission';
 
-export const gravityforms = createPiece({
+export const gravityforms = createConnector({
   displayName: 'Gravity Forms',
   description: 'Build and publish your WordPress forms',
 

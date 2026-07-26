@@ -1,9 +1,9 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { delayForAction } from './lib/actions/delay-for-action';
 import { delayUntilAction } from './lib/actions/delay-until-action';
 
-export const delay = createPiece({
+export const delay = createConnector({
   displayName: 'Delay',
   description: 'Use it to delay the execution of the next action',
   minimumSupportedRelease: '0.82.0',

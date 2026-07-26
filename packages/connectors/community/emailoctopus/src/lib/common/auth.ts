@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 
 // The base URL for the EmailOctopus API
 const emailOctopusApiUrl = 'https://api.emailoctopus.com';

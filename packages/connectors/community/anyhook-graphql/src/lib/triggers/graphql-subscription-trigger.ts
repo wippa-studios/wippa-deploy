@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@wippa/connectors-framework';
 import { createGraphQLSubscription, deleteGraphQLSubscription } from './helpers';
 import { graphqlCommon } from '../common/common';
 

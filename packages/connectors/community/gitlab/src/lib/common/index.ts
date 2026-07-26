@@ -1,5 +1,5 @@
-import { getAccessTokenOrThrow } from '@wippa/pieces-common';
-import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { getAccessTokenOrThrow } from '@wippa/connectors-common';
+import { OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 import { GitlabApi } from './client';
 import { gitlabAuth } from '../auth';
 

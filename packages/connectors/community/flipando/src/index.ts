@@ -1,13 +1,13 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { flipandoAuth } from './lib/common/auth';
 import { runApp } from './lib/actions/run-app';
 import { getTask } from './lib/actions/get-task';
 import { runAppGenerator } from './lib/actions/run-app-generator';
 import { getAllApps } from './lib/actions/get-all-apps';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const flipando = createPiece({
+export const flipando = createConnector({
   displayName: 'Flipando AI',
   auth: flipandoAuth,
   minimumSupportedRelease: '0.36.1',

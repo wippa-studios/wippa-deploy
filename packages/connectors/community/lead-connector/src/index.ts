@@ -1,12 +1,12 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { baseUrl, getContacts, leadConnectorHeaders } from './lib/common';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addContactToCampaignAction } from './lib/actions/add-contact-to-campaign';
 import { addContactToWorkflowAction } from './lib/actions/add-contact-to-workflow';
 import { addNoteToContactAction } from './lib/actions/add-note-to-contact';
@@ -76,7 +76,7 @@ export const leadConnectorAuth = PieceAuth.OAuth2({
   },
 });
 
-export const leadConnector = createPiece({
+export const leadConnector = createConnector({
   displayName: 'LeadConnector',
   description: 'Lead Connector - Go High Level',
   auth: leadConnectorAuth,

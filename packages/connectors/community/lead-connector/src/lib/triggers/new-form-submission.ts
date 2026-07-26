@@ -1,10 +1,10 @@
-import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property, createTrigger } from '@wippa/pieces-framework';
-import { TriggerStrategy } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property, createTrigger } from '@wippa/connectors-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { leadConnectorAuth } from '../..';
 import { getFormSubmissions, getForms } from '../common';
 

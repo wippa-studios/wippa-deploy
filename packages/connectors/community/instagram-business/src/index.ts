@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { uploadPhoto } from './lib/actions/upload-photo';
 import { uploadReel } from './lib/actions/upload-reel';
 import { instagramCommon } from './lib/common';
 
-export const instagramBusiness = createPiece({
+export const instagramBusiness = createConnector({
   displayName: 'Instagram for Business',
   description: 'Grow your business on Instagram',
   minimumSupportedRelease: '0.30.0',

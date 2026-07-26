@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpMessageBody } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, HttpMessageBody } from '@wippa/connectors-common';
 
 export const BASE_URL = 'https://api.imagerouter.io';
 

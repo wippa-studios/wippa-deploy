@@ -1,6 +1,6 @@
 import path from 'path'
 import { isNil, STEP_NAME_REGEX } from '@wippa/core-utils'
-import { LATEST_CONTEXT_VERSION } from '@wippa/pieces-framework'
+import { LATEST_CONTEXT_VERSION } from '@wippa/connectors-framework'
 import { CodeAction, EngineGenericError, ExecutionError, ExecutionErrorType, FlowActionType, FlowRunStatus, GenericStepOutput, StepOutputStatus } from '@wippa/shared'
 import { initCodeSandbox } from '../core/code/code-sandbox'
 import { continueIfFailureHandler, runWithExponentialBackoff } from '../helper/error-handling'

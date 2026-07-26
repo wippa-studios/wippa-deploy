@@ -1,9 +1,9 @@
 import {
 	OAuth2PropertyValue,
-	createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+	createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { workdayAuth } from './lib/auth';
 
@@ -49,7 +49,7 @@ import { newOrUpdatedBusinessObjectBatch } from './lib/trigger/new-or-updated-bu
 import { scheduledReportFetchBatch } from './lib/trigger/scheduled-report-fetch-batch';
 import { scheduledReportFetchWqlBatch } from './lib/trigger/scheduled-report-fetch-wql-batch';
 
-export const workday = createPiece({
+export const workday = createConnector({
 	displayName: 'Workday',
 	description:
 		'Cloud-based enterprise platform for human resources, finance, and planning.',

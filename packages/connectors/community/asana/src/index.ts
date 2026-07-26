@@ -1,14 +1,14 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { asanaCreateTaskAction } from './lib/actions/create-task';
 import { asanaAuth } from './lib/auth';
 
-export const asana = createPiece({
+export const asana = createConnector({
   displayName: 'Asana',
   description: "Work management platform designed to help teams organize, track, and manage their work.",
   minimumSupportedRelease: '0.30.0',

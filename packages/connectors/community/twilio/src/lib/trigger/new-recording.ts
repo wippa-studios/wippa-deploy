@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, createTrigger, PiecePropValueSchema, TriggerStrategy } from '@wippa/pieces-framework';
-import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, createTrigger, PiecePropValueSchema, TriggerStrategy } from '@wippa/connectors-framework';
+import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from '@wippa/connectors-common';
 import { twilioAuth } from '../..';
 
 interface Recording {

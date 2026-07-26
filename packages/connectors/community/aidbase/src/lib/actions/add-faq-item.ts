@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { aidbaseAuth } from '../common/auth';
 import { aidbaseClient } from '../common/client';
 import { faqDropdown } from '../common/props';

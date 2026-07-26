@@ -1,7 +1,7 @@
-import { PieceAuth } from "@wippa/pieces-framework";
+import { PieceAuth } from "@wippa/connectors-framework";
 import { makeRequest } from "./client";
-import { HttpMethod } from "@wippa/pieces-common";
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { HttpMethod } from "@wippa/connectors-common";
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export const magicalApiAuth = PieceAuth.SecretText({
   displayName: "Magical API Key",

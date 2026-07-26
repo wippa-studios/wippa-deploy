@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { formatDateAction } from '../src/lib/actions/format-date';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('formatDateAction', () => {
   test('converts between formats', async () => {

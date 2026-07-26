@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { knockAuth, KNOCK_API_BASE_URL, knockHeaders } from './lib/auth';
 import { triggerWorkflow } from './lib/actions/trigger-workflow';
 import { identifyUser } from './lib/actions/identify-user';
@@ -9,7 +9,7 @@ import { deleteUser } from './lib/actions/delete-user';
 import { getMessage } from './lib/actions/get-message';
 import { listMessages } from './lib/actions/list-messages';
 
-export const knock = createPiece({
+export const knock = createConnector({
   displayName: 'Knock',
   description:
     'Notification infrastructure for developers. Manage users, trigger workflows, and track messages.',

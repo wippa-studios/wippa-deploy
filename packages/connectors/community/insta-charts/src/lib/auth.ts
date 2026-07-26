@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 export const instaChartsAuth = PieceAuth.OAuth2({
   description: 'InstaCharts OAuth2 Authentication',

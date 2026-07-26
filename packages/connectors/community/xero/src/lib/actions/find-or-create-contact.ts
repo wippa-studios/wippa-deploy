@@ -1,10 +1,10 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 

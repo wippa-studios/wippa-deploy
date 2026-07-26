@@ -1,10 +1,10 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { BasicAuthConnectionValue } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { BasicAuthConnectionValue } from '@wippa/connectors-framework';
 
 export const scenarioAuth = PieceAuth.BasicAuth({
   description:
@@ -21,7 +21,7 @@ export const scenarioAuth = PieceAuth.BasicAuth({
   }),
 });
 
-export const scenario = createPiece({
+export const scenario = createConnector({
   displayName: 'Scenario',
   auth: scenarioAuth,
   minimumSupportedRelease: '0.36.1',

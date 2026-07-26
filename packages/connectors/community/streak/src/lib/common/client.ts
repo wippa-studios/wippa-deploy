@@ -5,7 +5,7 @@ import {
   HttpMethod,
   HttpResponse,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export async function streakApiCall<T extends HttpMessageBody>({
   apiKey,

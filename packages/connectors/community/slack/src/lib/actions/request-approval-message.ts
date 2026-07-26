@@ -1,8 +1,8 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { buildFlowOriginContextBlock, slackSendMessage, textToSectionBlocks } from '../common/utils';
 import { slackAuth } from '../auth';
-import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
-import { ExecutionType } from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined } from '@wippa/connectors-framework';
+import { ExecutionType } from '@wippa/connectors-framework';
 import {
   profilePicture,
   singleSelectChannelInfo,

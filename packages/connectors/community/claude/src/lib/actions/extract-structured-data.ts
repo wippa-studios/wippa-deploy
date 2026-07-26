@@ -1,6 +1,6 @@
 import { claudeAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import Anthropic from '@anthropic-ai/sdk';
 import { TextBlock, ToolUseBlock } from '@anthropic-ai/sdk/resources';
 import Ajv from 'ajv';

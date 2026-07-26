@@ -1,5 +1,5 @@
 import { reoonEmailVerifyAuth } from '../..';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { verifyEmailsResult } from '../common/send-util';
 
 export const bulkVerificationResult = createAction({

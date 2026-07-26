@@ -1,4 +1,4 @@
-import { OAuth2AuthorizationMethod, PieceAuth } from '@wippa/pieces-framework';
+import { OAuth2AuthorizationMethod, PieceAuth } from '@wippa/connectors-framework';
 
 export const figmaAuth = PieceAuth.OAuth2({
   description: '',

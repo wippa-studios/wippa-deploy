@@ -1,10 +1,10 @@
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
 	createTrigger,
 	Property,
 	TriggerStrategy,
-} from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { airparserAuth } from '../auth';
 import { airparserApiCall, GetDocumentResponse } from '../common';
 import { inboxIdDropdown } from '../common/props';

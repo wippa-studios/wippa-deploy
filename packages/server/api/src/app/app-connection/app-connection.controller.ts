@@ -21,11 +21,11 @@ export const appConnectionController: FastifyPluginCallbackZod = (app, _opts, do
             projectIds: [request.projectId],
             externalId: request.body.externalId,
             displayName: request.body.displayName,
-            pieceName: request.body.pieceName,
+            connectorName: request.body.connectorName,
             ownerId,
             scope: AppConnectionScope.PROJECT,
             metadata: request.body.metadata,
-            pieceVersion: request.body.pieceVersion,
+            connectorVersion: request.body.connectorVersion,
         }
         const appConnection = request.body.type === PLACEHOLDER_CONNECTION_TYPE
             ? await appConnectionService(request.log).upsert({
@@ -66,10 +66,10 @@ export const appConnectionController: FastifyPluginCallbackZod = (app, _opts, do
     })
 
     app.get('/', ListAppConnectionsRequest, async (request): Promise<SeekPage<AppConnectionWithoutSensitiveData>> => {
-        const { displayName, pieceName, status, cursor, limit, scope } = request.query
+        const { displayName, connectorName, status, cursor, limit, scope } = request.query
 
         const appConnections = await appConnectionService(request.log).list({
-            pieceName,
+            connectorName,
             displayName,
             status,
             scope,
@@ -170,8 +170,8 @@ export const appConnectionController: FastifyPluginCallbackZod = (app, _opts, do
     app.post('/oauth2/authorization-url', GetOAuth2AuthorizationUrlRequest, async (request) => {
         return oauth2Util(request.log).buildAuthorizationUrl({
             platformId: request.principal.platform.id,
-            pieceName: request.body.pieceName,
-            pieceVersion: request.body.pieceVersion,
+            connectorName: request.body.connectorName,
+            connectorVersion: request.body.connectorVersion,
             clientId: request.body.clientId,
             redirectUrl: request.body.redirectUrl,
             props: request.body.props,

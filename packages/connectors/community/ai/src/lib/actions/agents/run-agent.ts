@@ -3,10 +3,10 @@ import {
   Property,
   PieceAuth,
   ArraySubProps,
-} from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
-import { AgentToolType } from '@wippa/pieces-framework';
-import { AgentOutputField, AgentPieceProps, AgentTaskStatus, AgentTool, TASK_COMPLETION_TOOL_NAME, AIProviderName, AgentProviderModel, ExecutionToolStatus, AgentKnowledgeBaseTool, KnowledgeBaseSourceType, normalizeToolOutputToExecuteResponse, spreadIfDefined, getEffectiveProviderAndModel } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
+import { AgentToolType } from '@wippa/connectors-framework';
+import { AgentOutputField, AgentPieceProps, AgentTaskStatus, AgentTool, TASK_COMPLETION_TOOL_NAME, AIProviderName, AgentProviderModel, ExecutionToolStatus, AgentKnowledgeBaseTool, KnowledgeBaseSourceType, normalizeToolOutputToExecuteResponse, spreadIfDefined, getEffectiveProviderAndModel } from '@wippa/connectors-framework';
 import { hasToolCall, stepCountIs, streamText } from 'ai';
 import { agentOutputBuilder } from './agent-output-builder';
 import { createAIModel, createEmbeddingModel } from '../../common/ai-sdk';
@@ -26,7 +26,7 @@ const agentToolArrayItems: ArraySubProps<boolean> = {
     required: true,
   }),
 
-  pieceMetadata: Property.Json({
+  connectorMetadata: Property.Json({
     displayName: 'Piece Metadata',
     required: false,
   }),

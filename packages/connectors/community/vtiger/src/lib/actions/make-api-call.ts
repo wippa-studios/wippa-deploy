@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { vtigerAuth } from '../..';
 import { instanceLogin } from '../common';
 import {
@@ -8,7 +8,7 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 //Docs: https://code.vtiger.com/vtiger/vtigercrm-manual/-/wikis/Webservice-Docs
 //Extra: https://help.vtiger.com/article/147111249-Rest-API-Manual

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 
 const markdown = `
 To Obtain a Phone Number ID and a Permanent System User Access Token, follow these steps:

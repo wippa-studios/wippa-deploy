@@ -1,13 +1,13 @@
 import {
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
   propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { heartbeatAuth } from '../..';
 import * as z from 'zod/mini'
 

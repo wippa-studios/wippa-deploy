@@ -1,9 +1,9 @@
 import { isNil } from '@wippa/core-utils';
 import {
-  PieceProperty,
-  PiecePropertyMap,
+  ConnectorProperty,
+  ConnectorPropertyMap,
   PropertyType,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { PropertySettings } from '@wippa/shared';
 import { t } from 'i18next';
 import { ControllerRenderProps, UseFormReturn } from 'react-hook-form';
@@ -13,7 +13,7 @@ import { ColorPicker } from '@/components/custom/color-picker';
 import { DictionaryInput } from '@/components/custom/dictionary-input';
 import { JsonEditor } from '@/components/custom/json-editor';
 import { ApMarkdown } from '@/components/custom/markdown';
-import { MultiSelectPieceProperty } from '@/components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '@/components/custom/multi-select-piece-property';
 import { SearchableSelect } from '@/components/custom/searchable-select';
 import { FormControl } from '@/components/ui/form';
 import { Switch } from '@/components/ui/switch';
@@ -181,7 +181,7 @@ export const selectGenericFormComponentForProperty = ({
           allowDynamicValues={allowDynamicValues}
           dynamicInputModeToggled={dynamicInputModeToggled}
         >
-          <MultiSelectPieceProperty
+          <MultiSelectConnectorProperty
             placeholder={property.options.placeholder ?? t('Select an option')}
             options={property.options.options}
             onChange={field.onChange}
@@ -192,7 +192,7 @@ export const selectGenericFormComponentForProperty = ({
               field.value.length > 0 &&
               !property.required
             }
-          ></MultiSelectPieceProperty>
+          ></MultiSelectConnectorProperty>
         </AutoFormFieldWrapper>
       );
     case PropertyType.MULTI_SELECT_DROPDOWN:
@@ -215,8 +215,8 @@ export const selectGenericFormComponentForProperty = ({
               refreshers={property.refreshers}
               value={field.value}
               actionOrTriggerName={dynamicPropsInfo.actionOrTriggerName}
-              pieceName={dynamicPropsInfo.pieceName}
-              pieceVersion={dynamicPropsInfo.pieceVersion}
+              connectorName={dynamicPropsInfo.connectorName}
+              connectorVersion={dynamicPropsInfo.connectorVersion}
               form={form}
               placedInside={dynamicPropsInfo.placedInside}
               onChange={field.onChange}
@@ -272,8 +272,8 @@ export const selectGenericFormComponentForProperty = ({
           refreshers={property.refreshers}
           propertyName={propertyName}
           disabled={disabled}
-          pieceName={dynamicPropsInfo.pieceName}
-          pieceVersion={dynamicPropsInfo.pieceVersion}
+          connectorName={dynamicPropsInfo.connectorName}
+          connectorVersion={dynamicPropsInfo.connectorVersion}
           actionOrTriggerName={dynamicPropsInfo.actionOrTriggerName}
           placedInside={dynamicPropsInfo.placedInside}
           propertySettings={propertySettings}
@@ -323,7 +323,7 @@ export type SelectGenericFormComponentForPropertyParams = {
   hideLabel?: boolean;
   propertyName: string;
   inputName: string;
-  property: PieceProperty;
+  property: ConnectorProperty;
   allowDynamicValues: boolean;
   markdownVariables: Record<string, string>;
   useMentionTextInput: boolean;
@@ -334,18 +334,18 @@ export type SelectGenericFormComponentForPropertyParams = {
   enableMarkdownForInputWithMention?: boolean;
   dynamicPropsInfo:
     | ({
-        pieceName: string;
-        pieceVersion: string;
+        connectorName: string;
+        connectorVersion: string;
         actionOrTriggerName: string;
       } & (
         | {
             placedInside: 'stepSettings';
             updateFormSchema: (
               key: string,
-              newFieldSchema: PiecePropertyMap,
+              newFieldSchema: ConnectorPropertyMap,
             ) => void;
             updatePropertySettingsSchema: (
-              schema: PiecePropertyMap,
+              schema: ConnectorPropertyMap,
               propertyName: string,
               form: UseFormReturn,
             ) => void;

@@ -1,9 +1,9 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { manualTrigger } from "./lib/triggers/manual-trigger";
-import { PieceCategory } from "@wippa/pieces-framework";
+import { PieceCategory } from "@wippa/connectors-framework";
 
-export const manualTriggerPiece = createPiece({
+export const manualTriggerPiece = createConnector({
       displayName: "Manual Trigger",
       auth: PieceAuth.None(),
       minimumSupportedRelease: '0.78.0',

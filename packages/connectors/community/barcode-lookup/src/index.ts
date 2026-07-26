@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { barcodeLookupAuth } from './lib/common/auth';
 import { searchByBarcode } from './lib/actions/search-by-barcode';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const barcodeLookup = createPiece({
+export const barcodeLookup = createConnector({
   displayName: 'Barcode Lookup',
   auth: barcodeLookupAuth,
   minimumSupportedRelease: '0.36.1',

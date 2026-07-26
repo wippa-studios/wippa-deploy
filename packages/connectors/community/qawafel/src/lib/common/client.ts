@@ -4,7 +4,7 @@ import {
   HttpMessageBody,
   HttpResponse,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { getQawafelBaseUrl, QawafelAuth } from './auth';
 
 export async function qawafelApiCall<T extends HttpMessageBody>({

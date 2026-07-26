@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendNotification } from './lib/actions/send-notification';
 
 export const pushoverAuth = PieceAuth.CustomAuth({
@@ -31,7 +31,7 @@ export const pushoverAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const pushover = createPiece({
+export const pushover = createConnector({
   displayName: 'Pushover',
   description: 'Simple push notification service',
 

@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getGraphBaseUrl } from './lib/common/microsoft-cloud';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { addAttachmentAction } from './lib/actions/add-attachment';
 import { completeTaskAction } from './lib/actions/complete-task';
@@ -25,7 +25,7 @@ import { newTaskCreatedTrigger } from './lib/triggers/new-task-created';
 import { taskCompletedTrigger } from './lib/triggers/task-completed';
 import { newOrUpdatedTaskTrigger } from './lib/triggers/task-updated';
 
-export const microsoftTodo = createPiece({
+export const microsoftTodo = createConnector({
   displayName: 'Microsoft To Do',
   description: 'Cloud based task management application.',
   categories: [PieceCategory.PRODUCTIVITY],

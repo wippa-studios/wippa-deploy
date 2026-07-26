@@ -2,12 +2,12 @@ import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { endpoint, kizeoFormsCommon } from '../common';
 import { kizeoFormsAuth } from '../..';
 

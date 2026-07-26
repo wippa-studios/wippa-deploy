@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newEmail } from './lib/triggers/new-email';
 import { imapAuth } from './lib/common';
 import { markEmailAsRead } from './lib/actions/mark-email-read';
@@ -7,7 +7,7 @@ import { copyEmail } from './lib/actions/copy-email';
 import { deleteEmail } from './lib/actions/delete-email';
 import { moveEmail } from './lib/actions/move-email';
 
-export const imapPiece = createPiece({
+export const imapPiece = createConnector({
   displayName: 'IMAP',
   description: 'Receive new email trigger',
   minimumSupportedRelease: '0.30.0',

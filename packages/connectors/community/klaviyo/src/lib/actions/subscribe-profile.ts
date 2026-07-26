@@ -1,8 +1,8 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { klaviyoAuth, KlaviyoAuthValue } from '../common/auth';
 import { listIdDropdown, profileIdsMultiSelectDropdown } from '../common/props';
 import { fetchProfilesByIds, makeRequest, normalizeProfileIds } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const subscribeProfile = createAction({
   auth: klaviyoAuth,

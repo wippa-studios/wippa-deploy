@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const getMainPageBlocks = createAction({
   name: 'get_main_page_blocks',

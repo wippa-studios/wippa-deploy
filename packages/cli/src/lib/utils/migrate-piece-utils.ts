@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-function migratePiece({ piecePath, dryRun }: MigratePieceParams): MigrateReport {
+function migrateConnector({ piecePath, dryRun }: MigratePieceParams): MigrateReport {
     const repointedFiles: string[] = []
     const srcDir = join(piecePath, 'src')
     if (existsSync(srcDir)) {
@@ -35,7 +35,7 @@ function collectTsFiles(dir: string): string[] {
     return files
 }
 
-// A piece imports only from @wippa/pieces-framework (which re-exports the foundation
+// A piece imports only from @wippa/connectors-framework (which re-exports the foundation
 // symbols). Repoint every shared / core-* import specifier to the framework; a symbol the
 // framework does not re-export was server-only and will surface as a build error.
 function repointImports(content: string): string {
@@ -119,18 +119,18 @@ function defaultEslintConfig(): Record<string, unknown> {
     }
 }
 
-const FRAMEWORK = '@wippa/pieces-framework'
+const FRAMEWORK = '@wippa/connectors-framework'
 const REPOINTED_MODULES = [
     '@wippa/shared',
     '@wippa/core-utils',
-    '@wippa/core-piece-types',
+    '@wippa/core-connector-types',
     '@wippa/core-formula',
     '@wippa/core-execution',
 ]
 const REQUIRED_DEPENDENCIES = [
-    '@wippa/pieces-common',
-    '@wippa/pieces-framework',
-    '@wippa/core-piece-types',
+    '@wippa/connectors-common',
+    '@wippa/connectors-framework',
+    '@wippa/core-connector-types',
     '@wippa/core-utils',
 ]
 const IMPORT_BOUNDARY_PATTERNS = [
@@ -144,7 +144,7 @@ const IMPORT_BOUNDARY_PATTERNS = [
 const TSLIB_VERSION = '2.6.2'
 const BUNDLE_SCRIPT = 'node ../../../../dist/packages/cli/src/index.js pieces bundle'
 
-export const migratePieceUtils = { migratePiece }
+export const migratePieceUtils = { migrateConnector }
 
 export type MigratePieceParams = {
     piecePath: string

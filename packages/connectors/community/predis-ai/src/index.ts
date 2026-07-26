@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { predisAiActions } from './lib/actions';
 import { predisAiTriggers } from './lib/triggers';
 
@@ -9,7 +9,7 @@ export const predisAiAuth = PieceAuth.SecretText({
     'In Predis.ai, go to Pricing & Account -> Rest API to generate an API key.',
 });
 
-export const predisAi = createPiece({
+export const predisAi = createConnector({
   displayName: 'Predis.ai',
   description: 'AI-powered social media content creation platform. Generate posts, videos, carousels, images, quotes, and memes with automated creation and webhook notifications.',
   auth: predisAiAuth,

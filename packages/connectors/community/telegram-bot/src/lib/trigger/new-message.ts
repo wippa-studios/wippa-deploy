@@ -1,7 +1,7 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
-import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 
 type TelegramUpdate = Record<string, unknown> & { update_id?: number };
 

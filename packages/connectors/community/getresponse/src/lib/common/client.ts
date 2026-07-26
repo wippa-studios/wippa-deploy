@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 import { GetResponseAuthValue } from './auth';
 

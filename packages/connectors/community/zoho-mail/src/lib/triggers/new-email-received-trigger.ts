@@ -4,13 +4,13 @@ import {
 	Polling,
 	QueryParams,
 	pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
 	AppConnectionValueForAuthProperty,
 	PiecePropValueSchema,
 	TriggerStrategy,
 	createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { zohoMailApiCall } from '../common';
 import { zohoMailAuth } from '../common/auth';
 import { accountId, folderId } from '../common/props';

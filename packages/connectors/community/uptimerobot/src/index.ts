@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { uptimeRobotAuth } from './lib/auth';
 import { getMonitorsAction } from './lib/actions/get-monitors';
 import { createMonitorAction } from './lib/actions/create-monitor';
@@ -7,7 +7,7 @@ import { editMonitorAction } from './lib/actions/edit-monitor';
 import { deleteMonitorAction } from './lib/actions/delete-monitor';
 import { pauseResumeMonitorAction } from './lib/actions/pause-resume-monitor';
 
-export const uptimeRobot = createPiece({
+export const uptimeRobot = createConnector({
   displayName: 'UptimeRobot',
   description: 'Monitor your websites, APIs, and servers. Get alerted when things go down.',
   minimumSupportedRelease: '0.36.1',

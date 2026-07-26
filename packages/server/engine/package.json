@@ -9,8 +9,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@wippa/shared": "workspace:*",
     "ai": "^6.0.0",
     "async-mutex": "0.4.0",

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { abandonedCart } from './lib/triggers/abandoned-cart';
 import { cartCreated } from './lib/triggers/cart-created';
 import { customerAddressCreated } from './lib/triggers/customer-address-created';
@@ -20,7 +20,7 @@ import { listOrders } from './lib/actions/list-orders';
 import { listCategories } from './lib/actions/list-categories';
 import { createBlogPost } from './lib/actions/create-blog-post';
 import { createCustomerAddress } from './lib/actions/create-customer-address';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { bigCommerceAuth, GET_BASE_URL } from './lib/common/constants';
 import { searchCustomer } from './lib/actions/search-customer';
 import { searchProduct } from './lib/actions/search-product';
@@ -29,7 +29,7 @@ import { findOrCreateCustomer } from './lib/actions/find-or-create-customer';
 import { findOrCreateProduct } from './lib/actions/find-or-create-product';
 import { findOrCreateCustomersAddress } from './lib/actions/find-or-create-customers-address';
 
-export const bigcommerce = createPiece({
+export const bigcommerce = createConnector({
   displayName: 'BigCommerce',
   description:
     'BigCommerce is a leading e-commerce platform that enables businesses to create and manage online stores.',

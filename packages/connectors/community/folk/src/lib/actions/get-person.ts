@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { folkAuth } from '../common/auth';
 import { folkClient } from '../common/client';
 import { folkProps } from '../common/props';

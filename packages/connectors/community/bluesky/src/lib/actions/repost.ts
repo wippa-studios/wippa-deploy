@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { blueskyAuth, BlueSkyAuthType } from '../common/auth';
 import { createBlueskyAgent } from '../common/client';
 import { parseBlueskyUrl } from '../common/props';

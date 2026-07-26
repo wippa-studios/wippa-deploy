@@ -1,10 +1,10 @@
 import {
   AppConnectionValueForAuthProperty,
   PiecePropValueSchema,
-  PiecePropertyMap,
+  ConnectorPropertyMap,
   Property,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { PastefyClient } from './client';
 import { FolderHierarchy } from './models/folder';
 import { PasteVisibility } from './models/paste';
@@ -86,7 +86,7 @@ export const pastefyCommon = {
 
 export function makeClient(
   auth: AppConnectionValueForAuthProperty<typeof pastefyAuth>,
-  propsValue: StaticPropsValue<PiecePropertyMap>
+  propsValue: StaticPropsValue<ConnectorPropertyMap>
 ): PastefyClient {
   return new PastefyClient(auth.props.token || undefined, propsValue.instance_url);
 }

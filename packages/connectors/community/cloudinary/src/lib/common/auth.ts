@@ -1,7 +1,7 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 import { makeRequest } from './client';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export const cloudinaryAuth = PieceAuth.CustomAuth({
     required: true,

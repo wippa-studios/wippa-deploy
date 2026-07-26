@@ -1,8 +1,8 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { advancedMapping } from './lib/actions/advanced-mapping';
 
-export const dataMapper = createPiece({
+export const dataMapper = createConnector({
   displayName: 'Data Mapper',
   description: 'tools to manipulate data structure',
 

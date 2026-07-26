@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { cronExpressionTrigger } from './lib/triggers/cron-expression.trigger';
 import { everyDayTrigger } from './lib/triggers/every-day.trigger';
 import { everyHourTrigger } from './lib/triggers/every-hour.trigger';
@@ -7,7 +7,7 @@ import { everyMonthTrigger } from './lib/triggers/every-month.trigger';
 import { everyWeekTrigger } from './lib/triggers/every-week.trigger';
 import { everyXMinutesTrigger } from './lib/triggers/every-x-minutes.trigger';
 
-export const schedule = createPiece({
+export const schedule = createConnector({
   displayName: 'Schedule',
   logoUrl: 'https://cdn.activepieces.com/pieces/new-core/schedule.svg',
   description: 'Trigger flow with fixed schedule',

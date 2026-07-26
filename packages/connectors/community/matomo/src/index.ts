@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addAnnotationAction } from './lib/actions/add-annotation';
 import { matomoAuth } from './lib/auth';
 
-export const matomo = createPiece({
+export const matomo = createConnector({
   displayName: 'Matomo',
   description: 'Open source alternative to Google Analytics',
 

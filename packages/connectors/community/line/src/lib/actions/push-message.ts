@@ -1,10 +1,10 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { lineAuth2 } from '../..';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const pushMessage = createAction({
   name: 'push_message', // Must be a unique across the piece, this shouldn't be changed.

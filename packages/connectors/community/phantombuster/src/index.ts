@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { launchPhantom } from './lib/actions/launch-phantom';
 import { phantombusterAuth } from './lib/common/auth';
 import { newOutput } from './lib/triggers/new-output';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const phantombuster = createPiece({
+export const phantombuster = createConnector({
   displayName: 'PhantomBuster',
   auth: phantombusterAuth,
   minimumSupportedRelease: '0.36.1',

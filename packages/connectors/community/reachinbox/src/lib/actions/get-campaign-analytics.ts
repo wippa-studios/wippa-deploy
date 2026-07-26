@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { fetchCampaigns, reachinboxCommon } from '../common/index';
 import { ReachinboxAuth } from '../..';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 // Define the structure of the analytics response
 interface CampaignAnalyticsResponse {

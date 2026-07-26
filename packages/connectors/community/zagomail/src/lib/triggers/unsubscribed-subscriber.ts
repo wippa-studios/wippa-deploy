@@ -1,9 +1,9 @@
 
 import { zagomailAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { zagoMailApiService } from '../common/request';
 import { StoredWebhookId, WebhookResponse } from '../common/constants';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 const CACHE_KEY = 'zagomail_unsubscribed_subscriber_trigger_store';
 

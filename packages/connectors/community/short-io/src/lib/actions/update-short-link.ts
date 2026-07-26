@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { shortIoApiCall } from '../common/client';
 import { shortIoAuth } from '../common/auth';
 import { domainIdDropdown, linkIdDropdown, folderIdDropdown } from '../common/props';

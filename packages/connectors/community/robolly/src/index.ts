@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { generateImage } from './lib/actions/generate-image.action';
 
 const markdownDescription = `
@@ -21,7 +21,7 @@ export const robollyAuth = PieceAuth.SecretText({
   },
 });
 
-export const robolly = createPiece({
+export const robolly = createConnector({
   displayName: 'Robolly',
   description:
     'Robolly is the all‑in‑one service for personalized image, video & PDF generation with API',

@@ -1,5 +1,5 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { tenzoAuth } from "./lib/common/auth";
 import { newDailyForecastTrigger } from "./lib/triggers/new-daily-forecast.trigger";
 import { newSummaryPaymentsTrigger } from "./lib/triggers/new-summary-payments.trigger";
@@ -7,7 +7,7 @@ import { newSummarySalesTrigger } from "./lib/triggers/new-summary-sales.trigger
 
 export { tenzoAuth };
 
-export const tenzo = createPiece({
+export const tenzo = createConnector({
   displayName: "Tenzo",
   description: "Extract data and insights from the Tenzo platform for sales, forecasting, and analytics.",
   auth: tenzoAuth,

@@ -1,8 +1,8 @@
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece, Property } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector, Property } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient, AuthenticationType } from '@wippa/connectors-common';
 import { converseWithDocumentAction } from './lib/actions/converse-with-document';
 import { createConversationAction } from './lib/actions/create-conversation';
 import { newConversationTrigger } from './lib/triggers/new-conversation';
@@ -29,7 +29,7 @@ const markdown = `
 - For organization accounts: \`https://your-organization.instabase.com/api\` (replace with your custom domain)
 `;
 
-export const instabase = createPiece({
+export const instabase = createConnector({
   displayName: "Instabase",
   description: "Integrate with Instabase AI Hub to automate document processing and AI workflows",
   auth: instabaseAuth,

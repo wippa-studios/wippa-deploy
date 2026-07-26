@@ -1,7 +1,7 @@
 import {
   PiecePropValueSchema, Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { flowluAuth } from '../../auth';
 import { makeClient } from '../../common';

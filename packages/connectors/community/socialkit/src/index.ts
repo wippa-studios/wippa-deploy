@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { httpClient, HttpMethod, createCustomApiCallAction, HttpHeaders } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { httpClient, HttpMethod, createCustomApiCallAction, HttpHeaders } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { getYoutubeDetails } from './lib/actions/get-youtube-details';
 import { getYoutubeTranscript } from './lib/actions/get-youtube-transcript';
@@ -10,7 +10,7 @@ import { socialkitAuth } from './lib/auth';
 
 const socialkitApiUrl = 'https://api.socialkit.dev';
 
-export const socialkit = createPiece({
+export const socialkit = createConnector({
   displayName: "Socialkit",
   auth: socialkitAuth,
   minimumSupportedRelease: '0.36.1',

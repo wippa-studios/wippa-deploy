@@ -100,8 +100,8 @@ function buildToolCallMetaFromGate(
   if (gate.toolName === 'ap_execute_action') {
     actionPreview = {
       toolCallId: gate.gateId,
-      pieceName:
-        typeof gateInput.pieceName === 'string' ? gateInput.pieceName : '',
+      connectorName:
+        typeof gateInput.connectorName === 'string' ? gateInput.connectorName : '',
       actionName:
         typeof gateInput.actionName === 'string' ? gateInput.actionName : '',
       actionDisplayName: gate.displayName,
@@ -122,7 +122,7 @@ function buildToolCallMetaFromGate(
   } else if (gate.toolName === 'ap_test_flow') {
     actionPreview = {
       toolCallId: gate.gateId,
-      pieceName: '',
+      connectorName: '',
       actionName: 'ap_test_flow',
       actionDisplayName: gate.displayName,
       input: {},

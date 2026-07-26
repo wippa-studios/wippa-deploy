@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { chatGemini } from './lib/actions/chat-gemini.action';
 import { createVideoAction } from './lib/actions/create-video.action';
 import { generateContentFromImageAction } from './lib/actions/generate-content-from-image.action';
@@ -9,7 +9,7 @@ import { textToSpeechAction } from './lib/actions/text-to-speech.action';
 import { generateContentWithFileSearchAction } from './lib/actions/generate-content-with-file-search';
 import { googleGeminiAuth } from './lib/auth';
 
-export const googleGemini = createPiece({
+export const googleGemini = createConnector({
   displayName: 'Google Gemini',
   auth: googleGeminiAuth,
   description: 'Use the new Gemini models from Google',

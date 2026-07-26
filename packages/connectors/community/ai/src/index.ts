@@ -1,6 +1,6 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { askAI } from './lib/actions/text/ask-ai';
 import { summarizeText } from './lib/actions/text/summarize-text';
 import { generateImageAction } from "./lib/actions/image/generate-image";
@@ -9,7 +9,7 @@ import { extractStructuredData } from "./lib/actions/utility/extract-structured-
 import { runAgent } from "./lib/actions/agents/run-agent";
 
 
-export const ai = createPiece({
+export const ai = createConnector({
   displayName: "AI",
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.78.2',

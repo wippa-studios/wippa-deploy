@@ -85,7 +85,7 @@ function AppConnectionsPage() {
     ? parseInt(searchParams.get(LIMIT_QUERY_PARAM)!)
     : 10;
   const status = (searchParams.getAll('status') as AppConnectionStatus[]) ?? [];
-  const pieceName = searchParams.get('pieceName') ?? undefined;
+  const connectorName = searchParams.get('connectorName') ?? undefined;
   const displayName = searchParams.get('displayName') ?? undefined;
 
   const {
@@ -98,7 +98,7 @@ function AppConnectionsPage() {
       cursor,
       limit,
       status,
-      pieceName,
+      connectorName,
       displayName,
     },
     extraKeys: [location.search, projectId],
@@ -146,7 +146,7 @@ function AppConnectionsPage() {
         {
           type: 'select',
           title: t('Pieces'),
-          accessorKey: 'pieceName',
+          accessorKey: 'connectorName',
           icon: Puzzle,
           options: pieceOptions,
         },
@@ -186,7 +186,7 @@ function AppConnectionsPage() {
               >
                 <span className="shrink-0">
                   <PieceIconWithPieceName
-                    pieceName={row.original.pieceName}
+                    connectorName={row.original.connectorName}
                     showTooltip={false}
                     size="sm"
                   />

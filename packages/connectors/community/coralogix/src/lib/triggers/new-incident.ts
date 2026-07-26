@@ -2,8 +2,8 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { coralogixAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 

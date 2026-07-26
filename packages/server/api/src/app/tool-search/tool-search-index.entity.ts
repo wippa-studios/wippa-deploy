@@ -6,8 +6,8 @@ type ToolSearchIndexSchema = {
     created: string
     updated: string
     objectKind: string
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     objectName: string
     displayName: string
     retrievalDoc: string
@@ -28,11 +28,11 @@ export const ToolSearchIndexEntity = new EntitySchema<ToolSearchIndexSchema>({
             type: String,
             nullable: false,
         },
-        pieceName: {
+        connectorName: {
             type: String,
             nullable: false,
         },
-        pieceVersion: {
+        connectorVersion: {
             type: String,
             nullable: false,
         },
@@ -91,13 +91,13 @@ export const ToolSearchIndexEntity = new EntitySchema<ToolSearchIndexSchema>({
         // expressible in TypeORM). Shared catalog (platformId IS NULL) dedupes on the object key.
         {
             name: 'uq_tsi_object_shared',
-            columns: ['pieceName', 'objectKind', 'objectName', 'modelVersion'],
+            columns: ['connectorName', 'objectKind', 'objectName', 'modelVersion'],
             unique: true,
             where: '"platformId" IS NULL',
         },
         {
             name: 'uq_tsi_object_tenant',
-            columns: ['pieceName', 'objectKind', 'objectName', 'platformId', 'modelVersion'],
+            columns: ['connectorName', 'objectKind', 'objectName', 'platformId', 'modelVersion'],
             unique: true,
             where: '"platformId" IS NOT NULL',
         },

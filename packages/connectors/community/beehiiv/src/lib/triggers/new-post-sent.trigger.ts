@@ -1,9 +1,9 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { publicationId } from '../common/props';
 import { beehiivAuth } from '../common/auth';
 import { beehiivApiCall, WebhookPayload } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 const TRIGGER_KEY = 'new-post-sent-trigger';
 

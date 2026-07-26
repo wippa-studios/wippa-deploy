@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { CreateSkuParams, UpdateSkuParams } from './types';
 
 export class Sku {

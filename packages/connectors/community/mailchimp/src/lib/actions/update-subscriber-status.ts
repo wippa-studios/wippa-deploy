@@ -1,6 +1,6 @@
 import { mailchimpCommon } from '../common';
 import mailchimp from '@mailchimp/mailchimp_marketing';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { mailchimpAuth } from '../..';
 
 export const updateSubscriberInList = createAction({

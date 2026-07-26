@@ -1,11 +1,11 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createMember } from './lib/actions/create-member';
 import { createPost } from './lib/actions/create-post';
 import { findMember } from './lib/actions/find-member';
@@ -45,7 +45,7 @@ export const ghostAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const ghostcms = createPiece({
+export const ghostcms = createConnector({
   displayName: 'GhostCMS',
   description: 'Publishing platform for professional bloggers',
 

@@ -4,7 +4,7 @@ import { BranchOperator, FlowRunStatus, RouterExecutionType } from '@wippa/share
 import { codeExecutor } from '../../src/lib/handler/code-executor'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { loopExecutor } from '../../src/lib/handler/loop-executor'
-import { pieceExecutor } from '../../src/lib/handler/piece-executor'
+import { connectorExecutor } from '../../src/lib/handler/piece-executor'
 import { routerExecuter } from '../../src/lib/handler/router-executor'
 import { buildCodeAction, buildPieceAction, buildRouterWithOneCondition, buildSimpleLoopAction, generateMockEngineConstants } from './test-helper'
 
@@ -37,10 +37,10 @@ describe('code piece with error handling', () => {
 describe('piece with error handling', () => {
 
     it('should continue on failure when piece fails', async () => {
-        const result = await pieceExecutor.handle({
+        const result = await connectorExecutor.handle({
             action: buildPieceAction({
                 name: 'send_http',
-                pieceName: '@wippa/piece-http',
+                connectorName: '@wippa/connector-http',
                 actionName: 'send_request',
                 input: {
                     'method': 'POST',

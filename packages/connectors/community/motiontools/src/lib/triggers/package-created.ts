@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { motiontoolsAuth } from '../common/auth';
 export const packageCreated = createTrigger({
   auth: motiontoolsAuth,

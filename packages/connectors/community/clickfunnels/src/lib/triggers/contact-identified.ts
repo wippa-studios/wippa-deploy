@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { clickfunnelsAuth } from '../common/constants';
 import { teamsDropdown, workspacesDropdown } from '../common/props';
 import { clickfunnelsApiService } from '../common/requests';

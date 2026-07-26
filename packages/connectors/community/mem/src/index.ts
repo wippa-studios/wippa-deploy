@@ -1,12 +1,12 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createMemAction } from './lib/actions/create-mem';
 import { createNoteAction } from './lib/actions/create-note';
 import { deleteNoteAction } from './lib/actions/delete-note';
 import { memAuth } from './lib/auth';
 
-export const mem = createPiece({
+export const mem = createConnector({
   displayName: 'Mem',
   description: 'Capture and organize your thoughts using Mem.ai',
   auth: memAuth,

@@ -23,7 +23,7 @@ export const connectionKeyService = (log: FastifyBaseLogger) => ({
         const project = await projectService(log).getOneOrThrow(projectId)
 
         // TODO this is hardcoded for now, just to make sure it's not changed on client side
-        const finalAppName = appName.replace('@wippa/piece-', '')
+        const finalAppName = appName.replace('@wippa/connector-', '')
         if (connectionName == null) {
             throw new ActivepiecesError({
                 code: ErrorCode.INVALID_OR_EXPIRED_JWT_TOKEN,
@@ -62,7 +62,7 @@ export const connectionKeyService = (log: FastifyBaseLogger) => ({
         }
 
         // TODO this is hardcoded for now, just to make sure it's not changed on client side
-        const finalAppName = `@wippa/piece-${appCredential.appName}`
+        const finalAppName = `@wippa/connector-${appCredential.appName}`
         switch (appCredential.settings.type) {
             case AppCredentialType.API_KEY: {
                 const apiRequest = request as UpsertApiKeyConnectionFromToken
@@ -72,7 +72,7 @@ export const connectionKeyService = (log: FastifyBaseLogger) => ({
                     projectIds: [projectId],
                     externalId: `${appCredential.appName}_${connectionName}`,
                     displayName: `${appCredential.appName}_${connectionName}`,
-                    pieceName: finalAppName,
+                    connectorName: finalAppName,
                     type: AppConnectionType.SECRET_TEXT,
                     value: {
                         type: AppConnectionType.SECRET_TEXT,
@@ -89,7 +89,7 @@ export const connectionKeyService = (log: FastifyBaseLogger) => ({
                     projectIds: [projectId],
                     externalId: `${appCredential.appName}_${connectionName}`,
                     displayName: `${appCredential.appName}_${connectionName}`,
-                    pieceName: finalAppName,
+                    connectorName: finalAppName,
                     type: AppConnectionType.OAUTH2,
                     value: {
                         type: AppConnectionType.OAUTH2,

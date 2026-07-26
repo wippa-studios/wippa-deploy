@@ -3,13 +3,13 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   createTrigger,
   AppConnectionValueForAuthProperty,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { commonProps } from '../common';
 import { filterParams, makeClient } from '../common/client';
 import dayjs from 'dayjs';

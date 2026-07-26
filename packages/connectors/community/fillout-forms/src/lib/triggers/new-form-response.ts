@@ -1,9 +1,9 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { formIdDropdown } from '../common/props';
 import { filloutFormsAuth } from '../auth';
 import { makeRequest } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 const TRIGGER_KEY = 'new-form-response-trigger';
 

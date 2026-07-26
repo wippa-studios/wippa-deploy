@@ -1,5 +1,5 @@
-import { PieceAuth, OAuth2PropertyValue } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, OAuth2PropertyValue } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { MEISTERTASK_API_URL } from './common/common';
 
 export const meistertaskAuth = PieceAuth.OAuth2({

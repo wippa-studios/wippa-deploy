@@ -2,16 +2,16 @@ import {
   createTrigger,
   TriggerStrategy,
   Property
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   pollingHelper,
   DedupeStrategy,
   Polling
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 import { fetchUsers, fetchTags, WEALTHBOX_API_BASE, handleApiError } from '../common';
 import { wealthboxAuth } from '../..';

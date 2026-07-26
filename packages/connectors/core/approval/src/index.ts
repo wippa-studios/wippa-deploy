@@ -1,9 +1,9 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createApprovalLink } from './lib/actions/create-approval-link';
 import { waitForApprovalLink } from './lib/actions/wait-for-approval';
 
-export const approval = createPiece({
+export const approval = createConnector({
   displayName: 'Approval (Legacy)',
   description: 'Build approval process in your workflows',
   auth: PieceAuth.None(),

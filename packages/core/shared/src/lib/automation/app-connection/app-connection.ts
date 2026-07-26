@@ -100,7 +100,7 @@ export type AppConnection<Type extends AppConnectionType = AppConnectionType> = 
     externalId: string
     type: Type
     scope: AppConnectionScope
-    pieceName: string
+    connectorName: string
     displayName: string
     projectIds: string[]
     platformId: string
@@ -109,7 +109,7 @@ export type AppConnection<Type extends AppConnectionType = AppConnectionType> = 
     owner: UserWithMetaInformation | null
     value: AppConnectionValue<Type>
     metadata: Metadata | null
-    pieceVersion: string
+    connectorVersion: string
     preSelectForNewProjects: boolean
 }
 
@@ -127,7 +127,7 @@ export const AppConnectionWithoutSensitiveData = z.object({
     externalId: z.string(),
     displayName: z.string(),
     type: z.nativeEnum(AppConnectionType),
-    pieceName: z.string(),
+    connectorName: z.string(),
     projectIds: z.array(ApId),
     platformId: Nullable(z.string()),
     scope: z.nativeEnum(AppConnectionScope),
@@ -136,7 +136,7 @@ export const AppConnectionWithoutSensitiveData = z.object({
     owner: Nullable(UserWithMetaInformation),
     metadata: Nullable(Metadata),
     flowIds: Nullable(z.array(ApId)),
-    pieceVersion: z.string(),
+    connectorVersion: z.string(),
     preSelectForNewProjects: z.boolean(),
     usingSecretManager: z.boolean(),
 }).describe('App connection is a connection to an external app.')

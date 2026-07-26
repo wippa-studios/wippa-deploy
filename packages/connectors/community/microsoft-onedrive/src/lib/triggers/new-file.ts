@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema, Property, createTrigger } from '@wippa/pieces-framework';
-import { TriggerStrategy } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema, Property, createTrigger } from '@wippa/connectors-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import dayjs from 'dayjs';
 import { oneDriveAuth } from '../auth';

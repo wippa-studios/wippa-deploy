@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { codaAuth } from '../auth';
 import { CodaRow, codaClient } from '../common/types';
 import { columnIdsDropdown, docIdDropdown, tableIdDropdown } from '../common/props';

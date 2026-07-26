@@ -1,11 +1,11 @@
 import {
   PiecePropValueSchema,
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
-import { propsValidation } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
+import { propsValidation } from '@wippa/connectors-common';
 import * as z from 'zod/mini'
 
 import actions from './lib/actions';
@@ -87,7 +87,7 @@ const validateAuth = async (auth: PiecePropValueSchema<typeof mongodbAuth>) => {
   console.log('MongoDB validation successful');
 };
 
-export const mongodb = createPiece({
+export const mongodb = createConnector({
   displayName: 'MongoDB',
   auth: mongodbAuth,
   minimumSupportedRelease: '0.36.1',

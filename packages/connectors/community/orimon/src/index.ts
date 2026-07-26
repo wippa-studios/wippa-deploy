@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { orimonAuth } from './lib/common/auth';
 import { sendMessage } from './lib/actions/send-message';
 import { newLead } from './lib/triggers/new-lead';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const orimon = createPiece({
+export const orimon = createConnector({
   displayName: 'Orimon',
   auth: orimonAuth,
   minimumSupportedRelease: '0.36.1',

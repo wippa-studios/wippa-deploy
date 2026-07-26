@@ -3,7 +3,7 @@ import * as zMini from 'zod/mini'
 import { BaseModelSchema, Nullable } from '@wippa/core-utils'
 import { ApId } from '@wippa/core-utils'
 import { Metadata } from '@wippa/core-utils'
-import { TriggerSource, WebhookHandshakeConfiguration } from '@wippa/core-piece-types'
+import { TriggerSource, WebhookHandshakeConfiguration } from '@wippa/core-connector-types'
 import { FlowVersion } from './flow-version'
 
 type FlowId = ApId

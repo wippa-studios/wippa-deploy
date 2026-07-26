@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { linkupAuth, linkupAction, accountIdProp } from '../common';
 
 export const checkInvitationStatus = createAction({

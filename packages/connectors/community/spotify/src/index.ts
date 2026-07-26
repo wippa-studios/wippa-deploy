@@ -1,13 +1,13 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
-  createPiece,
-} from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
 import actions from './lib/actions';
 import { spotifyCommon } from './lib/common';
 import triggers from './lib/triggers';
 
-export const spotify = createPiece({
+export const spotify = createConnector({
   displayName: 'Spotify',
   description: 'Music for everyone',
   auth: spotifyCommon.authentication,

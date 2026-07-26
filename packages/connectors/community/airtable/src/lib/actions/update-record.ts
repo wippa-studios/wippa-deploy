@@ -1,7 +1,7 @@
 import {
   createAction,
   DynamicPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 import { airtableCommon } from '../common';
 import { airtableAuth } from '../auth';

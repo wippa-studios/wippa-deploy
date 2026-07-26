@@ -1,11 +1,11 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { sendpulseAuth } from '../common/auth';
 import { sendpulseApiCall } from '../common/client';
 import { mailingListDropdown } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 function detectChanges(previous: any, current: any): Record<string, { from: any; to: any }> {
   const changes: Record<string, { from: any; to: any }> = {};

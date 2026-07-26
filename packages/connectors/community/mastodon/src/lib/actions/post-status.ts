@@ -1,10 +1,10 @@
 import FormData from 'form-data';
-import { Property, createAction, ApFile } from '@wippa/pieces-framework';
+import { Property, createAction, ApFile } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { mastodonAuth } from '../..';
 
 const uploadMedia = async (media: ApFile, baseUrl: string, token: string) => {

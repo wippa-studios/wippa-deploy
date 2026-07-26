@@ -2,9 +2,9 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { listAffiliates } from './lib/actions/list-affiliates';
 import { findAffiliate } from './lib/actions/find-affiliate';
 import { createAffiliate } from './lib/actions/create-affiliate';
@@ -46,7 +46,7 @@ export const promotekitAuth = PieceAuth.SecretText({
   },
 });
 
-export const promotekit = createPiece({
+export const promotekit = createConnector({
   displayName: 'PromoteKit',
   description: 'Affiliate marketing platform integrated with Stripe.',
   minimumSupportedRelease: '0.36.1',

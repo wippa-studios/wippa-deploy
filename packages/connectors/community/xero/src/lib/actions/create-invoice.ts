@@ -1,10 +1,10 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 import { props } from '../common/props';
 import dayjs from 'dayjs';

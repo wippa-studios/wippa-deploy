@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendMessage } from './lib/actions/send-message';
 
 export const matrixAuth = PieceAuth.CustomAuth({
@@ -30,7 +30,7 @@ export const matrixAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const matrix = createPiece({
+export const matrix = createConnector({
   displayName: 'Matrix',
   description:
     'Open standard for interoperable, decentralized, real-time communication',

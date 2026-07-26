@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { flatten } from 'safe-flat';
 import { stringify } from "csv-stringify/sync";
 

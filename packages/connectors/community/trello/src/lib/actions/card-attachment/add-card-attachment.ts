@@ -1,10 +1,10 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpRequest,
   HttpMethod,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { trelloCommon } from '../../common';
 import { trelloAuth } from '../../..';
 import FormData from "form-data";

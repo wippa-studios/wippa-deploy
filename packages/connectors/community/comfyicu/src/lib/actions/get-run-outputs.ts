@@ -1,7 +1,7 @@
 import { comfyIcuAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { comfyIcuApiCall, commonProps } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const getRunOutputAction = createAction({
   auth: comfyIcuAuth,

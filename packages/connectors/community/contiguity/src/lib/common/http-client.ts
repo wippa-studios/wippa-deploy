@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequest, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, HttpRequest, httpClient } from '@wippa/connectors-common';
 
 export const CONTIGUITY_API_BASE_URL = 'https://api.contiguity.com';
 

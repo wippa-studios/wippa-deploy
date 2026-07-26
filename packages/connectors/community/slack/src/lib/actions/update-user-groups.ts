@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { slackAuth } from '../auth';
 import { WebClient } from '@slack/web-api';
 import { getBotToken, requireUserToken, SlackAuthValue } from '../common/auth-helpers';

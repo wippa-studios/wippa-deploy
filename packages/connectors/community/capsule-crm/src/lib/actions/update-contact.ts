@@ -3,7 +3,7 @@ import {
   Property,
   DynamicPropsValue,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { capsuleCrmAuth, CapsuleCrmAuthType } from '../common/auth';
 import { capsuleCrmClient } from '../common/client';
 import { capsuleCrmProps } from '../common/props';

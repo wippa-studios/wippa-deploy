@@ -1,4 +1,4 @@
-import { Property, createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { Property, createAction, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { oneNoteAuth } from '../auth';
 import { Client } from '@microsoft/microsoft-graph-client';

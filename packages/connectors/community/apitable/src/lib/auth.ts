@@ -1,4 +1,4 @@
-import { PieceAuth, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { PieceAuth, PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { makeClient } from './common';
 
 export const APITableAuth = PieceAuth.CustomAuth({

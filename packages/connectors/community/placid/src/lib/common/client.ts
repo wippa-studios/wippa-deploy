@@ -1,4 +1,4 @@
-import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/connectors-common';
 import {
 	PLACID_BASE_URL,
 	PlacidTemplate,
@@ -7,7 +7,7 @@ import {
 	PlacidCreatePdfRequest,
 	PlacidCreateVideoRequest,
 } from './index';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { placidAuth } from '../auth';
 
 export class PlacidClient {

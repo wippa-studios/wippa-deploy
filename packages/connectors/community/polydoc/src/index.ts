@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
 import { convertToPdf } from './lib/actions/convert-pdf';
 import { generateEinvoice } from './lib/actions/generate-einvoice';
 import { polydocAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const polydoc = createPiece({
+export const polydoc = createConnector({
   displayName: 'PolyDoc',
   description:
     'Convert HTML or a URL to PDF, capture screenshots, and generate EU e-invoices (Factur-X / ZUGFeRD).',

@@ -1,10 +1,10 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { gammaAuth } from "./lib/common/auth";
 import { generateGamma } from "./lib/actions/generate-gamma";
 import { getGeneration } from "./lib/actions/get-generation";
 
-export const gamma = createPiece({
+export const gamma = createConnector({
   displayName: "Gamma",
   auth: gammaAuth,
   minimumSupportedRelease: '0.36.1',

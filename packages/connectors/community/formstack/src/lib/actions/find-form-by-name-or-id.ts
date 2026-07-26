@@ -2,10 +2,10 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { formStackAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const findFormByNameOrId = createAction({
   auth: formStackAuth,

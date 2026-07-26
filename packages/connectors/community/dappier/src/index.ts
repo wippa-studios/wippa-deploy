@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { realTimeWebSearch } from './lib/actions/real-time-data';
 import { sportsNewsSearch } from './lib/actions/sports-news';
 import { stockMarketDataSearch } from './lib/actions/stock-market-data';
@@ -11,7 +11,7 @@ export const dappierAuth = PieceAuth.SecretText({
   description: 'Enter your Dappier API Key. You can generate one at https://platform.dappier.com/profile/api-keys.',
 });
 
-export const dappier = createPiece({
+export const dappier = createConnector({
   displayName: 'Dappier',
   logoUrl: 'https://cdn.activepieces.com/pieces/dappier.png',
   description: 'Enable fast, free real-time web search and access premium data from trusted media brands—news, financial markets, sports, entertainment, weather, and more. Build powerful AI agents with Dappier',

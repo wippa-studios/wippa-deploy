@@ -40,11 +40,11 @@ export const TriggerSourceEntity = new EntitySchema<TriggerSourceSchema>({
             type: 'jsonb',
             nullable: true,
         },
-        pieceName: {
+        connectorName: {
             type: String,
             nullable: false,
         },
-        pieceVersion: {
+        connectorVersion: {
             type: String,
             nullable: false,
         },

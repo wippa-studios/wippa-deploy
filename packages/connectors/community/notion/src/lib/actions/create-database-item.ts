@@ -2,7 +2,7 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { Client } from '@notionhq/client';
 import { NotionFieldMapping } from '../common/models';
 import { notionAuth } from '../auth';

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { identifyAction } from './lib/actions/identify';
 import { trackAction } from './lib/actions/track';
@@ -22,7 +22,7 @@ export const dittofeedAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const dittofeed = createPiece({
+export const dittofeed = createConnector({
   displayName: "Dittofeed",
   auth: dittofeedAuth,
   minimumSupportedRelease: '0.36.1',

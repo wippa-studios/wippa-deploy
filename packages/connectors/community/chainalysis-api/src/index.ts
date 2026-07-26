@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { checkAddressSanction } from './lib/actions/check-address-sanction';
 
 export const chainalysisApiAuth = PieceAuth.SecretText({
@@ -8,7 +8,7 @@ export const chainalysisApiAuth = PieceAuth.SecretText({
   required: true,
 })
 
-export const chainalysisApi = createPiece({
+export const chainalysisApi = createConnector({
   displayName: "Chainalysis Screening API",
   description: "Chainalysis Screening API allows you to check if a blockchain address is sanctioned.",
   auth: chainalysisApiAuth,

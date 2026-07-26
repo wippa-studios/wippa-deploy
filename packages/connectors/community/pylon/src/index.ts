@@ -1,12 +1,12 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 const auth = PieceAuth.SecretText({
   displayName: "API Key",
   required: true,
 })
-export const pylon = createPiece({
+export const pylon = createConnector({
   displayName: "Pylon",
   auth,
   minimumSupportedRelease: '0.36.1',

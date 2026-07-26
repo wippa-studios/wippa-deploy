@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { ServiceNowRecordSchema } from '../common/types';
 import { createServiceNowClient, servicenowAuth } from '../common/props';
 

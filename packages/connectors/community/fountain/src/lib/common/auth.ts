@@ -1,6 +1,6 @@
 import { fountainAuth } from '../auth';
 import { API_BASE_URL_DEFAULT } from '../auth';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 export function getBaseUrl(auth: AppConnectionValueForAuthProperty<typeof fountainAuth>): string {
   const baseUrl = auth.props.baseUrl

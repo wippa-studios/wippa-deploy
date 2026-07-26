@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { Brand } from '../../common/Brand';
 import { Replace } from '../../common/types';
 import { vtexAuth } from '../../..';

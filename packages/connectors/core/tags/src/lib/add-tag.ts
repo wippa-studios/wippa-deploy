@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 
 const markdown = `
 This action add a tag to the current execution, this tag can be used to filter the execution in the **API** only at this moment.

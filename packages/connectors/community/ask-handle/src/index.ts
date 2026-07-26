@@ -1,4 +1,4 @@
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { askHandleAuth } from "./lib/common/auth";
 import { createMessage } from "./lib/actions/create-message";
 import { createLead } from "./lib/actions/create-lead";
@@ -8,7 +8,7 @@ import { newMessageTrigger } from "./lib/triggers/new-message";
 import { newLeadTrigger } from "./lib/triggers/new-lead";
 import { newRoomTrigger } from "./lib/triggers/new-room";
 
-export const askHandle = createPiece({
+export const askHandle = createConnector({
   displayName: "AskHandle",
   auth: askHandleAuth,
   minimumSupportedRelease: '0.36.1',

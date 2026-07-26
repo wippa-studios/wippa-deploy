@@ -2,8 +2,8 @@ import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { lobstermailAuth } from '../..';
 
 const baseUrl = 'https://api.lobstermail.ai';

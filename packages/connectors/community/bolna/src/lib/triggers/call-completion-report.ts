@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { bolnaaiAuth } from '../common/auth';
 export const callCompletionReport = createTrigger({
   auth: bolnaaiAuth,

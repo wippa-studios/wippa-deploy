@@ -4,13 +4,13 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { splitwiseAuth } from '../auth';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { splitwiseApi } from '../common/api';
 
 const props = {

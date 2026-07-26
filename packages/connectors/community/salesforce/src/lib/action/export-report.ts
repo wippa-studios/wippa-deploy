@@ -1,9 +1,9 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { salesforceAuth } from '../..';
 import { callSalesforceApi, salesforcesCommon } from '../common';
 

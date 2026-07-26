@@ -1,5 +1,5 @@
 import MailerLite from '@mailerlite/mailerlite-nodejs';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { mailerLiteAuth } from '../..';
 
 export const findSubscriberAction = createAction({

@@ -54,7 +54,7 @@ async function assignDefaultPieceSet({ log, project }: AssignDefaultPieceSetPara
     }
     const defaultSet = await pieceSetService(log).getOrCreateDefaultPieceSet(project.platformId)
     await pieceSetService(log).assignProject({
-        pieceSet: defaultSet,
+        connectorSet: defaultSet,
         projectId: project.id,
     })
 }

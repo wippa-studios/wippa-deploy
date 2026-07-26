@@ -9,7 +9,7 @@ import { Handle, NodeProps, Position } from '@xyflow/react';
 import React, { useMemo } from 'react';
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';
-import { PieceSelector } from '@/app/builder/pieces-selector';
+import { ConnectorSelector } from '@/app/builder/pieces-selector';
 import { LoopIterationInput } from '@/app/builder/run-details/loop-iteration-input';
 import { RightSideBarType } from '@/app/builder/types';
 import { stepsHooks } from '@/features/pieces';
@@ -160,7 +160,7 @@ const ApStepCanvasNode = React.memo(
           })}
         >
           {!isDragging && (
-            <PieceSelector
+            <ConnectorSelector
               operation={{
                 type: getPieceSelectorOperationType(step),
                 stepName: step.name,
@@ -202,13 +202,13 @@ const ApStepCanvasNode = React.memo(
                     stepDisplayName={step.displayName}
                     stepIndex={stepIndex}
                     isSkipped={isSkipped}
-                    pieceDisplayName={stepMetadata?.displayName ?? ''}
+                    connectorDisplayName={stepMetadata?.displayName ?? ''}
                     stepName={step.name}
                   />
                   {!readonly && <StepNodeChevron />}
                 </div>
               )}
-            </PieceSelector>
+            </ConnectorSelector>
           )}
           {isHorizontal && (
             <div
@@ -222,7 +222,7 @@ const ApStepCanvasNode = React.memo(
                   stepDisplayName={step.displayName}
                   stepIndex={stepIndex}
                   isSkipped={isSkipped}
-                  pieceDisplayName={stepMetadata?.displayName ?? ''}
+                  connectorDisplayName={stepMetadata?.displayName ?? ''}
                   stepName={step.name}
                 />
               </div>

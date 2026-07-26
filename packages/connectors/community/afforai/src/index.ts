@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { askChatbotAction } from './lib/actions/ask-chatbot';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { afforaiAuth } from './lib/auth';
 
-export const afforai = createPiece({
+export const afforai = createConnector({
   displayName: 'Afforai',
   description:
     'Helps you search, summarize, and translate knowledge from hundreds of documents to help you produce trustworthy research.',

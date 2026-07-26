@@ -1,6 +1,6 @@
 import { medullarAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { medullarCommon } from '../common';
 import { medullarPropsCommon } from '../common';
 

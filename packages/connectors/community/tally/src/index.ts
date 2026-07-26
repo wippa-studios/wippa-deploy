@@ -1,12 +1,12 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { tallyAuth } from './lib/auth';
 import { TALLY_API_BASE } from './lib/common/client';
 import { newSubmissionTrigger } from './lib/triggers/new-submission';
 
-export const tally = createPiece({
+export const tally = createConnector({
 	displayName: 'Tally',
 	description: 'Receive form submissions from Tally forms',
 	auth: tallyAuth,

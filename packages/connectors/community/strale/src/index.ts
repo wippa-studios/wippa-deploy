@@ -1,13 +1,13 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { straleAuth } from './lib/auth';
 import { searchCapabilities } from './lib/actions/search';
 import { executeCapability } from './lib/actions/execute';
 import { checkBalance } from './lib/actions/balance';
 import { trustProfile } from './lib/actions/trust-profile';
 
-export const strale = createPiece({
+export const strale = createConnector({
   displayName: 'Strale',
   description:
     'Trust layer for AI agents. 271 quality-scored API capabilities: company verification across 27 countries, sanctions screening, IBAN/VAT validation, web intelligence, and more. Every result includes a quality score and audit trail.',

@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { ConversationWebhookSchema } from '../schemas';
 import { insightoAuth } from '../..';
 

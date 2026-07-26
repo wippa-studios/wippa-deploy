@@ -1,8 +1,8 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { activityCommonProps } from '../common/props';
 import { pipedriveApiCall } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 
 export const updateActivityAction = createAction({

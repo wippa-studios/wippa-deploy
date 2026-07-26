@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { replyIoAuth } from './lib/auth';
 import { REPLY_IO_API_ROOT, buildReplyIoHeaders } from './lib/common/client';
@@ -14,7 +14,7 @@ import { removeFromAllCampaignsAction } from './lib/actions/remove-from-all-camp
 import { getContactAction } from './lib/actions/get-contact';
 import { deleteContactAction } from './lib/actions/delete-contact';
 
-export const replyIo = createPiece({
+export const replyIo = createConnector({
   displayName: 'Reply.io',
   description:
     'Sales engagement platform for contacts, campaigns, and outbound outreach workflows.',

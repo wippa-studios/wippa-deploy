@@ -2,12 +2,12 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   MarkdownVariant,
   USE_DRAFT_QUERY_PARAM_NAME,
   ChatFormResponse,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 const responseMarkdown = `
 This trigger sets up a chat interface. Ensure that **Respond on UI** is used in your flow`;

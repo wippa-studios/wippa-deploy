@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, type HttpHeaders } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, type HttpHeaders } from '@wippa/connectors-common';
 import { DEFAULT_BASE_URL } from './constants';
 import type { JsonObject, PolyDocRequest } from './types';
 

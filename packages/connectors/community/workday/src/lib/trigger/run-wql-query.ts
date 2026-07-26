@@ -1,5 +1,5 @@
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty, Property, StaticPropsValue, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty, Property, StaticPropsValue, TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { workdayAuth } from '../auth';
 import { workdayWqlRequest } from '../common';

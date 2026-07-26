@@ -1,5 +1,5 @@
-import { HttpMethod, QueryParams } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod, QueryParams } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { clockifyAuth } from '../auth';
 import { clockifyApiCall } from '../common/client';
 import { projectId, taskId, workspaceId } from '../common/props';

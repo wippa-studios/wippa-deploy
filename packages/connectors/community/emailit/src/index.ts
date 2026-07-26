@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework'
+import { createConnector } from '@wippa/connectors-framework'
 import { sendEmailAction } from './lib/actions/send-email'
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common'
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common'
 import { emailitAuth } from './lib/auth'
 
-export const emailit = createPiece({
+export const emailit = createConnector({
     displayName: 'Emailit',
     description: 'Send transactional emails with Emailit',
     logoUrl: 'https://cdn.activepieces.com/pieces/emailit.svg',

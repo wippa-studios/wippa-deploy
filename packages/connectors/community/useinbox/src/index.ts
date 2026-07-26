@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { useinboxAuth } from './lib/common/auth';
 import { useinboxClient } from './lib/common/client';
 import { addContactToListAction } from './lib/actions/add-contact-to-list';
@@ -16,7 +16,7 @@ import { emailSpamReportedTrigger } from './lib/triggers/email-spam-reported';
 import { emailOpenedTrigger } from './lib/triggers/email-opened';
 import { emailClickedTrigger } from './lib/triggers/email-clicked';
 
-export const useinbox = createPiece({
+export const useinbox = createConnector({
   displayName: 'Inbox',
   description:
     'Email marketing and transactional email automation with INBOX (useinbox.com). Manage contacts, lists, campaigns, and react to delivery events.',

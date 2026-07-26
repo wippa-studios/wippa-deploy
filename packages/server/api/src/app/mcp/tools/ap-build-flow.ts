@@ -10,7 +10,7 @@ import { mcpUtils } from './mcp-utils'
 const stepSpec = z.object({
     type: z.enum([FlowActionType.CODE, FlowActionType.PIECE, FlowActionType.LOOP_ON_ITEMS]),
     displayName: z.string(),
-    pieceName: z.string().optional(),
+    connectorName: z.string().optional(),
     actionName: z.string().optional(),
     input: z.record(z.string(), z.unknown()).optional(),
     auth: z.string().optional(),
@@ -30,7 +30,7 @@ const stepSpec = z.object({
 const buildFlowInput = z.object({
     flowName: z.string(),
     trigger: z.object({
-        pieceName: z.string(),
+        connectorName: z.string(),
         triggerName: z.string(),
         input: z.record(z.string(), z.unknown()).optional(),
         auth: z.string().optional(),
@@ -46,12 +46,12 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
         inputSchema: {
             flowName: z.string().describe('Name for the new flow'),
             trigger: z.object({
-                pieceName: z.string().describe('Trigger piece name (e.g. "@wippa/piece-webhook")'),
+                connectorName: z.string().describe('Trigger piece name (e.g. "@wippa/connector-webhook")'),
                 triggerName: z.string().describe('Trigger name (e.g. "catch_webhook")'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Trigger input config'),
                 auth: z.string().optional().describe('Connection externalId for trigger auth'),
             }).describe('Trigger configuration'),
-            steps: z.array(stepSpec).describe('Array of steps. By default added sequentially after trigger. Use parentStepName + stepLocationRelativeToParent to nest steps inside loops. Each step supports: PIECE (pieceName+actionName+input), CODE (sourceCode+input), LOOP_ON_ITEMS (loopItems). Prefer PIECE and inline formula expressions (in free-text/value inputs, not dropdowns) over CODE — reach for a CODE step only when no piece fits and the transform exceeds the inline formula functions. ROUTER is not supported here — add it afterwards with ap_add_step + ap_add_branch.'),
+            steps: z.array(stepSpec).describe('Array of steps. By default added sequentially after trigger. Use parentStepName + stepLocationRelativeToParent to nest steps inside loops. Each step supports: PIECE (connectorName+actionName+input), CODE (sourceCode+input), LOOP_ON_ITEMS (loopItems). Prefer PIECE and inline formula expressions (in free-text/value inputs, not dropdowns) over CODE — reach for a CODE step only when no piece fits and the transform exceeds the inline formula functions. ROUTER is not supported here — add it afterwards with ap_add_step + ap_add_branch.'),
         },
         annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
         execute: async (args) => {
@@ -82,7 +82,7 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
                 const platformId = project.platformId
                 flowId = flow.id
 
-                const triggerVersionResult = await mcpUtils.resolveLatestPieceVersion({ pieceName: trigger.pieceName, projectId, platformId, log })
+                const triggerVersionResult = await mcpUtils.resolveLatestPieceVersion({ connectorName: trigger.connectorName, projectId, platformId, log })
                 if (triggerVersionResult.error) {
                     await flowService(log).delete({ id: flowId, projectId }).catch((deleteErr) => {
                         log.warn({ error: deleteErr, flow: { id: flowId } }, 'Failed to clean up orphaned flow after trigger version resolution error')
@@ -101,8 +101,8 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
                     lastUpdatedDate: new Date().toISOString(),
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: triggerVersionResult.normalizedPieceName,
-                        pieceVersion: triggerVersionResult.pieceVersion,
+                        connectorName: triggerVersionResult.normalizedPieceName,
+                        connectorVersion: triggerVersionResult.connectorVersion,
                         triggerName: trigger.triggerName,
                         input: triggerInput,
                         propertySettings: {},
@@ -113,7 +113,7 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
                     operation: { type: FlowOperationType.UPDATE_TRIGGER, request: triggerPayload },
                 })
                 const unknownPropFindings: string[] = []
-                const triggerUnknown = await mcpUtils.detectUnknownInputProps({ pieceName: triggerVersionResult.normalizedPieceName, pieceVersion: triggerVersionResult.pieceVersion, componentName: trigger.triggerName, componentType: 'trigger', input: trigger.input, platformId, log })
+                const triggerUnknown = await mcpUtils.detectUnknownInputProps({ connectorName: triggerVersionResult.normalizedPieceName, connectorVersion: triggerVersionResult.connectorVersion, componentName: trigger.triggerName, componentType: 'trigger', input: trigger.input, platformId, log })
                 if (triggerUnknown.unknownKeys.length > 0) {
                     unknownPropFindings.push(`trigger: ${triggerUnknown.message}`)
                 }
@@ -129,16 +129,16 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
                     let resolvedPieceVersion: string | undefined
                     let resolvedPieceName: string | undefined
                     if (step.type === FlowActionType.PIECE) {
-                        if (!step.pieceName) {
+                        if (!step.connectorName) {
                             skippedSteps.push(step.displayName)
                             continue
                         }
-                        const versionResult = await mcpUtils.resolveLatestPieceVersion({ pieceName: step.pieceName, projectId, platformId, log })
+                        const versionResult = await mcpUtils.resolveLatestPieceVersion({ connectorName: step.connectorName, projectId, platformId, log })
                         if (versionResult.error) {
                             skippedSteps.push(step.displayName)
                             continue
                         }
-                        resolvedPieceVersion = versionResult.pieceVersion
+                        resolvedPieceVersion = versionResult.connectorVersion
                         resolvedPieceName = versionResult.normalizedPieceName
                     }
 
@@ -174,7 +174,7 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
                     })
 
                     if (step.type === FlowActionType.PIECE && resolvedPieceName && resolvedPieceVersion && step.actionName) {
-                        const stepUnknown = await mcpUtils.detectUnknownInputProps({ pieceName: resolvedPieceName, pieceVersion: resolvedPieceVersion, componentName: step.actionName, componentType: 'action', input: step.input, platformId, log })
+                        const stepUnknown = await mcpUtils.detectUnknownInputProps({ connectorName: resolvedPieceName, connectorVersion: resolvedPieceVersion, componentName: step.actionName, componentType: 'action', input: step.input, platformId, log })
                         if (stepUnknown.unknownKeys.length > 0) {
                             unknownPropFindings.push(`${stepName} (${step.displayName}): ${stepUnknown.message}`)
                         }
@@ -254,8 +254,8 @@ function buildSkeleton({ step, name, resolvedPieceVersion, resolvedPieceName }: 
                 displayName: step.displayName,
                 valid: false,
                 settings: {
-                    pieceName: resolvedPieceName ?? step.pieceName ?? '',
-                    pieceVersion: resolvedPieceVersion ?? '',
+                    connectorName: resolvedPieceName ?? step.connectorName ?? '',
+                    connectorVersion: resolvedPieceVersion ?? '',
                     actionName: step.actionName ?? '',
                     input: resolvedInput,
                     propertySettings: {},

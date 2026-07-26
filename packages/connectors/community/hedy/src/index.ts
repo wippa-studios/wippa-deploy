@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { hedyAuth } from './lib/auth';
 import {
   getSession,
@@ -30,7 +30,7 @@ import {
   todoExported,
 } from './lib/triggers';
 
-export const hedy = createPiece({
+export const hedy = createConnector({
   displayName: 'Hedy',
   description: 'AI-powered meeting intelligence – be the brightest person in the room.',
   auth: hedyAuth,

@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { cancelRunAction } from './lib/actions/cancel-run';
 import { findWorkflowAction } from './lib/actions/find-workflow';
 import { getRunAction } from './lib/actions/get-run';
@@ -8,7 +8,7 @@ import { runWorkflowAction } from './lib/actions/run-workflow';
 import { skyvernAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 
-export const skyvern = createPiece({
+export const skyvern = createConnector({
 	displayName: 'Skyvern',
 	auth: skyvernAuth,
 	minimumSupportedRelease: '0.36.1',

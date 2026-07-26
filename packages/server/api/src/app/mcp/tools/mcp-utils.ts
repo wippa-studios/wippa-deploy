@@ -1,5 +1,5 @@
 import { isNil, isObject, tryCatch } from '@wippa/core-utils'
-import { AiMetadata, OutputSchema, OutputSchemaField, PieceMetadataModel, PiecePropertyMap, PropertyType } from '@wippa/pieces-framework'
+import { AiMetadata, OutputSchema, OutputSchemaField, PieceMetadataModel, ConnectorPropertyMap, PropertyType } from '@wippa/connectors-framework'
 import { BranchOperator, EngineResponse, EngineResponseStatus, FlowActionType, flowStructureUtil, McpServerType, McpToolResult, ProjectScopedMcpServer, singleValueConditions, WorkerJobType } from '@wippa/shared'
 import type { RouterAction, Step } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
@@ -112,7 +112,7 @@ const EMPTY_CONTAINER_DEFAULTS: Partial<Record<PropertyType, () => unknown>> = {
     [PropertyType.ARRAY]: () => [],
 }
 
-function coerceEmptyContainerInputs({ props, input }: { props: PiecePropertyMap, input: Record<string, unknown> }): Record<string, unknown> {
+function coerceEmptyContainerInputs({ props, input }: { props: ConnectorPropertyMap, input: Record<string, unknown> }): Record<string, unknown> {
     const coerced: Record<string, unknown> = { ...input }
     for (const [propName, prop] of Object.entries(props)) {
         const makeDefault = EMPTY_CONTAINER_DEFAULTS[prop.type]
@@ -213,12 +213,12 @@ function diagnosePieceProps({ props, input, pieceAuth, requireAuth, componentTyp
     return { parts, missing, unknownKeys, uiRequired, invalidEnums, hasAuth }
 }
 
-async function detectUnknownInputProps({ pieceName, pieceVersion, componentName, componentType, input, platformId, log }: DetectUnknownInputPropsParams): Promise<{ unknownKeys: string[], message: string }> {
+async function detectUnknownInputProps({ connectorName, connectorVersion, componentName, componentType, input, platformId, log }: DetectUnknownInputPropsParams): Promise<{ unknownKeys: string[], message: string }> {
     if (!isObject(input) || Object.keys(input).length === 0) {
         return { unknownKeys: [], message: '' }
     }
     try {
-        const piece = await pieceMetadataService(log).getOrThrow({ platformId, name: pieceName, version: pieceVersion })
+        const piece = await pieceMetadataService(log).getOrThrow({ platformId, name: connectorName, version: connectorVersion })
         const component = componentType === 'action' ? piece.actions[componentName] : piece.triggers[componentName]
         if (isNil(component)) {
             return { unknownKeys: [], message: '' }
@@ -231,7 +231,7 @@ async function detectUnknownInputProps({ pieceName, pieceVersion, componentName,
         return { unknownKeys, message: unknownMessage }
     }
     catch (err) {
-        log.warn({ error: err, piece: { name: pieceName }, componentName }, 'detectUnknownInputProps: failed to fetch piece metadata')
+        log.warn({ error: err, piece: { name: connectorName }, componentName }, 'detectUnknownInputProps: failed to fetch piece metadata')
         return { unknownKeys: [], message: '' }
     }
 }
@@ -246,7 +246,7 @@ async function rejectUnknownInputProps(params: DetectUnknownInputPropsParams): P
 
 const MAX_PROP_DEPTH = 3
 
-function buildPropSummaries(props: PiecePropertyMap, depth = 0): PropSummary[] {
+function buildPropSummaries(props: ConnectorPropertyMap, depth = 0): PropSummary[] {
     return Object.entries(props)
         .filter(([, prop]) => !NON_INPUT_PROP_TYPES.has(prop.type))
         .map(([name, prop]) => {
@@ -272,7 +272,7 @@ function buildPropSummaries(props: PiecePropertyMap, depth = 0): PropSummary[] {
                 summary.note = 'DYNAMIC — call ap_get_piece_props with auth+input to resolve sub-fields.'
             }
             if (prop.type === PropertyType.ARRAY && 'properties' in prop && isObject(prop.properties) && depth < MAX_PROP_DEPTH) {
-                const arraySubProps: PiecePropertyMap = prop.properties
+                const arraySubProps: ConnectorPropertyMap = prop.properties
                 summary.items = buildPropSummaries(arraySubProps, depth + 1)
             }
             return summary
@@ -364,22 +364,22 @@ function deriveFieldPathsFromSample(value: unknown, prefix = ''): string[] {
     return [`${prefix} (${value === null ? 'null' : typeof value})`]
 }
 
-function normalizePieceName(pieceName: string | undefined): string | undefined {
-    if (isNil(pieceName)) {
+function normalizePieceName(connectorName: string | undefined): string | undefined {
+    if (isNil(connectorName)) {
         return undefined
     }
-    if (pieceName.startsWith('@')) {
-        return pieceName
+    if (connectorName.startsWith('@')) {
+        return connectorName
     }
-    const stripped = pieceName.startsWith('piece-') ? pieceName.slice('piece-'.length) : pieceName
+    const stripped = connectorName.startsWith('piece-') ? connectorName.slice('piece-'.length) : connectorName
     const normalized = stripped.replace(/_/g, '-')
-    return `@wippa/piece-${normalized}`
+    return `@wippa/connector-${normalized}`
 }
 
-async function lookupPieceComponent({ pieceName, componentName, componentType, projectId, platformId, log }: LookupPieceComponentParams): Promise<LookupPieceComponentResult> {
-    const normalized = normalizePieceName(pieceName)
+async function lookupPieceComponent({ connectorName, componentName, componentType, projectId, platformId, log }: LookupPieceComponentParams): Promise<LookupPieceComponentResult> {
+    const normalized = normalizePieceName(connectorName)
     if (isNil(normalized)) {
-        return { error: mcpToolError('Validation failed', new Error('pieceName is required')) }
+        return { error: mcpToolError('Validation failed', new Error('connectorName is required')) }
     }
     // platformId is needed so private (CUSTOM) pieces on this platform are discoverable.
     let resolvedPlatformId: string
@@ -405,7 +405,7 @@ async function lookupPieceComponent({ pieceName, componentName, componentType, p
         const hint = suggestion ? ` Did you mean "${suggestion}"?` : ''
         return { error: { content: [{ type: 'text', text: `❌ ${label} "${componentName}" not found in "${normalized}".${hint} Available: ${available.join(', ')}` }] } }
     }
-    return { piece, component, pieceName: normalized }
+    return { piece, component, connectorName: normalized }
 }
 
 function findResolvableProps({ props, componentProps, auth, providedInput }: FindResolvablePropsParams): PropSummary[] {
@@ -493,14 +493,14 @@ async function fillDefaultsForMissingOptionalProps({ settings, platformId, log }
     platformId: string
     log: FastifyBaseLogger
 }): Promise<void> {
-    const pieceName = settings.pieceName
-    const pieceVersion = settings.pieceVersion
+    const connectorName = settings.connectorName
+    const connectorVersion = settings.connectorVersion
     const actionName = settings.actionName
-    if (typeof pieceName !== 'string' || typeof pieceVersion !== 'string' || typeof actionName !== 'string') {
+    if (typeof connectorName !== 'string' || typeof connectorVersion !== 'string' || typeof actionName !== 'string') {
         return
     }
     try {
-        const piece = await pieceMetadataService(log).getOrThrow({ platformId, name: pieceName, version: pieceVersion })
+        const piece = await pieceMetadataService(log).getOrThrow({ platformId, name: connectorName, version: connectorVersion })
         const action = piece.actions[actionName]
         if (isNil(action)) {
             return
@@ -520,7 +520,7 @@ async function fillDefaultsForMissingOptionalProps({ settings, platformId, log }
         settings.input = { ...defaults, ...(typeof settings.input === 'object' && settings.input !== null ? settings.input : {}) }
     }
     catch (err) {
-        log.warn({ error: err, piece: { name: pieceName }, actionName }, 'fillDefaultsForMissingOptionalProps: failed, skipping defaults')
+        log.warn({ error: err, piece: { name: connectorName }, actionName }, 'fillDefaultsForMissingOptionalProps: failed, skipping defaults')
     }
 }
 
@@ -534,21 +534,21 @@ function buildErrorHandlingOptions({ continueOnFailure, retryOnFailure }: {
     }
 }
 
-async function resolveLatestPieceVersion({ pieceName, projectId, platformId, log }: {
-    pieceName: string
+async function resolveLatestPieceVersion({ connectorName, projectId, platformId, log }: {
+    connectorName: string
     projectId: string
     platformId: string
     log: FastifyBaseLogger
 }): Promise<ResolveLatestPieceVersionResult> {
-    const normalized = normalizePieceName(pieceName)
+    const normalized = normalizePieceName(connectorName)
     if (isNil(normalized)) {
-        return { error: mcpToolError('Validation failed', new Error('pieceName is required')) }
+        return { error: mcpToolError('Validation failed', new Error('connectorName is required')) }
     }
     const piece = await pieceMetadataService(log).get({ name: normalized, projectId, platformId })
     if (isNil(piece)) {
         return { error: { content: [{ type: 'text', text: `❌ Piece "${normalized}" not found. Use ap_research_pieces to get valid piece names.` }] } }
     }
-    return { pieceVersion: `~${piece.version}`, normalizedPieceName: normalized }
+    return { connectorVersion: `~${piece.version}`, normalizedPieceName: normalized }
 }
 
 function withTimeout<T>({ promise, ms }: { promise: Promise<T>, ms: number }): Promise<T> {
@@ -602,9 +602,9 @@ function extractOptionsArray(options: unknown): Array<{ label: string, value: un
 
 const RESOLVE_TIMEOUT_MS = 30_000
 
-async function executePropertyResolution({ pieceName, pieceVersion, actionOrTriggerName, propertyName, auth, input, searchValue, projectId, platformId, log }: {
-    pieceName: string
-    pieceVersion: string
+async function executePropertyResolution({ connectorName, connectorVersion, actionOrTriggerName, propertyName, auth, input, searchValue, projectId, platformId, log }: {
+    connectorName: string
+    connectorVersion: string
     actionOrTriggerName: string
     propertyName: string
     auth?: string
@@ -614,7 +614,7 @@ async function executePropertyResolution({ pieceName, pieceVersion, actionOrTrig
     platformId: string
     log: FastifyBaseLogger
 }): Promise<PropertyResolutionResult> {
-    const piecePackage = await getPiecePackageWithoutArchive(log, platformId, { pieceName, pieceVersion })
+    const connectorPackage = await getPiecePackageWithoutArchive(log, platformId, { connectorName, connectorVersion })
     const resolvedInput: Record<string, unknown> = {
         ...(input ?? {}),
         ...(auth ? { auth: `{{connections['${auth}']}}` } : {}),
@@ -622,7 +622,7 @@ async function executePropertyResolution({ pieceName, pieceVersion, actionOrTrig
 
     const { data: result, error } = await tryCatch(() => withTimeout({
         promise: userInteractionWatcher.submitAndWaitForResponse<EngineResponse<{
-            options: Array<{ label: string, value: unknown }> | PiecePropertyMap
+            options: Array<{ label: string, value: unknown }> | ConnectorPropertyMap
             disabled?: boolean
         }>>({
             jobType: WorkerJobType.EXECUTE_PROPERTY,
@@ -634,7 +634,7 @@ async function executePropertyResolution({ pieceName, pieceVersion, actionOrTrig
             input: resolvedInput,
             sampleData: {},
             searchValue,
-            piece: piecePackage,
+            piece: connectorPackage,
         }, log),
         ms: RESOLVE_TIMEOUT_MS,
     }))
@@ -683,7 +683,7 @@ function classifyActionCardinality(actionName: string): ActionCardinality {
 // in the tool; a fake in tests) so this loop is deterministically unit-testable without the engine.
 async function resolveTransitively({ props, componentProps, auth, providedInput, resolveOne, maxIterations = 6 }: {
     props: PropSummary[]
-    componentProps: PiecePropertyMap
+    componentProps: ConnectorPropertyMap
     auth: string | undefined
     providedInput: Record<string, unknown>
     resolveOne: (params: { prop: PropSummary, input: Record<string, unknown> }) => Promise<PropertyResolutionResult>
@@ -793,19 +793,19 @@ export type { PropSummary }
 
 export type PropertyResolutionResult =
     | { status: 'options', options: Array<{ label: string, value: unknown }> }
-    | { status: 'dynamic', props: PiecePropertyMap }
+    | { status: 'dynamic', props: ConnectorPropertyMap }
     | { status: 'failed', message: string }
 
 type FindResolvablePropsParams = {
     props: PropSummary[]
-    componentProps: PiecePropertyMap
+    componentProps: ConnectorPropertyMap
     auth: string | undefined
     providedInput: Record<string, unknown>
 }
 
 type DetectUnknownInputPropsParams = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     componentName: string
     componentType: 'action' | 'trigger'
     input: unknown
@@ -814,7 +814,7 @@ type DetectUnknownInputPropsParams = {
 }
 
 type DiagnosePiecePropsParams = {
-    props: PiecePropertyMap
+    props: ConnectorPropertyMap
     input: Record<string, unknown>
     pieceAuth: unknown
     requireAuth: boolean
@@ -844,7 +844,7 @@ type PropSummary = {
 }
 
 type LookupPieceComponentParams = {
-    pieceName: string
+    connectorName: string
     componentName: string
     componentType: 'action' | 'trigger'
     projectId: string | undefined
@@ -853,16 +853,16 @@ type LookupPieceComponentParams = {
 }
 
 type LookupPieceComponentResult =
-    | { piece: PieceMetadataModel, component: { props: PiecePropertyMap, requireAuth: boolean, name: string, displayName: string, description: string, outputSchema?: OutputSchema, aiMetadata?: AiMetadata, sampleData?: unknown }, pieceName: string, error?: never }
-    | { error: McpToolResult, piece?: never, component?: never, pieceName?: never }
+    | { piece: PieceMetadataModel, component: { props: ConnectorPropertyMap, requireAuth: boolean, name: string, displayName: string, description: string, outputSchema?: OutputSchema, aiMetadata?: AiMetadata, sampleData?: unknown }, connectorName: string, error?: never }
+    | { error: McpToolResult, piece?: never, component?: never, connectorName?: never }
 
 type ResolveRouterStepResult =
     | { routerStep: RouterAction, error?: never }
     | { error: McpToolResult, routerStep?: never }
 
 type ResolveLatestPieceVersionResult =
-    | { pieceVersion: string, normalizedPieceName: string, error?: never }
-    | { error: McpToolResult, pieceVersion?: never, normalizedPieceName?: never }
+    | { connectorVersion: string, normalizedPieceName: string, error?: never }
+    | { error: McpToolResult, connectorVersion?: never, normalizedPieceName?: never }
 
 export type ActionCardinality = 'enumerate' | 'single' | 'other'
 

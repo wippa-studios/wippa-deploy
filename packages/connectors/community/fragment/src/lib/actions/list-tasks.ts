@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { fragmentAuth } from '../common/auth';
 import { fragmentClient } from '../common/client';
-import { HttpMethod, QueryParams } from '@wippa/pieces-common';
+import { HttpMethod, QueryParams } from '@wippa/connectors-common';
 
 export const listTasks = createAction({
   auth: fragmentAuth,

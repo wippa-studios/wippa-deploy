@@ -1,11 +1,11 @@
 import { straicoAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
   propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import * as z from 'zod/mini'
 
 import { baseUrlv1 } from '../common/common';

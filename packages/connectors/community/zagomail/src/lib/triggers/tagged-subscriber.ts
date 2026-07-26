@@ -3,10 +3,10 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { zagoMailApiService } from '../common/request';
 import { StoredWebhookId, Tag, WebhookResponse } from '../common/constants';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 const CACHE_KEY = 'zagomail_tagged_subscriber_trigger';
 

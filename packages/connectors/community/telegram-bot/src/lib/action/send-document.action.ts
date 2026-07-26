@@ -2,12 +2,12 @@ import {
   ApFile,
   createAction,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpMessageBody,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import FormData from 'form-data';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';

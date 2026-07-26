@@ -3,9 +3,9 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
-import { PieceAuth, Property, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, Property, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { posthogCreateEvent } from './lib/actions/create-event';
 import { posthogCreateProject } from './lib/actions/create-project';
 import { posthogGetFeatureFlags } from './lib/actions/get-feature-flags';
@@ -71,7 +71,7 @@ export const posthogAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const posthog = createPiece({
+export const posthog = createConnector({
   displayName: 'PostHog',
   description: 'Open-source product analytics',
   minimumSupportedRelease: '0.30.0',

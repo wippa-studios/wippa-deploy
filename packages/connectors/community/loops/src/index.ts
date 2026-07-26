@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { loopsAuth, LOOPS_BASE_URL } from './lib/auth';
 import { createContact } from './lib/actions/create-contact';
@@ -9,7 +9,7 @@ import { sendTransactionalEmail } from './lib/actions/send-transactional-email';
 import { findContact } from './lib/actions/find-contact';
 import { deleteContact } from './lib/actions/delete-contact';
 
-export const loops = createPiece({
+export const loops = createConnector({
   displayName: 'Loops',
   description:
     'Loops is an email platform for sending beautiful transactional and marketing emails. Manage contacts, trigger automations with events, and send transactional emails from your workflows.',

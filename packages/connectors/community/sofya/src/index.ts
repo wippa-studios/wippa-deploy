@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { searchAction } from './lib/actions/search';
 import { fetchAction } from './lib/actions/fetch';
 import { extractAction } from './lib/actions/extract';
@@ -8,7 +8,7 @@ import { researchAction } from './lib/actions/research';
 import { sofyaAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 
-export const sofya = createPiece({
+export const sofya = createConnector({
   displayName: 'Sofya',
   description:
     'Web tools for AI agents: search the web, fetch pages as clean markdown, extract structured data with AI, and run deep multi-source research.',

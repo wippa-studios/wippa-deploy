@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 import { XAI_BASE_URL } from './constants';
 import { grokAuth } from './auth';
 

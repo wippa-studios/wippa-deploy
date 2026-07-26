@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { bannerbearCreateImageAction } from './lib/actions/create-image';
 import { bannerbearAuth } from './lib/auth';
 
-export const bannerbear = createPiece({
+export const bannerbear = createConnector({
   displayName: 'Bannerbear',
   description: 'Automate image generation',
 

@@ -1,14 +1,14 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newResponse } from './lib/triggers/new-form-response';
 import { googleFormsAuth, getAccessToken } from './lib/common/common';
 
 export { googleFormsAuth, getAccessToken, GoogleFormsAuthValue } from './lib/common/common';
 
-export const googleForms = createPiece({
+export const googleForms = createConnector({
   displayName: 'Google Forms',
   description: 'Receive form responses from Google Forms',
 

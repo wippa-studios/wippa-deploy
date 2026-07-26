@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { propsValidation } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { propsValidation } from '@wippa/connectors-common';
 import { googleChatApiAuth, googleChatCommon } from '../common';
 import { projectsDropdown, spacesDropdown } from '../common/props';
 import { googleChatAPIService } from '../common/requests';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { googleGeminiAuth } from '../auth';
 import { getGeminiTtsModelOptions } from '../common/common';
 import { GoogleGenAI } from '@google/genai';

@@ -1,11 +1,11 @@
 
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { alttextifyAuth } from "./lib/common/auth";
 import { generateAltTextAction } from "./lib/actions/generate-alt-text";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 
-export const alttextify = createPiece({
+export const alttextify = createConnector({
   displayName: "AltTextify",
   categories: [PieceCategory.PRODUCTIVITY],
   auth: alttextifyAuth,

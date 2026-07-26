@@ -1,7 +1,7 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { pipedriveApiCall } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const getNoteAction = createAction({
 	auth: pipedriveAuth,

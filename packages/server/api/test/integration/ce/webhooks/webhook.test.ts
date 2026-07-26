@@ -1,4 +1,4 @@
-import { apId, EngineResponseStatus, FlowStatus, PieceType, PrincipalType, TriggerStrategy, WebhookHandshakeStrategy } from '@wippa/shared'
+import { apId, EngineResponseStatus, FlowStatus, ConnectorType, PrincipalType, TriggerStrategy, WebhookHandshakeStrategy } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { generateMockToken } from '../../../helpers/auth'
@@ -390,14 +390,14 @@ describe('Webhook Service', () => {
         const { mockProject, mockPlatform } = await mockAndSaveBasicSetup()
 
         const triggerName = 'new_webhook'
-        const pieceName = 'test-handshake-piece'
-        const pieceVersion = '1.0.0'
+        const connectorName = 'test-handshake-piece'
+        const connectorVersion = '1.0.0'
 
         const mockPiece = createMockPieceMetadata({
             platformId: mockPlatform.id,
-            pieceType: PieceType.CUSTOM,
-            name: pieceName,
-            version: pieceVersion,
+            pieceType: ConnectorType.CUSTOM,
+            name: connectorName,
+            version: connectorVersion,
             triggers: {
                 [triggerName]: {
                     handshakeConfiguration: {
@@ -426,8 +426,8 @@ describe('Webhook Service', () => {
             flowId: mockFlow.id,
             flowVersionId: mockFlowVersion.id,
             projectId: mockProject.id,
-            pieceName,
-            pieceVersion,
+            connectorName,
+            connectorVersion,
             triggerName,
             type: TriggerStrategy.WEBHOOK,
             simulate: false,
@@ -461,14 +461,14 @@ describe('Webhook Service', () => {
         const { mockProject, mockPlatform } = await mockAndSaveBasicSetup()
 
         const triggerName = 'new_webhook'
-        const pieceName = 'test-handshake-piece-enabled'
-        const pieceVersion = '1.0.0'
+        const connectorName = 'test-handshake-piece-enabled'
+        const connectorVersion = '1.0.0'
 
         const mockPiece = createMockPieceMetadata({
             platformId: mockPlatform.id,
-            pieceType: PieceType.CUSTOM,
-            name: pieceName,
-            version: pieceVersion,
+            pieceType: ConnectorType.CUSTOM,
+            name: connectorName,
+            version: connectorVersion,
             triggers: {
                 [triggerName]: {
                     handshakeConfiguration: {
@@ -497,8 +497,8 @@ describe('Webhook Service', () => {
             flowId: mockFlow.id,
             flowVersionId: mockFlowVersion.id,
             projectId: mockProject.id,
-            pieceName,
-            pieceVersion,
+            connectorName,
+            connectorVersion,
             triggerName,
             type: TriggerStrategy.WEBHOOK,
             simulate: false,

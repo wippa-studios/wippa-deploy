@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { typeformNewSubmission } from './lib/trigger/new-submission';
 
 export const typeformAuth = PieceAuth.OAuth2({
@@ -14,7 +14,7 @@ export const typeformAuth = PieceAuth.OAuth2({
   scope: ['webhooks:write', 'forms:read'],
 });
 
-export const typeform = createPiece({
+export const typeform = createConnector({
   displayName: 'Typeform',
   description: 'Create beautiful online forms and surveys',
 

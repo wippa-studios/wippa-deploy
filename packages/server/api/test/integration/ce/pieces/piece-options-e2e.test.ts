@@ -14,7 +14,7 @@ import {
     FlowTriggerType,
     FlowVersionState,
     PackageType,
-    PieceType,
+    ConnectorType,
     PrincipalType,
 } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
@@ -69,8 +69,8 @@ describe('Piece Options E2E', () => {
                 name: 'trigger',
                 displayName: 'Catch Webhook',
                 settings: {
-                    pieceName: '@wippa/piece-webhook',
-                    pieceVersion: '~0.1.29',
+                    connectorName: '@wippa/connector-webhook',
+                    connectorVersion: '~0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'basic' },
                     propertySettings: {},
@@ -82,11 +82,11 @@ describe('Piece Options E2E', () => {
         await db.save('flow_version', mockFlowVersion)
 
         const mockPiece = createMockPieceMetadata({
-            name: '@wippa/piece-webhook',
+            name: '@wippa/connector-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
         await databaseConnection().getRepository('piece_metadata').save(mockPiece)
 
@@ -106,8 +106,8 @@ describe('Piece Options E2E', () => {
                 projectId: mockProject.id,
                 flowId: mockFlow.id,
                 flowVersionId: mockFlowVersion.id,
-                pieceName: '@wippa/piece-webhook',
-                pieceVersion: '~0.1.29',
+                connectorName: '@wippa/connector-webhook',
+                connectorVersion: '~0.1.29',
                 actionOrTriggerName: 'catch_webhook',
                 propertyName: 'authFields',
                 input: { authType: 'basic' },

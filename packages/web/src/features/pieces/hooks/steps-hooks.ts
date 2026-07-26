@@ -144,8 +144,8 @@ const getQueryKeyForStepMetadata = (
   }
   const isPieceStep =
     step.type === FlowActionType.PIECE || step.type === FlowTriggerType.PIECE;
-  const pieceName = isPieceStep ? step.settings.pieceName : undefined;
-  const pieceVersion = isPieceStep ? step.settings.pieceVersion : undefined;
+  const connectorName = isPieceStep ? step.settings.connectorName : undefined;
+  const connectorVersion = isPieceStep ? step.settings.connectorVersion : undefined;
   const customLogoUrl =
     'customLogoUrl' in step && typeof step.customLogoUrl === 'string'
       ? step.customLogoUrl
@@ -157,8 +157,8 @@ const getQueryKeyForStepMetadata = (
   return [
     actionName,
     triggerName,
-    pieceName,
-    pieceVersion,
+    connectorName,
+    connectorVersion,
     customLogoUrl,
     locale,
     step.type,

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { makePhoneCall } from "./lib/actions/make-phone-call";
 import { phoneCallEnded } from "./lib/triggers/phone-call-ended";
 import { conversationEnded } from "./lib/triggers/conversation-ended";
@@ -7,7 +7,7 @@ import { addLead } from "./lib/actions/add-lead";
 import { sendSms } from "./lib/actions/send-sms";
 import { inboundCall } from "./lib/triggers/inbound-call";
 import { getAssistants } from "./lib/triggers/get-assistants";
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { baseApiUrl } from './lib/common';
 import { campaignControl } from "./lib/actions/campaign-control";
 import { createCampaign } from "./lib/actions/create-campaign";
@@ -68,7 +68,7 @@ export const famulorAuth =  PieceAuth.SecretText({
     }
   })
 
-export const famulor = createPiece({
+export const famulor = createConnector({
   displayName: "Famulor AI - Voice Agent",
   auth:famulorAuth,
   minimumSupportedRelease: '0.36.1',

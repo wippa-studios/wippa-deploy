@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, OAuth2PropertyValue, PieceAuth } from '@wippa/connectors-framework';
 import { webmasters as googleWebmasters } from '@googleapis/webmasters';
 import { OAuth2Client } from 'google-auth-library';
 import { urlInspection } from './lib/actions/url-inspection';
@@ -8,7 +8,7 @@ import { submitSitemap } from './lib/actions/submit-a-sitemap';
 import { listSites } from './lib/actions/list-sites';
 import { addSite } from './lib/actions/add-a-site';
 import { deleteSite } from './lib/actions/delete-a-site';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { googleSearchConsoleAuth } from './lib/auth';
 
 export const createAuthClient = (accessToken: string) => {
@@ -17,7 +17,7 @@ export const createAuthClient = (accessToken: string) => {
   return googleWebmasters({ version: 'v3', auth });
 };
 
-export const googleSearchConsolePiece = createPiece({
+export const googleSearchConsolePiece = createConnector({
   displayName: 'Google Search Console',
   minimumSupportedRelease: '0.30.0',
   auth: googleSearchConsoleAuth,

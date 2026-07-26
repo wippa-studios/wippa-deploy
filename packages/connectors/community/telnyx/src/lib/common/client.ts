@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 const TELNYX_API_BASE_URL = 'https://api.telnyx.com/v2';
 

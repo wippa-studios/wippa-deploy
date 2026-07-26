@@ -1,7 +1,7 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { JiraDataCenterAuth, jiraDataCenterAuth } from './auth';
 import { createIssueAction } from './lib/actions/create-issue';
 import { searchIssuesAction } from './lib/actions/search-issues';
@@ -21,7 +21,7 @@ import { linkIssuesAction } from './lib/actions/link-issues';
 import { getIssueAttachmentAction } from './lib/actions/get-issue-attachment';
 import { getIssueAction } from './lib/actions/get-issue';
 
-export const jiraDataCenter = createPiece({
+export const jiraDataCenter = createConnector({
 	displayName: 'Jira Data Center',
 	description: 'Issue tracking and project management for Jira Data Center and Server',
 

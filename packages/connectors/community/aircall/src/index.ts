@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { aircallAuth } from './lib/common/auth';
 import { commentACall } from './lib/actions/comment-a-call';
 import { createAContact } from './lib/actions/create-a-contact';
@@ -12,11 +12,11 @@ import { newContact } from './lib/triggers/new-contact';
 import { newNote } from './lib/triggers/new-note';
 import { newNumberCreated } from './lib/triggers/new-number-created';
 import { newSms } from './lib/triggers/new-sms';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 
-export const aircall = createPiece({
+export const aircall = createConnector({
   displayName: 'Aircall',
   auth: aircallAuth,
   minimumSupportedRelease: '0.36.1',

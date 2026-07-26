@@ -1,10 +1,10 @@
 import {
   createAction,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { grokAuth } from '../common/auth';
 import { 
   createModelProperty, 

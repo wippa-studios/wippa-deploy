@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import Client from 'ssh2-sftp-client';
 import { Client as FTPClient, FTPError } from 'basic-ftp';
 import { endClient, getClient, getProtocolBackwardCompatibility } from '../common';

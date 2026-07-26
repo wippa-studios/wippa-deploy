@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth, PiecePropValueSchema } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, PiecePropValueSchema } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { leadStatusChangedTrigger, newContactAddedTrigger, newLeadCreatedTrigger, newTaskCreatedTrigger } from "./lib/triggers";
 import { findLeadAction, updateContactAction, createLeadAction, createContactAction, findContactAction, findCompanyAction, updateLeadAction } from "./lib/actions";
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { kommoAuth } from './lib/auth';
 
 const markdownDescription = `
@@ -12,7 +12,7 @@ Your Kommo account subdomain (e.g., "mycompany" if your URL is mycompany.kommo.c
 
 `;
 
-export const kommo = createPiece({
+export const kommo = createConnector({
   displayName: 'Kommo',
   auth: kommoAuth,
   logoUrl: 'https://cdn.activepieces.com/pieces/kommo.png',

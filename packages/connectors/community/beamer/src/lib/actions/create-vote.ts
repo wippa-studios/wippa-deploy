@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod, HttpRequest } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@wippa/connectors-common';
 import { beamerAuth } from '../auth';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { beamerCommon } from '../common';
 
 export const createVote = createAction({

@@ -3,7 +3,7 @@ import {
   HttpError,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export class JungleGridApiError extends Error {
   public readonly status: number;

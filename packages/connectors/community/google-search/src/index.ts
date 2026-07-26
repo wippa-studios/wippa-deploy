@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { searchAction } from './lib/actions/search';
 import { googleSearchAuth } from './lib/auth';
 
@@ -15,7 +15,7 @@ Follow these steps to obtain your Google Cloud API Key:
 7. Copy the API key and paste it below.
 `;
 
-export const googleSearch = createPiece({
+export const googleSearch = createConnector({
   displayName: 'Google Search',
   description: 'Search using Vertex AI Search (Discovery Engine)',
   auth: googleSearchAuth,

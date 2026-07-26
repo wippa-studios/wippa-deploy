@@ -1,11 +1,11 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { beamerAuth } from '../auth';
 import { beamerCommon } from '../common';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const createComment = createAction({
   auth: beamerAuth,

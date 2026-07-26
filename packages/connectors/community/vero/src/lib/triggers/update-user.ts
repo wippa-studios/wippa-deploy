@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { veroAuth } from '../common/auth';
 export const updateUser = createTrigger({
   auth: veroAuth,

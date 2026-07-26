@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { jotformCommon } from './lib/common';
 import { newSubmission } from './lib/triggers/new-submission';
 
@@ -47,7 +47,7 @@ export const jotformAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const jotform = createPiece({
+export const jotform = createConnector({
   displayName: 'Jotform',
   description: 'Create online forms and surveys',
 

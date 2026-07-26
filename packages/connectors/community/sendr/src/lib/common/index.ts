@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType, HttpMessageBody, HttpResponse } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { sendrAuth } from '../auth';
 
 export const BASE_URL = 'https://api.sendr.io/api/v1';

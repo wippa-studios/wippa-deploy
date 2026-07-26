@@ -4,7 +4,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 const BASE_URL = 'https://app.documerge.ai';
 

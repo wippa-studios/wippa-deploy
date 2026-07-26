@@ -2,13 +2,13 @@ import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { trustAuth } from '../auth';
 import { trustApiRequest } from '../common/client';
 

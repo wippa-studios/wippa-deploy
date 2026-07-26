@@ -1,5 +1,5 @@
-import { DropdownOption, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
-import { HttpRequest, HttpMethod, httpClient } from '@wippa/pieces-common';
+import { DropdownOption, OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
+import { HttpRequest, HttpMethod, httpClient } from '@wippa/connectors-common';
 import {
 	FacebookForm,
 	FacebookLead,

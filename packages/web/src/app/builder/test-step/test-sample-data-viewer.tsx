@@ -32,7 +32,7 @@ type TestSampleDataViewerProps = {
   children?: React.ReactNode;
   consoleLogs: string | null;
   explanationContext?: ErrorExplanationContext;
-  pieceDisplayName?: string;
+  connectorDisplayName?: string;
   pieceSchema?: OutputSchema | null;
 } & (
   | {
@@ -77,7 +77,7 @@ export const TestSampleDataViewer = React.memo(
       sampleDataInput,
       consoleLogs,
       explanationContext,
-      pieceDisplayName,
+      connectorDisplayName,
       pieceSchema,
     } = props;
     const [requestedTab, setActiveTab] = useState<ActiveTab>('Output');
@@ -146,7 +146,7 @@ export const TestSampleDataViewer = React.memo(
               <FriendlyErrorView
                 error={friendlyError}
                 explanationContext={explanationContext}
-                pieceDisplayName={pieceDisplayName}
+                connectorDisplayName={connectorDisplayName}
               />
             ) : activeTab === 'Output' && !errorMessage ? (
               <SmartOutputViewer

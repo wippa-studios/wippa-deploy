@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { convertkitAuth } from '../..';
 import { tag } from '../common/tags';
 import { formId } from '../common/forms';

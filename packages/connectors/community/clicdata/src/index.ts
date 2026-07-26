@@ -1,9 +1,9 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { clicdataAuth } from "./lib/common/auth";
 import { insertRow, refreshTable } from "./lib/actions";
 
-export const clicdata = createPiece({
+export const clicdata = createConnector({
   displayName: "Clicdata",
   auth: clicdataAuth,
   minimumSupportedRelease: '0.36.1',

@@ -11,7 +11,7 @@ import { EngineConstants, ResolvedExecuteFlowOperation } from './context/engine-
 import { FlowExecutorContext } from './context/flow-execution-context'
 import { loopExecutor } from './loop-executor'
 import { parallelExecutor } from './parallel-executor'
-import { pieceExecutor } from './piece-executor'
+import { connectorExecutor } from './piece-executor'
 import { routerExecuter } from './router-executor'
 
 function getExecuteFunction(): Record<FlowActionType, BaseExecutor<FlowAction>> {
@@ -19,7 +19,7 @@ function getExecuteFunction(): Record<FlowActionType, BaseExecutor<FlowAction>> 
         [FlowActionType.CODE]: codeExecutor,
         [FlowActionType.LOOP_ON_ITEMS]: loopExecutor,
         [FlowActionType.PARALLEL]: parallelExecutor,
-        [FlowActionType.PIECE]: pieceExecutor,
+        [FlowActionType.PIECE]: connectorExecutor,
         [FlowActionType.ROUTER]: routerExecuter,
     }
 }

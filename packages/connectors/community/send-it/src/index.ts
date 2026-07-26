@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendItAuth } from './lib/auth';
 import { publishPost } from './lib/actions/publish-post';
 import { schedulePost } from './lib/actions/schedule-post';
@@ -14,7 +14,7 @@ import { postScheduled } from './lib/triggers/post-scheduled';
 import { postFailed } from './lib/triggers/post-failed';
 import { BASE_URL } from './lib/common';
 
-export const sendIt = createPiece({
+export const sendIt = createConnector({
   displayName: 'SendIt',
   description:
     'Multi-platform social media publishing. Schedule and publish content to LinkedIn, Instagram, Threads, TikTok, X, and 30+ more platforms.',

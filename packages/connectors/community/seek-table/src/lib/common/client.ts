@@ -1,4 +1,4 @@
-import { HttpMethod, AuthenticationType, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, AuthenticationType, httpClient } from '@wippa/connectors-common';
 
 export const BASE_URL = 'https://www.seektable.com/';
 

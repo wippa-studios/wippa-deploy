@@ -1,5 +1,5 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const freeAgentAuth = PieceAuth.OAuth2({
   description: 'Connect your FreeAgent account',

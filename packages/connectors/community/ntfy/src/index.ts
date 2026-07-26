@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendNotification } from './lib/actions/send-notification';
 
 export const ntfyAuth = PieceAuth.CustomAuth({
@@ -32,7 +32,7 @@ export const ntfyAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const ntfy = createPiece({
+export const ntfy = createConnector({
   displayName: 'ntfy',
   description: 'Notification management made easy',
 

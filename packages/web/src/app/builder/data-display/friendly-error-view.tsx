@@ -22,14 +22,14 @@ import { ErrorExplanationContext } from './explanation-prompt';
 type FriendlyErrorViewProps = {
   error: FriendlyPieceError;
   explanationContext?: ErrorExplanationContext;
-  pieceDisplayName?: string;
+  connectorDisplayName?: string;
   className?: string;
 };
 
 const FriendlyErrorView = ({
   error,
   explanationContext,
-  pieceDisplayName,
+  connectorDisplayName,
   className,
 }: FriendlyErrorViewProps) => {
   const { status } = error;
@@ -38,8 +38,8 @@ const FriendlyErrorView = ({
   const messageText = pickDisplayMessage(error);
   const showMessage = !isNil(messageText) && messageText.length > 0;
   const messageLabel = isHttpError
-    ? pieceDisplayName
-      ? t('Response from {pieceDisplayName}', { pieceDisplayName })
+    ? connectorDisplayName
+      ? t('Response from {connectorDisplayName}', { connectorDisplayName })
       : t('What the service said')
     : t('Error message');
   const technicalPayload = stripInternalMarker(error);

@@ -6,14 +6,14 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { hubspotAuth } from '../auth';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 type Props = {
 	eventType?: string;
@@ -25,7 +25,7 @@ type EmailEventResponse = {
 	offset: string;
 };
 
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 const polling: Polling<AppConnectionValueForAuthProperty<typeof hubspotAuth>, Props> = {
 	strategy: DedupeStrategy.TIMEBASED,
 	async items({ auth, propsValue, lastFetchEpochMS }) {

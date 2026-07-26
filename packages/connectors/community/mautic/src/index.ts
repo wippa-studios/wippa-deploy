@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   PiecePropValueSchema,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   createCompany,
   createContact,
@@ -26,7 +26,7 @@ Follow these steps:
 
 `;
 
-export const mautic = createPiece({
+export const mautic = createConnector({
   displayName: 'Mautic',
   description: 'Open-source marketing automation software',
 

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 export const ashbyAuth = PieceAuth.CustomAuth({
   required: true,
@@ -11,7 +11,7 @@ export const ashbyAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const ashby = createPiece({
+export const ashby = createConnector({
   displayName: 'Ashby',
   auth: ashbyAuth,
   minimumSupportedRelease: '0.36.1',

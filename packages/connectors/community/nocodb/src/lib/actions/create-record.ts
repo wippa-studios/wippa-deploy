@@ -1,5 +1,5 @@
 import { nocodbAuth } from '../auth';
-import { createAction, DynamicPropsValue } from '@wippa/pieces-framework';
+import { createAction, DynamicPropsValue } from '@wippa/connectors-framework';
 import { makeClient, nocodbCommon } from '../common';
 
 export const createRecordAction = createAction({

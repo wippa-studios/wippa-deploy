@@ -2,7 +2,7 @@ export const reachinboxCommon = {
   baseUrl: 'https://api.reachinbox.ai/api/v1/',
 };
 
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export interface Campaign {
   id: number;

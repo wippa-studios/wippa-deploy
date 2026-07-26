@@ -2,14 +2,14 @@ import {
   Property,
   PiecePropValueSchema,
   DropdownOption,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpMethod,
   HttpMessageBody,
   httpClient,
   AuthenticationType,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { clicksendAuth } from '../..';
 
 export const clicksendCommon = {

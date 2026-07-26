@@ -4,7 +4,7 @@ import {
   HttpRequest,
   HttpMessageBody,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export type SendPulseAuthProps = {
   clientId: string;

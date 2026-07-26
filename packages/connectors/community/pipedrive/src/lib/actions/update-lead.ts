@@ -1,12 +1,12 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { leadCommonProps, leadIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
 	pipedriveTransformV1CustomFields,
 } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { GetField, GetLeadResponse } from '../common/types';
 import dayjs from 'dayjs';
 

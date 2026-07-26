@@ -1,16 +1,16 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { appfollowAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { newReview } from './lib/triggers/new-review';
 import { newTag } from './lib/triggers/new-tag';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 import { replyToReview } from './lib/actions/reply-to-review';
 import { addUser } from './lib/actions/add-user';
 
-export const appfollow = createPiece({
+export const appfollow = createConnector({
   displayName: 'AppFollow',
   auth: appfollowAuth,
   minimumSupportedRelease: '0.36.1',

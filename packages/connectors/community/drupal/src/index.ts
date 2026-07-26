@@ -1,7 +1,7 @@
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { drupalCallServiceAction } from './lib/actions/services';
 import { drupalCreateEntityAction } from './lib/actions/create_entity';
 import { drupalListEntitiesAction } from './lib/actions/list_entities';
@@ -13,7 +13,7 @@ import { drupalPollingTimestamp } from './lib/triggers/polling-timestamp';
 import { drupalWebhook } from './lib/triggers/webhook';
 import { drupalAuth } from './lib/auth';
 
-export const drupal = createPiece({
+export const drupal = createConnector({
   displayName: 'Drupal',
   auth: drupalAuth,
   minimumSupportedRelease: '0.36.1',

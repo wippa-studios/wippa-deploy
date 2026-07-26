@@ -1,7 +1,7 @@
-import { createAction, Property, PiecePropValueSchema } from '@wippa/pieces-framework';
+import { createAction, Property, PiecePropValueSchema } from '@wippa/connectors-framework';
 import { teamworkAuth } from '../common/auth';
 import { teamworkRequest } from '../common/client';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const createNotebookComment = createAction({
 	name: 'create_notebook_comment',

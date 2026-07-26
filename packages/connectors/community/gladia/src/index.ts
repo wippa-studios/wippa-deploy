@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createTranscription } from './lib/actions/create-transcription';
 import { uploadAFile } from './lib/actions/upload-a-file';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { gladiaAuth } from './lib/common/auth';
 
-export const gladia = createPiece({
+export const gladia = createConnector({
   displayName: 'Gladia',
   auth: gladiaAuth,
   minimumSupportedRelease: '0.36.1',

@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const { mockSendRequest } = vi.hoisted(() => ({ mockSendRequest: vi.fn() }))
 
-vi.mock('@wippa/pieces-common', () => ({
+vi.mock('@wippa/connectors-common', () => ({
     httpClient: { sendRequest: mockSendRequest },
     HttpMethod: { GET: 'GET' },
 }))

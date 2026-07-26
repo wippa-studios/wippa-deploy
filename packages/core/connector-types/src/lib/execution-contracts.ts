@@ -1,6 +1,6 @@
 import { ApId, BaseModelSchema, DateOrString, Nullable } from '@wippa/core-utils'
 import * as z from 'zod/mini'
-import { PackageType, PieceType } from './piece'
+import { PackageType, ConnectorType } from './piece'
 import { TriggerStrategy } from './trigger'
 
 // Contracts that the execution layer (@wippa/core-execution) and the engine
@@ -21,9 +21,9 @@ export const VersionType = z.string().check(z.regex(new RegExp(VERSION_PATTERN))
 // ── piece package ──────────────────────────────────────────────────────────
 export const PrivatePiecePackage = z.object({
     packageType: z.literal(PackageType.ARCHIVE),
-    pieceType: z.enum(PieceType),
-    pieceName: z.string(),
-    pieceVersion: z.string(),
+    pieceType: z.enum(ConnectorType),
+    connectorName: z.string(),
+    connectorVersion: z.string(),
     archiveId: z.string(),
     platformId: z.string(),
 })
@@ -31,17 +31,17 @@ export type PrivatePiecePackage = z.infer<typeof PrivatePiecePackage>
 
 export const OfficialPiecePackage = z.object({
     packageType: z.literal(PackageType.REGISTRY),
-    pieceType: z.literal(PieceType.OFFICIAL),
-    pieceName: z.string(),
-    pieceVersion: z.string(),
+    pieceType: z.literal(ConnectorType.OFFICIAL),
+    connectorName: z.string(),
+    connectorVersion: z.string(),
 })
 export type OfficialPiecePackage = z.infer<typeof OfficialPiecePackage>
 
 export const CustomNpmPiecePackage = z.object({
     packageType: z.literal(PackageType.REGISTRY),
-    pieceType: z.literal(PieceType.CUSTOM),
-    pieceName: z.string(),
-    pieceVersion: z.string(),
+    pieceType: z.literal(ConnectorType.CUSTOM),
+    connectorName: z.string(),
+    connectorVersion: z.string(),
     platformId: z.string(),
 })
 export type CustomNpmPiecePackage = z.infer<typeof CustomNpmPiecePackage>
@@ -49,8 +49,8 @@ export type CustomNpmPiecePackage = z.infer<typeof CustomNpmPiecePackage>
 export const PublicPiecePackage = z.union([OfficialPiecePackage, CustomNpmPiecePackage])
 export type PublicPiecePackage = OfficialPiecePackage | CustomNpmPiecePackage
 
-export const PiecePackage = z.union([PrivatePiecePackage, OfficialPiecePackage, CustomNpmPiecePackage])
-export type PiecePackage = PrivatePiecePackage | OfficialPiecePackage | CustomNpmPiecePackage
+export const ConnectorPackage = z.union([PrivatePiecePackage, OfficialPiecePackage, CustomNpmPiecePackage])
+export type ConnectorPackage = PrivatePiecePackage | OfficialPiecePackage | CustomNpmPiecePackage
 
 // ── trigger source / schedule ──────────────────────────────────────────────
 export enum TriggerSourceScheduleType {
@@ -79,8 +79,8 @@ export const TriggerSource = z.object({
     triggerName: z.string(),
     schedule: Nullable(ScheduleOptions),
     flowVersionId: z.string(),
-    pieceName: z.string(),
-    pieceVersion: z.string(),
+    connectorName: z.string(),
+    connectorVersion: z.string(),
     deleted: Nullable(z.string()),
     simulate: z.boolean(),
 })

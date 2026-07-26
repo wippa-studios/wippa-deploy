@@ -5,7 +5,7 @@ import serviceActions from './service';
 import teamActions from './team';
 import userActions from './user';
 import absenceActions from './absence';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { clockodoAuth } from '../auth';
 
 export default [

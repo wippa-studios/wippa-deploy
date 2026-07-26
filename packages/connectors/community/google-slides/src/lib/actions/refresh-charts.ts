@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { batchUpdate, getSlide, PageElement } from '../commons/common';
 import { googleSlidesAuth } from '../auth';
 

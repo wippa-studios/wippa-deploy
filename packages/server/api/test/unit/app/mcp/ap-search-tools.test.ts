@@ -57,7 +57,7 @@ describe('ap_search_actions / ap_search_triggers — empty-query validation (no 
 
 describe('ap_search_actions — the keyword-degrade note names the real cause', () => {
     const row = {
-        pieceName: '@wippa/piece-slack',
+        connectorName: '@wippa/connector-slack',
         actionName: 'send_channel_message',
         displayName: 'Send Channel Message',
         oneLineDescription: 'Send a message to a Slack channel',

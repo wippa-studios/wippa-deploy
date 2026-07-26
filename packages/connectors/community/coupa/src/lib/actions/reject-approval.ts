@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { coupaAuth } from '../auth';
 import { CoupaClient } from '../common/client';
 import { pendingApprovalDropdown } from '../common/props';

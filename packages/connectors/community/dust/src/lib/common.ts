@@ -1,9 +1,9 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMessageBody,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { dustAuth, DustAuthType } from '..';
 import { DustAPI } from '@dust-tt/client';
 

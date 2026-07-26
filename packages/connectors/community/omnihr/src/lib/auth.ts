@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 // Docs: https://api-docs.omnihr.co/#auth-jwt
 const ACCESS_TOKEN_EXPIRY_BUFFER_SECONDS = 5 * 60;

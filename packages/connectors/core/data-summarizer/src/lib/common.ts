@@ -1,5 +1,5 @@
-import { Property } from "@wippa/pieces-framework"
-import { isNil } from "@wippa/pieces-framework"
+import { Property } from "@wippa/connectors-framework"
+import { isNil } from "@wippa/connectors-framework"
 
 type ErrorInfo = {
     value: unknown | null,

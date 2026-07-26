@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { everhourAuth } from './lib/auth';
 import { createTaskAction } from './lib/actions/create-task';
 import { startTimerAction } from './lib/actions/start-timer';
 import { stopTimerAction } from './lib/actions/stop-timer';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const everhour = createPiece({
+export const everhour = createConnector({
   displayName: 'Everhour',
   description: 'Time tracking software that integrates into project management tools to track billable hours, set budgets, and monitor spending.',
   logoUrl: 'https://cdn.activepieces.com/pieces/everhour.png',

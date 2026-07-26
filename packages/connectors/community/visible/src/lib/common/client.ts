@@ -3,7 +3,7 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const VISIBLE_BASE_URL = 'https://api.visible.vc';
 

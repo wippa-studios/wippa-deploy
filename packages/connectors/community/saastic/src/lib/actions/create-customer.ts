@@ -1,14 +1,14 @@
 import {
   createAction,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpMethod,
   AuthenticationType,
   httpClient,
   HttpRequest,
   propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import * as z from 'zod/mini'
 import { saasticCommon } from '../common';
 import { saasticAuth } from '../..';

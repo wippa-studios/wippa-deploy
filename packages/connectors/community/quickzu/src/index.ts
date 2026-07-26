@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { updateBusinessTimeAction } from './lib/actions/business-settings/update-business-time';
 import { createCategoryAction } from './lib/actions/categories/create-category';
 import { deleteCategoryAction } from './lib/actions/categories/delete-category';
@@ -22,7 +22,7 @@ const authHelpDescription = `
 2. Go to **https://app.quickzu.com/dash/settings/api-webhooks**.
 3. Copy **API Token** to the clipboard and paste it.`;
 
-export const quickzu = createPiece({
+export const quickzu = createConnector({
   displayName: 'Quickzu',
   description: 'Streamline ordering from whatsapp',
 

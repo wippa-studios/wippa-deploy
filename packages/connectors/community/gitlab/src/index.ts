@@ -1,15 +1,15 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createIssueAction } from './lib/actions/create-issue-action';
 import { issuesEventTrigger } from './lib/trigger/issue-event';
 import { gitlabAuth } from './lib/auth';
 
-export const gitlab = createPiece({
+export const gitlab = createConnector({
   displayName: 'GitLab',
   description: 'Collaboration tool for developers',
 

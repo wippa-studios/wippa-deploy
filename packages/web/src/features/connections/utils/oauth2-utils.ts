@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import { OAuth2Property, OAuth2Props } from '@wippa/pieces-framework';
+import { OAuth2Property, OAuth2Props } from '@wippa/connectors-framework';
 import {
   AppConnectionType,
   BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE,
@@ -96,9 +96,9 @@ function getGrantType(property: OAuth2Property<OAuth2Props>) {
 
 function getPredefinedOAuth2App(
   piecesOAuth2AppsMap: PiecesOAuth2AppsMap,
-  pieceName: string,
+  connectorName: string,
 ): OAuth2App | null {
-  const pieceOAuth2Apps = piecesOAuth2AppsMap[pieceName];
+  const pieceOAuth2Apps = piecesOAuth2AppsMap[connectorName];
   if (isNil(pieceOAuth2Apps)) {
     return null;
   }

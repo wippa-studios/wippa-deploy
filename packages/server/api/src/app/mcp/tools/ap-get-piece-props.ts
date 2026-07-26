@@ -1,5 +1,5 @@
 import { isNil, isObject, spreadIfDefined, tryCatch } from '@wippa/core-utils'
-import { PiecePropertyMap } from '@wippa/pieces-framework'
+import { ConnectorPropertyMap } from '@wippa/connectors-framework'
 import { AppConnectionStatus, EngineResponse, EngineResponseStatus, FlowVersion, McpToolDefinition, ProjectScopedMcpServer, SampleDataFileType, WorkerJobType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
@@ -9,7 +9,7 @@ import { sampleDataService } from '../../flows/step-run/sample-data.service'
 import { getPiecePackageWithoutArchive } from '../../pieces/metadata/piece-metadata-service'
 import { userInteractionWatcher } from '../../workers/user-interaction-watcher'
 import { mcpUtils, PropertyResolutionResult, PropSummary } from './mcp-utils'
-import { pieceExpertise } from './piece-expertise'
+import { connectorExpertise } from './piece-expertise'
 
 export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogger): McpToolDefinition => {
     return {
@@ -19,12 +19,12 @@ export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBas
         annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
         execute: async (args) => {
             try {
-                const { pieceName, actionOrTriggerName, type, auth, flowId, input: providedInput } = getPiecePropsInput.parse(args)
+                const { connectorName, actionOrTriggerName, type, auth, flowId, input: providedInput } = getPiecePropsInput.parse(args)
 
                 const platformId = await mcpUtils.resolvePlatformId({ mcp, log })
                 const projectId = mcpUtils.isProjectScoped(mcp) ? mcp.projectId : undefined
                 const lookup = await mcpUtils.lookupPieceComponent({
-                    pieceName,
+                    connectorName,
                     componentName: actionOrTriggerName,
                     componentType: type,
                     projectId,
@@ -35,7 +35,7 @@ export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBas
                     return lookup.error
                 }
 
-                const { piece, component, pieceName: normalized } = lookup
+                const { piece, component, connectorName: normalized } = lookup
                 const label = type === 'action' ? 'Action' : 'Trigger'
                 const props = mcpUtils.buildPropSummaries(component.props)
                 const requiresAuth = component.requireAuth && !isNil(piece.auth)
@@ -43,14 +43,14 @@ export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBas
                 const hasRealProject = mcpUtils.isProjectScoped(mcp)
                 let authHint: AuthHint | undefined
                 if (hasRealProject && requiresAuth && auth) {
-                    const authOwnership = await validateAuthOwnership({ auth, pieceName: normalized, projectId: mcp.projectId, platformId, log })
+                    const authOwnership = await validateAuthOwnership({ auth, connectorName: normalized, projectId: mcp.projectId, platformId, log })
                     if (authOwnership) {
                         return authOwnership
                     }
                 }
                 if (requiresAuth && !auth) {
                     if (hasRealProject) {
-                        authHint = await discoverAvailableConnections({ pieceName: normalized, projectId: mcp.projectId, platformId, log })
+                        authHint = await discoverAvailableConnections({ connectorName: normalized, projectId: mcp.projectId, platformId, log })
                     }
                     else {
                         authHint = { message: 'Select a project with ap_set_project_context to see available connections.', connections: [] }
@@ -61,8 +61,8 @@ export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBas
                     await resolvePropertyOptions({
                         props,
                         componentProps: component.props,
-                        pieceName: normalized,
-                        pieceVersion: piece.version,
+                        connectorName: normalized,
+                        connectorVersion: piece.version,
                         actionOrTriggerName,
                         auth,
                         flowId,
@@ -102,7 +102,7 @@ export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBas
                     description: component.description,
                     requiresAuth,
                     cardinality: mcpUtils.classifyActionCardinality(component.name),
-                    ...spreadIfDefined('expertNotes', pieceExpertise.getNotes({ pieceName: normalized, actionName: component.name })),
+                    ...spreadIfDefined('expertNotes', connectorExpertise.getNotes({ connectorName: normalized, actionName: component.name })),
                     ...(aiMetadata && { aiMetadata }),
                     ...(component.outputSchema && { outputSchema: component.outputSchema }),
                     ...(outputFields.length > 0 && { outputFields, outputFieldsSource }),
@@ -138,7 +138,7 @@ export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBas
     }
 }
 
-async function resolvePropertyOptions({ props, componentProps, pieceName, pieceVersion, actionOrTriggerName, auth, flowId, providedInput, projectId, platformId, log }: ResolvePropertyOptionsParams): Promise<void> {
+async function resolvePropertyOptions({ props, componentProps, connectorName, connectorVersion, actionOrTriggerName, auth, flowId, providedInput, projectId, platformId, log }: ResolvePropertyOptionsParams): Promise<void> {
     const resolvableProps = mcpUtils.findResolvableProps({ props, componentProps, auth, providedInput })
     if (resolvableProps.length === 0) {
         return
@@ -146,8 +146,8 @@ async function resolvePropertyOptions({ props, componentProps, pieceName, pieceV
 
     const flow = flowId ? await flowService(log).getOnePopulated({ id: flowId, projectId }) : null
 
-    const [piecePackage, sampleData] = await Promise.all([
-        getPiecePackageWithoutArchive(log, platformId, { pieceName, pieceVersion }),
+    const [connectorPackage, sampleData] = await Promise.all([
+        getPiecePackageWithoutArchive(log, platformId, { connectorName, connectorVersion }),
         flow
             ? sampleDataService(log).getSampleDataForFlow(projectId, flow.version, SampleDataFileType.OUTPUT)
             : Promise.resolve({} as Record<string, unknown>),
@@ -161,7 +161,7 @@ async function resolvePropertyOptions({ props, componentProps, pieceName, pieceV
         const engineInput: Record<string, unknown> = { ...input, ...(auth ? { auth: `{{connections['${auth}']}}` } : {}) }
         const { data: result, error } = await tryCatch(() => withTimeout({
             promise: userInteractionWatcher.submitAndWaitForResponse<EngineResponse<{
-                options: Array<{ label: string, value: unknown }> | PiecePropertyMap
+                options: Array<{ label: string, value: unknown }> | ConnectorPropertyMap
                 disabled?: boolean
             }>>({
                 jobType: WorkerJobType.EXECUTE_PROPERTY,
@@ -173,7 +173,7 @@ async function resolvePropertyOptions({ props, componentProps, pieceName, pieceV
                 input: engineInput,
                 sampleData,
                 searchValue: undefined,
-                piece: piecePackage,
+                piece: connectorPackage,
             }, log),
             ms: PROPERTY_TIMEOUT_MS,
         }))
@@ -190,8 +190,8 @@ async function resolvePropertyOptions({ props, componentProps, pieceName, pieceV
     await mcpUtils.resolveTransitively({ props, componentProps, auth, providedInput, resolveOne })
 }
 
-async function discoverAvailableConnections({ pieceName, projectId, platformId, log }: {
-    pieceName: string
+async function discoverAvailableConnections({ connectorName, projectId, platformId, log }: {
+    connectorName: string
     projectId: string
     platformId: string
     log: FastifyBaseLogger
@@ -200,7 +200,7 @@ async function discoverAvailableConnections({ pieceName, projectId, platformId, 
         const connections = await appConnectionService(log).list({
             projectId,
             platformId,
-            pieceName,
+            connectorName,
             cursorRequest: null,
             scope: undefined,
             displayName: undefined,
@@ -216,14 +216,14 @@ async function discoverAvailableConnections({ pieceName, projectId, platformId, 
         return { message: 'No connections found. Set up in UI or use ap_setup_guide.', connections: [] }
     }
     catch (err) {
-        log.debug({ error: err, piece: { name: pieceName } }, 'Failed to discover connections')
+        log.debug({ error: err, piece: { name: connectorName } }, 'Failed to discover connections')
         return { message: 'Use ap_list_connections to find connections.', connections: [] }
     }
 }
 
-async function validateAuthOwnership({ auth, pieceName, projectId, platformId, log }: {
+async function validateAuthOwnership({ auth, connectorName, projectId, platformId, log }: {
     auth: string
-    pieceName: string
+    connectorName: string
     projectId: string
     platformId: string
     log: FastifyBaseLogger
@@ -232,7 +232,7 @@ async function validateAuthOwnership({ auth, pieceName, projectId, platformId, l
         const connections = await appConnectionService(log).list({
             projectId,
             platformId,
-            pieceName,
+            connectorName,
             cursorRequest: null,
             scope: undefined,
             displayName: undefined,
@@ -245,7 +245,7 @@ async function validateAuthOwnership({ auth, pieceName, projectId, platformId, l
             return {
                 content: [{
                     type: 'text',
-                    text: `⚠️ Connection "${auth}" does not belong to piece "${pieceName}". Use ap_list_connections to find the correct connection for this piece.`,
+                    text: `⚠️ Connection "${auth}" does not belong to piece "${connectorName}". Use ap_list_connections to find the correct connection for this piece.`,
                 }],
             }
         }
@@ -259,7 +259,7 @@ async function validateAuthOwnership({ auth, pieceName, projectId, platformId, l
 const { withTimeout } = mcpUtils
 
 const getPiecePropsInput = z.object({
-    pieceName: z.string().describe('The piece name (e.g. "@wippa/piece-slack"). Use ap_research_pieces to get valid values.'),
+    connectorName: z.string().describe('The piece name (e.g. "@wippa/connector-slack"). Use ap_research_pieces to get valid values.'),
     actionOrTriggerName: z.string().describe('The action or trigger name (e.g. "send_channel_message"). Use ap_research_pieces with pieceNames to get valid values.'),
     type: z.enum(['action', 'trigger']).describe('Whether to look up an action or a trigger.'),
     auth: z.string().optional().describe('Connection externalId from ap_list_connections. When provided, dynamic dropdowns and dynamic property sub-fields are resolved via your account.'),
@@ -271,9 +271,9 @@ const PROPERTY_TIMEOUT_MS = 30_000
 
 type ResolvePropertyOptionsParams = {
     props: PropSummary[]
-    componentProps: PiecePropertyMap
-    pieceName: string
-    pieceVersion: string
+    componentProps: ConnectorPropertyMap
+    connectorName: string
+    connectorVersion: string
     actionOrTriggerName: string
     auth: string | undefined
     flowId: string | undefined

@@ -1,9 +1,9 @@
 import { deepseekAuth } from '../auth';
-import { createAction, Property, StoreScope } from "@wippa/pieces-framework";
+import { createAction, Property, StoreScope } from "@wippa/connectors-framework";
 import OpenAI from 'openai';
 import { baseUrl } from '../common/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const askDeepseek = createAction({
   audience: 'human',

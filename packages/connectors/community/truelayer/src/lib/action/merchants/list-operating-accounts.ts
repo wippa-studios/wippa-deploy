@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createAction, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createAction, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { trueLayerCommon } from '../../common';
 
 export const listOperatingAccounts = createAction({

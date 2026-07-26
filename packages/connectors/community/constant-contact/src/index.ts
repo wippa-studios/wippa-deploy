@@ -1,14 +1,14 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createOrUpdateContact } from './lib/actions/create-or-update-contact';
 import { constantContactAuth } from './lib/auth';
 
-export const constantContact = createPiece({
+export const constantContact = createConnector({
   displayName: 'Constant Contact',
   description: 'Email marketing for small businesses',
 

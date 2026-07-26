@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { validateEmail } from './lib/actions/validate-email';
 import { validatedMailsAuth } from './lib/common/auth';
 
-export const validatedmails = createPiece({
+export const validatedmails = createConnector({
   displayName: 'ValidatedMails',
   auth: validatedMailsAuth,
   minimumSupportedRelease: '0.36.1',

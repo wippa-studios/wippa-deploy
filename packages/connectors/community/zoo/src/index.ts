@@ -1,6 +1,6 @@
 
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { ML_ACTIONS } from './lib/actions';
 import { API_CALLS_ACTIONS } from './lib/actions/api-calls';
 import { API_TOKENS_ACTIONS } from './lib/actions/api-tokens';
@@ -15,7 +15,7 @@ import { UNIT_ACTIONS } from './lib/actions/unit';
 import { USER_ACTIONS } from './lib/actions/users';
 import { zooAuth } from './lib/auth';
 
-export const textToCad = createPiece({
+export const textToCad = createConnector({
   displayName: 'Zoo',
   description: 'Generate and iterate on 3D models from text descriptions using ML endpoints.',
   logoUrl: 'https://cdn.activepieces.com/pieces/zoo.jpg',

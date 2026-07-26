@@ -1,6 +1,6 @@
 import { I18nForPiece, PieceMetadataModel, PieceMetadataModelSummary } from "./piece-metadata"
 import { LocalesEnum } from "@wippa/core-utils"
-import { MAX_KEY_LENGTH_FOR_CORWDIN } from "@wippa/core-piece-types"
+import { MAX_KEY_LENGTH_FOR_CORWDIN } from "@wippa/core-connector-types"
 import path from 'path';
 import fs from 'fs/promises';
 

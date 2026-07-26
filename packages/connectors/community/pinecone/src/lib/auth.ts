@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 
 export const pineconeAuth = PieceAuth.CustomAuth({
   description: 'Configure your Pinecone API key',

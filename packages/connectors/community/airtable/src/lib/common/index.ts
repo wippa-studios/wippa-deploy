@@ -3,12 +3,12 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   DropdownState,
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import Airtable from 'airtable';
 import {
   AirtableBase,
@@ -23,7 +23,7 @@ import {
   AirtableTable,
   AirtableView,
 } from './models';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { airtableAuth } from '../auth';
 
 

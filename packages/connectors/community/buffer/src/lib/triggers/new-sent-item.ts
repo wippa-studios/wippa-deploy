@@ -3,12 +3,12 @@ import {
   Property,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { bufferAuth } from '../common/auth';
 import {
   bufferProps,

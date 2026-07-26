@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { pinterestAuth } from './lib/common/auth';
 import { createPin } from './lib/actions/create-pin';
 import { createBoard } from './lib/actions/create-board';
@@ -10,7 +10,7 @@ import { newBoard } from './lib/triggers/new-board';
 import { newFollower } from './lib/triggers/new-follower';
 import { newPinOnBoard } from './lib/triggers/new-pin-on-board';
 
-export const pinterest = createPiece({
+export const pinterest = createConnector({
   displayName: 'Pinterest',
   auth: pinterestAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { isString } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { isString } from '@wippa/connectors-framework';
 import {parse} from 'csv-parse/sync';
 
 export const csvToJsonAction = createAction({

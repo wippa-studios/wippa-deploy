@@ -3,7 +3,7 @@ import {
   httpClient,
   HttpMessageBody,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const METATEXT_API_URL = 'https://api.metatext.ai';
 export const METATEXT_GUARD_URL = 'https://guard-api.metatext.ai';

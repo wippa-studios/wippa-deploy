@@ -1,11 +1,11 @@
 
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { generateAnswerAction } from "./lib/actions/generate-answer";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { dashworksAuth } from "./lib/common/auth";
 
-export const dashworks = createPiece({
+export const dashworks = createConnector({
   displayName: "Dashworks",
   categories: [PieceCategory.PRODUCTIVITY],
   auth: dashworksAuth,

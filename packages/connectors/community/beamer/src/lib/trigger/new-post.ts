@@ -2,7 +2,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 const markdown = `
 - Go to the "Integration" section.

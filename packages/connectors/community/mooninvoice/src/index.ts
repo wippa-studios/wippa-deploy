@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { mooninvoiceAuth } from './lib/common/auth';
 import { createCreditNote } from './lib/actions/create-credit-note';
 import { createInvoice } from './lib/actions/create-invoice';
@@ -8,7 +8,7 @@ import { addNewContact } from './lib/actions/add-new-contact';
 import { createProduct } from './lib/actions/create-product';
 import { createTask } from './lib/actions/create-task';
 
-export const mooninvoice = createPiece({
+export const mooninvoice = createConnector({
   displayName: 'Moon Invoice',
   auth: mooninvoiceAuth,
   minimumSupportedRelease: '0.36.1',

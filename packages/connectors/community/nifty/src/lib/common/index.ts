@@ -1,11 +1,11 @@
-import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   HttpMessageBody,
   HttpResponse,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { niftyAuth } from '../auth';
 
 export const nitfyCommon = {

@@ -1,4 +1,4 @@
-import { QueryParams } from '@wippa/pieces-common';
+import { QueryParams } from '@wippa/connectors-common';
 
 export interface Paging {
   items_per_page: number;

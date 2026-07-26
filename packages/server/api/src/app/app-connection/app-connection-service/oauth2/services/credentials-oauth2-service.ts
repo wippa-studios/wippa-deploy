@@ -1,5 +1,5 @@
 import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
-import { OAuth2AuthorizationMethod } from '@wippa/pieces-framework'
+import { OAuth2AuthorizationMethod } from '@wippa/connectors-framework'
 import { safeHttp } from '@wippa/server-utils'
 import { AppConnectionType, BaseOAuth2ConnectionValue, OAuth2ConnectionValueWithApp, OAuth2GrantType, resolveValueFromProps } from '@wippa/shared'
 import { AxiosError } from 'axios'

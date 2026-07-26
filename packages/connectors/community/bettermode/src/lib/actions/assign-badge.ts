@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { assignBadgeToMember } from '../api';
 import { buildBadgesDropdown } from '../props';
 import { bettermodeAuth } from '../auth';

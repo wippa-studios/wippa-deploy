@@ -1,7 +1,7 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { getAccessToken, makeRequest } from './client';
 import { mooninvoiceAuth } from './auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const companyIdProp = Property.Dropdown({
   auth: mooninvoiceAuth,

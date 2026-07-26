@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 import { BedrockClient, ListFoundationModelsCommand } from '@aws-sdk/client-bedrock';
 
 const bedrockOidcDescription = `

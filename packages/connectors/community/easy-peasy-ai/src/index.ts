@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { easyPeasyAiAuth } from './lib/common/auth';
 import { customGeneratorText } from './lib/actions/custom-generator-text';
 import { getAiTranscription } from './lib/actions/get-ai-transcription';
 import { generateAiImage } from './lib/actions/generate-ai-image';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const easyPeasyAi = createPiece({
+export const easyPeasyAi = createConnector({
   displayName: 'Easy-Peasy.AI',
   description:
     'Create professional-quality music in any genre with just a text prompt. From hip-hop to classical, our AI generates custom tracks for your projects in seconds.',

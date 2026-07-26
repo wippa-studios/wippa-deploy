@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 import { CursorAuth } from './auth';
 
 const BASE_URL = 'https://api.cursor.com';

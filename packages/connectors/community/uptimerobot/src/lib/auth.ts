@@ -1,6 +1,6 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { tryCatch } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { tryCatch } from '@wippa/connectors-framework';
 import { toFormUrlEncoded } from './common/form';
 
 export const uptimeRobotAuth = PieceAuth.SecretText({

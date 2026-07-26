@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { auditWalletAddress } from './lib/actions/audit-wallet-address';
 import { creditScore } from './lib/actions/credit-score';
 import { fraudCheck } from './lib/actions/fraud-check';
@@ -9,7 +9,7 @@ import { walletSegment } from './lib/actions/wallet-segment';
 import { BASE_URL } from './lib/common/client';
 import { chainAwareAuth } from './lib/common/auth';
 
-export const chainAware = createPiece({
+export const chainAware = createConnector({
   displayName: 'ChainAware.AI',
   description: 'Detect risky wallet behavior',
   auth: chainAwareAuth,

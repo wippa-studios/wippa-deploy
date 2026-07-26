@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { scrapelessApiAuth } from '../auth';
 import { createScrapelessClient } from '../services/scrapeless-api-client';
 

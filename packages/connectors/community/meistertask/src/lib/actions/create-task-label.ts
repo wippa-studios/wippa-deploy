@@ -1,7 +1,7 @@
 import { meistertaskAuth } from '../auth';
 import {  makeRequest, meisterTaskCommon} from '../common/common';
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const createTaskLabel = createAction({
   auth: meistertaskAuth,

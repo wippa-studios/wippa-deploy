@@ -2,14 +2,14 @@ import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 import { certopusCommon, makeClient } from '../common';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { Organisation } from '../common/models/oranisation';
 import { Event } from '../common/models/event';
 import { Category } from '../common/models/category';

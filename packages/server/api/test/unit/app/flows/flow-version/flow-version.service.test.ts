@@ -82,8 +82,8 @@ const mockLog = {
 
 function makePieceTriggerSettings(extras: Partial<PieceTrigger['settings']> = {}): PieceTrigger['settings'] {
     return {
-        pieceName: '@wippa/piece-gmail',
-        pieceVersion: '~0.1.0',
+        connectorName: '@wippa/connector-gmail',
+        connectorVersion: '~0.1.0',
         triggerName: 'new_email',
         input: {},
         propertySettings: {},
@@ -112,8 +112,8 @@ function makeFlowVersion(overrides: { id?: string, trigger?: FlowVersion['trigge
                 lastUpdatedDate: '2024-01-01T00:00:00Z',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@wippa/piece-slack',
-                    pieceVersion: '~0.2.0',
+                    connectorName: '@wippa/connector-slack',
+                    connectorVersion: '~0.2.0',
                     actionName: 'send_message',
                     input: {},
                     propertySettings: {},

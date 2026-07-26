@@ -3,7 +3,7 @@ import {
   httpClient,
   HttpRequest,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const vidnozAuth = (auth: string) => ({
   type: AuthenticationType.BEARER_TOKEN as const,

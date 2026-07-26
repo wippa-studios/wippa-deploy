@@ -1,8 +1,8 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { uscreenAuth } from "../common/auth";
 import { uscreenProps } from "../common/props";
 import { UscreenClient } from "../common/client";
-import { HttpMethod } from "@wippa/pieces-common";
+import { HttpMethod } from "@wippa/connectors-common";
 
 export const assignUserAccess = createAction({
     auth: uscreenAuth,

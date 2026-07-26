@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { STEP_NAME_REGEX } from '@wippa/core-utils'
-import { VersionType } from '@wippa/core-piece-types'
+import { VersionType } from '@wippa/core-connector-types'
 import { PropertySettings } from '../properties'
 import { SampleDataSetting } from '../sample-data'
 
@@ -77,8 +77,8 @@ export const CodeActionSchema = z.object({
 const pieceActionSettingsFields = {
     ...commonActionSettings,
     propertySettings: z.record(z.string(), PropertySettings),
-    pieceName: z.string(),
-    pieceVersion: VersionType,
+    connectorName: z.string(),
+    connectorVersion: VersionType,
     actionName: z.string().optional(),
     input: z.record(z.string(), z.unknown()),
     errorHandlingOptions: ActionErrorHandlingOptions,

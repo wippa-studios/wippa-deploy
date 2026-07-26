@@ -3,7 +3,7 @@ import {
   HttpMethod,
   httpClient,
   HttpError,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import crypto from 'crypto';
 
 export const BASE_URL = 'https://api.helpscout.net/v2';

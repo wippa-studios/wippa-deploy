@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { microsoft365PlannerAuth, microsoft365PlannerCommon } from '../common';
 import { BucketDropdown, PlanDropdown } from '../common/properties';
 

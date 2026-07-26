@@ -1,7 +1,7 @@
 import { githubAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { githubApiCall, githubCommon } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const githubAddLabelsToIssueAction = createAction({
   auth: githubAuth,

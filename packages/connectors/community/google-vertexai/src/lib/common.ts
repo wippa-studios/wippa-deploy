@@ -1,5 +1,5 @@
 import { GoogleGenAI } from '@google/genai';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { GoogleAuth } from 'google-auth-library';
 import { GoogleVertexAIAuthValue } from './auth';
 

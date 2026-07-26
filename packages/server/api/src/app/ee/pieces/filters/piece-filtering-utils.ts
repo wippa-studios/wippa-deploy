@@ -1,6 +1,6 @@
 import { isNil } from '@wippa/core-utils'
-import { PieceMetadataModel, PieceMetadataModelSummary } from '@wippa/pieces-framework'
-import { ApEdition, isComponentVisible, isPieceVisible, PieceSet, PieceSetConfig } from '@wippa/shared'
+import { PieceMetadataModel, PieceMetadataModelSummary } from '@wippa/connectors-framework'
+import { ApEdition, isComponentVisible, isPieceVisible, ConnectorSet, PieceSetConfig } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../helper/system/system'
 import { PieceMetadataSchema } from '../../../pieces/metadata/piece-metadata-entity'
@@ -15,8 +15,8 @@ export async function resolveVisibility({ platformId, projectId, log }: ResolveV
     if (isNil(platformId) || isNil(projectId)) {
         return null
     }
-    const pieceSet = await resolvePieceSetForProject({ log, projectId, platformId })
-    return buildPolicy(pieceSet.config)
+    const connectorSet = await resolvePieceSetForProject({ log, projectId, platformId })
+    return buildPolicy(connectorSet.config)
 }
 
 function buildPolicy(config: PieceSetConfig): VisibilityPolicy {
@@ -47,7 +47,7 @@ function buildPolicy(config: PieceSetConfig): VisibilityPolicy {
     }
 }
 
-async function resolvePieceSetForProject({ log, projectId, platformId }: ResolvePieceSetForProjectParams): Promise<PieceSet> {
+async function resolvePieceSetForProject({ log, projectId, platformId }: ResolvePieceSetForProjectParams): Promise<ConnectorSet> {
     const project = await projectRepo().findOneBy({ id: projectId })
     const pieceSetId = project?.pieceSetId ?? null
 

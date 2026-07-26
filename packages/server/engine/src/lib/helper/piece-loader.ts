@@ -1,81 +1,81 @@
 import fs from 'fs/promises'
 import path from 'path'
 import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
-import { Action, Piece, PiecePropertyMap, Trigger } from '@wippa/pieces-framework'
+import { Action, Piece, ConnectorPropertyMap, Trigger } from '@wippa/connectors-framework'
 import { EngineGenericError, extractPieceFromModule, getPackageAliasForPiece, getPieceNameFromAlias, trimVersionFromAlias } from '@wippa/shared'
 import { utils } from '../utils'
 
-export const pieceLoader = {
+export const connectorLoader = {
     loadPieceOrThrow: async (
-        { pieceName, pieceVersion, devPieces }: LoadPieceParams,
+        { connectorName, connectorVersion, devPieces }: LoadPieceParams,
     ): Promise<Piece> => {
-        const { data: piece, error: pieceError } = await utils.tryCatchAndThrowOnEngineError(async () => {
-            const packageName = pieceLoader.getPackageAlias({
-                pieceName,
-                pieceVersion,
+        const { data: piece, error: connectorError } = await utils.tryCatchAndThrowOnEngineError(async () => {
+            const packageName = connectorLoader.getPackageAlias({
+                connectorName,
+                connectorVersion,
                 devPieces,
             })
-            const piecePath = await pieceLoader.getPiecePath({ packageName, devPieces })
+            const piecePath = await connectorLoader.getPiecePath({ packageName, devPieces })
             const module = await import(piecePath)
 
             const piece = extractPieceFromModule<Piece>({
                 module,
-                pieceName,
-                pieceVersion,
+                connectorName,
+                connectorVersion,
             })
 
             if (isNil(piece)) {
-                throw new EngineGenericError('PieceNotFoundError', `Piece not found for piece: ${pieceName}, pieceVersion: ${pieceVersion}`)
+                throw new EngineGenericError('PieceNotFoundError', `Piece not found for piece: ${connectorName}, connectorVersion: ${connectorVersion}`)
             }
             return piece
         })
-        if (pieceError) {
-            throw pieceError
+        if (connectorError) {
+            throw connectorError
         }
         return piece
     },
 
-    getPieceAndTriggerOrThrow: async (params: GetPieceAndTriggerParams): Promise<{ piece: Piece, pieceTrigger: Trigger }> => {
-        const { pieceName, pieceVersion, triggerName, devPieces } = params
-        const piece = await pieceLoader.loadPieceOrThrow({ pieceName, pieceVersion, devPieces })
+    getPieceAndTriggerOrThrow: async (params: GetPieceAndTriggerParams): Promise<{ piece: Piece, connectorTrigger: Trigger }> => {
+        const { connectorName, connectorVersion, triggerName, devPieces } = params
+        const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
         const trigger = piece.getTrigger(triggerName)
 
         if (trigger === undefined) {
-            throw new EngineGenericError('TriggerNotFoundError', `Trigger not found, pieceName=${pieceName}, triggerName=${triggerName}`)
+            throw new EngineGenericError('TriggerNotFoundError', `Trigger not found, connectorName=${connectorName}, triggerName=${triggerName}`)
         }
 
         return {
             piece,
-            pieceTrigger: trigger,
+            connectorTrigger: trigger,
         }
     },
 
-    getPieceAndActionOrThrow: async (params: GetPieceAndActionParams): Promise<{ piece: Piece, pieceAction: Action }> => {
-        const { pieceName, pieceVersion, actionName, devPieces } = params
+    getPieceAndActionOrThrow: async (params: GetPieceAndActionParams): Promise<{ piece: Piece, connectorAction: Action }> => {
+        const { connectorName, connectorVersion, actionName, devPieces } = params
 
-        const piece = await pieceLoader.loadPieceOrThrow({ pieceName, pieceVersion, devPieces })
-        const pieceAction = piece.getAction(actionName)
+        const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
+        const connectorAction = piece.getAction(actionName)
 
-        if (isNil(pieceAction)) {
+        if (isNil(connectorAction)) {
             throw new ActivepiecesError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'step',
                     entityId: actionName,
-                    message: `Action not found for piece ${pieceName}@${pieceVersion}`,
-                    extra: { pieceName, pieceVersion },
+                    message: `Action not found for piece ${connectorName}@${connectorVersion}`,
+                    extra: { connectorName, connectorVersion },
                 },
             })
         }
 
         return {
             piece,
-            pieceAction,
+            connectorAction,
         }
     },
 
-    getPropOrThrow: async ({ pieceName, pieceVersion, actionOrTriggerName, propertyName, devPieces }: GetPropParams) => {
-        const piece = await pieceLoader.loadPieceOrThrow({ pieceName, pieceVersion, devPieces })
+    getPropOrThrow: async ({ connectorName, connectorVersion, actionOrTriggerName, propertyName, devPieces }: GetPropParams) => {
+        const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
 
         const actionOrTrigger = piece.getAction(actionOrTriggerName) ?? piece.getTrigger(actionOrTriggerName)
 
@@ -85,13 +85,13 @@ export const pieceLoader = {
                 params: {
                     entityType: 'step',
                     entityId: actionOrTriggerName,
-                    message: `Step not found for piece ${pieceName}@${pieceVersion}`,
-                    extra: { pieceName, pieceVersion },
+                    message: `Step not found for piece ${connectorName}@${connectorVersion}`,
+                    extra: { connectorName, connectorVersion },
                 },
             })
         }
 
-        const property = (actionOrTrigger.props as PiecePropertyMap)[propertyName]
+        const property = (actionOrTrigger.props as ConnectorPropertyMap)[propertyName]
 
         if (isNil(property)) {
             throw new ActivepiecesError({
@@ -99,8 +99,8 @@ export const pieceLoader = {
                 params: {
                     entityType: 'config',
                     entityId: propertyName,
-                    message: `Config not found for step ${actionOrTriggerName} in piece ${pieceName}@${pieceVersion}`,
-                    extra: { pieceName, pieceVersion, stepName: actionOrTriggerName },
+                    message: `Config not found for step ${actionOrTriggerName} in piece ${connectorName}@${connectorVersion}`,
+                    extra: { connectorName, connectorVersion, stepName: actionOrTriggerName },
                 },
             })
         }
@@ -108,14 +108,14 @@ export const pieceLoader = {
         return { property, piece }
     },
 
-    getPackageAlias: ({ pieceName, pieceVersion, devPieces }: GetPackageAliasParams) => {
-        if (devPieces.includes(getPieceNameFromAlias(pieceName))) {
-            return pieceName
+    getPackageAlias: ({ connectorName, connectorVersion, devPieces }: GetPackageAliasParams) => {
+        if (devPieces.includes(getPieceNameFromAlias(connectorName))) {
+            return connectorName
         }
 
         return getPackageAliasForPiece({
-            pieceName,
-            pieceVersion,
+            connectorName,
+            connectorVersion,
         })
     },
 
@@ -247,36 +247,36 @@ type GetPiecePathParams = {
 }
 
 type LoadPieceParams = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     devPieces: string[]
 }
 
 type GetPieceAndTriggerParams = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     triggerName: string
     devPieces: string[]
 }
 
 type GetPieceAndActionParams = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     actionName: string
     devPieces: string[]
 }
 
 type GetPropParams = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     actionOrTriggerName: string
     propertyName: string
     devPieces: string[]
 }
 
 type GetPackageAliasParams = {
-    pieceName: string
+    connectorName: string
     devPieces: string[]
-    pieceVersion: string
+    connectorVersion: string
 }
 

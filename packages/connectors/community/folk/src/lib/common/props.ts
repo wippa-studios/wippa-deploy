@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { folkAuth } from './auth';
 import { folkClient } from './client';
 

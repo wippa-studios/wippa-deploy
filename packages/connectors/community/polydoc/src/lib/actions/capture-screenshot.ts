@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { polydocAuth } from '../common/auth';
 import { buildRequestBody } from '../common/build-request-body';
 import { extractApiErrorMessage, polyDocRequest } from '../common/client';

@@ -60,7 +60,7 @@ export const oauthAppsQueries = {
         return response.data;
       },
       select: (data) => {
-        return data.find((app) => app.pieceName === pieceId);
+        return data.find((app) => app.connectorName === pieceId);
       },
       staleTime: Infinity,
     });
@@ -85,8 +85,8 @@ export const oauthAppsQueries = {
           : await oauthAppsApi.listCloudOAuth2Apps(edition!);
         const appsMap: PiecesOAuth2AppsMap = {};
 
-        Object.entries(cloudApps).forEach(([pieceName, app]) => {
-          appsMap[pieceName] = {
+        Object.entries(cloudApps).forEach(([connectorName, app]) => {
+          appsMap[connectorName] = {
             cloudOAuth2App: {
               oauth2Type: AppConnectionType.CLOUD_OAUTH2,
               clientId: app.clientId,
@@ -95,12 +95,12 @@ export const oauthAppsQueries = {
           };
         });
         apps.data.forEach((app) => {
-          appsMap[app.pieceName] = {
+          appsMap[app.connectorName] = {
             platformOAuth2App: {
               oauth2Type: AppConnectionType.PLATFORM_OAUTH2,
               clientId: app.clientId,
             },
-            cloudOAuth2App: appsMap[app.pieceName]?.cloudOAuth2App ?? null,
+            cloudOAuth2App: appsMap[app.connectorName]?.cloudOAuth2App ?? null,
           };
         });
         return appsMap;
@@ -112,7 +112,7 @@ export const oauthAppsQueries = {
 
 export type PieceToClientIdMap = {
   [
-    pieceName: `${string}-${
+    connectorName: `${string}-${
       | AppConnectionType.CLOUD_OAUTH2
       | AppConnectionType.PLATFORM_OAUTH2}`
   ]: {

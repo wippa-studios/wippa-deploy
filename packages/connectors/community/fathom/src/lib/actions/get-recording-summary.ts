@@ -1,5 +1,5 @@
 import { fathomAuth, getFathomClient } from '../common/auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 export const getRecordingSummary = createAction({
   name: 'getRecordingSummary',

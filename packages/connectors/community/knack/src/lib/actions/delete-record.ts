@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { knackApiCall, KnackAuthProps } from '../common/client';
 import { knackAuth } from '../common/auth';
 import { objectDropdown } from '../common/props';

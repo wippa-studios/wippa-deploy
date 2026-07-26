@@ -2,7 +2,7 @@ import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   addContact,
   Country,
@@ -13,7 +13,7 @@ import {
 } from '../common';
 import { leadConnectorAuth } from '../..';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const createContact = createAction({
   auth: leadConnectorAuth,

@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { servicenowAuth } from './lib/common/props';
 import { createRecordAction } from './lib/actions/create-record';
 import { updateRecordAction } from './lib/actions/update-record';
@@ -22,7 +22,7 @@ import { newRecordTrigger } from './lib/triggers/new-record';
 import { updatedRecordTrigger } from './lib/triggers/updated-record';
 import { newCommentTrigger } from './lib/triggers/new-comment';
 
-export const serviceNow = createPiece({
+export const serviceNow = createConnector({
   displayName: 'ServiceNow',
   description:
     'Enterprise IT service management platform for incident, change, and service request management',

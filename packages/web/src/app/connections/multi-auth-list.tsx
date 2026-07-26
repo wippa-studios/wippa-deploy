@@ -4,7 +4,7 @@ import {
   PropertyType,
   DEFAULT_CONNECTION_DISPLAY_NAME,
   OAuth2Props,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AppConnectionType,
   BOTH_CLIENT_CREDENTIALS_AND_AUTHORIZATION_CODE,
@@ -36,7 +36,7 @@ export function MutliAuthList({
   setSelectedItem,
   confirmSelectedItem,
   piecesOAuth2AppsMap,
-  pieceName,
+  connectorName,
   selectedItem,
 }: MutliAuthListProps) {
   const authItems: RadioGroupListItem<AuthListItem>[] = pieceAuth.flatMap(
@@ -45,7 +45,7 @@ export function MutliAuthList({
       if (auth.type === PropertyType.OAUTH2) {
         const predefinedOAuth2App = oauth2Utils.getPredefinedOAuth2App(
           piecesOAuth2AppsMap,
-          pieceName,
+          connectorName,
         );
         return createOAuth2Options(auth, predefinedOAuth2App);
       }
@@ -188,5 +188,5 @@ type MutliAuthListProps = {
   confirmSelectedItem: () => void;
   piecesOAuth2AppsMap: PiecesOAuth2AppsMap;
   selectedItem: AuthListItem;
-  pieceName: string;
+  connectorName: string;
 };

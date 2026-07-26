@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { PaperformFormsResponse, PaperformWebhookResponse, PaperformSubmissionsResponse, PaperformPartialSubmissionsResponse, PaperformCouponsResponse, PaperformFieldsResponse, PaperformProductsResponse, PaperformSpacesResponse, PaperformField, PaperformSubmission } from './types';
 
 export const paperformCommon = {

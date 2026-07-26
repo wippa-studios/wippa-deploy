@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth, OAuth2AuthorizationMethod, Property, OAuth2PropertyValue } from "@wippa/pieces-framework";
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth, OAuth2AuthorizationMethod, Property, OAuth2PropertyValue } from "@wippa/connectors-framework";
 import { retrieveRedditPost } from './lib/actions/retrieve-reddit-post';
 import { getRedditPostDetails } from './lib/actions/get-reddit-post-details';
 import { createRedditPost } from './lib/actions/create-reddit-post';
@@ -9,8 +9,8 @@ import { editRedditPost } from './lib/actions/edit-reddit-post';
 import { editRedditComment } from './lib/actions/edit-reddit-comment';
 import { deleteRedditPost } from './lib/actions/delete-reddit-post';
 import { deleteRedditComment } from './lib/actions/delete-reddit-comment';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { OAuth2GrantType } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { OAuth2GrantType } from '@wippa/connectors-framework';
 import { redditAuth } from './lib/auth';
 
 const markdown = `
@@ -28,7 +28,7 @@ To obtain your Reddit API credentials:
 6. Note down the client ID (under the app name) and client secret.
 `;
 
-export const reddit = createPiece({
+export const reddit = createConnector({
   displayName: 'Reddit',
   description: 'Interact with Reddit - fetch and submit posts.',
   logoUrl: 'https://cdn.activepieces.com/pieces/reddit.png',

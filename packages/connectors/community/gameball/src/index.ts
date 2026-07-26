@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { sendEvent } from "./lib/actions/send-event";
 
 export const gameballAuth = PieceAuth.SecretText({
@@ -8,7 +8,7 @@ export const gameballAuth = PieceAuth.SecretText({
   description: 'Please use your gameball api key. visit [help center](https://help.gameball.co/en/articles/3467114-get-your-account-integration-details-api-key-and-transaction-key) for more information',
 });
 
-export const gameball = createPiece({
+export const gameball = createConnector({
   displayName: "Gameball",
   auth: gameballAuth,
   minimumSupportedRelease: '0.30.0',

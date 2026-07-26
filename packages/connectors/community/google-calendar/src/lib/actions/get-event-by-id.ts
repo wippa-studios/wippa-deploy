@@ -1,10 +1,10 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { googleCalendarCommon, googleCalendarAuth, getAccessToken } from '../common';
 import { GoogleCalendarEvent } from '../common/types';
 import { eventOutputSchema } from '../output-schemas';

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 
 export const mooninvoiceAuth = PieceAuth.CustomAuth({
   displayName: 'MoonInvoice API Key',

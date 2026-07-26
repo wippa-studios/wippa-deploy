@@ -1,9 +1,9 @@
-import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export type GorgiasAuth = AppConnectionValueForAuthProperty<typeof gorgiasAuth>
 

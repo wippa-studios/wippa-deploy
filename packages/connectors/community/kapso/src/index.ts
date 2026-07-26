@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { kapsoAuth, KAPSO_BASE_URL } from './lib/common';
 import { sendTextMessage } from './lib/actions/send-text-message';
 import { sendButtons } from './lib/actions/send-buttons';
@@ -19,7 +19,7 @@ import { sendTemplate } from './lib/actions/send-template';
 import { newMessage } from './lib/triggers/new-message';
 import { messageStatusUpdate } from './lib/triggers/message-status-update';
 
-export const kapso = createPiece({
+export const kapso = createConnector({
   displayName: 'Kapso',
   description: 'Send and receive WhatsApp messages, media, templates, and more using the Kapso WhatsApp API.',
   auth: kapsoAuth,

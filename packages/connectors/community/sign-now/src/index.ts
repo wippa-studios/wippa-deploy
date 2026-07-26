@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { signNowAuth } from './lib/common/auth';
 import { cancelInviteAction } from './lib/actions/cancel-invite';
 import { createDocumentFromTemplateAndSendInviteAction } from './lib/actions/create-document-from-template-and-send-invite';
@@ -15,7 +15,7 @@ import { newDocumentTrigger } from './lib/triggers/new-document';
 import { documentGroupCompletedTrigger } from './lib/triggers/document-group-completed';
 import { documentUpdatedTrigger } from './lib/triggers/document-updated';
 
-export const signNow = createPiece({
+export const signNow = createConnector({
   displayName: 'SignNow',
   description:
     'eSignature platform for sending, signing, and managing documents.',

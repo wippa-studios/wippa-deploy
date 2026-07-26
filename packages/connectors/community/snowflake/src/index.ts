@@ -1,7 +1,7 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { runMultipleQueries } from './lib/actions/run-multiple-queries';
 import { runQuery } from './lib/actions/run-query';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { insertRowAction } from './lib/actions/insert-row';
 import { updateRowAction } from './lib/actions/update-row';
 import { deleteRowAction } from './lib/actions/delete-row';
@@ -21,7 +21,7 @@ import { newViewTrigger } from './lib/triggers/new-view';
 import { newRowTrigger } from './lib/triggers/new-row';
 import { newOrUpdatedRowTrigger } from './lib/triggers/new-or-updated-row';
 
-export const snowflake = createPiece({
+export const snowflake = createConnector({
   displayName: 'Snowflake',
   description: 'Data warehouse built for the cloud',
 

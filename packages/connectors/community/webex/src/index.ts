@@ -1,7 +1,7 @@
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { createMessage } from './lib/actions/create-message';
 import { createRoom } from './lib/actions/create-room';
 import { createTeam } from './lib/actions/create-team';
@@ -10,11 +10,11 @@ import { findRoom } from './lib/actions/find-room';
 import { webexAuth } from './lib/common/auth';
 import { newRoom } from './lib/triggers/new-room';
 import { newMeeting } from './lib/triggers/new-meeting';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 
-export const webex = createPiece({
+export const webex = createConnector({
   displayName: 'Cisco Webex Meetings',
   auth: webexAuth,
   minimumSupportedRelease: '0.36.1',

@@ -4,7 +4,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { WhatConvertsAuth } from './auth';
 import {
   CreateLeadParams,

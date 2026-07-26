@@ -1,5 +1,5 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { lettaAuth } from "./lib/common/auth";
 import { createAgentFromTemplate } from "./lib/actions/create-agent-from-template";
 import { createIdentity } from "./lib/actions/create-identity";
@@ -8,7 +8,7 @@ import { getIdentities } from "./lib/actions/get-identities";
 import { newAgent } from "./lib/triggers/new-agent";
 import { newMessage } from "./lib/triggers/new-message";
 
-export const letta = createPiece({
+export const letta = createConnector({
   displayName: "Letta",
   description: "Letta is the platform for building stateful agents: open AI with advanced memory that can learn and self-improve over time.",
   auth: lettaAuth,

@@ -12,10 +12,10 @@ const distDir = resolve(packageDir, 'dist')
 // inline them. esbuild resolves them from source via these aliases (mirrors the piece bundler).
 const alias = {
     '@wippa/shared': resolve(repoRoot, 'packages/core/shared/src'),
-    '@wippa/pieces-framework': resolve(repoRoot, 'packages/pieces/framework/src'),
-    '@wippa/pieces-common': resolve(repoRoot, 'packages/pieces/common/src'),
+    '@wippa/connectors-framework': resolve(repoRoot, 'packages/pieces/framework/src'),
+    '@wippa/connectors-common': resolve(repoRoot, 'packages/pieces/common/src'),
     '@wippa/core-utils': resolve(repoRoot, 'packages/core/utils/src'),
-    '@wippa/core-piece-types': resolve(repoRoot, 'packages/core/piece-types/src'),
+    '@wippa/core-connector-types': resolve(repoRoot, 'packages/core/piece-types/src'),
     '@wippa/core-formula': resolve(repoRoot, 'packages/core/formula/src'),
     '@wippa/core-execution': resolve(repoRoot, 'packages/core/execution/src'),
 }

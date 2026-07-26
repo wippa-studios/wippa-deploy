@@ -2,7 +2,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { mondayAuth } from '../auth';
 import { makeClient, mondayCommon } from '../common';
 import {
@@ -10,7 +10,7 @@ import {
   MondayWebhookEventType,
 } from '../common/constants';
 import { WebhookInformation } from '../common/models';
-import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/connectors-framework';
 export const specificColumnValueUpdatedTrigger = createTrigger({
   auth: mondayAuth,
   name: 'monday_specific_column_updated',

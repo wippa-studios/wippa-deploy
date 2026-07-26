@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { outsetaAuth } from '../auth';
 import { OutsetaClient } from '../common/client';
 import { planUidDropdown } from '../common/dropdowns';

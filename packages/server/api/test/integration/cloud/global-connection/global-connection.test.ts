@@ -54,9 +54,9 @@ describe('GlobalConnection API', () => {
             })
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 projectIds: [mockProject.id],
                 scope: AppConnectionScope.PLATFORM,
                 type: AppConnectionType.SECRET_TEXT,
@@ -77,7 +77,7 @@ describe('GlobalConnection API', () => {
                 body: mockUpsertGlobalConnectionRequest,
             })
             const responseBody = response?.json()
-            expect(responseBody.pieceVersion).toEqual(mockPieceMetadata.version)
+            expect(responseBody.connectorVersion).toEqual(mockPieceMetadata.version)
             // assert
             expect(response?.statusCode).toBe(StatusCodes.CREATED)
         })
@@ -109,9 +109,9 @@ describe('GlobalConnection API', () => {
             })
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 scope: AppConnectionScope.PLATFORM,
                 projectIds: [mockProject.id],
                 type: AppConnectionType.SECRET_TEXT,
@@ -159,9 +159,9 @@ describe('GlobalConnection API', () => {
             })
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 projectIds: [apId()], // Invalid project ID
                 scope: AppConnectionScope.PLATFORM,
                 type: AppConnectionType.SECRET_TEXT,
@@ -266,9 +266,9 @@ describe('GlobalConnection API', () => {
             })
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 scope: AppConnectionScope.PLATFORM,
                 projectIds: [mockProject.id],
                 type: AppConnectionType.SECRET_TEXT,
@@ -327,9 +327,9 @@ describe('GlobalConnection API', () => {
             })
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 scope: AppConnectionScope.PLATFORM,
                 projectIds: [mockProject.id],
                 type: AppConnectionType.SECRET_TEXT,
@@ -396,9 +396,9 @@ describe('GlobalConnection API', () => {
             })
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 scope: AppConnectionScope.PLATFORM,
                 type: AppConnectionType.SECRET_TEXT,
                 projectIds: [mockProject.id],
@@ -467,9 +467,9 @@ describe('GlobalConnection API', () => {
             })
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 scope: AppConnectionScope.PLATFORM,
                 type: AppConnectionType.SECRET_TEXT,
                 projectIds: [mockProject.id],
@@ -541,9 +541,9 @@ describe('GlobalConnection API', () => {
 
 
             const mockUpsertGlobalConnectionRequest: UpsertGlobalConnectionRequestBody = {
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
                 displayName: 'test global connection',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 scope: AppConnectionScope.PLATFORM,
                 type: AppConnectionType.SECRET_TEXT,
                 projectIds: [mockProject.id],

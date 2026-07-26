@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { villageAuth } from './lib/common/auth';
 
@@ -61,7 +61,7 @@ import { importRelationships } from './lib/actions/user/import-relationships';
 
 export { villageAuth };
 
-export const village = createPiece({
+export const village = createConnector({
   displayName: 'Village',
   description: 'The Social Capital API',
   auth: villageAuth,

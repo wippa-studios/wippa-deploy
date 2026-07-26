@@ -1,7 +1,7 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { quizellApiCall } from './lib/common/client';
 import { createCustomer } from './lib/actions/create-customer';
 import { updateCustomer } from './lib/actions/update-customer';
@@ -36,7 +36,7 @@ Need help? See [Quizell API Docs](https://docs.quizell.com).`,
   },
 });
 
-export const quizell = createPiece({
+export const quizell = createConnector({
   displayName: 'Quizell',
   description: 'Quiz-based product recommendation and lead capture platform.',
   minimumSupportedRelease: '0.36.1',

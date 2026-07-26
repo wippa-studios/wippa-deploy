@@ -1,5 +1,5 @@
 import { apId, isEmpty, isNil } from '@wippa/core-utils'
-import { PackageType, PieceType } from '@wippa/shared'
+import { PackageType, ConnectorType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import semVer from 'semver'
 import { system } from '../../../helper/system/system'
@@ -63,7 +63,7 @@ async function loadDevPieces(log: FastifyBaseLogger, devPiecesConfig: string): P
         id: apId(),
         ...p,
         projectUsage: 0,
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
         packageType: PackageType.REGISTRY,
         created: new Date().toISOString(),
         updated: new Date().toISOString(),
@@ -75,14 +75,14 @@ export function filterPieceBasedOnType(platformId: string | undefined, piece: Pi
 }
 
 export function isOfficialPiece(piece: PieceMetadataSchema | PieceRegistryEntry): boolean {
-    return piece.pieceType === PieceType.OFFICIAL && isNil(piece.platformId)
+    return piece.pieceType === ConnectorType.OFFICIAL && isNil(piece.platformId)
 }
 
 export function isCustomPiece(platformId: string | undefined, piece: PieceMetadataSchema | PieceRegistryEntry): boolean {
     if (isNil(platformId)) {
         return false
     }
-    return piece.platformId === platformId && piece.pieceType === PieceType.CUSTOM
+    return piece.platformId === platformId && piece.pieceType === ConnectorType.CUSTOM
 }
 
 export function isSupportedRelease(release: string | undefined, piece: { minimumSupportedRelease?: string, maximumSupportedRelease?: string }): boolean {

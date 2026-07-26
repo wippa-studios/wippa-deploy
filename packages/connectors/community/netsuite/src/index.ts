@@ -1,15 +1,15 @@
 import {
   PieceAuth,
-  createPiece,
+  createConnector,
   Property,
   PiecePropValueSchema,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { getVendor } from './lib/actions/get-vendor';
 import { getCustomer } from './lib/actions/get-customer';
 import { runSuiteQL } from './lib/actions/run-suiteql';
 import { executeDataset } from './lib/actions/execute-dataset';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { createOAuthHeader } from './lib/common/oauth';
 
 export const netsuiteAuth = PieceAuth.CustomAuth({
@@ -43,7 +43,7 @@ export const netsuiteAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const netsuite = createPiece({
+export const netsuite = createConnector({
   displayName: 'NetSuite',
   logoUrl: 'https://cdn.activepieces.com/pieces/netsuite.png',
   categories: [PieceCategory.ACCOUNTING],

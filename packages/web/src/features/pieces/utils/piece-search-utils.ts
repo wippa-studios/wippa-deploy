@@ -91,21 +91,21 @@ const getPinnedPieces = (
 ) => {
   const pieces = filterResultByPieceType(queryResult);
   const pinnedPieces = pieces.filter((piece) =>
-    pinnedPiecesNames.includes(piece.pieceName),
+    pinnedPiecesNames.includes(piece.connectorName),
   );
   return sortByPieceNameOrder(pinnedPieces, pinnedPiecesNames);
 };
 
 const POPULAR_PIECES_NAMES = [
-  '@wippa/piece-google-sheets',
-  '@wippa/piece-slack',
-  '@wippa/piece-notion',
-  '@wippa/piece-gmail',
-  '@wippa/piece-hubspot',
-  '@wippa/piece-openai',
-  '@wippa/piece-google-forms',
-  '@wippa/piece-google-drive',
-  '@wippa/piece-google-docs',
+  '@wippa/connector-google-sheets',
+  '@wippa/connector-slack',
+  '@wippa/connector-notion',
+  '@wippa/connector-gmail',
+  '@wippa/connector-hubspot',
+  '@wippa/connector-openai',
+  '@wippa/connector-google-forms',
+  '@wippa/connector-google-drive',
+  '@wippa/connector-google-docs',
 ];
 const getPopularPieces = (
   queryResult: StepMetadataWithSuggestions[],
@@ -114,8 +114,8 @@ const getPopularPieces = (
   const pieces = filterResultByPieceType(queryResult);
   const popularPieces = pieces.filter(
     (piece) =>
-      POPULAR_PIECES_NAMES.includes(piece.pieceName) &&
-      !pinnedPiecesNames.includes(piece.pieceName),
+      POPULAR_PIECES_NAMES.includes(piece.connectorName) &&
+      !pinnedPiecesNames.includes(piece.connectorName),
   );
   return sortByPieceNameOrder(popularPieces, POPULAR_PIECES_NAMES);
 };
@@ -140,7 +140,7 @@ const getHighlightedPieces = (
       ? HIGHLIGHTED_PIECES_NAMES_FOR_ACTIONS
       : HIGHLIGHTED_PIECES_NAMES_FOR_TRIGGERS;
   const highlightedPieces = pieces.filter((piece) =>
-    highlightedPiecesNames.includes(piece.pieceName),
+    highlightedPiecesNames.includes(piece.connectorName),
   );
   return sortByPieceNameOrder(
     highlightedPieces,
@@ -155,25 +155,25 @@ const sortByPieceNameOrder = (
 ): StepMetadataWithSuggestions[] => {
   const pieces = filterResultByPieceType(searchResult);
   return pieces.sort((a, b) => {
-    return orderNames.indexOf(a.pieceName) - orderNames.indexOf(b.pieceName);
+    return orderNames.indexOf(a.connectorName) - orderNames.indexOf(b.connectorName);
   });
 };
 const HIGHLIGHTED_PIECES_NAMES_FOR_TRIGGERS = [
-  '@wippa/piece-webhook',
-  '@wippa/piece-schedule',
-  '@wippa/piece-manual-trigger',
-  '@wippa/piece-forms',
-  '@wippa/piece-tables',
+  '@wippa/connector-webhook',
+  '@wippa/connector-schedule',
+  '@wippa/connector-manual-trigger',
+  '@wippa/connector-forms',
+  '@wippa/connector-tables',
 ];
 
 const HIGHLIGHTED_PIECES_NAMES_FOR_ACTIONS = [
   AI_PIECE_NAME,
-  '@wippa/piece-http',
-  '@wippa/piece-tables',
-  '@wippa/piece-forms',
-  '@wippa/piece-webhook',
-  '@wippa/piece-text-helper',
-  '@wippa/piece-date-helper',
+  '@wippa/connector-http',
+  '@wippa/connector-tables',
+  '@wippa/connector-forms',
+  '@wippa/connector-webhook',
+  '@wippa/connector-text-helper',
+  '@wippa/connector-date-helper',
 ];
 
 export const pieceSearchUtils = {

@@ -1,15 +1,15 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { heymarketSmsAuth } from './lib/common/auth';
 import { createOrUpdateContact } from './lib/actions/create-or-update-contact';
 import { sendCustomMessage } from './lib/actions/send-custom-message';
 import { sendTemplateMessage } from './lib/actions/send-template-message';
 import { updateList } from './lib/actions/update-list';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { chatStarted } from './lib/triggers/chat-started-';
 import { newOrUpdatedContact } from './lib/triggers/new-or-updated-contact';
 
-export const heymarketSms = createPiece({
+export const heymarketSms = createConnector({
   displayName: 'Heymarket SMS',
   auth: heymarketSmsAuth,
   minimumSupportedRelease: '0.36.1',

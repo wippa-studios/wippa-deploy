@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { getNotebooksDropdown, getSectionsByNotebookDropdown } from '../common';
 import { oneNoteAuth } from '../auth';

@@ -1,10 +1,10 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import {
   campaignDropdown,
   makeSenderRequest,
   senderAuth,
 } from '../common/common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const sendCampaignAction = createAction({
   auth: senderAuth,

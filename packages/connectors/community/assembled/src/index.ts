@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { customApiCall } from './lib/actions/custom-api-call';
 import { customGraphql } from './lib/actions/custom-graphql';
@@ -12,7 +12,7 @@ import { timeOffStatusChanged } from './lib/triggers/OOO-status-changed';
 import { newTimeOffRequest } from './lib/triggers/new-OOO-request';
 import { assembledAuth } from './lib/common/auth';
 
-export const assembled = createPiece({
+export const assembled = createConnector({
   displayName: 'Assembled',
   description: 'Workforce management platform for scheduling and forecasting',
   auth: assembledAuth,

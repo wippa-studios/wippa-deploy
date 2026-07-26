@@ -2,7 +2,7 @@ import { FlowVersionTemplate } from '@wippa/shared';
 import { Workflow } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
-import { PieceIconList } from '@/features/pieces';
+import { ConnectorIconList } from '@/features/pieces';
 
 type FlowCardProps = {
   flow: FlowVersionTemplate;
@@ -40,7 +40,7 @@ export const FlowCard = ({
 
         {flow.trigger && (
           <div className="h-6 px-3 flex items-center rounded-md shrink-0">
-            <PieceIconList
+            <ConnectorIconList
               trigger={flow.trigger}
               maxNumberOfIconsToShow={3}
               size="md"

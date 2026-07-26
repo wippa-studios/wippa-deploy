@@ -2,12 +2,12 @@ import {
 	Property,
 	TriggerStrategy,
 	createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
 	Polling,
 	DedupeStrategy,
 	pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { JiraDataCenterAuth, jiraDataCenterAuth } from '../../auth';
 import { searchIssuesByJql } from '../common';
 import dayjs from 'dayjs';

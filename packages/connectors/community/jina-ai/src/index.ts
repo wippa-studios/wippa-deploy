@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   extractWebpageContentAction,
   webSearchSummarizationAction,
@@ -13,7 +13,7 @@ const markdownDescription = `
 You can get your API key from [Jina AI](https://jina.ai).
 `;
 
-export const jinaAi = createPiece({
+export const jinaAi = createConnector({
   displayName: 'Jina AI',
   description: 'AI-powered web content extraction, search, and classification',
   auth: jinaAiAuth,

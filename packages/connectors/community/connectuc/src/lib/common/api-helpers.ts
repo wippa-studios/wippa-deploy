@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 
 export const CONNECTUC_BASE_URL = 'https://api.connectuc.io';
 

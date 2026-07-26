@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { lemlistAuth } from './lib/common/constants';
 import { newActivity } from './lib/triggers/new-activity';
 import { unsubscribedRecipient } from './lib/triggers/unsubscribed-recipient';
@@ -16,7 +16,7 @@ import { addCustomVariablesOnLead } from './lib/actions/add-custom-variables-on-
 import { updateLeadFromCampaign } from './lib/actions/update-lead-from-campaign';
 import { searchLead } from './lib/actions/search-lead';
 
-export const lemlist = createPiece({
+export const lemlist = createConnector({
   displayName: 'Lemlist',
   auth: lemlistAuth,
   minimumSupportedRelease: '0.36.1',

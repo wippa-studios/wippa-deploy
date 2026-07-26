@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { denserAiAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { processInputText } from './lib/actions/process-input-text';
 
-export const denserAi = createPiece({
+export const denserAi = createConnector({
   displayName: 'Denser.ai',
   auth: denserAiAuth,
   minimumSupportedRelease: '0.36.1',

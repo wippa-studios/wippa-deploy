@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { detectingAiAuth, BASE_URL } from './lib/common';
 import { detectAiContent } from './lib/actions/detect-ai-content';
 import { checkPlagiarism } from './lib/actions/check-plagiarism';
 import { humanizeText } from './lib/actions/humanize-text';
 
-export const detectingAi = createPiece({
+export const detectingAi = createConnector({
   displayName: 'DETECTING-AI.COM',
   auth: detectingAiAuth,
   minimumSupportedRelease: '0.36.1',

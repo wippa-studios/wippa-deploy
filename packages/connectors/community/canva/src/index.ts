@@ -1,10 +1,10 @@
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { canvaCommon } from './lib/common';
 import { createDesign } from './lib/actions/create-design';
 import { getDesign } from './lib/actions/get-design';
@@ -70,7 +70,7 @@ export const canvaAuth = PieceAuth.OAuth2({
   },
 });
 
-export const canva = createPiece({
+export const canva = createConnector({
   displayName: 'Canva',
   description: 'Create stunning designs with Canva\'s powerful design automation tools',
   auth: canvaAuth,

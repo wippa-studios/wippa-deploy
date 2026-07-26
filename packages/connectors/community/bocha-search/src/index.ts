@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { webSearchAction } from './lib/actions/web-search';
 import { bochaAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 
-export const bocha = createPiece({
+export const bocha = createConnector({
   displayName: 'Bocha',
   description:
     'Web search API for AI agents, providing real-time web pages, images, and news.',

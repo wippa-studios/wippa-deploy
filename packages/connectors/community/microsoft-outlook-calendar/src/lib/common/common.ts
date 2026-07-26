@@ -1,9 +1,9 @@
-import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { getGraphBaseUrl } from './microsoft-cloud';
 import { outlookCalendarAuth } from '../..';
 

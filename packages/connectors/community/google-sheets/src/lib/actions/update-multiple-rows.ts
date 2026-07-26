@@ -3,7 +3,7 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   areSheetIdsValid,
   createGoogleClient,
@@ -13,8 +13,8 @@ import {
   objectToArray,
   ValueInputOption,
 } from '../common/common';
-import { MarkdownVariant } from '@wippa/pieces-framework';
-import { isString } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
+import { isString } from '@wippa/connectors-framework';
 import { getWorkSheetName } from '../triggers/helpers';
 import { sheets as googleSheets, sheets_v4 } from '@googleapis/sheets';
 import { commonProps } from '../common/props';

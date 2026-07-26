@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { askAQuestionAboutTheWebPage } from './lib/actions/ask-a-question-about-the-web-page';
 import { extractStructuredData } from './lib/actions/extract-structured-data';
 import { getAccountInformation } from './lib/actions/get-account-information';
 import { getPageHtml } from './lib/actions/get-page-html';
 import { scrapeWebsiteText } from './lib/actions/scrape-website-text';
 import { webscrapingAiAuth } from './lib/common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const webscrapingAi = createPiece({
+export const webscrapingAi = createConnector({
   displayName: 'WebScraping AI',
   auth: webscrapingAiAuth,
   minimumSupportedRelease: '0.36.1',

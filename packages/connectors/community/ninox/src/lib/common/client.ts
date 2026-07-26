@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@wippa/connectors-common';
 
 
 export const BASE_URL = `https://api.ninox.com/v1`;

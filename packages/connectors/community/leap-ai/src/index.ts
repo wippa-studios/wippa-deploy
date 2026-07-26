@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { leapAiAuth } from './lib/common/auth';
 import { getAWorkflowRun } from './lib/actions/get-a-workflow-run';
 import { runAWorkflow } from './lib/actions/run-a-workflow';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const leapAi = createPiece({
+export const leapAi = createConnector({
   displayName: 'Leap AI',
   auth: leapAiAuth,
   minimumSupportedRelease: '0.36.1',

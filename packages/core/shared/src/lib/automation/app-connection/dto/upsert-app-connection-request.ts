@@ -6,10 +6,10 @@ import { OAuth2AuthorizationMethod } from '../oauth2-authorization-method'
 const commonAuthProps = {
     externalId: z.string(),
     displayName: z.string(),
-    pieceName: z.string(),
+    connectorName: z.string(),
     projectId: z.string(),
     metadata: z.optional(Metadata),
-    pieceVersion: z.string().optional(),
+    connectorVersion: z.string().optional(),
 }
 
 
@@ -176,8 +176,8 @@ export const UpsertGlobalConnectionRequestBody =
 export type UpsertGlobalConnectionRequestBody = z.infer<typeof UpsertGlobalConnectionRequestBody>
 
 export const GetOAuth2AuthorizationUrlRequestBody = z.object({
-    pieceName: z.string(),
-    pieceVersion: z.string().optional(),
+    connectorName: z.string(),
+    connectorVersion: z.string().optional(),
     projectId: z.string().optional(),
     clientId: z.string(),
     redirectUrl: z.string(),

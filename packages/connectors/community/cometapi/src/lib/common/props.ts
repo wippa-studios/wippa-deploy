@@ -2,8 +2,8 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { BASE_URL } from './auth';
 import { cometApiAuth } from './auth';
 

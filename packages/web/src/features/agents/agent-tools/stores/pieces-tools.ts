@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import { ActionBase } from '@wippa/pieces-framework';
+import { ActionBase } from '@wippa/connectors-framework';
 import {
   AgentPieceTool,
   AgentToolType,
@@ -69,7 +69,7 @@ export const usePieceToolsDialogStore = create<PiecesToolDialogsState>(
         showAddPieceDialog: true,
         selectedPage: page,
         editingPieceTool: tool,
-        predefinedInputs: tool?.pieceMetadata.predefinedInput,
+        predefinedInputs: tool?.connectorMetadata.predefinedInput,
         selectedPiece: piece,
       });
     },
@@ -130,12 +130,12 @@ export const usePieceToolsDialogStore = create<PiecesToolDialogsState>(
       return {
         type: AgentToolType.PIECE,
         toolName: mcpToolNameUtils.createPieceToolName(
-          selectedPiece.pieceName,
+          selectedPiece.connectorName,
           selectedAction.name,
         ),
-        pieceMetadata: {
-          pieceVersion: selectedPiece.pieceVersion,
-          pieceName: selectedPiece.pieceName,
+        connectorMetadata: {
+          connectorVersion: selectedPiece.connectorVersion,
+          connectorName: selectedPiece.connectorName,
           actionName: selectedAction.name,
           predefinedInput: predefinedInputs || undefined,
         },

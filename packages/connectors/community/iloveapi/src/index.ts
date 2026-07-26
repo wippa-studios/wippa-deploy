@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { iloveapiAuth } from './lib/common/auth';
 import { compressPdfAction } from './lib/actions/compress-pdf';
 import { mergePdfAction } from './lib/actions/merge-pdf';
@@ -37,7 +37,7 @@ import {
   signerViewedTrigger,
 } from './lib/triggers/signature-events';
 
-export const iloveapi = createPiece({
+export const iloveapi = createConnector({
   displayName: 'iLoveAPI',
   description:
     'Compress, merge, split, convert, OCR, watermark, protect and sign PDFs and images using iLovePDF / iLoveIMG / iLoveSign.',

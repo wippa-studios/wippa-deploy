@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { instantVerifyAction } from './lib/actions/instant-verify';
 import { clearoutAuth } from './lib/auth';
 
-export const clearout = createPiece({
+export const clearout = createConnector({
   displayName: 'Clearout',
   description: 'Bulk email validation and verification',
   auth: clearoutAuth,

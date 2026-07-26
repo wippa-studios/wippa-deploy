@@ -19,11 +19,11 @@ type TemplateSeed = {
     flows: FlowVersionTemplate[]
 }
 
-const XERO_PIECE = '@wippa/piece-xero'
+const XERO_PIECE = '@wippa/connector-xero'
 const XERO_VERSION = '~0.6.8'
-const SLACK_PIECE = '@wippa/piece-slack'
+const SLACK_PIECE = '@wippa/connector-slack'
 const SLACK_VERSION = '~0.17.0'
-const SENDGRID_PIECE = '@wippa/piece-sendgrid'
+const SENDGRID_PIECE = '@wippa/connector-sendgrid'
 const SENDGRID_VERSION = '~0.5.0'
 
 function now(): string {
@@ -52,8 +52,8 @@ const TEMPLATES: TemplateSeed[] = [
                         type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
-                    pieceName: XERO_PIECE,
-                    pieceVersion: XERO_VERSION,
+                    connectorName: XERO_PIECE,
+                    connectorVersion: XERO_VERSION,
                     triggerName: 'xero_new_sales_invoice',
                     input: {},
                     propertySettings: {},
@@ -65,8 +65,8 @@ const TEMPLATES: TemplateSeed[] = [
                     type: 'PIECE',
                     lastUpdatedDate: now(),
                     settings: {
-                        pieceName: SENDGRID_PIECE,
-                        pieceVersion: SENDGRID_VERSION,
+                        connectorName: SENDGRID_PIECE,
+                        connectorVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: '{{trigger.contact_email}}',
@@ -98,8 +98,8 @@ const TEMPLATES: TemplateSeed[] = [
                         type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
-                    pieceName: XERO_PIECE,
-                    pieceVersion: XERO_VERSION,
+                    connectorName: XERO_PIECE,
+                    connectorVersion: XERO_VERSION,
                     triggerName: 'xero_updated_sales_invoice',
                     input: {},
                     propertySettings: {},
@@ -111,8 +111,8 @@ const TEMPLATES: TemplateSeed[] = [
                     type: 'PIECE',
                     lastUpdatedDate: now(),
                     settings: {
-                        pieceName: SENDGRID_PIECE,
-                        pieceVersion: SENDGRID_VERSION,
+                        connectorName: SENDGRID_PIECE,
+                        connectorVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: '{{trigger.contact_email}}',
@@ -144,8 +144,8 @@ const TEMPLATES: TemplateSeed[] = [
                         type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
-                    pieceName: XERO_PIECE,
-                    pieceVersion: XERO_VERSION,
+                    connectorName: XERO_PIECE,
+                    connectorVersion: XERO_VERSION,
                     triggerName: 'xero_new_contact',
                     input: {},
                     propertySettings: {},
@@ -157,8 +157,8 @@ const TEMPLATES: TemplateSeed[] = [
                     type: 'PIECE',
                     lastUpdatedDate: now(),
                     settings: {
-                        pieceName: SLACK_PIECE,
-                        pieceVersion: SLACK_VERSION,
+                        connectorName: SLACK_PIECE,
+                        connectorVersion: SLACK_VERSION,
                         actionName: 'send_channel_message',
                         input: {
                             text: 'New contact created in Xero: {{trigger.name}} ({{trigger.email}})',
@@ -188,8 +188,8 @@ const TEMPLATES: TemplateSeed[] = [
                         type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
-                    pieceName: XERO_PIECE,
-                    pieceVersion: XERO_VERSION,
+                    connectorName: XERO_PIECE,
+                    connectorVersion: XERO_VERSION,
                     triggerName: 'xero_new_payment',
                     input: {},
                     propertySettings: {},
@@ -201,8 +201,8 @@ const TEMPLATES: TemplateSeed[] = [
                     type: 'PIECE',
                     lastUpdatedDate: now(),
                     settings: {
-                        pieceName: SLACK_PIECE,
-                        pieceVersion: SLACK_VERSION,
+                        connectorName: SLACK_PIECE,
+                        connectorVersion: SLACK_VERSION,
                         actionName: 'send_channel_message',
                         input: {
                             text: 'Payment received: ${{trigger.amount}} from {{trigger.contact_name}} for invoice {{trigger.invoice_number}}',
@@ -232,8 +232,8 @@ const TEMPLATES: TemplateSeed[] = [
                         type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
-                    pieceName: XERO_PIECE,
-                    pieceVersion: XERO_VERSION,
+                    connectorName: XERO_PIECE,
+                    connectorVersion: XERO_VERSION,
                     triggerName: 'xero_new_bill',
                     input: {},
                     propertySettings: {},
@@ -245,8 +245,8 @@ const TEMPLATES: TemplateSeed[] = [
                     type: 'PIECE',
                     lastUpdatedDate: now(),
                     settings: {
-                        pieceName: SENDGRID_PIECE,
-                        pieceVersion: SENDGRID_VERSION,
+                        connectorName: SENDGRID_PIECE,
+                        connectorVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: 'accounts@example.com',
@@ -278,8 +278,8 @@ const TEMPLATES: TemplateSeed[] = [
                         type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
-                    pieceName: XERO_PIECE,
-                    pieceVersion: XERO_VERSION,
+                    connectorName: XERO_PIECE,
+                    connectorVersion: XERO_VERSION,
                     triggerName: 'xero_updated_sales_invoice',
                     input: {},
                     propertySettings: {},
@@ -291,8 +291,8 @@ const TEMPLATES: TemplateSeed[] = [
                     type: 'PIECE',
                     lastUpdatedDate: now(),
                     settings: {
-                        pieceName: SENDGRID_PIECE,
-                        pieceVersion: SENDGRID_VERSION,
+                        connectorName: SENDGRID_PIECE,
+                        connectorVersion: SENDGRID_VERSION,
                         actionName: 'send_email',
                         input: {
                             to: '{{trigger.contact_email}}',

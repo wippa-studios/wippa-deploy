@@ -2,7 +2,7 @@ import { rm, writeFile } from 'node:fs/promises'
 import path, { dirname, join } from 'node:path'
 import { ensureTrailingSlash, groupBy, isEmpty, isNil, tryCatch } from '@wippa/core-utils'
 import { type ApLogger, fileSystemUtils, memoryLock, wideEvent } from '@wippa/server-utils'
-import { ExecutionMode, getPieceNameFromAlias, PackageType, PiecePackage, PieceType } from '@wippa/shared'
+import { ExecutionMode, getPieceNameFromAlias, PackageType, ConnectorPackage, ConnectorType } from '@wippa/shared'
 import writeFileAtomic from 'write-file-atomic'
 import { SandboxSettings } from '../../types'
 import { bunRunner } from '../../utils/bun-runner'
@@ -11,8 +11,8 @@ import { cacheUtils } from '../cache-paths'
 const usedPiecesMemoryCache: Record<string, boolean> = {}
 const VALID_SCOPED_NAME_REGEX = /^@[^/]+\/[^/]+$/
 const VALID_UNSCOPED_NAME_REGEX = /^[^/]+$/
-const relativePiecePath = (piece: PiecePackage) => join('./', 'pieces', `${piece.pieceName}-${piece.pieceVersion}`)
-const piecePath = (rootWorkspace: string, piece: PiecePackage) => join(rootWorkspace, 'pieces', `${piece.pieceName}-${piece.pieceVersion}`)
+const relativePiecePath = (piece: ConnectorPackage) => join('./', 'pieces', `${piece.connectorName}-${piece.connectorVersion}`)
+const piecePath = (rootWorkspace: string, piece: ConnectorPackage) => join(rootWorkspace, 'pieces', `${piece.connectorName}-${piece.connectorVersion}`)
 
 export const pieceInstaller = (log: ApLogger, basePath: string, getSettings: () => SandboxSettings) => ({
     async install({ pieces, includeFilters, publicApiUrl, engineToken }: InstallParams): Promise<void> {
@@ -42,14 +42,14 @@ function getCustomPiecesPath(basePath: string, platformId: string, getSettings: 
     }
 }
 
-async function installPieces(rootWorkspace: string, pieces: PiecePackage[], includeFilters: boolean, log: ApLogger, bundleSource: BundleSource, getSettings: () => SandboxSettings): Promise<void> {
+async function installPieces(rootWorkspace: string, pieces: ConnectorPackage[], includeFilters: boolean, log: ApLogger, bundleSource: BundleSource, getSettings: () => SandboxSettings): Promise<void> {
     const devPieces = getSettings().DEV_PIECES
-    const nonDevPieces = pieces.filter(piece => !devPieces.includes(getPieceNameFromAlias(piece.pieceName)))
+    const nonDevPieces = pieces.filter(piece => !devPieces.includes(getPieceNameFromAlias(piece.connectorName)))
     const { validPieces, invalidPieces } = partitionValidPieceNames(nonDevPieces)
     if (!isEmpty(invalidPieces)) {
         log.error({
             rootWorkspace,
-            invalidPieces: invalidPieces.map(piece => `${piece.pieceName}@${piece.pieceVersion}`),
+            invalidPieces: invalidPieces.map(piece => `${piece.connectorName}@${piece.connectorVersion}`),
         }, '[pieceInstaller] Skipping pieces with invalid package names to protect the shared lockfile')
     }
     const { piecesToInstall } = await partitionPiecesToInstall(rootWorkspace, validPieces)
@@ -60,7 +60,7 @@ async function installPieces(rootWorkspace: string, pieces: PiecePackage[], incl
     }
     log.info({
         rootWorkspace,
-        piecesToInstall: piecesToInstall.map(piece => `${piece.pieceName}-${piece.pieceVersion}`),
+        piecesToInstall: piecesToInstall.map(piece => `${piece.connectorName}-${piece.connectorVersion}`),
     }, '[pieceInstaller] Installing pieces in workspace')
 
     await memoryLock.runExclusive({
@@ -73,7 +73,7 @@ async function installPieces(rootWorkspace: string, pieces: PiecePackage[], incl
             }
             log.info({
                 rootWorkspace,
-                pieces: piecesToInstall.map(piece => `${piece.pieceName}-${piece.pieceVersion}`),
+                pieces: piecesToInstall.map(piece => `${piece.connectorName}-${piece.connectorVersion}`),
             }, '[pieceInstaller] acquired lock and starting to install pieces')
 
             await createRootPackageJson({
@@ -84,7 +84,7 @@ async function installPieces(rootWorkspace: string, pieces: PiecePackage[], incl
 
             await Promise.all(piecesToInstall.map(piece => createPiecePackageJson({
                 rootWorkspace,
-                piecePackage: piece,
+                connectorPackage: piece,
             })))
 
             await wideEvent.timed({
@@ -112,14 +112,14 @@ async function installPieces(rootWorkspace: string, pieces: PiecePackage[], incl
 
                     log.warn({
                         rootWorkspace,
-                        pieces: piecesToInstall.map(piece => `${piece.pieceName}-${piece.pieceVersion}`),
+                        pieces: piecesToInstall.map(piece => `${piece.connectorName}-${piece.connectorVersion}`),
                         error: batchError,
                     }, '[pieceInstaller] Batch install failed, retrying pieces individually')
 
                     const failedPieces = await tryInstallPiecesIndividually(rootWorkspace, piecesToInstall, log)
 
                     if (failedPieces.length > 0) {
-                        const names = failedPieces.map(p => `${p.pieceName}@${p.pieceVersion}`).join(', ')
+                        const names = failedPieces.map(p => `${p.connectorName}@${p.connectorVersion}`).join(', ')
                         throw new Error(`[pieceInstaller] Failed to install: ${names}`)
                     }
 
@@ -134,7 +134,7 @@ async function installPieces(rootWorkspace: string, pieces: PiecePackage[], incl
 }
 
 // A workspace member name (and its dependency key) must be a plain npm package name. A relative
-// path such as `../../../common/pieces/@wippa/piece-x` — fed in via stale `usedPieces` data
+// path such as `../../../common/pieces/@wippa/connector-x` — fed in via stale `usedPieces` data
 // from a since-reverted build — makes bun write an unparseable resolution token into the SHARED
 // bun.lock. That lock then fails to parse on the next install and takes down EVERY piece in the
 // workspace (so cache pre-warm and the deploy fail). Worse, because the install joins the name onto
@@ -147,14 +147,14 @@ export function isValidPackageName(name: string): boolean {
     return VALID_SCOPED_NAME_REGEX.test(name) || VALID_UNSCOPED_NAME_REGEX.test(name)
 }
 
-function partitionValidPieceNames(pieces: PiecePackage[]): { validPieces: PiecePackage[], invalidPieces: PiecePackage[] } {
+function partitionValidPieceNames(pieces: ConnectorPackage[]): { validPieces: ConnectorPackage[], invalidPieces: ConnectorPackage[] } {
     return {
-        validPieces: pieces.filter(piece => isValidPackageName(piece.pieceName)),
-        invalidPieces: pieces.filter(piece => !isValidPackageName(piece.pieceName)),
+        validPieces: pieces.filter(piece => isValidPackageName(piece.connectorName)),
+        invalidPieces: pieces.filter(piece => !isValidPackageName(piece.connectorName)),
     }
 }
 
-async function rollbackInstallation(rootWorkspace: string, pieces: PiecePackage[]): Promise<void> {
+async function rollbackInstallation(rootWorkspace: string, pieces: ConnectorPackage[]): Promise<void> {
     await Promise.all(pieces.map(piece => rm(path.resolve(rootWorkspace, relativePiecePath(piece)), {
         recursive: true,
         force: true,
@@ -163,10 +163,10 @@ async function rollbackInstallation(rootWorkspace: string, pieces: PiecePackage[
 
 async function tryInstallPiecesIndividually(
     rootWorkspace: string,
-    pieces: PiecePackage[],
+    pieces: ConnectorPackage[],
     log: ApLogger,
-): Promise<PiecePackage[]> {
-    const failures: PiecePackage[] = []
+): Promise<ConnectorPackage[]> {
+    const failures: ConnectorPackage[] = []
     for (const piece of pieces) {
         const { error } = await tryCatch(async () =>
             bunRunner(log).install({
@@ -176,7 +176,7 @@ async function tryInstallPiecesIndividually(
         )
         if (error) {
             log.error({
-                piece: `${piece.pieceName}@${piece.pieceVersion}`,
+                piece: `${piece.connectorName}@${piece.connectorVersion}`,
                 error,
             }, '[pieceInstaller] Individual piece installation failed, rolling back')
             await rollbackInstallation(rootWorkspace, [piece])
@@ -189,14 +189,14 @@ async function tryInstallPiecesIndividually(
     return failures
 }
 
-function groupPiecesByPackagePath(pieces: PiecePackage[], basePath: string, getSettings: () => SandboxSettings): Record<string, PiecePackage[]> {
+function groupPiecesByPackagePath(pieces: ConnectorPackage[], basePath: string, getSettings: () => SandboxSettings): Record<string, ConnectorPackage[]> {
     const paths = cacheUtils(basePath)
     return groupBy(pieces, (piece) => {
         switch (piece.packageType) {
             case PackageType.ARCHIVE:
                 return getCustomPiecesPath(basePath, piece.platformId, getSettings)
             case PackageType.REGISTRY: {
-                if (piece.pieceType === PieceType.CUSTOM && !isNil(piece.platformId)) {
+                if (piece.pieceType === ConnectorType.CUSTOM && !isNil(piece.platformId)) {
                     return getCustomPiecesPath(basePath, piece.platformId, getSettings)
                 }
                 return paths.getGlobalCacheCommonPath()
@@ -219,24 +219,24 @@ async function createRootPackageJson({ path }: { path: string }): Promise<void> 
     }, null, 2), 'utf8')
 }
 
-async function createPiecePackageJson({ rootWorkspace, piecePackage }: {
+async function createPiecePackageJson({ rootWorkspace, connectorPackage }: {
     rootWorkspace: string
-    piecePackage: PiecePackage
+    connectorPackage: ConnectorPackage
 }): Promise<void> {
-    const packageJsonPath = join(piecePath(rootWorkspace, piecePackage), 'package.json')
+    const packageJsonPath = join(piecePath(rootWorkspace, connectorPackage), 'package.json')
 
     const packageJson = {
-        'name': `${piecePackage.pieceName}-${piecePackage.pieceVersion}`,
-        'version': `${piecePackage.pieceVersion}`,
+        'name': `${connectorPackage.connectorName}-${connectorPackage.connectorVersion}`,
+        'version': `${connectorPackage.connectorVersion}`,
         'dependencies': {
-            [piecePackage.pieceName]: bundleTgzPath(rootWorkspace, piecePackage),
+            [connectorPackage.connectorName]: bundleTgzPath(rootWorkspace, connectorPackage),
         },
     }
     await fileSystemUtils.threadSafeMkdir(dirname(packageJsonPath))
     await writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2), 'utf8')
 }
 
-function bundleTgzPath(rootWorkspace: string, piece: PiecePackage): string {
+function bundleTgzPath(rootWorkspace: string, piece: ConnectorPackage): string {
     return join(piecePath(rootWorkspace, piece), 'bundle.tgz')
 }
 
@@ -247,7 +247,7 @@ function bundleTgzPath(rootWorkspace: string, piece: PiecePackage): string {
 // `fetch` follows the redirect and carries the engine token in the Authorization header.
 // ARCHIVE pieces are fetched by archiveId (they may not be registered in metadata yet, e.g. during
 // EXTRACT_PIECE_METADATA); REGISTRY pieces by name@version.
-async function saveBundlesToDiskIfNotCached(rootWorkspace: string, pieces: PiecePackage[], { publicApiUrl, engineToken }: BundleSource): Promise<void> {
+async function saveBundlesToDiskIfNotCached(rootWorkspace: string, pieces: ConnectorPackage[], { publicApiUrl, engineToken }: BundleSource): Promise<void> {
     await Promise.all(pieces.map(async (piece) => {
         const bundlePath = bundleTgzPath(rootWorkspace, piece)
         if (await fileSystemUtils.fileExists(bundlePath)) {
@@ -256,22 +256,22 @@ async function saveBundlesToDiskIfNotCached(rootWorkspace: string, pieces: Piece
         const url = pieceBundleEndpointUrl(publicApiUrl, piece)
         const response = await fetch(url, { headers: { Authorization: `Bearer ${engineToken}` } })
         if (!response.ok) {
-            throw new Error(`Failed to fetch piece bundle ${piece.pieceName}@${piece.pieceVersion}: ${response.status} ${response.statusText}`)
+            throw new Error(`Failed to fetch piece bundle ${piece.connectorName}@${piece.connectorVersion}: ${response.status} ${response.statusText}`)
         }
         await fileSystemUtils.threadSafeMkdir(dirname(bundlePath))
         await writeFile(bundlePath, Buffer.from(await response.arrayBuffer()))
     }))
 }
 
-function pieceBundleEndpointUrl(publicApiUrl: string, piece: PiecePackage): string {
+function pieceBundleEndpointUrl(publicApiUrl: string, piece: ConnectorPackage): string {
     const base = `${ensureTrailingSlash(publicApiUrl)}v1/engine/pieces/bundle`
     if (piece.packageType === PackageType.ARCHIVE) {
         return `${base}?archiveId=${encodeURIComponent(piece.archiveId)}`
     }
-    return `${base}?name=${encodeURIComponent(piece.pieceName)}&version=${encodeURIComponent(piece.pieceVersion)}`
+    return `${base}?name=${encodeURIComponent(piece.connectorName)}&version=${encodeURIComponent(piece.connectorVersion)}`
 }
 
-async function partitionPiecesToInstall(rootWorkspace: string, pieces: PiecePackage[]): Promise<PieceInstallationResult> {
+async function partitionPiecesToInstall(rootWorkspace: string, pieces: ConnectorPackage[]): Promise<PieceInstallationResult> {
     const piecesWithCheck = await Promise.all(
         pieces.map(async (piece) => {
             const installed = await pieceCheckIfAlreadyInstalled(rootWorkspace, piece)
@@ -286,7 +286,7 @@ async function partitionPiecesToInstall(rootWorkspace: string, pieces: PiecePack
     }
 }
 
-async function pieceCheckIfAlreadyInstalled(rootWorkspace: string, piece: PiecePackage): Promise<boolean> {
+async function pieceCheckIfAlreadyInstalled(rootWorkspace: string, piece: ConnectorPackage): Promise<boolean> {
     const pieceFolder = piecePath(rootWorkspace, piece)
     if (usedPiecesMemoryCache[pieceFolder]) {
         return true
@@ -304,7 +304,7 @@ async function pieceCheckIfAlreadyInstalled(rootWorkspace: string, piece: PieceP
     return true
 }
 
-async function markPiecesAsUsed(rootWorkspace: string, pieces: PiecePackage[]): Promise<void> {
+async function markPiecesAsUsed(rootWorkspace: string, pieces: ConnectorPackage[]): Promise<void> {
     const writeToDiskJobs = pieces.map(async (piece) => {
         const pieceFolder = piecePath(rootWorkspace, piece)
         await fileSystemUtils.threadSafeMkdir(pieceFolder)
@@ -317,7 +317,7 @@ async function markPiecesAsUsed(rootWorkspace: string, pieces: PiecePackage[]): 
 }
 
 type InstallParams = {
-    pieces: PiecePackage[]
+    pieces: ConnectorPackage[]
     includeFilters: boolean
     publicApiUrl: string
     engineToken: string
@@ -329,5 +329,5 @@ type BundleSource = {
 }
 
 type PieceInstallationResult = {
-    piecesToInstall: PiecePackage[]
+    piecesToInstall: ConnectorPackage[]
 }

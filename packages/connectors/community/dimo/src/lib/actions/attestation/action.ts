@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { dimoAuth } from '../../auth';
 import { DimoClient } from '../../common/helpers';
-import { HttpError } from '@wippa/pieces-common';
+import { HttpError } from '@wippa/connectors-common';
 
 const createVinVcAction = createAction({
 	auth: dimoAuth,

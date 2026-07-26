@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { PDFDocument, PDFImage, RotationTypes, PageSizes } from 'pdf-lib';
 
 export const imageToPdf = createAction({

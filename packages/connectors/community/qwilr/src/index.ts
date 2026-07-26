@@ -1,8 +1,8 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { qwilrAuth } from "./lib/common/auth";
 import { createPageAction } from "./lib/actions/create-page";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { pageAcceptedTrigger } from "./lib/triggers/page-accepted";
 import { pagePartiallyAcceptedTrigger } from "./lib/triggers/page-partially-accepted";
 import { pagePreviewAcceptedTrigger } from "./lib/triggers/page-preview-accepted";
@@ -11,7 +11,7 @@ import { pageFirstViewedTrigger } from "./lib/triggers/page-first-viewed";
 import { pageSetLiveTrigger } from "./lib/triggers/page-set-live";
 import { pageRevivedLiveTrigger } from "./lib/triggers/page-revived-live";
 
-export const qwilr = createPiece({
+export const qwilr = createConnector({
   displayName: "Qwilr",
   description: "Create beautiful, interactive sales documents and proposals with Qwilr. Automate page creation, track views, and handle acceptance events.",
   auth: qwilrAuth,

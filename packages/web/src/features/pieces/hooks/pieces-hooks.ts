@@ -10,7 +10,7 @@ import {
   PieceMetadataModelSummary,
   PropertyType,
   ExecutePropsResult,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AddPieceRequestBody,
   ApEdition,
@@ -43,9 +43,9 @@ import { piecesApi } from '../api/pieces-api';
 import {
   PieceSelectorTabType,
   usePieceSelectorTabs,
-} from '../stores/piece-selector-tabs-provider';
-import { pieceSearchUtils } from '../utils/piece-search-utils';
-import { pieceSelectorCustomization } from '../utils/piece-selector-customization';
+} from '../stores/connector-selector-tabs-provider';
+import { pieceSearchUtils } from '../utils/connector-search-utils';
+import { pieceSelectorCustomization } from '../utils/connector-selector-customization';
 
 import { stepsHooks } from './steps-hooks';
 
@@ -105,7 +105,7 @@ export const piecesHooks = {
       },
     });
     return {
-      pieceModel: query.data,
+      connectorModel: query.data,
       isLoading: query.isLoading,
       isSuccess: query.isSuccess,
       isError: query.isError,
@@ -127,7 +127,7 @@ export const piecesHooks = {
       enabled,
     });
     return {
-      pieceModel: pieceQuery.pieceModel,
+      connectorModel: pieceQuery.connectorModel,
       isLoading: pieceQuery.isLoading,
       isSuccess: pieceQuery.isSuccess,
       isNotFound: pieceQuery.isNotFound,
@@ -397,7 +397,7 @@ export const piecesHooks = {
       retryDelay: 1000,
     });
   },
-  usePieceVersions: (pieceName: string) => {
+  usePieceVersions: (connectorName: string) => {
     const { data: release } = flagsHooks.useFlag<string>(
       ApFlagId.CURRENT_VERSION,
     );
@@ -406,10 +406,10 @@ export const piecesHooks = {
       queryKey: ['pieces-registry', release, edition],
       queryFn: () => piecesApi.registry(release!, edition!),
       staleTime: Infinity,
-      enabled: !!pieceName && !!release && !!edition,
+      enabled: !!connectorName && !!release && !!edition,
       select: (registry) =>
         registry
-          .filter((entry) => entry.name === pieceName)
+          .filter((entry) => entry.name === connectorName)
           .map((entry) => ({ version: entry.version }))
           .sort((a, b) => semver.rcompare(a.version, b.version)),
     });
@@ -419,18 +419,18 @@ export const piecesHooks = {
     };
   },
   usePieceForEmbeddingConnection: ({
-    pieceName,
+    connectorName,
     connectionExternalId,
   }: {
-    pieceName: string;
+    connectorName: string;
     connectionExternalId: string;
   }) => {
     return useQuery<PieceMetadataModel, Error>({
-      queryKey: ['piece', pieceName, connectionExternalId],
+      queryKey: ['piece', connectorName, connectionExternalId],
       queryFn: async () => {
         const appConnection = (
           await appConnectionsApi.list({
-            pieceName,
+            connectorName,
             limit: 1,
             projectId: authenticationSession.getProjectId()!,
           })
@@ -438,11 +438,11 @@ export const piecesHooks = {
           (connection) => connection.externalId === connectionExternalId,
         );
         if (!appConnection) {
-          return piecesApi.get({ name: pieceName });
+          return piecesApi.get({ name: connectorName });
         }
         return piecesApi.get({
-          name: appConnection.pieceName,
-          version: appConnection.pieceVersion,
+          name: appConnection.connectorName,
+          version: appConnection.connectorVersion,
         });
       },
       staleTime: Infinity,

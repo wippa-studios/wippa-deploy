@@ -1,5 +1,5 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { qwilrAuth } from '../../lib/common/auth';
 
 const subscribeWebhook = async (auth: string, event: string, targetUrl: string) => {

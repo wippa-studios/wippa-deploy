@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { TableField } from './types';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { SoftrAuth } from './auth';
 
 export const BASE_URL = `https://tables-api.softr.io/api/v1`;

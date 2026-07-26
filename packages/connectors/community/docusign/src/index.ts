@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { createApiClient } from './lib/common';
 import { listEnvelopes } from './lib/actions/list-envelopes';
@@ -30,7 +30,7 @@ export type DocusignAuthType = {
   scopes: string;
 };
 
-export const docusign = createPiece({
+export const docusign = createConnector({
   displayName: 'Docusign',
   auth: docusignAuth,
   minimumSupportedRelease: '0.36.1',

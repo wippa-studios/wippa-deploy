@@ -1,7 +1,7 @@
-import { Property, TriggerStrategy, createTrigger } from "@wippa/pieces-framework";
+import { Property, TriggerStrategy, createTrigger } from "@wippa/connectors-framework";
 import { emailOctopusAuth } from "../common/auth";
 import { emailOctopusProps } from "../common/props";
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 export const emailBounced = createTrigger({
     auth: emailOctopusAuth,

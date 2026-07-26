@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { blogIdeas } from './lib/actions/blog-ideas';
 import { blogIntros } from './lib/actions/blog-intros';
 import { blogOutlines } from './lib/actions/blog-outlines';
@@ -9,13 +9,13 @@ import { generateProductDescriptions } from './lib/actions/generate-product-desc
 import { googleAds } from './lib/actions/google-ads';
 import { landingPageHeadlines } from './lib/actions/landing-page-headlines';
 import { sentenceExpander } from './lib/actions/sentence-expander';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { writesonicBulkAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 
-export const writesonicBulk = createPiece({
+export const writesonicBulk = createConnector({
   displayName: 'Writesonic',
   auth: writesonicBulkAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   createCustomApiCallAction,
   HttpError,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { sendBatchEmails } from './lib/actions/send-batch-emails.action';
 import { createContact } from './lib/actions/create-contact.action';
@@ -63,7 +63,7 @@ export const resendAuth = PieceAuth.SecretText({
   },
 });
 
-export const resend = createPiece({
+export const resend = createConnector({
   displayName: 'Resend',
   description: 'The email API for developers',
   auth: resendAuth,

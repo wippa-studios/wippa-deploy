@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { azureBlobStorageAuth } from '../auth';
 import { BlobServiceClient } from '@azure/storage-blob';
 import { containerProp } from '../common';

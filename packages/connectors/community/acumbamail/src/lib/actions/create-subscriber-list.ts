@@ -2,8 +2,8 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
-import { Property, createAction } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { Property, createAction } from '@wippa/connectors-framework';
 import FormData from 'form-data';
 import { acumbamailAuth } from '../auth';
 import { acumbamailCommon } from '../common';

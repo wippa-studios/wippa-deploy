@@ -4,14 +4,14 @@ import {
   AppConnectionValueForAuthProperty,
   Property,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { skyprepAuth } from '../common/auth';
 import dayjs from 'dayjs';
 import { courceID } from '../common/props';

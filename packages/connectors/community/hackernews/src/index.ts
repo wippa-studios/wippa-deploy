@@ -1,7 +1,7 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { fetchTopStories } from './lib/actions/top-stories-in-hacker-news';
 
-export const hackernews = createPiece({
+export const hackernews = createConnector({
   displayName: 'Hacker News',
   description: 'A social news website',
 

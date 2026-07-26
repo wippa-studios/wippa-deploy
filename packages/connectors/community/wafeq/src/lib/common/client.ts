@@ -4,7 +4,7 @@ import {
   HttpMessageBody,
   HttpResponse,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { WAFEQ_API_BASE_URL } from './auth';
 
 export async function wafeqApiCall<T extends HttpMessageBody>({

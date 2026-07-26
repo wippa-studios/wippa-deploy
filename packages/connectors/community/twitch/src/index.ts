@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { streamStarted } from './lib/triggers/stream-started';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { twitchAuth } from './lib/auth';
 
-export const twitch = createPiece({
+export const twitch = createConnector({
   displayName: 'Twitch',
   auth: twitchAuth,
   minimumSupportedRelease: '0.36.1',

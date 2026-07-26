@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { ticktickAuth } from '../auth';
 import { tickTickApiCall } from '../common/client';
 import { TICKTICK_TASK_STATUS_INCOMPLETE } from '../common/constants';

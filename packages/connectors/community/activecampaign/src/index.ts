@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newDealAddedOrUpdatedTrigger } from './lib/triggers/new-deal-added-or-updated';
 import { createAccountAction } from './lib/actions/accounts/create-account';
 import { updateAccountAction } from './lib/actions/accounts/update-account';
@@ -31,7 +31,7 @@ To obtain your ActiveCampaign API URL and Key, follow these steps:
 3. Under **API Access** ,you'll find your API URL and Key.
 `;
 
-export const activecampaign = createPiece({
+export const activecampaign = createConnector({
   displayName: 'ActiveCampaign',
   description:
     'Email marketing, marketing automation, and CRM tools you need to create incredible customer experiences.',

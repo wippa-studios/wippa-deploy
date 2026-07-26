@@ -1,6 +1,6 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import {
   housecallProAuth,
   baseUrl,
@@ -55,7 +55,7 @@ import {
   convertLeadToEstimateOrJob,
 } from "./lib/common";
 
-export const housecallPro = createPiece({
+export const housecallPro = createConnector({
   displayName: "Housecall Pro",
   description: "Manage your home service business with Housecall Pro CRM integration",
   auth: housecallProAuth,

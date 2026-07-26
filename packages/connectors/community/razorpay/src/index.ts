@@ -1,5 +1,5 @@
-    import { createCustomApiCallAction } from "@wippa/pieces-common";
-    import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+    import { createCustomApiCallAction } from "@wippa/connectors-common";
+    import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
     import { generateRazorpayAuthHeader, RazorpayCredentials, razorpayURL } from "./lib/common/utils";
     import { createPaymentlink } from "./lib/actions/create-payment-link";
 
@@ -26,7 +26,7 @@
       }
   })
     
-    export const razorpay = createPiece({
+    export const razorpay = createConnector({
       displayName: "Razorpay",
       auth: razorpayAuth,
       minimumSupportedRelease: '0.30.0',

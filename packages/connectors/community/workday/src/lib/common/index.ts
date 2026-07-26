@@ -5,8 +5,8 @@ import {
 	HttpResponse,
 	httpClient,
 	QueryParams,
-} from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { XMLParser } from 'fast-xml-parser';
 
 const DEFAULT_HOST = 'wd2-impl-services1.workday.com';

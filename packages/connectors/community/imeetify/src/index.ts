@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { appointmentEvent } from './lib/triggers/appointment-event';
 
-export const imeetify = createPiece({
+export const imeetify = createConnector({
   displayName: 'iMeetify',
   description:
     'Online appointment scheduling: receive appointment confirmation and cancellation events via webhook.',

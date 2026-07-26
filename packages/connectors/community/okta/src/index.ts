@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { oktaAuth } from './lib/common/common';
 import { createUserAction } from './lib/actions/create-user';
 import { activateUserAction } from './lib/actions/activate-user';
@@ -11,9 +11,9 @@ import { updateUserAction } from './lib/actions/update-user';
 import { findUserByEmailAction } from './lib/actions/find-user-by-email';
 import { findGroupByNameAction } from './lib/actions/find-group-by-name';
 import { newEventTrigger } from './lib/triggers/new-event';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const okta = createPiece({
+export const okta = createConnector({
   displayName: 'Okta',
   auth: oktaAuth,
   minimumSupportedRelease: '0.30.0',

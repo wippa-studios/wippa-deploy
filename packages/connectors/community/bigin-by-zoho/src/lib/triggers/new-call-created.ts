@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { ZOHO_WEBHOOK_TOKEN } from '../common/constants';
 import { biginAuth } from '../auth';
 import { biginApiService } from '../common/request';

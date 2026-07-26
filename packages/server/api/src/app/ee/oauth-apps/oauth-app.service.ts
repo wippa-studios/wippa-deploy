@@ -23,26 +23,26 @@ export const oauthAppService = {
                 clientSecret: await encryptUtils.encryptString(request.clientSecret),
                 id: apId(),
             },
-            ['platformId', 'pieceName'],
+            ['platformId', 'connectorName'],
         )
         const connection = await oauthRepo().findOneByOrFail({
             platformId,
-            pieceName: request.pieceName,
+            connectorName: request.connectorName,
         })
         return deleteProps(connection, ['clientSecret'])
     },
     async getWithSecret({
         platformId,
-        pieceName,
+        connectorName,
         clientId,
     }: {
         platformId: string
-        pieceName: string
+        connectorName: string
         clientId?: string
     }): Promise<OAuthAppWithSecret> {
         const oauthApp = await oauthRepo().findOneByOrFail({
             platformId,
-            pieceName,
+            connectorName,
             clientId,
         })
         return {

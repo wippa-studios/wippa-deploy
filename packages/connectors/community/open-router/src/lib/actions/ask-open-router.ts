@@ -2,16 +2,16 @@ import { openRouterAuth } from '../auth';
 import {
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { openRouterModels, promptResponse } from '../common';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 import { askLmmActionOutputSchema } from '../output-schemas';
 
 export const askOpenRouterAction = createAction({

@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { instantlyAiAuth } from '../auth';
 
 export const BASE_URL = 'https://api.instantly.ai/api/v2';

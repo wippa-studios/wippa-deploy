@@ -15,13 +15,13 @@
       "@wippa/shared": [
         "../../packages/core/shared/src"
       ],
-      "@wippa/pieces-framework": [
+      "@wippa/connectors-framework": [
         "../../packages/pieces/framework/src"
       ],
       "ee-embed-sdk": [
         "../../packages/ee/embed-sdk/src"
       ],
-      "@wippa/piece-ai": [
+      "@wippa/connector-ai": [
         "../../packages/pieces/community/ai/src"
       ]
     }

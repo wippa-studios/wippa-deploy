@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, HttpMessageBody, QueryParams } from '@wippa/pieces-common';
+import { HttpMethod, httpClient, HttpMessageBody, QueryParams } from '@wippa/connectors-common';
 
 export const HYSTRUCT_BASE_URL = 'https://api.hystruct.com';
 

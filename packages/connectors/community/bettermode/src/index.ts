@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { assignBadgeAction } from './lib/actions/assign-badge';
 import { createDiscussionAction } from './lib/actions/create-discussion';
 import { createQuestionAction } from './lib/actions/create-question';
@@ -8,7 +8,7 @@ import { revokeBadgeAction } from './lib/actions/revoke-badge';
 import { bettermodeAuth } from './lib/auth';
 import { getAuthToken } from './lib/api';
 
-export const bettermode = createPiece({
+export const bettermode = createConnector({
   displayName: 'Bettermode',
   description: 'Feature-rich engagement platform. Browse beautifully designed templates, each flexible for precise customization to your needs.',
   auth: bettermodeAuth,

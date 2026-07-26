@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, PieceCategory } from '@wippa/connectors-framework';
 import { addition } from './lib/actions/addition';
 import { division } from './lib/actions/division';
 import { generateRandom } from './lib/actions/generateRandom';
@@ -10,7 +10,7 @@ const markdownDescription = `
 Perform mathematical operations.
 `;
 
-export const math = createPiece({
+export const math = createConnector({
   displayName: 'Math Helper',
   description: markdownDescription,
   auth: PieceAuth.None(),

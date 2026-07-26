@@ -1,11 +1,11 @@
 import {
 	PieceAuth,
 	Property,
-	createPiece,
+	createConnector,
 	OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { addContactToCampaign } from './lib/action/add-contact-to-campaign';
 import { addFileToRecord } from './lib/action/add-file-to-record';
@@ -61,7 +61,7 @@ export const salesforceAuth = PieceAuth.OAuth2({
 	scope: ['refresh_token', 'full', 'api'],
 });
 
-export const salesforce = createPiece({
+export const salesforce = createConnector({
 	displayName: 'Salesforce',
 	description: 'CRM software solutions and enterprise cloud computing',
 	minimumSupportedRelease: '0.30.0',

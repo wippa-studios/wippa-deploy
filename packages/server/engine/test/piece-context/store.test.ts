@@ -1,4 +1,4 @@
-import { StoreScope } from '@wippa/pieces-framework'
+import { StoreScope } from '@wippa/connectors-framework'
 import { StorageError, StorageInvalidKeyError, StorageLimitError, STORE_KEY_MAX_LENGTH, STORE_VALUE_MAX_SIZE } from '@wippa/shared'
 import { createContextStore } from '../../src/lib/piece-context/store'
 

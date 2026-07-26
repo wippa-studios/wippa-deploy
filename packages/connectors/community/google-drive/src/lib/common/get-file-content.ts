@@ -1,6 +1,6 @@
 import {
   FilesService,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { extension } from 'mime-types';
 import { GoogleDriveAuthValue, getAccessToken } from '../auth';
 

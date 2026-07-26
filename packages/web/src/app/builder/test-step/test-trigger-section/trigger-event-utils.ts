@@ -1,4 +1,4 @@
-import { TriggerBase, TriggerStrategy } from '@wippa/pieces-framework';
+import { TriggerBase, TriggerStrategy } from '@wippa/connectors-framework';
 import { TriggerTestStrategy } from '@wippa/shared';
 
 import { pieceSelectorUtils } from '@/features/pieces';
@@ -13,21 +13,21 @@ export type TestType =
 export const triggerEventUtils = {
   getTestType: ({
     triggerName,
-    pieceName,
+    connectorName,
     trigger,
   }: {
     triggerName: string;
-    pieceName: string;
+    connectorName: string;
     trigger: TriggerBase;
   }): TestType => {
-    if (pieceSelectorUtils.isMcpToolTrigger(pieceName, triggerName)) {
+    if (pieceSelectorUtils.isMcpToolTrigger(connectorName, triggerName)) {
       return 'mcp-tool';
     }
-    if (pieceSelectorUtils.isChatTrigger(pieceName, triggerName)) {
+    if (pieceSelectorUtils.isChatTrigger(connectorName, triggerName)) {
       return 'chat-trigger';
     }
     if (
-      pieceName === '@wippa/piece-webhook' &&
+      connectorName === '@wippa/connector-webhook' &&
       triggerName === 'catch_webhook'
     ) {
       return 'webhook';

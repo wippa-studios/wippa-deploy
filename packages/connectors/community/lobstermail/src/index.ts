@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createInbox } from './lib/actions/create-inbox';
 import { getInbox } from './lib/actions/get-inbox';
 import { deleteInbox } from './lib/actions/delete-inbox';
@@ -29,7 +29,7 @@ export const lobstermailAuth = PieceAuth.SecretText({
 Need help? See https://lobstermail.ai/docs`,
 });
 
-export const lobstermail = createPiece({
+export const lobstermail = createConnector({
   displayName: 'LobsterMail',
   description:
     'Email infrastructure for AI agents — create inboxes, send and receive email, search, threads, and webhooks.',

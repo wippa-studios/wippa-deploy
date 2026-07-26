@@ -330,7 +330,7 @@ describe('Secret Managers API', () => {
         })
 
         it('should not allow persisting resolved secrets in the database', async () => {
-            const pieceMetadata = await mockPieceMetadata(mockLog)
+            const connectorMetadata = await mockPieceMetadata(mockLog)
             const { mockOwner, mockPlatform, mockProject } = await mockAndSaveBasicSetup({
                 plan: {
                     secretManagersEnabled: true,
@@ -354,7 +354,7 @@ describe('Secret Managers API', () => {
             const mockUpsertAppConnectionRequest: UpsertGlobalConnectionRequestBody = {
                 externalId: 'test-app-connection-with-metadata',
                 displayName: 'Test Connection with Metadata',
-                pieceName: pieceMetadata.name,
+                connectorName: connectorMetadata.name,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
                     type: AppConnectionType.SECRET_TEXT,
@@ -363,7 +363,7 @@ describe('Secret Managers API', () => {
                 metadata: {
                     foo: 'bar',
                 },
-                pieceVersion: pieceMetadata.version,
+                connectorVersion: connectorMetadata.version,
                 projectIds: [mockProject.id],
                 scope: AppConnectionScope.PLATFORM,
             }

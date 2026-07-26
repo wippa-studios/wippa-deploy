@@ -1,8 +1,8 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { dropboxCopyFile } from './lib/actions/copy-file';
 import { dropboxCopyFolder } from './lib/actions/copy-folder';
 import { dropboxCreateNewFolder } from './lib/actions/create-new-folder';
@@ -19,7 +19,7 @@ import { dropboxDownloadFile } from './lib/actions/download-file';
 import { dropboxAuth } from './lib/auth';
 import { dropboxNewFolder } from './lib/triggers/new-folder';
 
-export const dropbox = createPiece({
+export const dropbox = createConnector({
   minimumSupportedRelease: '0.30.0',
   logoUrl: 'https://cdn.activepieces.com/pieces/dropbox.png',
   actions: [

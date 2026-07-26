@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
     import { startBrowsingTask } from "./lib/actions/start-browsing-task";
     
     export const twinLabsAuth = PieceAuth.SecretText({
@@ -8,7 +8,7 @@
       description:"Please use ***your-twin-labs-api-key*** as value for API Key"
     });
 
-    export const twinLabs = createPiece({
+    export const twinLabs = createConnector({
       displayName: "Twin Web Agent",
       auth: twinLabsAuth,
       minimumSupportedRelease: '0.20.0',

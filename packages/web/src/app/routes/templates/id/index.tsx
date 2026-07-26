@@ -27,7 +27,7 @@ import { formatUtils } from '@/lib/format-utils';
 import { FROM_QUERY_PARAM } from '@/lib/navigation-utils';
 
 import { FlowCard } from './flow-card';
-import { PieceCard } from './piece-card';
+import { ConnectorCard } from './piece-card';
 
 type TemplateDetailsPageProps = {
   template: Template;
@@ -237,8 +237,8 @@ const TemplateDetailsPage = ({ template }: TemplateDetailsPageProps) => {
                     {t('Used Pieces')}
                   </span>
                   <div className="flex flex-wrap gap-2">
-                    {template.pieces.map((pieceName: string, index: number) => (
-                      <PieceCard key={index} pieceName={pieceName} />
+                    {template.pieces.map((connectorName: string, index: number) => (
+                      <ConnectorCard key={index} connectorName={connectorName} />
                     ))}
                   </div>
                 </div>

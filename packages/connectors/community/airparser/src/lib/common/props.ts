@@ -1,6 +1,6 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { airparserApiCall } from './index';
 import { airparserAuth } from '../auth';
 

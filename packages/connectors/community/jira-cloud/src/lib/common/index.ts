@@ -5,9 +5,9 @@ import {
 	HttpRequest,
 	QueryParams,
 	httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { JiraAuth } from '../../auth';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { JiraSearchResponse } from './types';
 
 export async function sendJiraRequest(request: HttpRequest & { auth: JiraAuth }) {

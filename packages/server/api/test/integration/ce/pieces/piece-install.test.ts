@@ -5,7 +5,7 @@ import {
     EngineResponseStatus,
     PackageType,
     PieceScope,
-    PieceType,
+    ConnectorType,
 } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
@@ -75,8 +75,8 @@ describe('POST /v1/pieces — private piece installation', () => {
             new Blob([tgzBuffer], { type: 'application/gzip' }),
             'private-piece-test.tgz',
         )
-        formData.append('pieceName', PIECE_NAME)
-        formData.append('pieceVersion', PIECE_VERSION)
+        formData.append('connectorName', PIECE_NAME)
+        formData.append('connectorVersion', PIECE_VERSION)
         formData.append('packageType', PackageType.ARCHIVE)
         formData.append('scope', PieceScope.PLATFORM)
 
@@ -95,7 +95,7 @@ describe('POST /v1/pieces — private piece installation', () => {
         })
         expect(saved.name).toBe(PIECE_NAME)
         expect(saved.version).toBe(PIECE_VERSION)
-        expect(saved.pieceType).toBe(PieceType.CUSTOM)
+        expect(saved.pieceType).toBe(ConnectorType.CUSTOM)
         expect(saved.packageType).toBe(PackageType.ARCHIVE)
         expect(saved.archiveId).toBeDefined()
     })
@@ -110,8 +110,8 @@ describe('POST /v1/pieces — private piece installation', () => {
             new Blob([tgzBuffer], { type: 'application/gzip' }),
             'private-piece-test.tgz',
         )
-        formData.append('pieceName', PIECE_NAME)
-        formData.append('pieceVersion', PIECE_VERSION)
+        formData.append('connectorName', PIECE_NAME)
+        formData.append('connectorVersion', PIECE_VERSION)
         formData.append('packageType', PackageType.ARCHIVE)
         formData.append('scope', PieceScope.PLATFORM)
 

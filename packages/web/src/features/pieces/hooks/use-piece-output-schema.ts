@@ -1,27 +1,27 @@
 import { isNil } from '@wippa/core-utils';
-import type { OutputSchema } from '@wippa/pieces-framework';
+import type { OutputSchema } from '@wippa/connectors-framework';
 
 import { piecesHooks } from './pieces-hooks';
 
 function usePieceOutputSchema({
-  pieceName,
-  pieceVersion,
+  connectorName,
+  connectorVersion,
   stepName,
 }: {
-  pieceName?: string;
-  pieceVersion?: string;
+  connectorName?: string;
+  connectorVersion?: string;
   stepName?: string;
 }): OutputSchema | null {
-  const { pieceModel } = piecesHooks.usePiece({
-    name: pieceName ?? '',
-    version: pieceVersion,
-    enabled: !isNil(pieceName) && !isNil(stepName),
+  const { connectorModel } = piecesHooks.usePiece({
+    name: connectorName ?? '',
+    version: connectorVersion,
+    enabled: !isNil(connectorName) && !isNil(stepName),
   });
 
-  if (!pieceModel || !stepName) return null;
-  const fromTrigger = pieceModel.triggers?.[stepName]?.outputSchema;
+  if (!connectorModel || !stepName) return null;
+  const fromTrigger = connectorModel.triggers?.[stepName]?.outputSchema;
   if (fromTrigger) return fromTrigger;
-  const fromAction = pieceModel.actions?.[stepName]?.outputSchema;
+  const fromAction = connectorModel.actions?.[stepName]?.outputSchema;
   if (fromAction) return fromAction;
   return null;
 }

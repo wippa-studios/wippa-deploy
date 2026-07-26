@@ -16,8 +16,8 @@ import { AIPieceActionsList } from './ai-actions-list';
 const AITabContent = ({ operation }: { operation: PieceSelectorOperation }) => {
   const { t } = useTranslation();
   const { selectedTab } = usePieceSelectorTabs();
-  const { pieceModel, isLoading, isError } = piecesHooks.usePiece({
-    name: '@wippa/piece-ai',
+  const { connectorModel, isLoading, isError } = piecesHooks.usePiece({
+    name: '@wippa/connector-ai',
   });
 
   if (
@@ -37,7 +37,7 @@ const AITabContent = ({ operation }: { operation: PieceSelectorOperation }) => {
     );
   }
 
-  if (isError || isNil(pieceModel)) {
+  if (isError || isNil(connectorModel)) {
     return (
       <div className="flex items-center justify-center h-full w-full">
         <p className="text-sm text-muted-foreground">
@@ -48,14 +48,14 @@ const AITabContent = ({ operation }: { operation: PieceSelectorOperation }) => {
   }
 
   const metadata = stepUtils.mapPieceToMetadata({
-    piece: pieceModel,
+    piece: connectorModel,
     type: 'action',
   });
 
   const pieceMetadataWithSuggestion = {
     ...metadata,
-    suggestedActions: Object.values(pieceModel?.actions),
-    suggestedTriggers: Object.values(pieceModel.triggers),
+    suggestedActions: Object.values(connectorModel?.actions),
+    suggestedTriggers: Object.values(connectorModel.triggers),
   };
 
   return (

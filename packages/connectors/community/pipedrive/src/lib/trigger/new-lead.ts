@@ -1,6 +1,6 @@
 import { pipedriveAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
@@ -8,7 +8,7 @@ import {
     pipedriveTransformV1CustomFields,
 } from '../common';
 import { GetField } from '../common/types';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 interface PipedriveLeadV2 {
 	id: string;

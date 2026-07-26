@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
 import { fountainCreateApplicant } from './lib/actions/create-applicant';
 import { fountainDeleteApplicant } from './lib/actions/delete-applicant';
 import { fountainGetApplicantDetails } from './lib/actions/get-applicant-details';
@@ -17,7 +17,7 @@ import { fountainAuth } from './lib/auth';
 
 export const API_BASE_URL_DEFAULT = 'https://api.fountain.com';
 
-export const fountain = createPiece({
+export const fountain = createConnector({
   displayName: "Fountain",
   description: "Automate your complete HR hiring and onboarding workflow. Manage applicants, job openings, interview scheduling, and track progress through hiring stages with real-time webhooks.",
   auth: fountainAuth,

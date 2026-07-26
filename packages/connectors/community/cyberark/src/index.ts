@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createUser } from './lib/actions/create-user';
 import { updateUser } from './lib/actions/update-user';
 import { deleteUser } from './lib/actions/delete-user';
@@ -23,7 +23,7 @@ import { changeCredentialsInVaultBulk } from './lib/actions/change-credentials-i
 import { reconcileCredentialsBulk } from './lib/actions/reconcile-credentials-bulk';
 import { cyberarkAuth } from './lib/auth';
 
-export const cyberark = createPiece({
+export const cyberark = createConnector({
   displayName: 'CyberArk',
   description: 'Manage users, groups, and access controls in CyberArk Privileged Access Management',
   auth: cyberarkAuth,

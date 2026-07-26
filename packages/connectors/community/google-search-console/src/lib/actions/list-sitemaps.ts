@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { googleSearchConsoleAuth } from '../auth';
 import { createAuthClient } from '../../';
 import { commonProps } from '../common';

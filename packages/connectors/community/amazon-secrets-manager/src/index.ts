@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { awsSecretsManagerCombinedAuth } from './lib/common/auth';
 import { getSecretValue } from './lib/actions/get-secret-value';
 import { updateSecret } from './lib/actions/update-secret';
@@ -6,9 +6,9 @@ import { createSecret } from './lib/actions/create-secret';
 import { deleteSecret } from './lib/actions/delete-secret';
 import { findSecret } from './lib/actions/find-secret';
 import { getARandomPassword } from './lib/actions/get-a-random-password';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const amazonSecretsManager = createPiece({
+export const amazonSecretsManager = createConnector({
   displayName: 'AWS Secrets Manager',
   auth: awsSecretsManagerCombinedAuth,
   minimumSupportedRelease: '0.36.1',

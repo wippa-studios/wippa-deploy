@@ -1,7 +1,7 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { getTranscriptAction } from './lib/actions/get-transcript';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { gistlyConfig } from './lib/config';
 
 const markdownDescription = `
@@ -33,7 +33,7 @@ export const gistlyAuth = PieceAuth.SecretText({
   },
 });
 
-export const gistly = createPiece({
+export const gistly = createConnector({
   displayName: 'Gistly',
   auth: gistlyAuth,
   minimumSupportedRelease: '0.30.0',

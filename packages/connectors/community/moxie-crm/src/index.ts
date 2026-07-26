@@ -1,16 +1,16 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { moxieCreateClientAction } from './lib/actions/create-client';
 import { moxieCreateProjectAction } from './lib/actions/create-project';
 import { moxieCreateTaskAction } from './lib/actions/create-task';
 import { moxieCRMTriggers } from './lib/triggers';
 import { moxieCRMAuth } from './lib/auth';
-export const moxieCrm = createPiece({
+export const moxieCrm = createConnector({
   displayName: 'Moxie',
   description: 'CRM build for the freelancers.',
 

@@ -3,7 +3,7 @@ import {
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { gristAuth } from '../..';
 import { GristAPIClient } from './helpers';
 

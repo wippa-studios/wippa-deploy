@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth, OAuth2PropertyValue } from "@wippa/pieces-framework";
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth, OAuth2PropertyValue } from "@wippa/connectors-framework";
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { refreshSheetsCharts } from "./lib/actions/refresh-charts";
 import { generateFromTemplate } from "./lib/actions/generate-from-template";
 import { getPresentation } from "./lib/actions/get-presentation";
 import { googleSlidesAuth } from './lib/auth';
 
-export const googleSlide = createPiece({
+export const googleSlide = createConnector({
   displayName: "Google Slides",
   auth: googleSlidesAuth,
   minimumSupportedRelease: '0.36.1',

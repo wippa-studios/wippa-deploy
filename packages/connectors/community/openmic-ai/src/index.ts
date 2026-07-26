@@ -1,16 +1,16 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { openmicAiAuth } from './lib/common/auth';
 import { createPhoneCall } from './lib/actions/create-phone-call';
 import { findBot } from './lib/actions/find-bot';
 import { findCall } from './lib/actions/find-call';
 import { getBots } from './lib/actions/get-bots';
 import { getCalls } from './lib/actions/get-calls';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { newPostCallSummary } from './lib/triggers/new-post-call-summary';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { BASE_URL } from './lib/common/client';
 
-export const openmicAi = createPiece({
+export const openmicAi = createConnector({
   displayName: 'OpenMic AI',
   auth: openmicAiAuth,
   minimumSupportedRelease: '0.36.1',

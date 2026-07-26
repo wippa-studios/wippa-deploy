@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { newMessage } from './lib/triggers/new-message';
 import { chatwootAuth } from './lib/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getChatwootAuth } from './lib/common/types';
 import { CHATWOOT_AUTH_HEADER } from './lib/common/constants';
 
-export const chatwoot = createPiece({
+export const chatwoot = createConnector({
   displayName: 'Chatwoot',
   description: 'Receive and reply to customer messages with Chatwoot',
   auth: chatwootAuth,

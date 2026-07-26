@@ -63,7 +63,7 @@ const ConnectionEventData = z.object({
     connection: z.object({
         displayName: z.string(),
         externalId: z.string(),
-        pieceName: z.string(),
+        connectorName: z.string(),
         status: z.string(),
         type: z.string(),
         id: z.string(),

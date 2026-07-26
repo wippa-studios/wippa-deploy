@@ -1,4 +1,4 @@
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { emailOctopusAuth } from "./lib/common/auth";
 
 
@@ -9,7 +9,7 @@ import { addTagToContact } from "./lib/actions/add-tag-to-contact";
 import { removeTagFromContact } from "./lib/actions/remove-tag-from-contact";
 import { createList } from "./lib/actions/create-list";
 import { findContact } from "./lib/actions/find-contact"; 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 
 import { emailBounced } from "./lib/triggers/email-bounced";
@@ -17,10 +17,10 @@ import { emailOpened } from "./lib/triggers/email-opened";
 import { emailClicked } from "./lib/triggers/email-Clicked";
 import { newContact } from "./lib/triggers/new-Contact";
 import { contactUnsubscribes } from "./lib/triggers/contact-Unsubscribes";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { emailOctopusApiUrl } from "./lib/common/client";
 
-export const emailoctopus = createPiece({
+export const emailoctopus = createConnector({
     displayName: "EmailOctopus",
     description: 'Email marketing platform for list management, campaign sending, tagging & unsubscribes. Automate contact management and campaign engagement tracking.',
     auth: emailOctopusAuth,

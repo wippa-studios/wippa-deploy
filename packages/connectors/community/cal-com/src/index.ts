@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { triggers } from './lib/triggers';
 
 export const calcomAuth = PieceAuth.SecretText({
@@ -8,7 +8,7 @@ export const calcomAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const calcom = createPiece({
+export const calcom = createConnector({
   displayName: 'Cal.com',
   description: 'Open-source alternative to Calendly',
   minimumSupportedRelease: '0.30.0',

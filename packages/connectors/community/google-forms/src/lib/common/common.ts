@@ -1,10 +1,10 @@
-import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { JWT, OAuth2Client } from 'google-auth-library';
 
 export const googleFormsScopes = [

@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { githubAuth } from '../auth';
 import { githubApiCall, githubCommon } from '../common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 interface WebhookInformation {
   webhookId: number;

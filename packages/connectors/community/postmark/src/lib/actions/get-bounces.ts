@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 import { postmarkAuth } from '../auth';
 import { BounceListResponse, postmarkClient } from '../common/client';

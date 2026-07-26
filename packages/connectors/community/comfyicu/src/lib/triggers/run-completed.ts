@@ -3,14 +3,14 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { comfyIcuApiCall, commonProps } from '../common';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 
 const polling: Polling<

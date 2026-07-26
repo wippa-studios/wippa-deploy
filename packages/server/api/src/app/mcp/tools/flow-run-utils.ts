@@ -109,8 +109,8 @@ export async function executeFlowTest({ flowId, projectId, stepName, triggerTest
 
 export async function executeAdhocAction({
     projectId,
-    pieceName,
-    pieceVersion,
+    connectorName,
+    connectorVersion,
     actionName,
     input,
     connectionExternalId,
@@ -118,8 +118,8 @@ export async function executeAdhocAction({
     log,
 }: {
     projectId: string
-    pieceName: string
-    pieceVersion?: string
+    connectorName: string
+    connectorVersion?: string
     actionName: string
     input?: Record<string, unknown>
     connectionExternalId?: string
@@ -134,13 +134,13 @@ export async function executeAdhocAction({
         return authError
     }
 
-    const normalizedPieceName = mcpUtils.normalizePieceName(pieceName)
+    const normalizedPieceName = mcpUtils.normalizePieceName(connectorName)
     if (isNil(normalizedPieceName)) {
-        return mcpUtils.mcpToolError('Validation failed', new Error('pieceName is required'))
+        return mcpUtils.mcpToolError('Validation failed', new Error('connectorName is required'))
     }
 
     const lookup = await mcpUtils.lookupPieceComponent({
-        pieceName: normalizedPieceName,
+        connectorName: normalizedPieceName,
         componentName: actionName,
         componentType: 'action',
         projectId,
@@ -149,7 +149,7 @@ export async function executeAdhocAction({
     if ('error' in lookup && lookup.error) {
         return lookup.error
     }
-    const { piece, component: action, pieceName: resolvedPieceName } = lookup
+    const { piece, component: action, connectorName: resolvedPieceName } = lookup
 
     const resolvedInput: Record<string, unknown> = {
         ...inputWithoutAuth,
@@ -186,7 +186,7 @@ export async function executeAdhocAction({
         return mcpUtils.mcpToolError('Failed to load project', projectError)
     }
 
-    const resolvedPieceVersion = pieceVersion ?? piece.version
+    const resolvedPieceVersion = connectorVersion ?? piece.version
 
     const { data: flow, error: flowError } = await tryCatch(
         () => flowService(log).create({
@@ -221,8 +221,8 @@ export async function executeAdhocAction({
         const stepName = flowStructureUtil.findUnusedName(flowWithTrigger.version.trigger)
 
         const pieceSettings: Record<string, unknown> = {
-            pieceName: resolvedPieceName,
-            pieceVersion: resolvedPieceVersion,
+            connectorName: resolvedPieceName,
+            connectorVersion: resolvedPieceVersion,
             actionName: action.name,
             input: coercedInput,
             propertySettings: {},
@@ -437,10 +437,10 @@ function extractCodeStepResult(run: FlowRun, stepName: string): AdhocCodeResult 
     }
 }
 
-const FORMS_PIECE_NAME = '@wippa/piece-forms'
+const FORMS_PIECE_NAME = '@wippa/connector-forms'
 
 function buildTriggerShapeHint(trigger: Step): string {
-    if (trigger.type !== FlowTriggerType.PIECE || trigger.settings.pieceName !== FORMS_PIECE_NAME) {
+    if (trigger.type !== FlowTriggerType.PIECE || trigger.settings.connectorName !== FORMS_PIECE_NAME) {
         return ''
     }
     const note = 'Note: the Human Input / Web Form trigger camelCases each field label to build its output key (e.g. "Full Name" → "fullName"). Reference fields as {{trigger[\'output\'].<camelCaseKey>}}, never by the original label.'

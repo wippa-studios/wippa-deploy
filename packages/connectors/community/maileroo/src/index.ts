@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { sendFromTemplate } from './lib/actions/send-from-template';
 import { verifyEmail } from './lib/actions/verify-email';
 import { mailerooAuth } from './lib/auth';
 
-export const maileroo = createPiece({
+export const maileroo = createConnector({
   displayName: 'Maileroo',
   auth: mailerooAuth,
   minimumSupportedRelease: '0.30.0',

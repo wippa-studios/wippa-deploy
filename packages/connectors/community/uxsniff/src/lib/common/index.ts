@@ -4,8 +4,8 @@ import {
   HttpMessageBody,
   HttpResponse,
   QueryParams,
-} from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { uxsniffAuth } from '../../';
 
 const BASE_URL = 'https://api.uxsniff.com/v1';

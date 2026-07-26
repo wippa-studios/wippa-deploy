@@ -4,7 +4,7 @@ import {
   Property,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   DedupeStrategy,
@@ -12,7 +12,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { posthogAuth, PostHogAuth } from '../..';
 
 const props = {

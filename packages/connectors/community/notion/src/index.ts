@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { notionAuth } from './lib/auth';
 import { getNotionToken, NotionAuthValue } from './lib/common';
 import { appendToPage } from './lib/actions/append-to-page';
@@ -22,7 +22,7 @@ import { findPage } from './lib/actions/find-page';
 import { listDatabases } from './lib/actions/list-databases';
 import { listDatabasePages } from './lib/actions/list-database-pages';
 
-export const notion = createPiece({
+export const notion = createConnector({
   displayName: 'Notion',
   description: 'The all-in-one workspace',
   logoUrl: 'https://cdn.activepieces.com/pieces/notion.png',

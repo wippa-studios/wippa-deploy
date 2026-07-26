@@ -1,6 +1,6 @@
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { smartScraper } from './lib/actions/smart-scraper';
 import { localScraper } from './lib/actions/local-scraper';
 import { markdownify } from './lib/actions/markdownify';
@@ -14,7 +14,7 @@ Follow these steps to obtain your ScrapeGraphAI API Key:
 3. Locate and copy your API key from the dashboard.
 `;
 
-export const scrapegraphai = createPiece({
+export const scrapegraphai = createConnector({
   displayName: 'ScrapeGraphAI',
   description: 'AI-powered web scraping and content extraction.',
   minimumSupportedRelease: '0.30.0',

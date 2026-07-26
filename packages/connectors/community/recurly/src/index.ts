@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { createAccountAction } from './lib/actions/create-account';
 import { createSubscriptionAction } from './lib/actions/create-subscription';
@@ -8,7 +8,7 @@ import { getAccountAction } from './lib/actions/get-account';
 import { listSubscriptionsAction } from './lib/actions/list-subscriptions';
 import { recurlyAuth } from './lib/auth';
 
-export const recurly = createPiece({
+export const recurly = createConnector({
   displayName: 'Recurly',
   description:
     'Manage subscriptions, billing accounts, and recurring revenue with Recurly.',

@@ -1,10 +1,10 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { csvToJsonAction } from './lib/actions/convert-csv-to-json';
 import { jsonToCsvAction } from './lib/actions/convert-json-to-csv';
 import { excelToCsvAction } from './lib/actions/convert-excel-to-csv';
 
-export const csv = createPiece({
+export const csv = createConnector({
   displayName: 'CSV',
   description: 'Manipulate CSV text',
   minimumSupportedRelease: '0.30.0',

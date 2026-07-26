@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { kimaiAuth } from '../..';
 import { KimaiClient } from './client';
 

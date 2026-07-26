@@ -1,5 +1,5 @@
-import { Property, DynamicPropsValue } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { Property, DynamicPropsValue } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 import {
   RetableFieldMapping,
@@ -9,7 +9,7 @@ import {
   RetableProject,
   RetableTable,
 } from './models';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { retableAuth } from '../..';
 
 export const retableCommon = {

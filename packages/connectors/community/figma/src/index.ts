@@ -1,16 +1,16 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
 import { getCommentsAction } from './lib/actions/get-comments-action';
 import { getFileAction } from './lib/actions/get-file-action';
 import { postCommentAction } from './lib/actions/post-comment-action';
 import { newCommentTrigger } from './lib/trigger/new-comment';
 import { figmaAuth } from './lib/auth';
 
-export const figma = createPiece({
+export const figma = createConnector({
   displayName: 'Figma',
   description: 'Collaborative interface design tool',
   minimumSupportedRelease: '0.30.0',

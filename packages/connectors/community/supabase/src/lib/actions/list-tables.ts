@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { createClient } from '@supabase/supabase-js';
 import { supabaseAuth } from '../auth';
 import { listTablesActionOutputSchema } from '../output-schemas';

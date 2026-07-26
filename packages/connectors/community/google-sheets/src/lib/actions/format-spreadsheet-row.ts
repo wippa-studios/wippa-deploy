@@ -1,9 +1,9 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { areSheetIdsValid, createGoogleClient } from '../common/common';
 import { googleSheetsAuth } from '../common/common';
 import { commonProps } from '../common/props';
 import { sheets as googleSheets } from '@googleapis/sheets';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { formatRowActionOutputSchema } from '../output-schemas';
 
 export const formatRowAction = createAction({

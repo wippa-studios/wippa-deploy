@@ -1,5 +1,5 @@
 import { pipedriveAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { labelIdsProp, personIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -7,7 +7,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, GetPersonResponse } from '../common/types';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const addLabelToPersonAction = createAction({
 	auth: pipedriveAuth,

@@ -31,8 +31,8 @@ const triggerWithNoNext = (overrides: Partial<FlowVersion['trigger']['settings']
     valid: true,
     lastUpdatedDate: new Date().toISOString(),
     settings: {
-        pieceName: '@wippa/piece-webhook',
-        pieceVersion: '0.0.1',
+        connectorName: '@wippa/connector-webhook',
+        connectorVersion: '0.0.1',
         triggerName: 'catch_request',
         input: {},
         propertySettings: {},
@@ -53,8 +53,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: { field: '{{step_1.foo}}' },
                         propertySettings: {},
@@ -78,8 +78,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: {
                             headers: { Authorization: '{{step_1.token}}' },
@@ -104,8 +104,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: { tags: ['{{step_1.tag1}}', '{{step_2.tag2}}'] },
                         propertySettings: {},
@@ -210,8 +210,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: { topic: '{{trigger.event}}' },
                         propertySettings: {},
@@ -256,8 +256,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: { email: '{{step_1[\'user identity\'][\'email\']}}' },
                         propertySettings: {},
@@ -280,8 +280,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: {
                             json: { xyz: '{{step_1[\'user-details\'][\'full name\']}}' },
@@ -305,8 +305,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: { name: '{{step_1[\'user identity\'].first_name}}' },
                         propertySettings: {},
@@ -374,8 +374,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: { fullName: '{{step_1[\'name\']}} {{step_1[\'surname\']}}' },
                         propertySettings: {},
@@ -398,8 +398,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: {
                             rows: [
@@ -430,8 +430,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: {
                             onlyVariable: '{{variables[\'apiKey\']}}',
@@ -464,8 +464,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.0.1',
                         actionName: 'do',
                         input: { field: '{{step_1.foo}}', literal: 'unchanged', count: 42 },
                         propertySettings: {},
@@ -493,8 +493,8 @@ describe('migrateV21StepOutputNesting', () => {
                     valid: true,
                     lastUpdatedDate: new Date().toISOString(),
                     settings: {
-                        pieceName: '@wippa/piece-webhook',
-                        pieceVersion: '0.0.1',
+                        connectorName: '@wippa/connector-webhook',
+                        connectorVersion: '0.0.1',
                         actionName: 'return_response',
                         input: {
                             body: '{\n  "result": "{{step_15[\'body\'][\'url]}}",\n  "record": {{step_13[\'body\']}}\n}',
@@ -545,8 +545,8 @@ describe('migrateV21StepOutputNesting', () => {
                             valid: true,
                             lastUpdatedDate: new Date().toISOString(),
                             settings: {
-                                pieceName: '@wippa/piece-test',
-                                pieceVersion: '0.0.1',
+                                connectorName: '@wippa/connector-test',
+                                connectorVersion: '0.0.1',
                                 actionName: 'do',
                                 input: { field: '{{trigger.body.id}}' },
                                 propertySettings: {},

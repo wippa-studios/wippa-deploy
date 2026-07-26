@@ -1,10 +1,10 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { calendlyCommon, CalendlyWebhookInformation } from '../common';
 import { calendlyAuth } from '../auth';
 

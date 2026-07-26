@@ -60,7 +60,7 @@ const TestTriggerSection = React.memo(
     }
 
     const {
-      pieceModel,
+      connectorModel,
       isPieceLoading,
       testType,
       mockData,
@@ -100,20 +100,20 @@ const TestTriggerSection = React.memo(
       | Record<string, unknown>
       | undefined;
     const explanationContext: ErrorExplanationContext = {
-      pieceName: currentStep.settings.pieceName,
-      pieceVersion: currentStep.settings.pieceVersion,
-      pieceDisplayName: pieceModel?.displayName,
-      pieceAuthType: stepPropertiesSnapshotUtils.findAuthType(pieceModel),
+      connectorName: currentStep.settings.connectorName,
+      connectorVersion: currentStep.settings.connectorVersion,
+      connectorDisplayName: connectorModel?.displayName,
+      pieceAuthType: stepPropertiesSnapshotUtils.findAuthType(connectorModel),
       stepKind: 'trigger',
       stepName: triggerName,
       stepDisplayName: currentStep.displayName,
       stepDescription: stepPropertiesSnapshotUtils.findDescription({
-        pieceModel,
+        connectorModel,
         stepKind: 'trigger',
         stepName: triggerName,
       }),
       stepProperties: stepPropertiesSnapshotUtils.build({
-        pieceModel,
+        connectorModel,
         stepKind: 'trigger',
         stepName: triggerName,
         input: triggerInput,
@@ -124,9 +124,9 @@ const TestTriggerSection = React.memo(
       switch (testType) {
         case 'simulation':
           return t('testPieceWebhookTriggerNote', {
-            pieceName: pieceModel?.displayName,
+            connectorName: connectorModel?.displayName,
             triggerName: triggerName
-              ? pieceModel?.triggers[triggerName]?.displayName
+              ? connectorModel?.triggers[triggerName]?.displayName
               : undefined,
           });
         case 'webhook':
@@ -222,10 +222,10 @@ const TestTriggerSection = React.memo(
                 lastTestDate={lastTestDate}
                 isSaving={isSaving}
                 pieceSchema={
-                  pieceModel?.triggers[triggerName ?? '']?.outputSchema ?? null
+                  connectorModel?.triggers[triggerName ?? '']?.outputSchema ?? null
                 }
                 explanationContext={explanationContext}
-                pieceDisplayName={pieceModel?.displayName}
+                connectorDisplayName={connectorModel?.displayName}
               >
                 {pollResults?.data && !errorMessage && (
                   <TriggerEventSelect

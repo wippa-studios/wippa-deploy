@@ -1,9 +1,9 @@
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { mauticAuth } from '../auth';
 
 // Function Section

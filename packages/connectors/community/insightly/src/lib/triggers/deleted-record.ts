@@ -2,10 +2,10 @@ import {
     createTrigger,
     Property,
     TriggerStrategy
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
     HttpMethod
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { insightlyAuth, makeInsightlyRequest } from '../common/common';
 
 export const deletedRecord = createTrigger({

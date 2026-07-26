@@ -1,11 +1,11 @@
 import { pipedriveAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
     pipedriveApiCall,
     pipedriveCommon,
 } from '../common';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 interface PipedriveNoteV2 {
     id: number;

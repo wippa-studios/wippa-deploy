@@ -1,13 +1,13 @@
 import {
     HttpMethod,
     propsValidation,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { contiguityAuth } from '../../..';
 import {
     InputPropertyMap,
     Property,
     createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import * as z from 'zod/mini'
 import { _fetch } from '../../common/request';
 

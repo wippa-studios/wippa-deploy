@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { pdfcrowdAuth } from './lib/common/auth';
 import { urlToPdfAction } from './lib/actions/url-to-pdf';
 import { htmlToPdfAction } from './lib/actions/html-to-pdf';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 
-export const pdfcrowd = createPiece({
+export const pdfcrowd = createConnector({
   displayName: 'Pdfcrowd',
   auth: pdfcrowdAuth,
   minimumSupportedRelease: '0.36.1',

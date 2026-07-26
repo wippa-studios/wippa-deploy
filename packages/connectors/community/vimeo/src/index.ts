@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue } from "@wippa/pieces-framework";
+import { createConnector, OAuth2PropertyValue } from "@wippa/connectors-framework";
 import { vimeoAuth } from "./lib/auth";
 import { uploadVideo } from './lib/actions/upload-video';
 import { deleteVideo } from './lib/actions/delete-video';
@@ -8,10 +8,10 @@ import { newVideoLiked } from './lib/triggers/new-video-liked';
 import { newVideoBySearch } from './lib/triggers/new-video-by-search';
 import { newVideoOfMine } from './lib/triggers/new-video-of-mine';
 import { newVideoByUser } from './lib/triggers/new-video-by-user';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 
-export const vimeo = createPiece({
+export const vimeo = createConnector({
   displayName: "Vimeo",
   auth: vimeoAuth,
   minimumSupportedRelease: '0.36.1',

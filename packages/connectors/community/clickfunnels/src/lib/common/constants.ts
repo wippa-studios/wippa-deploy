@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from "@wippa/pieces-framework";
+import { PieceAuth, Property } from "@wippa/connectors-framework";
 import { clickfunnelsApiService } from "./requests";
 
 export const CLICKFUNNELS_BASE_URL = (subdomain: string) => `https://${subdomain}.myclickfunnels.com/api/v2`;

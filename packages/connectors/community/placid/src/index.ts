@@ -3,9 +3,9 @@ import {
 	HttpMethod,
 	createCustomApiCallAction,
 	httpClient,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createImage } from './lib/actions/create-image';
 import { createPdf } from './lib/actions/create-pdf';
 import { createVideo } from './lib/actions/create-video';
@@ -16,7 +16,7 @@ import { getVideo } from './lib/actions/get-video';
 import { PLACID_BASE_URL } from './lib/common';
 import { placidAuth } from './lib/auth';
 
-export const placid = createPiece({
+export const placid = createConnector({
 	displayName: 'Placid',
 	description:
 		'Creative automation engine that generates dynamic images, PDFs, and videos from templates and data.',

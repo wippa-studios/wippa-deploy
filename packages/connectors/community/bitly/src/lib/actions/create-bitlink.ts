@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { bitlyApiCall } from '../common/client';
 import { bitlyAuth } from '../common/auth';
 import { groupGuid, domain } from '../common/props';

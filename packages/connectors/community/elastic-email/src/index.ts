@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { elasticEmailAuth } from './lib/auth';
 import { ELASTIC_EMAIL_API_BASE } from './lib/common/constants';
@@ -15,7 +15,7 @@ import { unsubscribeContactAction } from './lib/actions/unsubscribe-contact';
 import { updateCampaignAction } from './lib/actions/update-campaign';
 import { updateContactAction } from './lib/actions/update-contact';
 
-export const elasticEmail = createPiece({
+export const elasticEmail = createConnector({
   displayName: 'Elastic Email',
   description:
     'Email delivery and marketing platform for sending emails, managing contacts, campaigns, and segments.',

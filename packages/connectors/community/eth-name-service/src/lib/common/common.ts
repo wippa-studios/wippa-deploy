@@ -1,6 +1,6 @@
 import {
   PieceAuth,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const ensCommon = {
   auth: PieceAuth.SecretText({

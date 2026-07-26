@@ -3,7 +3,7 @@ import { ApErrorParams, ErrorCode, isNil, SeekPage } from '@wippa/core-utils';
 import {
   getAuthPropertyForValue,
   PieceAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AppConnectionScope,
   AppConnectionStatus,
@@ -383,7 +383,7 @@ export const appConnectionsQueries = {
         displayName: sp.get('displayName') ?? undefined,
         ownerEmails: sp.getAll('owner'),
         status: sp.getAll('status') as AppConnectionStatus[],
-        pieceName: sp.get('pieceName') ?? undefined,
+        connectorName: sp.get('connectorName') ?? undefined,
       };
     }, [search]);
   },

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { skyprepAuth } from './lib/common/auth';
 import { enrollAUserIntoACource } from './lib/actions/enroll-a-user-into-a-cource';
 import { enrollAUserIntoAUserGroup } from './lib/actions/enroll-a-user-into-a-user-group';
@@ -7,7 +7,7 @@ import { courceFailed } from './lib/triggers/cource-failed';
 import { newUser } from './lib/triggers/new-user';
 import { courcePassed } from './lib/triggers/cource-passed';
 
-export const skyprep = createPiece({
+export const skyprep = createConnector({
   displayName: 'SkyPrep',
   auth: skyprepAuth,
   minimumSupportedRelease: '0.36.1',

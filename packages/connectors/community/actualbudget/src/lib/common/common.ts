@@ -1,4 +1,4 @@
-import { DropdownOption } from '@wippa/pieces-framework';
+import { DropdownOption } from '@wippa/connectors-framework';
 import os from 'os';
 
 export async function initializeAndDownloadBudget(api: any, auth: any): Promise<void> {

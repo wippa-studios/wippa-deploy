@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { fetchForms } from '../../common/service';
 import { convertkitAuth } from '../../..';
 

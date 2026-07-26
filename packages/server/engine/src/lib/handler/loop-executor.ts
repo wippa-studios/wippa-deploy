@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils'
-import { LATEST_CONTEXT_VERSION } from '@wippa/pieces-framework'
+import { LATEST_CONTEXT_VERSION } from '@wippa/connectors-framework'
 import { FlowRunStatus, LoopOnItemsAction, LoopStepOutput, StepOutputStatus } from '@wippa/shared'
 import { utils } from '../utils'
 import { BaseExecutor } from './base-executor'

@@ -30,7 +30,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { PieceIcon } from '@/features/pieces';
+import { ConnectorIcon } from '@/features/pieces';
 import { secretManagersHooks } from '@/features/secret-managers';
 import { platformHooks } from '@/hooks/platform-hooks';
 
@@ -72,7 +72,7 @@ const SecretManagersPage = () => {
         );
         return (
           <div className="flex items-center gap-2 w-fit">
-            <PieceIcon
+            <ConnectorIcon
               size="md"
               border={true}
               displayName={provider?.name}

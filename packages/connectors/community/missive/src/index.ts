@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { missiveAuth } from './lib/common/auth';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';
@@ -13,7 +13,7 @@ import { newContact } from './lib/triggers/new-contact';
 import { newContactBook } from './lib/triggers/new-contact-book';
 import { newContactGroup } from './lib/triggers/new-contact-group';
 
-export const missive = createPiece({
+export const missive = createConnector({
     displayName: 'Missive',
     minimumSupportedRelease: '0.36.1',
     logoUrl: 'https://cdn.activepieces.com/pieces/missive.png',

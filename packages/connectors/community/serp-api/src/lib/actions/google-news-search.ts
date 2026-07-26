@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { serpApiAuth } from '../auth';
 import { COUNTRY_OPTIONS } from '../constants/countries';
 import { LANGUAGE_OPTIONS } from '../constants/languages';

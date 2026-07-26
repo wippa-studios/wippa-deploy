@@ -1,4 +1,4 @@
-import { WebhookRenewStrategy } from '@wippa/pieces-framework'
+import { WebhookRenewStrategy } from '@wippa/connectors-framework'
 import {
     ApplicationEventName,
     Flow,
@@ -9,7 +9,7 @@ import {
     FlowVersion,
     FlowVersionState,
     PackageType,
-    PieceType,
+    ConnectorType,
     PropertyExecutionType,
     TriggerStrategy,
     TriggerTestStrategy,
@@ -270,8 +270,8 @@ async function seedPublishableFlow({
     initialStatus,
     publishCurrentVersion,
 }: SeedPublishableFlowParams): Promise<{ flow: Flow, flowVersion: FlowVersion }> {
-    const pieceMetadata = createMockPieceMetadata({
-        name: '@wippa/piece-schedule',
+    const connectorMetadata = createMockPieceMetadata({
+        name: '@wippa/connector-schedule',
         version: '0.1.5',
         triggers: {
             every_hour: {
@@ -287,10 +287,10 @@ async function seedPublishableFlow({
                 testStrategy: TriggerTestStrategy.TEST_FUNCTION,
             },
         },
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
         packageType: PackageType.REGISTRY,
     })
-    await db.save('piece_metadata', pieceMetadata)
+    await db.save('piece_metadata', connectorMetadata)
 
     const flow = createMockFlow({
         projectId: ctx.project.id,
@@ -333,8 +333,8 @@ function scheduleTrigger(): FlowTrigger {
     return {
         type: FlowTriggerType.PIECE,
         settings: {
-            pieceName: '@wippa/piece-schedule',
-            pieceVersion: '0.1.5',
+            connectorName: '@wippa/connector-schedule',
+            connectorVersion: '0.1.5',
             input: { run_on_weekends: false },
             triggerName: 'every_hour',
             propertySettings: {

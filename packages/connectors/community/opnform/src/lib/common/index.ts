@@ -2,13 +2,13 @@ import {
     Property,
     DropdownOption,
     AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
     HttpRequest,
     HttpMethod,
     AuthenticationType,
     httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { opnformAuth } from '../auth';
 import { CreateIntegrationResponse } from './types';
 

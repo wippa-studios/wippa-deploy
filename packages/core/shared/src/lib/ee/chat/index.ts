@@ -84,7 +84,7 @@ const PersistedActionReceiptPartSchema = z.object({
     type: z.literal(PersistedChatPartType.ACTION_RECEIPT),
     toolCallId: z.string(),
     actionDisplayName: z.string(),
-    pieceName: z.string(),
+    connectorName: z.string(),
     connectionLabel: z.string().optional(),
     status: z.enum(['success', 'failed']),
     output: z.unknown().optional(),

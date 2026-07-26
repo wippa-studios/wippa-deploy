@@ -1,10 +1,10 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   HttpResponse,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { callTwilioApi, twilioCommon } from '../common';
 import { twilioAuth } from '../..';
 

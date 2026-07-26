@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { linearCreateComment } from './lib/actions/comments/create-comment';
 import { linearCreateIssue } from './lib/actions/issues/create-issue';
 import { linearUpdateIssue } from './lib/actions/issues/update-issue';
@@ -37,7 +37,7 @@ export const linearAuth = PieceAuth.SecretText({
     };
   },
 });
-export const linear = createPiece({
+export const linear = createConnector({
   displayName: 'Linear',
   description: 'Issue tracking for modern software teams',
 

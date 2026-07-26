@@ -1,5 +1,5 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { tldvAuth } from "./lib/common/auth";
 import { uploadRecording } from "./lib/actions/upload-recording";
 import { listMeetings } from "./lib/actions/list-meetings";
@@ -11,7 +11,7 @@ import { transcriptReady } from "./lib/triggers/transcript-ready";
 
 export { tldvAuth } from "./lib/common/auth";
 
-export const tlDv = createPiece({
+export const tlDv = createConnector({
   displayName: "tl;dv",
   description: "Record meetings, get transcripts, and access meeting notes automatically.",
   auth: tldvAuth,

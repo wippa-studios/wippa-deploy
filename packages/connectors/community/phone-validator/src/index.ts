@@ -1,10 +1,10 @@
 
-    import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+    import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { phoneValidatorAuth } from './lib/common/auth';
 import { validatePhone } from './lib/actions';
 
-export const phoneValidator = createPiece({
+export const phoneValidator = createConnector({
   displayName: "Phone Validator",
   description: "Validate phone numbers and retrieve line type, carrier, and location information",
   auth: phoneValidatorAuth,

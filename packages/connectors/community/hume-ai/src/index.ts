@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { humeAiAuth } from './lib/common/auth';
 import { generateTextToSpeech } from './lib/actions/generate-text-to-speech';
 import { generateSpeechFromFile } from './lib/actions/generate-speech-from-file';
@@ -7,9 +7,9 @@ import { deleteVoice } from './lib/actions/delete-voice';
 import { analyzeEmotionsFromUrl } from './lib/actions/analyze-emotions-from-url';
 import { getEmotionResults } from './lib/actions/get-emotion-results';
 import { newVoiceTrigger } from './lib/triggers/new-voice';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const humeAi = createPiece({
+export const humeAi = createConnector({
   displayName: 'Hume AI',
   auth: humeAiAuth,
   minimumSupportedRelease: '0.36.1',

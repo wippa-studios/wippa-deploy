@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 export const ticktickAuth = PieceAuth.OAuth2({
 	authUrl: 'https://ticktick.com/oauth/authorize',

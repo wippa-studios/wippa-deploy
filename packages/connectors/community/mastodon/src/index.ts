@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { postStatus } from './lib/actions/post-status';
 
 const markdownDescription = `
@@ -37,7 +37,7 @@ export const mastodonAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const mastodon = createPiece({
+export const mastodon = createConnector({
   displayName: 'Mastodon',
   description: 'Open-source decentralized social network',
 

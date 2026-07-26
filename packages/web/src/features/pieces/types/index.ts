@@ -4,11 +4,11 @@ import {
   PieceAuthProperty,
   PieceMetadataModelSummary,
   TriggerBase,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   FlowActionType,
   PackageType,
-  PieceType,
+  ConnectorType,
   FlowTriggerType,
   FlowOperationType,
   StepLocationRelativeToParent,
@@ -22,11 +22,11 @@ type BaseStepMetadata = {
 
 export type PieceStepMetadata = BaseStepMetadata & {
   type: FlowActionType.PIECE | FlowTriggerType.PIECE;
-  pieceName: string;
-  pieceVersion: string;
+  connectorName: string;
+  connectorVersion: string;
   categories: string[];
   packageType: PackageType;
-  pieceType: PieceType;
+  pieceType: ConnectorType;
   auth: PieceAuthProperty | PieceAuthProperty[] | undefined;
   errorHandlingOptions?: ErrorHandlingOptionsParam;
 };
@@ -87,12 +87,12 @@ export type PieceSelectorPieceItem =
   | {
       actionOrTrigger: TriggerBase;
       type: FlowTriggerType.PIECE;
-      pieceMetadata: PieceStepMetadata;
+      connectorMetadata: PieceStepMetadata;
     }
   | ({
       actionOrTrigger: ActionBase;
       type: FlowActionType.PIECE;
-      pieceMetadata: PieceStepMetadata;
+      connectorMetadata: PieceStepMetadata;
     } & {
       auth?: PieceAuthProperty;
     });

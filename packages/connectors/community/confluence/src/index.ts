@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { confluenceAuth } from './lib/auth';
 
@@ -31,7 +31,7 @@ import { newCommentTrigger } from './lib/triggers/new-comment';
 import { newAttachmentTrigger } from './lib/triggers/new-attachment';
 import { newBlogPostTrigger } from './lib/triggers/new-blog-post';
 
-export const confluence = createPiece({
+export const confluence = createConnector({
   displayName: 'Confluence',
   auth: confluenceAuth,
   minimumSupportedRelease: '0.30.0',

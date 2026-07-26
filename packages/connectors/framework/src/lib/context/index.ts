@@ -10,7 +10,7 @@ import {
   DelayPauseMetadata,
   PauseMetadata,
   WebhookPauseMetadata,
-} from '@wippa/core-piece-types';
+} from '@wippa/core-connector-types';
 import type { SeekPage } from '@wippa/core-utils';
 import type { FlowRunId, ProjectId } from '@wippa/core-utils';
 import { LanguageModel, Tool } from 'ai'
@@ -26,7 +26,7 @@ import {
   StaticPropsValue,
 } from '../property';
 import { PieceAuthProperty } from '../property/authentication';
-import type { PopulatedFlowSummary } from '@wippa/core-piece-types';
+import type { PopulatedFlowSummary } from '@wippa/core-connector-types';
 
 export type BaseContext<
   PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined,

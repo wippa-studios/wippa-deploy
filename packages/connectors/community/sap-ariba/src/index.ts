@@ -1,4 +1,4 @@
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { sapAribaAuth } from "./lib/auth";
 import { listPurchaseOrders } from "./lib/actions/list-purchase-orders";
 import { listPurchaseOrderItems } from "./lib/actions/list-purchase-order-items";
@@ -14,9 +14,9 @@ import { createContractWorkspace } from "./lib/actions/create-contract-workspace
 import { updateContractWorkspace } from "./lib/actions/update-contract-workspace";
 import { updateContractStatus } from "./lib/actions/update-contract-status";
 import { deleteContractWorkspace } from "./lib/actions/delete-contract-workspace";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const sapAriba = createPiece({
+export const sapAriba = createConnector({
   displayName: "SAP Ariba",
   description: "Automate procurement, contracts, and invoices with SAP Ariba.",
   auth: sapAribaAuth,

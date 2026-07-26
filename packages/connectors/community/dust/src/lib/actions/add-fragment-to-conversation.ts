@@ -1,11 +1,11 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { dustAuth } from '../..';
 import { DUST_BASE_URL } from '../common';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import mime from 'mime-types';
 
 export const addFragmentToConversation = createAction({

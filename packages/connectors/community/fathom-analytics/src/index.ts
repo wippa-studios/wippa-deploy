@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { fathomAuth, FATHOM_API_BASE } from './lib/auth';
 import { listSites } from './lib/actions/list-sites';
 import { getSite } from './lib/actions/get-site';
@@ -8,7 +8,7 @@ import { createEvent } from './lib/actions/create-event';
 import { listEvents } from './lib/actions/list-events';
 import { getAggregation } from './lib/actions/get-aggregation';
 
-export const fathomAnalytics = createPiece({
+export const fathomAnalytics = createConnector({
   displayName: 'Fathom Analytics',
   description:
     'Privacy-focused website analytics. Query your site traffic, manage sites and events, and generate custom reports.',

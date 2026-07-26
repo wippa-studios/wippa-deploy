@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { PieceCategory } from '@wippa/shared';
 import { produktlyAuth } from './lib/common/auth';
 import { PRODUKTLY_BASE_URL } from './lib/common/client';
@@ -24,7 +24,7 @@ import { newTag } from './lib/triggers/new-tag';
 
 export { produktlyAuth } from './lib/common/auth';
 
-export const produktly = createPiece({
+export const produktly = createConnector({
   displayName: 'Produktly',
   description: 'Onboarding, in-app announcements, feedback collection and NPS for SaaS products.',
   minimumSupportedRelease: '0.36.1',

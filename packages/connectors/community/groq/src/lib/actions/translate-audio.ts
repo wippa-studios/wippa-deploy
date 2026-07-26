@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { groqAuth } from '../..';
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 import { translateAudioActionOutputSchema } from '../output-schemas';
 
 export const translateAudio = createAction({

@@ -1,5 +1,5 @@
 import { ActivepiecesError, ErrorCode, isNil, ProjectId } from '@wippa/core-utils'
-import { TriggerBase } from '@wippa/pieces-framework'
+import { TriggerBase } from '@wippa/connectors-framework'
 import { FlowTriggerType, FlowVersion } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { pieceMetadataService } from '../../pieces/metadata/piece-metadata-service'
@@ -8,61 +8,61 @@ import { projectService } from '../../project/project-service'
 export const triggerUtils = (log: FastifyBaseLogger) => ({
     async getPieceTriggerOrThrow({ flowVersion, projectId }: GetPieceTriggerOrThrowParams): Promise<TriggerBase> {
 
-        const pieceTrigger = await this.getPieceTrigger({
+        const connectorTrigger = await this.getPieceTrigger({
             flowVersion,
             projectId,
 
         })
-        if (isNil(pieceTrigger)) {
+        if (isNil(connectorTrigger)) {
             throw new ActivepiecesError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'piece_trigger',
                     entityId: flowVersion.trigger.settings.triggerName,
-                    message: `Trigger not found for piece ${flowVersion.trigger.settings.pieceName}@${flowVersion.trigger.settings.pieceVersion}`,
+                    message: `Trigger not found for piece ${flowVersion.trigger.settings.connectorName}@${flowVersion.trigger.settings.connectorVersion}`,
                     extra: {
-                        pieceName: flowVersion.trigger.settings.pieceName,
-                        pieceVersion: flowVersion.trigger.settings.pieceVersion,
+                        connectorName: flowVersion.trigger.settings.connectorName,
+                        connectorVersion: flowVersion.trigger.settings.connectorVersion,
                         triggerName: flowVersion.trigger.settings.triggerName,
                     },
                 },
             })
         }
-        return pieceTrigger
+        return connectorTrigger
     },
     async getPieceTrigger({ flowVersion, projectId }: GetPieceTriggerOrThrowParams): Promise<TriggerBase | null> {
         if (flowVersion.trigger.type !== FlowTriggerType.PIECE) {
             return null
         }
-        const { pieceName, pieceVersion, triggerName } = flowVersion.trigger.settings
+        const { connectorName, connectorVersion, triggerName } = flowVersion.trigger.settings
         if (isNil(triggerName)) {
             return null
         }
         return this.getPieceTriggerByName({
-            pieceName,
-            pieceVersion,
+            connectorName,
+            connectorVersion,
             triggerName,
             projectId,
         })
     },
-    async getPieceTriggerByName({ pieceName, pieceVersion, triggerName, projectId }: GetPieceTriggerByNameParams): Promise<TriggerBase | null> {
+    async getPieceTriggerByName({ connectorName, connectorVersion, triggerName, projectId }: GetPieceTriggerByNameParams): Promise<TriggerBase | null> {
         const platformId = await projectService(log).getPlatformId(projectId)
         const piece = await pieceMetadataService(log).get({
             platformId,
-            name: pieceName,
-            version: pieceVersion,
+            name: connectorName,
+            version: connectorVersion,
         })
         if (isNil(piece) || isNil(triggerName)) {
             return null
         }
-        const pieceTrigger = piece.triggers[triggerName]
-        return pieceTrigger
+        const connectorTrigger = piece.triggers[triggerName]
+        return connectorTrigger
     },
 })
 
 type GetPieceTriggerByNameParams = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     triggerName: string
     projectId: ProjectId
 }

@@ -8,7 +8,7 @@ import { appConnectionsRepo } from '../../../app-connection/app-connection-servi
 import { flowFolderService } from '../../../flows/folder/folder.service'
 import { encryptUtils } from '../../../helper/encryption'
 import { pieceMetadataService } from '../../../pieces/metadata/piece-metadata-service'
-import { pieceInstallService } from '../../../pieces/piece-install-service'
+import { connectorInstallService } from '../../../pieces/piece-install-service'
 import { fieldService } from '../../../tables/field/field.service'
 import { tableService } from '../../../tables/table/table.service'
 import { connectionDiffService } from '../project-release/project-state/diff/connection-diff.service'
@@ -72,11 +72,11 @@ async function runInstallPhase({ platformId, request, log }: InstallPhaseParams)
             continue
         }
         try {
-            await pieceInstallService(log).installPiece(platformId, {
+            await connectorInstallService(log).installConnector(platformId, {
                 packageType: PackageType.REGISTRY,
                 scope: PieceScope.PLATFORM,
-                pieceName: piece.name,
-                pieceVersion: piece.version,
+                connectorName: piece.name,
+                connectorVersion: piece.version,
             })
             installed.push({
                 name: piece.name,
@@ -86,7 +86,7 @@ async function runInstallPhase({ platformId, request, log }: InstallPhaseParams)
         }
         catch (e) {
             failures.push({
-                pieceName: piece.name,
+                connectorName: piece.name,
                 version: piece.version,
                 pieceType: piece.pieceType,
                 message: errorMessage(e),
@@ -154,7 +154,7 @@ async function checkPiece({ piece, platformId, log, errors }: CheckPieceParams):
     if (found.version !== piece.version) {
         errors.push({
             kind: ProjectReplaceErrorKind.PIECE_VERSION_MISMATCH,
-            pieceName: piece.name,
+            connectorName: piece.name,
             sourceVersion: piece.version,
             destVersion: found.version,
         })
@@ -172,19 +172,19 @@ async function checkConnections({ projectId, platformId, request, errors }: Chec
             platformId,
             externalId: In(externalIds),
         },
-        select: { externalId: true, pieceName: true },
+        select: { externalId: true, connectorName: true },
     })
-    const destByExternalId = new Map(existing.map((row) => [row.externalId, row.pieceName]))
+    const destByExternalId = new Map(existing.map((row) => [row.externalId, row.connectorName]))
     const seen = new Set<string>()
     for (const conn of request.connections) {
         if (seen.has(conn.externalId)) continue
         seen.add(conn.externalId)
         const destPieceName = destByExternalId.get(conn.externalId)
-        if (!isNil(destPieceName) && destPieceName !== conn.pieceName) {
+        if (!isNil(destPieceName) && destPieceName !== conn.connectorName) {
             errors.push({
                 kind: ProjectReplaceErrorKind.CONNECTION_PIECE_MISMATCH,
                 externalId: conn.externalId,
-                expectedPieceName: conn.pieceName,
+                expectedPieceName: conn.connectorName,
                 foundPieceName: destPieceName,
             })
         }
@@ -289,8 +289,8 @@ async function runConnectionOp({ op, projectId, platformId, applied, failed }: R
                     id: apId(),
                     externalId: op.connectionState.externalId,
                     displayName: op.connectionState.displayName,
-                    pieceName: op.connectionState.pieceName,
-                    pieceVersion: '0.0.0',
+                    connectorName: op.connectionState.connectorName,
+                    connectorVersion: '0.0.0',
                     platformId,
                     projectIds: [projectId],
                     scope: AppConnectionScope.PROJECT,
@@ -341,13 +341,13 @@ async function collectConnectionsAwaitingAuthorization({ projectId, platformId, 
             platformId,
             externalId: In(externalIds),
         },
-        select: { externalId: true, pieceName: true, displayName: true, status: true },
+        select: { externalId: true, connectorName: true, displayName: true, status: true },
     })
     return rows
         .filter((row) => row.status !== AppConnectionStatus.ACTIVE)
         .map((row) => ({
             externalId: row.externalId,
-            pieceName: row.pieceName,
+            connectorName: row.connectorName,
             displayName: row.displayName,
         }))
 }

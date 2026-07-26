@@ -2,8 +2,8 @@ import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { dripCommon } from '../common';
 import { dripAuth } from '../auth';
 

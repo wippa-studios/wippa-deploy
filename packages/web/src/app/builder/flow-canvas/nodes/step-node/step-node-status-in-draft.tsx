@@ -47,7 +47,7 @@ const ApStepNodeStatusInDraft = ({ stepName }: { stepName: string }) => {
     const isManualTrigger =
       step?.type === FlowTriggerType.PIECE &&
       pieceSelectorUtils.isManualTrigger({
-        pieceName: step?.settings.pieceName,
+        connectorName: step?.settings.connectorName,
         triggerName: step?.settings.triggerName ?? '',
       });
     return [

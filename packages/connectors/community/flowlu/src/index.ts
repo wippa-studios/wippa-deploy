@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createContactAction } from './lib/actions/accounts/create-contact';
 import { createOrganizationAction } from './lib/actions/accounts/create-organization';
 import { deleteContactAction } from './lib/actions/accounts/delete-contact';
@@ -17,7 +17,7 @@ import { getTaskAction } from './lib/actions/tasks/get-task';
 import { updateTaskAction } from './lib/actions/tasks/update-task';
 import { flowluAuth } from './lib/auth';
 
-export const flowlu = createPiece({
+export const flowlu = createConnector({
   displayName: 'Flowlu',
   description: 'Business management software',
   auth: flowluAuth,

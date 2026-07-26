@@ -2,7 +2,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { CartloomAuthType } from './auth';
 
 type KeyValuePair = { [key: string]: string | boolean | number | undefined };

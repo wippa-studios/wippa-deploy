@@ -2,7 +2,7 @@ import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { firstSeenAtFromField, firstSeenAtUntilField, lastSeenAtFromField, lastSeenAtUntilField, limitField, makeClient, pageField } from '../common';
 import { PredictLeadsAuth } from '../auth';
 import { prepareQuery } from '../common/client';

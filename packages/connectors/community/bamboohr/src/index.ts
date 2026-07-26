@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { reportFieldChanged } from './lib/triggers/report-field-changed';
 import { bambooHrAuth } from './lib/common/auth';
 
-export const bambooHr = createPiece({
+export const bambooHr = createConnector({
   displayName: 'BambooHR',
   auth: bambooHrAuth,
   minimumSupportedRelease: '0.36.1',

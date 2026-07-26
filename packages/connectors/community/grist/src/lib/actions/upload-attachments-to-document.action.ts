@@ -1,12 +1,12 @@
 import { gristAuth } from '../..';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { commonProps } from '../common/props';
 import FormData from 'form-data';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { GristAPIClient } from '../common/helpers';
 
 export const gristUploadAttachmentsToDocumnetAction = createAction({

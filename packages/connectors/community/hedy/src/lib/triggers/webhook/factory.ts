@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { Property, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Property, TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { createHmac, timingSafeEqual } from 'crypto';
 import { hedyAuth } from '../../auth';
 import { createClient, unwrapResource } from '../../common/client';

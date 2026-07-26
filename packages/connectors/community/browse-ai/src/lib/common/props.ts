@@ -1,5 +1,5 @@
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { browseAiApiCall } from './client';
 import { browseAiAuth } from './auth';
 

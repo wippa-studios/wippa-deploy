@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { parallelAuth } from './lib/auth';
 import { chatCompletionAction } from './lib/actions/chat-completion';
 import { createFindAllRunAction } from './lib/actions/create-findall-run';
@@ -12,7 +12,7 @@ import { getTaskRunResultAction } from './lib/actions/get-task-run-result';
 import { searchAction } from './lib/actions/search';
 import { PARALLEL_BASE_URL } from './lib/common/client';
 
-export const parallel = createPiece({
+export const parallel = createConnector({
   displayName: 'Parallel',
   description:
     'Web research APIs for AI: search, extract, multi-hop research tasks, entity discovery (FindAll), and web monitoring.',

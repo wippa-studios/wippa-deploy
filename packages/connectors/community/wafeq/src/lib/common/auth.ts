@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 const markdownDescription = `
 **How to get your Wafeq API Key:**

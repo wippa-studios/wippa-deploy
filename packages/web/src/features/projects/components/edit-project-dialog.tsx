@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
 import { GlobalConnectionWarning } from '@/components/custom/global-connection-utils';
-import { MultiSelectPieceProperty } from '@/components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '@/components/custom/multi-select-piece-property';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -196,7 +196,7 @@ const EditProjectForm = ({
             render={({ field }) => (
               <FormItem>
                 <Label>{t('Global Connections')}</Label>
-                <MultiSelectPieceProperty
+                <MultiSelectConnectorProperty
                   placeholder={t('Select global connections')}
                   options={globalConnections.map((connection) => ({
                     value: connection.externalId,

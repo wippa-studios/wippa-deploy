@@ -1,7 +1,7 @@
-import { createAction } from '@wippa/pieces-framework';
-import { propsValidation, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { propsValidation, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { cloudconvertAuth, CloudConvertClient, optimizeFileSchema } from '../common';
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 
 const optimizeFileProps = () => ({
   import_method: Property.StaticDropdown({

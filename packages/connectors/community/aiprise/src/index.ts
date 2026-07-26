@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { runUserVerificationProfileAction } from './lib/actions/run-user-verification-profile';
 import { getVerificationUrlAction } from './lib/actions/get-verification-url';
@@ -20,7 +20,7 @@ import { getBusinessProfileAction } from './lib/actions/get-business-profile';
 import { searchBusinessesAction } from './lib/actions/search-businesses';
 import { aipriseAuth } from './lib/common/auth';
 
-export const aiprise = createPiece({
+export const aiprise = createConnector({
   displayName: 'AiPrise',
   description:
     'KYC, KYB, and fraud prevention platform — verify user identities, onboard businesses, run AML/sanctions checks, and detect fraud signals.',

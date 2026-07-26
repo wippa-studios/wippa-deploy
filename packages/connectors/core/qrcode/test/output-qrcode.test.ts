@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { outputQrcodeAction } from '../src/lib/actions/output-qrcode-action';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('outputQrcodeAction', () => {
   test('generates QR code from text', async () => {

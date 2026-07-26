@@ -1,7 +1,7 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createDocument } from './lib/actions/create-document';
 import { createDocumentBasedOnTemplate } from './lib/actions/create-document-based-on-template.action';
 import { readDocument } from './lib/actions/read-document.action';
@@ -12,7 +12,7 @@ import { googleDocsAuth, getAccessToken, GoogleDocsAuthValue } from './lib/auth'
 
 export { googleDocsAuth, getAccessToken, GoogleDocsAuthValue } from './lib/auth';
 
-export const googleDocs = createPiece({
+export const googleDocs = createConnector({
 	displayName: 'Google Docs',
 	description: 'Create and edit documents online',
 	minimumSupportedRelease: '0.30.0',

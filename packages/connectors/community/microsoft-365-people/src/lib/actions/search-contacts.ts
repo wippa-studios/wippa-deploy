@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { microsoft365PeopleAuth } from '../common/auth';
 import { microsoft365PeopleCommon } from '../common/common';
 

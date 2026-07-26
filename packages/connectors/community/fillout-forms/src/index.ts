@@ -1,15 +1,15 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { getFormResponses } from './lib/actions/get-form-responses';
 import { getSingleResponse } from './lib/actions/get-single-response';
 import { findFormByTitle } from './lib/actions/find-form-by-title';
 import { newFormResponse } from './lib/triggers/new-form-response';
-import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction, HttpMethod } from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { makeRequest } from './lib/common';
 import { filloutFormsAuth } from './lib/auth';
 
-export const filloutForms = createPiece({
+export const filloutForms = createConnector({
 	displayName: 'Fillout Forms',
 	description: 'Create interactive forms and automate workflows with Fillout',
 	auth: filloutFormsAuth,

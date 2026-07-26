@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { smartleadAuth } from './lib/auth';
 import { BASE_URL } from './lib/common/client';
@@ -9,7 +9,7 @@ import { addLeadsToCampaignAction } from './lib/actions/add-leads-to-campaign';
 import { getCampaignStatisticsAction } from './lib/actions/get-campaign-statistics';
 import { updateCampaignSettingsAction } from './lib/actions/update-campaign-settings';
 
-export const smartlead = createPiece({
+export const smartlead = createConnector({
   displayName: 'SmartLead',
   description:
     'Powerful cold email outreach platform with multi-account rotation, email warmup, unified inbox, and advanced analytics.',

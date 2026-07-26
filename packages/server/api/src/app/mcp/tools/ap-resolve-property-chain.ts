@@ -1,5 +1,5 @@
 import { isNil, isObject } from '@wippa/core-utils'
-import { PiecePropertyMap, PropertyType } from '@wippa/pieces-framework'
+import { ConnectorPropertyMap, PropertyType } from '@wippa/connectors-framework'
 import { EngineResponse, EngineResponseStatus, McpToolDefinition, ProjectScopedMcpServer, WorkerJobType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
@@ -17,12 +17,12 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
         annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
         execute: async (args) => {
             try {
-                const { pieceName, actionOrTriggerName, type, propertyChain, auth, currentInput: providedInput } = resolvePropertyChainInput.parse(args)
+                const { connectorName, actionOrTriggerName, type, propertyChain, auth, currentInput: providedInput } = resolvePropertyChainInput.parse(args)
 
                 const platformId = await mcpUtils.resolvePlatformId({ mcp, log })
 
                 const lookup = await mcpUtils.lookupPieceComponent({
-                    pieceName,
+                    connectorName,
                     componentName: actionOrTriggerName,
                     componentType: type,
                     projectId: mcp.projectId,
@@ -33,7 +33,7 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
                     return lookup.error
                 }
 
-                const { piece, component, pieceName: normalized } = lookup
+                const { piece, component, connectorName: normalized } = lookup
 
                 const firstPropDef = component.props[propertyChain[0].propertyName]
                 if (isNil(firstPropDef)) {
@@ -41,7 +41,7 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
                         content: [{ type: 'text', text: `❌ Property "${propertyChain[0].propertyName}" not found on ${normalized}/${actionOrTriggerName}. Use ap_get_piece_props to see available properties.` }],
                     }
                 }
-                const piecePackage = await getPiecePackageWithoutArchive(log, platformId, { pieceName: normalized, pieceVersion: piece.version })
+                const connectorPackage = await getPiecePackageWithoutArchive(log, platformId, { connectorName: normalized, connectorVersion: piece.version })
 
                 const resolvedProperties: ResolvedProperty[] = []
                 const accumulatedInput: Record<string, unknown> = {
@@ -57,11 +57,11 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
                         }
                     }
 
-                    let result: EngineResponse<{ options: Array<{ label: string, value: unknown }> | PiecePropertyMap, disabled?: boolean }>
+                    let result: EngineResponse<{ options: Array<{ label: string, value: unknown }> | ConnectorPropertyMap, disabled?: boolean }>
                     try {
                         result = await withTimeout({
                             promise: userInteractionWatcher.submitAndWaitForResponse<EngineResponse<{
-                                options: Array<{ label: string, value: unknown }> | PiecePropertyMap
+                                options: Array<{ label: string, value: unknown }> | ConnectorPropertyMap
                                 disabled?: boolean
                             }>>({
                                 jobType: WorkerJobType.EXECUTE_PROPERTY,
@@ -73,7 +73,7 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
                                 input: accumulatedInput,
                                 sampleData: {},
                                 searchValue: undefined,
-                                piece: piecePackage,
+                                piece: connectorPackage,
                             }, log),
                             ms: RESOLVE_TIMEOUT_MS,
                         })
@@ -102,7 +102,7 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
                     const { options } = result.response
 
                     if (propDef.type === PropertyType.DYNAMIC && isObject(options) && !Array.isArray(options)) {
-                        const dynamicFields = mcpUtils.buildPropSummaries(options as PiecePropertyMap)
+                        const dynamicFields = mcpUtils.buildPropSummaries(options as ConnectorPropertyMap)
                         resolvedProperties.push({
                             propertyName: chainItem.propertyName,
                             dynamicFields,
@@ -172,7 +172,7 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
 }
 
 const resolvePropertyChainInput = z.object({
-    pieceName: z.string().describe('The piece name (e.g. "@wippa/piece-google-sheets").'),
+    connectorName: z.string().describe('The piece name (e.g. "@wippa/connector-google-sheets").'),
     actionOrTriggerName: z.string().describe('The action or trigger name (e.g. "insert_row").'),
     type: z.enum(['action', 'trigger']).describe('Whether this is an action or trigger.'),
     propertyChain: z.array(z.object({

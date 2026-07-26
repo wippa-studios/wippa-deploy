@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
 	webSearch,
 	searchNews,
@@ -7,16 +7,16 @@ import {
 	crawlWebsite,
 	extractDocument,
 } from './lib/actions';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
 	AuthenticationType,
 	createCustomApiCallAction,
 	httpClient,
 	HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { dumplingAuth } from './lib/auth';
 
-export const dumplingAi = createPiece({
+export const dumplingAi = createConnector({
 	displayName: 'Dumpling AI',
 	description:'Transform unstructured website content into clean, AI-ready data',
 	auth: dumplingAuth,

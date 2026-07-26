@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common'
-import { createPiece } from '@wippa/pieces-framework'
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common'
+import { createConnector } from '@wippa/connectors-framework'
+import { PieceCategory } from '@wippa/connectors-framework';
 import { triggers } from './lib/triggers'
 import { SURVEYTALE_BASE_URL, surveyTaleAuth } from './lib/auth'
 
-export const surveytale = createPiece({
+export const surveytale = createConnector({
     displayName: 'SurveyTale',
     description: 'Experience management platform for surveys and feedback',
     auth: surveyTaleAuth,

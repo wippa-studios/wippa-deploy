@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createRecordAction } from './lib/actions/create-record.action';
 import { deleteRecordAction } from './lib/actions/delete-record.action';
 import { getRecordAction } from './lib/actions/get-record.action';
@@ -12,7 +12,7 @@ import { updateRecordAction } from './lib/actions/update-record.action';
 import { businessCentralAuth } from './lib/auth';
 import { newOrUpdatedRecordTrigger } from './lib/triggers/new-or-updated-record.trigger';
 
-export const microsoftDynamics365BusinessCentral = createPiece({
+export const microsoftDynamics365BusinessCentral = createConnector({
   displayName: 'Microsoft Dynamics 365 Business Central',
   auth: businessCentralAuth,
   description: 'All-in-one business management solution by Microsoft.',

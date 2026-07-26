@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, HttpRequest} from '@wippa/pieces-common';
+import { HttpMethod, httpClient, HttpRequest} from '@wippa/connectors-common';
 
 export const workableCommon = {
     subscribeWebhook: async (

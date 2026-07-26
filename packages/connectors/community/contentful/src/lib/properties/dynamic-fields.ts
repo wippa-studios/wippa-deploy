@@ -1,8 +1,8 @@
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { ContentfulAuth, PropertyKeys, makeClient } from '../common';
 import { FieldTransformers } from './transformers';
 import { FieldType } from 'contentful-management';
-import { isEmpty, isNil } from '@wippa/pieces-framework';
+import { isEmpty, isNil } from '@wippa/connectors-framework';
 
 const DynamicFields = Property.DynamicProperties({
   auth: ContentfulAuth,

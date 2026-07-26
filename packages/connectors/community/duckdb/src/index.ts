@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 
 import { createAndQueryDB } from './lib/actions/create-and-query-db';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const duckdb = createPiece({
+export const duckdb = createConnector({
   displayName: 'DuckDB',
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.36.1',

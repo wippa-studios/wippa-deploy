@@ -1,15 +1,15 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import actions from './lib/actions';
 import triggers from './lib/triggers';
 import { clockodoAuth } from './lib/auth';
 
-export const clockodo = createPiece({
+export const clockodo = createConnector({
   displayName: 'Clockodo',
   description: 'Time tracking made easy',
   minimumSupportedRelease: '0.30.0',

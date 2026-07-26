@@ -1,10 +1,10 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   makeSenderRequest,
   senderAuth,
   subscriberDropdownSingle,
 } from '../common/common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { subscribe } from 'diagnostics_channel';
 
 export const unsubscribeSubscriberAction = createAction({

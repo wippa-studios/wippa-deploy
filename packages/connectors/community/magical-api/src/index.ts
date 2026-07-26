@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { magicalApiAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 import { reviewResume } from './lib/actions/review-resume';
@@ -9,7 +9,7 @@ import { getProfileData } from './lib/actions/get-profile-data';
 import { getCompanyData } from './lib/actions/get-company-data';
 import { scoreResume } from './lib/actions/score-resume';
 
-export const magicalApi = createPiece({
+export const magicalApi = createConnector({
   displayName: 'Magical API',
   description: 'Automate resume parsing, review, scoring, and LinkedIn profile/company data retrieval with Magical API.',
   auth: magicalApiAuth,

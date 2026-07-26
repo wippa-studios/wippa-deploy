@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { echowinAuth } from './lib/common/auth';
 import { createContact } from './lib/actions/create-contact';
 import { findContactByName } from './lib/actions/find-contact-by-name';
 import { deleteContact } from './lib/actions/delete-contact';
 import { newContact } from './lib/triggers/new-contact';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const echowin = createPiece({
+export const echowin = createConnector({
   displayName: 'Echowin',
   auth: echowinAuth,
   minimumSupportedRelease: '0.36.1',

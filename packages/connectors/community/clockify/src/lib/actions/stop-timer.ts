@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { clockifyAuth } from '../auth';
 import { clockifyApiCall } from '../common/client';
 import { workspaceId } from '../common/props';

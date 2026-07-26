@@ -11,7 +11,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@wippa/sandbox": "workspace:*",
     "@wippa/server-utils": "workspace:*",
     "@wippa/shared": "workspace:*",

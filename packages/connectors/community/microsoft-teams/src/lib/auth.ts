@@ -2,7 +2,7 @@ import {
   PieceAuth,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { microsoftCloudProperty } from './common/microsoft-cloud';
 import { createGraphClient, withGraphRetry } from './common/graph';
 

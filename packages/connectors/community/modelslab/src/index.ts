@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { modelsLabAuth } from './lib/common/auth';
 import { textToImage } from './lib/actions/text-to-image';
 
-export const modelsLab = createPiece({
+export const modelsLab = createConnector({
   displayName: 'ModelsLab',
   description:
     'ModelsLab is a developer-first AI API platform for text-to-image generation, video creation, voice cloning, and more.',

@@ -1,10 +1,10 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpError,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { mattermostAuth } from '../..';
 
 export const sendMessage = createAction({

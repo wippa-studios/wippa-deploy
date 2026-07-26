@@ -1,7 +1,7 @@
 
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { formitableTriggers } from './lib/triggers';
 
 const markdown = `
@@ -37,7 +37,7 @@ export const formitableAuth = PieceAuth.SecretText({
   },
 });
 
-export const formitable = createPiece({
+export const formitable = createConnector({
   displayName: 'Formitable',
   description: 'Restaurant reservation and guest management platform',
   auth: formitableAuth,

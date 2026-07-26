@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
-import { BaseContext, InputPropertyMap, PieceAuthProperty } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
+import { BaseContext, InputPropertyMap, PieceAuthProperty } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 export const CONNECTUC_BASE_URL = 'https://api.connectuc.io/activepieces';
 export const CONNECTUC_WEBHOOK_TRIGGER_KEY = 'connectuc_webhook';

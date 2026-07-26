@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { readwiseAuth } from './lib/common/auth';
 import { READWISE_BASE_URL } from './lib/common/client';
 import { getHighlights } from './lib/actions/get-highlights';
 import { createHighlight } from './lib/actions/create-highlight';
 import { newHighlight } from './lib/triggers/new-highlight';
 
-export const readwise = createPiece({
+export const readwise = createConnector({
   displayName: 'Readwise',
   description:
     'Save and retrieve your highlights from Readwise — your reading notes, all in one place.',

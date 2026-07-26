@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { pinchPaymentsAuth } from '../common/auth';
 import { createWebhook, deleteWebhook, WebhookResponse } from '../common/client';
 

@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { documentproAuth } from './lib/common/auth';
 import { uploaddocument } from './lib/actions/upload-document';
 import { runExtract } from './lib/actions/run-extract';
 import { newDocument } from './lib/triggers/new-document';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-export const documentpro = createPiece({
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+export const documentpro = createConnector({
   displayName: 'DocumentPro',
   auth: documentproAuth,
   minimumSupportedRelease: '0.36.1',

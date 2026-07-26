@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { SerpApiValidator } from './utils/validators';
 import { SerpApiClient } from './services/serp-api-client';
 

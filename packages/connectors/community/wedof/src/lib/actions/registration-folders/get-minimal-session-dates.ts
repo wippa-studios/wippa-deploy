@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { wedofAuth } from '../../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const getMinimalSessionDates = createAction({

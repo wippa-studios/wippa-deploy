@@ -4,7 +4,7 @@ import {
 	TriggerStrategy,
 	WebhookRenewStrategy,
 	createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 import {
 	createFileNotification,

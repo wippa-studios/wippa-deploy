@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import * as zMini from 'zod/mini'
-import { File } from '@wippa/core-piece-types'
+import { File } from '@wippa/core-connector-types'
 
 export enum SampleDataFileType {
     INPUT = 'INPUT',

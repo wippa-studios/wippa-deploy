@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 
 const BASE_URL = 'https://api.sardis.sh';
 

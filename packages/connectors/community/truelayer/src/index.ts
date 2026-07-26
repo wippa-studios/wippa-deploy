@@ -1,5 +1,5 @@
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { OAuth2PropertyValue, PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { trueLayerCommon } from './lib/common';
 
 import { createPayout } from './lib/action/payouts/create-payout';
@@ -46,9 +46,9 @@ import { getPaymentRefund } from './lib/action/payments/get-payment-refund';
 
 import { searchPaymentProviders } from './lib/action/payments-providers/search-payment-providers';
 import { getPaymentProvider } from './lib/action/payments-providers/get-payment-provider';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const paymentsApiV3Payments = createPiece({
+export const paymentsApiV3Payments = createConnector({
   displayName: 'TrueLayer',
   description: `Connect with TrueLayer to leverage secure open banking services. This integration allows seamless interaction with TrueLayer's API to manage various financial processes.`,
   auth: trueLayerCommon.auth,

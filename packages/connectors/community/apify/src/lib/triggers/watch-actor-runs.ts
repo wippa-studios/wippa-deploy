@@ -1,5 +1,5 @@
 import { apifyAuth } from '../..';
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import {
   createApifyClient,
   generateIdempotencyKey,

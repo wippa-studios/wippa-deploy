@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { githubAuthHelpers, GithubAuthValue } from './lib/common/auth-helpers';
 import { githubCreateIssueAction } from './lib/actions/create-issue';
 import { githubUnlockIssueAction } from './lib/actions/unlock-issue';
@@ -24,7 +24,7 @@ import { githubFindUserAction } from './lib/actions/find-user';
 
 import { githubAuth } from './lib/auth';
 
-export const github = createPiece({
+export const github = createConnector({
   displayName: 'GitHub',
   description:
     'Developer platform that allows developers to create, store, manage and share their code',

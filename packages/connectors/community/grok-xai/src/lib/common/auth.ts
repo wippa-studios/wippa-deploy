@@ -2,8 +2,8 @@ import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 export const grokAuth = PieceAuth.SecretText({
   description: `

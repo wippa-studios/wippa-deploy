@@ -3,9 +3,9 @@ import {
 	Property,
 	PiecePropValueSchema,
 	AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { teamworkAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { teamworkRequest } from '../common/client';
 
 // Helper to fetch all tasks, handling pagination

@@ -4,7 +4,7 @@ import {
   OAuth2Props,
   PieceMetadataModel,
   PieceMetadataModelSummary,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   ApFlagId,
   AppConnectionType,
@@ -265,9 +265,9 @@ function OAuth2ConnectionSettings({
                           redirectUrl,
                           clientId: form.getValues().request.value.client_id,
                           props: form.getValues().request.value.props,
-                          pieceName: piece.name,
+                          connectorName: piece.name,
                           form,
-                          pieceVersion: piece.version,
+                          connectorVersion: piece.version,
                           scopes:
                             scopesList.length > 0 ? scopesList : undefined,
                           setLoading,
@@ -307,8 +307,8 @@ async function openPopup({
   redirectUrl,
   clientId,
   props,
-  pieceName,
-  pieceVersion,
+  connectorName,
+  connectorVersion,
   form,
   scopes,
   setLoading,
@@ -318,10 +318,10 @@ async function openPopup({
     setLoading(true);
     const formProjectId = form.getValues().request.projectId;
     const result = await appConnectionsApi.getOAuth2AuthorizationUrl({
-      pieceName,
+      connectorName,
       clientId,
       redirectUrl,
-      pieceVersion,
+      connectorVersion,
       props,
       projectId: formProjectId,
       scopes,
@@ -362,8 +362,8 @@ type OpenPopupParams = {
   redirectUrl: string;
   clientId: string;
   props: Record<string, unknown> | undefined;
-  pieceName: string;
-  pieceVersion: string;
+  connectorName: string;
+  connectorVersion: string;
   scopes: string[] | undefined;
   form: UseFormReturn<{
     request:

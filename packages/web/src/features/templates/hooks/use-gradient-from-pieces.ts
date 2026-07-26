@@ -135,7 +135,7 @@ const buildGradientFromColors = (colors: string[]): string => {
   return `linear-gradient(135deg, ${gradientColors})`;
 };
 
-export const useGradientFromPieces = (
+export const useGradientFromConnectors = (
   trigger: FlowTrigger | undefined,
   excludeCore = false,
 ) => {
@@ -154,7 +154,7 @@ export const useGradientFromPieces = (
   });
 
   const uniqueMetadata: StepMetadata[] = useMemo(() => {
-    const pieceMetadata: StepMetadata[] = summaries
+    const connectorMetadata: StepMetadata[] = summaries
       .filter(
         (piece) =>
           !excludeCore || !piece.categories?.includes(PieceCategory.CORE),
@@ -165,14 +165,14 @@ export const useGradientFromPieces = (
         description: piece.description,
         type: FlowActionType.PIECE as const,
         pieceType: piece.pieceType,
-        pieceName: piece.name,
-        pieceVersion: piece.version,
+        connectorName: piece.name,
+        connectorVersion: piece.version,
         categories: piece.categories ?? [],
         packageType: piece.packageType,
         auth: piece.auth,
       }));
 
-    const allMetadata = [...coreMetadata, ...pieceMetadata];
+    const allMetadata = [...coreMetadata, ...connectorMetadata];
     return allMetadata.filter(
       (item, index, self) =>
         self.findIndex(

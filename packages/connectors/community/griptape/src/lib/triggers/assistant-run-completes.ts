@@ -3,13 +3,13 @@ import {
   TriggerStrategy,
   StaticPropsValue,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 import { griptapeAuth } from '../common/auth';
 import { makeRequest } from '../common/client';

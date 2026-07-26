@@ -1,4 +1,4 @@
-import { PauseType } from '@wippa/core-piece-types';
+import { PauseType } from '@wippa/core-connector-types';
 import { ActionContext, PauseHook } from ".";
 import { InputPropertyMap, PieceAuthProperty } from "../property";
 

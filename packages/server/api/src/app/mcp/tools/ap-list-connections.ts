@@ -9,11 +9,11 @@ import { mcpUtils } from './mcp-utils'
 const statusEnum = z.enum(Object.values(AppConnectionStatus) as [AppConnectionStatus, ...AppConnectionStatus[]])
 
 const listConnectionsSchema = z.object({
-    pieceName: z
+    connectorName: z
         .string()
         .optional()
         .describe(
-            'Filter by piece name. Short names like "slack" or "google-drive" are auto-expanded to full format (e.g. "@wippa/piece-slack"). You can also pass the full name directly.',
+            'Filter by piece name. Short names like "slack" or "google-drive" are auto-expanded to full format (e.g. "@wippa/connector-slack"). You can also pass the full name directly.',
         ),
     displayName: z
         .string()
@@ -36,7 +36,7 @@ export const apListConnectionsTool = (mcp: ProjectScopedMcpServer, log: FastifyB
         description:
             'List OAuth/app connections in the project. Returns externalId needed for the auth parameter on steps.',
         inputSchema: {
-            pieceName: listConnectionsSchema.shape.pieceName,
+            connectorName: listConnectionsSchema.shape.connectorName,
             displayName: listConnectionsSchema.shape.displayName,
             status: listConnectionsSchema.shape.status,
         },
@@ -52,16 +52,16 @@ export const apListConnectionsTool = (mcp: ProjectScopedMcpServer, log: FastifyB
                     scope: undefined,
                     displayName: params.displayName,
                     status: params.status,
-                    pieceName: mcpUtils.normalizePieceName(params.pieceName),
+                    connectorName: mcpUtils.normalizePieceName(params.connectorName),
                     limit: 200,
                     externalIds: undefined,
                 })
-                const lines = connections.data.map(c => `- externalId: ${c.externalId} | displayName: "${c.displayName}" | piece: ${c.pieceName} | status: ${c.status} | scope: ${c.scope}`)
+                const lines = connections.data.map(c => `- externalId: ${c.externalId} | displayName: "${c.displayName}" | piece: ${c.connectorName} | status: ${c.status} | scope: ${c.scope}`)
                 const structured = {
                     connections: connections.data.map(c => ({
                         externalId: c.externalId,
                         displayName: c.displayName,
-                        pieceName: c.pieceName,
+                        connectorName: c.connectorName,
                         status: c.status,
                         scope: c.scope,
                     })),

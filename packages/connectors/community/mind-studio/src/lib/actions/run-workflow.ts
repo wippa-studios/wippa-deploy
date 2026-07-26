@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient, HttpRequest } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient, HttpRequest } from '@wippa/connectors-common';
 import { mindStudioAuth } from '../..';
 
 export const runWorkflowAction = createAction({

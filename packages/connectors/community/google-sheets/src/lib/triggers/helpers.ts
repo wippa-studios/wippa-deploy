@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import dayjs from 'dayjs';
 import crypto from 'crypto';
 import { columnToLabel, createGoogleClient, GoogleSheetsAuthValue } from '../common/common';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 export async function getWorkSheetName(
 	auth: GoogleSheetsAuthValue,

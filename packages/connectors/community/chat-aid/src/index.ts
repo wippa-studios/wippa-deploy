@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { ChatAidAuth } from './lib/common/auth';
 import { addCustomSources } from './lib/actions/add-custom-sources';
 import { askQuestions } from './lib/actions/ask-questions';
 import { getCustomSourceById } from './lib/actions/get-custom-source-by-id';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 
-export const chatAid = createPiece({
+export const chatAid = createConnector({
   displayName: 'Chat Aid',
   description: 'AI-powered assistant for your knowledge base.',
   auth: ChatAidAuth,

@@ -1,5 +1,5 @@
-import { ApFile, createAction, Property } from "@wippa/pieces-framework";
-import { HttpMethod } from "@wippa/pieces-common";
+import { ApFile, createAction, Property } from "@wippa/connectors-framework";
+import { HttpMethod } from "@wippa/connectors-common";
 import { murfAuth } from "../common/auth";
 import { murfCommon } from "../common/dropdown";
 import { makeRequest } from "../common/client";

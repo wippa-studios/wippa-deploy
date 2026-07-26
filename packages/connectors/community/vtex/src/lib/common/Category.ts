@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { CreateCategoryParams, UpdateCategoryParams } from './types';
 
 export class Category {

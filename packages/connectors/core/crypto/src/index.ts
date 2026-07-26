@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { generatePassword } from './lib/actions/generate-password';
 import { hashText } from './lib/actions/hash-text';
 import { hmacSignature } from './lib/actions/hmac-signature';
@@ -8,7 +8,7 @@ import { base64Decode } from './lib/actions/base64-decode';
 import { base64Encode } from './lib/actions/base64-encode';
 import { openpgpEncrypt } from './lib/actions/openpgp-encrypt';
 
-export const Crypto = createPiece({
+export const Crypto = createConnector({
   displayName: 'Crypto',
   description: 'Generate random passwords and hash existing text',
   auth: PieceAuth.None(),

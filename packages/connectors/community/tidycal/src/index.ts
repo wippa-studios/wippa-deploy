@@ -1,9 +1,9 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 import { calltidycalapi } from './lib/common';
 import { tidycalbookingcancelled } from './lib/trigger/cancelled-booking';
 import { tidycalnewbooking } from './lib/trigger/new-booking';
@@ -15,7 +15,7 @@ const markdown = `
 1- Visit https://tidycal.com/integrations/oauth and click on "Create a new token"
 2- Enter a name for your token and click on "Create"
 `;
-export const tidycal = createPiece({
+export const tidycal = createConnector({
   displayName: 'TidyCal',
   description: 'Streamline your scheduling',
   auth: tidyCalAuth,

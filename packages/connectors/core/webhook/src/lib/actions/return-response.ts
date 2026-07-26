@@ -3,8 +3,8 @@ import {
   PieceAuth,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
-import { StopResponse } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { StopResponse } from '@wippa/connectors-framework';
 
 const HTTP_STATUS_OK = 200;
 const HTTP_STATUS_MOVED_PERMANENTLY = 301;

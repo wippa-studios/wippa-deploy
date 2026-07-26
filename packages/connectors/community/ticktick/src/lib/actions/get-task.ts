@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { ticktickAuth } from '../auth';
 import { tickTickApiCall } from '../common/client';
 import { projectId, taskId } from '../common/props';

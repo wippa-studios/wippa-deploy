@@ -1,9 +1,9 @@
 import { trelloAuth } from '../..';
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { getCardDetail, getCardsInBoard, getCardsInList, trelloCommon } from '../common';
 import { TrelloNewCard } from '../common/props/card';
-import { isNil } from '@wippa/pieces-framework';
-import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
+import { WebhookHandshakeStrategy } from '@wippa/connectors-framework';
 
 export const newCardTrigger = createTrigger({
 	auth: trelloAuth,

@@ -1,7 +1,7 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { ziplinAuth } from './auth';
 import { makeRequest } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const project_idProp = Property.Dropdown({
   auth: ziplinAuth,

@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { kissflowAuth, KissflowAuth } from './auth';
 import { downloadAttachmentFromFormField } from './lib/actions/download-attachment-from-form-field';
 
-export const kissflow = createPiece({
+export const kissflow = createConnector({
   displayName: 'Kissflow',
   description: 'Low-code no-code platform',
   categories: [PieceCategory.PRODUCTIVITY],

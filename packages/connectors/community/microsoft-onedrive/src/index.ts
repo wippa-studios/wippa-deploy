@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { copyFile } from './lib/actions/copy-file';
 import { downloadFile } from './lib/actions/download-file';
 import { listFiles } from './lib/actions/list-files';
@@ -13,7 +13,7 @@ import { oneDriveAuth } from './lib/auth';
 import { oneDriveCommon } from './lib/common/common';
 import { newFile } from './lib/triggers/new-file';
 
-export const microsoftOneDrive = createPiece({
+export const microsoftOneDrive = createConnector({
   displayName: 'Microsoft OneDrive',
   description: 'Cloud storage by Microsoft',
   auth: oneDriveAuth,

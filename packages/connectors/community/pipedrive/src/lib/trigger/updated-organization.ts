@@ -1,6 +1,6 @@
 import { pipedriveAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
 	pipedriveApiCall,
 	pipedriveCommon,
@@ -8,7 +8,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField } from '../common/types';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { ORGANIZATION_OPTIONAL_FIELDS } from '../common/constants';
 
 interface PipedriveOrganizationV2 {

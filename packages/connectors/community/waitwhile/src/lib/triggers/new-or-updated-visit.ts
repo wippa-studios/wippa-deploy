@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { makeRequest } from '../common/client';
 import { waitwhileAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 export const newOrUpdatedVisit = createTrigger({
   auth: waitwhileAuth,
   name: 'newOrUpdatedVisit',

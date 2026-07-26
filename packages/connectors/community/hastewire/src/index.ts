@@ -1,11 +1,11 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { hastewireAuth } from "./lib/common/auth";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { detectTextAction } from "./lib/actions/detect-text";
 import { humanizeTextAction } from "./lib/actions/humanize-text";
 
-export const hastewire = createPiece({
+export const hastewire = createConnector({
   displayName: "Hastewire",
   auth: hastewireAuth,
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],

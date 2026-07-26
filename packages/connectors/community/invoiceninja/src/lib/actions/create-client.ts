@@ -1,8 +1,8 @@
 import {
   createAction,
   Property,
-} from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { invoiceninjaAuth } from '../..';
 
 export const createClient = createAction({

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getTrends } from './lib/actions/get-trends';
 import { getTweet } from './lib/actions/get-tweet';
 import { getUserTweets } from './lib/actions/get-user-tweets';
@@ -10,7 +10,7 @@ import { searchUsers } from './lib/actions/search-users';
 import { xquikAuth } from './lib/auth';
 import { xquikCommon } from './lib/common';
 
-export const xquik = createPiece({
+export const xquik = createConnector({
   displayName: 'Xquik',
   description:
     'Search public X/Twitter posts, users, timelines, and trends for automation workflows.',

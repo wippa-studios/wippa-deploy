@@ -2,7 +2,7 @@ import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { sep } from 'path'
-import { Piece, PieceMetadata, pieceTranslation } from '@wippa/pieces-framework'
+import { Piece, ConnectorMetadata, pieceTranslation } from '@wippa/connectors-framework'
 import { extractPieceFromModule } from '@wippa/shared'
 import clearModule from 'clear-module'
 import { FastifyBaseLogger } from 'fastify'
@@ -49,18 +49,18 @@ export const filePiecesUtils = (log: FastifyBaseLogger) => ({
         return null
     },
 
-    findSourcePiecePathByPieceName: async (pieceName: string): Promise<string | null> => {
+    findSourcePiecePathByPieceName: async (connectorName: string): Promise<string | null> => {
         const piecesPath = await findAllPiecesFolder(SOURCE_PIECES_PATH)
-        const piecePath = piecesPath.find((p) => p.endsWith(sep + pieceName))
+        const piecePath = piecesPath.find((p) => p.endsWith(sep + connectorName))
         return piecePath ?? null
     },
 
-    loadDistPiecesMetadata: async (piecesNames: string[]): Promise<PieceMetadata[]> => {
+    loadDistPiecesMetadata: async (piecesNames: string[]): Promise<ConnectorMetadata[]> => {
         try {
             const devPieces = await findAllDistPiecesFolders(SOURCE_PIECES_PATH)
             const paths = devPieces.filter(path => piecesNames.some(name => path.endsWith(sep + name + sep + 'dist')))
             const pieces = await Promise.all(paths.map((p) => loadPieceFromFolder(p)))
-            return pieces.filter((p): p is PieceMetadata => p !== null)
+            return pieces.filter((p): p is ConnectorMetadata => p !== null)
         }
         catch (e) {
             const err = e as Error
@@ -119,26 +119,26 @@ const findAllDistPiecesFolders = async (sourcePiecesPath: string): Promise<strin
 
 const loadPieceFromFolder = async (
     folderPath: string,
-): Promise<PieceMetadata | null> => {
+): Promise<ConnectorMetadata | null> => {
     const indexPath = join(folderPath, 'src', 'index')
     const packageJsonPath = join(folderPath, 'package.json')
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const packageJson = require(packageJsonPath)
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const module = require(indexPath)
-    const { name: pieceName, version: pieceVersion } = packageJson
+    const { name: connectorName, version: connectorVersion } = packageJson
     const piece = extractPieceFromModule<Piece>({
         module,
-        pieceName,
-        pieceVersion,
+        connectorName,
+        connectorVersion,
     })
     const originalMetadata = piece.metadata()
     const loadTranslations = environmentVariables.getBooleanEnvironment(AppSystemProp.LOAD_TRANSLATIONS_FOR_DEV_PIECES)
     const i18n = loadTranslations ? await pieceTranslation.initializeI18n(folderPath) : undefined
-    const metadata: PieceMetadata = {
+    const metadata: ConnectorMetadata = {
         ...originalMetadata,
-        name: pieceName,
-        version: pieceVersion,
+        name: connectorName,
+        version: connectorVersion,
         authors: piece.authors,
         directoryPath: folderPath,
         i18n,

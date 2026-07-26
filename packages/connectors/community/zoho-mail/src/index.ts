@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-	createPiece,
+	createConnector,
 	OAuth2PropertyValue,
 	PiecePropValueSchema,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getEmailDetailsAction } from './lib/actions/get-email-details';
 import { markEmailAsReadAction } from './lib/actions/mark-email-as-read';
 import { markEmailAsUnreadAction } from './lib/actions/mark-email-as-unread';
@@ -15,7 +15,7 @@ import { sendEmailAction } from './lib/actions/send-email';
 import { zohoMailAuth } from './lib/common/auth';
 import { newEmailReceivedTrigger } from './lib/triggers/new-email-received-trigger';
 
-export const zohoMail = createPiece({
+export const zohoMail = createConnector({
 	displayName: 'Zoho Mail',
 	logoUrl: 'https://cdn.activepieces.com/pieces/zoho-mail.png',
 	auth: zohoMailAuth,

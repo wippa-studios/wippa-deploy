@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { simplePDFNewSubmission } from './lib/triggers/new-submission';
 
-export const simplepdf = createPiece({
+export const simplepdf = createConnector({
   displayName: 'SimplePDF',
   description: 'PDF editing and generation tool',
   auth: PieceAuth.None(),

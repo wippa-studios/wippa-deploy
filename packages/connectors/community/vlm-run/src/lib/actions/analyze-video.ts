@@ -1,5 +1,5 @@
-import { propsValidation } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { propsValidation } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { vlmRunAuth, vlmRunCommon } from '../common';
 import { analyzeVideoProperties } from '../common/properties';
 import { analyzeVideoSchema } from '../common/schemas';

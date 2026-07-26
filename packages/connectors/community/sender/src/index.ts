@@ -1,5 +1,5 @@
-import { createPiece} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { senderAuth } from './lib/common/common';
 import { addUpdateSubscriberAction } from './lib/actions/add-subscriber';
 import { createCampaignAction } from './lib/actions/create-campaign';
@@ -16,7 +16,7 @@ import { newUnsubscriberTrigger } from './lib/triggers/new-unsubscriber';
 import { newUnsubscriberFromGroupTrigger } from './lib/triggers/new-unsubscriber-from-group';
 import { updateSubscriberAction } from './lib/actions/update-subscriber';
 
-export const sender = createPiece({
+export const sender = createConnector({
   displayName: 'Sender',
   auth: senderAuth,
   minimumSupportedRelease: '0.30.0',

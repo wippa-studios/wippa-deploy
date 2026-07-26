@@ -1,10 +1,10 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { imageRouterAuth } from '../common/auth';
 import { imageRouterApiCall } from '../common/client';
 import { modelDropdown } from '../common/props';
 import { randomBytes } from 'node:crypto';
-import { kebabCase } from '@wippa/pieces-framework';
+import { kebabCase } from '@wippa/connectors-framework';
 
 export const createImage = createAction({
   audience: 'human',

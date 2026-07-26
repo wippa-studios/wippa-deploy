@@ -2,7 +2,7 @@ import {
   createTrigger,
   TriggerStrategy,
   FilesService,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { GmailLabel } from '../common/models';
 import { GmailProps } from '../common/props';
 import { gmailAuth, createGoogleClient, GmailAuthValue } from '../auth';

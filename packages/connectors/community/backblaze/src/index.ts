@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { readBackBlazeFileAction } from './lib/actions/read-file';
 import { backBlazes3UploadFileAction } from './lib/actions/upload-file';
 import { createBackBlazeS3 } from './lib/common';
@@ -185,7 +185,7 @@ export const backBlazeS3Auth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const backblaze = createPiece({
+export const backblaze = createConnector({
   displayName: 'Backblaze',
   description: 'Scalable storage in the cloud',
   logoUrl: 'https://cdn.activepieces.com/pieces/backblaze.png',

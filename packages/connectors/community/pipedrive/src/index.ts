@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { OAuth2PropertyValue, PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newActivity } from './lib/trigger/new-activity';
 import { newDeal } from './lib/trigger/new-deal';
 import { newPerson } from './lib/trigger/new-person';
@@ -46,7 +46,7 @@ import { updateProductAction } from './lib/actions/update-product';
 import { findLeadAction } from './lib/actions/find-leads';
 import { pipedriveAuth } from './lib/auth';
 
-export const pipedrive = createPiece({
+export const pipedrive = createConnector({
 	displayName: 'Pipedrive',
 	description: 'Sales CRM and pipeline management software',
 

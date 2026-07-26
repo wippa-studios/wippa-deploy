@@ -45,7 +45,7 @@ import { MoveToFolderDialog } from '@/features/automations/components/move-to-fo
 import { FlowCreatedByBadge } from '@/features/flows/components/flow-created-by-badge';
 import { FlowStatusToggle } from '@/features/flows/components/flow-status-toggle';
 import { ShareTemplateDialog } from '@/features/flows/components/share-template-dialog';
-import { PieceIconList } from '@/features/pieces/components/piece-icon-list';
+import { ConnectorIconList } from '@/features/pieces/components/connector-icon-list';
 import { cn } from '@/lib/utils';
 
 import { TreeItem } from '../lib/types';
@@ -391,7 +391,7 @@ const RowItemDetails = ({ item }: { item: TreeItem }) => {
   }
   if (isFlowItem(item)) {
     return (
-      <PieceIconList
+      <ConnectorIconList
         trigger={item.data.version.trigger}
         maxNumberOfIconsToShow={3}
         size="xs"

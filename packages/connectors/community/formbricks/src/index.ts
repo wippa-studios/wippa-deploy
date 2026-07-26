@@ -2,14 +2,14 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { triggers } from './lib/triggers';
 
 const markdownPropertyDescription = `
@@ -69,7 +69,7 @@ export const formBricksAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const formbricks = createPiece({
+export const formbricks = createConnector({
   displayName: 'Formbricks',
   description: 'Open source Survey Platform',
   auth: formBricksAuth,

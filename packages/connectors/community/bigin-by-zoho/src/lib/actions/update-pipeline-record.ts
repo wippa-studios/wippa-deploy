@@ -1,5 +1,5 @@
 import { biginAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { companyDropdown, contactsDropdown, layoutsDropdown, multiContactsDropdown, pipelineRecordsDropdown, productsDropdown, SubPipelineorStageDropdown, tagsDropdown, usersDropdown } from '../common/props';
 import { biginApiService } from '../common/request';
 import { formatDateOnly } from '../common/helpers';

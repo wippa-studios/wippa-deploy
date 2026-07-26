@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 import { twilioAuth } from '../..';
-import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from '@wippa/pieces-common';
+import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from '@wippa/connectors-common';
 
 interface Call {
     sid: string;

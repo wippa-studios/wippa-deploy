@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { encodeVideoAction } from './lib/actions/encode-video';
 
 export const slashedAuth = PieceAuth.SecretText({
@@ -16,7 +16,7 @@ export const slashedAuth = PieceAuth.SecretText({
   },
 });
 
-export const slashed = createPiece({
+export const slashed = createConnector({
   displayName: 'SlashedCloud',
   description: 'AV1 video encoding and transcoding via slashed.cloud.',
   auth: slashedAuth,

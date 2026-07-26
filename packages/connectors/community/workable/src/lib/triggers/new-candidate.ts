@@ -1,7 +1,7 @@
 
 import { workableAuth } from '../auth';
-import { createTrigger, Property, TriggerStrategy, WebhookResponse } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createTrigger, Property, TriggerStrategy, WebhookResponse } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { getAccountSubdomain } from '../common/get-subdomain';
 import { workableCommon } from '../common/webhooks';
 

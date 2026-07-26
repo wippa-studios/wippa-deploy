@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { trustAuth } from './lib/auth';
 import { createTestimonialAction } from './lib/actions/create-testimonial';
 import { updateTestimonialAction } from './lib/actions/update-testimonial';
@@ -15,7 +15,7 @@ import { uploadVideoAction } from './lib/actions/upload-video';
 import { uploadSmallVideoAction } from './lib/actions/upload-small-video';
 import { newTestimonialTrigger } from './lib/triggers/new-testimonial';
 
-export const trust = createPiece({
+export const trust = createConnector({
   displayName: 'Trust',
   description: 'Collect and manage video and text testimonials from your customers.',
   minimumSupportedRelease: '0.36.1',

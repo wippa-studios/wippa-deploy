@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { letsCalendarAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addContactToCampaign } from './lib/actions/add-contact-to-campaign';
 import { newCampaign } from './lib/triggers/new-campaign';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const letsCalendar = createPiece({
+export const letsCalendar = createConnector({
   displayName: `Let's Calendar`,
   auth: letsCalendarAuth,
   minimumSupportedRelease: '0.36.1',

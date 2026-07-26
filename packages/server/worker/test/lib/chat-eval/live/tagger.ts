@@ -76,7 +76,7 @@ function gradeNativeHandled({ scenario, calls }: { scenario: LiveScenario, calls
     if (scenario.native === 'code') {
         return calls.some((c) => c.toolName === CODE_TOOL)
     }
-    return calls.some((c) => c.pieceName.includes(HTTP_PIECE_HINT) || c.toolName === CODE_TOOL || c.toolName === FETCH_TOOL)
+    return calls.some((c) => c.connectorName.includes(HTTP_PIECE_HINT) || c.toolName === CODE_TOOL || c.toolName === FETCH_TOOL)
 }
 
 function isEnumerateAction(actionName: string): boolean {
@@ -125,7 +125,7 @@ function collectToolCalls(uiMessages: unknown[]): ToolCall[] {
                 toolName: asString(part['toolName']) ?? '',
                 input,
                 actionName: asString(input['actionName']) ?? '',
-                pieceName: asString(input['pieceName']) ?? '',
+                connectorName: asString(input['connectorName']) ?? '',
                 outputText: extractText(part['output']),
                 errorText: asString(part['errorText']) ?? '',
                 status: asString(part['status']) ?? '',
@@ -152,7 +152,7 @@ function countSchemaRefetches(calls: ToolCall[]): number {
     let refetches = 0
     for (const call of calls) {
         if (!SCHEMA_TOOLS.includes(call.toolName)) continue
-        const piece = asString(call.input['pieceName']) ?? ''
+        const piece = asString(call.input['connectorName']) ?? ''
         const action = asString(call.input['actionOrTriggerName']) ?? ''
         const key = `${piece}::${action}`
         if (seen.has(key)) {
@@ -246,7 +246,7 @@ type ToolCall = {
     toolName: string
     input: Record<string, unknown>
     actionName: string
-    pieceName: string
+    connectorName: string
     outputText: string
     errorText: string
     status: string

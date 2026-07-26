@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { clearoutphoneAuth } from './lib/common/auth';
 import { findPhoneNumberCarrier } from './lib/actions/find-phone-number-carrier';
 import { findPhoneNumberIsMobile } from './lib/actions/find-phone-number-is-mobile';
 import { validatePhoneNumber } from './lib/actions/validate-phone-number';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const clearoutphone = createPiece({
+export const clearoutphone = createConnector({
   displayName: 'ClearoutPhone',
   auth: clearoutphoneAuth,
   minimumSupportedRelease: '0.36.1',

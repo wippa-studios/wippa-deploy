@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { OAuth2PropertyValue, PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { todoistCreateTaskAction } from './lib/actions/create-task-action';
 import { todoistTaskCompletedTrigger } from './lib/triggers/task-completed-trigger';
 import { todoistUpdateTaskAction } from './lib/actions/update-task.action';
@@ -14,7 +14,7 @@ export const todoistAuth = PieceAuth.OAuth2({
 	scope: ['data:read_write'],
 });
 
-export const todoist = createPiece({
+export const todoist = createConnector({
 	displayName: 'Todoist',
 	description: 'To-do list and task manager',
 	minimumSupportedRelease: '0.5.0',

@@ -1,16 +1,16 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { createInvoiceAction } from './lib/actions/create-invoice.action';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { findProductRatePlanAction } from './lib/actions/find-product-rate-plans.action';
 import { findAccountAction } from './lib/actions/find-account.action';
 import { findProductAction } from './lib/actions/find-product.action';
 import { zuoraAuth } from './lib/auth';
 
-export const zuora = createPiece({
+export const zuora = createConnector({
   displayName: 'Zuora',
   auth: zuoraAuth,
   minimumSupportedRelease: '0.27.1',

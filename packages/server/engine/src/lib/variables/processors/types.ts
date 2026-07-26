@@ -1,8 +1,8 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { PieceProperty } from '@wippa/pieces-framework'
+import { ConnectorProperty } from '@wippa/connectors-framework'
 
 export type ProcessorFn<INPUT = any, OUTPUT = any> = (
-    property: PieceProperty,
+    property: ConnectorProperty,
     value: INPUT,
 ) => OUTPUT

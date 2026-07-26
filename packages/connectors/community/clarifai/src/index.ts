@@ -2,9 +2,9 @@ import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { clarifaiAskLLM } from './lib/actions/ask-llm';
 import { audioToTextModelPredictAction } from './lib/actions/call-audio-model';
 import {
@@ -25,7 +25,7 @@ Follow these instructions to get your Clarifai (Personal Access Token) PAT Key:
 1. Go to the [security tab](https://clarifai.com/settings/security) in your Clarifai account and generate a new PAT token.
 2. Copy the PAT token and paste it in the PAT Key field.
 `;
-export const clarifai = createPiece({
+export const clarifai = createConnector({
   displayName: 'Clarifai',
   description: 'AI-powered visual recognition',
   minimumSupportedRelease: '0.30.0',

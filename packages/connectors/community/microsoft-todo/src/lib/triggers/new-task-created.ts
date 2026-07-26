@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { getTaskListsDropdown, createTodoClient } from '../common';
 import { microsoftToDoAuth } from '../auth';
 import { PageCollection } from '@microsoft/microsoft-graph-client';

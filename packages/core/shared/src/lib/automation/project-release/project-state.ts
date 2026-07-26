@@ -30,7 +30,7 @@ export type FlowState = z.infer<typeof FlowState>
 
 export const ConnectionState = z.object({
     externalId: z.string(),
-    pieceName: z.string(),
+    connectorName: z.string(),
     displayName: z.string(),
 })
 export type ConnectionState = z.infer<typeof ConnectionState>

@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue, PieceAuth, PiecePropValueSchema, Property } from "@wippa/pieces-framework";
+import { createConnector, OAuth2PropertyValue, PieceAuth, PiecePropValueSchema, Property } from "@wippa/connectors-framework";
 import { findInvoiceAction } from "./actions/find-invoice";
 import { findCustomerAction } from "./actions/find-customer";
 import { findPaymentAction } from "./actions/find-payment";
@@ -14,11 +14,11 @@ import { newExpense } from "./triggers/new-expense";
 import { newCustomer } from "./triggers/new-customer";
 import { newDeposit } from "./triggers/new-deposit";
 import { newTransfer } from "./triggers/new-transfer";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { quickbooksCommon } from "./lib/common";
 import { quickbooksAuth } from './lib/auth';
 
-export const quickbooks = createPiece({
+export const quickbooks = createConnector({
   displayName: "Quickbooks Online",
   auth: quickbooksAuth,
   minimumSupportedRelease: '0.36.1',

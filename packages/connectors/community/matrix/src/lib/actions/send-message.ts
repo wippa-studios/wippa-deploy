@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { getRoomId, sendMessage as sendMatrixMessage } from '../common/common';
 import { matrixAuth } from '../..';
 

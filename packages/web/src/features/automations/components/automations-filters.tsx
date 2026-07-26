@@ -1,4 +1,4 @@
-import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/connectors-framework';
 import {
   AppConnectionWithoutSensitiveData,
   FlowStatus,
@@ -122,14 +122,14 @@ export const AutomationsFilters = ({
   }));
 
   const connectionOptions = (connections || []).map((connection) => {
-    const pieceIcon = pieces?.find(
-      (p) => p.name === connection.pieceName,
+    const connectorIcon = pieces?.find(
+      (p) => p.name === connection.connectorName,
     )?.logoUrl;
     return {
       value: connection.externalId,
       label: connection.displayName,
-      icon: pieceIcon ? (
-        <img src={pieceIcon} alt="" className="h-4 w-4 object-contain" />
+      icon: connectorIcon ? (
+        <img src={connectorIcon} alt="" className="h-4 w-4 object-contain" />
       ) : undefined,
     };
   });

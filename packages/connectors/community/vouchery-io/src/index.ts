@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { voucheryIoAuth } from './lib/common/auth';
 import { findVoucher } from './lib/actions/find-voucher';
 import { createCustomer } from './lib/actions/create-customer';
 import { createAVoucher } from './lib/actions/create-a-voucher';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const voucheryIo = createPiece({
+export const voucheryIo = createConnector({
   displayName: 'Vouchery',
   auth: voucheryIoAuth,
   minimumSupportedRelease: '0.36.1',

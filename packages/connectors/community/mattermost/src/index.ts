@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendMessage } from './lib/actions/send-message';
 
 const markdownDescription = `
@@ -31,7 +31,7 @@ export const mattermostAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const mattermost = createPiece({
+export const mattermost = createConnector({
   displayName: 'Mattermost',
   description: 'Open-source, self-hosted Slack alternative',
 

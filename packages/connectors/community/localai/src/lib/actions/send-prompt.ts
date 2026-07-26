@@ -2,13 +2,13 @@ import {
   AppConnectionValueForAuthProperty,
   createAction,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import OpenAI from 'openai';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { localaiAuth } from '../..';
 
 const billingIssueMessage = `Error Occurred: 429 \n

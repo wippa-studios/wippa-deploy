@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createCase } from './lib/actions/create-case';
 import { createCaseStage } from './lib/actions/create-case-stage';
 import { createCompany } from './lib/actions/create-company';
@@ -71,7 +71,7 @@ MyCase uses OAuth 2.0 Authorization Code Grant flow with the following endpoints
 For detailed API documentation, visit: [https://mycaseapi.stoplight.io/docs/mycase-api-documentation/k5xpc4jyhkom7-getting-started](https://mycaseapi.stoplight.io/docs/mycase-api-documentation/k5xpc4jyhkom7-getting-started)
 `;
 
-export const mycasePiece = createPiece({
+export const mycasePiece = createConnector({
   displayName: 'MyCase',
   description: 'Automate legal case management workflows with MyCase. Create and manage cases, clients, companies, events, tasks, time entries, documents, and more. Get notified when cases, events, people, companies, or leads are added or updated.',
   auth: mycaseAuth,

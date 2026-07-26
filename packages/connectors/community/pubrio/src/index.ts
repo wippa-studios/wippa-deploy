@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { searchCompanies } from './lib/actions/search-companies';
 import { lookupCompany } from './lib/actions/lookup-company';
 import { enrichCompany } from './lib/actions/enrich-company';
@@ -30,7 +30,7 @@ import { pubrioWebhookTrigger } from './lib/triggers/webhook';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { pubrioRequest } from './lib/common';
 
 export const pubrioAuth = PieceAuth.SecretText({
@@ -50,7 +50,7 @@ export const pubrioAuth = PieceAuth.SecretText({
   },
 });
 
-export const pubrio = createPiece({
+export const pubrio = createConnector({
   displayName: 'Pubrio',
   description:
     'Enrich company and people data, monitor changes, and get notified with Pubrio.',

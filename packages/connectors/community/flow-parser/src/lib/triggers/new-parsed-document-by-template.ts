@@ -2,14 +2,14 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { flowParserAuth } from '../common/auth';
 import { templateDropdown } from '../common/props';
 import dayjs from 'dayjs';

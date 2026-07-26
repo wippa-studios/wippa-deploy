@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { createServiceNowClient, servicenowAuth } from '../common/props';
 
 export const deleteAttachmentAction = createAction({

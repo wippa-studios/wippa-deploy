@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { GmailRequests } from './data';
 import { GmailLabel } from './models';
 import { gmailAuth, createGoogleClient, GmailAuthValue } from '../auth';

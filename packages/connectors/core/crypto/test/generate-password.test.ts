@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { generatePassword } from '../src/lib/actions/generate-password';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('generatePassword', () => {
   test('generates password with correct length', async () => {

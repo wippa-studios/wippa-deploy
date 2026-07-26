@@ -1,5 +1,5 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createChatCompletion } from "./lib/actions/create-chat-completion";
 import { createEmbeddings } from "./lib/actions/create-embeddings";
 import { uploadFile } from "./lib/actions/upload-file";
@@ -7,9 +7,9 @@ import { runOcr } from "./lib/actions/run-ocr";
 import { listModels } from "./lib/actions/list-models";
 import { mistralAuth } from "./lib/common/auth";
 import { mistralRequest } from "./lib/common/request";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 
-export const mistralAi = createPiece({
+export const mistralAi = createConnector({
   displayName: "Mistral AI",
   description: "Mistral AI provides state-of-the-art open-weight and hosted language models for text generation, embeddings, and reasoning tasks.",
   auth: mistralAuth,

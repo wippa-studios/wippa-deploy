@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { clockodoCommon, makeClient } from '../../common';
 import { clockodoAuth } from '../../auth';
 

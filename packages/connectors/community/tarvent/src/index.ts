@@ -1,6 +1,6 @@
 
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 import { makeClient } from "./lib/common";
 import { campaignSendFinishedTrigger, contactAddedTrigger, contactBouncedTrigger, contactClickedTrigger, contactGroupUpdatedTrigger, contactNoteAddedTrigger, contactOpenedTrigger, contactRepliedTrigger, contactStatusUpdatedTrigger, contactTagUpdatedTrigger, contactUnsubscribedTrigger, contactUpdatedTrigger, formSubmittedTrigger, pagePerformedTrigger, surveySubmittedTrigger, transactionCreatedTrigger, transactionSentTrigger } from "./lib/triggers";
 import { updateContactTags, sendCampaign, createAudienceGroup, updateContactGroup, createContactNote, updateContactJourney, updateContactStatus, generateCustomEvent, updateJourneyStatus, createSuppressionFilter, getAudiences, getAudienceGroups, getCampaigns, getContact, getCustomEvent, getJourney, createContact, createTransaction } from "./lib/actions";
@@ -15,7 +15,7 @@ To obtain your Tarvent Account ID and API Key, follow these steps:
 4. The **Account ID** is available to copy at the top right
 `;
 
-export const tarvent = createPiece({
+export const tarvent = createConnector({
   displayName: "Tarvent",
   description: "Tarvent is an email marketing, automation, and email API platform that allows to you to send campaigns, manage contacts, automate your marketing, and more.",
   auth: tarventAuth,

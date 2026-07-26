@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { baseUrlv1 } from './lib/common/common';
 import { promptCompletion } from './lib/actions/prompt-completion';
 import { imageGeneration } from './lib/actions/image-generation';
@@ -22,7 +22,7 @@ import { agentDelete } from './lib/actions/agent-delete';
 import { agentUpdate } from './lib/actions/agent-update';
 import { agentGet } from './lib/actions/agent-get';
 import { agentPromptCompletion } from './lib/actions/agent-prompt-completion';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { straicoAuth } from './lib/auth';
 
 const markdownDescription = `
@@ -32,7 +32,7 @@ Follow these instructions to get your Straico API Key:
 2. Once on the website, locate "Connect with Straico API" and click on the copy API Key.
 `;
 
-export const straico = createPiece({
+export const straico = createConnector({
   displayName: 'Straico',
   auth: straicoAuth,
   minimumSupportedRelease: '0.30.0',

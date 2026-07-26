@@ -4,13 +4,13 @@
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@wippa/pieces-common": "workspace:*",
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-common": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@notionhq/client": "2.2.14",
     "@tryfabric/martian": "1.2.4",
     "dayjs": "1.11.9",
     "notion-to-md": "3.1.1",
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "@wippa/core-utils": "workspace:*"
   },
   "devDependencies": {

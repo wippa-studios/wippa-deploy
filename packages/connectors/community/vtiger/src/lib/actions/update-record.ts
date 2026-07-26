@@ -1,11 +1,11 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import {
   DropdownState,
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { vtigerAuth } from '../..';
 import {
   instanceLogin,

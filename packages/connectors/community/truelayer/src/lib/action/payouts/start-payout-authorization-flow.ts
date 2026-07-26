@@ -1,6 +1,6 @@
 
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { trueLayerCommon } from '../../common';
 
 export const startPayoutAuthorizationFlow = createAction({

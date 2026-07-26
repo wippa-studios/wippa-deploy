@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { importInvoice } from './lib/actions/import-invoice';
 import { tidelyAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { create } from 'domain';
 import { createAPlan } from './lib/actions/create-a-plan';
 
-export const tidely = createPiece({
+export const tidely = createConnector({
   displayName: 'Tidely',
   auth: tidelyAuth,
   minimumSupportedRelease: '0.36.1',

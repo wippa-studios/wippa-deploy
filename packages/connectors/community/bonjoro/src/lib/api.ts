@@ -2,7 +2,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { BonjoroAuthType } from './auth';
 
 export type KeyValuePair = {

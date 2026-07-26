@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { greenhouseAuth } from './lib/auth';
 import { createCandidateAction } from './lib/actions/create-candidate';
 import { createCandidateNoteAction } from './lib/actions/create-candidate-note';
@@ -16,7 +16,7 @@ import { jobUpdatedTrigger } from './lib/triggers/job-updated';
 import { newScheduledInterviewTrigger } from './lib/triggers/new-scheduled-interview';
 import { newScorecardDueTrigger } from './lib/triggers/new-scorecard-due';
 
-export const greenhouse = createPiece({
+export const greenhouse = createConnector({
   displayName: 'Greenhouse',
   description: 'Recruiting and onboarding software',
   auth: greenhouseAuth,

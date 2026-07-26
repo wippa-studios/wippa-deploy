@@ -1,5 +1,5 @@
 import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
-import { TriggerStrategy } from '@wippa/pieces-framework'
+import { TriggerStrategy } from '@wippa/connectors-framework'
 import { ApEnvironment, EngineResponseStatus } from '@wippa/shared'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
@@ -57,7 +57,7 @@ const mockLog = {
 const BASE_PARAMS = {
     flowId: 'flow-1',
     flowVersionId: 'fv-1',
-    pieceName: '@wippa/piece-test',
+    connectorName: '@wippa/connector-test',
     projectId: 'proj-1',
     simulate: false,
 }
@@ -110,7 +110,7 @@ describe('flowTriggerSideEffect', () => {
 
             await flowTriggerSideEffect(mockLog).disable({
                 ...BASE_PARAMS,
-                pieceTrigger: makeManualTrigger(),
+                connectorTrigger: makeManualTrigger(),
                 ignoreError: false,
             })
 
@@ -123,7 +123,7 @@ describe('flowTriggerSideEffect', () => {
             await expect(
                 flowTriggerSideEffect(mockLog).disable({
                     ...BASE_PARAMS,
-                    pieceTrigger: makeManualTrigger(),
+                    connectorTrigger: makeManualTrigger(),
                     ignoreError: false,
                 }),
             ).rejects.toThrow(ActivepiecesError)
@@ -134,7 +134,7 @@ describe('flowTriggerSideEffect', () => {
 
             await flowTriggerSideEffect(mockLog).disable({
                 ...BASE_PARAMS,
-                pieceTrigger: makeManualTrigger(),
+                connectorTrigger: makeManualTrigger(),
                 ignoreError: true,
             })
         })
@@ -150,7 +150,7 @@ describe('flowTriggerSideEffect', () => {
             await expect(
                 flowTriggerSideEffect(mockLog).disable({
                     ...BASE_PARAMS,
-                    pieceTrigger: makeManualTrigger(),
+                    connectorTrigger: makeManualTrigger(),
                     ignoreError: false,
                 }),
             ).rejects.toThrow(ActivepiecesError)
@@ -166,7 +166,7 @@ describe('flowTriggerSideEffect', () => {
 
             await flowTriggerSideEffect(mockLog).disable({
                 ...BASE_PARAMS,
-                pieceTrigger: makeManualTrigger(),
+                connectorTrigger: makeManualTrigger(),
                 ignoreError: true,
             })
 
@@ -181,7 +181,7 @@ describe('flowTriggerSideEffect', () => {
 
             await flowTriggerSideEffect(mockLog).disable({
                 ...BASE_PARAMS,
-                pieceTrigger: makePollingTrigger(),
+                connectorTrigger: makePollingTrigger(),
                 ignoreError: true,
             })
 
@@ -195,7 +195,7 @@ describe('flowTriggerSideEffect', () => {
 
             await flowTriggerSideEffect(mockLog).disable({
                 ...BASE_PARAMS,
-                pieceTrigger: {
+                connectorTrigger: {
                     ...makePollingTrigger(),
                     type: TriggerStrategy.APP_WEBHOOK,
                 },

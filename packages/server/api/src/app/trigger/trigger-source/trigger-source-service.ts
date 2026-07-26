@@ -22,7 +22,7 @@ export const triggerSourceService = (log: FastifyBaseLogger) => {
                 project: { id: projectId },
                 simulate,
             }, '[triggerSourceService#enable] Enabling trigger source')
-            const pieceTrigger = await triggerUtils(log).getPieceTriggerOrThrow({ flowVersion, projectId })
+            const connectorTrigger = await triggerUtils(log).getPieceTriggerOrThrow({ flowVersion, projectId })
             const existingTriggerSource = await triggerSourceRepo().findOne({
                 where: {
                     flowId: flowVersion.flowId,
@@ -42,13 +42,13 @@ export const triggerSourceService = (log: FastifyBaseLogger) => {
             log.info('[triggerSourceService#enable] Soft deleted trigger source')
             const triggerSourceWithouSchedule: Omit<TriggerSource, 'created' | 'updated' | 'schedule'> = {
                 id: apId(),
-                type: pieceTrigger.type,
+                type: connectorTrigger.type,
                 projectId,
                 flowId: flowVersion.flowId,
-                triggerName: pieceTrigger.name,
+                triggerName: connectorTrigger.name,
                 flowVersionId: flowVersion.id,
-                pieceName: flowVersion.trigger.settings.pieceName,
-                pieceVersion: flowVersion.trigger.settings.pieceVersion,
+                connectorName: flowVersion.trigger.settings.connectorName,
+                connectorVersion: flowVersion.trigger.settings.connectorVersion,
                 simulate,
             }
             const triggerSource = await triggerSourceRepo().save(triggerSourceWithouSchedule)
@@ -56,8 +56,8 @@ export const triggerSourceService = (log: FastifyBaseLogger) => {
                 flowId: flowVersion.flowId,
                 flowVersionId: flowVersion.id,
                 projectId,
-                pieceName: flowVersion.trigger.settings.pieceName,
-                pieceTrigger,
+                connectorName: flowVersion.trigger.settings.connectorName,
+                connectorTrigger,
                 simulate,
             })
 
@@ -164,14 +164,14 @@ export const triggerSourceService = (log: FastifyBaseLogger) => {
                 return
             }
             const flowVersion = await flowVersionService(log).getOneOrThrow(triggerSource.flowVersionId)
-            const pieceTrigger = await triggerUtils(log).getPieceTrigger({ flowVersion, projectId })
-            if (!isNil(pieceTrigger)) {
+            const connectorTrigger = await triggerUtils(log).getPieceTrigger({ flowVersion, projectId })
+            if (!isNil(connectorTrigger)) {
                 await flowTriggerSideEffect(log).disable({
                     flowId: triggerSource.flowId,
                     flowVersionId: triggerSource.flowVersionId,
                     projectId,
-                    pieceName: triggerSource.pieceName,
-                    pieceTrigger,
+                    connectorName: triggerSource.connectorName,
+                    connectorTrigger,
                     simulate,
                     ignoreError: params.ignoreError,
                 })

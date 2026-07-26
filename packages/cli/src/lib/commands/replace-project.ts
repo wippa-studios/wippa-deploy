@@ -3,7 +3,7 @@ import {
     FlowState,
     flowStructureUtil,
     Folder,
-    PieceType,
+    ConnectorType,
     PROJECT_REPLACE_SCHEMA_VERSION,
     ProjectReplaceRequest,
     ProjectReplaceResponse,
@@ -98,7 +98,7 @@ async function fetchSourceState(config: ReplaceConfig): Promise<SourceState> {
         listAll<FlowState>(client, '/api/v1/flows', { projectId: config.sourceProjectId }),
         listAll<Folder>(client, '/api/v1/folders', { projectId: config.sourceProjectId }),
         listAll<TableState & { projectId: string }>(client, '/api/v1/tables', { projectId: config.sourceProjectId }),
-        listAll<{ externalId: string; pieceName: string; displayName: string }>(client, '/api/v1/app-connections', { projectId: config.sourceProjectId }),
+        listAll<{ externalId: string; connectorName: string; displayName: string }>(client, '/api/v1/app-connections', { projectId: config.sourceProjectId }),
     ]);
 
     const tableStates: TableState[] = await Promise.all(
@@ -134,7 +134,7 @@ async function fetchSourceState(config: ReplaceConfig): Promise<SourceState> {
 
     const connections: ConnectionState[] = connectionsPage.map((c) => ({
         externalId: c.externalId,
-        pieceName: c.pieceName,
+        connectorName: c.connectorName,
         displayName: c.displayName,
     }));
 
@@ -175,16 +175,16 @@ function collectRequiredPieces(flows: FlowState[]): RequiredPiece[] {
     const map = new Map<string, RequiredPiece>();
     for (const flow of flows) {
         for (const step of flowStructureUtil.getAllSteps(flow.version.trigger)) {
-            const settings = step.settings as { pieceName?: string; pieceVersion?: string; pieceType?: PieceType } | undefined;
-            const name = settings?.pieceName;
-            const version = settings?.pieceVersion;
+            const settings = step.settings as { connectorName?: string; connectorVersion?: string; pieceType?: ConnectorType } | undefined;
+            const name = settings?.connectorName;
+            const version = settings?.connectorVersion;
             if (!name || !version) continue;
             const key = `${name}@${version}`;
             if (map.has(key)) continue;
             map.set(key, {
                 name,
                 version,
-                pieceType: settings?.pieceType ?? PieceType.OFFICIAL,
+                pieceType: settings?.pieceType ?? ConnectorType.OFFICIAL,
             });
         }
     }
@@ -280,7 +280,7 @@ function renderApplied(body: ProjectReplaceResponse): void {
     if (body.connectionsAwaitingAuthorization.length > 0) {
         console.log(chalk.yellow(`\n${body.connectionsAwaitingAuthorization.length} connection(s) need authorization on destination before flows can run:`));
         for (const c of body.connectionsAwaitingAuthorization) {
-            console.log(`  - ${c.displayName} (${c.pieceName}) [externalId=${c.externalId}]`);
+            console.log(`  - ${c.displayName} (${c.connectorName}) [externalId=${c.externalId}]`);
         }
     }
 }
@@ -298,9 +298,9 @@ function renderPreflightErrors(body: unknown): void {
 function renderInstallFailures(body: unknown): void {
     console.error(chalk.red('Piece install failed on destination. No flows, tables, folders, or connections were touched.'));
     if (typeof body === 'object' && body !== null && 'failures' in body) {
-        const failures = (body as { failures: Array<{ pieceName: string; version: string; pieceType: string; message: string }> }).failures;
+        const failures = (body as { failures: Array<{ connectorName: string; version: string; pieceType: string; message: string }> }).failures;
         for (const f of failures) {
-            console.error(`  - ${f.pieceName}@${f.version} (${f.pieceType}): ${f.message}`);
+            console.error(`  - ${f.connectorName}@${f.version} (${f.pieceType}): ${f.message}`);
         }
     }
 }

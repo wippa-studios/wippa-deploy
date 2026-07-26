@@ -1,9 +1,9 @@
-import { createTrigger } from '@wippa/pieces-framework';
-import { TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger } from '@wippa/connectors-framework';
+import { TriggerStrategy } from '@wippa/connectors-framework';
 import { stripeCommon } from '../common';
 import { stripeAuth } from '../..';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { isEmpty } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { isEmpty } from '@wippa/connectors-framework';
 
 export const stripeNewSubscription = createTrigger({
   auth: stripeAuth,

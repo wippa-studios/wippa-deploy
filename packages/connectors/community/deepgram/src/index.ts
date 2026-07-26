@@ -1,14 +1,14 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { deepgramAuth } from './common/auth';
 import { createSummaryAction } from './actions/create-summary';
 import { createTranscriptionCallbackAction } from './actions/create-transcription';
 import { listProjectsAction } from './actions/list-projects';
 import { textToSpeechAction } from './actions/text-to-speech';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './common/constants';
 
-export const deepgramPiece = createPiece({
+export const deepgramPiece = createConnector({
   displayName: 'Deepgram',
   logoUrl: 'https://cdn.activepieces.com/pieces/deepgram.png',
   description:

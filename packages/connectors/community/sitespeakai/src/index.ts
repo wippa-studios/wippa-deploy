@@ -1,13 +1,13 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { sendQuery } from "./lib/actions/send-query";
 import { createFinetune } from "./lib/actions/create-finetune";
 import { deleteFinetune } from "./lib/actions/delete-finetune";
 import { newLead } from "./lib/triggers/new-lead";
 import { SiteSpeakAuth } from "./lib/common/auth";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const sitespeakai = createPiece({
+export const sitespeakai = createConnector({
   displayName: "SiteSpeakAI",
   description: "Integrate with Sitespeakai to leverage AI-powered chatbots and enhance user interactions on your website.",
   auth: SiteSpeakAuth,

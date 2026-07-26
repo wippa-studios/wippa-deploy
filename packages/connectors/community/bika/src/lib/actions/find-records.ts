@@ -2,7 +2,7 @@ import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { BikaCommon, makeClient } from '../common';
 import { BikaAuth } from '../auth';
 import { prepareQuery } from '../common/client';

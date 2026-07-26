@@ -1,5 +1,5 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { closeAuth } from '../auth';
 import { CloseCRMLeadWebhookPayload } from '../common/types';
 import { closeApiCall } from '../common/client';

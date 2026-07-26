@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getRunOutputAction } from './lib/actions/get-run-outputs';
 import { getRunStatusAction } from './lib/actions/get-run-status';
 import { listWorkflowsAction } from './lib/actions/list-workflows';
@@ -9,7 +9,7 @@ import { runCompletedTrigger } from './lib/triggers/run-completed';
 import { runFailedTrigger } from './lib/triggers/run-failed';
 import { comfyIcuAuth } from './lib/auth';
 
-export const comfyicu = createPiece({
+export const comfyicu = createConnector({
   displayName: 'Comfy.ICU',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   auth: comfyIcuAuth,

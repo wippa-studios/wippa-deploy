@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { makePhoneCall } from "./lib/actions/make-phone-call";
 import { phoneCallEnded } from "./lib/triggers/phone-call-ended";
 import { addLead } from "./lib/actions/add-lead";
 import { sendSms } from "./lib/actions/send-sms";
 import { inboundCall } from "./lib/triggers/inbound-call";
 import { getAssistants } from "./lib/triggers/get-assistants";
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { campaignControl } from "./lib/actions/campaign-control";
 import { deleteLead } from "./lib/actions/delete-lead";
 
@@ -46,7 +46,7 @@ export const autocallsAuth =  PieceAuth.SecretText({
     }
   })
 
-export const autocalls = createPiece({
+export const autocalls = createConnector({
   displayName: "Autocalls",
   auth:autocallsAuth,
   minimumSupportedRelease: '0.36.1',

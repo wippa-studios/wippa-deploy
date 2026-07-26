@@ -2,16 +2,16 @@ import { tryParseFriendlyPieceError } from '@wippa/core-utils'
 import { FlowAction, FlowRunStatus } from '@wippa/shared'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { flowExecutor } from '../../src/lib/handler/flow-executor'
-import { pieceExecutor } from '../../src/lib/handler/piece-executor'
+import { connectorExecutor } from '../../src/lib/handler/piece-executor'
 import { buildPieceAction, generateMockEngineConstants } from './test-helper'
 
-describe('pieceExecutor', () => {
+describe('connectorExecutor', () => {
 
     it('should execute data mapper successfully', async () => {
-        const result = await pieceExecutor.handle({
+        const result = await connectorExecutor.handle({
             action: buildPieceAction({
                 name: 'data_mapper',
-                pieceName: '@wippa/piece-data-mapper',
+                connectorName: '@wippa/connector-data-mapper',
                 actionName: 'advanced_mapping',
                 input: {
                     mapping: {
@@ -27,10 +27,10 @@ describe('pieceExecutor', () => {
     })
 
     it('should execute fail gracefully when pieces fail', async () => {
-        const result = await pieceExecutor.handle({
+        const result = await connectorExecutor.handle({
             action: buildPieceAction({
                 name: 'send_http',
-                pieceName: '@wippa/piece-http',
+                connectorName: '@wippa/connector-http',
                 actionName: 'send_request',
                 input: {
                     'url': 'https://cloud.activepieces.com/api/v1/asd',
@@ -73,7 +73,7 @@ describe('pieceExecutor', () => {
                 name: 'data_mapper',
                 input: {},
                 skip: true,
-                pieceName: '@wippa/piece-data-mapper',
+                connectorName: '@wippa/connector-data-mapper',
                 actionName: 'advanced_mapping',
             }), executionState: FlowExecutorContext.empty(), constants: generateMockEngineConstants(),
         })
@@ -92,13 +92,13 @@ describe('pieceExecutor', () => {
                     },
                 },
                 skip: false,
-                pieceName: '@wippa/piece-data-mapper',
+                connectorName: '@wippa/connector-data-mapper',
                 actionName: 'advanced_mapping',
             }),
             nextAction: {
                 ...buildPieceAction({
                     name: 'send_http',
-                    pieceName: '@wippa/piece-http',
+                    connectorName: '@wippa/connector-http',
                     actionName: 'send_request',
                     input: {},
                     skip: true,

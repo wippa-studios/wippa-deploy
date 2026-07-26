@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { chargekeepCommon } from '../common/common';
 import { chargekeepAuth } from '../auth';
 

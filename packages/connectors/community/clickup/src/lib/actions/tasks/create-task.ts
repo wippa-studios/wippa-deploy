@@ -2,9 +2,9 @@ import {
   OAuth2PropertyValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
-import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/connectors-common';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 import {
   clickupCommon,

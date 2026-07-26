@@ -1,11 +1,11 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { foreplayCoApiCall } from '../common';
 import {
   HttpMethod,
   Polling,
   DedupeStrategy,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { newAdInSpyder as newAdInSpyderProperties } from '../properties';
 import { newAdInSpyderSchema } from '../schemas';
 import { foreplayCoAuth } from '../..';

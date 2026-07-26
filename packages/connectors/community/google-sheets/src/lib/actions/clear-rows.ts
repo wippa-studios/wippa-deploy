@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { sheets as googleSheets } from '@googleapis/sheets';
 import { areSheetIdsValid, createGoogleClient, googleSheetsAuth } from '../common/common';
 import { commonProps } from '../common/props';

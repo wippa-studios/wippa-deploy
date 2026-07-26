@@ -4,7 +4,7 @@ import { z } from 'zod'
 
 export type McpId = ApId
 
-export const MCP_TRIGGER_PIECE_NAME = '@wippa/piece-mcp'
+export const MCP_TRIGGER_PIECE_NAME = '@wippa/connector-mcp'
 
 export enum McpServerType {
     PLATFORM = 'PLATFORM',

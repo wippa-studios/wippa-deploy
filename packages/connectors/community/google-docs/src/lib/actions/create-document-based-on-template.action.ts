@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { googleDocsAuth, createGoogleClient } from '../auth';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { docs as googleDocs } from '@googleapis/docs';
 import { editTemplateActionOutputSchema } from '../output-schemas';
 

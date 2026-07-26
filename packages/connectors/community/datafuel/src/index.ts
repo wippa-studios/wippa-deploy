@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { dataFuelAuth } from './lib/common/auth';
 import { crawlWebsiteAction } from './lib/actions/crawl-website';
 import { scrapeWebsiteAction } from './lib/actions/scrape-website';
 import { getScrapeAction } from './lib/actions/get-scrape-result';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/constants';
 
-export const datafuel = createPiece({
+export const datafuel = createConnector({
 	displayName: 'DataFuel',
 	auth: dataFuelAuth,
 	minimumSupportedRelease: '0.36.1',

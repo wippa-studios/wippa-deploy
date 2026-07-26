@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createOrUpdateContact } from './lib/actions/create-or-update-contact';
 import { findListByName } from './lib/actions/find-list-by-name';
 import { sendDynamicTemplate } from './lib/actions/send-dynamic-template';
@@ -9,7 +9,7 @@ import { getApiKey, getBaseUrl, sendgridAuth, SendgridAuthValue } from './lib/co
 
 export { sendgridAuth, SendgridAuthValue } from './lib/common';
 
-export const sendgrid = createPiece({
+export const sendgrid = createConnector({
   displayName: 'SendGrid',
   description:
     'Email delivery service for sending transactional and marketing emails',

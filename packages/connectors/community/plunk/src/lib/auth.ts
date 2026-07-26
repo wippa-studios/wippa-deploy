@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
-import { PieceAuth, Property } from "@wippa/pieces-framework";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
+import { PieceAuth, Property } from "@wippa/connectors-framework";
 
 export const PLUNK_BASE_URL = 'https://next-api.useplunk.com';
 

@@ -1,6 +1,6 @@
 import { instabaseAuth } from '../auth';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 
 

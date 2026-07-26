@@ -1,6 +1,6 @@
 // Trigger: Updated Issue
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/connectors-common';
 import { youtrackAuth } from '../../';
 import { ISSUE_FIELDS, flattenObject, youtrackApiCall } from '../common';
 

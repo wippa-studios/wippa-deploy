@@ -1,6 +1,6 @@
 import { URL } from 'node:url'
 import { FlowId, isNil } from '@wippa/core-utils'
-import { Store, StoreScope } from '@wippa/pieces-framework'
+import { Store, StoreScope } from '@wippa/connectors-framework'
 import { DeleteStoreEntryRequest, ExecutionError, FetchError, PutStoreEntryRequest, StorageError, StorageInvalidKeyError, StorageLimitError, STORE_KEY_MAX_LENGTH, STORE_VALUE_MAX_SIZE, StoreEntry } from '@wippa/shared'
 import { utils } from '../utils'
 

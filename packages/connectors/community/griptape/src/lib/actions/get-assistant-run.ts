@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { griptapeAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import { assistantIdDropdown, assistantRunsDropdown } from '../common/props';

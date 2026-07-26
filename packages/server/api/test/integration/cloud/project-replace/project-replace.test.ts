@@ -2,7 +2,7 @@ import { memoryLock } from '@wippa/server-utils'
 import {
     FlowState,
     Folder,
-    PieceType,
+    ConnectorType,
     PROJECT_REPLACE_SCHEMA_VERSION,
     ProjectReplaceErrorKind,
     ProjectReplaceRequest,
@@ -20,15 +20,15 @@ import {
 import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/test-setup'
 
 vi.mock('../../../../src/app/pieces/piece-install-service', () => ({
-    pieceInstallService: () => ({
-        installPiece: (_platformId: string, params: { pieceName: string, pieceVersion: string }) => {
-            if (params.pieceName.includes('definitely-does-not-exist-on-npm')) {
+    connectorInstallService: () => ({
+        installConnector: (_platformId: string, params: { connectorName: string, connectorVersion: string }) => {
+            if (params.connectorName.includes('definitely-does-not-exist-on-npm')) {
                 return Promise.reject(new Error('mocked: npm extract failed'))
             }
             return Promise.resolve({
                 id: 'mocked-piece-id',
-                name: params.pieceName,
-                version: params.pieceVersion,
+                name: params.connectorName,
+                version: params.connectorVersion,
             })
         },
     }),
@@ -125,9 +125,9 @@ describe('Project Replace API', () => {
                 body: {
                     ...emptyReplaceRequest(),
                     requiredPieces: [{
-                        name: '@wippa/piece-definitely-does-not-exist-on-npm',
+                        name: '@wippa/connector-definitely-does-not-exist-on-npm',
                         version: '1.2.3',
-                        pieceType: PieceType.OFFICIAL,
+                        pieceType: ConnectorType.OFFICIAL,
                     }],
                 },
             })
@@ -136,9 +136,9 @@ describe('Project Replace API', () => {
             const body = response.json()
             expect(body.failures).toHaveLength(1)
             expect(body.failures[0]).toMatchObject({
-                pieceName: '@wippa/piece-definitely-does-not-exist-on-npm',
+                connectorName: '@wippa/connector-definitely-does-not-exist-on-npm',
                 version: '1.2.3',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
             })
             expect(typeof body.failures[0].message).toBe('string')
         })
@@ -153,7 +153,7 @@ describe('Project Replace API', () => {
                     ...emptyReplaceRequest(),
                     connections: [{
                         externalId: 'slack_main',
-                        pieceName: '@wippa/piece-slack',
+                        connectorName: '@wippa/connector-slack',
                         displayName: 'Slack Main',
                     }],
                 },
@@ -165,20 +165,20 @@ describe('Project Replace API', () => {
             expect(body.connectionsAwaitingAuthorization).toEqual([
                 expect.objectContaining({
                     externalId: 'slack_main',
-                    pieceName: '@wippa/piece-slack',
+                    connectorName: '@wippa/connector-slack',
                     displayName: 'Slack Main',
                 }),
             ])
         })
 
-        it('returns 422 CONNECTION_PIECE_MISMATCH when dest connection exists with a different pieceName', async () => {
+        it('returns 422 CONNECTION_PIECE_MISMATCH when dest connection exists with a different connectorName', async () => {
             const { project, platform, apiKey, ownerId } = await setupCtx({ environmentsEnabled: true })
 
             const connection = createMockConnection({
                 platformId: platform.id,
                 projectIds: [project.id],
                 externalId: 'shared_conn',
-                pieceName: '@wippa/piece-discord',
+                connectorName: '@wippa/connector-discord',
             }, ownerId)
             await db.save('app_connection', connection)
 
@@ -189,7 +189,7 @@ describe('Project Replace API', () => {
                     ...emptyReplaceRequest(),
                     connections: [{
                         externalId: 'shared_conn',
-                        pieceName: '@wippa/piece-slack',
+                        connectorName: '@wippa/connector-slack',
                         displayName: 'Slack Main',
                     }],
                 },
@@ -201,8 +201,8 @@ describe('Project Replace API', () => {
             expect(mismatch).toMatchObject({
                 kind: ProjectReplaceErrorKind.CONNECTION_PIECE_MISMATCH,
                 externalId: 'shared_conn',
-                expectedPieceName: '@wippa/piece-slack',
-                foundPieceName: '@wippa/piece-discord',
+                expectedPieceName: '@wippa/connector-slack',
+                foundPieceName: '@wippa/connector-discord',
             })
         })
 
@@ -341,7 +341,7 @@ describe('Project Replace API', () => {
                     requiredPieces: [{
                         name: 'mocked-piece-that-installs-fine',
                         version: '1.2.3',
-                        pieceType: PieceType.CUSTOM,
+                        pieceType: ConnectorType.CUSTOM,
                     }],
                 },
             })
@@ -352,7 +352,7 @@ describe('Project Replace API', () => {
                 expect.objectContaining({
                     name: 'mocked-piece-that-installs-fine',
                     version: '1.2.3',
-                    pieceType: PieceType.CUSTOM,
+                    pieceType: ConnectorType.CUSTOM,
                 }),
             ])
         })

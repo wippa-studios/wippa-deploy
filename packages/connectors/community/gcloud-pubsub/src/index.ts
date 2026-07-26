@@ -1,9 +1,9 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { publishToTopic } from './lib/action/publish-to-topic';
 import { common } from './lib/common';
 import { newMessageInTopic } from './lib/trigger/new-message-in-topic';
@@ -49,7 +49,7 @@ export const googlePubsubAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const gcloudPubsub = createPiece({
+export const gcloudPubsub = createConnector({
   displayName: 'GCloud Pub/Sub',
   description: "Google Cloud's event streaming service",
 

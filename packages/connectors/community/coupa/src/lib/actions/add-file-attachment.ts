@@ -2,7 +2,7 @@ import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import FormData from 'form-data';
 import { coupaAuth } from '../auth';
 import { CoupaClient } from '../common/client';

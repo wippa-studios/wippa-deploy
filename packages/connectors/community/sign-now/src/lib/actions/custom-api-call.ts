@@ -1,4 +1,4 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { signNowAuth, getSignNowBearerToken } from '../common/auth';
 
 export const customApiCallAction = createCustomApiCallAction({

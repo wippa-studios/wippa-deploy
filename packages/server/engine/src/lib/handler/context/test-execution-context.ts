@@ -1,5 +1,5 @@
 import { isNil, spreadIfDefined } from '@wippa/core-utils'
-import { LATEST_CONTEXT_VERSION } from '@wippa/pieces-framework'
+import { LATEST_CONTEXT_VERSION } from '@wippa/connectors-framework'
 import { FlowActionType, flowStructureUtil, FlowTriggerType, FlowVersion, GenericStepOutput, LoopStepOutput, RouterStepOutput, StepOutputStatus } from '@wippa/shared'
 import { createPropsResolver } from '../../variables/props-resolver'
 import { EngineConstants } from './engine-constants'

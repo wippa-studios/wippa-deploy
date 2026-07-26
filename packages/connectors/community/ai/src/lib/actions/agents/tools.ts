@@ -2,14 +2,14 @@ import { dynamicTool, embed, embedMany, EmbeddingModel, LanguageModel, Tool } fr
 import z from "zod";
 import { agentUtils } from "./utils";
 import { agentOutputBuilder } from "./agent-output-builder";
-import { isNil } from '@wippa/pieces-framework';
-import { AgentToolType } from '@wippa/pieces-framework';
-import { AgentKnowledgeBaseTool, AgentMcpTool, AgentOutputField, AgentTaskStatus, AgentTool, buildAuthHeaders, isString, KnowledgeBaseSourceType, McpProtocol, mcpToolNameUtils, TASK_COMPLETION_TOOL_NAME } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
+import { AgentToolType } from '@wippa/connectors-framework';
+import { AgentKnowledgeBaseTool, AgentMcpTool, AgentOutputField, AgentTaskStatus, AgentTool, buildAuthHeaders, isString, KnowledgeBaseSourceType, McpProtocol, mcpToolNameUtils, TASK_COMPLETION_TOOL_NAME } from '@wippa/connectors-framework';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js'
-import { ActionContext } from "@wippa/pieces-framework";
+import { ActionContext } from "@wippa/connectors-framework";
 import { ProviderOptions } from "@ai-sdk/provider-utils";
 import { experimental_createMCPClient as createMCPClient, MCPClient, MCPTransport } from '@ai-sdk/mcp';
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
 
 function createTransportConfig(
     protocol: McpProtocol,

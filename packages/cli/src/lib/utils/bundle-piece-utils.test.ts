@@ -4,7 +4,7 @@ import { join } from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
 import { bundlePieceUtils } from './bundle-piece-utils'
 
-describe('bundlePiece — external dependency capture', () => {
+describe('bundleConnector — external dependency capture', () => {
     let root: string | undefined
 
     afterEach(() => {
@@ -29,7 +29,7 @@ describe('bundlePiece — external dependency capture', () => {
         const distPath = join(piecePath, 'dist')
         mkdirSync(distPath, { recursive: true })
 
-        const result = await bundlePieceUtils.bundlePiece({ piecePath, distPath, repoRoot: root })
+        const result = await bundlePieceUtils.bundleConnector({ piecePath, distPath, repoRoot: root })
 
         expect(result.external).toContain('better-sqlite3')
         expect(result.inlined).toContain('fake-sdk')
@@ -53,7 +53,7 @@ describe('bundlePiece — external dependency capture', () => {
         const distPath = join(piecePath, 'dist')
         mkdirSync(distPath, { recursive: true })
 
-        const result = await bundlePieceUtils.bundlePiece({ piecePath, distPath, repoRoot: root })
+        const result = await bundlePieceUtils.bundleConnector({ piecePath, distPath, repoRoot: root })
 
         expect(result.external).toContain('tiktoken')
         expect(result.external).toContain('sharp')
@@ -76,7 +76,7 @@ describe('bundlePiece — external dependency capture', () => {
         const distPath = join(piecePath, 'dist')
         mkdirSync(distPath, { recursive: true })
 
-        const result = await bundlePieceUtils.bundlePiece({ piecePath, distPath, repoRoot: root })
+        const result = await bundlePieceUtils.bundleConnector({ piecePath, distPath, repoRoot: root })
 
         expect(result.external).toContain('esm-dep')
         expect(result.inlined).not.toContain('esm-dep')

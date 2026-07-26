@@ -1,4 +1,4 @@
-import { createAction } from "@wippa/pieces-framework";
+import { createAction } from "@wippa/connectors-framework";
 import { areSheetIdsValid, googleSheetsAuth, googleSheetsCommon, mapRowsToHeaderNames } from "../common/common";
 import { commonProps, isFirstRowHeaderProp } from "../common/props";
 import { getManyRowsActionOutputSchema } from '../output-schemas';

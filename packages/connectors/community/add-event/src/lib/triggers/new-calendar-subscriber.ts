@@ -2,13 +2,13 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   StaticPropsValue,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { addEventAuth } from '../auth';
 import { addEventApi } from '../common/client';
 import { addEventProps } from '../common/props';

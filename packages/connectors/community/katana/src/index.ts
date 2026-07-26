@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { katanaAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/constants';
 import { createCustomer } from './lib/actions/create-customer';
 import { createSalesOrder } from './lib/actions/create-sales-order';
 import { findCustomer } from './lib/actions/find-customer';
 
-export const katana = createPiece({
+export const katana = createConnector({
   displayName: 'Katana',
   auth: katanaAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,5 +1,5 @@
 import { ApId, BaseModel } from '@wippa/core-utils'
-import { PieceMetadataModel } from '@wippa/pieces-framework'
+import { PieceMetadataModel } from '@wippa/connectors-framework'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

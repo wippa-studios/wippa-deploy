@@ -1,6 +1,6 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { vidnozClient } from "./lib/common/auth";
 import { generateVideoWithAvatar } from "./lib/actions/generate-video-with-avatar";
 import { generateVideoWithTemplate } from "./lib/actions/generate-video-with-template";
@@ -38,7 +38,7 @@ export const vidnozAuth = PieceAuth.SecretText({
   },
 });
 
-export const vidnoz = createPiece({
+export const vidnoz = createConnector({
   displayName: "Vidnoz",
   description: "AI video generation platform",
   auth: vidnozAuth,

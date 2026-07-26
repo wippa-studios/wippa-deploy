@@ -2,9 +2,9 @@ import {
     createTrigger,
     Property,
     TriggerStrategy,
-  } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
-import { McpProperty, McpPropertyType } from '@wippa/pieces-framework';
+  } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
+import { McpProperty, McpPropertyType } from '@wippa/connectors-framework';
 
 
 export const mcpTool = createTrigger({

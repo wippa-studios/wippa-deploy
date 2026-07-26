@@ -1,10 +1,10 @@
-import { PiecePropertyMap } from "./property";
+import { ConnectorPropertyMap } from "./property";
 import { WebhookRenewConfiguration } from "./trigger/trigger";
 import { ErrorHandlingOptionsParam } from "./action/action";
 import { PieceAuthProperty } from "./property/authentication";
 import * as z from "zod/mini";
 import { LocalesEnum } from "@wippa/core-utils";
-import { PackageType, PieceCategory, PieceType, TriggerStrategy, TriggerTestStrategy, WebhookHandshakeConfiguration } from "@wippa/core-piece-types";
+import { PackageType, PieceCategory, ConnectorType, TriggerStrategy, TriggerTestStrategy, WebhookHandshakeConfiguration } from "@wippa/core-connector-types";
 import { ContextVersion } from "./context/versioning";
 import type { OutputSchema } from "./output-schema";
 
@@ -62,7 +62,7 @@ export const ActionBase = z.object({
   name: z.string(),
   displayName: z.string(),
   description: z.string(),
-  props: PiecePropertyMap,
+  props: ConnectorPropertyMap,
   requireAuth: z.boolean(),
   errorHandlingOptions: z.optional(ErrorHandlingOptionsParam),
   outputSchema: z.optional(z.custom<OutputSchema>()),
@@ -74,7 +74,7 @@ export type ActionBase = {
   name: string,
   displayName: string,
   description: string,
-  props: PiecePropertyMap,
+  props: ConnectorPropertyMap,
   requireAuth: boolean;
   errorHandlingOptions?: ErrorHandlingOptionsParam;
   outputSchema?: OutputSchema;
@@ -86,7 +86,7 @@ export const TriggerBase = z.object({
   name: z.string(),
   displayName: z.string(),
   description: z.string(),
-  props: PiecePropertyMap,
+  props: ConnectorPropertyMap,
   errorHandlingOptions: z.optional(ErrorHandlingOptionsParam),
   type: z.enum(TriggerStrategy),
   sampleData: z.unknown(),
@@ -104,13 +104,13 @@ export type TriggerBase = Omit<ActionBase, 'audience'> & {
   testStrategy: TriggerTestStrategy;
 };
 
-export const PieceMetadata = z.object({
+export const ConnectorMetadata = z.object({
   ...PieceBase.shape,
   actions: z.record(z.string(), ActionBase),
   triggers: z.record(z.string(), TriggerBase),
 })
 
-export type PieceMetadata = Omit<PieceBase, 'getContextInfo'> & {
+export type ConnectorMetadata = Omit<PieceBase, 'getContextInfo'> & {
   actions: Record<string, ActionBase>;
   triggers: Record<string, TriggerBase>;
   // this property didn't exist in older version
@@ -124,7 +124,7 @@ export const PieceMetadataSummary = z.object({
   suggestedActions: z.optional(z.array(TriggerBase)),
   suggestedTriggers: z.optional(z.array(ActionBase)),
 })
-export type PieceMetadataSummary = Omit<PieceMetadata, "actions" | "triggers"> & {
+export type PieceMetadataSummary = Omit<ConnectorMetadata, "actions" | "triggers"> & {
   actions: number;
   triggers: number;
   suggestedActions?: ActionBase[];
@@ -134,7 +134,7 @@ export type PieceMetadataSummary = Omit<PieceMetadata, "actions" | "triggers"> &
 
 const PiecePackageMetadata = z.object({
   projectUsage: z.number(),
-  pieceType: z.enum(PieceType),
+  pieceType: z.enum(ConnectorType),
   packageType: z.enum(PackageType),
   platformId: z.optional(z.string()),
   archiveId: z.optional(z.string()),
@@ -142,10 +142,10 @@ const PiecePackageMetadata = z.object({
 type PiecePackageMetadata = z.infer<typeof PiecePackageMetadata>
 
 export const PieceMetadataModel = z.object({
-  ...PieceMetadata.shape,
+  ...ConnectorMetadata.shape,
   ...PiecePackageMetadata.shape,
 })
-export type PieceMetadataModel = PieceMetadata & PiecePackageMetadata
+export type PieceMetadataModel = ConnectorMetadata & PiecePackageMetadata
 
 export const PieceMetadataModelSummary = z.object({
   ...PieceMetadataSummary.shape,

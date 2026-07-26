@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { storageAddtoList } from './lib/actions/store-add-to-list';
 import { storageAppendAction } from './lib/actions/store-append-action';
 import { storageGetAction } from './lib/actions/store-get-action';
@@ -7,7 +7,7 @@ import { storagePutAction } from './lib/actions/store-put-action';
 import { storageRemoveFromList } from './lib/actions/store-remove-from-list';
 import { storageRemoveValue } from './lib/actions/store-remove-value';
 
-export const storage = createPiece({
+export const storage = createConnector({
   displayName: 'Storage',
   description: 'Store or retrieve data from key/value database',
   minimumSupportedRelease: '0.30.0',

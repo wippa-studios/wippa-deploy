@@ -1,4 +1,4 @@
-import { ApFile, createAction, Property } from '@wippa/pieces-framework';
+import { ApFile, createAction, Property } from '@wippa/connectors-framework';
 import mime from 'mime-types';
 import MailComposer from 'nodemailer/lib/mail-composer';
 import Mail, { Attachment } from 'nodemailer/lib/mailer';

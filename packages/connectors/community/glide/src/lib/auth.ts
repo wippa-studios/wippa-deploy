@@ -1,5 +1,5 @@
-import { PieceAuth, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+import { PieceAuth, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 
 import { validateGlideAuth } from './common/client';
 

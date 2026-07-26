@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { cancelBooking } from './lib/actions/cancel-booking';
 import { createBooking } from './lib/actions/create-booking';
 import { createBookingComment } from './lib/actions/create-booking-comment';
@@ -17,7 +17,7 @@ import { newClient } from './lib/triggers/new-client';
 import { newInvoice } from './lib/triggers/new-invoice';
 import { newOffer } from './lib/triggers/new-offer';
 
-export const simplybookme = createPiece({
+export const simplybookme = createConnector({
   displayName: 'SimplyBook.me',
   auth: simplybookAuth,
   minimumSupportedRelease: '0.36.1',

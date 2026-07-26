@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createTask } from './lib/actions/create-task';
 import { getClient } from './lib/actions/get-client';
 import { getInvoices } from './lib/actions/get-invoices';
@@ -33,7 +33,7 @@ export const invoiceninjaAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const invoiceninja = createPiece({
+export const invoiceninja = createConnector({
   displayName: 'Invoice Ninja',
   description: 'Free open-source invoicing tool',
 

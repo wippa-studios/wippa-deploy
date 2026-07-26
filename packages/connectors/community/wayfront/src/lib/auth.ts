@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 import { wayfrontApiClient } from './common';
 
 export const wayfrontAuth = PieceAuth.CustomAuth({

@@ -1,7 +1,7 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { linkupAuth, linkupPost, linkupDelete, accountIdProp } from '../common';
 
 const STORE_KEY = '_linkup_invitation_accepted_webhook_id';

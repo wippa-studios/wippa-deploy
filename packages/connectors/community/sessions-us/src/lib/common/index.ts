@@ -1,11 +1,11 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import {
   AiMetadata,
   createTrigger,
   Property,
   Trigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { sessionAuth } from '../..';
 
 export const baseUrl = 'https://api.app.sessions.us/api';

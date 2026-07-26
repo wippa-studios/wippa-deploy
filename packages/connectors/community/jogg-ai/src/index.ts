@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createAiAvatarPhoto } from './lib/actions/create-ai-avatar-photo';
 import { createAvatarVideo } from './lib/actions/create-avatar-video';
 import { createProductFromUrl } from './lib/actions/create-product-from-url';
@@ -17,7 +17,7 @@ export const joggAiAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const joggAi = createPiece({
+export const joggAi = createConnector({
   displayName: 'JoggAI',
   description:
     'AI-powered content creation platform for generating avatar photos, videos, and product content using advanced AI technology.',

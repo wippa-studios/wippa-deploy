@@ -1,6 +1,6 @@
 import { createHash, randomBytes } from 'crypto'
 import { ActivepiecesError, assertNotNullOrUndefined, deleteProps, ErrorCode, PlatformId } from '@wippa/core-utils'
-import { PropertyType } from '@wippa/pieces-framework'
+import { PropertyType } from '@wippa/connectors-framework'
 import { AppConnection, AppConnectionType, BaseOAuth2ConnectionValue, GetOAuth2AuthorizationUrlResponse, OAuth2GrantType, resolveValueFromProps } from '@wippa/shared'
 import { isAxiosError } from 'axios'
 import { FastifyBaseLogger } from 'fastify'
@@ -60,16 +60,16 @@ export const oauth2Util = (log: FastifyBaseLogger) => ({
     },
     getOAuth2TokenUrl: async ({
         platformId,
-        pieceName,
-        pieceVersion,
+        connectorName,
+        connectorVersion,
         props,
     }: OAuth2TokenUrlParams): Promise<string> => {
-        const pieceMetadata = await pieceMetadataService(log).getOrThrow({
-            name: pieceName,
+        const connectorMetadata = await pieceMetadataService(log).getOrThrow({
+            name: connectorName,
             platformId,
-            version: pieceVersion,
+            version: connectorVersion,
         })
-        const pieceAuth = Array.isArray(pieceMetadata.auth) ? pieceMetadata.auth.find(auth => auth.type === PropertyType.OAUTH2) : pieceMetadata.auth
+        const pieceAuth = Array.isArray(connectorMetadata.auth) ? connectorMetadata.auth.find(auth => auth.type === PropertyType.OAUTH2) : connectorMetadata.auth
         assertNotNullOrUndefined(pieceAuth, 'auth')
         switch (pieceAuth.type) {
             case PropertyType.OAUTH2:
@@ -85,22 +85,22 @@ export const oauth2Util = (log: FastifyBaseLogger) => ({
     },
     buildAuthorizationUrl: async ({
         platformId,
-        pieceName,
-        pieceVersion,
+        connectorName,
+        connectorVersion,
         clientId,
         redirectUrl,
         projectId,
         props,
         scopes,
     }: BuildAuthorizationUrlParams): Promise<GetOAuth2AuthorizationUrlResponse> => {
-        const pieceMetadata = await pieceMetadataService(log).getOrThrow({
-            name: pieceName,
+        const connectorMetadata = await pieceMetadataService(log).getOrThrow({
+            name: connectorName,
             platformId,
-            version: pieceVersion,
+            version: connectorVersion,
         })
-        const pieceAuth = Array.isArray(pieceMetadata.auth)
-            ? pieceMetadata.auth.find(auth => auth.type === PropertyType.OAUTH2)
-            : pieceMetadata.auth
+        const pieceAuth = Array.isArray(connectorMetadata.auth)
+            ? connectorMetadata.auth.find(auth => auth.type === PropertyType.OAUTH2)
+            : connectorMetadata.auth
         assertNotNullOrUndefined(pieceAuth, 'auth')
         if (pieceAuth.type !== PropertyType.OAUTH2) {
             throw new ActivepiecesError({
@@ -182,8 +182,8 @@ export const oauth2Util = (log: FastifyBaseLogger) => ({
 
 type OAuth2TokenUrlParams = {
     platformId: PlatformId
-    pieceName: string
-    pieceVersion?: string
+    connectorName: string
+    connectorVersion?: string
     props?: Record<string, unknown>
 }
 
@@ -210,8 +210,8 @@ const resolveSelectedScopes = (requested: string[] | undefined, allowed: string[
 
 type BuildAuthorizationUrlParams = {
     platformId: PlatformId
-    pieceName: string
-    pieceVersion?: string
+    connectorName: string
+    connectorVersion?: string
     clientId: string
     redirectUrl: string
     props?: Record<string, unknown>

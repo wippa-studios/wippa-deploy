@@ -4,13 +4,13 @@ import {
   HttpRequest,
   createCustomApiCallAction,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createWordPressPage } from './lib/actions/create-page.action';
 import { createWordPressPost } from './lib/actions/create-post.action';
 import { getWordPressPost } from './lib/actions/get-post.action';
@@ -95,7 +95,7 @@ export const wordpressAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const wordpress = createPiece({
+export const wordpress = createConnector({
   displayName: 'WordPress',
   description: 'Open-source website creation software',
 

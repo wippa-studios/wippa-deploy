@@ -78,8 +78,8 @@ export const McpAuthConfig = z.discriminatedUnion('type', [
 export type McpAuthConfig = z.infer<typeof McpAuthConfig>
 
 export const AgentPieceToolMetadata = z.object({
-    pieceName: z.string(),
-    pieceVersion: z.string(),
+    connectorName: z.string(),
+    connectorVersion: z.string(),
     actionName: z.string(),
     predefinedInput: PredefinedInputsStructure.optional(),
 })
@@ -88,7 +88,7 @@ export type AgentPieceToolMetadata = z.infer<typeof AgentPieceToolMetadata>
 export const AgentPieceTool = z.object({
     type: z.literal(AgentToolType.PIECE),
     ...AgentToolBase,
-    pieceMetadata: AgentPieceToolMetadata,
+    connectorMetadata: AgentPieceToolMetadata,
 })
 export type AgentPieceTool = z.infer<typeof AgentPieceTool>
 

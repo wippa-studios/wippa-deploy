@@ -1,9 +1,9 @@
-import { OAuth2PropertyValue, PieceAuth } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, PieceAuth } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const capsuleCrmAuth = PieceAuth.OAuth2({
   description: `

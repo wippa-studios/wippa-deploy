@@ -1,8 +1,8 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { graphqlCommon } from './lib/common/common';
 import { graphqlSubscriptionTrigger } from './lib/triggers/graphql-subscription-trigger';
 
-export const anyHookGraphql = createPiece({
+export const anyHookGraphql = createConnector({
   displayName: 'AnyHook GraphQL',
   description:
     'AnyHook GraphQL enables real-time communication through AnyHook proxy server by allowing you to subscribe and listen to GraphQL subscription events',

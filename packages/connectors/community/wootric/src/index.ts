@@ -1,13 +1,13 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createWootricSurvey } from './lib/actions/create-survey';
-import { OAuth2GrantType } from '@wippa/pieces-framework';
+import { OAuth2GrantType } from '@wippa/connectors-framework';
 import { wootricAuth } from './lib/auth';
 
 export const WOOTRIC_API_URL = 'https://api.wootric.com';
 export const WOOTRIC_IMAGE_URL =
   'https://assets-production.wootric.com/assets/wootric-is-now-inmoment-250x108-85cb4900c62ff4d33200abafee7d63372d410abc5bf0cab90e80a07d4f4e5a31.png';
 
-export const wootric = createPiece({
+export const wootric = createConnector({
   displayName: 'Wootric',
   description: 'Measure and boost customer happiness',
 

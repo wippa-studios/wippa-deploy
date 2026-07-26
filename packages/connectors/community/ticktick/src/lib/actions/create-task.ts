@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { ticktickAuth } from '../auth';
 import { tickTickApiCall } from '../common/client';

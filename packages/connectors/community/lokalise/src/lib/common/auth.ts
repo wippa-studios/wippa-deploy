@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 export const lokaliseAuth = PieceAuth.SecretText({
   displayName: 'API Token',

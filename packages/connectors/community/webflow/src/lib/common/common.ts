@@ -1,10 +1,10 @@
-import { Property, OAuth2PropertyValue, DynamicPropsValue } from '@wippa/pieces-framework';
+import { Property, OAuth2PropertyValue, DynamicPropsValue } from '@wippa/connectors-framework';
 import {
 	HttpRequest,
 	HttpMethod,
 	AuthenticationType,
 	httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const webflowCommon = {
 	baseUrl: 'https://api.webflow.com/',

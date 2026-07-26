@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { runWorkflowAction } from './lib/actions/run-workflow';
 import { getWorkflowRunStatusAction } from './lib/actions/get-workflow-run-status';
@@ -16,7 +16,7 @@ To use Copy AI, you need to get an API key:
 5. Click the Copy button below WORKSPACE API KEY.
 `;
 
-export const copyAi = createPiece({
+export const copyAi = createConnector({
 	displayName: 'Copy.ai',
 	description: 'AI-powered content generation and copywriting platform',
 	logoUrl: 'https://cdn.activepieces.com/pieces/copy-ai.png',

@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 import { textToSpeech } from './lib/actions/text-to-speech-action';
 import {
   createClient,
@@ -65,7 +65,7 @@ export const elevenlabsAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const elevenlabs = createPiece({
+export const elevenlabs = createConnector({
   displayName: 'ElevenLabs',
   auth: elevenlabsAuth,
   minimumSupportedRelease: '0.30.0',

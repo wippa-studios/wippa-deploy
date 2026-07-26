@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createReply } from './lib/actions/create-reply';
 import { newReview } from './lib/triggers/new-review';
 
@@ -15,7 +15,7 @@ export const googleAuth = PieceAuth.OAuth2({
   scope: ['https://www.googleapis.com/auth/business.manage'],
 });
 
-export const googleBusiness = createPiece({
+export const googleBusiness = createConnector({
   auth: googleAuth,
   displayName: 'Google My Business',
   description: 'Manage your business on Google',

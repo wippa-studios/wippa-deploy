@@ -1,8 +1,8 @@
 import { weblingAuth } from '../auth';
-import { createAction, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { createAction, PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { getCalendars, getEventsById } from '../common/helpers';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const eventsById = createAction({
   auth: weblingAuth,

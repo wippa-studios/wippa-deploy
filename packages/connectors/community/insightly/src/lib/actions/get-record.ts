@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
     HttpMethod
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { insightlyAuth, makeInsightlyRequest } from '../common/common';
 
 export const getRecord = createAction({

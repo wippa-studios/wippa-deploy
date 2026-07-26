@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { sendAPrompt } from './lib/actions/send-a-prompt';
 import { newLeadSubmission } from './lib/triggers/new-lead-submission';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { guideliteAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const guidelite = createPiece({
+export const guidelite = createConnector({
   displayName: 'GuideLite',
   auth: guideliteAuth,
   minimumSupportedRelease: '0.36.1',

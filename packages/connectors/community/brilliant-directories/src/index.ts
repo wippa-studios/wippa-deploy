@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createNewUser } from './lib/actions/create-new-user';
 
 export const brilliantDirectoriesAuth = PieceAuth.CustomAuth({
@@ -31,7 +31,7 @@ export const brilliantDirectoriesAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const brilliantDirectories = createPiece({
+export const brilliantDirectories = createConnector({
   displayName: 'Brilliant Directories',
   description: 'All-in-one membership software',
 

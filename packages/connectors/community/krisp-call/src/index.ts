@@ -1,18 +1,18 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { addContact } from './lib/actions/add-contact';
 import { deleteContacts } from './lib/actions/delete-contacts';
 import { sendSms } from './lib/actions/send-sms';
 import { sendMms } from './lib/actions/send-mms';
 import { triggers } from './lib/triggers';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { krispcallAuth } from './lib/auth';
 
 export type krispcallAuth = {
   apiKey: string;
 };
 
-export const KrispCall = createPiece({
+export const KrispCall = createConnector({
   displayName: 'KrispCall',
   description:
     'KrispCall is a cloud telephony system for modern businesses, offering advanced features for high-growth startups and modern enterprises.',

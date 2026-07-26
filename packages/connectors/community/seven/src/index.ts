@@ -1,13 +1,13 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { sendSmsAction } from './action/sms-send';
 import { sendRcsAction } from './action/rcs-send';
 import { sendVoiceCallAction } from './action/send-voice-call';
 import { lookup } from './action/lookup';
 import { smsInbound } from './trigger/sms-inbound';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sevenAuth } from './lib/auth';
 
-export const seven = createPiece({
+export const seven = createConnector({
   displayName: 'seven',
   description: 'Business Messaging Gateway',
   auth: sevenAuth,

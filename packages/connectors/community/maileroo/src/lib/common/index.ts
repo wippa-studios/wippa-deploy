@@ -1,5 +1,5 @@
-import { ApFile } from "@wippa/pieces-framework";
-import { isNil } from '@wippa/pieces-framework';
+import { ApFile } from "@wippa/connectors-framework";
+import { isNil } from '@wippa/connectors-framework';
 
 export function toEmailObjects(addresses: unknown[]) {
   return addresses

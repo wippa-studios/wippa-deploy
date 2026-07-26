@@ -3,7 +3,7 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 async function callApi<TResponse extends HttpMessageBody>({
   apiKey,

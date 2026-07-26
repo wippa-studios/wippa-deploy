@@ -2,8 +2,8 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@wippa/pieces-common';
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { SubscriberListFieldType } from './constants';
 import {
   GetListsResponse,

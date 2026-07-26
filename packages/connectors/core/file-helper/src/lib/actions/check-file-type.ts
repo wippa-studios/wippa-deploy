@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { predefinedMimeTypes } from '../common/mimeTypes';
 import mime from 'mime-types';
 

@@ -3,8 +3,8 @@ import {
   TriggerStrategy,
   StoreScope,
   Property,
-} from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { plausibleAuth } from '../..';
 import { plausibleApiCall, siteIdDropdown } from '../common';
 

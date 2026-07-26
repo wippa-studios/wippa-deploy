@@ -361,7 +361,7 @@ export const flowOperations = {
                 break
             case FlowOperationType.ADD_ACTION: {
                 if (operation.request.action.type === FlowActionType.PIECE) {
-                    operation.request.action.settings.pieceVersion = flowPieceUtil.getExactVersion(operation.request.action.settings.pieceVersion)
+                    operation.request.action.settings.connectorVersion = flowPieceUtil.getExactVersion(operation.request.action.settings.connectorVersion)
                 }
                 clonedVersion = _addAction(clonedVersion, operation.request)
                 break
@@ -372,7 +372,7 @@ export const flowOperations = {
             }
             case FlowOperationType.UPDATE_TRIGGER: {
                 if (operation.request.type === FlowTriggerType.PIECE) {
-                    operation.request.settings.pieceVersion = flowPieceUtil.getExactVersion(operation.request.settings.pieceVersion)
+                    operation.request.settings.connectorVersion = flowPieceUtil.getExactVersion(operation.request.settings.connectorVersion)
                 }
                 clonedVersion = _updateTrigger(clonedVersion, operation.request)
                 break
@@ -387,7 +387,7 @@ export const flowOperations = {
             }
             case FlowOperationType.UPDATE_ACTION: {
                 if (operation.request.type === FlowActionType.PIECE) {
-                    operation.request.settings.pieceVersion = flowPieceUtil.getExactVersion(operation.request.settings.pieceVersion)
+                    operation.request.settings.connectorVersion = flowPieceUtil.getExactVersion(operation.request.settings.connectorVersion)
                 }
                 clonedVersion = _updateAction(clonedVersion, operation.request)
                 break

@@ -1,6 +1,6 @@
 import { krispcallAuth } from '../auth';
-import { HttpMethod, httpClient } from "@wippa/pieces-common";
-import { TriggerStrategy, createTrigger } from "@wippa/pieces-framework"
+import { HttpMethod, httpClient } from "@wippa/connectors-common";
+import { TriggerStrategy, createTrigger } from "@wippa/connectors-framework"
 
 export const triggers = [
     {

@@ -1,12 +1,12 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   HttpHeaders,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const DATO_BASE_URL = 'https://site-api.datocms.com';
 
@@ -30,7 +30,7 @@ type DatoAuthType = {
   environment?: string;
 };
 
-export const datocms = createPiece({
+export const datocms = createConnector({
   displayName: 'Dato CMS',
   description: 'Dato is a modern headless CMS',
   auth: datoAuth,

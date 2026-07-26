@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   PiecePropValueSchema,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createRecordAction } from './lib/actions/create-record';
 import { findRecordsAction } from './lib/actions/find-records';
 import { findRecordAction} from './lib/actions/find-record';
@@ -13,7 +13,7 @@ import { updateRecordAction } from './lib/actions/update-record';
 import { makeClient } from './lib/common';
 import { BikaAuth } from './lib/auth';
 
-export const bika = createPiece({
+export const bika = createConnector({
   displayName: 'Bika.ai',
   auth: BikaAuth,
   description: `Interactive spreadsheets with collaboration`,

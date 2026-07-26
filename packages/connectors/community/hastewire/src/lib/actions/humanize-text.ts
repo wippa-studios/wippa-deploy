@@ -1,6 +1,6 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { hastewireAuth } from "../common/auth";
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
 
 export const humanizeTextAction = createAction({
     name: 'humanize-text',

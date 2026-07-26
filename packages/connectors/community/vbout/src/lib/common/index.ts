@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { VboutClient } from './client';
 import {
   ContactStatusValues,

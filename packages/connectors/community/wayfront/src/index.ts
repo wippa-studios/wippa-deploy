@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { wayfrontAuth } from './lib/auth';
 import { createClientAction } from './lib/actions/create-client';
 import { updateClientAction } from './lib/actions/update-client';
@@ -12,7 +12,7 @@ import { listOrdersAction } from './lib/actions/list-orders';
 import { createOrderAction } from './lib/actions/create-order';
 import { updateOrderAction } from './lib/actions/update-order';
 
-export const wayfront = createPiece({
+export const wayfront = createConnector({
   displayName: 'Wayfront',
   description: 'Unify your process, automate steps, and help clients find what they need.',
   auth: wayfrontAuth,

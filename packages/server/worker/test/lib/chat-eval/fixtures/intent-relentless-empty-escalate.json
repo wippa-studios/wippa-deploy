@@ -12,8 +12,8 @@
             "toolName": "ap_list_across_projects",
             "output": {
                 "connections": [
-                    { "externalId": "conn_attio", "displayName": "Attio", "pieceName": "@wippa/piece-attio", "status": "ACTIVE", "scope": "PROJECT" },
-                    { "externalId": "conn_gmail", "displayName": "Gmail", "pieceName": "@wippa/piece-gmail", "status": "ACTIVE", "scope": "PROJECT" }
+                    { "externalId": "conn_attio", "displayName": "Attio", "connectorName": "@wippa/connector-attio", "status": "ACTIVE", "scope": "PROJECT" },
+                    { "externalId": "conn_gmail", "displayName": "Gmail", "connectorName": "@wippa/connector-gmail", "status": "ACTIVE", "scope": "PROJECT" }
                 ]
             }
         },

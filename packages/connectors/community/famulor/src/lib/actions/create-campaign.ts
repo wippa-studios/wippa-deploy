@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { propsValidation } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { propsValidation } from '@wippa/connectors-common';
 import { famulorAuth } from '../..';
 import { famulorCommon } from '../common';
 import type { CampaignWeekday } from '../common/types';

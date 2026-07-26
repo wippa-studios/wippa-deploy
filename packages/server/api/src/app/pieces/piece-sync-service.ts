@@ -1,6 +1,6 @@
 import { groupBy, tryCatch } from '@wippa/core-utils'
 import { apVersionUtil } from '@wippa/server-utils'
-import { PieceSyncMode, PieceType } from '@wippa/shared'
+import { PieceSyncMode, ConnectorType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import semver from 'semver'
 import { rejectedPromiseHandler } from '../helper/promise-handler'
@@ -11,21 +11,21 @@ import { systemJobHandlers } from '../helper/system-jobs/job-handlers'
 import { systemJobsSchedule } from '../helper/system-jobs/system-job'
 import { isToolSearchEnabled } from '../tool-search/tool-search-flag'
 import { toolSearchReindexJob } from '../tool-search/tool-search-reindex.job'
-import { pieceCache } from './metadata/piece-cache'
+import { connectorCache } from './metadata/piece-cache'
 import { PieceMetadataSchema } from './metadata/piece-metadata-entity'
 import { pieceMetadataService, pieceRepos } from './metadata/piece-metadata-service'
-import { pieceBundle } from './piece-bundle'
+import { connectorBundle } from './piece-bundle'
 
 const CLOUD_API_URL = 'https://cloud.activepieces.com/api/v1/pieces'
 const syncMode = system.get<PieceSyncMode>(AppSystemProp.PIECES_SYNC_MODE)
 
-export const pieceSyncService = (log: FastifyBaseLogger) => ({
+export const connectorSyncService = (log: FastifyBaseLogger) => ({
     async setup(): Promise<void> {
-        pieceBundle(log).registerJobHandler()
+        connectorBundle(log).registerJobHandler()
         systemJobHandlers.registerJobHandler(SystemJobName.PIECES_SYNC, async function syncPiecesJobHandler(): Promise<void> {
-            await pieceSyncService(log).sync({ publishCacheRefresh: true })
+            await connectorSyncService(log).sync({ publishCacheRefresh: true })
         })
-        rejectedPromiseHandler(pieceSyncService(log).sync({ publishCacheRefresh: false }), log)
+        rejectedPromiseHandler(connectorSyncService(log).sync({ publishCacheRefresh: false }), log)
         await systemJobsSchedule(log).upsertJob({
             job: {
                 name: SystemJobName.PIECES_SYNC,
@@ -80,7 +80,7 @@ export const pieceSyncService = (log: FastifyBaseLogger) => ({
 
 async function deletePiecesIfNotOnCloud(dbPieces: PieceMetadataOnly[], cloudPieces: PieceRegistryResponse[], log: FastifyBaseLogger): Promise<number> {
     const cloudMap = new Map<string, true>(cloudPieces.map(cloudPiece => [`${cloudPiece.name}:${cloudPiece.version}`, true]))
-    const piecesToDelete = dbPieces.filter(piece => piece.pieceType === PieceType.OFFICIAL && !cloudMap.has(`${piece.name}:${piece.version}`))
+    const piecesToDelete = dbPieces.filter(piece => piece.pieceType === ConnectorType.OFFICIAL && !cloudMap.has(`${piece.name}:${piece.version}`))
     await pieceMetadataService(log).bulkDelete(piecesToDelete.map(piece => ({ name: piece.name, version: piece.version })))
     return piecesToDelete.length
 }
@@ -95,23 +95,23 @@ async function installNewPieces(cloudPieces: PieceRegistryResponse[], dbPieces: 
             const url = `${CLOUD_API_URL}/${piece.name}${piece.version ? '?version=' + piece.version : ''}`
             const response = await fetch(url)
             if (!response.ok) {
-                log.warn({ piece: { name: piece.name, version: piece.version }, status: response.status }, '[pieceSyncService#installNewPieces] Error reading piece metadata')
+                log.warn({ piece: { name: piece.name, version: piece.version }, status: response.status }, '[connectorSyncService#installNewPieces] Error reading piece metadata')
                 return
             }
-            const pieceMetadata = await response.json()
+            const connectorMetadata = await response.json()
             const { error } = await tryCatch(() => pieceMetadataService(log).create({
-                pieceMetadata,
-                packageType: pieceMetadata.packageType,
-                pieceType: pieceMetadata.pieceType,
+                connectorMetadata,
+                packageType: connectorMetadata.packageType,
+                pieceType: connectorMetadata.pieceType,
                 publishCacheRefresh: false,
             }))
             if (error) {
-                log.debug({ piece: { name: piece.name, version: piece.version } }, '[pieceSyncService#installNewPieces] Piece already exists, skipping')
+                log.debug({ piece: { name: piece.name, version: piece.version } }, '[connectorSyncService#installNewPieces] Piece already exists, skipping')
             }
         }))
     }
     if (newPiecesToFetch.length > 0) {
-        await pieceCache(log).invalidate()
+        await connectorCache(log).invalidate()
     }
     return newPiecesToFetch.length
 }

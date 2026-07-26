@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { manychatAuth } from '../auth';
 import { BASE_URL, subscriberId, tagIdDropdown } from '../common/props';
 

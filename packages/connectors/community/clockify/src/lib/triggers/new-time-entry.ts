@@ -1,6 +1,6 @@
-import { HttpMethod, QueryParams } from '@wippa/pieces-common';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod, QueryParams } from '@wippa/connectors-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { clockifyAuth } from '../auth';
 import { clockifyApiCall } from '../common/client';
 import { projectId, taskId, workspaceId } from '../common/props';

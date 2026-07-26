@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
 import { saleorRawGraphqlQuery } from "./lib/actions/raw-graphql-query";
 import { getOrder } from "./lib/actions/get-order";
 import { addOrderNote } from "./lib/actions/add-note-to-order";
@@ -20,7 +20,7 @@ export const saleorAuth = PieceAuth.CustomAuth({
   }
 })
 
-export const saleor = createPiece({
+export const saleor = createConnector({
   displayName: "Saleor",
   auth: saleorAuth,
   minimumSupportedRelease: '0.36.1',

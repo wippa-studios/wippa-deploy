@@ -5,8 +5,8 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 function normalizeDomain(domain: string): string {
 	return domain.replace(/\/+$/, '');

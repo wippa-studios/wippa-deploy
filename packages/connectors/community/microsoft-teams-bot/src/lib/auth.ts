@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 import { createGraphClient, getAppOnlyToken, GRAPH_DEFAULT_SCOPE, withGraphRetry } from './common/graph';
 
 const authDesc = `

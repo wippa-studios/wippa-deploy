@@ -1,5 +1,5 @@
-import { QueryParams } from '@wippa/pieces-common';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { QueryParams } from '@wippa/connectors-common';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { workdayAuth } from '../auth';
 import { workdayGetReport } from '../common';
 import { flattenRecord } from '../common/fields';

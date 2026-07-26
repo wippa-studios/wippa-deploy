@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { wedofCommon } from './lib/common/wedof';
 import { newRegistrationFolderNotProcessed } from './lib/triggers/registration-folders/new-registration-folder-created';
 import { registrationFolderUpdated } from './lib/triggers/registration-folders/registration-folder-updated';
@@ -77,7 +77,7 @@ import { createCertificationFolder } from './lib/actions/certification-folders/c
 import { createRegistrationFolder } from './lib/actions/registration-folders/create-registration-folder';
 import { wedofAuth } from './lib/auth';
 
-export const wedof = createPiece({
+export const wedof = createConnector({
   displayName: 'Wedof',
   auth: wedofAuth,
   description:

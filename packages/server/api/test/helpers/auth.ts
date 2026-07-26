@@ -102,7 +102,7 @@ export const generateMockExternalToken = (
 
     const mockExternalTokenPayload: ExternalTokenPayload = isNil(params?.pieceSetKey)
         ? { ...commonPayload, pieces: params?.pieces ?? undefined }
-        : { ...commonPayload, version: 'v4', pieceSet: params.pieceSetKey }
+        : { ...commonPayload, version: 'v4', connectorSet: params.pieceSetKey }
 
     const algorithm = 'RS256'
     const key = params?.privateKey ?? MOCK_SIGNING_KEY_PRIVATE_KEY

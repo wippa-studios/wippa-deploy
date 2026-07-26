@@ -1,9 +1,9 @@
 import { isNil } from '@wippa/core-utils';
 import {
   OAuth2Props,
-  PiecePropertyMap,
+  ConnectorPropertyMap,
   ArraySubProps,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { PropertyExecutionType, PropertySettings } from '@wippa/shared';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
@@ -84,7 +84,7 @@ export const GenericPropertiesForm = React.memo(
 GenericPropertiesForm.displayName = 'GenericFormComponent';
 
 type GenericPropertiesFormProps = {
-  props: PiecePropertyMap | OAuth2Props | ArraySubProps<boolean>;
+  props: ConnectorPropertyMap | OAuth2Props | ArraySubProps<boolean>;
   /**Use this to allow user toggling property execution type */
   propertySettings: Record<string, PropertySettings> | null;
   prefixValue: string;

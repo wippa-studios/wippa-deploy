@@ -1,6 +1,6 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 
 
 export const oktaAuth = PieceAuth.CustomAuth({

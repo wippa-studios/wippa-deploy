@@ -1,5 +1,5 @@
-import { createAction } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { confluenceAuth } from '../auth';
 import { confluenceApiCall, PaginatedResponse } from '../common';
 import { pageIdProp, spaceIdProp } from '../common/props';

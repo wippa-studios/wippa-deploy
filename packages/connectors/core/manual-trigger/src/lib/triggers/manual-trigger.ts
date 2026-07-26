@@ -1,6 +1,6 @@
 
-import { createTrigger, Property, TriggerStrategy  } from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy  } from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 export const manualTrigger = createTrigger({
 name: 'manual_trigger',

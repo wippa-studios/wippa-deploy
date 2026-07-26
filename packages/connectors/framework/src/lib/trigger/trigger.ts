@@ -5,7 +5,7 @@ import { AiMetadata, TriggerBase } from '../piece-metadata';
 import { InputPropertyMap } from '../property';
 import { ExtractPieceAuthPropertyTypeForMethods, PieceAuthProperty } from '../property/authentication';
 import { isNil } from '@wippa/core-utils';
-import { TriggerStrategy, TriggerTestStrategy, WebhookHandshakeConfiguration, WebhookHandshakeStrategy } from '@wippa/core-piece-types';
+import { TriggerStrategy, TriggerTestStrategy, WebhookHandshakeConfiguration, WebhookHandshakeStrategy } from '@wippa/core-connector-types';
 export { TriggerStrategy }
 
 export const DEDUPE_KEY_PROPERTY = '_dedupe_key'

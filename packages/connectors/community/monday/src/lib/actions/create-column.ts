@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { mondayAuth } from '../auth';
 import { makeClient, mondayCommon } from '../common';
 import { COLUMN_TYPE_OPTIONS } from '../common/constants';

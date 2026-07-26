@@ -412,7 +412,7 @@ function buildStepParts({ content }: {
                         type: PersistedChatPartType.ACTION_RECEIPT,
                         toolCallId: part.toolCallId ?? '',
                         actionDisplayName: title ?? toolName,
-                        pieceName: typeof input['pieceName'] === 'string' ? input['pieceName'] : '',
+                        connectorName: typeof input['connectorName'] === 'string' ? input['connectorName'] : '',
                         ...spreadIfDefined('connectionLabel', connectionLabel),
                         status: isAppSuccess ? 'success' : 'failed',
                         output: rawOutput,

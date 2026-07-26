@@ -1,6 +1,6 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createPhotoPost } from './lib/actions/create-photo-post';
 import { createPost } from './lib/actions/create-post';
 import { createVideoPost } from './lib/actions/create-video-post';
@@ -33,7 +33,7 @@ export const facebookPagesAuth = PieceAuth.OAuth2({
   ],
 });
 
-export const facebookPages = createPiece({
+export const facebookPages = createConnector({
   displayName: 'Facebook Pages',
   description: 'Manage your Facebook pages to grow your business',
 

@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { buttondownAuth } from './lib/common/auth';
 import { createSubscriber } from './lib/actions/create-subscriber';
 import { listSubscribers } from './lib/actions/list-subscribers';
@@ -9,7 +9,7 @@ import { buttondownNewSubscriber } from './lib/triggers/new-subscriber';
 import { buttondownSubscriberConfirmed } from './lib/triggers/subscriber-confirmed';
 import { buttondownEmailSent } from './lib/triggers/email-sent';
 
-export const buttondown = createPiece({
+export const buttondown = createConnector({
   displayName: 'Buttondown',
   description: 'Automate your Buttondown newsletter workflows.',
   auth: buttondownAuth,

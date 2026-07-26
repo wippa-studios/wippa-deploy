@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { queryAgentAction } from './lib/actions/query-agent';
 import { queryDatastoretAction } from './lib/actions/query-datastore';
 import { uploadFileAction } from './lib/actions/upload-file';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { chaindeskAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/constants';
 
-export const chaindesk = createPiece({
+export const chaindesk = createConnector({
   displayName: 'Chaindesk',
   auth: chaindeskAuth,
   minimumSupportedRelease: '0.36.1',

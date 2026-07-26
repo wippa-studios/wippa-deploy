@@ -1,8 +1,8 @@
 
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { createExpenseAction } from './lib/actions/create-expense';
 import { newExpenseTrigger } from './lib/triggers/new-expense';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { splitwiseAuth } from './lib/auth';
 
 const markdownDescription = `
@@ -10,7 +10,7 @@ You can generate an API key from your app's details page on Splitwise.
 The API key should be kept secure as it provides access to your personal account.
 `;
 
-export const splitwise = createPiece({
+export const splitwise = createConnector({
   displayName: "Splitwise",
   auth: splitwiseAuth,
   minimumSupportedRelease: '0.36.1',

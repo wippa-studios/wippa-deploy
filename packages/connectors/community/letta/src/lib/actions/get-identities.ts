@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { lettaAuth } from '../common/auth';
 import { getLettaClient } from '../common/client';
 import type {

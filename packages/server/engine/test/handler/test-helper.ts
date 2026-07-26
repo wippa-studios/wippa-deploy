@@ -101,7 +101,7 @@ export function buildCodeAction({ name, input, skip, nextAction, errorHandlingOp
     }
 }
 
-export function buildPieceAction({ name, input, skip, pieceName, actionName, nextAction, errorHandlingOptions }: { errorHandlingOptions?: ActionErrorHandlingOptions, name: string, input: Record<string, unknown>, skip?: boolean, pieceName: string, actionName: string, nextAction?: FlowAction }): PieceAction {
+export function buildPieceAction({ name, input, skip, connectorName, actionName, nextAction, errorHandlingOptions }: { errorHandlingOptions?: ActionErrorHandlingOptions, name: string, input: Record<string, unknown>, skip?: boolean, connectorName: string, actionName: string, nextAction?: FlowAction }): PieceAction {
     return {
         name,
         displayName: 'Your Action Name',
@@ -109,8 +109,8 @@ export function buildPieceAction({ name, input, skip, pieceName, actionName, nex
         skip: skip ?? false,
         settings: {
             input,
-            pieceName,
-            pieceVersion: '1.0.0', // Not required since it's running in development mode
+            connectorName,
+            connectorVersion: '1.0.0', // Not required since it's running in development mode
             actionName,
             propertySettings: Object.fromEntries(Object.entries(input).map(([key]) => [key, {
                 type: PropertyExecutionType.MANUAL,

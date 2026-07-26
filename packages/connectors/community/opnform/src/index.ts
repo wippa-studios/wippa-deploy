@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { opnformNewSubmission } from './lib/triggers/new-submission';
 import { API_URL_DEFAULT } from './lib/common';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { opnformAuth } from './lib/auth';
 
-export const opnform = createPiece({
+export const opnform = createConnector({
     displayName: 'Opnform',
     description: 'Create beautiful online forms and surveys with unlimited fields and submissions',
     auth: opnformAuth,

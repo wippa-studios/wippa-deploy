@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { helpScoutApiRequest } from '../common/api';
 import { helpScoutAuth } from '../common/auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { conversationIdDropdown, userIdDropdown } from '../common/props';
 
 export const addNote = createAction({

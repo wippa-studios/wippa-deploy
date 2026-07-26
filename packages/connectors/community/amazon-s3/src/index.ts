@@ -1,7 +1,7 @@
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { readFile } from './lib/actions/read-file';
 import { amazons3UploadFile } from './lib/actions/upload-file';
 import { newFile } from './lib/triggers/new-file';
@@ -13,7 +13,7 @@ import { listFiles } from './lib/actions/list-files';
 import { decryptPgpFile } from './lib/actions/decrypt-pgp-file';
 import { amazonS3CombinedAuth } from './lib/auth';
 
-export const amazonS3 = createPiece({
+export const amazonS3 = createConnector({
   displayName: 'Amazon S3',
   description: 'Scalable storage in the cloud',
 

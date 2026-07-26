@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { motionAuth } from '../auth';
 import {
   BASE_URL,
@@ -9,7 +9,7 @@ import {
   userId,
   workspaceId,
 } from '../common/props';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const updateTask = createAction({
   auth: motionAuth,

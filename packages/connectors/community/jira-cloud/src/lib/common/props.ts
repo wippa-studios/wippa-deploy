@@ -6,11 +6,11 @@ import {
 	jiraPaginatedApiCall,
 	sendJiraRequest,
 } from '.';
-import { DropdownOption, Property } from '@wippa/pieces-framework';
+import { DropdownOption, Property } from '@wippa/connectors-framework';
 import { JiraAuth, jiraCloudAuth } from '../../auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { IssueFieldMetaData, IssueTypeMetadata } from './types';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 
 export function getProjectIdDropdown(data?: DropdownParams) {

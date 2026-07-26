@@ -1,4 +1,4 @@
-import { OAuth2AuthorizationMethod } from '@wippa/pieces-framework'
+import { OAuth2AuthorizationMethod } from '@wippa/connectors-framework'
 import {
     BaseOAuth2ConnectionValue,
     OAuth2GrantType,
@@ -13,7 +13,7 @@ export type OAuth2Service<CONNECTION_VALUE extends BaseOAuth2ConnectionValue> =
   }
 
 export type RefreshOAuth2Request<T extends BaseOAuth2ConnectionValue> = {
-    pieceName: string
+    connectorName: string
     projectId: string | undefined
     platformId: string
     connectionValue: T
@@ -35,6 +35,6 @@ export type OAuth2RequestBody = {
 export type ClaimOAuth2Request = {
     projectId: string | undefined
     platformId: string
-    pieceName: string
+    connectorName: string
     request: OAuth2RequestBody
 }

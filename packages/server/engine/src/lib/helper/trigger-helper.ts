@@ -1,5 +1,5 @@
 import { assertEqual, isNil } from '@wippa/core-utils'
-import { PiecePropertyMap, SetScheduleRequest, StaticPropsValue, TriggerStrategy } from '@wippa/pieces-framework'
+import { ConnectorPropertyMap, SetScheduleRequest, StaticPropsValue, TriggerStrategy } from '@wippa/connectors-framework'
 import { AUTHENTICATION_PROPERTY_NAME, EngineGenericError, EventPayload, ExecuteTriggerResponse, FlowTrigger, InvalidCronExpressionError, InvalidScheduleIntervalError, PieceTrigger, PropertySettings, ScheduleOptions, TriggerHookType, TriggerSourceScheduleType } from '@wippa/shared'
 import { isValidCron } from 'cron-validator'
 import { EngineConstants, ResolvedExecuteTriggerOperation } from '../handler/context/engine-constants'
@@ -10,7 +10,7 @@ import { createContextStore } from '../piece-context/store'
 import { utils } from '../utils'
 import { propsProcessor } from '../variables/props-processor'
 import { createPropsResolver } from '../variables/props-resolver'
-import { pieceLoader } from './piece-loader'
+import { connectorLoader } from './piece-loader'
 
 type Listener = {
     events: string[]
@@ -20,15 +20,15 @@ type Listener = {
 
 export const triggerHelper = {
     async executeOnStart(trigger: FlowTrigger, constants: EngineConstants, payload: unknown) {
-        const { pieceName, pieceVersion, triggerName, input, propertySettings } = (trigger as PieceTrigger).settings
+        const { connectorName, connectorVersion, triggerName, input, propertySettings } = (trigger as PieceTrigger).settings
 
         if (isNil(triggerName)) {
             throw new EngineGenericError('TriggerNameNotSetError', 'Trigger name is not set')
         }
 
-        const { pieceTrigger, processedInput, piece } = await prepareTriggerExecution({
-            pieceName,
-            pieceVersion,
+        const { connectorTrigger, processedInput, piece } = await prepareTriggerExecution({
+            connectorName,
+            connectorVersion,
             triggerName,
             input,
             projectId: constants.projectId,
@@ -38,7 +38,7 @@ export const triggerHelper = {
             propertySettings,
             stepNames: constants.stepNames,
         })
-        const isOldVersionOrNotSupported = isNil(pieceTrigger.onStart)
+        const isOldVersionOrNotSupported = isNil(connectorTrigger.onStart)
         if (isOldVersionOrNotSupported) {
             return
         }
@@ -70,19 +70,19 @@ export const triggerHelper = {
                 contextVersion: piece.getContextInfo?.().version,
             }),
         }
-        await pieceTrigger.onStart(context)
+        await connectorTrigger.onStart(context)
     },
 
     async executeTrigger({ params, constants }: ExecuteTriggerParams): Promise<ExecuteTriggerResponse<TriggerHookType>> {
-        const { pieceName, pieceVersion, triggerName, input, propertySettings } = (params.flowVersion.trigger as PieceTrigger).settings
+        const { connectorName, connectorVersion, triggerName, input, propertySettings } = (params.flowVersion.trigger as PieceTrigger).settings
 
         if (isNil(triggerName)) {
             throw new EngineGenericError('TriggerNameNotSetError', 'Trigger name is not set')
         }
 
-        const { piece, pieceTrigger, processedInput } = await prepareTriggerExecution({
-            pieceName,
-            pieceVersion,
+        const { piece, connectorTrigger, processedInput } = await prepareTriggerExecution({
+            connectorName,
+            connectorVersion,
             triggerName,
             input,
             projectId: params.projectId,
@@ -161,23 +161,23 @@ export const triggerHelper = {
         }
         switch (params.hookType) {
             case TriggerHookType.ON_DISABLE: {
-                await pieceTrigger.onDisable(context)
+                await connectorTrigger.onDisable(context)
                 return {}
             }
             case TriggerHookType.ON_ENABLE: {
-                await pieceTrigger.onEnable(context)
+                await connectorTrigger.onEnable(context)
                 return {
                     listeners: appListeners,
-                    scheduleOptions: pieceTrigger.type === TriggerStrategy.POLLING ? scheduleOptions : undefined,
+                    scheduleOptions: connectorTrigger.type === TriggerStrategy.POLLING ? scheduleOptions : undefined,
                 }
             }
             case TriggerHookType.RENEW: {
-                assertEqual(pieceTrigger.type, TriggerStrategy.WEBHOOK, 'triggerType', 'WEBHOOK')
-                await pieceTrigger.onRenew(context)
+                assertEqual(connectorTrigger.type, TriggerStrategy.WEBHOOK, 'triggerType', 'WEBHOOK')
+                await connectorTrigger.onRenew(context)
                 return {}
             }
             case TriggerHookType.HANDSHAKE: {
-                const { data: handshakeResponse, error: handshakeResponseError } = await utils.tryCatchAndThrowOnEngineError(() => pieceTrigger.onHandshake(context))
+                const { data: handshakeResponse, error: handshakeResponseError } = await utils.tryCatchAndThrowOnEngineError(() => connectorTrigger.onHandshake(context))
 
                 if (handshakeResponseError) {
                     throw handshakeResponseError
@@ -187,7 +187,7 @@ export const triggerHelper = {
                 }
             }
             case TriggerHookType.TEST: {
-                const { data: testResponse, error: testResponseError } = await utils.tryCatchAndThrowOnEngineError(() => pieceTrigger.test({
+                const { data: testResponse, error: testResponseError } = await utils.tryCatchAndThrowOnEngineError(() => connectorTrigger.test({
                     ...context,
                     files: createFileUploader({
                         apiUrl: constants.internalApiUrl,
@@ -203,14 +203,14 @@ export const triggerHelper = {
                 }
             }
             case TriggerHookType.RUN: {
-                if (pieceTrigger.type === TriggerStrategy.APP_WEBHOOK) {
+                if (connectorTrigger.type === TriggerStrategy.APP_WEBHOOK) {
 
                     const { data: verified, error: verifiedError } = await utils.tryCatchAndThrowOnEngineError(async () => {
                         if (!params.appWebhookUrl) {
-                            throw new EngineGenericError('AppWebhookUrlNotAvailableError', `App webhook url is not available for piece name ${pieceName}`)
+                            throw new EngineGenericError('AppWebhookUrlNotAvailableError', `App webhook url is not available for piece name ${connectorName}`)
                         }
                         if (!params.webhookSecret) {
-                            throw new EngineGenericError('WebhookSecretNotAvailableError', `Webhook secret is not available for piece name ${pieceName}`)
+                            throw new EngineGenericError('WebhookSecretNotAvailableError', `Webhook secret is not available for piece name ${connectorName}`)
                         }
 
                         return piece.events?.verify({
@@ -229,7 +229,7 @@ export const triggerHelper = {
                 }
 
                 const { data: triggerRunResult, error: triggerRunError } = await utils.tryCatchAndThrowOnEngineError(async () => {
-                    const items = await pieceTrigger.run({
+                    const items = await connectorTrigger.run({
                         ...context,
                         files: createFileUploader({
                             apiUrl: constants.internalApiUrl,
@@ -255,10 +255,10 @@ type ExecuteTriggerParams = {
     constants: EngineConstants
 }
 
-async function prepareTriggerExecution({ pieceName, pieceVersion, triggerName, input, propertySettings, projectId, apiUrl, engineToken, devPieces, stepNames }: PrepareTriggerExecutionParams) {
-    const { piece, pieceTrigger } = await pieceLoader.getPieceAndTriggerOrThrow({
-        pieceName,
-        pieceVersion,
+async function prepareTriggerExecution({ connectorName, connectorVersion, triggerName, input, propertySettings, projectId, apiUrl, engineToken, devPieces, stepNames }: PrepareTriggerExecutionParams) {
+    const { piece, connectorTrigger } = await connectorLoader.getPieceAndTriggerOrThrow({
+        connectorName,
+        connectorVersion,
         triggerName,
         devPieces,
     })
@@ -269,23 +269,23 @@ async function prepareTriggerExecution({ pieceName, pieceVersion, triggerName, i
         engineToken,
         contextVersion: piece.getContextInfo?.().version,
         stepNames,
-    }).resolve<StaticPropsValue<PiecePropertyMap>>({
+    }).resolve<StaticPropsValue<ConnectorPropertyMap>>({
         unresolvedInput: input,
         executionState: FlowExecutorContext.empty(),
     })
 
-    const { processedInput, errors } = await propsProcessor.applyProcessorsAndValidators(resolvedInput, pieceTrigger.props, piece.auth, pieceTrigger.requireAuth, propertySettings)
+    const { processedInput, errors } = await propsProcessor.applyProcessorsAndValidators(resolvedInput, connectorTrigger.props, piece.auth, connectorTrigger.requireAuth, propertySettings)
 
     if (Object.keys(errors).length > 0) {
         throw new Error(JSON.stringify(errors, null, 2))
     }
 
-    return { piece, pieceTrigger, processedInput }
+    return { piece, connectorTrigger, processedInput }
 }
 
 type PrepareTriggerExecutionParams = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     triggerName: string
     input: unknown
     propertySettings: Record<string, PropertySettings>

@@ -2,8 +2,8 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
-import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { assertNotNullOrUndefined } from '@wippa/connectors-framework';
 import { nanoid } from 'nanoid';
 import { figmaCommon } from '../common';
 import { figmaWebhookPostRequest, figmaDeleteRequest } from '../common/utils';

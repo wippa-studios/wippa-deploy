@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { readFileAction } from './lib/actions/read-file';
 import { createFile } from './lib/actions/create-file';
 import { changeFileEncoding } from './lib/actions/change-file-encoding';
@@ -8,7 +8,7 @@ import { zipFiles } from './lib/actions/zip-files';
 import { unzipFile } from './lib/actions/unzip-file';
 import { getFileName } from './lib/actions/get-file-name';
 
-export const filesHelper = createPiece({
+export const filesHelper = createConnector({
   displayName: 'Files Helper',
   description: 'Read file content and return it in different formats.',
   auth: PieceAuth.None(),

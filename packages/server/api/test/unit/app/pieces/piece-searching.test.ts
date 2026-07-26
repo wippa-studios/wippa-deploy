@@ -1,17 +1,17 @@
 import { SuggestionType } from '@wippa/shared'
 import { describe, expect, it } from 'vitest'
-import { pieceSearching } from '../../../../src/app/pieces/metadata/utils/piece-searching'
+import { connectorSearching } from '../../../../src/app/pieces/metadata/utils/piece-searching'
 import { createMockPieceMetadata } from '../../../helpers/mocks'
 
 const pieces = [
-    createMockPieceMetadata({ name: '@wippa/piece-discord', displayName: 'Discord', description: 'Send messages to Discord channels' }),
-    createMockPieceMetadata({ name: '@wippa/piece-slack', displayName: 'Slack', description: 'Send messages to Slack channels' }),
-    createMockPieceMetadata({ name: '@wippa/piece-gmail', displayName: 'Gmail', description: 'Send and read emails' }),
+    createMockPieceMetadata({ name: '@wippa/connector-discord', displayName: 'Discord', description: 'Send messages to Discord channels' }),
+    createMockPieceMetadata({ name: '@wippa/connector-slack', displayName: 'Slack', description: 'Send messages to Slack channels' }),
+    createMockPieceMetadata({ name: '@wippa/connector-gmail', displayName: 'Gmail', description: 'Send and read emails' }),
 ]
 
-describe('pieceSearching.search — robustness to extra query words', () => {
+describe('connectorSearching.search — robustness to extra query words', () => {
     it('finds Discord even when the query has an extra word ("Discord webhook")', () => {
-        const results = pieceSearching.search({
+        const results = connectorSearching.search({
             categories: undefined,
             searchQuery: 'Discord webhook',
             pieces,
@@ -21,7 +21,7 @@ describe('pieceSearching.search — robustness to extra query words', () => {
     })
 
     it('finds a piece by an exact one-word name', () => {
-        const results = pieceSearching.search({
+        const results = connectorSearching.search({
             categories: undefined,
             searchQuery: 'Discord',
             pieces,
@@ -31,7 +31,7 @@ describe('pieceSearching.search — robustness to extra query words', () => {
     })
 
     it('returns all pieces when there is no query', () => {
-        const results = pieceSearching.search({
+        const results = connectorSearching.search({
             categories: undefined,
             searchQuery: undefined,
             pieces,

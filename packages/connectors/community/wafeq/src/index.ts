@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { wafeqAuth, WAFEQ_API_BASE_URL } from './lib/common/auth';
 import { createInvoice } from './lib/actions/create-invoice';
 import { reportInvoiceToTaxAuthority } from './lib/actions/report-invoice-to-tax-authority';
@@ -23,7 +23,7 @@ import { newPaymentReceived } from './lib/triggers/new-payment-received';
 
 export { wafeqAuth } from './lib/common/auth';
 
-export const wafeq = createPiece({
+export const wafeq = createConnector({
   displayName: 'Wafeq',
   description:
     'Cloud accounting software for invoicing, bills, expenses, and tax reporting (ZATCA, UAE FTA).',

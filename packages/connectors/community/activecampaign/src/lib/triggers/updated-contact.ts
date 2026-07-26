@@ -1,5 +1,5 @@
 import { activeCampaignAuth } from '../auth';
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { makeClient } from '../common';
 import { CreateWebhookResponse } from '../common/types';
 import { WEBHOOK_SOURCES } from '../common/constants';

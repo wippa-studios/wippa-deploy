@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { logrocketAuth } from './lib/common/auth';
 import { requestHighlights } from './lib/actions/request-highlights';
 import { identifyUser } from './lib/actions/identify-user';
 import { highlightsReady } from './lib/triggers/highlights-ready';
 
-export const logrocket = createPiece({
+export const logrocket = createConnector({
   displayName: 'LogRocket',
   description: 'Get AI-generated summaries of user sessions to understand customer behavior and troubleshoot issues faster.',
   auth: logrocketAuth,

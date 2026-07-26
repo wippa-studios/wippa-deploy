@@ -1,8 +1,8 @@
 
 
-import { createPiece } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createConnector } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { uscreenAuth } from "./lib/common/auth";
 import { uscreenPublisherApiUrl } from "./lib/common/client";
 
@@ -15,7 +15,7 @@ import { beganToPlayVideo } from "./lib/triggers/began-to-play-video";
 import { canceledSubscription } from "./lib/triggers/canceled-subscription";
 import { userUpdated } from "./lib/triggers/user-updated"; 
 
-export const uscreen = createPiece({
+export const uscreen = createConnector({
     displayName: "Uscreen",
      description: "All-in-one video monetization platform for creating, hosting, and selling online courses, memberships, and video content.",
     auth: uscreenAuth,

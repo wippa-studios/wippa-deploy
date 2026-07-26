@@ -1,5 +1,5 @@
 import { openaiAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import OpenAI from 'openai';
 import { isLLM } from '../common/common';
 

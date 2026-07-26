@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { sendMessageAction } from "./lib/actions/send-message";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { chatflyAuth } from './lib/auth';
 
-export const chatfly = createPiece({
+export const chatfly = createConnector({
   displayName: "Chatfly",
   description: "ChatFly allows you to build AI chatbots trained on your data.",
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],

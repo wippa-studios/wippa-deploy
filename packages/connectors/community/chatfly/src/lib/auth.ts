@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 export const chatflyAuth = PieceAuth.SecretText({
   displayName: 'API Key',

@@ -1,7 +1,7 @@
 
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { runWorkflowAction } from './lib/actions/run-workflow';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 export const mindStudioAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -9,7 +9,7 @@ export const mindStudioAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const mindStudio = createPiece({
+export const mindStudio = createConnector({
   displayName: 'MindStudio',
   description: 'Run MindStudio workflows and get AI results.',
   auth: mindStudioAuth,

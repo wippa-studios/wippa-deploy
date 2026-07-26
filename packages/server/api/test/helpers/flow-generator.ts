@@ -73,8 +73,8 @@ function generateAction(): FlowAction {
         lastUpdatedDate: dayjs().toISOString(),
         settings: {
             input: {},
-            pieceName: faker.helpers.arrayElement(['@wippa/piece-schedule', '@wippa/piece-webhook']),
-            pieceVersion: faker.system.semver(),
+            connectorName: faker.helpers.arrayElement(['@wippa/connector-schedule', '@wippa/connector-webhook']),
+            connectorVersion: faker.system.semver(),
             actionName: faker.hacker.noun(),
             propertySettings: {},
         },
@@ -89,8 +89,8 @@ function generateTrigger(): FlowTrigger {
         name: apId(),
         lastUpdatedDate: dayjs().toISOString(),
         settings: {
-            pieceName: faker.helpers.arrayElement(['@wippa/piece-schedule', '@wippa/piece-webhook']),
-            pieceVersion: faker.system.semver(),
+            connectorName: faker.helpers.arrayElement(['@wippa/connector-schedule', '@wippa/connector-webhook']),
+            connectorVersion: faker.system.semver(),
             triggerName: faker.hacker.noun(),
             input: {},
             propertySettings: {},

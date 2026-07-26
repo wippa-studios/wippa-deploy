@@ -4,7 +4,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { VercelAuthValue } from './auth';
 
 const BASE_URL = 'https://api.vercel.com';

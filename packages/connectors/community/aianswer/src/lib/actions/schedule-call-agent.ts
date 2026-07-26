@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { aiAnswerAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { aiAnswerConfig } from '../common/models';
 
 export const scheduleCallAgent = createAction({

@@ -1,6 +1,6 @@
 import { isNil } from '@wippa/core-utils'
-import { AiMetadata, Audience, ErrorHandlingOptionsParam, type OutputSchema, PieceMetadata, PieceMetadataModel, WebhookRenewConfiguration } from '@wippa/pieces-framework'
-import { AdminRetryRunsRequestBody, ApplyLicenseKeyByEmailRequestBody, ChatConversation, ExactVersionType, IncreaseAICreditsForPlatformRequestBody, PackageType, PieceCategory, PieceType, TriggerStrategy, TriggerTestStrategy, WebhookHandshakeConfiguration } from '@wippa/shared'
+import { AiMetadata, Audience, ErrorHandlingOptionsParam, type OutputSchema, ConnectorMetadata, PieceMetadataModel, WebhookRenewConfiguration } from '@wippa/connectors-framework'
+import { AdminRetryRunsRequestBody, ApplyLicenseKeyByEmailRequestBody, ChatConversation, ExactVersionType, IncreaseAICreditsForPlatformRequestBody, PackageType, PieceCategory, ConnectorType, TriggerStrategy, TriggerTestStrategy, WebhookHandshakeConfiguration } from '@wippa/shared'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
@@ -41,9 +41,9 @@ const adminPlatformController: FastifyPluginAsyncZod = async (
 
     app.post('/pieces', CreatePieceRequest, async (req): Promise<PieceMetadataModel> => {
         return pieceMetadataService(req.log).create({
-            pieceMetadata: req.body as PieceMetadata,
+            connectorMetadata: req.body as ConnectorMetadata,
             packageType: PackageType.REGISTRY,
-            pieceType: PieceType.OFFICIAL,
+            pieceType: ConnectorType.OFFICIAL,
         })
     },
     )

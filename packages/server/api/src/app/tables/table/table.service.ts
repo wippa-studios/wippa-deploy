@@ -16,7 +16,7 @@ import { TableEntity } from './table.entity'
 export const tableRepo = repoFactory(TableEntity)
 export const recordRepo = repoFactory(RecordEntity)
 const tableWebhookRepo = repoFactory(TableWebhookEntity)
-const tablePieceName = '@wippa/piece-tables'
+const tablePieceName = '@wippa/connector-tables'
 
 export const tableService = {
     async create({

@@ -1,10 +1,10 @@
-import { getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { getAccessTokenOrThrow } from '@wippa/connectors-common';
 import {
   AppConnectionValueForAuthProperty,
   Property,
   DynamicPropsValue,
-} from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { Client } from '@notionhq/client';
 import { NotionFieldMapping } from './models';
 import { notionAuth } from '../auth';

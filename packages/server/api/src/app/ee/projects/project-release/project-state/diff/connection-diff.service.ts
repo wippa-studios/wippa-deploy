@@ -7,7 +7,7 @@ export const connectionDiffService = {
 
         currentState.connections?.forEach(connection => {
             const connectionState = newState.connections?.find((c) => c.externalId === connection.externalId)
-            const connectionChanged =  connectionState?.pieceName !== connection.pieceName
+            const connectionChanged =  connectionState?.connectorName !== connection.connectorName
             if (!isNil(connectionState) && connectionChanged) {
                 connectionOperations.push({
                     type: ConnectionOperationType.UPDATE_CONNECTION,

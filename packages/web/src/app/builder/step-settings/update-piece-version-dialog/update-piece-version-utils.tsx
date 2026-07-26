@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import { OAuth2Props, PiecePropertyMap } from '@wippa/pieces-framework';
+import { OAuth2Props, ConnectorPropertyMap } from '@wippa/connectors-framework';
 import {
   FlowActionType,
   FlowOperationRequest,
@@ -66,7 +66,7 @@ function getInputAfterVersionChange({
   currentInput,
 }: {
   versionChangeType: VersionChangeType;
-  props: PiecePropertyMap | OAuth2Props;
+  props: ConnectorPropertyMap | OAuth2Props;
   currentInput: Record<string, unknown>;
 }): Record<string, unknown> {
   if (versionChangeType === VersionChangeType.MINOR_OR_MAJOR) {
@@ -166,14 +166,14 @@ async function applyPieceVersionChange({
   currentVersion: string;
   applyOperation: (operation: FlowOperationRequest) => void;
 }) {
-  const pieceName = step.settings.pieceName;
+  const connectorName = step.settings.connectorName;
   const actionOrTriggerName =
     step.type === FlowTriggerType.PIECE
       ? step.settings.triggerName ?? ''
       : step.settings.actionName ?? '';
 
   const piece = await piecesApi.get({
-    name: pieceName,
+    name: connectorName,
     version: targetVersion,
   });
   const changeType = getVersionChangeType({
@@ -216,7 +216,7 @@ async function applyPieceVersionChange({
         valid,
         settings: {
           ...step.settings,
-          pieceVersion: targetVersion,
+          connectorVersion: targetVersion,
           input,
         },
       },
@@ -230,7 +230,7 @@ async function applyPieceVersionChange({
         valid,
         settings: {
           ...step.settings,
-          pieceVersion: targetVersion,
+          connectorVersion: targetVersion,
           input,
         },
       },

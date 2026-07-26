@@ -1,7 +1,7 @@
 import {
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { shopifyAuth } from '../..';
 import { createCustomer } from '../common';
 

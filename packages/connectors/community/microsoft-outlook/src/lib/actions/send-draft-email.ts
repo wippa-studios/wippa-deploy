@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { microsoftOutlookAuth } from '../common/auth';
 import { outlookCommon } from '../common/client';
 import { draftMessageIdDropdown } from '../common/props';

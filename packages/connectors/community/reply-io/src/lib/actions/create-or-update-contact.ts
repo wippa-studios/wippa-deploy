@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { Property, createAction } from '@wippa/connectors-framework';
 
 import { replyIoAuth } from '../auth';
 import { cleanPayload, replyIoRequest } from '../common/client';

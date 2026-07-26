@@ -3,7 +3,7 @@ import {
 	DynamicPropsValue,
 	PiecePropValueSchema,
 	Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 import { WebflowApiClient } from './client';
 import { webflowAuth } from '../..';

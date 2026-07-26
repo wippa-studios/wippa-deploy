@@ -1,9 +1,9 @@
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { qawafelAuth } from '../common/auth';
 import { qawafelApiCall } from '../common/client';
 

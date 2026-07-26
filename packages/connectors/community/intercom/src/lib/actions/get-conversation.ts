@@ -1,5 +1,5 @@
 import { intercomAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { conversationIdProp } from '../common/props';
 import { intercomClient } from '../common';
 

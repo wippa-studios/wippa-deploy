@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
 import { sendpulseAuth } from './lib/common/auth';
 import { sendpulseApiCall } from './lib/common/client';
 import { newSubscriberTrigger } from './lib/triggers/new-subscriber';
@@ -14,7 +14,7 @@ import { deleteContactAction } from './lib/actions/delete-contact';
 import { unsubscribeUserAction } from './lib/actions/unsubscribe-user';
 import { updateSubscriberAction } from './lib/actions/update-subscriber';
 
-export const sendpulse = createPiece({
+export const sendpulse = createConnector({
   displayName: 'SendPulse',
   auth: sendpulseAuth,
   minimumSupportedRelease: '0.36.1',

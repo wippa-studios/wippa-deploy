@@ -3,7 +3,7 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { Organisation } from './models/oranisation';
 import { Event } from './models/event';
 import { Category } from './models/category';

@@ -22,7 +22,7 @@ import {
 
 import { useBuilderStateContext } from '../builder-hooks';
 
-import GenericActionOrTriggerItem from './generic-piece-selector-item';
+import GenericActionOrTriggerItem from './generic-connector-selector-item';
 type PieceActionsOrTriggersListProps = {
   hidePieceIconAndDescription: boolean;
   stepMetadataWithSuggestions: StepMetadataWithSuggestions | null;
@@ -39,7 +39,7 @@ export const convertStepMetadataToPieceSelectorItems = (
       return actions.map((action) => ({
         actionOrTrigger: action,
         type: FlowActionType.PIECE,
-        pieceMetadata: stepMetadataWithSuggestions,
+        connectorMetadata: stepMetadataWithSuggestions,
       }));
     }
     case FlowTriggerType.PIECE: {
@@ -49,7 +49,7 @@ export const convertStepMetadataToPieceSelectorItems = (
       return triggers.map((trigger) => ({
         actionOrTrigger: trigger,
         type: FlowTriggerType.PIECE,
-        pieceMetadata: stepMetadataWithSuggestions,
+        connectorMetadata: stepMetadataWithSuggestions,
       }));
     }
     case FlowActionType.CODE:

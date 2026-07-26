@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@wippa/core-utils": "workspace:*",
-    "@wippa/core-piece-types": "workspace:*",
+    "@wippa/core-connector-types": "workspace:*",
     "dayjs": "1.11.9",
     "semver": "7.6.0",
     "socket.io-client": "4.8.1",

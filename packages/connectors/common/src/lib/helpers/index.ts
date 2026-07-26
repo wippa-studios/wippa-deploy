@@ -10,7 +10,7 @@ import {
   AppConnectionValueForAuthProperty,
   ExtractPieceAuthPropertyTypeForMethods,
   ApFile,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpError,
   HttpHeaders,

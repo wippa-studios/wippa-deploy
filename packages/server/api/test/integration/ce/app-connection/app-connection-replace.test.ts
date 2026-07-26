@@ -20,7 +20,7 @@ afterAll(async () => {
     await teardownTestEnvironment()
 })
 
-const PIECE_NAME = '@wippa/piece-slack'
+const PIECE_NAME = '@wippa/connector-slack'
 
 describe('POST /v1/app-connections/replace', () => {
     it('keeps the source connection when deleteSourceConnection is not set', async () => {
@@ -29,12 +29,12 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -55,12 +55,12 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -82,7 +82,7 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', source)
 
@@ -105,14 +105,14 @@ describe('POST /v1/app-connections/replace', () => {
             ...createMockConnection({
                 platformId: ctx.platform.id,
                 projectIds: [ctx.project.id],
-                pieceName: PIECE_NAME,
+                connectorName: PIECE_NAME,
             }, ctx.user.id),
             scope: AppConnectionScope.PLATFORM,
         }
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -135,14 +135,14 @@ describe('POST /v1/app-connections/replace', () => {
             ...createMockConnection({
                 platformId: ctx.platform.id,
                 projectIds: [ctx.project.id],
-                pieceName: PIECE_NAME,
+                connectorName: PIECE_NAME,
             }, ctx.user.id),
             scope: AppConnectionScope.PLATFORM,
         }
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -175,12 +175,12 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -217,12 +217,12 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -258,12 +258,12 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -310,12 +310,12 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 
@@ -357,12 +357,12 @@ describe('POST /v1/app-connections/replace', () => {
         const source = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         const target = createMockConnection({
             platformId: ctx.platform.id,
             projectIds: [ctx.project.id],
-            pieceName: PIECE_NAME,
+            connectorName: PIECE_NAME,
         }, ctx.user.id)
         await db.save('app_connection', [source, target])
 

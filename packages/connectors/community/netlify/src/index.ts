@@ -1,5 +1,5 @@
 
-    import { createPiece } from "@wippa/pieces-framework";
+    import { createConnector } from "@wippa/connectors-framework";
     import { netlifyAuth } from "./lib/common/auth";
     import { startDeploy } from "./lib/actions/start-deploy";
     import { getSite } from "./lib/actions/get-site";
@@ -9,9 +9,9 @@
     import { newDeploySucceeded } from "./lib/triggers/new-deploy-succeeded";
     import { newDeployFailed } from "./lib/triggers/new-deploy-failed";
     import { newFormSubmission } from "./lib/triggers/new-form-submission";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-    export const netlify = createPiece({
+    export const netlify = createConnector({
       displayName: "Netlify",
       auth: netlifyAuth,
       minimumSupportedRelease: '0.36.1',

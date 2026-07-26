@@ -1,4 +1,4 @@
-export { PackageType, PieceType, PieceCategory, MAX_KEY_LENGTH_FOR_CORWDIN } from './lib/piece'
+export { PackageType, ConnectorType, PieceCategory, MAX_KEY_LENGTH_FOR_CORWDIN } from './lib/piece'
 
 export {
     AppConnectionType,

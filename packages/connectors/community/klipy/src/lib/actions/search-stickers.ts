@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { klipyAuth } from '../common/auth';
 import { klipyClient, GifSticker } from '../common/client';
 

@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PiecePropValueSchema,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { smartsuiteAuth } from './lib/auth';
 
 // Actions
@@ -16,10 +16,10 @@ import { getRecord } from './lib/actions/get-record';
 // Triggers
 import { newRecord } from './lib/triggers/new-record';
 import { updatedRecord } from './lib/triggers/updated-record';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { SMARTSUITE_API_URL } from './lib/common/constants';
 
-export const smartsuite = createPiece({
+export const smartsuite = createConnector({
   displayName: 'SmartSuite',
   description:
     'Collaborative work management platform combining databases with spreadsheets.',

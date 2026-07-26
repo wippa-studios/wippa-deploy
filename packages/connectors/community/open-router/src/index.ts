@@ -4,9 +4,9 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { askOpenRouterAction } from './lib/actions/ask-open-router';
 import { openRouterAuth } from './lib/auth';
 
@@ -17,7 +17,7 @@ Follow these instructions to get your OpenAI API Key:
 2. Once on the website, click on create a key.
 3. Once you have created a key, copy it and use it for the Api key field on the site.
 `;
-export const openRouter = createPiece({
+export const openRouter = createConnector({
   displayName: 'OpenRouter',
   description: 'Use any AI model to generate code, text, or images via OpenRouter.ai.',
   auth: openRouterAuth,

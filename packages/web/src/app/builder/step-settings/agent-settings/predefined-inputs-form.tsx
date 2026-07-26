@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@wippa/core-utils';
-import { PieceProperty, PropertyType } from '@wippa/pieces-framework';
+import { ConnectorProperty, PropertyType } from '@wippa/connectors-framework';
 import { FieldControlMode, PredefinedInputField } from '@wippa/shared';
 import { t } from 'i18next';
 import { useEffect, useMemo } from 'react';
@@ -46,7 +46,7 @@ export const PredefinedInputsForm = () => {
     selectedPiece: piece,
   } = usePieceToolsDialogStore();
   const { pieces } = piecesHooks.usePieces({});
-  const selectedPiece = pieces?.find((p) => p.name === piece?.pieceName);
+  const selectedPiece = pieces?.find((p) => p.name === piece?.connectorName);
   const requireAuth = selectedAction?.requireAuth ?? true;
   const formSchema = useMemo(
     () => createPredefinedInputsFormSchema(requireAuth),
@@ -58,7 +58,7 @@ export const PredefinedInputsForm = () => {
         ? Object.fromEntries(
             Object.entries(selectedAction.props).map(([name, prop]) => [
               name,
-              prop as PieceProperty,
+              prop as ConnectorProperty,
             ]),
           )
         : {},
@@ -247,8 +247,8 @@ export const PredefinedInputsForm = () => {
                             dynamicInputModeToggled: false,
                             form,
                             dynamicPropsInfo: {
-                              pieceName: selectedPiece?.name ?? '',
-                              pieceVersion: selectedPiece?.version ?? '',
+                              connectorName: selectedPiece?.name ?? '',
+                              connectorVersion: selectedPiece?.version ?? '',
                               actionOrTriggerName: selectedAction?.name ?? '',
                               placedInside: 'predefinedAgentInputs',
                               updateFormSchema: null,

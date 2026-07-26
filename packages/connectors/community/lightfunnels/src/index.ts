@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { OAuth2GrantType, PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { OAuth2GrantType, PieceCategory } from '@wippa/connectors-framework';
 import { newOrderTrigger } from './lib/triggers/new-order';
 import { newLeadTrigger } from './lib/triggers/new-lead';
 import { listProducts } from './lib/actions/list-products';
@@ -14,7 +14,7 @@ import { listCustomers } from './lib/actions/list-customers';
 import { getFunnel } from './lib/actions/get-funnel';
 import { lightfunnelsAuth } from './lib/auth';
 
-export const lightfunnels = createPiece({
+export const lightfunnels = createConnector({
   displayName: 'Lightfunnels',
   auth: lightfunnelsAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,5 +1,5 @@
-import { Property, createAction } from '@wippa/pieces-framework';
-import { FileResponseInterface, HumanInputFormResult, HumanInputFormResultTypes } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
+import { FileResponseInterface, HumanInputFormResult, HumanInputFormResultTypes } from '@wippa/connectors-framework';
 import { StatusCodes } from 'http-status-codes';
 import mime from 'mime-types';
 

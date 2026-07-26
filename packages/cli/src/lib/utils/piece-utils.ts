@@ -41,14 +41,14 @@ export async function findPieces(inputPath?: string, pieces?: string[]): Promise
 /**
  * Finds and returns the path of a single piece. Exits the process if the piece is not found.
  *
- * @param pieceName - The name of the piece to search for.
+ * @param connectorName - The name of the piece to search for.
  * @returns A promise resolving to a string representing the path of the found piece. If not found, the process exits.
  */
-export async function findPiece(pieceName: string): Promise<string | null> {
-    return (await findPieces(piecesPath(), [pieceName]))[0] ?? null;
+export async function findPiece(connectorName: string): Promise<string | null> {
+    return (await findPieces(piecesPath(), [connectorName]))[0] ?? null;
 }
 
-export async function buildPiece(pieceFolder: string): Promise<{ outputFolder: string, outputFile: string }> {
+export async function buildConnector(pieceFolder: string): Promise<{ outputFolder: string, outputFile: string }> {
     const packageJson = await readPackageJson(pieceFolder);
 
     await buildPackage(packageJson.name);
@@ -83,13 +83,13 @@ export async function publishPieceFromFolder(
 
     await buildPackage(packageJson.name);
 
-    const { outputFile } = await buildPiece(pieceFolder);
+    const { outputFile } = await buildConnector(pieceFolder);
     const formData = new FormData();
 
     console.log(chalk.blue(`Uploading ${outputFile}`));
     formData.append('pieceArchive', fs.createReadStream(outputFile));
-    formData.append('pieceName', packageJson.name);
-    formData.append('pieceVersion', packageJson.version);
+    formData.append('connectorName', packageJson.name);
+    formData.append('connectorVersion', packageJson.version);
     formData.append('packageType', 'ARCHIVE');
     formData.append('scope', 'PLATFORM');
 
@@ -165,9 +165,9 @@ export function displayNameToCamelCase(input: string): string {
     return camelCaseWords.join('');
   }
 
-export const assertPieceExists = async (pieceName: string | null) => {
-    if (!pieceName) {
-      console.error(chalk.red(`🚨 Piece ${pieceName} not found`));
+export const assertPieceExists = async (connectorName: string | null) => {
+    if (!connectorName) {
+      console.error(chalk.red(`🚨 Piece ${connectorName} not found`));
       process.exit(1);
     }
   };

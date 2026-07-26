@@ -24,8 +24,8 @@ import { cn } from '../../../lib/utils';
 import { useBuilderStateContext } from '../builder-hooks';
 
 import { NoResultsFound } from './no-results-found';
-import { PieceActionsOrTriggersList } from './piece-actions-or-triggers-list';
-import { PieceCardListItem } from './piece-card-item';
+import { PieceActionsOrTriggersList } from './connector-actions-or-triggers-list';
+import { PieceCardListItem } from './connector-card-item';
 
 type PiecesCardListProps = {
   searchQuery: string;
@@ -118,7 +118,7 @@ export const PiecesCardList: React.FC<PiecesCardListProps> = ({
               }
               return (
                 <PieceCardListItem
-                  pieceMetadata={item.pieceMetadata}
+                  connectorMetadata={item.connectorMetadata}
                   searchQuery={searchQuery}
                   operation={operation}
                   isTemporaryDisabledUntilNextCursorMove={!mouseMoved}
@@ -155,7 +155,7 @@ type VirtualizedItem = {
     }
   | {
       isCategory: false;
-      pieceMetadata: StepMetadataWithSuggestions;
+      connectorMetadata: StepMetadataWithSuggestions;
     }
 );
 const transformPiecesMetadataToVirtualizedItems = (
@@ -171,16 +171,16 @@ const transformPiecesMetadataToVirtualizedItems = (
         isCategory: true,
       });
     }
-    category.metadata.forEach((pieceMetadata, index) => {
+    category.metadata.forEach((connectorMetadata, index) => {
       result.push({
-        id: `${pieceMetadata.displayName}-${index}`,
+        id: `${connectorMetadata.displayName}-${index}`,
         height: getItemHeight(
-          pieceMetadata,
+          connectorMetadata,
           showActionsOrTriggersInsidePiecesList,
         ),
         isCategory: false,
-        pieceMetadata,
-        displayName: pieceMetadata.displayName,
+        connectorMetadata,
+        displayName: connectorMetadata.displayName,
       });
     });
     return result;
@@ -188,17 +188,17 @@ const transformPiecesMetadataToVirtualizedItems = (
 };
 
 const getItemHeight = (
-  pieceMetadata: StepMetadataWithSuggestions,
+  connectorMetadata: StepMetadataWithSuggestions,
   showActionsOrTriggersInsidePiecesList: boolean,
 ) => {
   const { ACTION_OR_TRIGGER_ITEM_HEIGHT, PIECE_ITEM_HEIGHT } =
     PIECE_SELECTOR_ELEMENTS_HEIGHTS;
   if (
-    pieceMetadata.type === FlowActionType.PIECE &&
+    connectorMetadata.type === FlowActionType.PIECE &&
     showActionsOrTriggersInsidePiecesList
   ) {
     const actionsListWithoutHiddenActions =
-      pieceSelectorUtils.removeHiddenActions(pieceMetadata);
+      pieceSelectorUtils.removeHiddenActions(connectorMetadata);
     return (
       ACTION_OR_TRIGGER_ITEM_HEIGHT *
         Object.values(actionsListWithoutHiddenActions).length +
@@ -206,19 +206,19 @@ const getItemHeight = (
     );
   }
   if (
-    pieceMetadata.type === FlowTriggerType.PIECE &&
+    connectorMetadata.type === FlowTriggerType.PIECE &&
     showActionsOrTriggersInsidePiecesList
   ) {
     return (
       ACTION_OR_TRIGGER_ITEM_HEIGHT *
-        Object.values(pieceMetadata.suggestedTriggers ?? {}).length +
+        Object.values(connectorMetadata.suggestedTriggers ?? {}).length +
       PIECE_ITEM_HEIGHT
     );
   }
   const isCoreAction =
-    pieceMetadata.type === FlowActionType.CODE ||
-    pieceMetadata.type === FlowActionType.LOOP_ON_ITEMS ||
-    pieceMetadata.type === FlowActionType.ROUTER;
+    connectorMetadata.type === FlowActionType.CODE ||
+    connectorMetadata.type === FlowActionType.LOOP_ON_ITEMS ||
+    connectorMetadata.type === FlowActionType.ROUTER;
   if (isCoreAction && showActionsOrTriggersInsidePiecesList) {
     return ACTION_OR_TRIGGER_ITEM_HEIGHT + PIECE_ITEM_HEIGHT;
   }

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sliteAuth } from './lib/auth';
 import { sliteApi } from './lib/common/client';
 import { sliteAskQuestionAction } from './lib/actions/ask-question';
@@ -12,7 +12,7 @@ import { sliteFetchDocAction } from './lib/actions/fetch-doc';
 import { sliteSearchDocsAction } from './lib/actions/search-docs';
 import { sliteUpdateDocAction } from './lib/actions/update-doc';
 
-export const slite = createPiece({
+export const slite = createConnector({
   displayName: 'Slite',
   description:
     'Slite is a modern knowledge base. Create, search, update, and ask questions about your team docs.',

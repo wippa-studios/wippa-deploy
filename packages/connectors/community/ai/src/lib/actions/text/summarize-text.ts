@@ -1,6 +1,6 @@
-import { AIProviderName } from '@wippa/pieces-framework';
+import { AIProviderName } from '@wippa/connectors-framework';
 import { createAIModel } from '../../common/ai-sdk';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { generateText } from 'ai';
 import { aiProps } from '../../common/props';
 

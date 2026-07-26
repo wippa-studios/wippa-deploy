@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addSubscriberToListAction } from './lib/actions/add-subscriber-to-list';
 import { updateSubscriberDetailsAction } from './lib/actions/update-subscriber-details';
 import { unsubscribeSubscriberAction } from './lib/actions/unsubscribe-subscriber';
@@ -17,7 +17,7 @@ To use Campaign Monitor, you need to get an API key:
 4. Create a new API key or use an existing one.
 `;
 
-export const campaignMonitor = createPiece({
+export const campaignMonitor = createConnector({
     displayName: 'Campaign Monitor',
     description: 'Email marketing platform for delivering exceptional email campaigns.',
     logoUrl: 'https://cdn.activepieces.com/pieces/campaign-monitor.png',

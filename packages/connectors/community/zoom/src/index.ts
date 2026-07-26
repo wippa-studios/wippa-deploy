@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { zoomCreateMeeting } from './lib/actions/create-meeting';
 import { zoomCreateMeetingRegistrant } from './lib/actions/create-meeting-registrant';
 import { zoomFindMeeting } from './lib/actions/find-meeting';
@@ -24,7 +24,7 @@ export const zoomAuth = PieceAuth.OAuth2({
   scope: [],
 });
 
-export const zoom = createPiece({
+export const zoom = createConnector({
   displayName: 'Zoom',
   description: 'Video conferencing, web conferencing, webinars, screen sharing',
 

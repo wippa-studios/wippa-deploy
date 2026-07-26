@@ -1,5 +1,5 @@
-    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-    import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
+    import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+    import { createCustomApiCallAction, HttpMethod } from '@wippa/connectors-common';
     import { createItemAction } from './lib/actions/create-item';
     import { updateItemAction } from './lib/actions/update-item';
     import { createTaskAction } from './lib/actions/create-task';
@@ -18,7 +18,7 @@
     import { podioApiCall, validateAuthData } from './lib/common';
 import { podioAuth } from './lib/auth';
 
-        export const podio = createPiece({
+        export const podio = createConnector({
       displayName: "Podio",
       auth: podioAuth,
       minimumSupportedRelease: '0.36.1',

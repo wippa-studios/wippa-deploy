@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { typefullyAuth } from './lib/auth';
 import { TYPEFULLY_API_URL } from './lib/common/client';
 import { createDraftAction } from './lib/actions/create-draft.action';
@@ -13,7 +13,7 @@ import { scheduleDraftAction } from './lib/actions/schedule-draft.action';
 import { uploadMediaAction } from './lib/actions/upload-media.action';
 import { newEventTrigger } from './lib/triggers/new-event.trigger';
 
-export const typefully = createPiece({
+export const typefully = createConnector({
 	displayName: 'Typefully',
 	description: 'Write, schedule, and publish social media content.',
 	auth: typefullyAuth,

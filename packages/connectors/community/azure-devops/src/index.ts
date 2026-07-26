@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createWorkItemAction } from './lib/actions/create-work-item';
 import { getWorkItemAction } from './lib/actions/get-work-item';
 import { updateWorkItemAction } from './lib/actions/update-work-item';
@@ -10,7 +10,7 @@ import { newUpdatedWorkItemTrigger } from './lib/triggers/new-updated-work-item'
 import { newUpdatedWorkItemWebhookTrigger } from './lib/triggers/new-updated-work-item-webhook';
 import { azureDevOpsAuth, azureDevOpsCommon } from './lib/common';
 
-export const azureDevOps = createPiece({
+export const azureDevOps = createConnector({
   displayName: 'Azure DevOps',
   description: 'Track work, code, and ship software with Azure Boards, Repos, and Pipelines.',
   minimumSupportedRelease: '0.36.1',

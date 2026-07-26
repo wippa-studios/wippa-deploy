@@ -1,8 +1,8 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { githubAuth } from '../auth';
 import { githubApiCall } from '../common';
 import { GithubAuthValue, isAppAuth } from '../common/auth-helpers';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const githubCreateGistAction = createAction({
   auth: githubAuth,

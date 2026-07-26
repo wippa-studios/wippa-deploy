@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 const BASE_URL = 'https://api.edenai.run/v2';
 const DEFAULT_TIMEOUT = 20000;

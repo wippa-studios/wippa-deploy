@@ -1,7 +1,7 @@
 
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addProspectToCampaign } from './lib/actions/add-prospect-to-campaign';
 import { addProspectToList } from './lib/actions/add-prospect-to-list';
 import { blacklistDomain } from './lib/actions/blacklist-domain';
@@ -59,7 +59,7 @@ To obtain your API key:
   },
 });
 
-export const woodpecker = createPiece({
+export const woodpecker = createConnector({
   displayName: 'Woodpecker',
   description: 'Cold email automation tool for sales teams to send personalized outreach campaigns',
   auth: woodpeckerAuth,

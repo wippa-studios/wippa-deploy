@@ -1,5 +1,5 @@
 import { googleSheetsAuth } from '../common/common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
 	areSheetIdsValid,
 	columnToLabel,

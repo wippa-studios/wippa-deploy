@@ -72,13 +72,13 @@ async function isFlowChanged(fromFlow: FlowState, targetFlow: FlowState): Promis
     
     flowStructureUtil.getAllSteps(fromFlow.version.trigger).forEach((step) => {
         if ([FlowActionType.PIECE, FlowTriggerType.PIECE].includes(step.type)) {
-            stepsPieceVersionsFrom.set(step.name, step.settings.pieceVersion)
+            stepsPieceVersionsFrom.set(step.name, step.settings.connectorVersion)
         }
     })
 
     flowStructureUtil.getAllSteps(targetFlow.version.trigger).forEach((step) => {
         if ([FlowActionType.PIECE, FlowTriggerType.PIECE].includes(step.type)) {
-            stepsPiecesVersionTo.set(step.name, step.settings.pieceVersion)
+            stepsPiecesVersionTo.set(step.name, step.settings.connectorVersion)
         }
     })
 
@@ -112,7 +112,7 @@ async function normalize(flowVersion: FlowVersion): Promise<FlowVersion> {
         const authExists = clonedStep?.settings?.input?.auth
 
         if ([FlowActionType.PIECE, FlowTriggerType.PIECE].includes(step.type)) {
-            clonedStep.settings.pieceVersion = ''
+            clonedStep.settings.connectorVersion = ''
             if (authExists) {
                 clonedStep.settings.input.auth = ''
             }

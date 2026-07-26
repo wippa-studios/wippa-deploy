@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { klaviyoAuth, KlaviyoAuthValue } from '../common/auth';
 import { listIdDropdown, profileIdsMultiSelectDropdown } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { makeRequest, normalizeProfileIds } from '../common/client';
 
 export const removeProfileFromList = createAction({

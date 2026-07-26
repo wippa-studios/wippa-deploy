@@ -1,8 +1,8 @@
 import { slackAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { WebClient } from '@slack/web-api';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 import { requireUserToken, SlackAuthValue } from '../common/auth-helpers';
 
 export const setUserStatusAction = createAction({

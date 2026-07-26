@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { addLeads } from './lib/actions/add-leads';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { campaignCompleted } from './lib/triggers/campaign-completed';
 import { emailBounced } from './lib/triggers/email-bounced';
 import { emailOpened } from './lib/triggers/email-opened';
@@ -19,7 +19,7 @@ import { removeEmail } from './lib/actions/remove-email';
 import { setSchedule } from './lib/actions/set-schedule';
 import { startCampaign } from './lib/actions/start-campaign';
 import { updateLead } from './lib/actions/update-lead';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 /**
  * Define the API Key authentication using PieceAuth.SecretText
@@ -44,7 +44,7 @@ export const ReachinboxAuth = PieceAuth.SecretText({
   },
 });
 
-export const reachinbox = createPiece({
+export const reachinbox = createConnector({
   displayName: 'Reachinbox',
   auth: ReachinboxAuth,
   minimumSupportedRelease: '0.30.0',

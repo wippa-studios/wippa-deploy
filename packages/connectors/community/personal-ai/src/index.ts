@@ -1,6 +1,6 @@
 
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { createMemory } from './lib/actions/memory/create-memory';
 import { createMessage } from './lib/actions/messaging/create-message';
@@ -16,7 +16,7 @@ import { personalAiAuth } from './lib/auth';
 
 export const BASE_URL = 'https://api.personal.ai';
 
-export const aiAssistant = createPiece({
+export const aiAssistant = createConnector({
   displayName: 'Personal AI',
   description: 'Manage memory storage, messaging, and documents through AI integration.',
   logoUrl: 'https://cdn.activepieces.com/pieces/personal-ai.png',

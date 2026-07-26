@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { isNil, tryCatch, tryCatchSync } from '@wippa/core-utils'
 import { type ApLogger } from '@wippa/server-utils'
-import { FlowVersion, GetFlowBundleResponse, LATEST_FLOW_SCHEMA_VERSION, PiecePackage, WorkerToApiContract } from '@wippa/shared'
+import { FlowVersion, GetFlowBundleResponse, LATEST_FLOW_SCHEMA_VERSION, ConnectorPackage, WorkerToApiContract } from '@wippa/shared'
 import { bundleHttp } from '../../utils/bundle-http'
 import { cacheUtils } from '../cache-paths'
 import { cacheState } from '../cache-state'
@@ -111,7 +111,7 @@ type TryFetchParams = {
 
 type PublishParams = {
     flowVersion: FlowVersion
-    pieces: PiecePackage[]
+    pieces: ConnectorPackage[]
     projectId: string
     platformId: string
 }
@@ -123,12 +123,12 @@ type MaterializeCodeParams = {
 
 type MaterializedFlowBundle = {
     flowVersion: FlowVersion
-    pieces: PiecePackage[]
+    pieces: ConnectorPackage[]
 }
 
 type FlowBundleManifest = {
     flowVersion: FlowVersion
-    pieces: PiecePackage[]
+    pieces: ConnectorPackage[]
     codes: CompiledCodeStep[]
 }
 

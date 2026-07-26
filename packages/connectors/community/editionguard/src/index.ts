@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { editionguardAuth } from './lib/common/auth';
 import { sendEbookDownloadLinks } from './lib/actions/send-ebook-download-links';
 
-export const editionguard = createPiece({
+export const editionguard = createConnector({
   displayName: 'EditionGuard',
   description:
     'Secure eBook DRM and fulfillment — protect and deliver EPUB, MOBI, and PDF files with Adobe DRM, Readium LCP, or Social DRM.',

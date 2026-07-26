@@ -1,6 +1,6 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { dashworksAuth } from "../common/auth";
-import {AuthenticationType, httpClient, HttpMethod} from "@wippa/pieces-common";
+import {AuthenticationType, httpClient, HttpMethod} from "@wippa/connectors-common";
 
 export const generateAnswerAction = createAction({
     name:'generate-answer',

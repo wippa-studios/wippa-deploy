@@ -1,18 +1,18 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { findRowAction } from './lib/actions/find-row';
 import { createRowAction } from './lib/actions/create-row';
 import { upsertRowAction } from './lib/actions/upsert-row';
 import { updateRowAction } from './lib/actions/update-row';
 import { newRowCreatedTrigger } from './lib/triggers/new-row-created';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getRowAction } from './lib/actions/get-row';
 import { listTablesAction } from './lib/actions/list-tables';
 import { getTableAction } from './lib/actions/get-table';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { CODA_BASE_URL } from './lib/common/types';
 import { codaAuth } from './lib/auth';
 
-export const coda = createPiece({
+export const coda = createConnector({
 	displayName: 'Coda',
 	logoUrl: 'https://cdn.activepieces.com/pieces/coda.png',
 	categories: [PieceCategory.PRODUCTIVITY],

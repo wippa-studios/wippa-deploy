@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { BASE_URL, makeRequest } from './lib/common';
 import { runWorkflow } from './lib/actions/run-workflow';
 import { runWorkflowAsync } from './lib/actions/run-workflow-async';
@@ -29,7 +29,7 @@ export const airOpsAuth = PieceAuth.SecretText({
   },
 });
 
-export const airOps = createPiece({
+export const airOps = createConnector({
   displayName: 'AirOps',
   description: 'Build and deploy AI-powered workflows and agents.',
   auth: airOpsAuth,

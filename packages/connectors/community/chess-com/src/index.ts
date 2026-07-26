@@ -1,9 +1,9 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { getPlayerProfile } from './lib/actions/get-player-profile';
 import { getPlayerStats } from './lib/actions/get-player-stats';
 import { getDailyPuzzle } from './lib/actions/get-daily-puzzle';
 
-export const chesscom = createPiece({
+export const chesscom = createConnector({
   displayName: 'Chess.com',
   description: 'Access Chess.com player data',
   auth: PieceAuth.None(),

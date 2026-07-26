@@ -1,7 +1,7 @@
 import {
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createFile } from './lib/actions/create-file';
 import { uploadFileAction } from './lib/actions/upload-file';
 import { readFileContent } from './lib/actions/read-file';
@@ -14,7 +14,7 @@ import { renameFileOrFolderAction } from './lib/actions/rename-file-or-folder';
 import { sftpAuth } from './lib/auth';
 export { getProtocolBackwardCompatibility, getClient, endClient } from './lib/common';
 
-export const ftpSftp = createPiece({
+export const ftpSftp = createConnector({
   displayName: 'FTP/SFTP',
   description: 'Connect to FTP, FTPS or SFTP servers',
   minimumSupportedRelease: '0.30.0',

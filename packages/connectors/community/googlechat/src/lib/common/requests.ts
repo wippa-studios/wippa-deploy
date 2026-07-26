@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { GOOGLE_SERVICE_ENTITIES } from './constants';
 
 async function fireHttpRequest({

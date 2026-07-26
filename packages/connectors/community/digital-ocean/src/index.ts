@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { digitalOceanAuth, DigitalOceanAuthValue } from './lib/common/auth';
 import {
   listDomains,
@@ -15,7 +15,7 @@ import {
   listDatabaseEvents,
 } from './lib/actions';
 
-export const digitalOcean = createPiece({
+export const digitalOcean = createConnector({
   displayName: 'DigitalOcean',
   auth: digitalOceanAuth,
   minimumSupportedRelease: '0.36.1',

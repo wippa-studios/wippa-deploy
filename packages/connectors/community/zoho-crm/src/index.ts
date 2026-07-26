@@ -1,16 +1,16 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newContact } from './lib/triggers/new-contact';
 import { readFile } from './lib/actions/read-file';
 import { zohoCrmAuth } from './lib/auth';
 
-export const zohoCrm = createPiece({
+export const zohoCrm = createConnector({
   displayName: 'Zoho CRM',
   description: 'Customer relationship management software',
 

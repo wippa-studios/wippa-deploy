@@ -1,4 +1,4 @@
-import { Property, StoreScope } from "@wippa/pieces-framework"
+import { Property, StoreScope } from "@wippa/connectors-framework"
 
 export enum PieceStoreScope {
     PROJECT = 'COLLECTION',

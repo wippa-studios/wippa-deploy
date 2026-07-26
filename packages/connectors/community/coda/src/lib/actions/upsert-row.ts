@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { codaAuth } from '../auth';
 import { codaClient } from '../common/types';
 import {

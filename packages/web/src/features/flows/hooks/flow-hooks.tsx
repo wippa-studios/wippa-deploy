@@ -27,7 +27,7 @@ import { internalErrorToast } from '@/components/ui/sonner';
 import { flowRunsApi } from '@/features/flow-runs/api/flow-runs-api';
 import { foldersApi } from '@/features/folders/api/folders-api';
 import { piecesApi } from '@/features/pieces/api/pieces-api';
-import { pieceSelectorUtils } from '@/features/pieces/utils/piece-selector-utils';
+import { pieceSelectorUtils } from '@/features/pieces/utils/connector-selector-utils';
 import { stepUtils } from '@/features/pieces/utils/step-utils';
 import { templatesApi } from '@/features/templates/api/templates-api';
 import { flagsHooks } from '@/hooks/flags-hooks';
@@ -237,7 +237,7 @@ export const flowHooks = {
           displayName: t('Untitled'),
         });
         const mcpPiece = await piecesApi.get({
-          name: '@wippa/piece-mcp',
+          name: '@wippa/connector-mcp',
         });
         const trigger = mcpPiece.triggers['mcp_tool'];
         if (!trigger) {
@@ -248,7 +248,7 @@ export const flowHooks = {
           pieceSelectorItem: {
             actionOrTrigger: trigger,
             type: FlowTriggerType.PIECE,
-            pieceMetadata: stepUtils.mapPieceToMetadata({
+            connectorMetadata: stepUtils.mapPieceToMetadata({
               piece: mcpPiece,
               type: 'trigger',
             }),

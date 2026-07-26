@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { SoftrAuth } from './lib/common/auth';
 import { createDatabaseRecord } from './lib/actions/create-database-record';
 import { createAppUser } from './lib/actions/create-app-user';
@@ -6,12 +6,12 @@ import { deleteAppUser } from './lib/actions/delete-app-user';
 import { deleteDatabaseRecord } from './lib/actions/delete-database-record';
 import { findDatabaseRecord } from './lib/actions/find-database-record';
 import { updateDatabaseRecord } from './lib/actions/update-database-record';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newDatabaseRecord } from './lib/triggers/new-database-record';
 
-export const softr = createPiece({
+export const softr = createConnector({
   displayName: 'Softr',
   auth: SoftrAuth,
   minimumSupportedRelease: '0.36.1',

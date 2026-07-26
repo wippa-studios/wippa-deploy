@@ -2,7 +2,7 @@ import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { onfleetAuth } from '../..';
 import { common } from '../common';
 

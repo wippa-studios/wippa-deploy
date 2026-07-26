@@ -1,8 +1,8 @@
 import { isNil, tryCatch } from '@wippa/core-utils'
 import { type ApLogger, wideEvent } from '@wippa/server-utils'
-import { AgentPieceTool, FailedStep, FlowActionType, flowStructureUtil, FlowVersion, FlowVersionState, LATEST_FLOW_SCHEMA_VERSION, PiecePackage, Step, WorkerToApiContract } from '@wippa/shared'
+import { AgentPieceTool, FailedStep, FlowActionType, flowStructureUtil, FlowVersion, FlowVersionState, LATEST_FLOW_SCHEMA_VERSION, ConnectorPackage, Step, WorkerToApiContract } from '@wippa/shared'
 import { CodeArtifact, SandboxSettings } from '../../types'
-import { pieceCache, PieceNotFoundError } from '../pieces/piece-cache'
+import { connectorCache, PieceNotFoundError } from '../pieces/piece-cache'
 import { flowBundleStore } from './flow-bundle-store'
 import { flowCache } from './flow-cache'
 import { flowSteps } from './flow-steps'
@@ -65,17 +65,17 @@ function buildPublishBundle({ log, apiClient, basePath, flowVersion, pieces, pro
     }
 }
 
-async function resolvePieces({ flowVersion, platformId, log, apiClient, basePath, getSettings }: ResolvePiecesParams): Promise<PiecePackage[]> {
+async function resolvePieces({ flowVersion, platformId, log, apiClient, basePath, getSettings }: ResolvePiecesParams): Promise<ConnectorPackage[]> {
     const stepPieceRefs = flowSteps.piece(flowVersion).map((step) => ({
-        pieceName: step.settings.pieceName,
-        pieceVersion: step.settings.pieceVersion,
+        connectorName: step.settings.connectorName,
+        connectorVersion: step.settings.connectorVersion,
     }))
     const agentToolPieceRefs = flowStructureUtil.getAllSteps(flowVersion.trigger).flatMap(extractAgentToolPieceRefs)
     const uniquePieceRefs = dedupePieceRefs([...stepPieceRefs, ...agentToolPieceRefs])
     return Promise.all(uniquePieceRefs.map((ref) =>
-        pieceCache(log, apiClient, basePath, getSettings).getPiece({
-            pieceName: ref.pieceName,
-            pieceVersion: ref.pieceVersion,
+        connectorCache(log, apiClient, basePath, getSettings).getConnector({
+            connectorName: ref.connectorName,
+            connectorVersion: ref.connectorVersion,
             platformId,
         }),
     ))
@@ -83,13 +83,13 @@ async function resolvePieces({ flowVersion, platformId, log, apiClient, basePath
 
 function buildMissingPieceFailedStep({ flowVersion, missingPiece }: BuildMissingPieceFailedStepParams): FailedStep {
     const pieceSteps = flowSteps.piece(flowVersion)
-    const stepMatch = pieceSteps.find((step) => step.settings.pieceName === missingPiece.pieceName && step.settings.pieceVersion === missingPiece.pieceVersion)
-    const agentToolMatch = pieceSteps.find((step) => extractAgentToolPieceRefs(step).some((ref) => ref.pieceName === missingPiece.pieceName && ref.pieceVersion === missingPiece.pieceVersion))
+    const stepMatch = pieceSteps.find((step) => step.settings.connectorName === missingPiece.connectorName && step.settings.connectorVersion === missingPiece.connectorVersion)
+    const agentToolMatch = pieceSteps.find((step) => extractAgentToolPieceRefs(step).some((ref) => ref.connectorName === missingPiece.connectorName && ref.connectorVersion === missingPiece.connectorVersion))
     const step = stepMatch ?? agentToolMatch ?? flowVersion.trigger
     return {
         name: step.name,
         displayName: step.displayName,
-        message: `The piece ${missingPiece.pieceName}@${missingPiece.pieceVersion} is not installed on this instance or has been hidden by an admin, so the flow was turned off. Install the missing piece version or update the step to an installed version, then publish and re-enable the flow.`,
+        message: `The piece ${missingPiece.connectorName}@${missingPiece.connectorVersion} is not installed on this instance or has been hidden by an admin, so the flow was turned off. Install the missing piece version or update the step to an installed version, then publish and re-enable the flow.`,
     }
 }
 
@@ -109,8 +109,8 @@ function extractAgentToolPieceRefs(step: Step): PieceRef[] {
             return []
         }
         return [{
-            pieceName: parsed.data.pieceMetadata.pieceName,
-            pieceVersion: parsed.data.pieceMetadata.pieceVersion,
+            connectorName: parsed.data.connectorMetadata.connectorName,
+            connectorVersion: parsed.data.connectorMetadata.connectorVersion,
         }]
     })
 }
@@ -118,7 +118,7 @@ function extractAgentToolPieceRefs(step: Step): PieceRef[] {
 function dedupePieceRefs(refs: PieceRef[]): PieceRef[] {
     const byKey = new Map<string, PieceRef>()
     for (const ref of refs) {
-        byKey.set(`${ref.pieceName}@${ref.pieceVersion}`, ref)
+        byKey.set(`${ref.connectorName}@${ref.connectorVersion}`, ref)
     }
     return [...byKey.values()]
 }
@@ -151,14 +151,14 @@ type BuildPublishBundleParams = {
     apiClient: WorkerToApiContract
     basePath: string
     flowVersion: FlowVersion
-    pieces: PiecePackage[]
+    pieces: ConnectorPackage[]
     projectId: string
     platformId: string
 }
 
 type PieceRef = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
 }
 
 type BuildMissingPieceFailedStepParams = {
@@ -175,4 +175,4 @@ export type ProvisionedCode =
 export type ResolvedFlow =
     | { kind: 'flow-not-found' }
     | { kind: 'disabled', failedStep?: FailedStep }
-    | { kind: 'ready', flowVersion: FlowVersion, pieces: PiecePackage[], code: ProvisionedCode, publishBundle: PublishBundle | null }
+    | { kind: 'ready', flowVersion: FlowVersion, pieces: ConnectorPackage[], code: ProvisionedCode, publishBundle: PublishBundle | null }

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { OAuth2PropertyValue, PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { webflowCreateCollectionItemAction } from './lib/actions/create-collection-item';
 import { webflowDeleteCollectionItem } from './lib/actions/delete-collection-item';
 import { webflowFindCollectionItem } from './lib/actions/find-collection-item';
@@ -23,7 +23,7 @@ export const webflowAuth = PieceAuth.OAuth2({
 	scope: ['webhooks:write', 'forms:read'],
 });
 
-export const webflow = createPiece({
+export const webflow = createConnector({
 	displayName: 'Webflow',
 	description: 'Design, build, and launch responsive websites visually',
 	minimumSupportedRelease: '0.5.0',

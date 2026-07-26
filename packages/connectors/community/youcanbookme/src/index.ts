@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { newBooking } from './lib/triggers/new-booking';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createprofile } from './lib/actions/create-profile';
 import { retrieveBookingById } from './lib/actions/retrieve-booking-by-id';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { youcanbookmeAuth } from './lib/common/auth';
 
-export const youcanbookme = createPiece({
+export const youcanbookme = createConnector({
   displayName: 'YouCanBookMe',
   auth: youcanbookmeAuth,
   minimumSupportedRelease: '0.36.1',

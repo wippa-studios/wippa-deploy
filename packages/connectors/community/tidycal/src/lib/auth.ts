@@ -1,6 +1,6 @@
-import { PieceAuth } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { calltidycalapi } from './common';
 
 const markdown = `

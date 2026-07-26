@@ -1,4 +1,4 @@
-import { PieceMetadataModelSummary } from '@wippa/pieces-framework';
+import { PieceMetadataModelSummary } from '@wippa/connectors-framework';
 import {
   apId,
   PieceSelectorTabConfig,
@@ -52,7 +52,7 @@ import {
   SortableItem,
 } from '@/components/ui/sortable';
 import {
-  PieceIcon,
+  ConnectorIcon,
   pieceSelectorCustomization,
   PIECE_SELECTOR_TAB_ICON_OPTIONS,
   piecesHooks,
@@ -482,7 +482,7 @@ const PiecePickerButton = ({
     () => new Map(pieces.map((piece) => [piece.name, piece])),
     [pieces],
   );
-  const selectedPieces = selectedPieceNames
+  const selectedConnectors = selectedPieceNames
     .map((name) => piecesByName.get(name))
     .filter((piece): piece is PieceMetadataModelSummary => !!piece);
 
@@ -505,14 +505,14 @@ const PiecePickerButton = ({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 p-0" align="end">
-        {selectedPieces.length > 0 && (
+        {selectedConnectors.length > 0 && (
           <div className="border-b p-2">
             <Sortable
-              value={selectedPieces.map((piece) => ({ id: piece.name }))}
+              value={selectedConnectors.map((piece) => ({ id: piece.name }))}
               onValueChange={(items) => onChange(items.map((item) => item.id))}
             >
               <div className="flex flex-col gap-1 max-h-40 overflow-y-auto">
-                {selectedPieces.map((piece) => (
+                {selectedConnectors.map((piece) => (
                   <SortableItem key={piece.name} value={piece.name} asChild>
                     <div className="flex items-center gap-2 rounded-sm px-1 py-0.5">
                       <SortableDragHandle
@@ -522,7 +522,7 @@ const PiecePickerButton = ({
                       >
                         <GripVerticalIcon className="size-3.5" />
                       </SortableDragHandle>
-                      <PieceIcon
+                      <ConnectorIcon
                         logoUrl={piece.logoUrl}
                         displayName={piece.displayName}
                         showTooltip={false}
@@ -560,7 +560,7 @@ const PiecePickerButton = ({
                     onSelect={() => togglePiece(piece.name)}
                     className="flex items-center gap-2"
                   >
-                    <PieceIcon
+                    <ConnectorIcon
                       logoUrl={piece.logoUrl}
                       displayName={piece.displayName}
                       showTooltip={false}

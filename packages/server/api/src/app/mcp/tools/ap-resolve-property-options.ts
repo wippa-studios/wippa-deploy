@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils'
-import { PropertyType } from '@wippa/pieces-framework'
+import { PropertyType } from '@wippa/connectors-framework'
 import { McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
@@ -12,12 +12,12 @@ export const apResolvePropertyOptionsTool = (mcp: ProjectScopedMcpServer, log: F
         inputSchema: resolvePropertyOptionsInput.shape,
         annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
         execute: async (args) => {
-            const { pieceName, actionOrTriggerName, type, propertyName, auth, input: providedInput, searchValue } = resolvePropertyOptionsInput.parse(args)
+            const { connectorName, actionOrTriggerName, type, propertyName, auth, input: providedInput, searchValue } = resolvePropertyOptionsInput.parse(args)
 
             const platformId = await mcpUtils.resolvePlatformId({ mcp, log })
 
             const lookup = await mcpUtils.lookupPieceComponent({
-                pieceName,
+                connectorName,
                 componentName: actionOrTriggerName,
                 componentType: type,
                 projectId: mcp.projectId,
@@ -28,7 +28,7 @@ export const apResolvePropertyOptionsTool = (mcp: ProjectScopedMcpServer, log: F
                 return lookup.error
             }
 
-            const { piece, component, pieceName: normalized } = lookup
+            const { piece, component, connectorName: normalized } = lookup
             const propDef = component.props[propertyName]
             if (isNil(propDef)) {
                 return {
@@ -37,8 +37,8 @@ export const apResolvePropertyOptionsTool = (mcp: ProjectScopedMcpServer, log: F
             }
 
             const result = await mcpUtils.executePropertyResolution({
-                pieceName: normalized,
-                pieceVersion: piece.version,
+                connectorName: normalized,
+                connectorVersion: piece.version,
                 actionOrTriggerName,
                 propertyName,
                 auth,
@@ -86,7 +86,7 @@ export const apResolvePropertyOptionsTool = (mcp: ProjectScopedMcpServer, log: F
 }
 
 const resolvePropertyOptionsInput = z.object({
-    pieceName: z.string().describe('The piece name (e.g. "@wippa/piece-slack").'),
+    connectorName: z.string().describe('The piece name (e.g. "@wippa/connector-slack").'),
     actionOrTriggerName: z.string().describe('The action or trigger name (e.g. "send_channel_message").'),
     type: z.enum(['action', 'trigger']).describe('Whether this is an action or trigger.'),
     propertyName: z.string().describe('The exact property name to resolve options for (e.g. "channel").'),

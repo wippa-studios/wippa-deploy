@@ -1,10 +1,10 @@
 import {
   AppConnectionValueForAuthProperty,
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { createConversation } from './lib/actions/create-conversation';
 import { replyToConversation } from './lib/actions/reply-to-conversation';
 import { upsertDocument } from './lib/actions/upsert-document';
@@ -43,7 +43,7 @@ export const dustAuth = PieceAuth.CustomAuth({
 export type DustAuthType = AppConnectionValueForAuthProperty<
   typeof dustAuth
 >['props'];
-export const dust = createPiece({
+export const dust = createConnector({
   displayName: 'Dust',
   description: 'Secure messaging and collaboration',
   auth: dustAuth,

@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { whatConvertsAuth } from '../src/lib/common/auth';
 import { createLeadAction } from '../src/lib/actions/create-lead';
 import { exportLeadsAction } from '../src/lib/actions/create-export';
@@ -6,9 +6,9 @@ import { updateLeadAction } from '../src/lib/actions/update-lead';
 import { findLeadAction } from '../src/lib/actions/find-lead';
 import { newLeadTrigger } from '../src/lib/triggers/new-lead';
 import { updatedLeadTrigger } from '../src/lib/triggers/update-lead';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const whatConverts = createPiece({
+export const whatConverts = createConnector({
   displayName: 'WhatConverts',
   auth: whatConvertsAuth,
   minimumSupportedRelease: '0.36.1',

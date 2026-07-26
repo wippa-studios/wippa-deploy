@@ -1,14 +1,14 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createSpace } from './lib/actions/create-space';
 import { listSpaces } from './lib/actions/list-spaces';
 import { addSpaceRecord } from './lib/actions/add-space-record';
 import { askSpace } from './lib/actions/ask-space';
 import { deleteSpace } from './lib/actions/delete-space';
 import { renameSpace } from './lib/actions/rename-space';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { medullarAuth } from './lib/auth';
 
-export const medullar = createPiece({
+export const medullar = createConnector({
   displayName: 'Medullar',
   description:
     'AI-powered discovery & insight platform that acts as your extended digital mind',

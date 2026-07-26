@@ -52,7 +52,7 @@ interface PieceIconProps extends VariantProps<typeof pieceIconVariants> {
   background?: string;
 }
 
-const PieceIcon = React.memo(
+const ConnectorIcon = React.memo(
   ({
     displayName,
     logoUrl,
@@ -95,5 +95,5 @@ const PieceIcon = React.memo(
   },
 );
 
-PieceIcon.displayName = 'PieceIcon';
-export { PieceIcon };
+ConnectorIcon.displayName = 'ConnectorIcon';
+export { ConnectorIcon };

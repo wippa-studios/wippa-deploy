@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { getDatasetItems } from './lib/actions/get-dataset-items';
 import { runActor } from './lib/actions/run-actor';
 import { createApifyClient } from './lib/common';
@@ -42,7 +42,7 @@ export const apifyAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const apify = createPiece({
+export const apify = createConnector({
   displayName: 'Apify',
   description: 'Access Apify tools for web scraping, data extraction, and automation.',
   auth: apifyAuth,

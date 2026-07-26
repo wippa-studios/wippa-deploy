@@ -1,8 +1,8 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { renderTemplate } from './actions/renderTemplate.action';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { generatebannersAuth } from './src/index';
-export const generatebanners = createPiece({
+export const generatebanners = createConnector({
   minimumSupportedRelease: '0.30.0',
   logoUrl: 'https://cdn.activepieces.com/pieces/generatebanners.png',
   authors: ['tpatel'],

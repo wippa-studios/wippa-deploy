@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { smsmodeAuth } from './lib/common/auth';
 import { sendMessage } from './lib/actions/send-message';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const smsmode = createPiece({
+export const smsmode = createConnector({
   displayName: 'smsmode',
   auth: smsmodeAuth,
   minimumSupportedRelease: '0.36.1',

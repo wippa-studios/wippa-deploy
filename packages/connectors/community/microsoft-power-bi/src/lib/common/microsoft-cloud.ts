@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
 
 const COMMERCIAL_LOGIN_HOST = 'login.microsoftonline.com';
 const GOV_LOGIN_HOST = 'login.microsoftonline.us';

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 
 import { createContactAction } from './lib/actions/create-contact';
 import { createNewsletterAction } from './lib/actions/create-newsletter';
@@ -9,7 +9,7 @@ import { findCampaignListAction } from './lib/actions/find-campaign-list';
 import { findContactAction } from './lib/actions/find-contact';
 import { getresponseAuth } from './lib/common/auth';
 
-export const getresponse = createPiece({
+export const getresponse = createConnector({
   displayName: 'GetResponse',
   description:
     'Email marketing and automation platform for contacts, campaigns, and newsletters.',

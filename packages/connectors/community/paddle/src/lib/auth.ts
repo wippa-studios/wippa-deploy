@@ -1,8 +1,8 @@
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 
 import { paddleClient } from './common/client';
 

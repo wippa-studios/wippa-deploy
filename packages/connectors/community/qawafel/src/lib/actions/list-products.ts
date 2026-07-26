@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { qawafelAuth } from '../common/auth';
 import { qawafelPaginatedList } from '../common/client';
 

@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { famulorAuth } from '../..';
 import { famulorCommon } from '../common';
 import dayjs from 'dayjs';

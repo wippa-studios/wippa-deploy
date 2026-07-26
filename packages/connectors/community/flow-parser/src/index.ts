@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { flowParserAuth } from './lib/common/auth';
 import { uploadDocument } from './lib/actions/upload-document';
 import { newParsedDocumentByTemplate } from './lib/triggers/new-parsed-document-by-template';
 import { newParsedDocumentFound } from './lib/triggers/new-parsed-document-found';
 
-export const flowParser = createPiece({
+export const flowParser = createConnector({
   displayName: 'FlowParser',
   description: 'Upload, process, and manage documents programmatically with FlowParser\'s REST API.',
   auth: flowParserAuth,

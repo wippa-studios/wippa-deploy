@@ -1,5 +1,5 @@
-import { MarkdownVariant } from '@wippa/pieces-framework';
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { BaserowAuthValue, baserowAuth, baserowAuthHelpers } from '../auth';
 import { makeClient } from './index';
 

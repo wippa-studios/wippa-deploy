@@ -1,6 +1,6 @@
 import { AddressInfo } from 'net'
 import { apId } from '@wippa/core-utils'
-import { ContextVersion, StoreScope } from '@wippa/pieces-framework'
+import { ContextVersion, StoreScope } from '@wippa/connectors-framework'
 import { AppConnectionStatus, AppConnectionType, ConnectionExpiredError, ConnectionNotFoundError, FetchError, FlowStatus, FlowVersionState, PrincipalType } from '@wippa/shared'
 import { FastifyInstance } from 'fastify'
 import { createConnectionResolver } from '../../../../../engine/src/lib/piece-context/connection-resolver'

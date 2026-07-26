@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   search,
   checkRedirect,
@@ -37,7 +37,7 @@ import {
   getTokenInstances
 } from './lib/actions';
 
-export const blockscout = createPiece({
+export const blockscout = createConnector({
   displayName: "Blockscout",
   description: "Blockscout is a tool for inspecting and analyzing EVM chains.",
   auth: PieceAuth.None(),

@@ -4,9 +4,9 @@
       createCustomApiCallAction,
       httpClient,
       HttpMethod,
-    } from '@wippa/pieces-common';
-    import { PieceAuth, createPiece } from "@wippa/pieces-framework";
-    import { PieceCategory } from '@wippa/pieces-framework';
+    } from '@wippa/connectors-common';
+    import { PieceAuth, createConnector } from "@wippa/connectors-framework";
+    import { PieceCategory } from '@wippa/connectors-framework';
     import { listApps } from './lib/actions/list-apps';
     import { runApp } from './lib/actions/run-app';
     import { getJobStatus } from './lib/actions/get-job-status';
@@ -42,7 +42,7 @@
       },
     });
 
-    export const promptmate = createPiece({
+    export const promptmate = createConnector({
       displayName: "PromptMate",
       description: "AI-powered automation platform",
       auth: promptmateAuth,

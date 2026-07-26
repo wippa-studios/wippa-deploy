@@ -1,9 +1,9 @@
-import { Property, createAction } from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 import { jiraCloudAuth } from '../../auth';
 import { searchIssuesByJql, mapFieldNames } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const searchIssues = createAction({
   name: 'search_issues',

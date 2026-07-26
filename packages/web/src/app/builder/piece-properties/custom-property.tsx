@@ -1,4 +1,4 @@
-import { CustomProperty as CustomPropertyType } from '@wippa/pieces-framework';
+import { CustomProperty as CustomPropertyType } from '@wippa/connectors-framework';
 import { useEffect, useId } from 'react';
 
 import { useEmbedding } from '@/components/providers/embed-provider';

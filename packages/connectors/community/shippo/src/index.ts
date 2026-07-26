@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 
 import { shippoAuth } from './lib/auth';
 import { createOrder } from './lib/actions/create-order';
@@ -7,7 +7,7 @@ import { findShippingLabel } from './lib/actions/find-shipping-label';
 import { newShippingLabel } from './lib/triggers/new-shipping-label';
 import { newOrder } from './lib/triggers/new-order';
 
-export const shippo = createPiece({
+export const shippo = createConnector({
   displayName: 'Shippo',
   description:
     'Multi-carrier shipping platform for real-time rates, labels, and tracking',

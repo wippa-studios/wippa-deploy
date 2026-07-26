@@ -1,4 +1,4 @@
-import { ActionBase, TriggerBase } from '@wippa/pieces-framework'
+import { ActionBase, TriggerBase } from '@wippa/connectors-framework'
 
 import {
     PieceCategory,
@@ -7,7 +7,7 @@ import {
 import Fuse from 'fuse.js'
 import { PieceMetadataSchema } from '../piece-metadata-entity'
 
-export const pieceSearching = {
+export const connectorSearching = {
     search: (params: SearchParams): PieceMetadataSchema[] => {
         return filterBasedOnCategories(params.categories, filterBasedOnSearchQuery(params))
     },
@@ -115,19 +115,19 @@ const filterBasedOnCategories = (categories: PieceCategory[] | undefined, pieces
 function searchForSuggestion<T extends ActionBase | TriggerBase>(
     actionsOrTriggers: T[],
     searchQuery: string,
-    pieceDisplayName: string,
+    connectorDisplayName: string,
 ): Record<string, T> {
     const actionsOrTriggerWithPieceDisplayName = actionsOrTriggers.map(
         (actionOrTrigger) => ({
             ...actionOrTrigger,
-            pieceDisplayName,
+            connectorDisplayName,
         }),
     )
 
     const nestedFuse = new Fuse(actionsOrTriggerWithPieceDisplayName, {
         isCaseSensitive: false,
         shouldSort: true,
-        keys: ['pieceDisplayName', 'displayName', 'description'],
+        keys: ['connectorDisplayName', 'displayName', 'description'],
         threshold: 0.2,
     })
     const suggestions = nestedFuse.search(searchQuery)
@@ -135,7 +135,7 @@ function searchForSuggestion<T extends ActionBase | TriggerBase>(
         (filteredSuggestions, { item }) => {
             filteredSuggestions[item.name] = {
                 ...item,
-                pieceDisplayName: undefined,
+                connectorDisplayName: undefined,
             }
             return filteredSuggestions
         },

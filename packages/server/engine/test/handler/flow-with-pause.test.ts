@@ -14,7 +14,7 @@ vi.mock('../../src/lib/piece-context/waitpoint-client', () => ({
 
 const simplePauseFlow = buildPieceAction({
     name: 'approval',
-    pieceName: '@wippa/piece-approval',
+    connectorName: '@wippa/connector-approval',
     actionName: 'wait_for_approval',
     input: {},
     nextAction: buildCodeAction({
@@ -25,7 +25,7 @@ const simplePauseFlow = buildPieceAction({
 
 const flawWithTwoPause = buildPieceAction({
     name: 'approval',
-    pieceName: '@wippa/piece-approval',
+    connectorName: '@wippa/connector-approval',
     actionName: 'wait_for_approval',
     input: {},
     nextAction: buildCodeAction({
@@ -33,7 +33,7 @@ const flawWithTwoPause = buildPieceAction({
         input: {},
         nextAction: buildPieceAction({
             name: 'approval-1',
-            pieceName: '@wippa/piece-approval',
+            connectorName: '@wippa/connector-approval',
             actionName: 'wait_for_approval',
             input: {},
             nextAction: buildCodeAction({
@@ -215,7 +215,7 @@ describe('flow with pause', () => {
             children: [
                 buildPieceAction({
                     name: 'approval_1',
-                    pieceName: '@wippa/piece-approval',
+                    connectorName: '@wippa/connector-approval',
                     actionName: 'wait_for_approval',
                     input: {},
                     nextAction: buildCodeAction({
@@ -225,7 +225,7 @@ describe('flow with pause', () => {
                 }),
                 buildPieceAction({
                     name: 'approval_2',
-                    pieceName: '@wippa/piece-approval',
+                    connectorName: '@wippa/connector-approval',
                     actionName: 'wait_for_approval',
                     input: {},
                     nextAction: buildCodeAction({

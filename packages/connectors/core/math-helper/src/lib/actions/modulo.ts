@@ -2,7 +2,7 @@ import {
   createAction,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const modulo = createAction({
   audience: 'human',

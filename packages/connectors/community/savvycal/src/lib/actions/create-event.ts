@@ -3,8 +3,8 @@ import {
   Property,
   DynamicPropsValue,
   InputPropertyMap,
-} from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
   savvyCalApiCall,
   flattenEvent,

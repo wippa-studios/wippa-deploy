@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { aidbaseAuth } from './lib/common/auth';
 import { emailReceived } from './lib/triggers/email-received';
 import { emailStatusChanged } from './lib/triggers/email-status-changed';
@@ -14,11 +14,11 @@ import { addFaqItem } from './lib/actions/add-faq-item';
 import { createFaq } from './lib/actions/create-faq';
 import { createChatbotReply } from './lib/actions/create-chatbot-reply';
 import { startTraining } from './lib/actions/start-training';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { API_BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const aidbase = createPiece({
+export const aidbase = createConnector({
   displayName: 'Aidbase',
   auth: aidbaseAuth,
   minimumSupportedRelease: '0.36.1',

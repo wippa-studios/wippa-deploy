@@ -1,7 +1,7 @@
 
-import { createPiece } from "@wippa/pieces-framework";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from "@wippa/connectors-framework";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { manusAuth } from "./lib/common/auth";
 import { createTask } from "./lib/actions/create-task";
 import { getTask } from "./lib/actions/get-task";
@@ -10,7 +10,7 @@ import { deleteTask } from "./lib/actions/delete-task";
 import { newTaskCreated } from "./lib/triggers/new-task-created";
 import { taskStopped } from "./lib/triggers/task-stopped";
 
-export const manus = createPiece({
+export const manus = createConnector({
   displayName: "Manus",
   description: "AI-powered automation and task execution platform",
   auth: manusAuth,

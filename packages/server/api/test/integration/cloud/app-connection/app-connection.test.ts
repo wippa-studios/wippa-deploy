@@ -41,7 +41,7 @@ describe('AppConnection API', () => {
             const response = await ctx.post('/v1/app-connections', {
                 externalId: 'test-app-connection-with-metadata',
                 displayName: 'Test Connection with Metadata',
-                pieceName: mockPieceMetadata.name,
+                connectorName: mockPieceMetadata.name,
                 projectId: ctx.project.id,
                 type: AppConnectionType.SECRET_TEXT,
                 value: {
@@ -49,13 +49,13 @@ describe('AppConnection API', () => {
                     secret_text: 'test-secret-text',
                 },
                 metadata: { foo: 'bar' },
-                pieceVersion: mockPieceMetadata.version,
+                connectorVersion: mockPieceMetadata.version,
             })
 
             expect(response?.statusCode).toBe(StatusCodes.CREATED)
             const responseBody = response?.json()
             expect(responseBody.metadata).toEqual({ foo: 'bar' })
-            expect(responseBody.pieceVersion).toEqual(mockPieceMetadata.version)
+            expect(responseBody.connectorVersion).toEqual(mockPieceMetadata.version)
 
             const updateResponse = await ctx.post(`/v1/app-connections/${responseBody.id}`, {
                 displayName: 'Updated Connection Name',
@@ -80,14 +80,14 @@ describe('AppConnection API', () => {
                 return memberCtx.post('/v1/app-connections', {
                     externalId: 'test-app-connection',
                     displayName: 'test-app-connection',
-                    pieceName: mockPieceMetadata.name,
+                    connectorName: mockPieceMetadata.name,
                     projectId: ownerCtx.project.id,
                     type: AppConnectionType.SECRET_TEXT,
                     value: {
                         type: AppConnectionType.SECRET_TEXT,
                         secret_text: 'test-secret-text',
                     },
-                    pieceVersion: mockPieceMetadata.version,
+                    connectorVersion: mockPieceMetadata.version,
                 })
             },
             allowedRoles: [DefaultProjectRole.ADMIN, DefaultProjectRole.EDITOR],

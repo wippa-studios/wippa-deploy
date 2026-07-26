@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { common } from './lib/common';
 import { newInvoice } from './lib/triggers/new-invoice';
 
@@ -47,7 +47,7 @@ export const zohoAuth = PieceAuth.OAuth2({
   },
 });
 
-export const zohoInvoice = createPiece({
+export const zohoInvoice = createConnector({
   displayName: 'Zoho Invoice',
   description: 'Online invoicing software for businesses',
 

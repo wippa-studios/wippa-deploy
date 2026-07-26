@@ -1,5 +1,5 @@
 import { scrapelessApiAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { googleTrendsDataTypeOptions } from '../constants';
 import { createScrapelessClient } from '../services/scrapeless-api-client';
 

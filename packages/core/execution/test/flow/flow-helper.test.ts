@@ -35,8 +35,8 @@ const flowVersionWithBranching: FlowVersion = {
             input: {
                 cronExpression: '25 10 * * 0,1,2,3,4',
             },
-            pieceName: 'schedule',
-            pieceVersion: '0.0.2',
+            connectorName: 'schedule',
+            connectorVersion: '0.0.2',
             propertySettings: {
                 'cronExpression': {
                     type: PropertyExecutionType.MANUAL,
@@ -75,8 +75,8 @@ const flowVersionWithBranching: FlowVersion = {
                     input: {
                         key: '1',
                     },
-                    pieceName: 'store',
-                    pieceVersion: '0.2.6',
+                    connectorName: 'store',
+                    connectorVersion: '0.2.6',
                     actionName: 'get',
                     propertySettings: {
                         'key': {
@@ -110,8 +110,8 @@ const flowVersionWithBranching: FlowVersion = {
                             content: 'MESSAGE',
                             webhook_url: 'WEBHOOK_URL',
                         },
-                        pieceName: 'discord',
-                        pieceVersion: '0.2.1',
+                        connectorName: 'discord',
+                        connectorVersion: '0.2.1',
                         actionName: 'send_message_webhook',
                         propertySettings: {
                             'content': {
@@ -165,8 +165,8 @@ const emptyScheduleFlowVersion: FlowVersion = {
             input: {
                 cronExpression: '25 10 * * 0,1,2,3,4',
             },
-            pieceName: 'schedule',
-            pieceVersion: '0.0.2',
+            connectorName: 'schedule',
+            connectorVersion: '0.0.2',
             propertySettings: {
                 'cronExpression': {
                     type: PropertyExecutionType.MANUAL,
@@ -218,8 +218,8 @@ describe('Flow Helper', () => {
                     input: {
                         cronExpression: '25 10 * * 0,1,2,3,4',
                     },
-                    pieceName: 'schedule',
-                    pieceVersion: '0.0.2',
+                    connectorName: 'schedule',
+                    connectorVersion: '0.0.2',
                     propertySettings: {
                         'cronExpression': {
                             type: PropertyExecutionType.MANUAL,
@@ -236,8 +236,8 @@ describe('Flow Helper', () => {
                         input: {
                             key: '1',
                         },
-                        pieceName: 'store',
-                        pieceVersion: '0.2.6',
+                        connectorName: 'store',
+                        connectorVersion: '0.2.6',
                         actionName: 'get',
                         propertySettings: {
                             'key': {
@@ -301,8 +301,8 @@ describe('Flow Helper', () => {
                 input: {
                     cronExpression: '25 10 * * 0,1,2,3,4',
                 },
-                pieceName: 'schedule',
-                pieceVersion: '0.0.2',
+                connectorName: 'schedule',
+                connectorVersion: '0.0.2',
                 propertySettings: {
                     'cronExpression': {
                         type: PropertyExecutionType.MANUAL,
@@ -520,8 +520,8 @@ test('Duplicate Flow With Loops using Import', () => {
                     },
                     authentication: '{{connections.github}}',
                 },
-                pieceName: 'github',
-                pieceVersion: '0.1.3',
+                connectorName: 'github',
+                connectorVersion: '0.1.3',
                 propertySettings: {
                     'repository': {
                         type: PropertyExecutionType.MANUAL,

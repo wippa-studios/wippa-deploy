@@ -1,5 +1,5 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { cloudinaryAuth } from "./lib/common/auth";
 import { uploadResource } from "./lib/actions/upload-resource";
 import { deleteResource } from "./lib/actions/delete-resource";
@@ -8,9 +8,9 @@ import { findResourceByPublicId } from "./lib/actions/find-resource-by-public-id
 import { transformResource } from "./lib/actions/transform-resource";
 import { newResourceInFolder } from "./lib/triggers/new-resource";
 import { newTagAddedToAsset } from "./lib/triggers/new-tag-added-to-asset";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const cloudinary = createPiece({
+export const cloudinary = createConnector({
   displayName: "Cloudinary",
   auth: cloudinaryAuth,
   description: "Cloudinary is a cloud-based image and video management platform that allows you to upload, store, manage, and deliver your media assets. It provides a range of features for image and video optimization, transformation, and delivery.",

@@ -1,4 +1,4 @@
-import { Property, ApFile } from '@wippa/pieces-framework';
+import { Property, ApFile } from '@wippa/connectors-framework';
 import { grpc } from 'clarifai-nodejs-grpc';
 import {
   Model,

@@ -5,8 +5,8 @@ import {
     httpClient,
     HttpRequest,
     HttpHeaders,
-} from '@wippa/pieces-common';
-import { PiecePropValueSchema } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PiecePropValueSchema } from '@wippa/connectors-framework';
 import { oracleFusionCloudErpAuth } from '../auth';
 
 type OracleAuthValue = PiecePropValueSchema<typeof oracleFusionCloudErpAuth>;

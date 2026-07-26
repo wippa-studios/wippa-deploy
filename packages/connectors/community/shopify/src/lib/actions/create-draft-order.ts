@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { shopifyAuth } from '../..';
 import { createDraftOrder } from '../common';
 import { ShopifyDraftOrder } from '../common/types';

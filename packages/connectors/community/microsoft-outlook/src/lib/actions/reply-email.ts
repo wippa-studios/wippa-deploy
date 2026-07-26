@@ -1,4 +1,4 @@
-import { ApFile, createAction, Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { ApFile, createAction, Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { microsoftOutlookAuth } from '../common/auth';
 import { outlookCommon } from '../common/client';
 import { BodyType, Message } from '@microsoft/microsoft-graph-types';

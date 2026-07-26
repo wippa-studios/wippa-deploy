@@ -173,10 +173,10 @@ const buildContextBlock = ({
   };
 
   const lines: string[] = [];
-  if (context.pieceDisplayName || context.pieceName) {
-    const version = context.pieceVersion ? ` v${context.pieceVersion}` : '';
+  if (context.connectorDisplayName || context.connectorName) {
+    const version = context.connectorVersion ? ` v${context.connectorVersion}` : '';
     lines.push(
-      `Piece: ${context.pieceDisplayName ?? context.pieceName}${version}`,
+      `Piece: ${context.connectorDisplayName ?? context.connectorName}${version}`,
     );
   }
   if (context.pieceAuthType) {
@@ -230,9 +230,9 @@ export type StepPropertySnapshot = {
 };
 
 export type ErrorExplanationContext = {
-  pieceName?: string;
-  pieceVersion?: string;
-  pieceDisplayName?: string;
+  connectorName?: string;
+  connectorVersion?: string;
+  connectorDisplayName?: string;
   pieceAuthType?: string;
   stepKind: 'action' | 'trigger';
   stepName?: string;

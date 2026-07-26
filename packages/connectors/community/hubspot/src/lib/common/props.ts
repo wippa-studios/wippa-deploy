@@ -4,13 +4,13 @@ import {
 	OAuth2PropertyValue,
 	PiecePropValueSchema,
 	Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
 	HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { WorkflowResponse, HubspotProperty, HubspotFieldType, ListBlogsResponse } from './types';
 import {
 	DEFAULT_COMPANY_PROPERTIES,

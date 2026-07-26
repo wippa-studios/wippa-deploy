@@ -114,7 +114,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             const result = await tools.ap_execute_action.execute({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 items: [
                     { channel: 'C01', text: 'Hi Alice' },
@@ -126,7 +126,7 @@ describe('chatWorkerTools', () => {
 
             expect(executeTool).toHaveBeenCalledTimes(3)
             expect(executeTool).toHaveBeenCalledWith('ap_execute_action', expect.objectContaining({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 input: { channel: 'C01', text: 'Hi Alice' },
             }))
@@ -166,7 +166,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             const result = await tools.ap_execute_action.execute({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 items: [
                     { channel: 'C01', text: 'Hi' },
@@ -199,7 +199,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             await tools.ap_execute_action.execute({
-                pieceName: 'http',
+                connectorName: 'http',
                 actionName: 'send_request',
                 items: [{ url: 'http://example.com' }],
             }, { toolCallId: 'tc3', messages: [], abortSignal: undefined as unknown as AbortSignal })
@@ -214,7 +214,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             await tools.ap_execute_action.execute({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 items: [{ channel: 'C01', text: 'Hi' }, { channel: 'C02', text: 'Hi' }],
             }, { toolCallId: 'tc4', messages: [], abortSignal: undefined as unknown as AbortSignal })
@@ -229,7 +229,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             await tools.ap_execute_action.execute({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 items: [{ channel: 'C01', text: 'Hi' }, { channel: 'C02', text: 'Hi' }],
             }, { toolCallId: 'tc5', messages: [], abortSignal: undefined as unknown as AbortSignal })
@@ -248,14 +248,14 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             await tools.ap_execute_action.execute({
-                pieceName: 'gmail',
+                connectorName: 'gmail',
                 actionName: 'send_email',
                 input: { to: 'test@example.com' },
             }, { toolCallId: 'tc6', messages: [], abortSignal: undefined as unknown as AbortSignal })
 
             expect(executeTool).toHaveBeenCalledTimes(1)
             expect(executeTool).toHaveBeenCalledWith('ap_execute_action', expect.objectContaining({
-                pieceName: 'gmail',
+                connectorName: 'gmail',
                 actionName: 'send_email',
                 input: { to: 'test@example.com' },
             }))
@@ -268,7 +268,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             const result = await tools.ap_execute_action.execute({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 items: [{ channel: 'C01', text: 'Hi' }],
             }, { toolCallId: 'tc7', messages: [], abortSignal: undefined as unknown as AbortSignal })
@@ -287,7 +287,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             const result = await tools.ap_execute_action.execute({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 items: Array.from({ length: 10 }, (_, i) => ({ channel: `C${i}`, text: 'Hi' })),
                 description: 'Sending messages',
@@ -320,7 +320,7 @@ describe('chatWorkerTools', () => {
 
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
             await tools.ap_execute_action.execute({
-                pieceName: 'slack',
+                connectorName: 'slack',
                 actionName: 'send_message',
                 items: Array.from({ length: 6 }, (_, i) => ({ channel: `C${i}` })),
             }, { toolCallId: 'tc9', messages: [], abortSignal: undefined as unknown as AbortSignal })
@@ -337,7 +337,7 @@ describe('chatWorkerTools', () => {
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, guides: {}, taintState: { tainted: true } })
 
             await tools.ap_execute_action.execute({
-                pieceName: 'slack', actionName: 'do_thing', needsConfirmation: false, input: {},
+                connectorName: 'slack', actionName: 'do_thing', needsConfirmation: false, input: {},
             }, { toolCallId: 'tc-taint', messages: [], abortSignal: undefined as unknown as AbortSignal })
 
             expect(waitForApproval).toHaveBeenCalledWith({ gateId: 'tc-taint' })
@@ -350,7 +350,7 @@ describe('chatWorkerTools', () => {
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, guides: {}, taintState: { tainted: false } })
 
             await tools.ap_execute_action.execute({
-                pieceName: 'slack', actionName: 'do_thing', needsConfirmation: false, input: {},
+                connectorName: 'slack', actionName: 'do_thing', needsConfirmation: false, input: {},
             }, { toolCallId: 'tc-clean', messages: [], abortSignal: undefined as unknown as AbortSignal })
 
             expect(waitForApproval).not.toHaveBeenCalled()
@@ -364,7 +364,7 @@ describe('chatWorkerTools', () => {
             const waitForApproval = vi.fn().mockResolvedValue({ outcome })
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, guides: {}, taintState: { tainted: false } })
             const result = await tools.ap_execute_action.execute({
-                pieceName: 'slack', actionName: 'send_message', input: { channel: 'C1' },
+                connectorName: 'slack', actionName: 'send_message', input: { channel: 'C1' },
             }, { toolCallId: 'tc-gate', messages: [], abortSignal: undefined as unknown as AbortSignal })
             return { result: result as { content: Array<{ text: string }> }, executeTool }
         }
@@ -451,7 +451,7 @@ describe('chatWorkerTools', () => {
             const executeTool = vi.fn().mockResolvedValue(mcpFailure('The request body contains invalid JSON. (400)'))
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
 
-            const input = { pieceName: '@wippa/piece-http', actionName: 'send_request', input: { url: 'https://x', body: { type: 'json_raw' } } }
+            const input = { connectorName: '@wippa/connector-http', actionName: 'send_request', input: { url: 'https://x', body: { type: 'json_raw' } } }
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g1' })
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g2' })
             const third = await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g3' })
@@ -467,7 +467,7 @@ describe('chatWorkerTools', () => {
             const executeTool = vi.fn().mockResolvedValue(mcpSuccess('Sent (204)'))
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
 
-            const input = { pieceName: '@wippa/piece-http', actionName: 'send_request', input: { url: 'https://x', body_type: 'json', body: { data: { content: 'hi' } } } }
+            const input = { connectorName: '@wippa/connector-http', actionName: 'send_request', input: { url: 'https://x', body_type: 'json', body: { data: { content: 'hi' } } } }
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 's1' })
             const second = await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 's2' })
 
@@ -480,8 +480,8 @@ describe('chatWorkerTools', () => {
             const executeTool = vi.fn().mockResolvedValue(mcpSuccess('Sent'))
             const tools = chatWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
 
-            await tools.ap_execute_action.execute({ pieceName: 'p', actionName: 'send_request', input: { a: 1 } }, { ...callOptions, toolCallId: 'a1' })
-            await tools.ap_execute_action.execute({ pieceName: 'p', actionName: 'send_request', input: { a: 2 } }, { ...callOptions, toolCallId: 'a2' })
+            await tools.ap_execute_action.execute({ connectorName: 'p', actionName: 'send_request', input: { a: 1 } }, { ...callOptions, toolCallId: 'a1' })
+            await tools.ap_execute_action.execute({ connectorName: 'p', actionName: 'send_request', input: { a: 2 } }, { ...callOptions, toolCallId: 'a2' })
 
             expect(executeTool).toHaveBeenCalledTimes(2)
         })
@@ -523,7 +523,7 @@ describe('chatWorkerTools', () => {
         })
 
         it('preserves a top-level _meta after truncation', () => {
-            const input = { _meta: { pieceName: '@wippa/piece-attio', connectionLabel: 'Attio0' }, content: [{ type: 'text', text: 'x'.repeat(1200 * 1024) }] }
+            const input = { _meta: { connectorName: '@wippa/connector-attio', connectionLabel: 'Attio0' }, content: [{ type: 'text', text: 'x'.repeat(1200 * 1024) }] }
             const out = chatWorkerTools.truncateLargeResult(input)
             expect(serializedBytes(out)).toBeLessThanOrEqual(MAX_RESULT_SIZE_BYTES)
             expect(out).toHaveProperty('_meta', input._meta)

@@ -157,7 +157,7 @@ export const buildMockEvent = ({ event, platformId, projectId }: BuildMockEventP
                         id: apId(),
                         displayName: 'Sample connection',
                         externalId: 'sample-connection',
-                        pieceName: '@wippa/piece-sample',
+                        connectorName: '@wippa/connector-sample',
                         status: 'ACTIVE',
                         type: 'CUSTOM_AUTH',
                         created: isoNow,

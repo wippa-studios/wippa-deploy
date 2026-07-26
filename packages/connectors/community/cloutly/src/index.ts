@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { sendReviewInvite } from './lib/actions/send-review-invite';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { cloutlyAuth } from './lib/auth';
 
-export const cloutly = createPiece({
+export const cloutly = createConnector({
   displayName: 'Cloutly',
   description: 'Review Management Tool',
   auth: cloutlyAuth,

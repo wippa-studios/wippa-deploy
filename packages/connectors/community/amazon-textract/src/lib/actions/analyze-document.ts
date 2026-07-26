@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property, createAction } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property, createAction } from '@wippa/connectors-framework';
 import {
   AnalyzeDocumentCommand,
   FeatureType,

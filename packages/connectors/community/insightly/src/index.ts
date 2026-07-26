@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { insightlyAuth } from './lib/common/common';
 import { createRecord } from './lib/actions/create-record';
 import { updateRecord } from './lib/actions/update-record';
@@ -9,7 +9,7 @@ import { newRecord } from './lib/triggers/new-record';
 import { updatedRecord } from './lib/triggers/updated-record';
 import { deletedRecord } from './lib/triggers/deleted-record';
 
-export const insightly = createPiece({
+export const insightly = createConnector({
   displayName: 'Insightly',
   auth: insightlyAuth,
   minimumSupportedRelease: '0.36.1',

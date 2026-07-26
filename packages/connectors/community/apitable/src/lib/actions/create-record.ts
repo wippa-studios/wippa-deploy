@@ -2,7 +2,7 @@ import {
   DynamicPropsValue,
   PiecePropValueSchema,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { APITableCommon, createNewFields, makeClient } from '../common';
 import { APITableAuth } from '../auth';
 

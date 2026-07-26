@@ -1,4 +1,4 @@
-import { ApFile, createAction, Property } from '@wippa/pieces-framework';
+import { ApFile, createAction, Property } from '@wippa/connectors-framework';
 import { TeableAuth, TeableAuthValue } from '../auth';
 import { makeClient, TeableCommon } from '../common';
 

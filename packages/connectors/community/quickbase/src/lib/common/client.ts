@@ -2,7 +2,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { QuickbaseApiError } from './types';
 
 export class QuickbaseClient {

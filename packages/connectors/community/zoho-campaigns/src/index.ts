@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { createConnector, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { addContactToMailingList } from './lib/actions/add-contact-to-mailing-list';
 import { addTagToContact } from './lib/actions/add-tag-to-contact';
 import { addUpdateContact } from './lib/actions/add-update-contact';
@@ -13,9 +13,9 @@ import { zohoCampaignsAuth, zohoCampaignsCommon } from './lib/common';
 import { newCampaign } from './lib/triggers/new-campaign';
 import { newContact } from './lib/triggers/new-contact';
 import { unsubscribe } from './lib/triggers/unsubscribe';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const zohoCampaigns = createPiece({
+export const zohoCampaigns = createConnector({
   displayName: 'Zoho Campaigns',
   description:
     'Zoho Campaigns is an email marketing platform for managing mailing lists, sending campaigns, tracking engagement, and automating subscriber workflows.',

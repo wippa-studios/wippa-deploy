@@ -3,13 +3,13 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 import { heymarketSmsAuth } from '../common/auth';
 import { makeRequest } from '../common/client';

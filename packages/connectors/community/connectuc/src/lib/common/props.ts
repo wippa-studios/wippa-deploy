@@ -1,7 +1,7 @@
-import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { connectucAuth } from '../../index';
 import { connectucApiCall } from './api-helpers';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 /**
  * Reusable domain dropdown property (single-select)

@@ -1,8 +1,8 @@
-import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { bexioAuth } from '../auth';
 import { BexioClient } from '../common/client';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 
 const polling: Polling<

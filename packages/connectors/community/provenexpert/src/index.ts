@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { provenExpertCommon } from './lib/common';
 import { getRatingSummaryAction } from './lib/actions/get-rating-summary';
 import { createSurveyInvitationUrlAction } from './lib/actions/create-survey-invitation-url';
@@ -9,7 +9,7 @@ import { listSurveysAction } from './lib/actions/list-surveys';
 import { getProfileAction } from './lib/actions/get-profile';
 import { provenExpertAuth } from './lib/common/auth';
 
-export const provenexpert = createPiece({
+export const provenexpert = createConnector({
   displayName: 'ProvenExpert',
   description:
     'Collect customer reviews, send survey invitations, and pull rating data from ProvenExpert.',

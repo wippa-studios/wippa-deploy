@@ -1,5 +1,5 @@
-import { Property, DynamicPropsValue } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { Property, DynamicPropsValue } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { pandadocAuth, pandadocClient } from './index';
 
 // Documents dropdown

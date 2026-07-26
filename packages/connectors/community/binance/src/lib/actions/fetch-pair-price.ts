@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 export const fetchCryptoPairPrice = createAction({
   name: 'fetch_crypto_pair_price',

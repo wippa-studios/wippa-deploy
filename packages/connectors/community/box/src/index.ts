@@ -1,11 +1,11 @@
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { common } from './lib/common';
 import { newComment } from './lib/triggers/new-comment';
 import { newFile } from './lib/triggers/new-file';
@@ -18,7 +18,7 @@ export const boxAuth = PieceAuth.OAuth2({
   scope: ['manage_webhook', 'root_readonly', 'root_readwrite'],
 });
 
-export const box = createPiece({
+export const box = createConnector({
   displayName: 'Box',
   description: 'Secure content management and collaboration',
 

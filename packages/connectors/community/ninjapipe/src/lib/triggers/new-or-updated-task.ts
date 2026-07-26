@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
-import { pollingHelper } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
+import { pollingHelper } from '@wippa/connectors-common';
 import { ninjapipeAuth } from '../../';
 import { ninjapipeCommon } from '../common';
 import { buildProjectTasksPolling } from './common';

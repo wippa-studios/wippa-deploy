@@ -3,7 +3,7 @@ import {
     AppConnectionType,
     ApplicationEventName,
     PackageType,
-    PieceType,
+    ConnectorType,
 } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
@@ -53,14 +53,14 @@ describe('App connection application events', () => {
         const response = await ctx.post('/v1/app-connections', {
             externalId: 'event-test-connection',
             displayName: 'Event Test Connection',
-            pieceName: piece.name,
+            connectorName: piece.name,
             projectId: ctx.project.id,
             type: AppConnectionType.SECRET_TEXT,
             value: {
                 type: AppConnectionType.SECRET_TEXT,
                 secret_text: 'my-secret',
             },
-            pieceVersion: piece.version,
+            connectorVersion: piece.version,
         })
 
         expect(response?.statusCode).toBe(StatusCodes.CREATED)
@@ -76,14 +76,14 @@ describe('App connection application events', () => {
         const createResponse = await ctx.post('/v1/app-connections', {
             externalId: 'event-test-connection-to-delete',
             displayName: 'Event Test Connection',
-            pieceName: piece.name,
+            connectorName: piece.name,
             projectId: ctx.project.id,
             type: AppConnectionType.SECRET_TEXT,
             value: {
                 type: AppConnectionType.SECRET_TEXT,
                 secret_text: 'my-secret',
             },
-            pieceVersion: piece.version,
+            connectorVersion: piece.version,
         })
         expect(createResponse?.statusCode).toBe(StatusCodes.CREATED)
         const connectionId = createResponse?.json().id
@@ -119,7 +119,7 @@ async function seedPieceMetadata(ctx: TestContext): Promise<{ name: string, vers
     const piece = createMockPieceMetadata({
         platformId: ctx.platform.id,
         packageType: PackageType.REGISTRY,
-        pieceType: PieceType.OFFICIAL,
+        pieceType: ConnectorType.OFFICIAL,
     })
     await db.save('piece_metadata', piece)
     pieceMetadataService(mockLog).getOrThrow = vi.fn().mockResolvedValue(piece)

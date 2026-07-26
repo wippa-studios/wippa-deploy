@@ -34,7 +34,7 @@ const cardTitleFields = {
 }
 const richOptionSchema = z.object({
     label: z.string().describe('The choice label'),
-    piece: z.string().optional().describe('When this option IS an app/integration, set its piece name (e.g. "google-sheets", "hubspot", "@wippa/piece-airtable") to show the real app logo. Prefer this over icon whenever the option is an app — use the exact piece names returned by ap_research_pieces.'),
+    piece: z.string().optional().describe('When this option IS an app/integration, set its piece name (e.g. "google-sheets", "hubspot", "@wippa/connector-airtable") to show the real app logo. Prefer this over icon whenever the option is an app — use the exact piece names returned by ap_research_pieces.'),
     icon: z.string().optional().describe(`Optional Lucide icon name (kebab-case) for short (1-2 word) non-app labels (ignored if piece is set). Allowed names: ${QUESTION_ICON_NAMES}`),
     description: z.string().optional().describe('Optional one-line subtitle under the label'),
 })
@@ -185,7 +185,7 @@ function looksLikeMcpContentParts(array: unknown[]): boolean {
 function normalizePieceName(piece: string): string {
     if (piece.startsWith('@')) return piece
     const stripped = piece.startsWith('piece-') ? piece.slice('piece-'.length) : piece
-    return `@wippa/piece-${stripped.replace(/_/g, '-')}`
+    return `@wippa/connector-${stripped.replace(/_/g, '-')}`
 }
 
 function createEventEmitter({ sendEvent, userId, conversationId, log }: {
@@ -257,7 +257,7 @@ function gateNoResponseMessage(step: string): string {
 function createDisplayTools({ waitForApproval, displayToolTimeoutMs, onConnectionSelected, onConnectorReconnected, onGateOpened }: {
     waitForApproval: (params: { gateId: string, timeoutMs?: number }) => Promise<GateDecision>
     displayToolTimeoutMs: number
-    onConnectionSelected?: (params: { pieceName: string, connectionExternalId: string, label: string, projectId: string }) => Promise<void>
+    onConnectionSelected?: (params: { connectorName: string, connectionExternalId: string, label: string, projectId: string }) => Promise<void>
     onConnectorReconnected?: (connectorUuid: string) => void
     onGateOpened?: (params: { gateId: string, toolName: string, displayName: string, toolInput: Record<string, unknown> }) => Promise<void>
 }): ToolSet {
@@ -309,7 +309,7 @@ function createDisplayTools({ waitForApproval, displayToolTimeoutMs, onConnectio
                     const projectId = payload['projectId']
                     if (typeof connectionExternalId === 'string' && onConnectionSelected) {
                         await onConnectionSelected({
-                            pieceName: normalizePieceName(typeof input['piece'] === 'string' ? input['piece'] : ''),
+                            connectorName: normalizePieceName(typeof input['piece'] === 'string' ? input['piece'] : ''),
                             connectionExternalId,
                             label: typeof label === 'string' ? label : connectionExternalId,
                             projectId: typeof projectId === 'string' ? projectId : '',
@@ -358,7 +358,7 @@ function createDisplayTools({ waitForApproval, displayToolTimeoutMs, onConnectio
                     const projectId = payload['projectId']
                     if (typeof connectionExternalId === 'string' && onConnectionSelected) {
                         await onConnectionSelected({
-                            pieceName: normalizePieceName(typeof input['piece'] === 'string' ? input['piece'] : ''),
+                            connectorName: normalizePieceName(typeof input['piece'] === 'string' ? input['piece'] : ''),
                             connectionExternalId,
                             label: typeof label === 'string' ? label : connectionExternalId,
                             projectId: typeof projectId === 'string' ? projectId : '',
@@ -497,8 +497,8 @@ function createProgressGuard() {
     const succeededWrites = new Set<string>()
     const loadedGuides = new Set<string>()
 
-    const actionKey = ({ pieceName, actionName, input }: { pieceName: string, actionName: string, input: unknown }): string =>
-        `${pieceName}::${actionName}::${stableStringify(input ?? {})}`
+    const actionKey = ({ connectorName, actionName, input }: { connectorName: string, actionName: string, input: unknown }): string =>
+        `${connectorName}::${actionName}::${stableStringify(input ?? {})}`
 
     const failureBreakerText = (actionName: string): string =>
         `✋ This exact ${actionName} call has already failed ${MAX_IDENTICAL_ACTION_FAILURES} times with the same input — it was NOT retried. Stop repeating it. Either change the input based on the error, call ap_get_piece_props to get the correct schema, or tell the user plainly what's blocking. Do not re-send the identical request.`
@@ -507,8 +507,8 @@ function createProgressGuard() {
         `✋ This exact action already ran successfully earlier in this turn (${actionName}) — it was NOT run again to avoid a duplicate side effect. Treat it as done; only repeat it if the user explicitly asks or the input changes.`
 
     return {
-        checkAdhocAction: ({ pieceName, actionName, input }: { pieceName: string, actionName: string, input: unknown }): { content: { type: string, text: string }[] } | null => {
-            const key = actionKey({ pieceName, actionName, input })
+        checkAdhocAction: ({ connectorName, actionName, input }: { connectorName: string, actionName: string, input: unknown }): { content: { type: string, text: string }[] } | null => {
+            const key = actionKey({ connectorName, actionName, input })
             if (succeededWrites.has(key)) {
                 return { content: [{ type: 'text', text: duplicateWriteText(actionName) }] }
             }
@@ -517,8 +517,8 @@ function createProgressGuard() {
             }
             return null
         },
-        recordAdhocResult: ({ pieceName, actionName, input, success }: { pieceName: string, actionName: string, input: unknown, success: boolean }): void => {
-            const key = actionKey({ pieceName, actionName, input })
+        recordAdhocResult: ({ connectorName, actionName, input, success }: { connectorName: string, actionName: string, input: unknown, success: boolean }): void => {
+            const key = actionKey({ connectorName, actionName, input })
             if (success) {
                 failureCounts.delete(key)
                 if (chatToolClassification.isWriteActionName(actionName)) {
@@ -557,7 +557,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
             description: 'Check what authentication a piece needs and find available connections. Call this BEFORE ap_execute_action to determine if auth is needed.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@wippa/piece-gmail"'),
+                connectorName: z.string().describe('Piece name, e.g. "@wippa/connector-gmail"'),
             }),
             execute: async (input) => {
                 return executeWithTimeout('ap_discover_action_auth', input)
@@ -578,7 +578,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
             description: 'Execute a piece action once or in batch. Before the FIRST call to an action you have not already inspected this conversation, call ap_get_piece_props to get the exact prop names, required fields, dropdown values, and dynamic sub-field shapes — never guess the input shape (guessing fails validation and wastes turns). Use ap_discover_action_auth first to check if auth is needed. The system manages connections automatically after the user selects one. If a call fails, fix the input from the returned error and retry ONCE; do not re-send a near-identical call repeatedly. For batch execution, provide an items array where each element is a complete input object for one invocation.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@wippa/piece-gmail"'),
+                connectorName: z.string().describe('Piece name, e.g. "@wippa/connector-gmail"'),
                 actionName: z.string().describe('Action to run, e.g. "gmail_search_mail"'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Input for the action (single-item mode)'),
                 items: z.array(z.record(z.string(), z.unknown())).max(MAX_BATCH_SIZE).optional().describe('Array of input objects for batch execution. Each element is a complete input for one invocation. Max 100 items.'),
@@ -589,7 +589,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
                 const isBatch = toolInput.items && toolInput.items.length > 0
                 if (!isBatch) {
                     const guardResult = progressGuard.checkAdhocAction({
-                        pieceName: toolInput.pieceName,
+                        connectorName: toolInput.connectorName,
                         actionName: toolInput.actionName,
                         input: toolInput.input,
                     })
@@ -607,7 +607,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
                 if (needsPreview) {
                     const previewData: ActionPreviewEvent = {
                         toolCallId: options.toolCallId,
-                        pieceName: toolInput.pieceName,
+                        connectorName: toolInput.connectorName,
                         actionName: toolInput.actionName,
                         actionDisplayName: toolInput.title ?? toolInput.actionName,
                         input: toolInput.input ?? {},
@@ -622,7 +622,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
                             toolName: 'ap_execute_action',
                             displayName: toolInput.title ?? toolInput.actionName,
                             toolInput: {
-                                pieceName: toolInput.pieceName,
+                                connectorName: toolInput.connectorName,
                                 actionName: toolInput.actionName,
                                 input: toolInput.input ?? {},
                                 items: isBatch ? toolInput.items!.slice(0, 3) : undefined,
@@ -642,7 +642,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
                         executeWithTimeout,
                         eventEmitter,
                         toolCallId: options.toolCallId,
-                        pieceName: toolInput.pieceName,
+                        connectorName: toolInput.connectorName,
                         actionName: toolInput.actionName,
                         items: toolInput.items!,
                         description: toolInput.description,
@@ -651,7 +651,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
                 const rawResult = await executeWithTimeout('ap_execute_action', toolInput)
                 const rawSuccess = isSuccessResult(rawResult)
                 progressGuard.recordAdhocResult({
-                    pieceName: toolInput.pieceName,
+                    connectorName: toolInput.connectorName,
                     actionName: toolInput.actionName,
                     input: toolInput.input,
                     success: rawSuccess,
@@ -671,7 +671,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
                     eventEmitter.emitActionReceipt({
                         toolCallId: options.toolCallId,
                         actionDisplayName: toolInput.title ?? toolInput.actionName,
-                        pieceName: toolInput.pieceName,
+                        connectorName: toolInput.connectorName,
                         connectionLabel: typeof meta?.['connectionLabel'] === 'string' ? meta['connectionLabel'] : undefined,
                         status: rawSuccess ? 'success' : 'failed',
                         output: result,
@@ -699,7 +699,7 @@ function createCrossProjectTools({ executeTool, eventEmitter, waitForApproval, o
             description: 'Read-only look at the user\'s real data during discovery — list/get/search/read a sheet\'s rows and columns, channels, records, etc. — to understand what they have and build something that fits. Only runs read actions (never writes). Needs a connection like ap_execute_action; ensure one is selected first AND that you pass auth + any resolved object/list id (via ap_get_piece_props with auth) — an empty read is usually an unset connection or an unresolved id, NOT absence of data, so fix that and retry before concluding there is nothing there. Keep samples small (~20 rows). This is for understanding, NOT for performing the task — use ap_execute_action to actually do things.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@wippa/piece-google-sheets"'),
+                connectorName: z.string().describe('Piece name, e.g. "@wippa/connector-google-sheets"'),
                 actionName: z.string().describe('A read action, e.g. "get_rows", "list_channels"'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Input for the read action (keep limits small)'),
             }),
@@ -1002,7 +1002,7 @@ function createEmailTools({ sendEmail, eventEmitter, userEmail, waitForApproval,
                 if (hasExternalRecipient) {
                     const previewData: ActionPreviewEvent = {
                         toolCallId: options.toolCallId,
-                        pieceName: 'email',
+                        connectorName: 'email',
                         actionName: 'ap_send_email',
                         actionDisplayName: displayName,
                         input: { to: toolInput.to, subject: toolInput.subject, body: toolInput.body },
@@ -1032,7 +1032,7 @@ function createEmailTools({ sendEmail, eventEmitter, userEmail, waitForApproval,
                 eventEmitter.emitActionReceipt({
                     toolCallId: options.toolCallId,
                     actionDisplayName: toolInput.doneTitle ?? displayName,
-                    pieceName: 'email',
+                    connectorName: 'email',
                     status: sent ? 'success' : 'failed',
                     output: { content: [{ type: 'text', text: message }] },
                     errorMessage: sent ? undefined : message,
@@ -1137,11 +1137,11 @@ async function generateImageWithFal({ modelId, imageSize, prompt, apiKey, signal
     }
 }
 
-async function executeBatchAction({ executeWithTimeout, eventEmitter, toolCallId, pieceName, actionName, items, description }: {
+async function executeBatchAction({ executeWithTimeout, eventEmitter, toolCallId, connectorName, actionName, items, description }: {
     executeWithTimeout: (toolName: string, toolInput: Record<string, unknown>) => Promise<unknown>
     eventEmitter: ChatEventEmitter
     toolCallId: string
-    pieceName: string
+    connectorName: string
     actionName: string
     items: Record<string, unknown>[]
     description?: string
@@ -1182,7 +1182,7 @@ async function executeBatchAction({ executeWithTimeout, eventEmitter, toolCallId
             batch.map(async (item, offset) => {
                 const idx = itemOffset + offset
                 const { data: result, error } = await tryCatch(() => executeWithTimeout('ap_execute_action', {
-                    pieceName, actionName, input: item,
+                    connectorName, actionName, input: item,
                 }))
                 if (error) return { index: idx, success: false as const, error: truncateForCard(error.message) }
                 if (isSuccessResult(result)) return { index: idx, success: true as const, output: result }
@@ -1323,7 +1323,7 @@ function wrapTestFlowGate({ mcpTools, checkFlowWrites, waitForApproval, storePen
                     // Without the emit the gate would block silently until the approval timeout.
                     eventEmitter.emitActionPreview({
                         toolCallId: gateId,
-                        pieceName: '',
+                        connectorName: '',
                         actionName: 'ap_test_flow',
                         actionDisplayName: gateLabel,
                         input: {},

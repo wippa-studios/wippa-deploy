@@ -1,15 +1,15 @@
 import {
   PieceAuth,
-  createPiece,
+  createConnector,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createMemory } from './lib/actions/create-memory';
 import { retrieveMemories } from './lib/actions/retrieve-memories';
 import { deleteMemory } from './lib/actions/delete-memory';
 import { getMemory } from './lib/actions/get-memory';
 import { createSpace } from './lib/actions/create-space';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const goodmemAuth = PieceAuth.CustomAuth({
   displayName: 'GoodMem Authentication',
@@ -52,7 +52,7 @@ export const goodmemAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const goodmem = createPiece({
+export const goodmem = createConnector({
   displayName: 'GoodMem',
   description:
     'Store documents as memories with vector embeddings and perform similarity-based semantic retrieval using GoodMem',

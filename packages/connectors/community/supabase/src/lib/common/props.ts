@@ -1,4 +1,4 @@
-import { Property, DynamicPropsValue } from "@wippa/pieces-framework";
+import { Property, DynamicPropsValue } from "@wippa/connectors-framework";
 import { createClient } from "@supabase/supabase-js";
 import { supabaseAuth } from '../auth';
 

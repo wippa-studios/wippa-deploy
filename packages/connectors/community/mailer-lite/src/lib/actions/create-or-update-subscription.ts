@@ -1,5 +1,5 @@
 import MailerLite from '@mailerlite/mailerlite-nodejs';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { mailerLiteAuth } from '../..';
 import { mailerLiteCommon } from '../common';
 import dayjs from 'dayjs';

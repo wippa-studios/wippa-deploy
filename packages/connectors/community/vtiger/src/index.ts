@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createRecord } from './lib/actions/create-record';
 import { deleteRecord } from './lib/actions/delete-record';
 import { getRecord } from './lib/actions/get-record';
@@ -13,7 +13,7 @@ import { updateRecord } from './lib/actions/update-record';
 import { instanceLogin, isBaseUrl } from './lib/common';
 import { newOrUpdatedRecord } from './lib/triggers/new-or-updated-record';
 import { queryRecords } from './lib/actions/query-records';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 const markdownProperty = `
 To obtain your Access Key, follow these steps:
@@ -100,7 +100,7 @@ export const vtigerAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const vtiger = createPiece({
+export const vtiger = createConnector({
   displayName: 'Vtiger',
   description: 'CRM software for sales, marketing, and support teams',
   auth: vtigerAuth,

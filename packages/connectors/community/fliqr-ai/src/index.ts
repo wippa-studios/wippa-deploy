@@ -1,12 +1,12 @@
-import { HttpMethod, createCustomApiCallAction, httpClient } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { HttpMethod, createCustomApiCallAction, httpClient } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { getFliqrAccountDetails } from './lib/actions/get-account-details';
 import { fliqrConfig } from './lib/common/models';
 import { getFliqrAccountFlows } from './lib/actions/get-account-flows';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { fliqrAuth } from './lib/auth';
 
-export const fliqrAi = createPiece({
+export const fliqrAi = createConnector({
   displayName: 'Fliqr AI',
   description:
     'Omnichannel AI chatbot enhancing customer interactions across WhatsApp, Facebook, Instagram, Telegram, and 6 other platforms.',

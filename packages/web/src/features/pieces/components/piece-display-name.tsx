@@ -1,14 +1,14 @@
 import { piecesHooks } from '../hooks/pieces-hooks';
 
 type PieceDisplayNameProps = {
-  pieceName: string;
+  connectorName: string;
   fallback?: string;
 };
 
-const PieceDisplayName = ({ pieceName, fallback }: PieceDisplayNameProps) => {
-  const { summary } = piecesHooks.usePieceSummary({ name: pieceName });
+const ConnectorDisplayName = ({ connectorName, fallback }: PieceDisplayNameProps) => {
+  const { summary } = piecesHooks.usePieceSummary({ name: connectorName });
 
-  return <span>{summary?.displayName || fallback || pieceName}</span>;
+  return <span>{summary?.displayName || fallback || connectorName}</span>;
 };
 
-export { PieceDisplayName };
+export { ConnectorDisplayName };

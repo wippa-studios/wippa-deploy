@@ -1,7 +1,7 @@
-import { createAction, Property } from "@wippa/pieces-framework";
+import { createAction, Property } from "@wippa/connectors-framework";
 import { jiraCloudAuth } from "../../auth";
 import { jiraApiCall } from "../common";
-import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/connectors-common";
 
 export const getIssueAttachmentAction = createAction({
     auth: jiraCloudAuth,

@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { create1stopBooking } from './lib/actions/create-1-stop-booking';
 import { create2stopBooking } from './lib/actions/create-2-stop-booking';
 import { motiontoolsAuth } from './lib/common/auth';
@@ -8,7 +8,7 @@ import { bookingStopStatusUpdate } from './lib/triggers/booking-stop-status-upda
 import { packageCreated } from './lib/triggers/package-created';
 import { packageStatusUpdate } from './lib/triggers/package-status-update';
 
-export const motiontools = createPiece({
+export const motiontools = createConnector({
   displayName: 'MotionTools',
   auth: motiontoolsAuth,
   description:

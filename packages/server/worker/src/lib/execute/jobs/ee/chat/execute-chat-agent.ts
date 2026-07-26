@@ -439,11 +439,11 @@ function buildToolSet({ ctx, eventEmitter, log, phaseState, taintState, mcpToolS
     const displayTools = chatWorkerTools.createDisplayTools({
         waitForApproval,
         displayToolTimeoutMs: DISPLAY_TOOL_TIMEOUT_MS,
-        onConnectionSelected: async ({ pieceName, connectionExternalId, label, projectId: connProjectId }) => {
-            selectedConnectionByPiece.set(pieceName, connectionExternalId)
+        onConnectionSelected: async ({ connectorName, connectionExternalId, label, projectId: connProjectId }) => {
+            selectedConnectionByPiece.set(connectorName, connectionExternalId)
             await tryCatch(() => ctx.apiClient.executeChatTool({
                 toolName: '__store_selected_connection',
-                toolInput: { pieceName, connectionExternalId, label, projectId: connProjectId },
+                toolInput: { connectorName, connectionExternalId, label, projectId: connProjectId },
                 platformId, userId, conversationId,
             }))
         },
@@ -463,7 +463,7 @@ function buildToolSet({ ctx, eventEmitter, log, phaseState, taintState, mcpToolS
         mcpTools: chatMcpClient.withToolTimeouts({
             mcpToolSet,
             brokenConnectors,
-            getSelectedAuth: ({ pieceName }) => selectedConnectionByPiece.get(pieceName),
+            getSelectedAuth: ({ connectorName }) => selectedConnectionByPiece.get(connectorName),
             saveLargeResult: async ({ json, fileName }) => {
                 const { data: saved } = await tryCatch(() => ctx.apiClient.saveChatFile({
                     platformId, conversationId, data: Buffer.from(json, 'utf8'), mediaType: 'application/json',

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addContactAction } from './lib/actions/add-contact';
 import { addTagToContactAction } from './lib/actions/add-tag-to-contact';
 import { createEmailMarketingCampaignAction } from './lib/actions/create-campaign';
@@ -21,7 +21,7 @@ To obtain your API key, follow these steps:
 3.Under **API USER KEY** ,copy API key.\n
 `;
 
-export const vbout = createPiece({
+export const vbout = createConnector({
   displayName: 'VBOUT',
   description: 'Marketing automation platform for agencies',
   auth: vboutAuth,

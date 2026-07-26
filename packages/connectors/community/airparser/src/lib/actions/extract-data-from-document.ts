@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { airparserAuth } from '../auth';
 import { airparserApiCall, GetDocumentResponse } from '../common';
 import { documentIdDropdown, inboxIdDropdown } from '../common/props';

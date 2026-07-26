@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import { ArraySubProps } from '@wippa/pieces-framework';
+import { ArraySubProps } from '@wippa/connectors-framework';
 import React, { useEffect, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 

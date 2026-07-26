@@ -2,7 +2,7 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { lokaliseAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import {
@@ -10,7 +10,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { projectDropdown } from '../common/props';
 
 const polling: Polling<

@@ -1,7 +1,7 @@
 import {
   DynamicPropsValue,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { BikaCommon, createNewFields, makeClient } from '../common';
 import { BikaAuth } from '../auth';
 

@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { linearAuth } from '../..';
 import { makeClient } from '../common/client';
 import { props } from '../common/props';

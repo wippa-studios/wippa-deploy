@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/connectors-framework';
 
 export const insightlyAuth = PieceAuth.SecretText({
   displayName: 'API Key',

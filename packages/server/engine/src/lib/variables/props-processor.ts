@@ -1,5 +1,5 @@
 import { isNil, isObject } from '@wippa/core-utils'
-import { getAuthPropertyForValue, InputPropertyMap, PieceAuthProperty, PieceProperty, PiecePropertyMap, PropertyType, StaticPropsValue } from '@wippa/pieces-framework'
+import { getAuthPropertyForValue, InputPropertyMap, PieceAuthProperty, ConnectorProperty, ConnectorPropertyMap, PropertyType, StaticPropsValue } from '@wippa/connectors-framework'
 import { AppConnectionValue, AUTHENTICATION_PROPERTY_NAME, PropertySettings } from '@wippa/shared'
 import { dynamicPropKeys } from '../helper/dynamic-prop-keys'
 import { processors } from './processors'
@@ -11,12 +11,12 @@ type PropsValidationError = {
 
 export const propsProcessor = {
     applyProcessorsAndValidators: async (
-        resolvedInput: StaticPropsValue<PiecePropertyMap>,
+        resolvedInput: StaticPropsValue<ConnectorPropertyMap>,
         props: InputPropertyMap,
         auth: PieceAuthProperty | PieceAuthProperty[] | undefined,
         requireAuth: boolean,
         propertySettings: Record<string, PropertySettings>,
-    ): Promise<{ processedInput: StaticPropsValue<PiecePropertyMap>, errors: PropsValidationError }> => {
+    ): Promise<{ processedInput: StaticPropsValue<ConnectorPropertyMap>, errors: PropsValidationError }> => {
         let dynamaicPropertiesSchema: Record<string, InputPropertyMap> | undefined = undefined
         if (Object.keys(propertySettings).length > 0) {
             dynamaicPropertiesSchema = Object.fromEntries(Object.entries(propertySettings).map(([key, propertySetting]) => [key, propertySetting.schema]))
@@ -112,7 +112,7 @@ export const propsProcessor = {
     },
 }
 
-const validateProperty = (property: PieceProperty, value: unknown, originalValue: unknown): string[] => {
+const validateProperty = (property: ConnectorProperty, value: unknown, originalValue: unknown): string[] => {
     if (property.type === PropertyType.JSON) {
         if (!property.required && originalValue === '') {
             return []

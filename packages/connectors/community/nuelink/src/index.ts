@@ -1,7 +1,7 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { createPost } from "./lib/actions/create-post";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 export const nuelinkAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -9,7 +9,7 @@ export const nuelinkAuth = PieceAuth.SecretText({
   description: 'Please use **Nuelink API Key**.',
 });
 
-export const nuelink = createPiece({
+export const nuelink = createConnector({
   displayName: "Nuelink",
   auth: nuelinkAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,13 +1,13 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { cryptolensAuth } from './lib/common/auth';
 import { addCustomer } from './lib/actions/add-customer';
 import { blockKey } from './lib/actions/block-key';
 import { createKey } from './lib/actions/create-key';
 import { newApiEvent } from './lib/triggers/new-api-event';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const cryptolens = createPiece({
+export const cryptolens = createConnector({
   displayName: 'Cryptolens',
   auth: cryptolensAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { saveDepot } from '../api';
 import { cmsAuth } from '../auth';
 

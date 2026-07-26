@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createField,
   deleteField,
@@ -54,7 +54,7 @@ import {
   listPurchases,
 } from './lib/actions/purchases';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   addTag,
   formSubscribed,
@@ -76,7 +76,7 @@ export const convertkitAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const convertkit = createPiece({
+export const convertkit = createConnector({
   displayName: 'ConvertKit',
   description: 'Email marketing for creators',
 

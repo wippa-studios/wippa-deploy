@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { koFiAuth } from './lib/auth';
 import { newCommission } from './lib/triggers/new-commission';
@@ -7,7 +7,7 @@ import { newDonation } from './lib/triggers/new-donation';
 import { newShopOrder } from './lib/triggers/new-shop-order';
 import { newSubscription } from './lib/triggers/new-subscription';
 
-export const koFi = createPiece({
+export const koFi = createConnector({
   displayName: 'Ko-fi',
   description:
     'Receive triggers for donations, subscriptions, commissions, and shop orders from Ko-fi.',

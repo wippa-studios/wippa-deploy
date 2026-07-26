@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { tarventAuth } from '../auth';
 import { makeClient, tarventCommon } from '../common';
 import { CreateWebhookResponse } from '../common/types';

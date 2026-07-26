@@ -223,15 +223,15 @@ export const chatController: FastifyPluginAsyncZod = async (app) => {
         const platformId = request.principal.platform.id
         const userId = request.principal.id
         await chatService(request.log).getConversationOrThrow({ id: conversationId, platformId, userId })
-        const pieceName = request.query.pieceName
-        const cached = await chatApprovalGate.getAvailableConnections({ conversationId, pieceName })
+        const connectorName = request.query.connectorName
+        const cached = await chatApprovalGate.getAvailableConnections({ conversationId, connectorName })
         if (cached.length > 0) {
             return reply.status(StatusCodes.OK).send(cached)
         }
         const projects = await chatHelpers.getUserProjects({ platformId, userId, log: request.log })
-        const result = await findConnectionsForPiece({ pieceName, projects, platformId, log: request.log })
+        const result = await findConnectionsForPiece({ connectorName, projects, platformId, log: request.log })
         if ('pickConnection' in result) {
-            await chatApprovalGate.storeAvailableConnections({ conversationId, pieceName, connections: result.connections })
+            await chatApprovalGate.storeAvailableConnections({ conversationId, connectorName, connections: result.connections })
             return reply.status(StatusCodes.OK).send(result.connections)
         }
         return reply.status(StatusCodes.OK).send([])
@@ -478,7 +478,7 @@ const GetPickerConnectionsRoute = {
         tags: ['chat'],
         security: [SERVICE_KEY_SECURITY_OPENAPI],
         params: CONVERSATION_PARAMS,
-        querystring: z.object({ pieceName: z.string() }),
+        querystring: z.object({ connectorName: z.string() }),
     },
 }
 

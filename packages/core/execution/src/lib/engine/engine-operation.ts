@@ -1,12 +1,12 @@
 import { FlowRunId, PlatformId, ProjectId } from '@wippa/core-utils'
 import { z } from 'zod'
 import { ExecutionToolStatus, PredefinedInputsStructure } from '../agents'
-import { AppConnectionValue } from '@wippa/core-piece-types'
+import { AppConnectionValue } from '@wippa/core-connector-types'
 import { ExecutionType } from '../flow-run/execution/execution-output'
 import { RunEnvironment } from '../flow-run/flow-run'
 import { FlowVersion } from '../flows/flow-version'
-import { PiecePackage } from '@wippa/core-piece-types'
-import { ScheduleOptions } from '@wippa/core-piece-types'
+import { ConnectorPackage } from '@wippa/core-connector-types'
+import { ScheduleOptions } from '@wippa/core-connector-types'
 import { JobPayload } from '../workers/job-data'
 
 export enum EngineOperationType {
@@ -60,7 +60,7 @@ export type BaseEngineOperation = {
 }
 
 export type ExecuteValidateAuthOperation = Omit<BaseEngineOperation, 'projectId'> & {
-    piece: PiecePackage
+    piece: ConnectorPackage
     auth: AppConnectionValue
 }
 
@@ -70,20 +70,20 @@ export type ExecuteRefreshTokenAuthResponse =
     | { skipped: true }
     | { skipped: false, access_token: string, expires_in: number }
 
-export type ExecuteExtractPieceMetadata = PiecePackage & { platformId: PlatformId }
+export type ExecuteExtractPieceMetadata = ConnectorPackage & { platformId: PlatformId }
 
 export type ExecuteExtractPieceMetadataOperation = ExecuteExtractPieceMetadata & { timeoutInSeconds: number, platformId: PlatformId }
 
 export type ExecuteToolOperation = BaseEngineOperation & {
     actionName: string
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     predefinedInput?: PredefinedInputsStructure
     instruction: string
 }
 
 export type ExecutePropsOptions = BaseEngineOperation & {
-    piece: PiecePackage
+    piece: ConnectorPackage
     propertyName: string
     actionOrTriggerName: string
     flowVersion?: FlowVersion

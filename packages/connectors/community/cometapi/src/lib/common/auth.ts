@@ -2,8 +2,8 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const markdownDescription = `
 Follow these instructions to get your CometAPI Key:

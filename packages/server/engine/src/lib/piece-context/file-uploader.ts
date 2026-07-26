@@ -1,6 +1,6 @@
 import { Readable } from 'node:stream'
 import { apId } from '@wippa/core-utils'
-import { FilesService } from '@wippa/pieces-framework'
+import { FilesService } from '@wippa/connectors-framework'
 import { FileSizeError, FileType } from '@wippa/shared'
 import { engineFileApi } from '../api/engine-file-api'
 

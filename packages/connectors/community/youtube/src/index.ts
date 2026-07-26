@@ -1,17 +1,17 @@
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { youtubeNewVideoTrigger } from './lib/triggers/new-video.trigger';
 import { youtubeAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { youtubeListPlaylistItemsAction } from './lib/actions/list-playlist-items';
 import { youtubeSearchAction } from './lib/actions/search';
 import { youtubeListCaptionsAction } from './lib/actions/list-captions';
 import { youtubeDownloadCaptionAction } from './lib/actions/download-caption';
 
-export const youtube = createPiece({
+export const youtube = createConnector({
   displayName: 'YouTube',
   description:
     'Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube',

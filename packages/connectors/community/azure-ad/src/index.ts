@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, OAuth2PropertyValue } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, OAuth2PropertyValue } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { azureAdAuth } from './lib/auth';
 import { addMemberToGroupAction } from './lib/actions/add-member-to-group';
 import { addOrRemoveUserLicenseAction } from './lib/actions/add-or-remove-user-license';
@@ -22,7 +22,7 @@ import { newDeletedUserTrigger } from './lib/triggers/new-deleted-user';
 import { newGroupTrigger } from './lib/triggers/new-group';
 import { newUserTrigger } from './lib/triggers/new-user';
 
-export const azureAd = createPiece({
+export const azureAd = createConnector({
     displayName: 'Azure Active Directory',
     description: 'Manage users, groups, and licenses in Microsoft Entra ID (Azure AD) via Microsoft Graph.',
     minimumSupportedRelease: '0.36.1',

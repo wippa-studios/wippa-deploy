@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { doctlyAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { convertPdfToTextAction } from './lib/actions/convert-pdf-to-text';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/constants';
 
-export const doctly = createPiece({
+export const doctly = createConnector({
 	displayName: 'Doctly AI',
 	auth: doctlyAuth,
 	minimumSupportedRelease: '0.36.1',

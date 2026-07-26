@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { instantlyAiAuth } from '../auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod, QueryParams } from '@wippa/pieces-common';
+import { HttpMethod, QueryParams } from '@wippa/connectors-common';
 import { campaignId, listId } from '../common/props';
 
 export const searchLeadsAction = createAction({

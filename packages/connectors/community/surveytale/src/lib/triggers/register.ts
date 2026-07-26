@@ -1,7 +1,7 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework'
-import { httpClient, HttpRequest, HttpMethod } from '@wippa/pieces-common'
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework'
+import { httpClient, HttpRequest, HttpMethod } from '@wippa/connectors-common'
 import { SURVEYTALE_BASE_URL, surveyTaleAuth } from '../auth'
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { surveyIdProp } from '../common/props'
 
 export const surveyTaleRegisterTrigger = ({

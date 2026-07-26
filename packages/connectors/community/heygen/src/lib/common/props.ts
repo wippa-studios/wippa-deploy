@@ -1,7 +1,7 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { heygenApiCall } from './client';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { heygenAuth } from './auth';
 
 export const folderDropdown = Property.Dropdown({

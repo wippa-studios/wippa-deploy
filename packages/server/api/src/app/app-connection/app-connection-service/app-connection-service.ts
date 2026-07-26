@@ -30,12 +30,12 @@ export const appConnectionsRepo = repoFactory(AppConnectionEntity)
 
 export const appConnectionService = (log: FastifyBaseLogger) => ({
     async upsert(params: UpsertParams): Promise<AppConnectionWithoutSensitiveData> {
-        const { projectIds, externalId, value, displayName, pieceName, ownerId, platformId, scope, type, status, metadata, preSelectForNewProjects } = params
-        const pieceVersion = params.pieceVersion ?? ( await pieceMetadataService(log).getOrThrow({
-            name: pieceName,
+        const { projectIds, externalId, value, displayName, connectorName, ownerId, platformId, scope, type, status, metadata, preSelectForNewProjects } = params
+        const connectorVersion = params.connectorVersion ?? ( await pieceMetadataService(log).getOrThrow({
+            name: connectorName,
             platformId,
         })).version
-        validatePieceVersion(pieceVersion)
+        validatePieceVersion(connectorVersion)
         await assertProjectIds(projectIds, platformId)
 
         if (status === AppConnectionStatus.MISSING) {
@@ -46,15 +46,15 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
                 ...(projectIds ? { projectIds: ArrayContains(projectIds) } : {}),
             })
             if (!isNil(existingForPlaceholder) && existingForPlaceholder.status !== AppConnectionStatus.MISSING) {
-                log.info({ connection: { id: existingForPlaceholder.id }, piece: { name: pieceName }, platform: { id: platformId }, existingStatus: existingForPlaceholder.status }, 'Placeholder upsert skipped — non-missing connection already exists')
+                log.info({ connection: { id: existingForPlaceholder.id }, piece: { name: connectorName }, platform: { id: platformId }, existingStatus: existingForPlaceholder.status }, 'Placeholder upsert skipped — non-missing connection already exists')
                 return this.removeSensitiveData(existingForPlaceholder)
             }
         }
 
         const validatedConnectionValue = await validateConnectionValue({
             value: await secretManagersService(log).resolveObject({ value, platformId, projectIds }),
-            pieceName,
-            pieceVersion,
+            connectorName,
+            connectorVersion,
             projectId: projectIds[0],
             platformId,
         }, log)
@@ -78,7 +78,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
             status: status ?? AppConnectionStatus.ACTIVE,
             value: encryptedConnectionValue,
             externalId,
-            pieceName,
+            connectorName,
             type,
             id: newId,
             scope,
@@ -86,7 +86,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
             platformId,
             ...spreadIfDefined('metadata', metadata),
             ...spreadIfDefined('preSelectForNewProjects', preSelectForNewProjects),
-            pieceVersion,
+            connectorVersion,
         }
 
         await appConnectionsRepo().upsert(connection, ['id'])
@@ -97,7 +97,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
             ...(projectIds ? { projectIds: ArrayContains(projectIds) } : {}),
             scope,
         })
-        log.info({ connection: { id: newId }, piece: { name: pieceName }, platform: { id: platformId }, isNew: isNil(existingConnection) }, 'App connection upserted')
+        log.info({ connection: { id: newId }, piece: { name: connectorName }, platform: { id: platformId }, isNew: isNil(existingConnection) }, 'App connection upserted')
         return this.removeSensitiveData(updatedConnection)
     },
     async update(params: UpdateParams): Promise<AppConnectionWithoutSensitiveData> {
@@ -198,7 +198,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
             platformId,
             projectId,
             externalId: metadata.externalId,
-            validate: ({ pieceName, value }) => engineValidateAuth({ pieceName, projectId, platformId, auth: value }, log),
+            validate: ({ connectorName, value }) => engineValidateAuth({ connectorName, projectId, platformId, auth: value }, log),
             log,
         })
         if (isNil(connection)) {
@@ -218,7 +218,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
         })
         return connections.map((connection) => ({
             externalId: connection.externalId,
-            pieceName: connection.pieceName,
+            connectorName: connection.connectorName,
             displayName: connection.displayName,
         }))
     },
@@ -245,7 +245,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
             platformId,
         })
 
-        if (sourceAppConnection.pieceName !== targetAppConnection.pieceName) {
+        if (sourceAppConnection.connectorName !== targetAppConnection.connectorName) {
             throw new ActivepiecesError({
                 code: ErrorCode.VALIDATION,
                 params: {
@@ -373,7 +373,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
         projectId,
         projectIds,
         ownerIds,
-        pieceName,
+        connectorName,
         cursorRequest,
         displayName,
         status,
@@ -398,8 +398,8 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
             ...spreadIfDefined('scope', scope),
             platformId,
         }
-        if (!isNil(pieceName)) {
-            querySelector.pieceName = Equal(pieceName)
+        if (!isNil(connectorName)) {
+            querySelector.connectorName = Equal(connectorName)
         }
         if (!isNil(displayName)) {
             querySelector.displayName = ILike(`%${displayName}%`)
@@ -504,7 +504,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
     async listForPlatform(params: ListForPlatformParams): Promise<SeekPage<PlatformAppConnectionsListItem>> {
         const service = appConnectionService(log)
         const page = await service.list({
-            pieceName: params.pieceName,
+            connectorName: params.connectorName,
             displayName: params.displayName,
             status: params.status,
             scope: params.scope,
@@ -582,20 +582,20 @@ const validateConnectionValue = async (
     params: ValidateConnectionValueParams,
     log: FastifyBaseLogger,
 ): Promise<AppConnectionValue> => {
-    const { value, pieceName, pieceVersion, projectId, platformId } = params
+    const { value, connectorName, connectorVersion, projectId, platformId } = params
 
     switch (value.type) {
         case AppConnectionType.PLATFORM_OAUTH2: {
             const tokenUrl = await oauth2Util(log).getOAuth2TokenUrl({
-                pieceName,
-                pieceVersion,
+                connectorName,
+                connectorVersion,
                 platformId,
                 props: value.props,
             })
             return oauth2Handler[value.type](log).claim({
                 projectId,
                 platformId,
-                pieceName,
+                connectorName,
                 request: {
                     grantType: OAuth2GrantType.AUTHORIZATION_CODE,
                     code: value.code,
@@ -610,15 +610,15 @@ const validateConnectionValue = async (
         }
         case AppConnectionType.CLOUD_OAUTH2: {
             const tokenUrl = await oauth2Util(log).getOAuth2TokenUrl({
-                pieceName,
-                pieceVersion,
+                connectorName,
+                connectorVersion,
                 platformId,
                 props: value.props,
             })
             return oauth2Handler[value.type](log).claim({
                 projectId,
                 platformId,
-                pieceName,
+                connectorName,
                 request: {
                     tokenUrl,
                     grantType: OAuth2GrantType.AUTHORIZATION_CODE,
@@ -632,8 +632,8 @@ const validateConnectionValue = async (
         }
         case AppConnectionType.OAUTH2: {
             const tokenUrl = await oauth2Util(log).getOAuth2TokenUrl({
-                pieceName,
-                pieceVersion,
+                connectorName,
+                connectorVersion,
                 platformId,
                 props: value.props,
             })
@@ -641,7 +641,7 @@ const validateConnectionValue = async (
             const auth = await oauth2Handler[value.type](log).claim({
                 projectId,
                 platformId,
-                pieceName,
+                connectorName,
                 request: {
                     tokenUrl,
                     code: value.code,
@@ -656,7 +656,7 @@ const validateConnectionValue = async (
                 },
             })
             await engineValidateAuth({
-                pieceName,
+                connectorName,
                 projectId,
                 platformId,
                 auth,
@@ -671,7 +671,7 @@ const validateConnectionValue = async (
         case AppConnectionType.SECRET_TEXT:
             await engineValidateAuth({
                 platformId,
-                pieceName,
+                connectorName,
                 projectId,
                 auth: value,
             }, log)
@@ -688,18 +688,18 @@ const engineValidateAuth = async (
     if (environment === ApEnvironment.TESTING) {
         return
     }
-    const { pieceName, auth, projectId, platformId } = params
+    const { connectorName, auth, projectId, platformId } = params
 
-    const pieceMetadata = await pieceMetadataService(log).getOrThrow({
-        name: pieceName,
+    const connectorMetadata = await pieceMetadataService(log).getOrThrow({
+        name: connectorName,
         version: undefined,
         platformId,
     })
 
     const engineResponse = await userInteractionWatcher.submitAndWaitForResponse<EngineResponse<ExecuteValidateAuthResponse>>({
         piece: await getPiecePackageWithoutArchive(log, platformId, {
-            pieceName,
-            pieceVersion: pieceMetadata.version,
+            connectorName,
+            connectorVersion: connectorMetadata.version,
         }),
         projectId,
         platformId,
@@ -795,8 +795,8 @@ function mapToUserWithMetaInformation(owner: (User & { identity?: UserIdentity }
     }
 }
 
-function validatePieceVersion(pieceVersion: string): void {
-    if (!semver.valid(pieceVersion)) {
+function validatePieceVersion(connectorVersion: string): void {
+    if (!semver.valid(connectorVersion)) {
         throw new ActivepiecesError({
             code: ErrorCode.VALIDATION,
             params: {
@@ -815,9 +815,9 @@ type UpsertParams = {
     displayName: string
     type: AppConnectionType
     status?: AppConnectionStatus
-    pieceName: string
+    connectorName: string
     metadata?: Metadata
-    pieceVersion?: string
+    connectorVersion?: string
     preSelectForNewProjects?: boolean
 }
 
@@ -853,8 +853,8 @@ type DeleteParams = {
 
 type ValidateConnectionValueParams = {
     value: Extract<UpsertAppConnectionRequestBody, { value: unknown }>['value']
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     projectId: ProjectId | undefined
     platformId: string
 }
@@ -864,7 +864,7 @@ type ListParams = {
     projectIds?: ProjectId[]
     ownerIds?: string[]
     platformId: string
-    pieceName: string | undefined
+    connectorName: string | undefined
     cursorRequest: Cursor | null
     scope: AppConnectionScope | undefined
     displayName: string | undefined
@@ -875,7 +875,7 @@ type ListParams = {
 
 type ListForPlatformParams = {
     platformId: string
-    pieceName: string | undefined
+    connectorName: string | undefined
     displayName: string | undefined
     status: AppConnectionStatus[] | undefined
     scope: AppConnectionScope | undefined
@@ -899,7 +899,7 @@ type UpdateParams = {
 }
 
 type EngineValidateAuthParams = {
-    pieceName: string
+    connectorName: string
     projectId: ProjectId | undefined
     platformId: string
     auth: AppConnectionValue

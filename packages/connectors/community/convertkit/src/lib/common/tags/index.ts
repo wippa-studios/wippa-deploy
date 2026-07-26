@@ -1,6 +1,6 @@
 import {
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   fetchSubscriberByEmail,
   fetchSubscribedTags,

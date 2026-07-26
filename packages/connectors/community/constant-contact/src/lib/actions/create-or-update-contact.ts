@@ -2,12 +2,12 @@ import {
   OAuth2PropertyValue,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { constantContactAuth } from '../auth';
 
 export const createOrUpdateContact = createAction({

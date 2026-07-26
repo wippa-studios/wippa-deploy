@@ -1,5 +1,5 @@
-import { Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
   teamhoodApiCall,
   TeamhoodAuth,

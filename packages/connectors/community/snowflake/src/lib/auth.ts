@@ -2,7 +2,7 @@ import {
   PieceAuth,
   Property,
   OAuth2AuthorizationMethod,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import snowflake from 'snowflake-sdk';
 
 // Suppress the SDK's verbose INFO/DEBUG logs so they don't corrupt stdout IPC

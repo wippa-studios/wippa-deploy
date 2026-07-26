@@ -1,12 +1,12 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { askGpt } from './lib/actions/ask-gpt';
 import { azureOpenaiAuth } from './lib/auth';
 
-export const azureOpenai = createPiece({
+export const azureOpenai = createConnector({
   displayName: 'Azure OpenAI',
   description: 'Powerful AI tools from Microsoft',
   auth: azureOpenaiAuth,

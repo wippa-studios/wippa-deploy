@@ -1,11 +1,11 @@
 
 import {
-    createPiece,
+    createConnector,
     PieceAuth,
     Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 const authDesc = `
 Connect to your Oracle Fusion Cloud ERP instance using Basic Authentication.
@@ -50,7 +50,7 @@ import {
 } from './lib/actions/journal-batches';
 import { oracleFusionCloudErpAuth } from './lib/auth';
 
-export const oracleFusionCloudErp = createPiece({
+export const oracleFusionCloudErp = createConnector({
     displayName: 'Oracle Fusion Cloud ERP',
     description: 'Enterprise resource planning suite covering financials, procurement, project accounting, supply chain, and more.',
     minimumSupportedRelease: '0.36.1',

@@ -2,8 +2,8 @@ import { ActivepiecesError, ErrorCode, isNil, PlatformId, STEP_NAME_REGEX, UserI
 import {
     PieceAuthProperty,
     piecePropertiesUtils,
-    PiecePropertyMap,
-} from '@wippa/pieces-framework'
+    ConnectorPropertyMap,
+} from '@wippa/connectors-framework'
 import { CodeActionSettings, FlowActionType, FlowOperationRequest, FlowOperationType, flowPieceUtil, flowStructureUtil, FlowTrigger, FlowTriggerType, LoopOnItemsActionSettings, PieceActionSettings, PieceTriggerSettings, RouterActionSettingsWithValidation, SourceCode } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
@@ -38,7 +38,7 @@ export const flowVersionValidationUtil = (log: FastifyBaseLogger) => ({
                         ).success
                         break
                     case FlowActionType.PIECE: {
-                        clonedRequest.request.action.settings.pieceVersion = flowPieceUtil.getExactVersion(clonedRequest.request.action.settings.pieceVersion)
+                        clonedRequest.request.action.settings.connectorVersion = flowPieceUtil.getExactVersion(clonedRequest.request.action.settings.connectorVersion)
                         const result = await validateAction(
                             { settings: clonedRequest.request.action.settings, platformId, log },
                         )
@@ -68,7 +68,7 @@ export const flowVersionValidationUtil = (log: FastifyBaseLogger) => ({
                         ).success
                         break
                     case FlowActionType.PIECE: {
-                        clonedRequest.request.settings.pieceVersion = flowPieceUtil.getExactVersion(clonedRequest.request.settings.pieceVersion)
+                        clonedRequest.request.settings.connectorVersion = flowPieceUtil.getExactVersion(clonedRequest.request.settings.connectorVersion)
                         const result = await validateAction(
                             { settings: clonedRequest.request.settings, platformId, log },
                         )
@@ -96,7 +96,7 @@ export const flowVersionValidationUtil = (log: FastifyBaseLogger) => ({
                         clonedRequest.request.valid = false
                         break
                     case FlowTriggerType.PIECE: {
-                        clonedRequest.request.settings.pieceVersion = flowPieceUtil.getExactVersion(clonedRequest.request.settings.pieceVersion)
+                        clonedRequest.request.settings.connectorVersion = flowPieceUtil.getExactVersion(clonedRequest.request.settings.connectorVersion)
                         const result = await validateTrigger(
                             { settings: clonedRequest.request.settings, platformId, log },
                         )
@@ -138,8 +138,8 @@ function assertImportedStepNamesAreSafe(trigger: FlowTrigger): void {
 
 async function validateAction({ settings, platformId, log }: ValidateActionParams): Promise<ValidationResult> {
     if (
-        isNil(settings.pieceName) ||
-        isNil(settings.pieceVersion) ||
+        isNil(settings.connectorName) ||
+        isNil(settings.connectorVersion) ||
         isNil(settings.actionName) ||
         isNil(settings.input)
     ) {
@@ -148,8 +148,8 @@ async function validateAction({ settings, platformId, log }: ValidateActionParam
 
     const piece = await pieceMetadataService(log).getOrThrow({
         platformId,
-        name: settings.pieceName,
-        version: settings.pieceVersion,
+        name: settings.connectorName,
+        version: settings.connectorVersion,
     })
 
     if (isNil(piece)) {
@@ -168,8 +168,8 @@ async function validateAction({ settings, platformId, log }: ValidateActionParam
 
 async function validateTrigger({ settings, platformId, log }: ValidateTriggerParams): Promise<ValidationResult> {
     if (
-        isNil(settings.pieceName) ||
-        isNil(settings.pieceVersion) ||
+        isNil(settings.connectorName) ||
+        isNil(settings.connectorVersion) ||
         isNil(settings.triggerName) ||
         isNil(settings.input)
     ) {
@@ -178,8 +178,8 @@ async function validateTrigger({ settings, platformId, log }: ValidateTriggerPar
 
     const piece = await pieceMetadataService(log).getOrThrow({
         platformId,
-        name: settings.pieceName,
-        version: settings.pieceVersion,
+        name: settings.connectorName,
+        version: settings.connectorVersion,
     })
     if (isNil(piece)) {
         return { valid: false }
@@ -194,7 +194,7 @@ async function validateTrigger({ settings, platformId, log }: ValidateTriggerPar
 }
 
 function validateProps(
-    props: PiecePropertyMap,
+    props: ConnectorPropertyMap,
     input: Record<string, unknown> | undefined,
     auth: PieceAuthProperty | PieceAuthProperty[] | undefined,
     //if require auth is not defined, we default to true, because at first all auth was required

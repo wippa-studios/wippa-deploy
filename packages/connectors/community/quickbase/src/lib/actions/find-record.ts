@@ -1,4 +1,4 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { quickbaseAuth } from '../auth';
 import { appIdProp, tableIdProp, filtersProp, maxRecordsProp, sortFieldProp, sortOrderProp } from '../common/props';
 import { QuickbaseClient } from '../common/client';

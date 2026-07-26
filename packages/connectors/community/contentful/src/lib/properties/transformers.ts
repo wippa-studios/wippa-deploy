@@ -9,7 +9,7 @@ import {
   ObjectProperty,
   Property,
   ShortTextProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { ContentFields, FieldType } from 'contentful-management';
 import { getLinkHelperText } from '../common';
 

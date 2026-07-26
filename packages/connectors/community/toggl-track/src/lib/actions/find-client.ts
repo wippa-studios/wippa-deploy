@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient, QueryParams } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient, QueryParams } from '@wippa/connectors-common';
 import { togglTrackAuth } from '../..';
 import { togglCommon } from '../common';
 

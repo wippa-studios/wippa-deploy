@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { GetDocumentAnalysisCommand, JobStatus } from '@aws-sdk/client-textract';
 import { Block } from '@aws-sdk/client-textract';
 import { amazonTextractAuth } from '../auth';

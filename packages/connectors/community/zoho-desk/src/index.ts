@@ -1,17 +1,17 @@
 import {
 	OAuth2PropertyValue,
-	createPiece,
+	createConnector,
 	PiecePropValueSchema,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { listTicketsAction } from './lib/actions/list-tickets';
 import { createTicketAction } from './lib/actions/create-ticket';
 import { organizationId } from './lib/common/props';
 import { findContactAction } from './lib/actions/find-contact';
 import { zohoDeskAuth } from './lib/common/auth';
 
-export const piecesZohoDesk = createPiece({
+export const piecesZohoDesk = createConnector({
 	displayName: 'Zoho Desk',
 	description: 'Helpdesk management software',
 	auth: zohoDeskAuth,

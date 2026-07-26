@@ -1,6 +1,6 @@
-import { PieceAuth, OAuth2AuthorizationMethod, AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceAuth, OAuth2AuthorizationMethod, AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const signNowOAuth2Auth = PieceAuth.OAuth2({
   displayName: 'Sign in with SignNow',

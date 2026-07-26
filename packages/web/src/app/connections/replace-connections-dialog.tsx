@@ -55,7 +55,7 @@ type ReplaceConnectionsDialogProps = {
 };
 
 type FormData = {
-  pieceName: string;
+  connectorName: string;
   sourceConnections: { id: string; externalId: string };
   replacedWithConnection: { id: string; externalId: string };
 };
@@ -121,7 +121,7 @@ const ReplaceConnectionsDialog = ({
 
   const form = useForm<FormData>({
     defaultValues: {
-      pieceName: '',
+      connectorName: '',
       sourceConnections: { id: '', externalId: '' },
       replacedWithConnection: { id: '', externalId: '' },
     },
@@ -129,8 +129,8 @@ const ReplaceConnectionsDialog = ({
     resolver: (values) => {
       const errors: FieldErrors<FormData> = {};
 
-      if (!values.pieceName) {
-        errors.pieceName = {
+      if (!values.connectorName) {
+        errors.connectorName = {
           type: 'required',
           message: t('Please select a piece'),
         };
@@ -157,18 +157,18 @@ const ReplaceConnectionsDialog = ({
     },
   });
 
-  const selectedPiece = form.watch('pieceName');
+  const selectedPiece = form.watch('connectorName');
 
   const connectionPieceNames = new Set(
-    connections?.data.map((conn) => conn.pieceName),
+    connections?.data.map((conn) => conn.connectorName),
   );
 
   const piecesOptions =
     pieces
       ?.filter(
         (piece) =>
-          piece.name !== '@wippa/piece-mcp' &&
-          piece.name !== '@wippa/piece-webhook' &&
+          piece.name !== '@wippa/connector-mcp' &&
+          piece.name !== '@wippa/connector-webhook' &&
           connectionPieceNames.has(piece.name),
       )
       .map((piece) => ({
@@ -177,7 +177,7 @@ const ReplaceConnectionsDialog = ({
       })) ?? [];
 
   const filteredConnections =
-    connections?.data.filter((conn) => conn.pieceName === selectedPiece) ?? [];
+    connections?.data.filter((conn) => conn.connectorName === selectedPiece) ?? [];
 
   const sourceConnectionId = useWatch({
     control: form.control,
@@ -219,7 +219,7 @@ const ReplaceConnectionsDialog = ({
     const isValid = await form.trigger();
     if (!isValid) {
       form.trigger([
-        'pieceName',
+        'connectorName',
         'sourceConnections',
         'replacedWithConnection',
       ]);
@@ -274,7 +274,7 @@ const ReplaceConnectionsDialog = ({
             >
               <FormField
                 control={form.control}
-                name="pieceName"
+                name="connectorName"
                 render={({ field }) => (
                   <div className="flex flex-col gap-2">
                     <Label>{t('Piece')}</Label>
@@ -350,7 +350,7 @@ const ReplaceConnectionsDialog = ({
                             return (
                               <div className="flex gap-2 items-center">
                                 <PieceIconWithPieceName
-                                  pieceName={conn!.pieceName}
+                                  connectorName={conn!.connectorName}
                                   size="xs"
                                   border={false}
                                 />
@@ -396,7 +396,7 @@ const ReplaceConnectionsDialog = ({
                               return (
                                 <div className="flex gap-2 items-center">
                                   <PieceIconWithPieceName
-                                    pieceName={conn!.pieceName}
+                                    connectorName={conn!.connectorName}
                                     size="xs"
                                     border={false}
                                   />

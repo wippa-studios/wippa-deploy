@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { streakAuth } from './lib/common/auth';
 import { createBoxAction } from './lib/actions/create-box';
 import { createCommentAction } from './lib/actions/create-comment';
@@ -25,7 +25,7 @@ import { taskDueTrigger } from './lib/triggers/task-due';
 import { updatedBoxTrigger } from './lib/triggers/updated-box';
 import { updatedContactTrigger } from './lib/triggers/updated-contact';
 
-export const streak = createPiece({
+export const streak = createConnector({
   displayName: 'Streak',
   description:
     'CRM built into Gmail. Manage pipelines, boxes, tasks, comments, contacts and organizations from your flows.',

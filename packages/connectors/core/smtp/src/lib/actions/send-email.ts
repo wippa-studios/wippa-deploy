@@ -1,4 +1,4 @@
-import { ApFile, Property, createAction } from '@wippa/pieces-framework';
+import { ApFile, Property, createAction } from '@wippa/connectors-framework';
 import { smtpAuth } from '../..';
 import { smtpCommon } from '../common';
 import { Attachment, Headers } from 'nodemailer/lib/mailer';

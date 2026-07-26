@@ -1,6 +1,6 @@
 
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createSession } from './lib/actions/create-session';
 import { getSessionDetails } from './lib/actions/get-session-details';
 import { sendMessage } from './lib/actions/send-message';
@@ -11,7 +11,7 @@ export const devinAuth = PieceAuth.SecretText({
   description: 'Your Devin API key (used in the Authorization header).',
 });
 
-export const devin = createPiece({
+export const devin = createConnector({
   displayName: 'Devin AI',
   description: 'AI-powered engineering assistant for automating development tasks, code generation, and technical conversations.',
   logoUrl: 'https://cdn.activepieces.com/pieces/devin.png',

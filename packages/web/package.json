@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@wippa/pieces-framework": "workspace:*",
+    "@wippa/connectors-framework": "workspace:*",
     "@wippa/shared": "workspace:*",
     "@codemirror/commands": "6.10.3",
     "@codemirror/lang-javascript": "6.2.2",

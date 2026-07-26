@@ -1,4 +1,4 @@
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { whatsscaleClient } from './client';
 
 const POLL_INTERVAL_MS = 3000;

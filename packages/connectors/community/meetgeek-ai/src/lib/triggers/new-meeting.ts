@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { meetgeekaiAuth } from '../common/auth';
 export const newMeeting = createTrigger({
   auth: meetgeekaiAuth,

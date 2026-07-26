@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { dateDifferenceAction } from '../src/lib/actions/date-difference';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('dateDifferenceAction', () => {
   test('calculates difference in days', async () => {

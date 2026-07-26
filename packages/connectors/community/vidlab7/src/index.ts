@@ -1,9 +1,9 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createVideo } from './lib/actions/create-video';
 import { vidlab7Auth } from './lib/common/auth';
 
-export const vidlab7 = createPiece({
+export const vidlab7 = createConnector({
   displayName: 'VidLab7',
   auth: vidlab7Auth,
   minimumSupportedRelease: '0.36.1',

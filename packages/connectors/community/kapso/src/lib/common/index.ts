@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { WhatsAppClient } from '@kapso/whatsapp-cloud-api';
 
 export const KAPSO_BASE_URL = 'https://api.kapso.ai/meta/whatsapp';

@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { rendexAuth } from './lib/common/auth';
 import { RENDEX_BASE_URL } from './lib/common/common';
 import { renderToImage } from './lib/actions/render-to-image';
 
-export const rendex = createPiece({
+export const rendex = createConnector({
   displayName: 'Rendex',
   description:
     'Render raw HTML, a URL, or Markdown to a PNG, JPEG, or WebP image or a PDF via the Rendex API.',

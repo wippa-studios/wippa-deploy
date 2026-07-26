@@ -1,5 +1,5 @@
-import { Property, createAction } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { Property, createAction } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { closeAuth } from '../auth';
 import { CloseCRMContact } from '../common/types';
 import { customFields, leadId } from '../common/props';

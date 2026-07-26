@@ -1,14 +1,14 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { getBudget } from './lib/actions/get-budget';
 import { importTransaction } from './lib/actions/import-transaction';
 import { getCategories } from './lib/actions/get-categories';
 import { importTransactions } from './lib/actions/import-transactions';
 import { getAccounts } from './lib/actions/get-accounts';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 export const actualBudgetAuth = PieceAuth.CustomAuth({
   description: 'Enter authentication details',
@@ -38,7 +38,7 @@ export const actualBudgetAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const actualbudget = createPiece({
+export const actualbudget = createConnector({
   displayName: 'Actual Budget',
   description: 'Personal finance app',
   auth: actualBudgetAuth,

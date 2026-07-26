@@ -1,9 +1,9 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addOrUpdateContactExtended } from './lib/actions/add-or-update-contact-extended';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';
 import { addOrUpdateSubscription } from './lib/actions/add-or-update-subscription';
@@ -54,7 +54,7 @@ export const sperseAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const sperse = createPiece({
+export const sperse = createConnector({
   displayName: 'Sperse',
   description:
     'Sperse CRM enables secure payment processing and affiliate marketing for online businesses',

@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const markdownDescription = `
 To obtain your GenerateBanners public and secret API Keys, you can follow the steps below:

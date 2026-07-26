@@ -2,7 +2,7 @@ import {
   Property,
   createAction,
   PieceAuth,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   ZipReader,
   BlobReader,

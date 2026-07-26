@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createJob } from './lib/actions/create-job';
 import { workflowEvent } from './lib/triggers/workflow-event';
 import { hystructAuth } from './lib/auth';
 
-export const hystruct = createPiece({
+export const hystruct = createConnector({
   displayName: 'Hystruct',
   description: 'AI-powered document structuring and data extraction',
   auth: hystructAuth,

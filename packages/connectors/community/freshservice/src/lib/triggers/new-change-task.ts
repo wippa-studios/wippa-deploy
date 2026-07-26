@@ -2,13 +2,13 @@ import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpMethod,
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { freshserviceAuth } from '../../';
 import { freshserviceApiCall } from '../common/client';
 import { freshserviceCommon, FreshserviceChangeTask } from '../common/props';

@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { getFullList } from './lib/actions/get-full-list';
 import { getList } from './lib/actions/get-list';
 import { getRecord } from './lib/actions/get-record';
 import { createRecord } from './lib/actions/create-record';
 import { updateRecord } from './lib/actions/update-record';
 import { deleteRecord } from './lib/actions/delete-record';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 const markdown = `
 Provide your PocketBase **host URL** and **superuser credentials**.
@@ -96,7 +96,7 @@ export const pocketbaseAuth = PieceAuth.CustomAuth({
 
 
 
-export const pocketbase = createPiece({
+export const pocketbase = createConnector({
   displayName: 'Pocketbase',
   description: 'Interact with your PocketBase instance using superuser credentials.',
   auth: pocketbaseAuth,

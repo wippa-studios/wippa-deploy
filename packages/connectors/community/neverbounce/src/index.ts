@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 
 import { neverbounceAuth } from './lib/common/auth';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { verifyEmailAddress } from './lib/actions/verify-email-address';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const neverbounce = createPiece({
+export const neverbounce = createConnector({
   displayName: 'NeverBounce',
   auth: neverbounceAuth,
   minimumSupportedRelease: '0.36.1',

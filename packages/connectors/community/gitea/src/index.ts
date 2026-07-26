@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { giteaAuth } from './lib/auth';
 import { newCommit } from './lib/triggers/new-commit';
 import { newIssue } from './lib/triggers/new-issue';
@@ -13,7 +13,7 @@ import { createIssue } from './lib/actions/create-issue';
 import { createComment } from './lib/actions/create-comment';
 import { updateRepoSync } from './lib/actions/update-repo';
 
-export const gitea = createPiece({
+export const gitea = createConnector({
   displayName: 'Gitea',
   description: 'Self-hosted Git service',
   auth: giteaAuth,

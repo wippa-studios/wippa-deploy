@@ -3,9 +3,9 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { copyMediaAction } from './lib/actions/copy-media';
 import { createProjectAction } from './lib/actions/create-project';
 import { deleteMediaAction } from './lib/actions/delete-media';
@@ -46,7 +46,7 @@ export const wistiaAuth = PieceAuth.SecretText({
   },
 });
 
-export const wistia = createPiece({
+export const wistia = createConnector({
   displayName: 'Wistia',
   description: 'Video hosting and analytics for business. Manage your projects and media library.',
   minimumSupportedRelease: '0.36.1',

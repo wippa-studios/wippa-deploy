@@ -1,11 +1,11 @@
-import { DynamicPropsValue } from '@wippa/pieces-framework';
+import { DynamicPropsValue } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   HttpMessageBody,
   HttpResponse,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export async function callHarvestApi<T extends HttpMessageBody = any>(
   method: HttpMethod,

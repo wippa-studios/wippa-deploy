@@ -1,10 +1,10 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { createContact } from "./lib/actions/create-contact";
 import { videoaskAuth } from "./lib/common/auth";
-import { createCustomApiCallAction, HttpMethod } from "@wippa/pieces-common";
+import { createCustomApiCallAction, HttpMethod } from "@wippa/connectors-common";
 import { makeRequest } from "./lib/common/client";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { formContactMessage } from "./lib/triggers/form-contact-message";
 import { formTranscribed } from "./lib/triggers/form-transcribed";
 import { newFormResponse } from "./lib/triggers/new-form-response";
@@ -15,7 +15,7 @@ import { searchForm } from "./lib/actions/search-form";
 import { updateContact } from "./lib/actions/update-contact";
 import { organizationIdDropdown } from "./lib/common/props";
 
-export const videoask = createPiece({
+export const videoask = createConnector({
   displayName: "VideoAsk",
   auth: videoaskAuth,
   minimumSupportedRelease: '0.36.1',

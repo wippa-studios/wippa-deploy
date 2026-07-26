@@ -2,8 +2,8 @@ import {
 	httpClient,
 	HttpMethod,
 	AuthenticationType,
-} from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { BASE_URL } from './client';
 
 async function testEndpoint(auth: string): Promise<boolean> {

@@ -1,8 +1,8 @@
-import { PieceAuth, createPiece, PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector, PieceCategory } from '@wippa/connectors-framework';
 import { httpSendRequestAction } from './lib/actions/send-http-request-action';
 import { parseUrl } from './lib/actions/parse-url';
 
-export const http = createPiece({
+export const http = createConnector({
   displayName: 'HTTP',
   description: 'Sends HTTP requests and return responses',
   logoUrl: 'https://cdn.activepieces.com/pieces/new-core/http.svg',

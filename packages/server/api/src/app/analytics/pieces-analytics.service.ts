@@ -38,20 +38,20 @@ export const piecesAnalyticsService = (log: FastifyBaseLogger) => ({
                 ).map((step) => {
                     const clonedStep = step as (PieceTrigger | PieceAction)
                     return {
-                        name: clonedStep.settings.pieceName,
-                        version: clonedStep.settings.pieceVersion,
+                        name: clonedStep.settings.connectorName,
+                        version: clonedStep.settings.connectorVersion,
                     }
                 })
                 const platformId = await projectService(log).getPlatformId(flow.projectId)
 
                 for (const piece of pieces) {
                     try {   
-                        const pieceMetadata = await pieceMetadataService(log).getOrThrow({
+                        const connectorMetadata = await pieceMetadataService(log).getOrThrow({
                             name: piece.name,
                             version: piece.version,
                             platformId,
                         })
-                        const pieceId = pieceMetadata.id!
+                        const pieceId = connectorMetadata.id!
                         activeProjects[pieceId] = activeProjects[pieceId] || new Set()
                         activeProjects[pieceId].add(flow.projectId)
                     }

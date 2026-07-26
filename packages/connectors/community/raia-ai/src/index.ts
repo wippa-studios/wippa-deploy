@@ -1,12 +1,12 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { promptAgentAction } from "./lib/actions/prompt-agent";
 import { uploadAgentFileAction } from "./lib/actions/upload-agent-file";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { raiaAiAuth } from "./lib/common/auth";
 import { BASE_URL } from "./lib/common/constants";
 
-export const raiaAi = createPiece({
+export const raiaAi = createConnector({
   displayName: "raia",
   auth: raiaAiAuth,
   minimumSupportedRelease: '0.36.1',

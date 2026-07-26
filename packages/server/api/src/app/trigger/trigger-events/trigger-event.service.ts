@@ -141,13 +141,13 @@ export const triggerEventService = (log: FastifyBaseLogger) => ({
 function getSourceName(trigger: FlowTrigger): string {
     switch (trigger.type) {
         case FlowTriggerType.PIECE: {
-            const pieceTrigger = trigger as PieceTrigger
-            const pieceName = pieceTrigger.settings.pieceName
-            const pieceVersion = getPieceMajorAndMinorVersion(
-                pieceTrigger.settings.pieceVersion,
+            const connectorTrigger = trigger as PieceTrigger
+            const connectorName = connectorTrigger.settings.connectorName
+            const connectorVersion = getPieceMajorAndMinorVersion(
+                connectorTrigger.settings.connectorVersion,
             )
-            const triggerName = pieceTrigger.settings.triggerName
-            return `${pieceName}@${pieceVersion}:${triggerName}`
+            const triggerName = connectorTrigger.settings.triggerName
+            return `${connectorName}@${connectorVersion}:${triggerName}`
         }
 
         case FlowTriggerType.EMPTY:

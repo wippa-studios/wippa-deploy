@@ -1,5 +1,5 @@
-import { Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { getAuthToken, CyberArkAuth } from './auth-helper';
 import { cyberarkAuth } from '../auth';
 

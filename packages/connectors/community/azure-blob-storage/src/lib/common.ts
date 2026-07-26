@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { BlobServiceClient } from '@azure/storage-blob';
 import { azureBlobStorageAuth } from './auth';
 

@@ -1,7 +1,7 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { InferenceClient } from '@huggingface/inference';
 import type { TextToImageInput } from '@huggingface/tasks';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { huggingFaceAuth } from '../auth';
 
 export const createImage = createAction({

@@ -35,7 +35,7 @@ type MultiSelectPiecePropertyProps = {
   itemExtraContent?: (index: number) => React.ReactNode;
 };
 
-const MultiSelectPieceProperty = ({
+const MultiSelectConnectorProperty = ({
   placeholder,
   options,
   onChange,
@@ -168,5 +168,5 @@ const MultiSelectPieceProperty = ({
   );
 };
 
-MultiSelectPieceProperty.displayName = 'MultiSelectPieceProperty';
-export { MultiSelectPieceProperty };
+MultiSelectConnectorProperty.displayName = 'MultiSelectConnectorProperty';
+export { MultiSelectConnectorProperty };

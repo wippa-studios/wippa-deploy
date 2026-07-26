@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 import { BASE_URL } from './lib/common';
 import { createCustomer } from './lib/actions/create-customer';
@@ -43,7 +43,7 @@ export const timeOpsAuth = PieceAuth.SecretText({
   },
 });
 
-export const timeOps = createPiece({
+export const timeOps = createConnector({
   displayName: 'TimeOps',
   description: 'Time tracking and project management for teams and freelancers.',
   auth: timeOpsAuth,

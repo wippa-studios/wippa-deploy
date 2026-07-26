@@ -1,8 +1,8 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { deepgramAuth } from '../common/auth';
 import { BASE_URL } from '../common/constants';
 import { deepgramModels } from '../common/models';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const textToSpeechAction = createAction({
   auth: deepgramAuth,

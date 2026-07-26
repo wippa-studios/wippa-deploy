@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { kebabCase } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { kebabCase } from '@wippa/connectors-framework';
 import { randomBytes } from 'node:crypto';
 import OpenAI from 'openai';
 import { openaiAuth } from '../auth';

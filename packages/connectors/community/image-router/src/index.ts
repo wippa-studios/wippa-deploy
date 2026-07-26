@@ -1,10 +1,10 @@
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { imageRouterAuth } from "./lib/common/auth";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createImage } from "./lib/actions/create-image";
 import { imageToImage } from "./lib/actions/image-to-image";
 
-export const imageRouter = createPiece({
+export const imageRouter = createConnector({
   displayName: "ImageRouter",
   auth: imageRouterAuth,
   minimumSupportedRelease: '0.36.1',

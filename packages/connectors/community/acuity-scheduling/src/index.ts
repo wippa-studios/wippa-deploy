@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { OAuth2PropertyValue, PieceAuth, createConnector } from '@wippa/connectors-framework';
 import {
 	addBlockedTimeAction,
 	createAppointmentAction,
@@ -8,13 +8,13 @@ import {
 	rescheduleAppointmentAction,
 	updateClientAction,
 } from './lib/actions';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { API_URL } from './lib/common';
 import { appointmentCanceledTrigger, appointmentScheduledTrigger } from './lib/triggers';
 import { acuitySchedulingAuth } from './lib/auth';
 
-export const acuityScheduling = createPiece({
+export const acuityScheduling = createConnector({
 	displayName: 'Acuity Scheduling',
 	logoUrl: 'https://cdn.activepieces.com/pieces/acuity-scheduling.png',
 	auth: acuitySchedulingAuth,

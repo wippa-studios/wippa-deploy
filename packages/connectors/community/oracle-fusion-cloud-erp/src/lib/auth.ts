@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
 
 const authDesc = `
 Connect to your Oracle Fusion Cloud ERP instance using Basic Authentication.

@@ -1,6 +1,6 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createTrigger, TriggerStrategy, Property } from '@wippa/pieces-framework';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createTrigger, TriggerStrategy, Property } from '@wippa/connectors-framework';
+import { isNil } from '@wippa/connectors-framework';
 import { wufooAuth } from '../auth';
 import { wufooApiCall } from '../common/client';
 import { formIdentifier } from '../common/props';

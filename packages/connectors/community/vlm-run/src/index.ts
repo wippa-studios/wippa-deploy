@@ -1,14 +1,14 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { analyzeAudio } from './lib/actions/analyze-audio';
 import { analyzeDocument } from './lib/actions/analyze-document';
 import { analyzeImage } from './lib/actions/analyze-image';
 import { analyzeVideo } from './lib/actions/analyze-video';
 import { getFile } from './lib/actions/get-file';
 import { vlmRunAuth } from './lib/common';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const vlmRun = createPiece({
+export const vlmRun = createConnector({
   displayName: 'VLM Run',
   description:
     'VLM Run is a visual AI platform that extracts data from images, videos, audio, and documents. It helps automate analysis workflows, such as object detection, transcription, image/audio analysis, and document parsing.',

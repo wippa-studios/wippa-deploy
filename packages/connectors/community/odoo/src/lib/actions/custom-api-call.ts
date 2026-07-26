@@ -1,7 +1,7 @@
 import {
   createAction,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { odooAuth } from '../auth';
 import Odoo from '../../commom/index';
 

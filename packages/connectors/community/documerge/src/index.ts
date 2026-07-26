@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { documergeAuth } from './lib/common/auth';
 import { combineFiles } from './lib/actions/combine-files';
 import { convertFileToPdf } from './lib/actions/convert-file-to-pdf';
@@ -9,7 +9,7 @@ import { splitPdf } from './lib/actions/split-pdf';
 import { newMergedDocument } from './lib/triggers/new-merged-document';
 import { newMergedRoute } from './lib/triggers/new-merged-route';
 
-export const documerge = createPiece({
+export const documerge = createConnector({
   displayName: 'DocuMerge',
   description: 'Merge and generate documents with dynamic data',
   auth: documergeAuth,

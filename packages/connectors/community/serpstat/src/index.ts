@@ -1,13 +1,13 @@
 
-import { createPiece } from "@wippa/pieces-framework";
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from "@wippa/connectors-framework";
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { serpstatAuth } from "./lib/common/auth";
 import { getKeywords } from "./lib/actions/keyword-analysis/get-keywords";
 import { getSuggestions } from "./lib/actions/keyword-analysis/get-suggestions";
 import { BASE_URL } from "./lib/common/client";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const serpstat = createPiece({
+export const serpstat = createConnector({
   displayName: "Serpstat",
   auth: serpstatAuth,
   categories:[PieceCategory.PRODUCTIVITY],

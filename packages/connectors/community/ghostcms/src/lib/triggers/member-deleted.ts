@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 
 import { ghostAuth } from '../..';
 import { common } from '../common';

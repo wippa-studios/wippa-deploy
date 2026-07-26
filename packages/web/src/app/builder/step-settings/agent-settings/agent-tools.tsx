@@ -60,7 +60,7 @@ export const AgentTools = ({
   const pieceToToolMap = tools
     .filter((tool) => tool.type === AgentToolType.PIECE)
     .reduce<Record<string, AgentPieceTool[]>>((acc, tool) => {
-      const key = tool.pieceMetadata?.pieceName;
+      const key = tool.connectorMetadata?.connectorName;
 
       if (!key) return acc;
 
@@ -83,9 +83,9 @@ export const AgentTools = ({
               collapsible
               className="border rounded-md overflow-hidden shadow-none"
             >
-              {Object.entries(pieceToToolMap).map(([pieceName, tools]) => (
+              {Object.entries(pieceToToolMap).map(([connectorName, tools]) => (
                 <AgentPieceToolComponent
-                  key={pieceName}
+                  key={connectorName}
                   disabled={disabled}
                   tools={tools}
                   removeTool={removeTool}

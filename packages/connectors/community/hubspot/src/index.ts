@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { OAuth2PropertyValue, PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { hubSpotListsAddContactAction } from './lib/actions/add-contact-to-list-action';
 import { newCompanyTrigger } from './lib/triggers/new-company';
 import { newContactTrigger } from './lib/triggers/new-contact';
@@ -71,7 +71,7 @@ import { getPageAction } from './lib/actions/get-page';
 import { deletePageAction } from './lib/actions/delete-page';
 import { hubspotAuth } from './lib/auth';
 
-export const hubspot = createPiece({
+export const hubspot = createConnector({
 	displayName: 'HubSpot',
 	description: 'Powerful CRM that offers tools for sales, customer service, and marketing automation.',
 	minimumSupportedRelease: '0.5.0',

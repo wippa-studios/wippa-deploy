@@ -1,6 +1,6 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { quickbooksAuth } from '../lib/auth'; // Correct path relative to actions/find-payment.ts
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { quickbooksCommon, QuickbooksEntityResponse } from '../lib/common';
 
 interface QuickbooksPayment {

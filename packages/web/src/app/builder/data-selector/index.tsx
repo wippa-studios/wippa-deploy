@@ -1,6 +1,6 @@
 import { useQueries } from '@tanstack/react-query';
 import { LocalesEnum, isNil } from '@wippa/core-utils';
-import { PieceMetadataModel } from '@wippa/pieces-framework';
+import { PieceMetadataModel } from '@wippa/connectors-framework';
 import {
   FlowAction,
   FlowActionType,
@@ -133,16 +133,16 @@ const DataSelector = ({ parentHeight, parentWidth }: DataSelectorProps) => {
           if (step.type === FlowActionType.PIECE) {
             return {
               stepName: step.name,
-              pieceName: step.settings.pieceName,
-              pieceVersion: step.settings.pieceVersion,
+              connectorName: step.settings.connectorName,
+              connectorVersion: step.settings.connectorVersion,
               stepKey: step.settings.actionName,
             };
           }
           if (step.type === FlowTriggerType.PIECE) {
             return {
               stepName: step.name,
-              pieceName: step.settings.pieceName,
-              pieceVersion: step.settings.pieceVersion,
+              connectorName: step.settings.connectorName,
+              connectorVersion: step.settings.connectorVersion,
               stepKey: step.settings.triggerName,
             };
           }
@@ -153,24 +153,24 @@ const DataSelector = ({ parentHeight, parentWidth }: DataSelectorProps) => {
             entry,
           ): entry is {
             stepName: string;
-            pieceName: string;
-            pieceVersion: string;
+            connectorName: string;
+            connectorVersion: string;
             stepKey: string;
           } =>
             entry !== null &&
-            Boolean(entry.pieceName) &&
+            Boolean(entry.connectorName) &&
             Boolean(entry.stepKey),
         ),
     [steps],
   );
 
   const pieceQueries = useQueries({
-    queries: piecePairs.map(({ pieceName, pieceVersion }) => ({
-      queryKey: ['piece', pieceName, pieceVersion],
+    queries: piecePairs.map(({ connectorName, connectorVersion }) => ({
+      queryKey: ['piece', connectorName, connectorVersion],
       queryFn: () =>
         piecesApi.get({
-          name: pieceName,
-          version: pieceVersion,
+          name: connectorName,
+          version: connectorVersion,
           locale: i18n.language as LocalesEnum,
         }),
       staleTime: Infinity,

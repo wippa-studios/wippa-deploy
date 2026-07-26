@@ -1,12 +1,12 @@
 import { isNil } from '@wippa/core-utils'
-import { ActionContext, backwardCompatabilityContextUtils, ConstructToolParams, CreateWaitpointHook, CreateWaitpointParams, CreateWaitpointResult, InputPropertyMap, PieceAuthProperty, PiecePropertyMap, RespondHook, RespondHookParams, StaticPropsValue, StopHook, StopHookParams, TagsManager, WaitForWaitpointHook } from '@wippa/pieces-framework'
+import { ActionContext, backwardCompatabilityContextUtils, ConstructToolParams, CreateWaitpointHook, CreateWaitpointParams, CreateWaitpointResult, InputPropertyMap, PieceAuthProperty, ConnectorPropertyMap, RespondHook, RespondHookParams, StaticPropsValue, StopHook, StopHookParams, TagsManager, WaitForWaitpointHook } from '@wippa/connectors-framework'
 import { AUTHENTICATION_PROPERTY_NAME, EngineGenericError, ExecutionType, FlowActionType, FlowRunStatus, GenericStepOutput, PausedFlowTimeoutError, PieceAction, RespondResponse, StepOutputStatus } from '@wippa/shared'
 import type { ToolSet } from 'ai'
 import dayjs from 'dayjs'
 import { engineRunApi } from '../api/engine-run-api'
 import { continueIfFailureHandler, runWithExponentialBackoff } from '../helper/error-handling'
 import { flowRunProgressReporter } from '../helper/flow-run-progress-reporter'
-import { pieceLoader } from '../helper/piece-loader'
+import { connectorLoader } from '../helper/piece-loader'
 import { createFileUploader } from '../piece-context/file-uploader'
 import { createFlowsContext } from '../piece-context/flows'
 import { createContextStore } from '../piece-context/store'
@@ -19,7 +19,7 @@ import { EngineConstants } from './context/engine-constants'
 
 const AP_PAUSED_FLOW_TIMEOUT_DAYS = Number(process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS)
 
-export const pieceExecutor: BaseExecutor<PieceAction> = {
+export const connectorExecutor: BaseExecutor<PieceAction> = {
     async handle({
         action,
         executionState,
@@ -46,21 +46,21 @@ const executeAction: ActionHandler<PieceAction> = async ({ action, executionStat
             throw new EngineGenericError('ActionNameNotSetError', 'Action name is not set')
         }
 
-        const { pieceAction, piece } = await pieceLoader.getPieceAndActionOrThrow({
-            pieceName: action.settings.pieceName,
-            pieceVersion: action.settings.pieceVersion,
+        const { connectorAction, piece } = await connectorLoader.getPieceAndActionOrThrow({
+            connectorName: action.settings.connectorName,
+            connectorVersion: action.settings.connectorVersion,
             actionName: action.settings.actionName,
             devPieces: constants.devPieces,
         })
 
-        const { resolvedInput, censoredInput } = await constants.getPropsResolver(piece.getContextInfo?.().version).resolve<StaticPropsValue<PiecePropertyMap>>({
+        const { resolvedInput, censoredInput } = await constants.getPropsResolver(piece.getContextInfo?.().version).resolve<StaticPropsValue<ConnectorPropertyMap>>({
             unresolvedInput: action.settings.input,
             executionState,
         })
 
         stepOutput.input = censoredInput
 
-        const { processedInput, errors } = await propsProcessor.applyProcessorsAndValidators(resolvedInput, pieceAction.props, piece.auth, pieceAction.requireAuth, action.settings.propertySettings)
+        const { processedInput, errors } = await propsProcessor.applyProcessorsAndValidators(resolvedInput, connectorAction.props, piece.auth, connectorAction.requireAuth, action.settings.propertySettings)
         if (Object.keys(errors).length > 0) {
             throw new Error(JSON.stringify(errors, null, 2))
         }
@@ -149,12 +149,12 @@ const executeAction: ActionHandler<PieceAction> = async ({ action, executionStat
             context,
         })
         const testSingleStepMode = !isNil(constants.stepNameToTest)
-        const runMethodToExecute = (testSingleStepMode && !isNil(pieceAction.test)) ? pieceAction.test : pieceAction.run
+        const runMethodToExecute = (testSingleStepMode && !isNil(connectorAction.test)) ? connectorAction.test : connectorAction.run
         const output = await runMethodToExecute(backwardCompatibleContext)
         const newExecutionContext = executionState.addTags(params.hookResponse.tags)
 
         const webhookResponse = getResponse(params.hookResponse)
-        const isSamePiece = constants.triggerPieceName === action.settings.pieceName
+        const isSamePiece = constants.triggerPieceName === action.settings.connectorName
         if (!isNil(webhookResponse) && !isNil(constants.workerHandlerId) && !isNil(constants.httpRequestId) && isSamePiece) {
             await engineRunApi.sendFlowResponse({
                 apiUrl: constants.internalApiUrl,

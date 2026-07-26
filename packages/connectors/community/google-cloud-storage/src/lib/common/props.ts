@@ -1,6 +1,6 @@
-import { Property, OAuth2PropertyValue } from '@wippa/pieces-framework';
+import { Property, OAuth2PropertyValue } from '@wippa/connectors-framework';
 import { gcsCommon } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { googleCloudStorageAuth } from './auth';
 
 export const bucketDropdown = Property.Dropdown<string,true,typeof googleCloudStorageAuth>({

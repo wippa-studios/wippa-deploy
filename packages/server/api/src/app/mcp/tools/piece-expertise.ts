@@ -6,7 +6,7 @@ import { mcpUtils } from './mcp-utils'
 // so the agent gets it exactly when it commits to an action. This is the curated half of the
 // "generic-first, then curated top-N" strategy; grow it from real failures the eval harness catches
 // (see scripts/expertise-from-thrash.mjs). Keyed by normalized piece short-name.
-const EXPERTISE: Record<string, PieceExpertise> = {
+const EXPERTISE: Record<string, ConnectorExpertise> = {
     airtable: {
         general: 'base → table → fields are dynamic: fetch props WITH auth so they resolve. Linked-record fields take an ARRAY of record IDs (not names); attachment fields take {url} objects; single/multi-select take the option label exactly as defined in Airtable.',
         actions: {
@@ -50,8 +50,8 @@ const EXPERTISE: Record<string, PieceExpertise> = {
 
 // Returns curated notes for a piece (and optionally a specific action), or undefined if none exist.
 // Generic-first: the absence of a note is fine — the generic engine handles the long tail.
-function getNotes({ pieceName, actionName }: { pieceName: string, actionName?: string }): string | undefined {
-    const shortName = (mcpUtils.normalizePieceName(pieceName) ?? pieceName).replace('@wippa/piece-', '')
+function getNotes({ connectorName, actionName }: { connectorName: string, actionName?: string }): string | undefined {
+    const shortName = (mcpUtils.normalizePieceName(connectorName) ?? connectorName).replace('@wippa/connector-', '')
     const entry = EXPERTISE[shortName]
     if (!entry) {
         return undefined
@@ -60,17 +60,17 @@ function getNotes({ pieceName, actionName }: { pieceName: string, actionName?: s
     return [entry.general, actionNote].filter((n): n is string => Boolean(n)).join(' ') || undefined
 }
 
-function hasNotes({ pieceName }: { pieceName: string }): boolean {
-    const shortName = (mcpUtils.normalizePieceName(pieceName) ?? pieceName).replace('@wippa/piece-', '')
+function hasNotes({ connectorName }: { connectorName: string }): boolean {
+    const shortName = (mcpUtils.normalizePieceName(connectorName) ?? connectorName).replace('@wippa/connector-', '')
     return Boolean(EXPERTISE[shortName])
 }
 
-export const pieceExpertise = {
+export const connectorExpertise = {
     getNotes,
     hasNotes,
 }
 
-type PieceExpertise = {
+type ConnectorExpertise = {
     general?: string
     actions?: Record<string, string>
 }

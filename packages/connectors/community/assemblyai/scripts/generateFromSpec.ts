@@ -246,7 +246,7 @@ function mapType(schema: any) {
 function createTs(
   propsJson: Record<string, { type: string } & object>
 ): string {
-  let result = `import { Property } from "@wippa/pieces-framework";
+  let result = `import { Property } from "@wippa/connectors-framework";
 export const props = `;
   result += createTsProps(propsJson);
   result += ';\n';

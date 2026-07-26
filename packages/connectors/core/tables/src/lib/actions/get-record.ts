@@ -1,7 +1,7 @@
-import { createAction, PieceAuth, Property } from '@wippa/pieces-framework';
+import { createAction, PieceAuth, Property } from '@wippa/connectors-framework';
 import { tablesCommon } from '../common';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
-import { PopulatedRecord } from '@wippa/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
+import { PopulatedRecord } from '@wippa/connectors-framework';
 
 export const getRecord = createAction({
   audience: 'human',

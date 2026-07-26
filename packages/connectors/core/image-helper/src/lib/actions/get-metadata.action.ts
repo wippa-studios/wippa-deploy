@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import * as ExifReader from 'exifreader';
 
 export const getMetaData = createAction({

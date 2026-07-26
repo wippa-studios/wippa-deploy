@@ -2,10 +2,10 @@ import {
   InputPropertyMap,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { ToolSet } from 'ai';
 import { ProviderOptions } from '@ai-sdk/provider-utils';
-import { spreadIfDefined, AIProviderName, getEffectiveProviderAndModel } from '@wippa/pieces-framework';
+import { spreadIfDefined, AIProviderName, getEffectiveProviderAndModel } from '@wippa/connectors-framework';
 import { anthropicSearchTool, openaiSearchTool, googleSearchTool } from './ai-sdk';
 
 function buildWebSearchOptionsProps(provider: string, params?: { showIncludeSources?: boolean }): InputPropertyMap {

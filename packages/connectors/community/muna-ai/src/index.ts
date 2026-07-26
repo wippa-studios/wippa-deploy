@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { munaAiAuth } from './lib/auth';
 import { createPrediction } from './lib/actions/create-prediction';
 
-export const munaAi = createPiece({
+export const munaAi = createConnector({
   displayName: 'Muna',
   description: 'Run on-device AI predictions using Muna predictors.',
   auth: munaAiAuth,

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { createDiscussion } from '../api';
 import { buildMemberSpacesDropdown } from '../props';
 import { bettermodeAuth } from '../auth';

@@ -6,14 +6,14 @@ import {
 } from '@/components/custom/card-list';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
-  PieceIcon,
+  ConnectorIcon,
   piecesHooks,
   PieceSelectorTabType,
   usePieceSelectorTabs,
   PieceSelectorOperation,
 } from '@/features/pieces';
 
-import { PieceActionsOrTriggersList } from './piece-actions-or-triggers-list';
+import { PieceActionsOrTriggersList } from './connector-actions-or-triggers-list';
 
 const ExploreTabContent = ({
   operation,
@@ -63,21 +63,21 @@ const ExploreTabContent = ({
               {category.title}
             </div>
 
-            {category.metadata.map((pieceMetadata) => (
+            {category.metadata.map((connectorMetadata) => (
               <CardListItem
                 className="rounded-sm py-3"
-                key={pieceMetadata.displayName}
-                onClick={() => setSelectedPieceInExplore(pieceMetadata)}
+                key={connectorMetadata.displayName}
+                onClick={() => setSelectedPieceInExplore(connectorMetadata)}
               >
                 <div className="flex gap-2 items-center h-full">
-                  <PieceIcon
-                    logoUrl={pieceMetadata.logoUrl}
-                    displayName={pieceMetadata.displayName}
+                  <ConnectorIcon
+                    logoUrl={connectorMetadata.logoUrl}
+                    displayName={connectorMetadata.displayName}
                     showTooltip={false}
                     size={'sm'}
                   />
                   <div className="grow h-full flex items-center justify-left text-sm">
-                    {pieceMetadata.displayName}
+                    {connectorMetadata.displayName}
                   </div>
                 </div>{' '}
               </CardListItem>

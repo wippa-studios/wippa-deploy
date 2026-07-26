@@ -1,8 +1,8 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { websocketCommon } from './lib/common/common';
 import { websocketSubscriptionTrigger } from './lib/triggers/websocket-subscription-trigger';
 
-export const anyHookWebsocket = createPiece({
+export const anyHookWebsocket = createConnector({
   displayName: 'AnyHook Websocket',
   description:
     'AnyHook Websocket enables real-time communication through AnyHook proxy server by allowing you to subscribe and listen to websocket events',

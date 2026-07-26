@@ -26,11 +26,11 @@ export const apValidateStepConfigTool = (mcp: ProjectScopedMcpServer, log: Fasti
                     case 'PIECE_TRIGGER': {
                         const componentType = params.stepType === 'PIECE_ACTION' ? 'action' : 'trigger'
                         const componentName = componentType === 'action' ? params.actionName : params.triggerName
-                        if (!params.pieceName || !componentName) {
-                            const missing = !params.pieceName ? 'pieceName' : (componentType === 'action' ? 'actionName' : 'triggerName')
+                        if (!params.connectorName || !componentName) {
+                            const missing = !params.connectorName ? 'connectorName' : (componentType === 'action' ? 'actionName' : 'triggerName')
                             return { content: [{ type: 'text', text: `❌ ${missing} is required for ${componentType} validation.` }] }
                         }
-                        return await validatePieceComponent({ pieceName: params.pieceName, componentName, componentType, input: params.input ?? {}, auth: params.auth, projectId: mcp.projectId, log })
+                        return await validatePieceComponent({ connectorName: params.connectorName, componentName, componentType, input: params.input ?? {}, auth: params.auth, projectId: mcp.projectId, log })
                     }
                     case 'CODE':
                         return validateWithSchema({ schema: codeValidator, data: { sourceCode: { code: params.sourceCode ?? '', packageJson: params.packageJson ?? '{}' }, input: {} }, label: 'CODE' })
@@ -50,8 +50,8 @@ export const apValidateStepConfigTool = (mcp: ProjectScopedMcpServer, log: Fasti
 const validateStepConfigInput = z.object({
     stepType: z.enum(['PIECE_ACTION', 'PIECE_TRIGGER', 'CODE', 'LOOP_ON_ITEMS', 'ROUTER'])
         .describe('The type of step to validate.'),
-    pieceName: z.string().optional()
-        .describe('For PIECE_ACTION/PIECE_TRIGGER: piece name (e.g. "slack" or "@wippa/piece-slack").'),
+    connectorName: z.string().optional()
+        .describe('For PIECE_ACTION/PIECE_TRIGGER: piece name (e.g. "slack" or "@wippa/connector-slack").'),
     actionName: z.string().optional()
         .describe('For PIECE_ACTION: action name (e.g. "send_channel_message").'),
     triggerName: z.string().optional()
@@ -70,13 +70,13 @@ const validateStepConfigInput = z.object({
         .describe('For ROUTER: raw router settings including branches and executionType.'),
 })
 
-async function validatePieceComponent({ pieceName, componentName, componentType, input, auth, projectId, log }: ValidatePieceParams): Promise<McpToolResult> {
-    const lookup = await mcpUtils.lookupPieceComponent({ pieceName, componentName, componentType, projectId, log })
+async function validatePieceComponent({ connectorName, componentName, componentType, input, auth, projectId, log }: ValidatePieceParams): Promise<McpToolResult> {
+    const lookup = await mcpUtils.lookupPieceComponent({ connectorName, componentName, componentType, projectId, log })
     if (lookup.error) {
         return lookup.error
     }
 
-    const { component, pieceName: normalized } = lookup
+    const { component, connectorName: normalized } = lookup
     const inputWithAuth = auth ? { ...input, auth } : input
     const diagnosis = mcpUtils.diagnosePieceProps({
         props: component.props,
@@ -176,7 +176,7 @@ function validateRouter(settings: Record<string, unknown> | undefined): McpToolR
 }
 
 type ValidatePieceParams = {
-    pieceName: string
+    connectorName: string
     componentName: string
     componentType: 'action' | 'trigger'
     input: Record<string, unknown>

@@ -1,9 +1,9 @@
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { bitlyApiCall } from '../common/client';
 import { bitlyAuth } from '../common/auth';
 import { groupGuid } from '../common/props';

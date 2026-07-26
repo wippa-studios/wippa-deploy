@@ -4,11 +4,11 @@ import {
   DropdownOption,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { commonProps } from '../common/props';
 import { GristAPIClient } from '../common/helpers';
 
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const gristSearchRecordAction = createAction({
   auth: gristAuth,

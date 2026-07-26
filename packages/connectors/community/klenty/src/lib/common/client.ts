@@ -2,8 +2,8 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@wippa/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
 
 import { klentyAuth } from '../auth';
 import { DEFAULT_PAGE_SIZE, KLENTY_API_BASE } from './constants';

@@ -1,4 +1,4 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import {
   apDayjs,
@@ -11,7 +11,7 @@ import {
   timeZoneOptions,
 } from '../common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const addSubtractDateAction = createAction({
   audience: 'human',

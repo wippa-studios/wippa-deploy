@@ -1,6 +1,6 @@
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 // Account actions
 import { get_me } from './lib/actions/account/get-me';
@@ -53,7 +53,7 @@ import { get_tags } from './lib/actions/metadata/get-tags';
 import { get_zones } from './lib/actions/metadata/get-zones';
 import { simplirouteAuth } from './lib/auth';
 
-export const simpliroute = createPiece({
+export const simpliroute = createConnector({
   displayName: 'SimpliRoute',
   description: 'Connect with SimpliRoute, the last-mile delivery optimization platform. Manage clients, vehicles, visits, routes, and optimize your delivery operations.',
   logoUrl: 'https://cdn.activepieces.com/pieces/simpliroute.png',

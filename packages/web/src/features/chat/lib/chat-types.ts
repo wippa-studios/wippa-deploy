@@ -150,7 +150,7 @@ function normalizePieceName(name: string): string {
   const stripped = name.startsWith('piece-')
     ? name.slice('piece-'.length)
     : name;
-  return `@wippa/piece-${stripped.replace(/_/g, '-')}`;
+  return `@wippa/connector-${stripped.replace(/_/g, '-')}`;
 }
 
 function extractPieceNames(
@@ -158,8 +158,8 @@ function extractPieceNames(
 ): string[] {
   if (!input) return [];
   const names: string[] = [];
-  if (typeof input.pieceName === 'string') {
-    names.push(input.pieceName);
+  if (typeof input.connectorName === 'string') {
+    names.push(input.connectorName);
   }
   if (Array.isArray(input.pieceNames)) {
     for (const n of input.pieceNames) {
@@ -168,9 +168,9 @@ function extractPieceNames(
   }
   if (
     isObject(input.settings) &&
-    typeof input.settings.pieceName === 'string'
+    typeof input.settings.connectorName === 'string'
   ) {
-    names.push(input.settings.pieceName);
+    names.push(input.settings.connectorName);
   }
   return names.map(normalizePieceName);
 }

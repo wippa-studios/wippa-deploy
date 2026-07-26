@@ -3,7 +3,7 @@ import {
   PieceAuth,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 const markdown = `
 - Paste this URL in the webhook integration endpoint:

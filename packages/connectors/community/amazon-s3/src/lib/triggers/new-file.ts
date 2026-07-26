@@ -1,7 +1,7 @@
-import { AppConnectionValueForAuthProperty, Property, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { AppConnectionValueForAuthProperty, Property, TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import { ListObjectsV2CommandInput, S3 } from '@aws-sdk/client-s3';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 import dayjs from 'dayjs';
 import { amazonS3CombinedAuth, S3AuthProps } from '../auth';
 import { resolveS3Client } from '../common';

@@ -1,13 +1,13 @@
 import {
   Property,
   BasicAuthPropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   HttpMethod,
   HttpMessageBody,
   httpClient,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { twilioAuth } from '../..';
 
 export const twilioCommon = {

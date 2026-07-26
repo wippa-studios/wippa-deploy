@@ -1,6 +1,6 @@
 /// <reference types="vitest/globals" />
 
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 import { createApprovalLink } from '../src/lib/actions/create-approval-link';
 
 const RESUME_URL =

@@ -1,5 +1,5 @@
 import { taskadeAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { taskadeProps } from '../common/props';
 import { TaskadeAPIClient } from '../common/client';
 

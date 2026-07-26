@@ -2,9 +2,9 @@ import {
   AppConnectionValueForAuthProperty,
   OAuth2AuthorizationMethod,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export const klaviyoAuth = [
   PieceAuth.SecretText({

@@ -1,4 +1,4 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 const markdownDescription = `
 You can obtain an API key from **Settings->Integrations->API Keys**.

@@ -1,4 +1,4 @@
-import { Property, TriggerStrategy, createTrigger } from '@wippa/pieces-framework';
+import { Property, TriggerStrategy, createTrigger } from '@wippa/connectors-framework';
 import { slackAuth } from '../auth';
 import { getTeamId, SlackAuthValue } from '../common/auth-helpers';
 import { ViewSubmissionPayload } from '../common/types';

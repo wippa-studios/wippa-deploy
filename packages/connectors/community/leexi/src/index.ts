@@ -1,13 +1,13 @@
 
-import { createPiece} from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector} from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getCallAction } from "./lib/actions/get-call";
 import { newCallCreatedTrigger } from "./lib/triggers/new-call-created";
 import { leexiAuth } from "./lib/common/auth";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { BASE_URL } from "./lib/common/constants";
 
-export const leexi = createPiece({
+export const leexi = createConnector({
   displayName: "Leexi",
   description:'AI Notetaker',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE, PieceCategory.PRODUCTIVITY],

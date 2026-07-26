@@ -1,5 +1,5 @@
-import { Property, DropdownOption } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { Property, DropdownOption } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { mistralAuth } from './auth';
 import { mistralRequest } from './request';
 

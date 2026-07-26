@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createContact } from './lib/actions/create-contact';
 import { createList } from './lib/actions/create-list';
 import { unsubscribe } from './lib/actions/unsubscribe-contact';
 import { sendfoxAuth } from './lib/auth';
-export const sendfox = createPiece({
+export const sendfox = createConnector({
   displayName: 'SendFox',
   description: 'Email marketing made simple',
 

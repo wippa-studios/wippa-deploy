@@ -2,7 +2,7 @@ import {
   PieceAuth,
   Property,
   createAction,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const multiplication = createAction({
   audience: 'human',

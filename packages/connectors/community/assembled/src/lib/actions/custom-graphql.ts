@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { assembledCommon } from '../common';
 import { assembledAuth } from '../common/auth';
 

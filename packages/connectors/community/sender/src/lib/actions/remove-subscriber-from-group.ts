@@ -1,11 +1,11 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import {
   groupIdDropdown,
   makeSenderRequest,
   senderAuth,
   subscribersDropdown,
 } from '../common/common';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const removeSubscriberFromGroupAction = createAction({
   auth: senderAuth,

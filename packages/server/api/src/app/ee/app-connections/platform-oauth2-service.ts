@@ -1,5 +1,5 @@
 import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
-import { PropertyType } from '@wippa/pieces-framework'
+import { PropertyType } from '@wippa/connectors-framework'
 import { AppConnectionType, PlatformOAuth2ConnectionValue } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import {
@@ -13,12 +13,12 @@ import { oauthAppService } from '../oauth-apps/oauth-app.service'
 export const platformOAuth2Service = (log: FastifyBaseLogger) => ({
     claim: async ({
         request,
-        pieceName,
+        connectorName,
         platformId,
         projectId,
     }: ClaimOAuth2Request): Promise<PlatformOAuth2ConnectionValue> => {
         const { auth } = await pieceMetadataService(log).getOrThrow({
-            name: pieceName,
+            name: connectorName,
             version: undefined,
             platformId,
         })
@@ -26,7 +26,7 @@ export const platformOAuth2Service = (log: FastifyBaseLogger) => ({
             throw new ActivepiecesError({
                 code: ErrorCode.VALIDATION,
                 params: {
-                    message: `Auth is required to claim a platform oauth2 connection piece ${pieceName},platformId: ${platformId},projectId: ${projectId}`,
+                    message: `Auth is required to claim a platform oauth2 connection piece ${connectorName},platformId: ${platformId},projectId: ${projectId}`,
                 },
             })
         }
@@ -35,12 +35,12 @@ export const platformOAuth2Service = (log: FastifyBaseLogger) => ({
             throw new ActivepiecesError({
                 code: ErrorCode.VALIDATION,
                 params: {
-                    message: `Cannot claim auth for non oauth2 property ${oauth2Auth?.type} ${pieceName}`,
+                    message: `Cannot claim auth for non oauth2 property ${oauth2Auth?.type} ${connectorName}`,
                 },
             })
         }
         const oauth2App = await oauthAppService.getWithSecret({
-            pieceName,
+            connectorName,
             clientId: request.clientId,
             platformId,
         })
@@ -53,7 +53,7 @@ export const platformOAuth2Service = (log: FastifyBaseLogger) => ({
             },
             projectId,
             platformId,
-            pieceName,
+            connectorName,
         })
         return {
             ...claimedValue,
@@ -61,18 +61,18 @@ export const platformOAuth2Service = (log: FastifyBaseLogger) => ({
         }
     },
     refresh: async ({
-        pieceName,
+        connectorName,
         projectId,
         platformId,
         connectionValue,
     }: RefreshOAuth2Request<PlatformOAuth2ConnectionValue>): Promise<PlatformOAuth2ConnectionValue> => {
         const oauth2App = await oauthAppService.getWithSecret({
-            pieceName,
+            connectorName,
             clientId: connectionValue.client_id,
             platformId,
         })
         const newValue = await credentialsOauth2Service(log).refresh({
-            pieceName,
+            connectorName,
             projectId,
             platformId,
             connectionValue: {

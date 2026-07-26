@@ -2,10 +2,10 @@ import {
 	createAction,
 	Property,
 	PiecePropValueSchema,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { teamworkAuth } from '../common/auth';
 import { teamworkRequest } from '../common/client';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const uploadFileToProject = createAction({
 	name: 'upload_file_to_project',

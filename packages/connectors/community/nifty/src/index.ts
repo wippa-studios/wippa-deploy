@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createTask } from './lib/actions/create-task';
 import { niftyAuth } from './lib/auth';
 
@@ -20,7 +20,7 @@ const mddescription = `
 8. copy the client id and client secret and paste them in the piece
 `;
 
-export const nifty = createPiece({
+export const nifty = createConnector({
   displayName: 'Nifty',
   description: 'Project management made simple',
 

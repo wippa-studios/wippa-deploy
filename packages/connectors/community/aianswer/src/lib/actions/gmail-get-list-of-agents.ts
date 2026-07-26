@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { createAction } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { createAction } from '@wippa/connectors-framework';
 import { aiAnswerConfig } from '../common/models';
 import { aiAnswerAuth } from '../auth';
 

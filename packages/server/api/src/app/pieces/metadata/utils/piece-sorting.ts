@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import { PieceMetadataSchema } from '../piece-metadata-entity'
 
 
-export const pieceSorting = {
+export const connectorSorting = {
     sortAndOrder: (
         sortBy: PieceSortBy | undefined,
         orderBy: PieceOrderBy | undefined,

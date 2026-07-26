@@ -1,11 +1,11 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { synthesiaAuth } from './lib/common/auth';
 import { createAVideoFromATemplate } from './lib/actions/create-a-video-from-a-template';
 import { createVideo } from './lib/actions/create-video';
 import { newVideoReady } from './lib/triggers/new-video-ready';
 
-export const synthesia = createPiece({
+export const synthesia = createConnector({
   displayName: 'Synthesia',
   auth: synthesiaAuth,
   minimumSupportedRelease: '0.36.1',

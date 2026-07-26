@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient, AuthenticationType } from '@wippa/connectors-common';
 import { quickbooksAuth } from '../lib/auth';
 import { quickbooksCommon } from '../lib/common';
 import { QuickbooksReport } from '../lib/types';

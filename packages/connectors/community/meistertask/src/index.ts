@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newAttachment } from './lib/triggers/new-attachment';
 import { newPerson } from './lib/triggers/new-person';
 import { newSection } from './lib/triggers/new-section';
@@ -21,12 +21,12 @@ import { findTask } from './lib/actions/find-task';
 import { findOrCreateAttachment } from './lib/actions/find-or-create-attachment';
 import { findOrCreateTask } from './lib/actions/find-or-create-task';
 import { findOrCreateLabel } from './lib/actions/find-or-create-label';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType, createCustomApiCallAction } from '@wippa/pieces-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod, AuthenticationType, createCustomApiCallAction } from '@wippa/connectors-common';
 import { MEISTERTASK_API_URL } from './lib/common/common';
 import { meistertaskAuth } from './lib/auth';
 
-export const meistertask = createPiece({
+export const meistertask = createConnector({
   displayName: 'MeisterTask',
   description: 'Intuitive online task manager for teams, personal productivity, and everything in between.',
   auth: meistertaskAuth,

@@ -1,8 +1,8 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { callMethod } from './lib/actions/call-method';
 import { soapAuth } from './lib/shared/auth';
 
-export const soap = createPiece({
+export const soap = createConnector({
   displayName: 'SOAP',
   description:
     'Simple Object Access Protocol for communication between applications',

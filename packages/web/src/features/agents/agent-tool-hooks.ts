@@ -25,8 +25,8 @@ export const agentToolHooks = {
         switch (contentBlock.toolCallType) {
           case ToolCallType.PIECE: {
             const piece = await piecesApi.get({
-              name: contentBlock.pieceName,
-              version: contentBlock.pieceVersion,
+              name: contentBlock.connectorName,
+              version: contentBlock.connectorVersion,
               audience: PieceAudienceFilter.ALL,
             });
             const actionMetadata = piece.actions[contentBlock.actionName];

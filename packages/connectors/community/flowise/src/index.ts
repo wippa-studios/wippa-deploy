@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   createAction,
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 const flowiseAuth = PieceAuth.CustomAuth({
   description: 'Enter your Flowise URL and API Key',
@@ -78,7 +78,7 @@ export const flowisePredict = createAction({
   },
 });
 
-export const flowise = createPiece({
+export const flowise = createConnector({
   displayName: 'Flowise',
   description: 'No-Code AI workflow builder',
 

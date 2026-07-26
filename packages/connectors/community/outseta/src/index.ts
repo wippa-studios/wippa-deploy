@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { outsetaAuth } from './auth';
 
 // Actions — Retrieve
@@ -76,7 +76,7 @@ import { newTaskEventTrigger } from './triggers/new-task-event';
 import { newPlanEventTrigger } from './triggers/new-plan-event';
 import { newAddOnEventTrigger } from './triggers/new-add-on-event';
 
-export const outseta = createPiece({
+export const outseta = createConnector({
   displayName: 'Outseta',
   description: 'Triggers and actions for Outseta CRM and Billing',
   auth: outsetaAuth,

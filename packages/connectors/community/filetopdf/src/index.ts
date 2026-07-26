@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { filetopdfAuth } from './lib/common/auth';
 import { getAccount } from './lib/actions/get-account';
 import { convertFile } from './lib/actions/convert-file';
 import { convertHtml } from './lib/actions/convert-html';
 import { convertMarkdown } from './lib/actions/convert-markdown';
 
-export const filetopdf = createPiece({
+export const filetopdf = createConnector({
   displayName: 'FileToPDF',
   description:
     'Convert files, HTML, and Markdown to PDF. Office documents (DOCX, XLSX, PPTX), images, web pages, and Markdown become clean PDFs over a simple API.',

@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@wippa/pieces-framework';
+import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@wippa/connectors-framework';
 import { createWebsocketSubscription, deleteWebsocketSubscription } from './helpers';
 import { websocketCommon } from '../common/common';
 

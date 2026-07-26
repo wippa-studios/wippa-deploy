@@ -1,11 +1,11 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   HttpMessageBody,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const BASE_URL = 'https://api.detecting-ai.com';
 

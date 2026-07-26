@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { translateText } from './lib/actions/translate-text';
 
 const markdownDescription = `
@@ -43,7 +43,7 @@ export const deeplAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const deepl = createPiece({
+export const deepl = createConnector({
   displayName: 'DeepL',
   description: 'AI-powered language translation',
   auth: deeplAuth,

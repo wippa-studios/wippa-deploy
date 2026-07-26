@@ -2,7 +2,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { getChannels, multiSelectChannelInfo, userId } from '../common/props';
 import { slackAuth } from '../auth';
 import { parseCommand } from '../common/utils';

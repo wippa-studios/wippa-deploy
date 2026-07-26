@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { addComment } from "./lib/actions/add-comment";
 import { addContactHandle } from "./lib/actions/add-contact-handle";
 import { addConversationLinks } from "./lib/actions/add-conversation-links";
@@ -27,9 +27,9 @@ import { findContact } from "./lib/actions/find-contact";
 import { findConversation } from "./lib/actions/find-conversation";
 import { newConversationStateChange } from "./lib/triggers/new-conversation-state-change";
 import { frontAuth } from "./lib/common/auth";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const front = createPiece({
+export const front = createConnector({
   displayName: "Front",
   auth: frontAuth,
   minimumSupportedRelease: '0.36.1',

@@ -1,4 +1,4 @@
-import { DropdownOption, Property } from '@wippa/pieces-framework';
+import { DropdownOption, Property } from '@wippa/connectors-framework';
 import { makeClient } from './client';
 import { LinearDocument } from '@linear/sdk';
 import { linearAuth } from '../..';

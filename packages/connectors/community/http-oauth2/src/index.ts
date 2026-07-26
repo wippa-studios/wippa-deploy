@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
 import { httpOauth2RequestAction } from "./lib/actions/send-oauth2-http-request";
 
 export const httpOauth2Auth = PieceAuth.OAuth2({
@@ -27,7 +27,7 @@ export const httpOauth2Auth = PieceAuth.OAuth2({
   },
 });
 
-export const httpOauth2ClientCredentials = createPiece({
+export const httpOauth2ClientCredentials = createConnector({
   displayName: "HTTP (OAuth2)",
   auth: httpOauth2Auth,
   minimumSupportedRelease: '0.56.0',

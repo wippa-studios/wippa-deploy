@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { ampecoAuth } from './lib/common/auth';
 
 // Import actions
@@ -388,7 +388,7 @@ import { webhookTrigger } from './lib/triggers/webhook';
  * Generated from API version: 3.96.4
  * AMPECO.CHARGE Public API
  */
-export const ampeco = createPiece({
+export const ampeco = createConnector({
   displayName: 'AMPECO',
   description: 'AMPECO piece provides integrations of APIs and webhook notifications of the AMPECO platform for managing EV charging infrastructure and operations.',
   minimumSupportedRelease: '0.60.0',

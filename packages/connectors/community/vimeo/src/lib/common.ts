@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { vimeoAuth } from './auth';
 
 export async function apiRequest({

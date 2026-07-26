@@ -3,14 +3,14 @@ import {
 	httpClient,
 	HttpMethod,
 	QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { whatsappAuth } from '../auth';
 import {
 	Property,
 	PiecePropValueSchema,
 	DynamicPropsValue,
 	DropdownOption,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const supportedMediaTypes = ['image', 'audio', 'document', 'sticker', 'video'];
 export const capitalizeFirstLetter = (word: string) => word.charAt(0).toUpperCase() + word.slice(1);

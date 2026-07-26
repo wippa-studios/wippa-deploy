@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { sendItAuth } from './auth';
 
 const API_BASE = 'https://sendit.infiniteappsai.com/api/v1';

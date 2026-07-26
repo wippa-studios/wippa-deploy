@@ -1,5 +1,5 @@
-import { createAction, OAuth2PropertyValue, Property } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+import { createAction, OAuth2PropertyValue, Property } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 import { GraphError } from '@microsoft/microsoft-graph-client';
 import { excelAuth } from '../auth';
 import { commonProps } from '../common/props';

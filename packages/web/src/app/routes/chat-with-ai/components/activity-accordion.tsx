@@ -14,7 +14,7 @@ import {
 } from '@/features/chat/lib/chat-types';
 import { chatUtils } from '@/features/chat/lib/chat-utils';
 import { toolIconUtils } from '@/features/chat/lib/tool-icons';
-import { PieceIcon } from '@/features/pieces/components/piece-icon';
+import { ConnectorIcon } from '@/features/pieces/components/connector-icon';
 import { piecesHooks } from '@/features/pieces/hooks/pieces-hooks';
 import { cn } from '@/lib/utils';
 
@@ -240,7 +240,7 @@ function ToolStepRow({
             <ToolIcon className="size-4 shrink-0 text-muted-foreground animate-pulse motion-reduce:animate-none" />
             {label}
             {matchedPieces.map((piece) => (
-              <PieceIcon
+              <ConnectorIcon
                 key={piece.name}
                 displayName={piece.displayName}
                 logoUrl={piece.logoUrl!}
@@ -262,7 +262,7 @@ function ToolStepRow({
               <ToolIcon className="size-4 shrink-0 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">{label}</span>
               {matchedPieces.map((piece) => (
-                <PieceIcon
+                <ConnectorIcon
                   key={piece.name}
                   displayName={piece.displayName}
                   logoUrl={piece.logoUrl!}

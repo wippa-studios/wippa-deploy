@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
 import { createCredential } from './lib/actions/create-credential';
 import { certopusCommon } from './lib/common';
 import { certopusAuth } from './lib/auth';
 
-export const certopus = createPiece({
+export const certopus = createConnector({
   displayName: 'Certopus',
   description: 'Your certificates, made simple',
   minimumSupportedRelease: '0.30.0',

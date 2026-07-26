@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getRecordingSummary } from './lib/actions/get-recording-summary';
 import { getRecordingTranscript } from './lib/actions/get-recording-transcript';
 import { listMeetings } from './lib/actions/list-meetings';
@@ -10,7 +10,7 @@ import { fathomAuth } from './lib/common/auth';
 
 export { fathomAuth };
 
-export const fathom = createPiece({
+export const fathom = createConnector({
   displayName: 'Fathom',
   auth: fathomAuth,
   minimumSupportedRelease: '0.36.1',

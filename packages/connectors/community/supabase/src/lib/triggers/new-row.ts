@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@wippa/connectors-framework';
 import { supabaseAuth } from '../auth';
 import { supabaseCommon } from '../common/props';
 import { newRowTriggerOutputSchema } from '../output-schemas';

@@ -1,4 +1,4 @@
-import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { createAction, DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { JiraAuth, jiraCloudAuth } from '../../auth';
 import {
 	getProjectIdDropdown,
@@ -10,8 +10,8 @@ import {
 } from '../common/props';
 import { jiraApiCall, jiraPaginatedApiCall } from '../common';
 import { IssueFieldMetaData, VALID_CUSTOM_FIELD_TYPES } from '../common/types';
-import { HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 async function getFields(auth: JiraAuth, projectId: string, issueTypeId: string): Promise<IssueFieldMetaData[]> {
 	const fields = await jiraPaginatedApiCall<IssueFieldMetaData, 'fields'>({

@@ -1,6 +1,6 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { millionVerifierAuth } from '../common/auth';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 export const verifyEmail = createAction({
   auth: millionVerifierAuth,
   name: 'verifyEmail',

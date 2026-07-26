@@ -3,8 +3,8 @@ import {
   HttpMethod,
   HttpMessageBody,
   HttpResponse,
-} from '@wippa/pieces-common';
-import { Property } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { Property } from '@wippa/connectors-framework';
 import { postizAuth, PostizAuth } from './auth';
 
 const DEFAULT_BASE_URL = 'https://api.postiz.com/public/v1';

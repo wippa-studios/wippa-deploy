@@ -2,7 +2,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
 export const everyXMinutesTrigger = createTrigger({
   name: 'every_x_minutes',

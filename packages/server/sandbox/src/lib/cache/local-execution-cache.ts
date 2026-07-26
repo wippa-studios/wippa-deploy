@@ -1,6 +1,6 @@
 import { unique } from '@wippa/core-utils'
 import { type ApLogger, fileSystemUtils, wideEvent } from '@wippa/server-utils'
-import { PiecePackage } from '@wippa/shared'
+import { ConnectorPackage } from '@wippa/shared'
 import { CodeArtifact, SandboxSettings } from '../types'
 import { cacheUtils } from './cache-paths'
 import { engineInstaller } from './engine/engine-installer'
@@ -60,7 +60,7 @@ export const localExecutionCache = (log: ApLogger, basePath: string, getSettings
                                 engineToken,
                             })
                             log.info({
-                                pieces: uniquePieces.map(p => `${p.pieceName}@${p.pieceVersion}`),
+                                pieces: uniquePieces.map(p => `${p.connectorName}@${p.connectorVersion}`),
                                 path: commonPath,
                             }, 'Installed pieces in sandbox')
                         },
@@ -73,7 +73,7 @@ export const localExecutionCache = (log: ApLogger, basePath: string, getSettings
 })
 
 type ProvisionParams = {
-    pieces: PiecePackage[]
+    pieces: ConnectorPackage[]
     codeSteps: CodeArtifact[]
     publicApiUrl: string
     engineToken: string

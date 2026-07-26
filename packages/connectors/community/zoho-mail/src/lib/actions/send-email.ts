@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { Property, createAction } from '@wippa/connectors-framework';
 import FormData from 'form-data';
 import { zohoMailApiCall } from '../common';
 import { zohoMailAuth } from '../common/auth';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 import { simplyprintAuth } from '../auth';
 import { simplyprintFiles } from '../common/files';

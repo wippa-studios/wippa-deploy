@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { sendSMSAction } from './lib/actions/send-sms.action';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { listMessages } from './lib/actions/list-messages';
 import { birdAuth, BirdAuthValue } from './lib/auth';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const messagebird = createPiece({
+export const messagebird = createConnector({
   displayName: 'Bird',
   description: 'Unified CRM for Marketing, Service & Payments',
   auth: birdAuth,

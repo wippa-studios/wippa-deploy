@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { alaiAuth } from '../common/auth';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

@@ -1,6 +1,6 @@
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from "@wippa/pieces-framework";
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from "@wippa/connectors-framework";
 import { retellAiAuth } from './lib/common/auth';
 import { makePhoneCall } from './lib/actions/make-phone-call';
 import { createPhoneNumber } from './lib/actions/create-phone-number';
@@ -9,9 +9,9 @@ import { getPhoneNumber } from './lib/actions/get-phone-number';
 import { getVoice } from './lib/actions/get-voice';
 import { getAgent } from './lib/actions/get-agent';
 import { newCallTrigger } from './lib/triggers/new-call';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const retellAi = createPiece({
+export const retellAi = createConnector({
   displayName: "Retell AI",
   auth: retellAiAuth,
   minimumSupportedRelease: '0.36.1',

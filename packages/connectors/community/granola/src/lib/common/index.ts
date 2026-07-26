@@ -4,7 +4,7 @@ import {
   HttpMessageBody,
   HttpResponse,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const BASE_URL = 'https://public-api.granola.ai/v1';
 

@@ -26,7 +26,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { PieceIconList } from '@/features/pieces';
+import { ConnectorIconList } from '@/features/pieces';
 import { templatesApi, templatesMutations } from '@/features/templates';
 import { platformHooks } from '@/hooks/platform-hooks';
 
@@ -149,7 +149,7 @@ const PlatformTemplatesPage = () => {
       cell: ({ row }) => {
         const trigger = row.original.flows?.[0]?.trigger;
         if (!trigger) return null;
-        return <PieceIconList trigger={trigger} maxNumberOfIconsToShow={2} />;
+        return <ConnectorIconList trigger={trigger} maxNumberOfIconsToShow={2} />;
       },
     },
   ];

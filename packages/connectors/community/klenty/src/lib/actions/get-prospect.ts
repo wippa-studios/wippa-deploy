@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 import { klentyAuth } from '../auth';
 import { findKlentyProspectByEmail } from '../common/client';

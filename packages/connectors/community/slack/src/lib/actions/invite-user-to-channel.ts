@@ -1,5 +1,5 @@
 import { slackAuth } from '../auth';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { singleSelectChannelInfo, slackChannel, userId } from '../common/props';
 import { WebClient } from '@slack/web-api';
 import { getBotToken, SlackAuthValue } from '../common/auth-helpers';

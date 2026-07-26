@@ -1,8 +1,8 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { clicdataAuth } from '../common/auth';
 import { clicdataApiCall } from '../common/client';
 import { clicdataCommonProps } from '../common/props';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 
 export const insertRow = createAction({
   auth: clicdataAuth,

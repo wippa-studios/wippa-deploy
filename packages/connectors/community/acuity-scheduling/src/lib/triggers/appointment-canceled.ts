@@ -1,11 +1,11 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { acuitySchedulingAuth } from '../auth';
 import { API_URL, getAppointmentDetails } from '../common';
 import { appointmentTypeIdDropdown, calendarIdDropdown } from '../common/props';

@@ -7,7 +7,7 @@ import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
   PropertyType,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   AppConnectionType,
   AppConnectionWithoutSensitiveData,
@@ -96,7 +96,7 @@ export const newConnectionUtils = {
     auth,
     suggestedExternalId,
     suggestedDisplayName,
-    pieceName,
+    connectorName,
     grantType,
     oauth2App,
     redirectUrl,
@@ -110,7 +110,7 @@ export const newConnectionUtils = {
     const commmonProps = {
       externalId: suggestedExternalId,
       displayName: suggestedDisplayName,
-      pieceName: pieceName,
+      connectorName: connectorName,
       projectId,
     };
 
@@ -272,7 +272,7 @@ export const isConnectionNameUnique = async ({
 type DefaultValuesParams = {
   suggestedExternalId: string;
   suggestedDisplayName: string;
-  pieceName: string;
+  connectorName: string;
   redirectUrl: string;
   auth: PieceAuthProperty;
   oauth2App: OAuth2App | null;

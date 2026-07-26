@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { cognitoFormsAuth } from '../auth';
 
 export const entryUpdatedTrigger = createTrigger({

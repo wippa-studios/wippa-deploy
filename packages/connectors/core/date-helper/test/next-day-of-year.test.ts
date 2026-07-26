@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { nextDayofYear } from '../src/lib/actions/next-day-of-year';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('nextDayOfYear', () => {
   beforeEach(() => {

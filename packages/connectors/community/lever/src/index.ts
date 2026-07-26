@@ -1,15 +1,15 @@
 import {
   AppConnectionValueForAuthProperty,
-  createPiece,
+  createConnector,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { getOpportunity } from './lib/actions/get-opportunity';
 import { updateOpportunityStage } from './lib/actions/update-opportunity-stage';
 import { listOpportunityForms } from './lib/actions/list-opportunity-forms';
 import { listOpportunityFeedback } from './lib/actions/list-opportunity-feedback';
 import { addFeedbackToOpportunity } from './lib/actions/add-feedback-to-opportunity';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 export const LEVER_BASE_URL = 'https://api.lever.co/v1';
 
@@ -24,7 +24,7 @@ export const leverAuth = PieceAuth.CustomAuth({
 });
 
 export type LeverAuth = AppConnectionValueForAuthProperty<typeof leverAuth>;
-export const lever = createPiece({
+export const lever = createConnector({
   displayName: 'Lever',
   auth: leverAuth,
   description:

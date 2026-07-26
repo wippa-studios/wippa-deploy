@@ -5,7 +5,7 @@ import {
     FlowTriggerType,
     FlowVersionState,
     PackageType,
-    PieceType,
+    ConnectorType,
     PopulatedFlow,
     StepLocationRelativeToParent,
 } from '@wippa/shared'
@@ -225,9 +225,9 @@ describe('Flow Operations API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPiece = createMockPieceMetadata({
-                name: '@wippa/piece-schedule',
+                name: '@wippa/connector-schedule',
                 version: '0.2.0',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPiece)
@@ -244,8 +244,8 @@ describe('Flow Operations API', () => {
                 request: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@wippa/piece-schedule',
-                        pieceVersion: '0.2.0',
+                        connectorName: '@wippa/connector-schedule',
+                        connectorVersion: '0.2.0',
                         input: {},
                         triggerName: 'every_hour',
                         propertySettings: {},
@@ -258,7 +258,7 @@ describe('Flow Operations API', () => {
             expect(response?.statusCode).toBe(StatusCodes.OK)
             const body = response?.json()
             expect(body.version.trigger.type).toBe(FlowTriggerType.PIECE)
-            expect(body.version.trigger.settings.pieceName).toBe('@wippa/piece-schedule')
+            expect(body.version.trigger.settings.connectorName).toBe('@wippa/connector-schedule')
         })
     })
 
@@ -414,9 +414,9 @@ describe('Flow Operations API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPiece = createMockPieceMetadata({
-                name: '@wippa/piece-test',
+                name: '@wippa/connector-test',
                 version: '0.1.0',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPiece)
@@ -436,8 +436,8 @@ describe('Flow Operations API', () => {
                         displayName: 'Piece Step',
                         name: 'step_1',
                         settings: {
-                            pieceName: '@wippa/piece-test',
-                            pieceVersion: '0.1.0',
+                            connectorName: '@wippa/connector-test',
+                            connectorVersion: '0.1.0',
                             actionName: 'test_action',
                             input: {},
                             propertySettings: {},
@@ -456,8 +456,8 @@ describe('Flow Operations API', () => {
                     displayName: 'Piece Step',
                     name: 'step_1',
                     settings: {
-                        pieceName: '@wippa/piece-test',
-                        pieceVersion: '0.1.0',
+                        connectorName: '@wippa/connector-test',
+                        connectorVersion: '0.1.0',
                         actionName: 'test_action',
                         input: inputData,
                         propertySettings: {},

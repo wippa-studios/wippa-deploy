@@ -1,5 +1,5 @@
-import { createAction, DynamicPropsValue, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, DynamicPropsValue, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import FormData from 'form-data';
 
 import { vidnozAuth } from '../..';

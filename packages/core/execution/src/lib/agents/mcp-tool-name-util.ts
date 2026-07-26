@@ -24,13 +24,13 @@ function createToolName(name: string): string {
 }
 
 /**
- * Strips the @scope/piece- prefix from pieceName (e.g. @wippa/piece-slack → slack)
+ * Strips the @scope/piece- prefix from connectorName (e.g. @wippa/connector-slack → slack)
  * and delegates to createToolName.
  */
-function createPieceToolName(pieceName: string, actionName: string): string {
+function createPieceToolName(connectorName: string, actionName: string): string {
     const PIECE_NAME_PREFIX = 'piece-'
-    const idx = pieceName.indexOf(PIECE_NAME_PREFIX)
-    const shortPieceName = idx >= 0 ? pieceName.substring(idx + PIECE_NAME_PREFIX.length) : pieceName
+    const idx = connectorName.indexOf(PIECE_NAME_PREFIX)
+    const shortPieceName = idx >= 0 ? connectorName.substring(idx + PIECE_NAME_PREFIX.length) : connectorName
     return createToolName(`${shortPieceName}-${actionName}`)
 }
 

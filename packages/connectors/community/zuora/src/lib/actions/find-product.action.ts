@@ -1,12 +1,12 @@
 import { zuoraAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { getAccessToken } from '../common';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const findProductAction = createAction({
   auth: zuoraAuth,

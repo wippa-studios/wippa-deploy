@@ -1,5 +1,5 @@
-import { createPiece } from "@wippa/pieces-framework";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createConnector } from "@wippa/connectors-framework";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { lemonSqueezyAuth } from "./lib/common/auth";
 import { LEMON_SQUEEZY_API_BASE } from "./lib/common/api";
 import { orderCreatedTrigger } from "./lib/triggers/order-created";
@@ -25,7 +25,7 @@ import { listSubscriptions } from "./lib/actions/list-subscriptions";
 import { createCheckout } from "./lib/actions/create-checkout";
 import { listCustomers } from "./lib/actions/list-customers";
 
-export const lemonSqueezy = createPiece({
+export const lemonSqueezy = createConnector({
   displayName: "Lemon Squeezy",
   auth: lemonSqueezyAuth,
   description: "Lemon Squeezy is a payment gateway for e-commerce and subscription-based businesses.",

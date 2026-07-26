@@ -2,8 +2,8 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 import { dubAuth } from '../auth';
 
 export const linkCreated = createTrigger({

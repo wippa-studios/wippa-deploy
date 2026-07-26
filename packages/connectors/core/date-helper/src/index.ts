@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addSubtractDateAction } from './lib/actions/add-subtract-date';
 import { dateDifferenceAction } from './lib/actions/date-difference';
 import { extractDateParts } from './lib/actions/extract-date-parts';
@@ -12,7 +12,7 @@ import { lastDayOfPreviousMonthAction } from './lib/actions/last-day-of-prior-mo
 
 const description = `Manipulate, format, and extract time units for all your date and time needs.`;
 
-export const utilityDate = createPiece({
+export const utilityDate = createConnector({
   displayName: 'Date Helper',
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.36.1',

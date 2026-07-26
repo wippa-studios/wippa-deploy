@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { zohoMailApiCall } from '.';
 import { zohoMailAuth } from './auth';
 

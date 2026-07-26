@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   PiecePropValueSchema,
   Property,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createRecordAction } from './lib/actions/create-record';
 import { findRecordAction } from './lib/actions/find-record';
 import { updateRecordAction } from './lib/actions/update-record';
@@ -13,7 +13,7 @@ import { newRecordTrigger } from './lib/triggers/new-record';
 import { makeClient } from './lib/common';
 import { APITableAuth } from './lib/auth';
 
-export const apitable = createPiece({
+export const apitable = createConnector({
   displayName: 'AITable',
   auth: APITableAuth,
   description: `Interactive spreadsheets with collaboration`,

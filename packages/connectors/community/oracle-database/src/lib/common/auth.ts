@@ -2,7 +2,7 @@ import {
   PieceAuth,
   Property,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { OracleRunnerError, runnerPool } from './runner-pool';
 import type { RunnerAuth } from './runner-protocol';
 

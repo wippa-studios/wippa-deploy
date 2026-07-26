@@ -1,6 +1,6 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { folkClient } from './client';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 export const folkAuth = PieceAuth.SecretText({
   displayName: 'API Key',

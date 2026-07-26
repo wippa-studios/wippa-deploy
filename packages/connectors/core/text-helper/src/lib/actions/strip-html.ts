@@ -1,5 +1,5 @@
 import { stripHtml } from 'string-strip-html';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 
 export const stripHtmlContent = createAction({
   audience: 'human',

@@ -98,7 +98,7 @@ export {
   RAW_PAYLOAD_HEADER,
   PARENT_RUN_ID_HEADER,
   FAIL_PARENT_ON_FAILURE_HEADER,
-} from '@wippa/core-piece-types';
+} from '@wippa/core-connector-types';
 export type {
   McpAuthConfig,
   BasicAuthConnectionValue,
@@ -109,4 +109,4 @@ export type {
   ToolCallBase,
   ExecuteToolResponse,
   PopulatedFlow,
-} from '@wippa/core-piece-types';
+} from '@wippa/core-connector-types';

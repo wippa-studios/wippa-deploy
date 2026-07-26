@@ -1,5 +1,5 @@
 import { AIProviderName, isNil } from '@wippa/core-utils'
-import { PropertyType } from '@wippa/pieces-framework'
+import { PropertyType } from '@wippa/connectors-framework'
 import { McpToolDefinition, ProjectScopedMcpServer } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
@@ -10,7 +10,7 @@ import { mcpUtils } from './mcp-utils'
 
 const setupGuideInput = z.object({
     topic: z.enum(['connection', 'ai_provider']).describe('What to get setup instructions for'),
-    pieceName: z.string().optional().describe('For connections: the piece that needs auth (e.g., "@wippa/piece-gmail"). Omit for general instructions.'),
+    connectorName: z.string().optional().describe('For connections: the piece that needs auth (e.g., "@wippa/connector-gmail"). Omit for general instructions.'),
 })
 
 export const apSetupGuideTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogger): McpToolDefinition => {
@@ -21,10 +21,10 @@ export const apSetupGuideTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLo
         annotations: { readOnlyHint: true, openWorldHint: false },
         execute: async (args) => {
             try {
-                const { topic, pieceName } = setupGuideInput.parse(args)
+                const { topic, connectorName } = setupGuideInput.parse(args)
 
                 if (topic === 'connection') {
-                    return await connectionGuide(mcp, log, pieceName)
+                    return await connectionGuide(mcp, log, connectorName)
                 }
                 return await aiProviderGuide(mcp, log)
             }
@@ -36,8 +36,8 @@ export const apSetupGuideTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLo
     }
 }
 
-async function connectionGuide(mcp: ProjectScopedMcpServer, log: FastifyBaseLogger, pieceName?: string): Promise<{ content: [{ type: 'text', text: string }] }> {
-    if (isNil(pieceName)) {
+async function connectionGuide(mcp: ProjectScopedMcpServer, log: FastifyBaseLogger, connectorName?: string): Promise<{ content: [{ type: 'text', text: string }] }> {
+    if (isNil(connectorName)) {
         return {
             content: [{
                 type: 'text',
@@ -53,7 +53,7 @@ async function connectionGuide(mcp: ProjectScopedMcpServer, log: FastifyBaseLogg
                     '',
                     'Then use ap_list_connections to find the connection\'s externalId for use in flow steps.',
                     '',
-                    'Tip: Pass pieceName to this tool for specific instructions (e.g., pieceName: "@wippa/piece-gmail").',
+                    'Tip: Pass connectorName to this tool for specific instructions (e.g., connectorName: "@wippa/connector-gmail").',
                 ].join('\n'),
             }],
         }
@@ -62,14 +62,14 @@ async function connectionGuide(mcp: ProjectScopedMcpServer, log: FastifyBaseLogg
     // Resolve platformId so private (CUSTOM) pieces on this platform are discoverable.
     const project = await projectService(log).getOneOrThrow(mcp.projectId)
     const piece = await pieceMetadataService(log).get({
-        name: pieceName,
+        name: connectorName,
         version: undefined,
         projectId: mcp.projectId,
         platformId: project.platformId,
     })
 
     if (isNil(piece)) {
-        return { content: [{ type: 'text', text: `❌ Piece "${pieceName}" not found. Use ap_research_pieces to find valid piece names.` }] }
+        return { content: [{ type: 'text', text: `❌ Piece "${connectorName}" not found. Use ap_research_pieces to find valid piece names.` }] }
     }
 
     const rawAuth = piece.auth

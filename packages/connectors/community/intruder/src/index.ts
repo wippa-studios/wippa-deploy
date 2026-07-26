@@ -1,14 +1,14 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { addTarget } from './lib/actions/add-target';
 import { startScan } from './lib/actions/start-scan';
 import { intruderAuth } from './lib/common/auth';
 import { searchForATarget } from './lib/actions/search-for-a-target';
 import { searchForAnIssue } from './lib/actions/search-for-an-issue';
 import { searchForAnIssueOccurrence } from './lib/actions/search-for-an-issue-occurrence';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const intruder = createPiece({
+export const intruder = createConnector({
   displayName: 'Intruder',
   auth: intruderAuth,
   minimumSupportedRelease: '0.36.1',

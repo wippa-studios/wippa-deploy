@@ -1,6 +1,6 @@
 // Action: Remove Tag from Issue
-import { createAction } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { youtrackAuth } from '../../';
 import { issueDropdown, tagDropdown, youtrackApiCall } from '../common';
 

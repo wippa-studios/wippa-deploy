@@ -7,11 +7,11 @@ import {
     getAuthPropertyForValue,
     MultiSelectDropdownProperty,
     PieceAuthProperty,
-    PieceMetadata,
-    PiecePropertyMap,
+    ConnectorMetadata,
+    ConnectorPropertyMap,
     pieceTranslation,
     PropertyType,
-    StaticPropsValue } from '@wippa/pieces-framework'
+    StaticPropsValue } from '@wippa/connectors-framework'
 import { AppConnectionType, AppConnectionValue, EngineGenericError, ExecuteExtractPieceMetadata, ExecutePropsOptions, ExecuteRefreshTokenAuthOperation, ExecuteRefreshTokenAuthResponse, ExecuteValidateAuthOperation, ExecuteValidateAuthResponse } from '@wippa/shared'
 import { EngineConstants } from '../handler/context/engine-constants'
 
@@ -21,9 +21,9 @@ import { createFlowsContext } from '../piece-context/flows'
 import { utils } from '../utils'
 import { createPropsResolver } from '../variables/props-resolver'
 import { dynamicPropKeys } from './dynamic-prop-keys'
-import { pieceLoader } from './piece-loader'
+import { connectorLoader } from './piece-loader'
 
-export const pieceHelper = {
+export const connectorHelper = {
     async executeProps( operation: ExecutePropsParams): Promise<ExecutePropsResult<PropertyType.DROPDOWN | PropertyType.MULTI_SELECT_DROPDOWN | PropertyType.DYNAMIC>> {
         const constants = EngineConstants.fromExecutePropertyInput(operation)
         const executionState = await testExecutionContext.stateFromFlowVersion({
@@ -34,7 +34,7 @@ export const pieceHelper = {
             sampleData: operation.sampleData,
             engineConstants: constants,
         })
-        const { property, piece } = await pieceLoader.getPropOrThrow({ pieceName: operation.pieceName, pieceVersion: operation.pieceVersion, actionOrTriggerName: operation.actionOrTriggerName, propertyName: operation.propertyName, devPieces: EngineConstants.DEV_PIECES })
+        const { property, piece } = await connectorLoader.getPropOrThrow({ connectorName: operation.connectorName, connectorVersion: operation.connectorVersion, actionOrTriggerName: operation.actionOrTriggerName, propertyName: operation.propertyName, devPieces: EngineConstants.DEV_PIECES })
     
         if (property.type !== PropertyType.DROPDOWN && property.type !== PropertyType.MULTI_SELECT_DROPDOWN && property.type !== PropertyType.DYNAMIC) {
             throw new EngineGenericError('PropertyTypeNotExecutableError', `Property type is not executable: ${property.type} for ${property.displayName}`)
@@ -47,7 +47,7 @@ export const pieceHelper = {
                 contextVersion: piece.getContextInfo?.().version,
                 stepNames: constants.stepNames,
             }).resolve<
-            StaticPropsValue<PiecePropertyMap>
+            StaticPropsValue<ConnectorPropertyMap>
             >({
                 unresolvedInput: operation.input,
                 executionState,
@@ -128,9 +128,9 @@ export const pieceHelper = {
     async executeValidateAuth(
         { params, devPieces }: { params: ExecuteValidateAuthOperation, devPieces: string[] },
     ): Promise<ExecuteValidateAuthResponse> {
-        const { piece: piecePackage } = params
+        const { piece: connectorPackage } = params
 
-        const piece = await pieceLoader.loadPieceOrThrow({ pieceName: piecePackage.pieceName, pieceVersion: piecePackage.pieceVersion, devPieces })
+        const piece = await connectorLoader.loadPieceOrThrow({ connectorName: connectorPackage.connectorName, connectorVersion: connectorPackage.connectorVersion, devPieces })
         const server = buildServerContext(params)
         return  validateAuth({
             authValue: params.auth,
@@ -143,9 +143,9 @@ export const pieceHelper = {
     async executeRefreshTokenAuth(
         { params, devPieces }: { params: ExecuteRefreshTokenAuthOperation, devPieces: string[] },
     ): Promise<ExecuteRefreshTokenAuthResponse> {
-        const { piece: piecePackage } = params
+        const { piece: connectorPackage } = params
 
-        const piece = await pieceLoader.loadPieceOrThrow({ pieceName: piecePackage.pieceName, pieceVersion: piecePackage.pieceVersion, devPieces })
+        const piece = await connectorLoader.loadPieceOrThrow({ connectorName: connectorPackage.connectorName, connectorVersion: connectorPackage.connectorVersion, devPieces })
 
         if (params.auth.type !== AppConnectionType.CUSTOM_AUTH) {
             return { skipped: true }
@@ -172,25 +172,25 @@ export const pieceHelper = {
         }
     },
 
-    async extractPieceMetadata({ devPieces, params }: { devPieces: string[], params: ExecuteExtractPieceMetadata }): Promise<PieceMetadata> {
-        const { pieceName, pieceVersion } = params
-        const piece = await pieceLoader.loadPieceOrThrow({ pieceName, pieceVersion, devPieces })
-        const pieceAlias = pieceLoader.getPackageAlias({ pieceName, pieceVersion, devPieces })
-        const pieceIndexPath = await pieceLoader.getPiecePath({ packageName: pieceAlias, devPieces })
+    async extractPieceMetadata({ devPieces, params }: { devPieces: string[], params: ExecuteExtractPieceMetadata }): Promise<ConnectorMetadata> {
+        const { connectorName, connectorVersion } = params
+        const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
+        const pieceAlias = connectorLoader.getPackageAlias({ connectorName, connectorVersion, devPieces })
+        const pieceIndexPath = await connectorLoader.getPiecePath({ packageName: pieceAlias, devPieces })
         const pieceDistRoot = path.dirname(path.dirname(pieceIndexPath))
         const i18n = await pieceTranslation.initializeI18n(pieceDistRoot)
         const fullMetadata = piece.metadata()
         return {
             ...fullMetadata,
-            name: pieceName,
-            version: pieceVersion,
+            name: connectorName,
+            version: connectorVersion,
             authors: piece.authors,
             i18n,
         }
     },
 }
 
-type ExecutePropsParams = Omit<ExecutePropsOptions, 'piece'> & { pieceName: string, pieceVersion: string }
+type ExecutePropsParams = Omit<ExecutePropsOptions, 'piece'> & { connectorName: string, connectorVersion: string }
 
 
 function mismatchAuthTypeErrorMessage(pieceAuthType: PropertyType, connectionType: AppConnectionType): ExecuteValidateAuthResponse {

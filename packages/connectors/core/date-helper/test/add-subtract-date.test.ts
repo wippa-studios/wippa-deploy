@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
 import { addSubtractDateAction } from '../src/lib/actions/add-subtract-date';
-import { createMockActionContext } from '@wippa/pieces-framework';
+import { createMockActionContext } from '@wippa/connectors-framework';
 
 describe('addSubtractDateAction', () => {
   test('adds hours', async () => {

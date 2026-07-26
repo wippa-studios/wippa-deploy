@@ -1,24 +1,24 @@
 import { piecesHooks } from '../hooks/pieces-hooks';
 
-import { PieceIcon } from './piece-icon';
+import { ConnectorIcon } from './connector-icon';
 
 type PieceIconWithPieceNameProps = {
-  pieceName: string;
+  connectorName: string;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   border?: boolean;
   showTooltip?: boolean;
 };
 
 const PieceIconWithPieceName = ({
-  pieceName,
+  connectorName,
   size = 'md',
   border = true,
   showTooltip = true,
 }: PieceIconWithPieceNameProps) => {
-  const { summary } = piecesHooks.usePieceSummary({ name: pieceName });
+  const { summary } = piecesHooks.usePieceSummary({ name: connectorName });
 
   return (
-    <PieceIcon
+    <ConnectorIcon
       size={size}
       border={border}
       displayName={summary?.displayName}

@@ -31,37 +31,37 @@ const extractIdFromQueryParams = () => {
 export const EmbeddedConnectionDialog = () => {
   const connectionName = extractIdFromQueryParams();
   const queryParams = new URLSearchParams(memoryRouter.state.location.search);
-  const pieceName = queryParams.get(NEW_CONNECTION_QUERY_PARAMS.name);
+  const connectorName = queryParams.get(NEW_CONNECTION_QUERY_PARAMS.name);
   const randomId = queryParams.get(NEW_CONNECTION_QUERY_PARAMS.randomId);
   return (
     <EmbeddedConnectionDialogContent
       connectionName={
         connectionName && connectionName.length > 0 ? connectionName : null
       }
-      pieceName={pieceName}
+      connectorName={connectorName}
       key={randomId}
     ></EmbeddedConnectionDialogContent>
   );
 };
 
 type EmbeddedConnectionDialogContentProps = {
-  pieceName: string | null;
+  connectorName: string | null;
   connectionName: string | null;
 };
 
 const EmbeddedConnectionDialogContent = ({
-  pieceName,
+  connectorName,
   connectionName,
 }: EmbeddedConnectionDialogContentProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(true);
   const hasErrorRef = useRef(false);
 
   const {
-    data: pieceModel,
+    data: connectorModel,
     isLoading: isLoadingPiece,
     isSuccess,
   } = piecesHooks.usePieceForEmbeddingConnection({
-    pieceName: pieceName ?? '',
+    connectorName: connectorName ?? '',
     connectionExternalId: connectionName ?? '',
   });
   const hideConnectionIframe = (
@@ -104,14 +104,14 @@ const EmbeddedConnectionDialogContent = ({
         data: {
           error: JSON.stringify({
             isValid: 'false',
-            error: `piece: ${pieceName} not found`,
+            error: `piece: ${connectorName} not found`,
           }),
         },
       });
       hideConnectionIframe();
       hasErrorRef.current = true;
     }
-  }, [isSuccess, isLoadingPiece, pieceName]);
+  }, [isSuccess, isLoadingPiece, connectorName]);
 
   const { data: piecesOAuth2AppsMap, isPending: loadingPiecesOAuth2AppsMap } =
     oauthAppsQueries.usePiecesOAuth2AppsMap();
@@ -144,11 +144,11 @@ const EmbeddedConnectionDialogContent = ({
             </div>
           ))}
 
-        {!isLoadingPiece && pieceModel && piecesOAuth2AppsMap && (
+        {!isLoadingPiece && connectorModel && piecesOAuth2AppsMap && (
           <CreateOrEditConnectionDialogContent
             reconnectConnection={null}
             piecesOAuth2AppsMap={piecesOAuth2AppsMap}
-            piece={pieceModel}
+            piece={connectorModel}
             externalIdComingFromSdk={connectionName}
             isGlobalConnection={false}
             setOpen={(open, connection) => {

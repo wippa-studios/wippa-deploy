@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import MailerLite from '@mailerlite/mailerlite-nodejs';
 import { mailerLiteAuth } from '../..';
 

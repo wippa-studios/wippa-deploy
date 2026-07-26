@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { makeCallAction } from './lib/actions/make-call';
 import { getCallDetailsAction } from './lib/actions/get-call-details';
 import { addContactToListAction } from './lib/actions/add-contact-to-list';
@@ -29,7 +29,7 @@ export const kallabotAuth = PieceAuth.SecretText({
   required: true
 });
 
-export const kallabotAi = createPiece({
+export const kallabotAi = createConnector({
   displayName: 'Kallabot',
   minimumSupportedRelease: '0.36.1',
   logoUrl: 'https://cdn.activepieces.com/pieces/kallabot-ai.png',

@@ -2,8 +2,8 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
-import { MarkdownVariant } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { MarkdownVariant } from '@wippa/connectors-framework';
 
 const setupInstructions = `
 **Setup Instructions**

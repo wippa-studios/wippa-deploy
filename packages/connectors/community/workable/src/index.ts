@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { getCandidate } from "./lib/actions/get-candidate";
 import { getMembers } from "./lib/actions/get-members";
 import { getJob } from "./lib/actions/get-job";
@@ -7,13 +7,13 @@ import { getStages } from "./lib/actions/get-stages";
 import { moveCandidate } from "./lib/actions/move-candidate";
 import { rateCandidate } from "./lib/actions/rate-candidate";
 import { newCandidate } from "./lib/triggers/new-candidate";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from "@wippa/connectors-common";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { workableAuth } from './lib/auth';
 
  
 
-export const workable = createPiece({
+export const workable = createConnector({
   displayName: "Workable",
   auth: workableAuth,
   minimumSupportedRelease: '0.36.1',

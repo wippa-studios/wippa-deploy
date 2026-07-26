@@ -3,7 +3,7 @@ import {
   PiecePropValueSchema,
   Property,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { Connection, createConnection } from 'promise-mysql';
 import { mysqlAuth } from '../..';
 import sqlstring from 'sqlstring';

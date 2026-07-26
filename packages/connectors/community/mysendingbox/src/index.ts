@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 const markdown = `
 MySendingBox API keyis available under the developer portal.
@@ -38,7 +38,7 @@ export const mySendingBoxPieceAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const mysendingbox = createPiece({
+export const mysendingbox = createConnector({
   displayName: 'Mysendingbox',
   auth: mySendingBoxPieceAuth,
   minimumSupportedRelease: '0.78.0',

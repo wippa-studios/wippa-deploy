@@ -1,5 +1,5 @@
 import { ActivepiecesError, ErrorCode, isNil, LocalesEnum } from '@wippa/core-utils'
-import { PieceMetadataModel, PieceMetadataModelSummary } from '@wippa/pieces-framework'
+import { PieceMetadataModel, PieceMetadataModelSummary } from '@wippa/connectors-framework'
 import { ALL_PRINCIPAL_TYPES, EngineResponse, GetPieceRequestParams, GetPieceRequestQuery, GetPieceRequestWithScopeParams, ListPiecesRequestQuery, PieceAudienceFilter, PieceCategory, PieceOptionRequest, Principal, PrincipalType, RegistryPiecesRequestQuery, SampleDataFileType, WorkerJobType } from '@wippa/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
@@ -10,7 +10,7 @@ import { resolveVisibility } from '../../ee/pieces/filters/piece-filtering-utils
 import { flowService } from '../../flows/flow/flow.service'
 import { sampleDataService } from '../../flows/step-run/sample-data.service'
 import { userInteractionWatcher } from '../../workers/user-interaction-watcher'
-import { pieceSyncService } from '../piece-sync-service'
+import { connectorSyncService } from '../piece-sync-service'
 import { getPiecePackageWithoutArchive, pieceMetadataService } from './piece-metadata-service'
 import { filterActionsByAudience } from './utils'
 
@@ -111,7 +111,7 @@ const basePiecesController: FastifyPluginAsyncZod = async (app) => {
         return pieces
     })
 
-    app.post('/sync', SyncPiecesRequest, async (req) => pieceSyncService(req.log).sync({ publishCacheRefresh: true }))
+    app.post('/sync', SyncPiecesRequest, async (req) => connectorSyncService(req.log).sync({ publishCacheRefresh: true }))
 
     app.delete('/:id', DeletePieceRequest, async (req, reply) => {
         await pieceMetadataService(req.log).delete({

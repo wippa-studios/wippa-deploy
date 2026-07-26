@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 // Import actions
 import { createRecordAction } from './lib/actions/create-record';
@@ -23,11 +23,11 @@ import { recordUpdatedTrigger } from './lib/triggers/record-updated';
 import { listEntryCreatedTrigger } from './lib/triggers/list-entry-created';
 import { listEntryUpdatedTrigger } from './lib/triggers/list-entry-updated';
 import { callRecordingCreatedTrigger } from './lib/triggers/call-recording-created';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/client';
 import { attioAuth } from './lib/auth';
 
-export const attio = createPiece({
+export const attio = createConnector({
 	displayName: 'Attio',
 	description: 'Modern, collaborative CRM platform built to be fully customizable and real-time.',
 	auth: attioAuth,

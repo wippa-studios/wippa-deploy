@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { createRecord } from './lib/actions/create-record';
 import { updateRecord } from './lib/actions/update-record';
 import { deleteRecord } from './lib/actions/delete-record';
@@ -11,7 +11,7 @@ import { newRecord } from './lib/triggers/new-record';
 import { newOrUpdatedRecord } from './lib/triggers/new-or-updated-record';
 import { quickbaseAuth } from './lib/auth';
 
-export const quickbase = createPiece({
+export const quickbase = createConnector({
   displayName: 'Quickbase',
   auth: quickbaseAuth,
   minimumSupportedRelease: '0.36.1',

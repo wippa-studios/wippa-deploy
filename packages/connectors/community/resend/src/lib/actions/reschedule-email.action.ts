@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { AuthenticationType, HttpMethod, httpClient } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { AuthenticationType, HttpMethod, httpClient } from '@wippa/connectors-common';
 import { resendAuth } from '../..';
 
 export const rescheduleEmail = createAction({

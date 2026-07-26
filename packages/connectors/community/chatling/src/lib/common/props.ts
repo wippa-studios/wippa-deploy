@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { DropdownOption, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { DropdownOption, Property } from '@wippa/connectors-framework';
 import { makeRequest } from './index';
 import { chatlingAuth } from '../auth';
 

@@ -1,8 +1,8 @@
 import { apId } from '@wippa/core-utils'
-import { PackageType, PieceSelectionMode, PieceType, PrincipalType, SuggestionType, TriggerStrategy, TriggerTestStrategy } from '@wippa/shared'
+import { PackageType, PieceSelectionMode, ConnectorType, PrincipalType, SuggestionType, TriggerStrategy, TriggerTestStrategy } from '@wippa/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
-import { pieceCache } from '../../../../src/app/pieces/metadata/piece-cache'
+import { connectorCache } from '../../../../src/app/pieces/metadata/piece-cache'
 import { pieceMetadataService } from '../../../../src/app/pieces/metadata/piece-metadata-service'
 import { generateMockToken } from '../../../helpers/auth'
 import { db } from '../../../helpers/db'
@@ -52,7 +52,7 @@ describe('Piece Component Filtering (EE)', () => {
                 plan: { managePiecesEnabled: true },
             })
 
-            const pieceSet = {
+            const connectorSet = {
                 id: apId(),
                 created: new Date().toISOString(),
                 updated: new Date().toISOString(),
@@ -63,8 +63,8 @@ describe('Piece Component Filtering (EE)', () => {
                 generatedForProjectId: null,
                 config: { pieces: { mode: PieceSelectionMode.INCLUDE_ALL, exceptions: hiddenPieces }, selectedActions: {}, selectedTriggers: {} },
             }
-            await databaseConnection().getRepository('piece_set').save(pieceSet)
-            await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: pieceSet.id })
+            await databaseConnection().getRepository('piece_set').save(connectorSet)
+            await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: connectorSet.id })
 
             const token = await generateMockToken({
                 type: PrincipalType.USER,
@@ -94,9 +94,9 @@ describe('Piece Component Filtering (EE)', () => {
             await databaseConnection().getRepository('piece_set').save(defaultSet)
             await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: defaultSet.id })
 
-            const piece = createMockPieceMetadata({ name: 'visible-piece', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const piece = createMockPieceMetadata({ name: 'visible-piece', pieceType: ConnectorType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const token = await generateMockToken({ type: PrincipalType.USER, id: mockOwner.id, platform: { id: mockPlatform.id } })
             const response = await app!.inject({ method: 'GET', url: `/api/v1/pieces?projectId=${mockProject.id}`, headers: { authorization: `Bearer ${token}` } })
@@ -109,9 +109,9 @@ describe('Piece Component Filtering (EE)', () => {
         it('a hidden piece is not returned', async () => {
             const { mockProject, token } = await setupPieceSetScenario(['hidden-piece'])
 
-            const piece = createMockPieceMetadata({ name: 'hidden-piece', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const piece = createMockPieceMetadata({ name: 'hidden-piece', pieceType: ConnectorType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await app!.inject({ method: 'GET', url: `/api/v1/pieces?projectId=${mockProject.id}`, headers: { authorization: `Bearer ${token}` } })
 
@@ -123,10 +123,10 @@ describe('Piece Component Filtering (EE)', () => {
         it('only the hidden piece is excluded; others remain visible', async () => {
             const { mockProject, token } = await setupPieceSetScenario(['blocked-piece'])
 
-            const allowed = createMockPieceMetadata({ name: 'allowed-piece', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
-            const blocked = createMockPieceMetadata({ name: 'blocked-piece', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const allowed = createMockPieceMetadata({ name: 'allowed-piece', pieceType: ConnectorType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const blocked = createMockPieceMetadata({ name: 'blocked-piece', pieceType: ConnectorType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', [allowed, blocked])
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await app!.inject({ method: 'GET', url: `/api/v1/pieces?projectId=${mockProject.id}`, headers: { authorization: `Bearer ${token}` } })
 
@@ -139,10 +139,10 @@ describe('Piece Component Filtering (EE)', () => {
         it('a visible piece remains alongside a hidden one', async () => {
             const { mockProject, token } = await setupPieceSetScenario(['excluded-piece'])
 
-            const excluded = createMockPieceMetadata({ name: 'excluded-piece', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
-            const visible = createMockPieceMetadata({ name: 'visible-piece-2', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const excluded = createMockPieceMetadata({ name: 'excluded-piece', pieceType: ConnectorType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const visible = createMockPieceMetadata({ name: 'visible-piece-2', pieceType: ConnectorType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', [excluded, visible])
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await app!.inject({ method: 'GET', url: `/api/v1/pieces?projectId=${mockProject.id}`, headers: { authorization: `Bearer ${token}` } })
 
@@ -170,9 +170,9 @@ describe('Piece Component Filtering (EE)', () => {
             }
             await databaseConnection().getRepository('piece_set').save(defaultSet)
 
-            const piece = createMockPieceMetadata({ name: 'fallback-piece', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const piece = createMockPieceMetadata({ name: 'fallback-piece', pieceType: ConnectorType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const token = await generateMockToken({ type: PrincipalType.USER, id: mockOwner.id, platform: { id: mockPlatform.id } })
             const response = await app!.inject({ method: 'GET', url: `/api/v1/pieces?projectId=${mockProject.id}`, headers: { authorization: `Bearer ${token}` } })
@@ -192,7 +192,7 @@ describe('Piece Component Filtering (EE)', () => {
                 plan: { managePiecesEnabled: true },
             })
 
-            const pieceSet = {
+            const connectorSet = {
                 id: apId(),
                 created: new Date().toISOString(),
                 updated: new Date().toISOString(),
@@ -207,8 +207,8 @@ describe('Piece Component Filtering (EE)', () => {
                     selectedTriggers: opts.selectedTriggers ?? {},
                 },
             }
-            await databaseConnection().getRepository('piece_set').save(pieceSet)
-            await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: pieceSet.id })
+            await databaseConnection().getRepository('piece_set').save(connectorSet)
+            await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: connectorSet.id })
 
             const token = await generateMockToken({
                 type: PrincipalType.USER,
@@ -224,13 +224,13 @@ describe('Piece Component Filtering (EE)', () => {
 
             const piece = createMockPieceMetadata({
                 name: 'my-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: { action_a: makeAction('action_a'), action_b: makeAction('action_b') },
                 triggers: {},
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await app!.inject({
                 method: 'GET',
@@ -253,13 +253,13 @@ describe('Piece Component Filtering (EE)', () => {
 
             const piece = createMockPieceMetadata({
                 name: 'my-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: { excluded_action: makeAction('excluded_action'), visible_action: makeAction('visible_action') },
                 triggers: {},
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await app!.inject({
                 method: 'GET',
@@ -281,13 +281,13 @@ describe('Piece Component Filtering (EE)', () => {
 
             const piece = createMockPieceMetadata({
                 name: 'my-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: { allowed_action: makeAction('allowed_action'), blocked_action: makeAction('blocked_action') },
                 triggers: {},
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await app!.inject({
                 method: 'GET',
@@ -309,7 +309,7 @@ describe('Piece Component Filtering (EE)', () => {
 
             const piece = createMockPieceMetadata({
                 name: 'my-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: {},
                 triggers: {
@@ -318,7 +318,7 @@ describe('Piece Component Filtering (EE)', () => {
                 },
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const response = await app!.inject({
                 method: 'GET',
@@ -341,7 +341,7 @@ describe('Piece Component Filtering (EE)', () => {
                 plan: { managePiecesEnabled: true },
             })
 
-            const pieceSet = {
+            const connectorSet = {
                 id: apId(),
                 created: new Date().toISOString(),
                 updated: new Date().toISOString(),
@@ -356,12 +356,12 @@ describe('Piece Component Filtering (EE)', () => {
                     selectedTriggers: {},
                 },
             }
-            await databaseConnection().getRepository('piece_set').save(pieceSet)
-            await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: pieceSet.id })
+            await databaseConnection().getRepository('piece_set').save(connectorSet)
+            await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: connectorSet.id })
 
             const piece = createMockPieceMetadata({
                 name: 'test-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: {
                     visible_action: makeAction('visible_action'),
@@ -370,7 +370,7 @@ describe('Piece Component Filtering (EE)', () => {
                 triggers: {},
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const token = await generateMockToken({
                 type: PrincipalType.USER,
@@ -393,7 +393,7 @@ describe('Piece Component Filtering (EE)', () => {
 
             const piece = createMockPieceMetadata({
                 name: 'test-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: {
                     send_email: makeAction('send_email'),
@@ -402,7 +402,7 @@ describe('Piece Component Filtering (EE)', () => {
                 triggers: {},
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const token = await generateMockToken({
                 type: PrincipalType.USER,
@@ -425,7 +425,7 @@ describe('Piece Component Filtering (EE)', () => {
     // not only in the HTTP controller.
     describe('pieceMetadataService.get (MCP path enforces piece-set visibility)', () => {
         async function saveProjectPieceSet(config: object, projectId: string, platformId: string) {
-            const pieceSet = {
+            const connectorSet = {
                 id: apId(),
                 created: new Date().toISOString(),
                 updated: new Date().toISOString(),
@@ -436,8 +436,8 @@ describe('Piece Component Filtering (EE)', () => {
                 generatedForProjectId: null,
                 config,
             }
-            await databaseConnection().getRepository('piece_set').save(pieceSet)
-            await databaseConnection().getRepository('project').update({ id: projectId }, { pieceSetId: pieceSet.id })
+            await databaseConnection().getRepository('piece_set').save(connectorSet)
+            await databaseConnection().getRepository('project').update({ id: projectId }, { pieceSetId: connectorSet.id })
         }
 
         it('drops hidden actions when the project piece set curates the piece', async () => {
@@ -450,13 +450,13 @@ describe('Piece Component Filtering (EE)', () => {
 
             const piece = createMockPieceMetadata({
                 name: 'mcp-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: { visible_action: makeAction('visible_action'), hidden_action: makeAction('hidden_action') },
                 triggers: {},
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const result = await pieceMetadataService(mockLog).get({ name: 'mcp-piece', projectId: mockProject.id, platformId: mockPlatform.id })
 
@@ -474,13 +474,13 @@ describe('Piece Component Filtering (EE)', () => {
 
             const piece = createMockPieceMetadata({
                 name: 'mcp-hidden-piece',
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 actions: {},
                 triggers: {},
             })
             await db.save('piece_metadata', piece)
-            await pieceCache(mockLog).setup()
+            await connectorCache(mockLog).setup()
 
             const result = await pieceMetadataService(mockLog).get({ name: 'mcp-hidden-piece', projectId: mockProject.id, platformId: mockPlatform.id })
 

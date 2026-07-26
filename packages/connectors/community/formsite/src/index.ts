@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { newFormResult } from './lib/triggers/new-form-result';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 export const formsiteAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -8,7 +8,7 @@ export const formsiteAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const formsite = createPiece({
+export const formsite = createConnector({
   displayName: 'Formsite',
   auth: PieceAuth.None(),
   description:

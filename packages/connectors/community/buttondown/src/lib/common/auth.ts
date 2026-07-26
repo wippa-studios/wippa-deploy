@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { BUTTONDOWN_BASE_URL } from './client';
 
 interface ButtondownPingResponse {

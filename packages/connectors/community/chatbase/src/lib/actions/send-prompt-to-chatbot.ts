@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { chatbaseAuth } from '../auth';
 import { makeRequest } from '../common';
 import { chatbotIdDropdown } from '../common/props';

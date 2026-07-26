@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 import { getSchoolProfile } from './lib/actions/get-school-profile';
 import { getCompanyProfile } from './lib/actions/get-company-profile';
@@ -30,7 +30,7 @@ import { getCreditBalance } from './lib/actions/get-credit-balance';
 import { enrichlayerAuth } from './lib/auth';
 
 
-export const enrichlayer = createPiece({
+export const enrichlayer = createConnector({
   displayName: 'Enrich Layer',
   description:
     'Professional network data enrichment API — company profiles, person data, work emails, and more.',

@@ -1,7 +1,7 @@
-import { PieceAuth } from '@wippa/pieces-framework';
+import { PieceAuth } from '@wippa/connectors-framework';
 import { retellAiApiCall } from './client';
-import { HttpMethod } from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 // For typing purposes in the client
 export const RetellAiAuth = PieceAuth.SecretText({

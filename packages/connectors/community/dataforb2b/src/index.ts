@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { DATAFORB2B_API_BASE_URL, dataforb2bAuth } from './lib/common';
 import { searchPeople } from './lib/actions/search-people';
 import { searchCompanies } from './lib/actions/search-companies';
@@ -9,7 +9,7 @@ import { typeahead } from './lib/actions/typeahead';
 import { enrichProfile } from './lib/actions/enrich-profile';
 import { enrichCompany } from './lib/actions/enrich-company';
 
-export const dataforb2b = createPiece({
+export const dataforb2b = createConnector({
   displayName: 'DataForB2B',
   description:
     'Power your sales or recruiting AI agent with live B2B data. DataForB2B is a people and company search API with 70+ filters including job title, skills, company size, LinkedIn URL, funding stage, investor, past employers, certifications, years of experience, GitHub repositories, languages and more.',

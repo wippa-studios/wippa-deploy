@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { vercelAuth } from './lib/common/auth';
 import {
   createDeployment,
@@ -10,7 +10,7 @@ import {
   upsertEnvironmentVariable,
 } from './lib/actions';
 
-export const vercel = createPiece({
+export const vercel = createConnector({
   displayName: 'Vercel',
   auth: vercelAuth,
   minimumSupportedRelease: '0.36.1',

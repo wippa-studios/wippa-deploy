@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { KlaviyoAuthValue, getAuthorizationHeader } from './auth';
 
 export async function fetchProfilesByIds(

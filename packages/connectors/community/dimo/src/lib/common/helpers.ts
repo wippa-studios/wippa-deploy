@@ -4,7 +4,7 @@ import {
 	HttpError,
 	HttpMethod,
 	QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { ethers } from 'ethers';
 import {
 	ATTESTATION_API,

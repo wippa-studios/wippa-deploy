@@ -1,6 +1,6 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { seekTableApiCall } from './client';
-import { HttpMethod, AuthenticationType } from '@wippa/pieces-common';
+import { HttpMethod, AuthenticationType } from '@wippa/connectors-common';
 import { seekTableAuth } from './auth';
 
 interface Cube {

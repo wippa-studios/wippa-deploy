@@ -1,6 +1,6 @@
-import { AppConnectionType } from '@wippa/pieces-framework';
-import { AppConnectionValueForAuthProperty } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
+import { AppConnectionValueForAuthProperty } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import jwt from 'jsonwebtoken';
 import type { githubAuth } from '../auth';
 

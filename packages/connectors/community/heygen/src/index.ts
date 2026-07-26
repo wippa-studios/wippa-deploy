@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createVideoFromTemplateAction } from './lib/actions/create-a-video-from-template';
 import { retrieveTranslatedVideoStatus } from './lib/actions/retrieve-a-translated-video-status';
 import { retrieveVideoStatusAction } from './lib/actions/retrieve-a-video-status';
@@ -16,7 +16,7 @@ import { videoGenerationFailedTrigger } from './lib/triggers/video-generation-fa
 import { heygenAuth } from './lib/common/auth';
 import { BASE_URL_V1 } from './lib/common/client';
 
-export const heygen = createPiece({
+export const heygen = createConnector({
   displayName: 'HeyGen',
   description: 'Generate and manage AI avatar videos using HeyGen.',
   auth: heygenAuth,

@@ -2,8 +2,8 @@ import {
   DynamicPropsValue,
   DropdownState,
   Property,
-} from '@wippa/pieces-framework';
-import { tryCatch, unique } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { tryCatch, unique } from '@wippa/connectors-framework';
 import {
   baserowAuth,
   BaserowAuthValue,

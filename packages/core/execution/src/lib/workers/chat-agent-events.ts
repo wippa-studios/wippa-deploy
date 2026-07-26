@@ -26,7 +26,7 @@ export type ToolProgressEvent = {
 
 export type ActionPreviewEvent = {
     toolCallId: string
-    pieceName: string
+    connectorName: string
     actionName: string
     actionDisplayName: string
     connectionLabel?: string
@@ -39,7 +39,7 @@ export type ActionPreviewEvent = {
 export type ActionReceiptEvent = {
     toolCallId: string
     actionDisplayName: string
-    pieceName: string
+    connectorName: string
     connectionLabel?: string
     status: 'success' | 'failed'
     output: unknown

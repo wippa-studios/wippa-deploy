@@ -44,7 +44,7 @@ export const apListFlowsTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLog
                         status: flow.status,
                         published: !isNil(flow.publishedVersionId),
                         triggerType: flow.version.trigger.type === FlowTriggerType.PIECE
-                            ? (flow.version.trigger.settings.pieceName ?? 'piece (unconfigured)')
+                            ? (flow.version.trigger.settings.connectorName ?? 'piece (unconfigured)')
                             : flow.version.trigger.type,
                     })),
                     count: flows.data.length,
@@ -67,7 +67,7 @@ export const apListFlowsTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLog
 export function formatFlowLine(flow: PopulatedFlow): string {
     const trigger = flow.version.trigger
     const triggerLabel = trigger.type === FlowTriggerType.PIECE
-        ? (trigger.settings.pieceName ?? 'piece (unconfigured)')
+        ? (trigger.settings.connectorName ?? 'piece (unconfigured)')
         : 'no trigger'
     const published = !isNil(flow.publishedVersionId) ? 'published' : 'draft'
     return `- ${flow.version.displayName} (${flow.id}) | ${flow.status} | ${published} | trigger: ${triggerLabel}`

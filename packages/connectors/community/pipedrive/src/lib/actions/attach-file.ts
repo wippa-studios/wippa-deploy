@@ -1,8 +1,8 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { dealIdProp, organizationIdProp, personIdProp, productIdProp } from '../common/props';
 import FormData from 'form-data';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 
 export const attachFileAction = createAction({
 	auth: pipedriveAuth,

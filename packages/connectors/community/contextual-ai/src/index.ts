@@ -1,6 +1,6 @@
 
-import { PieceAuth, createPiece, Property } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector, Property } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { ContextualAI } from 'contextual-client';
 import { queryAgentAction } from './lib/actions/query-agent';
 import { generateAction } from './lib/actions/generate';
@@ -33,7 +33,7 @@ const markdown = `
 - Only change if you have a custom deployment
 `;
 
-export const contextualAi = createPiece({
+export const contextualAi = createConnector({
   displayName: "Contextual AI",
   description: "Integrate with Contextual AI to automate document processing and AI workflows",
   auth: contextualAiAuth,

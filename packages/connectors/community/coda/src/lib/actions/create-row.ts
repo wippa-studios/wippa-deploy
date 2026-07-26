@@ -1,8 +1,8 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { codaAuth } from '../auth';
 import { codaClient } from '../common/types';
 import { docIdDropdown, tableIdDropdown, tableRowsDynamicProps } from '../common/props';
-import { isNil } from '@wippa/pieces-framework';
+import { isNil } from '@wippa/connectors-framework';
 
 export const createRowAction = createAction({
 	auth: codaAuth,

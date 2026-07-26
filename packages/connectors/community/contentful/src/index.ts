@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   ContentfulCreateRecordAction,
   ContentfulGetRecordAction,
@@ -8,7 +8,7 @@ import {
 } from './lib/actions/records';
 import { ContentfulAuth } from './lib/common';
 
-export const contentful = createPiece({
+export const contentful = createConnector({
   displayName: 'Contentful',
   description: 'Content infrastructure for digital teams',
 

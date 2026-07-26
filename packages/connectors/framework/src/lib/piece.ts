@@ -4,8 +4,8 @@ import {
   EventPayload,
   ParseEventResponse,
   PieceCategory,
-} from '@wippa/core-piece-types';
-import { PieceBase, PieceMetadata} from './piece-metadata';
+} from '@wippa/core-connector-types';
+import { PieceBase, ConnectorMetadata} from './piece-metadata';
 import { PieceAuthProperty } from './property/authentication';
 import { ServerContext } from './context';
 import { ContextVersion, LATEST_CONTEXT_VERSION, MINIMUM_SUPPORTED_RELEASE_AFTER_LATEST_CONTEXT_VERSION } from './context/versioning';
@@ -75,7 +75,7 @@ export class Piece<PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | u
   }
 }
 
-export const createPiece = <PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined>(
+export const createConnector = <PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined>(
   params: CreatePieceParams<PieceAuth>
 ) => {
   if(params.auth && Array.isArray(params.auth)) { 
@@ -128,9 +128,9 @@ type PieceEventProcessors = {
   }) => boolean;
 };
 
-type BackwardCompatiblePieceMetadata = Omit<PieceMetadata, 'name' | 'version' | 'authors' | 'i18n' | 'getContextInfo'> & {
-  authors?: PieceMetadata['authors']
-  i18n?: PieceMetadata['i18n']
+type BackwardCompatiblePieceMetadata = Omit<ConnectorMetadata, 'name' | 'version' | 'authors' | 'i18n' | 'getContextInfo'> & {
+  authors?: ConnectorMetadata['authors']
+  i18n?: ConnectorMetadata['i18n']
 }
 
 function isValidSimpleSemver(version: string): boolean {

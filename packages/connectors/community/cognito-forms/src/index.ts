@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 import { createEntryAction } from './lib/actions/create-entry';
 import { updateEntryAction } from './lib/actions/update-entry';
 import { deleteEntryAction } from './lib/actions/delete-entry';
@@ -9,11 +9,11 @@ import { entryUpdatedTrigger } from './lib/triggers/entry-updated';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { makeRequest } from './lib/common';
 import { cognitoFormsAuth } from './lib/auth';
 
-export const cognitoForms = createPiece({
+export const cognitoForms = createConnector({
   displayName: 'Cognito Forms',
   auth: cognitoFormsAuth,
   logoUrl: 'https://cdn.activepieces.com/pieces/cognito-forms.png',

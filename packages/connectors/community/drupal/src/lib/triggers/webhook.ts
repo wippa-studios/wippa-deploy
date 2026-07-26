@@ -1,12 +1,12 @@
 import {
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { drupalAuth } from '../auth';
 
 const webhookStoreKey = (id: string) => `_drupal_webhook_trigger_${id}`;

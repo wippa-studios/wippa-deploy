@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { newLead } from './lib/triggers/new-lead';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const poper = createPiece({
+export const poper = createConnector({
   displayName: 'Poper',
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.30.0',

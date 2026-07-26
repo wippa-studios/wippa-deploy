@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { greipAuth } from './lib/common/auth';
 import { asnLookup } from './lib/actions/asn-lookup';
 import { binLookup } from './lib/actions/bin-lookup';
@@ -13,7 +13,7 @@ import { profanityTextDetectedTrigger } from './lib/triggers/profanity-text-dete
 import { spamEmailDetectedTrigger } from './lib/triggers/spam-email-detected';
 import { spamPhoneDetectedTrigger } from './lib/triggers/spam-phone-detected';
 
-export const greip = createPiece({
+export const greip = createConnector({
   displayName: 'Greip',
   description: 'Detect and prevent fraud in your website or app with Greip\'s Fraud Prevention API. Protect your business from financial losses and gain better insights into your users.',
   auth: greipAuth,

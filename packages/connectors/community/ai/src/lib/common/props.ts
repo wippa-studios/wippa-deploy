@@ -1,7 +1,7 @@
-import { PieceAuth, Property } from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
-import { AIProviderModel, AIProviderName, AIProviderWithoutSensitiveData } from '@wippa/pieces-framework';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
+import { AIProviderModel, AIProviderName, AIProviderWithoutSensitiveData } from '@wippa/connectors-framework';
 
 type AIModelType = 'text' | 'image';
 

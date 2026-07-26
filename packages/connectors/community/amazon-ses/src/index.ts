@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { SES, GetSendQuotaCommand } from '@aws-sdk/client-ses';
 import { sendEmail } from './lib/actions/send-email';
 import { createEmailTemplate } from './lib/actions/create-email-template';
@@ -13,7 +13,7 @@ import { sendCustomVerificationEmail } from './lib/actions/send-custom-verificat
 import { updateCustomVerificationEmailTemplate } from './lib/actions/update-custom-verification-email-template';
 import { amazonSesAuth } from './lib/auth';
 
-export const amazonSes = createPiece({
+export const amazonSes = createConnector({
   displayName: 'Amazon SES',
   auth: amazonSesAuth,
   minimumSupportedRelease: '0.36.1',

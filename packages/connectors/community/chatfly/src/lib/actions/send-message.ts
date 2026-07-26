@@ -1,5 +1,5 @@
-import { createAction, Property } from "@wippa/pieces-framework";
-import { HttpMethod, httpClient, AuthenticationType } from "@wippa/pieces-common";
+import { createAction, Property } from "@wippa/connectors-framework";
+import { HttpMethod, httpClient, AuthenticationType } from "@wippa/connectors-common";
 import { chatflyAuth } from '../auth';
 
 export const sendMessageAction = createAction({

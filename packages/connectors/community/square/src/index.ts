@@ -1,10 +1,10 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import crypto from 'crypto';
 import { triggers } from './lib/triggers';
 import { squareAuth } from './lib/auth';
 
-export const square = createPiece({
+export const square = createConnector({
   displayName: 'Square',
   description: 'Payment solutions for every business',
 

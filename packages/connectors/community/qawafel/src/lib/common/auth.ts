@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 
 const markdownDescription = `
 **How to get your Qawafel API Key:**

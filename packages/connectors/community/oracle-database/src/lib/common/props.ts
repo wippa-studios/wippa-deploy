@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { OracleDbClient } from './client';
   import { OracleDbAuth } from './types';
 import { oracleDbAuth } from './auth';

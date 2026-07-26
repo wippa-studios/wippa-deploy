@@ -1,7 +1,7 @@
-import { PiecePropertyMap } from '@wippa/pieces-framework'
+import { ConnectorPropertyMap } from '@wippa/connectors-framework'
 
 export const tsort = {
-    sortPropertiesByDependencies(properties: PiecePropertyMap): Record<number, string[]> {
+    sortPropertiesByDependencies(properties: ConnectorPropertyMap): Record<number, string[]> {
         const inDegree: Record<string, number> = {}
         const graph: Record<string, string[]> = {}
         const depth: Record<string, number> = {}

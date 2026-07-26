@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { callFlow } from './lib/actions/call-flow';
 import { callableFlow } from './lib/triggers/callable-flow';
 import { response } from './lib/actions/respond';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const flows = createPiece({
+export const flows = createConnector({
   displayName: 'Sub Flows',
   description: 'Trigger and call another sub flow.',
   auth: PieceAuth.None(),

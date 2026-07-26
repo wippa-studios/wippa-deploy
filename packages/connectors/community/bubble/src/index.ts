@@ -1,10 +1,10 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { bubbleCreateThingAction } from './lib/actions/create-thing';
 import { bubbleDeleteThingAction } from './lib/actions/delete-thing';
 import { bubbleGetThingAction } from './lib/actions/get-thing';
@@ -12,7 +12,7 @@ import { bubbleListThingsAction } from './lib/actions/list-things';
 import { bubbleUpdateThingAction } from './lib/actions/update-thing';
 import { bubbleAuth } from './lib/auth';
 
-export const bubble = createPiece({
+export const bubble = createConnector({
   displayName: 'Bubble',
   description: 'No-code platform for web and mobile apps',
 

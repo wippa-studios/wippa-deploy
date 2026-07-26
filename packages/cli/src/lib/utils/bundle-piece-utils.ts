@@ -3,10 +3,10 @@ import { builtinModules } from 'node:module'
 import { join, resolve, isAbsolute } from 'node:path'
 import * as esbuild from 'esbuild'
 
-async function bundlePiece({ piecePath, distPath, repoRoot }: BundlePieceParams): Promise<BundleResult> {
+async function bundleConnector({ piecePath, distPath, repoRoot }: BundlePieceParams): Promise<BundleResult> {
     const entryFile = join(piecePath, 'src', 'index.ts')
     if (!existsSync(entryFile)) {
-        throw new Error(`[bundlePiece] no entry at ${entryFile}`)
+        throw new Error(`[bundleConnector] no entry at ${entryFile}`)
     }
 
     const manifest = readPieceManifest(piecePath)
@@ -32,7 +32,7 @@ async function bundlePiece({ piecePath, distPath, repoRoot }: BundlePieceParams)
     // Anything still broken after auto-externalization is a genuine un-resolvable bug — fail loud.
     let issues = gateBundle({ metafile: pass.result.metafile, warnings: pass.result.warnings })
     if (issues.length > 0) {
-        throw new Error(`[bundlePiece] ${piecePath} failed the safety gate:\n  - ${issues.join('\n  - ')}`)
+        throw new Error(`[bundleConnector] ${piecePath} failed the safety gate:\n  - ${issues.join('\n  - ')}`)
     }
 
     // Size fallback: inlining a very large SDK (e.g. datadog's 7.7 MB API client) blows the cap.
@@ -42,7 +42,7 @@ async function bundlePiece({ piecePath, distPath, repoRoot }: BundlePieceParams)
         pass = await runEsbuild({ entryFile, outfile, repoRoot, inlineAll: false, inlineList: new Set(), external: new Set(excludeList) })
         issues = gateBundle({ metafile: pass.result.metafile, warnings: pass.result.warnings })
         if (issues.length > 0) {
-            throw new Error(`[bundlePiece] ${piecePath} failed the safety gate (external fallback):\n  - ${issues.join('\n  - ')}`)
+            throw new Error(`[bundleConnector] ${piecePath} failed the safety gate (external fallback):\n  - ${issues.join('\n  - ')}`)
         }
     }
 
@@ -220,7 +220,7 @@ function gateBundle({ metafile, warnings }: GateParams): string[] {
             issues.push(`${warning.text}${where}`)
         }
         else {
-            console.warn(`[bundlePiece] non-fatal warning: ${warning.text}${where}`)
+            console.warn(`[bundleConnector] non-fatal warning: ${warning.text}${where}`)
         }
     }
     return issues
@@ -251,10 +251,10 @@ function workspaceAliases(repoRoot: string): Record<string, string> {
         // bundle. Swap in a minimal common-types table; uncommon types fall back gracefully.
         'mime-db': resolve(repoRoot, 'packages', 'pieces', 'framework', 'src', 'mime-db-min.cjs'),
         '@wippa/shared': resolve(repoRoot, 'packages', 'core', 'shared', 'src'),
-        '@wippa/pieces-framework': resolve(repoRoot, 'packages', 'pieces', 'framework', 'src'),
-        '@wippa/pieces-common': resolve(repoRoot, 'packages', 'pieces', 'common', 'src'),
+        '@wippa/connectors-framework': resolve(repoRoot, 'packages', 'pieces', 'framework', 'src'),
+        '@wippa/connectors-common': resolve(repoRoot, 'packages', 'pieces', 'common', 'src'),
         '@wippa/core-utils': resolve(repoRoot, 'packages', 'core', 'utils', 'src'),
-        '@wippa/core-piece-types': resolve(repoRoot, 'packages', 'core', 'piece-types', 'src'),
+        '@wippa/core-connector-types': resolve(repoRoot, 'packages', 'core', 'piece-types', 'src'),
         '@wippa/core-formula': resolve(repoRoot, 'packages', 'core', 'formula', 'src'),
         '@wippa/core-execution': resolve(repoRoot, 'packages', 'core', 'execution', 'src'),
     }
@@ -268,11 +268,11 @@ function enforceSizeGate({ piecePath, bundleBytes }: SizeGateParams): void {
     const mb = bundleBytes / 1024 / 1024
     if (bundleBytes > FAIL_BYTES) {
         throw new Error(
-            `[bundlePiece] ${piecePath} bundle is ${mb.toFixed(2)} MB, over the ${FAIL_BYTES / 1024 / 1024} MB cap`,
+            `[bundleConnector] ${piecePath} bundle is ${mb.toFixed(2)} MB, over the ${FAIL_BYTES / 1024 / 1024} MB cap`,
         )
     }
     if (bundleBytes > WARN_BYTES) {
-        console.warn(`[bundlePiece] ${piecePath} bundle is ${mb.toFixed(2)} MB (warn threshold ${WARN_BYTES / 1024 / 1024} MB)`)
+        console.warn(`[bundleConnector] ${piecePath} bundle is ${mb.toFixed(2)} MB (warn threshold ${WARN_BYTES / 1024 / 1024} MB)`)
     }
 }
 
@@ -318,7 +318,7 @@ const NATIVE_EXTERNALS = new Set<string>([
     '@actual-app/api', 'pg-format', 'clarifai-nodejs-grpc',
 ])
 
-export const bundlePieceUtils = { bundlePiece, BUNDLE_FILENAME, readInlineConfig, unsafePackages }
+export const bundlePieceUtils = { bundleConnector, BUNDLE_FILENAME, readInlineConfig, unsafePackages }
 
 export type BundlePieceParams = {
     piecePath: string

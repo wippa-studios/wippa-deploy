@@ -1,9 +1,9 @@
 
-import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth, Property } from "@wippa/connectors-framework";
 import { DATA_CENTER_REGIONS } from "./lib/common/constants";
 import { getZohoBiginAccountAuthorizationUrl } from "./lib/common/helpers";
 import { newContactCreated } from "./lib/triggers/new-contact-created";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { companyUpdated } from "./lib/triggers/company-updated";
 import { contactUpdated } from "./lib/triggers/contact-updated";
 import { newCallCreated } from "./lib/triggers/new-call-created";
@@ -31,7 +31,7 @@ import { searchProductRecord } from "./lib/actions/search-product";
 import { searchUser } from "./lib/actions/search-user";
 import { biginAuth } from './lib/auth';
 
-export const biginByZoho = createPiece({
+export const biginByZoho = createConnector({
   displayName: 'Bigin by Zoho CRM',
   description:
     'Bigin by Zoho CRM is a lightweight CRM designed for small businesses to manage contacts, companies, deals (pipeline records), tasks, calls, and events.',

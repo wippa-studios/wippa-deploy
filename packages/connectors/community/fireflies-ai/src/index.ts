@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { findMeetingByIdAction } from './lib/actions/find-meeting-by-id';
 import { findRecentMeetingAction } from './lib/actions/find-recent-meeting';
@@ -16,7 +16,7 @@ To use Fireflies.ai, you need to get an API key:
 3. Copy the API key from the API Key section.
 `;
 
-export const firefliesAi = createPiece({
+export const firefliesAi = createConnector({
 	displayName: 'Fireflies.ai',
 	description: 'Meeting assistant that automatically records, transcribes, and analyzes conversations',
 	logoUrl: 'https://cdn.activepieces.com/pieces/fireflies-ai.png',

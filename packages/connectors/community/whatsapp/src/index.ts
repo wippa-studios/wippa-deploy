@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { sendMedia } from './lib/actions/send-media';
 import { sendTemplateMessageAction } from './lib/actions/send-from-template';
@@ -18,7 +18,7 @@ To Obtain a Phone Number ID and a Permanent System User Access Token, follow the
 9. Create a new System User with access over the app and copy the access token.
 `;
 
-export const whatsapp = createPiece({
+export const whatsapp = createConnector({
 	displayName: 'WhatsApp Business',
 	description: 'Manage your WhatsApp business account',
 	auth: whatsappAuth,

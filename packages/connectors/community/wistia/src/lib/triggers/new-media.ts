@@ -3,8 +3,8 @@ import {
   createTrigger,
   StaticPropsValue,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@wippa/connectors-common';
 import { wistiaAuth } from '../../';
 import { flattenMedia, wistiaApiCall, wistiaCommon, WistiaMedia } from '../common';
 

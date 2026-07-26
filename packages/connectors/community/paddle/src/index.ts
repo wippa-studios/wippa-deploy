@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { cancelSubscriptionAction } from './lib/actions/cancel-subscription';
 import { createTransactionAction } from './lib/actions/create-transaction';
@@ -15,7 +15,7 @@ import { subscriptionCanceled } from './lib/triggers/subscription-canceled';
 import { subscriptionPastDue } from './lib/triggers/subscription-past-due';
 import { transactionCompleted } from './lib/triggers/transaction-completed';
 
-const paddle = createPiece({
+const paddle = createConnector({
   displayName: 'Paddle',
   description:
     'Manage customers, subscriptions, and recurring billing with Paddle Billing.',

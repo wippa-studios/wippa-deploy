@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { gmailAuth, createGoogleClient } from '../auth';
 import { gmail as googleGmail } from '@googleapis/gmail';
 import { convertAttachment, parseStream } from '../common/data';

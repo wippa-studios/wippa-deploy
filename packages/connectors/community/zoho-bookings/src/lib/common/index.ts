@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { PieceAuth, Property } from '@wippa/pieces-framework';
-import { OAuth2GrantType } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { PieceAuth, Property } from '@wippa/connectors-framework';
+import { OAuth2GrantType } from '@wippa/connectors-framework';
 import * as schemas from './schemas';
 
 export const zohoBookingsAuth = PieceAuth.OAuth2({

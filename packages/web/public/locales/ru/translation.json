@@ -227,7 +227,7 @@
   "Use Mock Data": "Использовать данные док-станции",
   "Test Tool": "Тестовый инструмент",
   "Load Sample Data": "Загрузка примера данных",
-  "testPieceWebhookTriggerNote": "Пожалуйста, перейдите на {pieceName} и триггер {triggerName}",
+  "testPieceWebhookTriggerNote": "Пожалуйста, перейдите на {connectorName} и триггер {triggerName}",
   "Send Data to the webhook URL to generate sample data to use in the next steps": "Отправить данные на URL-адрес webhook для генерации образцов данных для использования в следующих шагах",
   "Testing Trigger": "Тестирование триггера",
   "Action Required": "Требуется действие",

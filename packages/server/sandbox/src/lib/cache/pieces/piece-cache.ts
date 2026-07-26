@@ -1,27 +1,27 @@
 import path from 'path'
 import { ActivepiecesError, ErrorCode } from '@wippa/core-utils'
 import { type ApLogger, wideEvent } from '@wippa/server-utils'
-import { ApEnvironment, EXACT_VERSION_REGEX, PackageType, PiecePackage, PieceType, WorkerToApiContract } from '@wippa/shared'
+import { ApEnvironment, EXACT_VERSION_REGEX, PackageType, ConnectorPackage, ConnectorType, WorkerToApiContract } from '@wippa/shared'
 import { SandboxSettings } from '../../types'
 import { cacheUtils } from '../cache-paths'
 import { cacheState, NO_SAVE_GUARD } from '../cache-state'
 import { isValidPackageName } from './piece-installer'
 
-export const pieceCache = (log: ApLogger, apiClient: WorkerToApiContract, basePath: string, getSettings: () => SandboxSettings) => ({
-    async getPiece({ pieceName, pieceVersion, platformId }: PieceCacheKey): Promise<PiecePackage> {
-        if (!isValidPackageName(pieceName)) {
+export const connectorCache = (log: ApLogger, apiClient: WorkerToApiContract, basePath: string, getSettings: () => SandboxSettings) => ({
+    async getConnector({ connectorName, connectorVersion, platformId }: PieceCacheKey): Promise<ConnectorPackage> {
+        if (!isValidPackageName(connectorName)) {
             throw new ActivepiecesError({
                 code: ErrorCode.VALIDATION,
-                params: { message: `Invalid pieceName: "${pieceName}" is not a valid package name` },
+                params: { message: `Invalid connectorName: "${connectorName}" is not a valid package name` },
             })
         }
-        const isExactVersion = EXACT_VERSION_REGEX.test(pieceVersion)
+        const isExactVersion = EXACT_VERSION_REGEX.test(connectorVersion)
 
         if (!isExactVersion) {
-            return getPiecePackage({ pieceName, pieceVersion, platformId }, apiClient)
+            return getPiecePackage({ connectorName, connectorVersion, platformId }, apiClient)
         }
 
-        const cacheKey = `${pieceName}-${pieceVersion}-${platformId}`
+        const cacheKey = `${connectorName}-${connectorVersion}-${platformId}`
         const cache = cacheState(path.join(cacheUtils(basePath).getGlobalCachePiecesPath(), cacheKey))
 
         const { state, cacheHit } = await cache.getOrSetCache({
@@ -32,7 +32,7 @@ export const pieceCache = (log: ApLogger, apiClient: WorkerToApiContract, basePa
                     return true
                 }
                 const devPieces = getSettings().DEV_PIECES
-                if (devPieces.includes(pieceName)) {
+                if (devPieces.includes(connectorName)) {
                     return true
                 }
                 return false
@@ -41,9 +41,9 @@ export const pieceCache = (log: ApLogger, apiClient: WorkerToApiContract, basePa
                 return wideEvent.timed({
                     name: 'pieceFetch',
                     fn: async () => {
-                        const piecePackage = await getPiecePackage({ pieceName, pieceVersion, platformId }, apiClient)
-                        log.info({ piece: { name: pieceName, version: pieceVersion }, platform: { id: platformId } }, 'Cached piece')
-                        return JSON.stringify(piecePackage)
+                        const connectorPackage = await getPiecePackage({ connectorName, connectorVersion, platformId }, apiClient)
+                        log.info({ piece: { name: connectorName, version: connectorVersion }, platform: { id: platformId } }, 'Cached piece')
+                        return JSON.stringify(connectorPackage)
                     },
                 })
             },
@@ -52,55 +52,55 @@ export const pieceCache = (log: ApLogger, apiClient: WorkerToApiContract, basePa
 
         wideEvent.set({ pieceCacheHit: cacheHit })
 
-        return JSON.parse(state as string) as PiecePackage
+        return JSON.parse(state as string) as ConnectorPackage
     },
 })
 
-async function getPiecePackage(query: PieceCacheKey, apiClient: WorkerToApiContract): Promise<PiecePackage> {
-    const pieceMetadata = await apiClient.getPiece({
-        name: query.pieceName,
-        version: query.pieceVersion,
+async function getPiecePackage(query: PieceCacheKey, apiClient: WorkerToApiContract): Promise<ConnectorPackage> {
+    const connectorMetadata = await apiClient.getConnector({
+        name: query.connectorName,
+        version: query.connectorVersion,
         platformId: query.platformId,
-    }) as { packageType: PackageType, name: string, version: string, pieceType: PieceType, archiveId?: string } | null
+    }) as { packageType: PackageType, name: string, version: string, pieceType: ConnectorType, archiveId?: string } | null
 
-    if (!pieceMetadata) {
-        throw new PieceNotFoundError(query.pieceName, query.pieceVersion)
+    if (!connectorMetadata) {
+        throw new PieceNotFoundError(query.connectorName, query.connectorVersion)
     }
 
     const baseProps = {
-        packageType: pieceMetadata.packageType,
-        pieceName: pieceMetadata.name,
-        pieceVersion: pieceMetadata.version,
-        pieceType: pieceMetadata.pieceType,
+        packageType: connectorMetadata.packageType,
+        connectorName: connectorMetadata.name,
+        connectorVersion: connectorMetadata.version,
+        pieceType: connectorMetadata.pieceType,
     }
 
-    if (pieceMetadata.packageType === PackageType.ARCHIVE) {
+    if (connectorMetadata.packageType === PackageType.ARCHIVE) {
         return {
             ...baseProps,
-            archiveId: pieceMetadata.archiveId!,
+            archiveId: connectorMetadata.archiveId!,
             platformId: query.platformId,
-        } as PiecePackage
+        } as ConnectorPackage
     }
 
-    if (pieceMetadata.pieceType === PieceType.CUSTOM) {
+    if (connectorMetadata.pieceType === ConnectorType.CUSTOM) {
         return {
             ...baseProps,
             platformId: query.platformId,
-        } as PiecePackage
+        } as ConnectorPackage
     }
 
-    return baseProps as PiecePackage
+    return baseProps as ConnectorPackage
 }
 
 export class PieceNotFoundError extends Error {
-    constructor(readonly pieceName: string, readonly pieceVersion: string) {
-        super(`Piece metadata not found for ${pieceName}@${pieceVersion}`)
+    constructor(readonly connectorName: string, readonly connectorVersion: string) {
+        super(`Piece metadata not found for ${connectorName}@${connectorVersion}`)
         this.name = 'PieceNotFoundError'
     }
 }
 
 type PieceCacheKey = {
-    pieceName: string
-    pieceVersion: string
+    connectorName: string
+    connectorVersion: string
     platformId: string
 }

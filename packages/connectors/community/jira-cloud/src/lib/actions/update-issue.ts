@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property, createAction } from '@wippa/pieces-framework';
+import { DynamicPropsValue, Property, createAction } from '@wippa/connectors-framework';
 import { JiraAuth, jiraCloudAuth } from '../../auth';
 import {
 	createPropertyDefinition,
@@ -10,8 +10,8 @@ import {
 } from '../common/props';
 import { jiraApiCall } from '../common';
 import { IssueFieldMetaData, VALID_CUSTOM_FIELD_TYPES } from '../common/types';
-import { HttpMethod } from '@wippa/pieces-common';
-import { isNil } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { isNil } from '@wippa/connectors-framework';
 
 async function getFields(auth: JiraAuth, issueId: string): Promise<IssueFieldMetaData[]> {
 	const response = await jiraApiCall<{ fields: { [x: string]: IssueFieldMetaData } }>({

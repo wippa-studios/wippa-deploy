@@ -1,9 +1,9 @@
-import { DropdownOption, Property } from '@wippa/pieces-framework';
+import { DropdownOption, Property } from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { motionAuth } from '../auth';
 
 export const BASE_URL = 'https://api.usemotion.com/v1';

@@ -1,5 +1,5 @@
 import { SeekPage } from '@wippa/core-utils'
-import { FlowsContext, ListFlowsContextParams } from '@wippa/pieces-framework'
+import { FlowsContext, ListFlowsContextParams } from '@wippa/connectors-framework'
 import { FetchError, PopulatedFlow } from '@wippa/shared'
 
 export const createFlowsContext = ({ engineToken, internalApiUrl, flowId, flowVersionId }: CreateFlowsServiceParams): FlowsContext => {

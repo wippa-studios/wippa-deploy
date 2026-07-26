@@ -11,11 +11,11 @@ import { platformPiecesMutations } from '@/features/platform-admin';
 import { platformHooks } from '@/hooks/platform-hooks';
 
 type PieceActionsProps = {
-  pieceName: string;
+  connectorName: string;
   isEnabled: boolean;
 };
 
-const PieceActions = ({ pieceName, isEnabled }: PieceActionsProps) => {
+const ConnectorActions = ({ connectorName, isEnabled }: PieceActionsProps) => {
   const { platform, refetch } = platformHooks.useCurrentPlatform();
 
   const { mutate: togglePin, isPending: isPinPending } =
@@ -25,7 +25,7 @@ const PieceActions = ({ pieceName, isEnabled }: PieceActionsProps) => {
       refetch,
     });
 
-  const pinned = platform.pinnedPieces.includes(pieceName);
+  const pinned = platform.pinnedPieces.includes(connectorName);
 
   return (
     <div className="flex gap-2">
@@ -41,7 +41,7 @@ const PieceActions = ({ pieceName, isEnabled }: PieceActionsProps) => {
                 e.preventDefault();
                 return;
               }
-              togglePin(pieceName);
+              togglePin(connectorName);
             }}
           >
             {pinned ? (
@@ -59,6 +59,6 @@ const PieceActions = ({ pieceName, isEnabled }: PieceActionsProps) => {
   );
 };
 
-PieceActions.displayName = 'PieceActions';
+ConnectorActions.displayName = 'ConnectorActions';
 
-export { PieceActions };
+export { ConnectorActions };

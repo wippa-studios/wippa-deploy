@@ -2,7 +2,7 @@ import { FlowActionType, FlowTriggerType } from '@wippa/shared';
 
 import { CardListItem } from '@/components/custom/card-list';
 import {
-  PieceIcon,
+  ConnectorIcon,
   PieceSelectorItem,
   StepMetadataWithSuggestions,
   PIECE_SELECTOR_ELEMENTS_HEIGHTS,
@@ -61,7 +61,7 @@ const GenericActionOrTriggerItem = ({
             'opacity-0': hidePieceIconAndDescription,
           })}
         >
-          <PieceIcon
+          <ConnectorIcon
             logoUrl={stepMetadataWithSuggestions.logoUrl}
             displayName={stepMetadataWithSuggestions.displayName}
             showTooltip={false}

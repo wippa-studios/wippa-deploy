@@ -1,13 +1,13 @@
 import {
   HttpMethod,
   createCustomApiCallAction,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 import { adjustInventoryLevelAction } from './lib/actions/adjust-inventory-level';
 import { cancelOrderAction } from './lib/actions/cancel-order';
 import { closeOrderAction } from './lib/actions/close-order';
@@ -94,7 +94,7 @@ export const shopifyAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const shopify = createPiece({
+export const shopify = createConnector({
   displayName: 'Shopify',
   description: 'Ecommerce platform for online stores',
   logoUrl: 'https://cdn.activepieces.com/pieces/shopify.png',

@@ -1,11 +1,11 @@
 import { acumbamailAuth } from '../auth';
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { acumbamailCommon } from '../common';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const removeSubscribeAction = createAction({
   auth: acumbamailAuth,

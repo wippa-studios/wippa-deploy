@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod, QueryParams, httpClient } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod, QueryParams, httpClient } from '@wippa/connectors-common';
 import { supadataAuth } from '../..';
 import { supadataConfig } from '../config';
 

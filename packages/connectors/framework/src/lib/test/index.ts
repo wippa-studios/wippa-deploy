@@ -1,4 +1,4 @@
-import { ExecutionType, TriggerStrategy } from '@wippa/core-piece-types';
+import { ExecutionType, TriggerStrategy } from '@wippa/core-connector-types';
 import {
   ActionContext,
   SetScheduleRequest,

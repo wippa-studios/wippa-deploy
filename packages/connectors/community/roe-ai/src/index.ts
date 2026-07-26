@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { roeAiAuth } from './lib/common/auth';
 import { runQuery } from './lib/actions/run-query';
 import { runAgent } from './lib/actions/run-agent';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { auth } from '@modelcontextprotocol/sdk/client/auth';
 
-export const roeAi = createPiece({
+export const roeAi = createConnector({
   displayName: 'Roe AI',
   auth: roeAiAuth,
   minimumSupportedRelease: '0.36.1',

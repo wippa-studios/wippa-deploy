@@ -8,8 +8,8 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 
 const { mockSendRequest } = vi.hoisted(() => ({ mockSendRequest: vi.fn() }))
 
-vi.mock('@wippa/pieces-common', async (importOriginal) => {
-    const original = await importOriginal<typeof import('@wippa/pieces-common')>()
+vi.mock('@wippa/connectors-common', async (importOriginal) => {
+    const original = await importOriginal<typeof import('@wippa/connectors-common')>()
     return {
         ...original,
         httpClient: { ...original.httpClient, sendRequest: mockSendRequest },

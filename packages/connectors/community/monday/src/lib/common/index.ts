@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, DynamicPropsValue, Property } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, DynamicPropsValue, Property } from '@wippa/connectors-framework';
 import { mondayClient } from './client';
 import { MondayColumnType, MondayNotWritableColumnType } from './constants';
 import { convertMondayColumnToActivepiecesProp } from './helper';

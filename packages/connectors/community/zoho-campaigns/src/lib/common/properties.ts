@@ -1,4 +1,4 @@
-import { PiecePropValueSchema, Property } from '@wippa/pieces-framework';
+import { PiecePropValueSchema, Property } from '@wippa/connectors-framework';
 import { zohoCampaignsAuth, zohoCampaignsCommon } from '.';
 import { Tag } from './types';
 

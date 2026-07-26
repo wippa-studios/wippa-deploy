@@ -3,12 +3,12 @@ import {
   PieceAuth,
   Property,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 const WHATCONVERTS_API_URL = 'https://app.whatconverts.com/api/v1';
 

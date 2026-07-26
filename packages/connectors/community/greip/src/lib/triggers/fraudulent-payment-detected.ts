@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { greipAuth } from '../common/auth';
 
 export const fraudulentPaymentDetectedTrigger = createTrigger({

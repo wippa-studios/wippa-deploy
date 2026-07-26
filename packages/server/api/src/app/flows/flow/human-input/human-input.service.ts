@@ -7,7 +7,7 @@ import { projectService } from '../../../project/project-service'
 import { flowVersionService } from '../../flow-version/flow-version.service'
 import { flowRepo } from '../flow.repo'
 
-const FORMS_PIECE_NAME = '@wippa/piece-forms'
+const FORMS_PIECE_NAME = '@wippa/connector-forms'
 const FORM_TRIIGGER = 'form_submission'
 const FILE_TRIGGER = 'file_submission'
 const SIMPLE_FILE_PROPS = {
@@ -31,7 +31,7 @@ function isFormTrigger(flow: PopulatedFlow | null): flow is PopulatedFlow {
         return false
     }
     const triggerSettings = flow.version.trigger.settings
-    return triggerSettings.pieceName === FORMS_PIECE_NAME && FORMS_TRIGGER_NAMES.includes(triggerSettings.triggerName)
+    return triggerSettings.connectorName === FORMS_PIECE_NAME && FORMS_TRIGGER_NAMES.includes(triggerSettings.triggerName)
 }
 
 export const humanInputService = (log: FastifyBaseLogger) => ({
@@ -47,9 +47,9 @@ export const humanInputService = (log: FastifyBaseLogger) => ({
                 },
             })
         }
-        const pieceVersion = await pieceMetadataService(log).resolveExactVersion({
+        const connectorVersion = await pieceMetadataService(log).resolveExactVersion({
             name: FORMS_PIECE_NAME,
-            version: flow.version.trigger.settings.pieceVersion,
+            version: flow.version.trigger.settings.connectorVersion,
             platformId: await projectService(log).getPlatformId(flow.projectId),
         })
         const triggerSettings = flow.version.trigger.settings
@@ -58,14 +58,14 @@ export const humanInputService = (log: FastifyBaseLogger) => ({
             title: flow.version.displayName,
             props: triggerSettings.triggerName === FILE_TRIGGER ? SIMPLE_FILE_PROPS : triggerSettings.input,
             projectId: flow.projectId,
-            version: pieceVersion,
+            version: connectorVersion,
         }
     },
     getChatUIByFlowIdOrThrow: async (flowId: string, useDraft: boolean): Promise<ChatUIResponse> => {
         const flow = await getPopulatedFlowById(log, flowId, useDraft)
         if (!flow
             || flow.version.trigger.settings.triggerName !== 'chat_submission'
-            || flow.version.trigger.settings.pieceName !== FORMS_PIECE_NAME) {
+            || flow.version.trigger.settings.connectorName !== FORMS_PIECE_NAME) {
             throw new ActivepiecesError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {

@@ -2,10 +2,10 @@ import {
   createAction,
   Property,
   OAuth2PropertyValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';
-import { HttpMethod, getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { HttpMethod, getAccessTokenOrThrow } from '@wippa/connectors-common';
 import { adAccountIdDropdown, pinIdDropdown } from '../common/props';
 
 export const deletePin = createAction({

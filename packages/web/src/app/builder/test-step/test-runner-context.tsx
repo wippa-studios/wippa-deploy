@@ -32,7 +32,7 @@ const ActionTestRunnerContext =
 
 const isReturnResponseAndWaitForWebhook = (step: FlowAction) =>
   step.type === FlowActionType.PIECE &&
-  step.settings.pieceName === '@wippa/piece-webhook' &&
+  step.settings.connectorName === '@wippa/connector-webhook' &&
   step.settings.actionName === 'return_response_and_wait_for_next_webhook';
 
 const ActionTestRunnerProvider = ({
@@ -103,27 +103,27 @@ const TriggerTestRunnerProvider = ({
   const queryClient = useQueryClient();
 
   const isPieceTrigger = step.type === FlowTriggerType.PIECE;
-  const pieceName = isPieceTrigger ? step.settings.pieceName : '';
-  const pieceVersion = isPieceTrigger ? step.settings.pieceVersion : undefined;
+  const connectorName = isPieceTrigger ? step.settings.connectorName : '';
+  const connectorVersion = isPieceTrigger ? step.settings.connectorVersion : undefined;
   const triggerName = isPieceTrigger ? step.settings.triggerName : undefined;
 
-  const { pieceModel, isLoading: isPieceLoading } = piecesHooks.usePiece({
-    name: pieceName,
-    version: pieceVersion,
-    enabled: isPieceTrigger && !!pieceName,
+  const { connectorModel, isLoading: isPieceLoading } = piecesHooks.usePiece({
+    name: connectorName,
+    version: connectorVersion,
+    enabled: isPieceTrigger && !!connectorName,
   });
 
-  const trigger = triggerName ? pieceModel?.triggers?.[triggerName] : undefined;
+  const trigger = triggerName ? connectorModel?.triggers?.[triggerName] : undefined;
   const mockData = trigger?.sampleData;
 
   const testType: TestType | null =
-    trigger && triggerName && pieceName
-      ? triggerEventUtils.getTestType({ triggerName, pieceName, trigger })
+    trigger && triggerName && connectorName
+      ? triggerEventUtils.getTestType({ triggerName, connectorName, trigger })
       : null;
 
   const isManualTrigger =
-    pieceName && triggerName
-      ? pieceSelectorUtils.isManualTrigger({ pieceName, triggerName })
+    connectorName && triggerName
+      ? pieceSelectorUtils.isManualTrigger({ connectorName, triggerName })
       : false;
 
   const onTestSuccess = useCallback(async () => {
@@ -197,7 +197,7 @@ const TriggerTestRunnerProvider = ({
     <TriggerTestRunnerContext.Provider
       value={{
         step,
-        pieceModel,
+        connectorModel,
         isPieceLoading,
         testType,
         mockData,
@@ -256,7 +256,7 @@ type ActionTestRunnerProviderProps = {
 
 type TriggerTestRunnerContextValue = {
   step: FlowTrigger;
-  pieceModel: ReturnType<typeof piecesHooks.usePiece>['pieceModel'];
+  connectorModel: ReturnType<typeof piecesHooks.usePiece>['connectorModel'];
   isPieceLoading: boolean;
   testType: TestType | null;
   mockData: unknown;

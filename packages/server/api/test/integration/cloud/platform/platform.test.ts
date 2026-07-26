@@ -355,12 +355,12 @@ describe('Platform API', () => {
                         title: 'Internal Tools',
                         icon: 'Star',
                         hidden: false,
-                        pieceNames: ['@wippa/piece-internal-a', '@wippa/piece-internal-b'],
+                        pieceNames: ['@wippa/connector-internal-a', '@wippa/connector-internal-b'],
                         sections: [
                             {
                                 id: apId(),
                                 title: 'CRM',
-                                pieceNames: ['@wippa/piece-internal-crm'],
+                                pieceNames: ['@wippa/connector-internal-crm'],
                             },
                         ],
                     },

@@ -1,5 +1,5 @@
 import { actualBudgetAuth } from '../..';
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import * as api from '@actual-app/api';
 import { initializeAndDownloadBudget } from '../common/common';
 

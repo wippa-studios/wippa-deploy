@@ -1,6 +1,6 @@
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
-import { tryCatch } from '@wippa/pieces-framework';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
+import { tryCatch } from '@wippa/connectors-framework';
 import { getGraphBaseUrl } from './microsoft-cloud';
 
 // Single-tenant app-only token. Same app registration mints a Graph token

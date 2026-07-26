@@ -3,8 +3,8 @@ import {
   HttpMessageBody,
   HttpMethod,
   QueryParams,
-} from '@wippa/pieces-common';
-import { OAuth2PropertyValue } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { OAuth2PropertyValue } from '@wippa/connectors-framework';
 
 export const WEEKDONE_BASE_URL = 'https://api.weekdone.com/1';
 

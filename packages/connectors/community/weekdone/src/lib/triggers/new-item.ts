@@ -3,14 +3,14 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   httpClient,
   HttpMethod,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { weekdoneAuth } from '../auth';
 import { weekdoneCommon } from '../common';
 

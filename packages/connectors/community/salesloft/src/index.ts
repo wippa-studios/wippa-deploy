@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { salesloftAuth } from './lib/auth';
 import { SALESLOFT_API_BASE } from './lib/common/client';
@@ -12,7 +12,7 @@ import { listCadencesAction } from './lib/actions/list-cadences';
 import { listPeopleAction } from './lib/actions/list-people';
 import { updatePersonAction } from './lib/actions/update-person';
 
-export const salesloft = createPiece({
+export const salesloft = createConnector({
   displayName: 'Salesloft',
   description:
     'Sales engagement platform for cadences, people, and revenue workflows.',

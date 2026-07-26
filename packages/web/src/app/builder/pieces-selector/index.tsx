@@ -36,7 +36,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { AITabContent } from './ai-tab-content';
 import { ApprovalsTabContent } from './approvals-tab-content';
 import { ExploreTabContent } from './explore-tab-content';
-import { PiecesCardList } from './pieces-card-list';
+import { PiecesCardList } from './connectors-card-list';
 
 const getTabsList = (
   operationType: FlowOperationType,
@@ -243,4 +243,4 @@ const PieceSelectorContent = ({
   );
 };
 
-export { PieceSelectorWrapper as PieceSelector };
+export { PieceSelectorWrapper as ConnectorSelector };

@@ -28,8 +28,8 @@ function makeFlowVersion(): FlowVersion {
                 displayName: 'Ask AI',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@wippa/piece-ai',
-                    pieceVersion: '0.1.0',
+                    connectorName: '@wippa/connector-ai',
+                    connectorVersion: '0.1.0',
                     actionName: 'askAi',
                     input: {
                         provider: 'GOOGLE',
@@ -43,8 +43,8 @@ function makeFlowVersion(): FlowVersion {
                     displayName: 'Run Agent',
                     type: FlowActionType.PIECE,
                     settings: {
-                        pieceName: '@wippa/piece-ai',
-                        pieceVersion: '0.1.0',
+                        connectorName: '@wippa/connector-ai',
+                        connectorVersion: '0.1.0',
                         actionName: 'run_agent',
                         input: {
                             [AgentPieceProps.AI_PROVIDER_MODEL]: {
@@ -60,8 +60,8 @@ function makeFlowVersion(): FlowVersion {
                         displayName: 'Run Agent Managed',
                         type: FlowActionType.PIECE,
                         settings: {
-                            pieceName: '@wippa/piece-ai',
-                            pieceVersion: '0.1.0',
+                            connectorName: '@wippa/connector-ai',
+                            connectorVersion: '0.1.0',
                             actionName: 'run_agent',
                             input: {
                                 [AgentPieceProps.AI_PROVIDER_MODEL]: {

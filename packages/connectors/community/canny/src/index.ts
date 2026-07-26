@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
 import { cannyAuth } from './lib/auth';
 import { createPostAction } from './lib/actions/create-post';
@@ -12,7 +12,7 @@ import { postStatusChangedTrigger } from './lib/triggers/post-status-changed';
 import { newCommentTrigger } from './lib/triggers/new-comment';
 import { newVoteTrigger } from './lib/triggers/new-vote';
 
-export const canny = createPiece({
+export const canny = createConnector({
   displayName: 'Canny',
   description:
     'Product feedback management platform. Collect, organize, and prioritize feature requests from your users.',

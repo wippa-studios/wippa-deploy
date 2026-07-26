@@ -1,10 +1,10 @@
-import { getAccessTokenOrThrow } from '@wippa/pieces-common';
+import { getAccessTokenOrThrow } from '@wippa/connectors-common';
 import { IntercomClient } from 'intercom-client';
 import {
   AppConnectionValueForAuthProperty,
   Property,
-} from '@wippa/pieces-framework';
-import { AppConnectionType } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { AppConnectionType } from '@wippa/connectors-framework';
 import { intercomAuth } from '../auth';
 
 export type IntercomAuthValue = AppConnectionValueForAuthProperty<

@@ -5,7 +5,7 @@ import { buildPieceAction, generateMockEngineConstants } from './test-helper'
 
 const failedHttpAction = buildPieceAction({
     name: 'send_http',
-    pieceName: '@wippa/piece-http',
+    connectorName: '@wippa/connector-http',
     actionName: 'send_request',
     input: {
         'url': 'https://cloud.activepieces.com/api/v1/asd',
@@ -19,7 +19,7 @@ const failedHttpAction = buildPieceAction({
 
 const successHttpAction =  buildPieceAction({
     name: 'send_http',
-    pieceName: '@wippa/piece-http',
+    connectorName: '@wippa/connector-http',
     actionName: 'send_request',
     input: {
         'url': 'https://cloud.activepieces.com/api/v1/pieces',

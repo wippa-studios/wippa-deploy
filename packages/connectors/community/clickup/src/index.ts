@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createClickupTaskComment } from './lib/actions/comments/create-task-comment';
 import { getClickupTaskComments } from './lib/actions/comments/get-task-comments';
 import { getClickupAccessibleCustomFields } from './lib/actions/custom-fields/get-accessible-custom-fields';
@@ -38,7 +38,7 @@ import { deleteClickupMessageReaction } from './lib/actions/chat/delete-message-
 import { getClickupTaskByName } from './lib/actions/tasks/get-task-by-name';
 import { clickupAuth } from './lib/auth';
 
-export const clickup = createPiece({
+export const clickup = createConnector({
   displayName: 'ClickUp',
   description: 'All-in-one productivity platform',
   minimumSupportedRelease: '0.30.0',

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { assertNotNullOrUndefined } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { assertNotNullOrUndefined } from '@wippa/connectors-framework';
 import { figmaCommon } from '../common';
 import { figmaGetRequest } from '../common/utils';
 import { figmaAuth } from '../auth';

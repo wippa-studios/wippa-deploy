@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { createChatbot } from './lib/actions/createChatbot';
 import { deleteChatbot } from './lib/actions/deleteChatbot';
 import { sendMessage } from './lib/actions/sendMessage';
@@ -7,7 +7,7 @@ import { retrainChatbot } from './lib/actions/retrainChatbot';
 import { uploadFile } from './lib/actions/uploadFile';
 import { chatDataAuth } from './lib/common/types';
 
-export const chatData = createPiece({
+export const chatData = createConnector({
   displayName: 'Chat Data',
   description: 'Build AI-chatbots with support for live chat escalation, knowledge bases, or custom backend endpoints.',
   auth:chatDataAuth ,

@@ -318,7 +318,7 @@ describe('Chat Conversations API', () => {
 
     describe('Tool permission parity', () => {
         it.each([
-            { toolName: 'ap_execute_action', toolInput: { pieceName: '@wippa/piece-slack', actionName: 'send_channel_message', input: {} } },
+            { toolName: 'ap_execute_action', toolInput: { connectorName: '@wippa/connector-slack', actionName: 'send_channel_message', input: {} } },
             { toolName: 'ap_run_code', toolInput: { code: 'export const code = async () => 1' } },
         ])('blocks a VIEWER from $toolName (needs WRITE_RUN)', async ({ toolName, toolInput }) => {
             const ctx = await createTestContext(app, { plan: { chatEnabled: true } })

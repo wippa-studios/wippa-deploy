@@ -32,7 +32,7 @@ export const PieceSetConfig = z.object({
 })
 export type PieceSetConfig = z.infer<typeof PieceSetConfig>
 
-export const PieceSet = z.object({
+export const ConnectorSet = z.object({
     ...BaseModelSchema,
     platformId: ApId,
     name: z.string(),
@@ -41,7 +41,7 @@ export const PieceSet = z.object({
     generatedForProjectId: Nullable(ApId),
     config: PieceSetConfig,
 })
-export type PieceSet = z.infer<typeof PieceSet>
+export type ConnectorSet = z.infer<typeof ConnectorSet>
 
 export const ComponentIntent = z.discriminatedUnion('mode', [
     z.object({ mode: z.literal('all') }),

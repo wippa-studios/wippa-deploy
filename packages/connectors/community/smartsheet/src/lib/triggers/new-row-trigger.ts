@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { smartsheetAuth } from '../auth';
 import {
 	smartsheetCommon,
@@ -8,7 +8,7 @@ import {
 	findOrCreateWebhook,
 	verifyWebhookSignature,
 } from '../common';
-import { WebhookHandshakeStrategy } from '@wippa/pieces-framework';
+import { WebhookHandshakeStrategy } from '@wippa/connectors-framework';
 
 const TRIGGER_KEY = 'smartsheet_new_row_trigger';
 

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@wippa/pieces-common';
-import { PieceAuth } from '@wippa/pieces-framework';
+import { HttpMethod } from '@wippa/connectors-common';
+import { PieceAuth } from '@wippa/connectors-framework';
 
 import { replyIoRequest } from './common/client';
 

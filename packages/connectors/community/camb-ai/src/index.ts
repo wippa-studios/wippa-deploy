@@ -1,14 +1,14 @@
-import { PieceAuth, createPiece } from "@wippa/pieces-framework";
-import { createCustomApiCallAction, httpClient, HttpMethod } from "@wippa/pieces-common";
+import { PieceAuth, createConnector } from "@wippa/connectors-framework";
+import { createCustomApiCallAction, httpClient, HttpMethod } from "@wippa/connectors-common";
 import { createTextToSound } from "./lib/actions/create-text-to-sound";
 import { createTextToSpeech } from "./lib/actions/create-text-to-speech";
 import { createTranslation } from "./lib/actions/create-translation";
 import { createTranscription } from "./lib/actions/create-transcription";
 import { API_BASE_URL } from "./lib/common";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { cambaiAuth } from './lib/auth';
 
-export const cambAi = createPiece({
+export const cambAi = createConnector({
     displayName: "Camb.AI",
     auth: cambaiAuth,
     minimumSupportedRelease: '0.36.1',

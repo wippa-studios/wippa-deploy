@@ -6,7 +6,7 @@ import { FieldTypeIcon } from '@/components/custom/smart-output-viewer/field-typ
 import { TextWithTooltip } from '@/components/custom/text-with-tooltip';
 import { useApRipple } from '@/components/providers/theme-provider';
 import { Button } from '@/components/ui/button';
-import { PieceIcon, stepsHooks } from '@/features/pieces';
+import { ConnectorIcon, stepsHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
 import { useBuilderStateContext } from '../builder-hooks';
@@ -194,7 +194,7 @@ const StepRootIcon = ({ step }: { step: FlowAction | FlowTrigger }) => {
   if (!stepMetadata) return null;
   return (
     <div className="shrink-0">
-      <PieceIcon
+      <ConnectorIcon
         displayName={stepMetadata.displayName}
         logoUrl={stepMetadata.logoUrl}
         showTooltip={false}

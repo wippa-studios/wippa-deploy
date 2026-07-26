@@ -1,9 +1,9 @@
-import { PieceAuth, createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceAuth, createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { convertJsonToXml } from './lib/actions/convert-json-to-xml';
 import { convertXmlToJson } from './lib/actions/convert-xml-to-json';
 
-export const xml = createPiece({
+export const xml = createConnector({
   displayName: 'XML',
   description: 'Extensible Markup Language for storing and transporting data',
 

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { heartBeatCreateUser } from './lib/actions/create-user';
 
 const markdownPropertyDescription = `
@@ -18,7 +18,7 @@ export const heartbeatAuth = PieceAuth.SecretText({
   required: true,
 });
 
-export const Heartbeat = createPiece({
+export const Heartbeat = createConnector({
   displayName: 'Heartbeat',
   description: 'Monitoring and alerting made easy',
 

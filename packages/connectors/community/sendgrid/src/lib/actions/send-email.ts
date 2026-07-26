@@ -1,10 +1,10 @@
-import { ApFile, createAction, Property } from '@wippa/pieces-framework';
+import { ApFile, createAction, Property } from '@wippa/connectors-framework';
 import {
   HttpMethod,
   AuthenticationType,
   httpClient,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { getApiKey, getBaseUrl, sendgridAuth } from '../common';
 import { Attachment } from 'nodemailer/lib/mailer';
 import mime from 'mime-types';

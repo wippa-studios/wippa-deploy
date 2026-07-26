@@ -1,5 +1,5 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { countAction } from './lib/actions/count-subscriber';
 import { createCampaignAction } from './lib/actions/create-campaign';
 import { deleteAction } from './lib/actions/delete-subscriber';
@@ -12,7 +12,7 @@ import { unsubscribeAction } from './lib/actions/unsubscribe';
 import { unsubscribeMultipleAction } from './lib/actions/unsubscribe-multiple';
 import { sendyAuth } from './lib/auth';
 
-export const sendy = createPiece({
+export const sendy = createConnector({
   displayName: 'Sendy',
   description: 'Self-hosted email marketing software',
   auth: sendyAuth,

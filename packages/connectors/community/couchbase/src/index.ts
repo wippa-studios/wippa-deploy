@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth, Property } from '@wippa/connectors-framework';
 import { createCouchbaseClient, closeCluster, CouchbaseAuthValue } from './lib/common';
 import actions from './lib/actions';
 
@@ -49,7 +49,7 @@ export const couchbaseAuth = PieceAuth.CustomAuth({
   },
 });
 
-export const couchbasePiece = createPiece({
+export const couchbasePiece = createConnector({
   displayName: 'Couchbase',
   description: 'NoSQL document database for modern applications',
   auth: couchbaseAuth,

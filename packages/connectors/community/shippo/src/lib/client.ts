@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 import { ShippoConfig, Order, ShippingLabel, ApiListResponse, CreateOrderRequest } from './common';
 
 export class ShippoClient {

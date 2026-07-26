@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { addRecipientsAction } from "./lib/actions/add-recipients";
 import { countEmailsAction } from "./lib/actions/count-emails";
 import { createLeadAction } from "./lib/actions/create-lead";
@@ -12,7 +12,7 @@ import { verifyEmailAction } from "./lib/actions/verify-email";
 import { newLeadTrigger } from "./lib/triggers/new-lead";
 import { hunterAuth } from './lib/auth';
 
-export const hunter = createPiece({
+export const hunter = createConnector({
   displayName: "Hunter",
   description: 'Find, verify and manage professional email addresses at scale. Automate email discovery, validation, lead tracking, and campaign outreach with Hunter.io.',
   auth: hunterAuth,

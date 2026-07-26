@@ -1,4 +1,4 @@
-import { Property } from '@wippa/pieces-framework';
+import { Property } from '@wippa/connectors-framework';
 import { parseurAuth, parseurCommon } from '.';
 
 export const parserDropdown = ({ required = true }) =>

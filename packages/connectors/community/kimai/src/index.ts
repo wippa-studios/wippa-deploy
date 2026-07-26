@@ -1,17 +1,17 @@
 import {
   createCustomApiCallAction,
   HttpError,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
+import { AppConnectionType, PieceCategory } from '@wippa/connectors-framework';
 import { kimaiCreateTimesheetAction } from './lib/actions/create-timesheet';
 import { makeClient } from './lib/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@wippa/pieces-common';
+import { propsValidation } from '@wippa/connectors-common';
 
 export const kimaiAuth = PieceAuth.CustomAuth({
   description: `
@@ -88,7 +88,7 @@ export const kimaiAuth = PieceAuth.CustomAuth({
   required: true,
 });
 
-export const kimai = createPiece({
+export const kimai = createConnector({
   displayName: 'Kimai',
   description: 'Open-source time tracking software',
 

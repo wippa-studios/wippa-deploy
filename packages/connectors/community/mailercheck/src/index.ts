@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { mailercheckAuth } from './lib/common/auth';
 import { verifyAnEmailAddress } from './lib/actions/verify-an-email-address';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
-export const mailercheck = createPiece({
+export const mailercheck = createConnector({
   displayName: 'Mailercheck',
   auth: mailercheckAuth,
   minimumSupportedRelease: '0.36.1',

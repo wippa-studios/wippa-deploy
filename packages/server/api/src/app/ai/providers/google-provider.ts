@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@wippa/pieces-common'
+import { httpClient, HttpMethod } from '@wippa/connectors-common'
 import { AIProviderModel, AIProviderModelType, GoogleProviderAuthConfig, GoogleProviderConfig } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { AIProviderStrategy } from './ai-provider'

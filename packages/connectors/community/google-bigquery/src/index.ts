@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import {
   bigQueryAuth,
   BigQueryAuthValue,
@@ -28,7 +28,7 @@ import { newJobCompletedTrigger } from './lib/triggers/new-job-completed';
 export { bigQueryAuth };
 export type { BigQueryAuthValue };
 
-export const googleBigQuery = createPiece({
+export const googleBigQuery = createConnector({
   displayName: 'Google BigQuery',
   description:
     'Query, analyze, and stream data into Google BigQuery — the fully managed, serverless data warehouse',

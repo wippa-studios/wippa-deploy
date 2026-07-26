@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { moonclerkAuth } from './lib/common/auth';
 import { retrivePlan } from './lib/actions/retrive-plan';
 import { newPlan } from './lib/triggers/new-plan';
@@ -6,10 +6,10 @@ import { paymentSucceeds } from './lib/triggers/payment-succeeds';
 import { newPayment } from './lib/triggers/new-payment';
 import { planEnded } from './lib/triggers/plan-ended';
 import { planPaymentFailed } from './lib/triggers/plan-payment-failed';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const moonclerk = createPiece({
+export const moonclerk = createConnector({
   displayName: 'Moonclerk',
   auth: moonclerkAuth,
   minimumSupportedRelease: '0.36.1',

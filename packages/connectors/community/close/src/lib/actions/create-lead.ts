@@ -1,6 +1,6 @@
-import { Property, createAction } from '@wippa/pieces-framework';
+import { Property, createAction } from '@wippa/connectors-framework';
 import { closeAuth } from '../auth';
-import { HttpMethod } from '@wippa/pieces-common';
+import { HttpMethod } from '@wippa/connectors-common';
 import { closeApiCall } from '../common/client';
 import { customFields, statusId } from '../common/props';
 

@@ -101,36 +101,36 @@ async function clearCancel({ conversationId }: { conversationId: string }): Prom
     await distributedStore.delete(`${CANCEL_KEY_PREFIX}${conversationId}`)
 }
 
-async function storeAvailableConnections({ conversationId, pieceName, connections }: {
+async function storeAvailableConnections({ conversationId, connectorName, connections }: {
     conversationId: string
-    pieceName: string
+    connectorName: string
     connections: StoredConnection[]
 }): Promise<void> {
-    await distributedStore.put(`${AVAILABLE_CONNECTIONS_PREFIX}${conversationId}:${pieceName}`, connections, CONNECTION_STORE_TTL_SECONDS)
+    await distributedStore.put(`${AVAILABLE_CONNECTIONS_PREFIX}${conversationId}:${connectorName}`, connections, CONNECTION_STORE_TTL_SECONDS)
 }
 
-async function getAvailableConnections({ conversationId, pieceName }: {
+async function getAvailableConnections({ conversationId, connectorName }: {
     conversationId: string
-    pieceName: string
+    connectorName: string
 }): Promise<StoredConnection[]> {
-    return await distributedStore.get<StoredConnection[]>(`${AVAILABLE_CONNECTIONS_PREFIX}${conversationId}:${pieceName}`) ?? []
+    return await distributedStore.get<StoredConnection[]>(`${AVAILABLE_CONNECTIONS_PREFIX}${conversationId}:${connectorName}`) ?? []
 }
 
-async function storeSelectedConnection({ conversationId, pieceName, externalId, label, projectId }: {
+async function storeSelectedConnection({ conversationId, connectorName, externalId, label, projectId }: {
     conversationId: string
-    pieceName: string
+    connectorName: string
     externalId: string
     label: string
     projectId: string
 }): Promise<void> {
-    await distributedStore.put(`${SELECTED_CONNECTION_PREFIX}${conversationId}:${pieceName}`, { externalId, label, projectId }, CONNECTION_STORE_TTL_SECONDS)
+    await distributedStore.put(`${SELECTED_CONNECTION_PREFIX}${conversationId}:${connectorName}`, { externalId, label, projectId }, CONNECTION_STORE_TTL_SECONDS)
 }
 
-async function getSelectedConnection({ conversationId, pieceName }: {
+async function getSelectedConnection({ conversationId, connectorName }: {
     conversationId: string
-    pieceName: string
+    connectorName: string
 }): Promise<SelectedConnection | null> {
-    return distributedStore.get<SelectedConnection>(`${SELECTED_CONNECTION_PREFIX}${conversationId}:${pieceName}`)
+    return distributedStore.get<SelectedConnection>(`${SELECTED_CONNECTION_PREFIX}${conversationId}:${connectorName}`)
 }
 
 async function storePendingGate({ conversationId, gate }: {

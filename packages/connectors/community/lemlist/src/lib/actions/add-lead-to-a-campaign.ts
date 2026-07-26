@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { lemlistAuth } from '../common/constants';
 import { campaignsDropdown } from '../common/props';
 import { lemlistApiService } from '../common/requests';

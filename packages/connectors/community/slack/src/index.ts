@@ -1,10 +1,10 @@
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import crypto from 'node:crypto';
 import { requestActionDirectMessageAction } from './lib/actions/request-action-direct-message';
 import { requestActionMessageAction } from './lib/actions/request-action-message';
@@ -53,7 +53,7 @@ import { getGroupByHandleAction } from './lib/actions/get-group-by-handle';
 
 export { slackAuth, slackOAuth2Auth } from './lib/auth';
 
-export const slack = createPiece({
+export const slack = createConnector({
   displayName: 'Slack',
   description: 'Channel-based messaging platform',
   minimumSupportedRelease: '0.82.0',

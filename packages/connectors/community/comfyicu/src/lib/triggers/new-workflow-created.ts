@@ -3,14 +3,14 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { comfyIcuAuth } from '../auth';
 import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   PiecePropValueSchema,
   TriggerStrategy,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { comfyIcuApiCall } from '../common';
 import dayjs from 'dayjs';
 

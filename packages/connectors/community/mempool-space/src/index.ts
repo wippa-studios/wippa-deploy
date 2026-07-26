@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 
 // General Actions
 import { getDifficultyAdjustment } from './lib/actions/general/get-difficulty-adjustment';
@@ -45,7 +45,7 @@ import { getTransactionStatus } from './lib/actions/transactions/get-transaction
 import { getTransactionTimes } from './lib/actions/transactions/get-transaction-times';
 import { postTransaction } from './lib/actions/transactions/post-transaction';
 
-export const mempoolSpace = createPiece({
+export const mempoolSpace = createConnector({
   displayName: 'Mempool',
   description: 'The mempool.space website invented the concept of visualizing a Bitcoin node\'s mempool as projected blocks.',
   logoUrl: 'https://cdn.activepieces.com/pieces/mempool-space.png',

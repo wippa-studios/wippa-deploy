@@ -16,7 +16,7 @@ export const isRunAgent = (step?: Step | null) => {
   return (
     !isNil(step) &&
     step.type === FlowActionType.PIECE &&
-    step.settings.pieceName === AI_PIECE_NAME &&
+    step.settings.connectorName === AI_PIECE_NAME &&
     step.settings.actionName === 'run_agent'
   );
 };

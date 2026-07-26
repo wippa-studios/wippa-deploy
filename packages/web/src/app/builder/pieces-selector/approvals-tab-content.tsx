@@ -12,37 +12,37 @@ import {
 
 import { useBuilderStateContext } from '../builder-hooks';
 
-import GenericActionOrTriggerItem from './generic-piece-selector-item';
+import GenericActionOrTriggerItem from './generic-connector-selector-item';
 
 const APPROVAL_PIECES_CONFIG = [
   {
-    pieceName: '@wippa/piece-slack',
+    connectorName: '@wippa/connector-slack',
     approvalActionNames: [
       'request_approval_message',
       'request_approval_direct_message',
     ],
   },
   {
-    pieceName: '@wippa/piece-discord',
+    connectorName: '@wippa/connector-discord',
     approvalActionNames: ['request_approval_message'],
   },
   {
-    pieceName: '@wippa/piece-microsoft-teams',
+    connectorName: '@wippa/connector-microsoft-teams',
     approvalActionNames: [
       'request_approval_direct_message',
       'request_approval_in_channel',
     ],
   },
   {
-    pieceName: '@wippa/piece-microsoft-outlook',
+    connectorName: '@wippa/connector-microsoft-outlook',
     approvalActionNames: ['request_approval_in_mail'],
   },
   {
-    pieceName: '@wippa/piece-gmail',
+    connectorName: '@wippa/connector-gmail',
     approvalActionNames: ['request_approval_in_mail'],
   },
   {
-    pieceName: '@wippa/piece-telegram-bot',
+    connectorName: '@wippa/connector-telegram-bot',
     approvalActionNames: ['request_approval_message'],
   },
 ];
@@ -58,7 +58,7 @@ const ApprovalsTabContent = ({
   ]);
 
   const pieceQueries = piecesHooks.useMultiplePieces({
-    names: APPROVAL_PIECES_CONFIG.map((config) => config.pieceName),
+    names: APPROVAL_PIECES_CONFIG.map((config) => config.connectorName),
   });
 
   const isLoading = pieceQueries.some((query) => query.isLoading);
@@ -87,10 +87,10 @@ const ApprovalsTabContent = ({
     if (!query.data) return [];
 
     const config = APPROVAL_PIECES_CONFIG.find(
-      (config) => config.pieceName === query.data.name,
+      (config) => config.connectorName === query.data.name,
     );
     if (isNil(config)) return [];
-    const pieceMetadata = stepUtils.mapPieceToMetadata({
+    const connectorMetadata = stepUtils.mapPieceToMetadata({
       piece: query.data,
       type: 'action',
     });
@@ -101,7 +101,7 @@ const ApprovalsTabContent = ({
         if (!action) return null;
         return {
           action,
-          pieceMetadata,
+          connectorMetadata,
         };
       })
       .filter((item) => !isNil(item));
@@ -111,15 +111,15 @@ const ApprovalsTabContent = ({
     <CardList listClassName="gap-0">
       {allApprovalActions.map((item) => (
         <GenericActionOrTriggerItem
-          key={`${item.pieceMetadata.pieceName}-${item.action.name}`}
+          key={`${item.connectorMetadata.connectorName}-${item.action.name}`}
           item={{
             actionOrTrigger: item.action,
             type: FlowActionType.PIECE,
-            pieceMetadata: item.pieceMetadata,
+            connectorMetadata: item.connectorMetadata,
           }}
           hidePieceIconAndDescription={false}
           stepMetadataWithSuggestions={{
-            ...item.pieceMetadata,
+            ...item.connectorMetadata,
             suggestedActions: [item.action],
             suggestedTriggers: [],
           }}
@@ -128,7 +128,7 @@ const ApprovalsTabContent = ({
               pieceSelectorItem: {
                 actionOrTrigger: item.action,
                 type: FlowActionType.PIECE,
-                pieceMetadata: item.pieceMetadata,
+                connectorMetadata: item.connectorMetadata,
               },
               operation,
               selectStepAfter: true,

@@ -14,7 +14,7 @@ import {
 import { flagsHooks } from '@/hooks/flags-hooks';
 
 import { useBuilderStateContext } from '../../builder-hooks';
-import { convertStepMetadataToPieceSelectorItems } from '../piece-actions-or-triggers-list';
+import { convertStepMetadataToPieceSelectorItems } from '../connector-actions-or-triggers-list';
 
 import AIActionItem from './ai-action';
 

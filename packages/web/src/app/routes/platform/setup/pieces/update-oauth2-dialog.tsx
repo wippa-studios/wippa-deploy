@@ -25,7 +25,7 @@ import {
 import { oauthAppsMutations, oauthAppsQueries } from '@/features/connections';
 
 type ConfigurePieceOAuth2DialogProps = {
-  pieceName: string;
+  connectorName: string;
   onConfigurationDone: () => void;
   isEnabled: boolean;
 };
@@ -39,14 +39,14 @@ type OAuth2FormValues = z.infer<typeof OAuth2FormValues>;
 export const ConfigurePieceOAuth2Dialog = forwardRef<
   HTMLButtonElement,
   ConfigurePieceOAuth2DialogProps
->(({ pieceName, onConfigurationDone, isEnabled }, ref) => {
+>(({ connectorName, onConfigurationDone, isEnabled }, ref) => {
   const [open, setOpen] = useState(false);
   const form = useForm<OAuth2FormValues>({
     resolver: zodResolver(OAuth2FormValues),
   });
 
   const { oauth2App, refetch } =
-    oauthAppsQueries.useOAuthAppConfigured(pieceName);
+    oauthAppsQueries.useOAuthAppConfigured(connectorName);
   const { mutate: deleteOAuth2App, isPending: isDeleting } =
     oauthAppsMutations.useDeleteOAuthApp(refetch, setOpen);
   const { mutate: upsert, isPending: isUpserting } =
@@ -110,7 +110,7 @@ export const ConfigurePieceOAuth2Dialog = forwardRef<
               upsert({
                 clientId: data.clientId,
                 clientSecret: data.clientSecret,
-                pieceName,
+                connectorName,
               });
             })}
           >

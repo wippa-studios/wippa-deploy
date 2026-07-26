@@ -1,13 +1,13 @@
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { sendNotification } from './lib/actions/send-notification';
 import { gotifyAuth } from './lib/auth';
 
-export const gotify = createPiece({
+export const gotify = createConnector({
   displayName: 'Gotify',
   description: 'Self-hosted push notification service',
 

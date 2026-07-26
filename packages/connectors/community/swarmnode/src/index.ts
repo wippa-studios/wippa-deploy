@@ -1,12 +1,12 @@
 
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { swarmnodeAuth } from "./lib/common/auth";
 import { getExecutionAction } from "./lib/actions/get-execution";
-import { createCustomApiCallAction } from "@wippa/pieces-common";
+import { createCustomApiCallAction } from "@wippa/connectors-common";
 import { BASE_URL } from "./lib/common/constants";
 import { executeAgentAction } from "./lib/actions/execute-agent";
 
-export const swarmnode = createPiece({
+export const swarmnode = createConnector({
   displayName: "SwarmNode",
   auth: swarmnodeAuth,
   minimumSupportedRelease: '0.36.1',

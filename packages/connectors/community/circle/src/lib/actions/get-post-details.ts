@@ -1,6 +1,6 @@
-import { createAction } from '@wippa/pieces-framework';
+import { createAction } from '@wippa/connectors-framework';
 import { BASE_URL, spaceIdDropdown, postIdDropdown } from '../common';
-import { httpClient, HttpMethod } from '@wippa/pieces-common';
+import { httpClient, HttpMethod } from '@wippa/connectors-common';
 import { circleAuth } from '../common/auth';
 import { PostDetails } from '../common/types';
 

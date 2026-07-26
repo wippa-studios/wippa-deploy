@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
-import { AppConnectionType } from '@wippa/pieces-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
+import { AppConnectionType } from '@wippa/connectors-framework';
 
 import {
   GlideAddRowsResponse,

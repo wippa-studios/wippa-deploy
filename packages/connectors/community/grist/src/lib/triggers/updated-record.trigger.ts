@@ -1,5 +1,5 @@
 import { gristAuth } from '../..';
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 import { commonProps } from '../common/props';
 import { GristAPIClient } from '../common/helpers';
 import { GristWebhookPayload } from '../common/types';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from '../common/microsoft-cloud';
 import { microsoft365PlannerAuth, microsoft365PlannerCommon } from '../common';
 import { groupDropdown } from '../common/properties';

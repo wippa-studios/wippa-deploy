@@ -1,10 +1,10 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { generateArticleAction } from './lib/actions/generate-article';
 import { sendPromptAction } from './lib/actions/send-prompt';
 import { rapidTextAiAuth } from './lib/common/auth';
 
-export const rapidtextAi = createPiece({
+export const rapidtextAi = createConnector({
   displayName: 'RapidText AI',
   auth: rapidTextAiAuth,
   minimumSupportedRelease: '0.36.1',

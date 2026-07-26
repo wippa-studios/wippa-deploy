@@ -1,6 +1,6 @@
-import { createPiece } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { createPost } from './lib/actions/create-post';
 import { listPosts } from './lib/actions/list-posts';
 import { deletePost } from './lib/actions/delete-post';
@@ -12,7 +12,7 @@ import { uploadFileFromUrl } from './lib/actions/upload-file-from-url';
 import { newPost } from './lib/triggers/new-post';
 import { postizAuth } from './lib/common/auth';
 
-export const postiz = createPiece({
+export const postiz = createConnector({
   displayName: 'Postiz',
   description:
     'Open-source social media scheduling tool supporting 30+ platforms',

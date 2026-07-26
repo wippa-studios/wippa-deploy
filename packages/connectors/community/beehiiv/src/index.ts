@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { createSubscriptionAction } from './lib/actions/create-subscription.action';
 import { updateSubscriptionAction } from './lib/actions/update-subscription.action';
 import { deleteSubscriptionAction } from './lib/actions/delete-subscription.action';
@@ -10,12 +10,12 @@ import { newPostSentTrigger } from './lib/triggers/new-post-sent.trigger';
 import { userUnsubscribesTrigger } from './lib/triggers/user-unsubscribes.trigger';
 import { newSubscriptionConfirmedTrigger } from './lib/triggers/new-subscription-confirmed.trigger';
 import { newSubscriberCreatedTrigger } from './lib/triggers/new-subscriber-created.trigger';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { beehiivAuth } from './lib/common/auth';
 import { BEEHIIV_API_URL } from './lib/common/client';
 
-export const beehiiv = createPiece({
+export const beehiiv = createConnector({
 	displayName: 'Beehiiv',
 	auth: beehiivAuth,
 	minimumSupportedRelease: '0.36.1',

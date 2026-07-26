@@ -1,7 +1,7 @@
 
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import { textcortexAuth } from './lib/common/auth';
 import { baseUrl } from './lib/common/common';
 import { sendPrompt } from './lib/actions/send-prompt';
@@ -13,7 +13,7 @@ import { createEmail } from './lib/actions/create-email';
 import { createProductDescription } from './lib/actions/create-product-description';
 import { createSummary } from './lib/actions/create-summary';
 
-export const textcortexAi = createPiece({
+export const textcortexAi = createConnector({
   displayName: 'TextCortex AI',
   description: 'AI-powered writing assistant for content creation, code generation, translations, and more using multiple AI models.',
   auth: textcortexAuth,

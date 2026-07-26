@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { verifyEmail } from './lib/actions/verify-email';
 import { verifySingleEmail } from './lib/common/send-util';
-import { HttpError } from '@wippa/pieces-common';
+import { HttpError } from '@wippa/connectors-common';
 import { bulkEmailVerification } from './lib/actions/bulk-email-verification';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { bulkVerificationResult } from './lib/actions/bulk-email-verification-status';
 
 const description = `
@@ -43,7 +43,7 @@ export const reoonEmailVerifyAuth = PieceAuth.SecretText({
   },
 });
 
-export const reoonEmailVerify = createPiece({
+export const reoonEmailVerify = createConnector({
   displayName: 'Reoon Email Verifier',
   auth: reoonEmailVerifyAuth,
   minimumSupportedRelease: '0.30.0',

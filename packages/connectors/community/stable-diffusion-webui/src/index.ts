@@ -1,8 +1,8 @@
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { textToImage } from './lib/actions/text-to-image';
 import { stableDiffusionAuth } from './lib/auth';
 
@@ -10,7 +10,7 @@ export type StableDiffusionAuthType = {
   baseUrl: string;
 };
 
-export const stableDiffusion = createPiece({
+export const stableDiffusion = createConnector({
   displayName: 'Stable Dffusion web UI',
   description: 'A web interface for Stable Diffusion',
   auth: stableDiffusionAuth,

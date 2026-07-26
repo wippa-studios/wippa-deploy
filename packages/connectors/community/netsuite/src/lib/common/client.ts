@@ -2,7 +2,7 @@ import {
   httpClient,
   HttpMethod,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { createOAuthHeader } from './oauth';
 
 const PAGE_SIZE = 1000;

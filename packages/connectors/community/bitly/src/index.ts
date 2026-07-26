@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { bitlyAuth } from './lib/common/auth';
 import { newBitlinkCreatedTrigger } from './lib/triggers/new-bitlink-created';
 import { archiveBitlinkAction } from './lib/actions/archive-bitlink';
@@ -9,7 +9,7 @@ import { createQrCodeAction } from './lib/actions/create-qr-code';
 import { getBitlinkDetailsAction } from './lib/actions/get-bitlink-details';
 import { updateBitlinkAction } from './lib/actions/update-bitlink';
 
-export const bitly = createPiece({
+export const bitly = createConnector({
   displayName: 'Bitly',
   description: 'URL shortening and link management platform with analytics.',
   auth: bitlyAuth,

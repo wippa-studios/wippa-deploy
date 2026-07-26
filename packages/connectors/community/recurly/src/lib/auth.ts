@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/pieces-framework';
-import { tryCatch } from '@wippa/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@wippa/connectors-framework';
+import { tryCatch } from '@wippa/connectors-framework';
 import { Client } from 'recurly';
 
 export const recurlyAuth = PieceAuth.SecretText({

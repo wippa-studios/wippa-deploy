@@ -3,7 +3,7 @@ import {
   createTrigger,
   Property,
   AiMetadata,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { MoxieCRMEventType } from '.';
 import { moxieCRMAuth } from '../auth';
 export const moxieCRMRegisterTrigger = ({

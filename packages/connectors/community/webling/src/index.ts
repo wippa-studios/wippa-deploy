@@ -2,19 +2,19 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import {
-  createPiece,
+  createConnector,
   PieceAuth,
   Property,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { onEventChanged } from './lib/triggers/calendar-event';
 import { onChangedData } from './lib/triggers/on-changed-data';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { eventsById } from './lib/actions/get-events-by-id';
 import { weblingAuth } from './lib/auth';
 
-export const webling = createPiece({
+export const webling = createConnector({
   displayName: 'Webling',
   auth: weblingAuth,
   minimumSupportedRelease: '0.30.0',

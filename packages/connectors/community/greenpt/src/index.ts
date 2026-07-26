@@ -1,12 +1,12 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { greenptAuth } from './lib/common/auth';
 import { chatCompletion } from './lib/actions/chat-completion';
 import { createEmbeddings } from './lib/actions/create-embeddings';
 import { transcribeAudio } from './lib/actions/transcribe-audio';
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const greenpt = createPiece({
+export const greenpt = createConnector({
   displayName: 'GreenPT',
   description:
     'GreenPT is a green AI and privacy friendly GPT-powered chat platform',

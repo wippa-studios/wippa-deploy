@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@wippa/pieces-common';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
 import {
   PieceAuth,
   Property,
-  createPiece,
-} from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+  createConnector,
+} from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { askLocalAI } from './lib/actions/send-prompt';
 
 export const localaiAuth = PieceAuth.CustomAuth({
@@ -22,7 +22,7 @@ export const localaiAuth = PieceAuth.CustomAuth({
   },
   required: true,
 });
-export const openai = createPiece({
+export const openai = createConnector({
   displayName: 'LocalAI',
   description:
     'The free, Self-hosted, community-driven and local-first. Drop-in replacement for OpenAI running on consumer-grade hardware. No GPU required.',

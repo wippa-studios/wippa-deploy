@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { runWorkflow } from './lib/actions/run-workflow';
 import { burstyAiAuth } from './lib/common/auth';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const burstyAi = createPiece({
+export const burstyAi = createConnector({
   displayName: 'BurstyAI',
   auth: burstyAiAuth,
   minimumSupportedRelease: '0.36.1',

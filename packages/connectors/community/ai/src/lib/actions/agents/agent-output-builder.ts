@@ -1,6 +1,6 @@
-import { assertNotNullOrUndefined, isNil } from '@wippa/pieces-framework';
-import { AgentToolType } from '@wippa/pieces-framework';
-import { AgentResult, AgentStepBlock, AgentTaskStatus, AgentTool, ContentBlockType, ExecutionToolStatus, MarkdownContentBlock, ToolCallBase, ToolCallContentBlock, ToolCallStatus, ToolCallType } from '@wippa/pieces-framework';
+import { assertNotNullOrUndefined, isNil } from '@wippa/connectors-framework';
+import { AgentToolType } from '@wippa/connectors-framework';
+import { AgentResult, AgentStepBlock, AgentTaskStatus, AgentTool, ContentBlockType, ExecutionToolStatus, MarkdownContentBlock, ToolCallBase, ToolCallContentBlock, ToolCallStatus, ToolCallType } from '@wippa/connectors-framework';
 
 export const agentOutputBuilder = (prompt: string) => {
   let status: AgentTaskStatus = AgentTaskStatus.IN_PROGRESS;
@@ -143,13 +143,13 @@ function getToolMetadata({
 
   switch (tool.type) {
     case AgentToolType.PIECE: {
-      assertNotNullOrUndefined(tool.pieceMetadata, 'Piece metadata is required');
+      assertNotNullOrUndefined(tool.connectorMetadata, 'Piece metadata is required');
       return {
         ...baseTool,
         toolCallType: ToolCallType.PIECE,
-        pieceName: tool.pieceMetadata.pieceName,
-        pieceVersion: tool.pieceMetadata.pieceVersion,
-        actionName: tool.pieceMetadata.actionName,
+        connectorName: tool.connectorMetadata.connectorName,
+        connectorVersion: tool.connectorMetadata.connectorVersion,
+        actionName: tool.connectorMetadata.actionName,
       };
     }
     case AgentToolType.FLOW: {

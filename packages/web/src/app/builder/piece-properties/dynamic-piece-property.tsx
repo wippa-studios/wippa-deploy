@@ -1,5 +1,5 @@
 import { isNil } from '@wippa/core-utils';
-import { PiecePropertyMap, PropertyType } from '@wippa/pieces-framework';
+import { ConnectorPropertyMap, PropertyType } from '@wippa/connectors-framework';
 import { AUTHENTICATION_PROPERTY_NAME, PropertySettings } from '@wippa/shared';
 import deepEqual from 'deep-equal';
 import React, { useState, useRef, useContext } from 'react';
@@ -16,8 +16,8 @@ import { DynamicPropertiesContext } from './dynamic-properties-context';
 import { GenericPropertiesForm } from './generic-properties-form';
 
 const removeOptionsFromDropdownPropertiesSchema = (
-  schema: PiecePropertyMap,
-): PiecePropertyMap => {
+  schema: ConnectorPropertyMap,
+): ConnectorPropertyMap => {
   return Object.fromEntries(
     Object.entries(schema).map(([key, value]) => {
       if (
@@ -28,7 +28,7 @@ const removeOptionsFromDropdownPropertiesSchema = (
       }
       return [key, value];
     }),
-  ) as PiecePropertyMap;
+  ) as ConnectorPropertyMap;
 };
 
 const DynamicPropertiesImplementation = React.memo(
@@ -59,7 +59,7 @@ const DynamicPropertiesImplementation = React.memo(
       DynamicPropertiesContext,
     );
     const [propertyMap, setPropertyMap] = useState<
-      PiecePropertyMap | undefined
+      ConnectorPropertyMap | undefined
     >(undefined);
     const propertyPrefix =
       props.placedInside === 'stepSettings' ? 'settings.input' : '';
@@ -114,8 +114,8 @@ const DynamicPropertiesImplementation = React.memo(
         {
           request: {
             projectId: authenticationSession.getProjectId()!,
-            pieceName: props.pieceName,
-            pieceVersion: props.pieceVersion,
+            connectorName: props.connectorName,
+            connectorVersion: props.connectorVersion,
             propertyName: props.propertyName,
             actionOrTriggerName: props.actionOrTriggerName,
             input: refresherValues,
@@ -221,18 +221,18 @@ const prependPrefixToPropertyName = ({
 type DynamicPropertiesProps = {
   refreshers: string[];
   propertyName: string;
-  pieceName: string;
-  pieceVersion: string;
+  connectorName: string;
+  connectorVersion: string;
   actionOrTriggerName: string;
   disabled: boolean;
   placedInside: 'stepSettings' | 'predefinedAgentInputs';
   updateFormSchema:
-    | ((key: string, newFieldSchema: PiecePropertyMap) => void)
+    | ((key: string, newFieldSchema: ConnectorPropertyMap) => void)
     | null;
   propertySettings: Record<string, PropertySettings> | null;
   updatePropertySettingsSchema:
     | ((
-        schema: PiecePropertyMap,
+        schema: ConnectorPropertyMap,
         propertyName: string,
         form: UseFormReturn,
       ) => void)

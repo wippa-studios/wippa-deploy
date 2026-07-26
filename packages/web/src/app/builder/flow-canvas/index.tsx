@@ -318,7 +318,7 @@ const createGraphKey = (
       }-${
         step.type === FlowActionType.PIECE ||
         step.type === FlowTriggerType.PIECE
-          ? `${step.settings.pieceName}-${step.settings.pieceVersion}`
+          ? `${step.settings.connectorName}-${step.settings.connectorVersion}`
           : ''
       }-${branchesNames}-${childrenKey}}`;
     }, '');

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@wippa/pieces-framework';
+import { createAction, Property } from '@wippa/connectors-framework';
 import { defaultSchema } from '@atlaskit/adf-schema/schema-default';
 import { JSONTransformer } from '@atlaskit/editor-json-transformer';
 import { MarkdownTransformer } from '@atlaskit/editor-markdown-transformer';

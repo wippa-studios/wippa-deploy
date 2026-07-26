@@ -1,5 +1,5 @@
-import { createAction, Property } from '@wippa/pieces-framework';
-import { HttpMethod } from '@wippa/pieces-common';
+import { createAction, Property } from '@wippa/connectors-framework';
+import { HttpMethod } from '@wippa/connectors-common';
 import { heygenApiCall } from '../common/client';
 import { heygenAuth } from '../common/auth';
 import { brandVoiceDropdown, supportedLanguagesDropdown } from '../common/props';

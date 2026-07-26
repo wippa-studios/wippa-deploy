@@ -3,8 +3,8 @@ import {
   Property,
   StoreScope,
   createAction,
-} from '@wippa/pieces-framework';
-import { HttpMethod, httpClient } from '@wippa/pieces-common';
+} from '@wippa/connectors-framework';
+import { HttpMethod, httpClient } from '@wippa/connectors-common';
 
 export const enrichCompany = createAction({
   name: 'enrichCompany',

@@ -21,7 +21,7 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { triggerRunHooks } from '@/features/flows';
-import { PieceDisplayName, PieceIconWithPieceName } from '@/features/pieces';
+import { ConnectorDisplayName, PieceIconWithPieceName } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
 import { StatusProgressBar, type DayStatus } from './status-progress-bar';
@@ -80,12 +80,12 @@ export default function TriggerHealthPage() {
 
   const triggerHealthData: TriggerHealthRow[] = isLoading
     ? []
-    : Object.entries(report?.pieces ?? {}).map(([pieceName, pieceData]) => {
+    : Object.entries(report?.pieces ?? {}).map(([connectorName, pieceData]) => {
         const last7Days = percentageForLastXDays(7, pieceData);
         const last14Days = percentageForLastXDays(14, pieceData);
         const last24Hours = percentageForLastXDays(1, pieceData);
         return {
-          id: pieceName,
+          id: connectorName,
           status: {
             type:
               last14Days === 100
@@ -146,7 +146,7 @@ export default function TriggerHealthPage() {
 
   const columns = [
     {
-      accessorKey: 'pieceDisplayName',
+      accessorKey: 'connectorDisplayName',
       size: 220,
       header: ({ column }: any) => (
         <DataTableColumnHeader column={column} title="Piece" icon={Puzzle} />
@@ -156,13 +156,13 @@ export default function TriggerHealthPage() {
         return (
           <div className="flex items-center gap-2">
             <PieceIconWithPieceName
-              pieceName={row.original.id}
+              connectorName={row.original.id}
               showTooltip={false}
               size="md"
             />
             <div className="flex flex-col">
               <div className="font-medium flex items-center gap-2">
-                <PieceDisplayName pieceName={row.original.id} />
+                <ConnectorDisplayName connectorName={row.original.id} />
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span

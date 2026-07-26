@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
-} from '@wippa/pieces-common';
-import { createPiece } from '@wippa/pieces-framework';
-import { PieceCategory } from '@wippa/pieces-framework';
+} from '@wippa/connectors-common';
+import { createConnector } from '@wippa/connectors-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { airtableCreateRecordAction } from './lib/actions/create-record';
 import { airtableDeleteRecordAction } from './lib/actions/delete-record';
 import { airtableFindRecordAction } from './lib/actions/find-record';
@@ -21,7 +21,7 @@ import { airtableFindTableAction } from './lib/actions/find-table';
 import { airtableGetBaseSchemaAction } from './lib/actions/get-base-schema';
 import { airtableAuth } from './lib/auth';
 
-export const airtable = createPiece({
+export const airtable = createConnector({
   displayName: 'Airtable',
   description: 'Low‒code platform to build apps.',
 

@@ -1,8 +1,8 @@
 import {
   PieceAuthProperty,
-  PieceProperty,
+  ConnectorProperty,
   PropertyType,
-} from '@wippa/pieces-framework';
+} from '@wippa/connectors-framework';
 import { FlowAction, FlowTrigger, PropertyExecutionType } from '@wippa/shared';
 import { t } from 'i18next';
 import { Calendar, SquareFunction, File } from 'lucide-react';
@@ -150,7 +150,7 @@ function AutoFormFielWrapperErrorBoundary({
 }
 
 function getValueForInputOnDynamicToggleChange(
-  property: PieceProperty | PieceAuthProperty[],
+  property: ConnectorProperty | PieceAuthProperty[],
   newMode: PropertyExecutionType,
   currentValue: unknown,
 ) {
@@ -251,7 +251,7 @@ function DynamicValueToggle({
     </div>
   );
 }
-function PropertyTypeTooltip({ property }: { property: PieceProperty }) {
+function PropertyTypeTooltip({ property }: { property: ConnectorProperty }) {
   if (
     property.type !== PropertyType.FILE &&
     property.type !== PropertyType.DATE_TIME
@@ -299,7 +299,7 @@ export { AutoFormFieldWrapper };
 type DynamicValueToggleProps = {
   propertyName: string;
   inputName: string;
-  property: PieceProperty | PieceAuthProperty[];
+  property: ConnectorProperty | PieceAuthProperty[];
   disabled: boolean;
   isToggled: boolean;
 };
@@ -314,13 +314,13 @@ type AutoFormFieldWrapperProps = {
   field: ControllerRenderProps<any, string>;
   inputName: string;
   dynamicInputModeToggled?: boolean;
-  property: PieceProperty | PieceAuthProperty[];
+  property: ConnectorProperty | PieceAuthProperty[];
   isForConnectionSelect?: boolean;
 };
 type AutoFormFielWrapperErrorBoundaryProps = {
   children: React.ReactNode;
   field: ControllerRenderProps;
-  property: PieceProperty | PieceAuthProperty[] | null;
+  property: ConnectorProperty | PieceAuthProperty[] | null;
   dynamicInputModeToggled?: boolean;
 };
 function isInputNameLiteral(
@@ -329,7 +329,7 @@ function isInputNameLiteral(
   return inputName.match(/settings\.input\./) !== null;
 }
 function isPieceAuthProperty(
-  property: PieceProperty | PieceAuthProperty[],
+  property: ConnectorProperty | PieceAuthProperty[],
 ): property is PieceAuthProperty[] {
   const authPropertyTypes = [
     PropertyType.SECRET_TEXT,

@@ -1,11 +1,11 @@
-import { WebhookRenewStrategy } from '@wippa/pieces-framework'
+import { WebhookRenewStrategy } from '@wippa/connectors-framework'
 import {
     FlowOperationType,
     FlowStatus,
     FlowTriggerType,
     FlowVersionState,
     PackageType,
-    PieceType,
+    ConnectorType,
     PopulatedFlow,
     PrincipalType,
     PropertyExecutionType,
@@ -85,7 +85,7 @@ describe('Flow API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@wippa/piece-schedule',
+                name: '@wippa/connector-schedule',
                 version: '0.1.5',
                 triggers: {
                     every_hour: {
@@ -99,7 +99,7 @@ describe('Flow API', () => {
                         testStrategy: TriggerTestStrategy.TEST_FUNCTION,
                     },
                 },
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPieceMetadata1)
@@ -116,8 +116,8 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@wippa/piece-schedule',
-                        pieceVersion: '0.1.5',
+                        connectorName: '@wippa/connector-schedule',
+                        connectorVersion: '0.1.5',
                         input: { run_on_weekends: false },
                         triggerName: 'every_hour',
                         propertySettings: {
@@ -197,7 +197,7 @@ describe('Flow API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@wippa/piece-schedule',
+                name: '@wippa/connector-schedule',
                 version: '0.1.5',
                 triggers: {
                     every_hour: {
@@ -213,7 +213,7 @@ describe('Flow API', () => {
                         testStrategy: TriggerTestStrategy.TEST_FUNCTION,
                     },
                 },
-                pieceType: PieceType.OFFICIAL,
+                pieceType: ConnectorType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
             })
             await db.save('piece_metadata', mockPieceMetadata1)
@@ -231,8 +231,8 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@wippa/piece-schedule',
-                        pieceVersion: '0.1.5',
+                        connectorName: '@wippa/connector-schedule',
+                        connectorVersion: '0.1.5',
                         input: { run_on_weekends: false },
                         triggerName: 'every_hour',
                         propertySettings: {

@@ -15,8 +15,8 @@ function createTriggerTemplate(displayName: string, description: string, techniq
     let triggerTemplate = ''
     if (technique === 'polling') {
         triggerTemplate = `
-import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty  } from '@wippa/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@wippa/pieces-common';
+import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty  } from '@wippa/connectors-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@wippa/connectors-common';
 import dayjs from 'dayjs';
 
 // replace auth with piece auth variable
@@ -60,7 +60,7 @@ async run(context) {
     }
     else {
         triggerTemplate = `
-import { createTrigger, TriggerStrategy } from '@wippa/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@wippa/connectors-framework';
 export const ${camelCase} = createTrigger({
     // auth: check https://www.activepieces.com/docs/developers/piece-reference/authentication,
     name: '${camelCase}',
@@ -90,10 +90,10 @@ const checkIfTriggerExists = async (triggerPath: string) => {
         process.exit(1);
     }
 }
-const createTrigger = async (pieceName: string, displayTriggerName: string, triggerDescription: string, triggerTechnique: string) => {
+const createTrigger = async (connectorName: string, displayTriggerName: string, triggerDescription: string, triggerTechnique: string) => {
     const triggerTemplate = createTriggerTemplate(displayTriggerName, triggerDescription, triggerTechnique)
     const triggerName = displayNameToKebabCase(displayTriggerName)
-    const pieceFolder = await findPiece(pieceName);
+    const pieceFolder = await findPiece(connectorName);
     assertPieceExists(pieceFolder)
     console.log(chalk.blue(`Piece path: ${pieceFolder}`))
 
@@ -113,7 +113,7 @@ export const createTriggerCommand = new Command('create')
         const questions = [
             {
                 type: 'input',
-                name: 'pieceName',
+                name: 'connectorName',
                 message: 'Enter the piece folder name:',
                 placeholder: 'google-drive',
             },
@@ -137,5 +137,5 @@ export const createTriggerCommand = new Command('create')
         ];
 
         const answers = await inquirer.prompt(questions);
-        createTrigger(answers.pieceName, answers.triggerName, answers.triggerDescription, answers.triggerTechnique);
+        createTrigger(answers.connectorName, answers.triggerName, answers.triggerDescription, answers.triggerTechnique);
     });

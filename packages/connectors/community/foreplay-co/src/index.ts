@@ -1,6 +1,6 @@
 
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
+import { PieceCategory } from '@wippa/connectors-framework';
 import { getAdById, getAdsByPage, findBrands, findAds, findBoards } from "./lib/actions";
 import { newAdInSpyder, newAdInBoard, newSwipefileAd } from "./lib/triggers";
 
@@ -9,7 +9,7 @@ export const foreplayCoAuth = PieceAuth.SecretText({
   description: "Your Foreplay.co API key",
   required: true,
 })
-export const foreplayCo = createPiece({
+export const foreplayCo = createConnector({
   displayName: "Foreplay",
   description: "Competitive advertising data and creative insights platform. Search, filter, and analyze ads and brands with live and historical ad creatives, metadata, and competitive intelligence.",
     auth: foreplayCoAuth,

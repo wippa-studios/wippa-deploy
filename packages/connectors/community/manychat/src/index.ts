@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@wippa/pieces-framework';
+import { createConnector, PieceAuth } from '@wippa/connectors-framework';
 import { findUserByCustomFieldAction } from './lib/actions/find-user-by-custom-field';
 import { createSubscriberAction } from './lib/actions/create-subscriber';
 import { sendContentToUserAction } from './lib/actions/send-content-to-user';
@@ -6,12 +6,12 @@ import { setCustomFieldAction } from './lib/actions/set-custom-fields';
 import { removeTagFromUserAction } from './lib/actions/remove-tag-from-user';
 import { addTagToUserAction } from './lib/actions/add-tag-to-user';
 import { findUserByNameAction } from './lib/actions/find-user-by-name';
-import { PieceCategory } from '@wippa/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
+import { PieceCategory } from '@wippa/connectors-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@wippa/connectors-common';
 import { BASE_URL } from './lib/common/props';
 import { manychatAuth } from './lib/auth';
 
-export const manychat = createPiece({
+export const manychat = createConnector({
 	displayName: 'Manychat',
 	description: 'Automations for Instagram, WhatsApp, TikTok, and Messenger marketing.',
 	categories: [PieceCategory.MARKETING],

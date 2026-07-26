@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from "@wippa/pieces-framework";
+import { createConnector, PieceAuth } from "@wippa/connectors-framework";
 import { respaidActions } from "./lib/actions";
 import { respaidTriggers } from "./lib/triggers";
 import { respaidAuth } from './lib/auth';
 
     
-export const respaid = createPiece({
+export const respaid = createConnector({
   displayName: "Respaid",
   auth: respaidAuth,
   minimumSupportedRelease: '0.36.1',

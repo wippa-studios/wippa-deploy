@@ -1,4 +1,4 @@
-import { createPiece } from '@wippa/pieces-framework';
+import { createConnector } from '@wippa/connectors-framework';
 import { cmsAuth } from './lib/auth';
 
 import { getBlogPostAction } from './lib/actions/get-blog-post';
@@ -15,11 +15,11 @@ import { saveTextAction } from './lib/actions/save-text';
 import { saveToggleAction } from './lib/actions/save-toggle';
 import { saveVideoAction } from './lib/actions/save-video';
 
-import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceCategory } from '@wippa/pieces-framework';
+import { createCustomApiCallAction } from '@wippa/connectors-common';
+import { PieceCategory } from '@wippa/connectors-framework';
 import { newBlogPost } from './lib/triggers/new-blog-post';
 
-export const totalcms = createPiece({
+export const totalcms = createConnector({
   displayName: 'Total CMS',
   description: 'Content management system for modern websites',
   auth: cmsAuth,

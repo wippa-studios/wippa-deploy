@@ -143,8 +143,8 @@ describe('Flow Diff Service', () => {
     it('should detect piece patch version change', async () => {
         const flowOne = flowGenerator.simpleActionAndTrigger()
         const flowTwo = JSON.parse(JSON.stringify(flowOne))
-        flowTwo.version.trigger.settings.pieceVersion = '0.1.1'
-        flowOne.version.trigger.settings.pieceVersion = '0.1.0'
+        flowTwo.version.trigger.settings.connectorVersion = '0.1.1'
+        flowOne.version.trigger.settings.connectorVersion = '0.1.0'
         const diff = await projectDiffService.diff({
             currentState: {
                 flows: [flowOne],
@@ -165,8 +165,8 @@ describe('Flow Diff Service', () => {
     it('should detect major piece version change', async () => {
         const flowOne = flowGenerator.simpleActionAndTrigger()
         const flowTwo = JSON.parse(JSON.stringify(flowOne))
-        flowTwo.version.trigger.settings.pieceVersion = '0.2.1'
-        flowOne.version.trigger.settings.pieceVersion = '0.1.0'
+        flowTwo.version.trigger.settings.connectorVersion = '0.2.1'
+        flowOne.version.trigger.settings.connectorVersion = '0.1.0'
         const diff = await projectDiffService.diff({
             currentState: {
                 flows: [flowOne],
@@ -220,8 +220,8 @@ describe('Flow Diff Service', () => {
                         propertySettings: flowOne.version.trigger.settings.propertySettings, // propertySettings first
                         input: flowOne.version.trigger.settings.input, // input second
                         triggerName: flowOne.version.trigger.settings.triggerName, // triggerName third
-                        pieceVersion: flowOne.version.trigger.settings.pieceVersion, // pieceVersion fourth
-                        pieceName: flowOne.version.trigger.settings.pieceName, // pieceName last
+                        connectorVersion: flowOne.version.trigger.settings.connectorVersion, // connectorVersion fourth
+                        connectorName: flowOne.version.trigger.settings.connectorName, // connectorName last
                     },
                 },
             },

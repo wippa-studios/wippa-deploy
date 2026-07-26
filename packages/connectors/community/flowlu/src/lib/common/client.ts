@@ -3,7 +3,7 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 import { FlowluEntity, FlowluModule } from './constants';
 import {
   Account,

@@ -7,7 +7,7 @@ import { usePieceSearchContext } from '@/features/pieces/stores/piece-search-con
 import {
   PieceSelectorTabType,
   usePieceSelectorTabs,
-} from '@/features/pieces/stores/piece-selector-tabs-provider';
+} from '@/features/pieces/stores/connector-selector-tabs-provider';
 
 type PiecesSearchInputProps = {
   searchInputRef: React.RefObject<HTMLInputElement | null>;

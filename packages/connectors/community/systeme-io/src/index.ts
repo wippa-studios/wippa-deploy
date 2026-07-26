@@ -1,4 +1,4 @@
-import { createPiece } from "@wippa/pieces-framework";
+import { createConnector } from "@wippa/connectors-framework";
 import { systemeIoAuth } from "./lib/common/auth"
 
 import { newContact } from "./lib/triggers/new-contact";
@@ -10,9 +10,9 @@ import { addTagToContact } from "./lib/actions/add-tag-to-contact";
 import { removeTagFromContact } from "./lib/actions/remove-tag-from-contact";
 import { findContactByEmail } from "./lib/actions/find-contact-by-email";
 import { updateContact } from "./lib/actions/update-contact"
-import { PieceCategory } from '@wippa/pieces-framework';
+import { PieceCategory } from '@wippa/connectors-framework';
 
-export const systemeIo = createPiece({
+export const systemeIo = createConnector({
   displayName: "Systeme.io",
   auth: systemeIoAuth,
   minimumSupportedRelease: '0.36.1',

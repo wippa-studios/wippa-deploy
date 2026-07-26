@@ -3,7 +3,7 @@ export enum PackageType {
     REGISTRY = 'REGISTRY',
 }
 
-export enum PieceType {
+export enum ConnectorType {
     CUSTOM = 'CUSTOM',
     OFFICIAL = 'OFFICIAL',
 }

@@ -3,7 +3,7 @@ import {
   httpClient,
   HttpMessageBody,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 export const JUSTINVOICE_API_URL = 'https://api.justinvoice.io';
 

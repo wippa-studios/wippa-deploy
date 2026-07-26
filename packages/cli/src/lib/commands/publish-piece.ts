@@ -6,14 +6,14 @@ import * as dotenv from 'dotenv';
 
 dotenv.config({path: 'packages/server/api/.env'});
 
-async function publishPiece(
-    {apiUrl, apiKey, pieceName, failOnError}:
+async function publishConnector(
+    {apiUrl, apiKey, connectorName, failOnError}:
     {apiUrl: string,
     apiKey: string,
-    pieceName: string,
+    connectorName: string,
     failOnError: boolean,}
 ) {
-    const pieceFolder = await findPiece(pieceName);
+    const pieceFolder = await findPiece(connectorName);
     assertPieceExists(pieceFolder)
     await publishPieceFromFolder({
         pieceFolder,
@@ -72,10 +72,10 @@ export const publishPieceCommand = new Command('publish')
         const apiUrlWithoutTrailSlash = answers.apiUrl.replace(/\/$/, '');
         const { failOnError } = command;
 
-        await publishPiece({
+        await publishConnector({
             apiUrl: apiUrlWithoutTrailSlash,
             apiKey,
-            pieceName: answers.name,
+            connectorName: answers.name,
             failOnError
         });
     });

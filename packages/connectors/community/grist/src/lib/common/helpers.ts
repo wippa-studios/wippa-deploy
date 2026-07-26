@@ -1,4 +1,4 @@
-import { DynamicPropsValue } from '@wippa/pieces-framework';
+import { DynamicPropsValue } from '@wippa/connectors-framework';
 import {
   GristAPIClientOptions,
   GristCreateRecordsRequest,
@@ -20,7 +20,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@wippa/pieces-common';
+} from '@wippa/connectors-common';
 
 type Query = Record<string, string | number | string[] | undefined>;
 

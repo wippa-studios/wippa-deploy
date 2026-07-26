@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import { SimpleJsonViewer } from '@/components/custom/simple-json-viewer';
 import { Collapsible, CollapsibleContent } from '@/components/ui/collapsible';
-import { PieceIconWithPieceName } from '@/features/pieces/components/piece-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
 
 import { normalizePieceName } from '../lib/message-parsers';
 
@@ -17,7 +17,7 @@ export function ActionReceiptCard({
 }) {
   const [outputOpen, setOutputOpen] = useState(false);
 
-  const pieceName = normalizePieceName(receipt.pieceName);
+  const connectorName = normalizePieceName(receipt.connectorName);
   const isSuccess = receipt.status === 'success';
   const hasOutput = receipt.output != null;
   const formattedTimestamp = formatTimestamp(receipt.timestamp);
@@ -32,7 +32,7 @@ export function ActionReceiptCard({
       <div className="px-3.5 pt-3 pb-2">
         <div className="flex items-center gap-2.5 min-w-0">
           <PieceIconWithPieceName
-            pieceName={pieceName}
+            connectorName={connectorName}
             size="xs"
             border={false}
             showTooltip={false}
