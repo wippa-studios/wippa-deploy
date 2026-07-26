@@ -23,7 +23,7 @@ import {
 } from '@/features/agents';
 import { piecesHooks } from '@/features/pieces';
 
-import { selectGenericFormComponentForProperty } from '../../piece-properties/properties-utils';
+import { selectGenericFormComponentForProperty } from '../../connector-properties/properties-utils';
 
 const createPredefinedInputsFormSchema = (requireAuth: boolean) =>
   requireAuth

@@ -10,8 +10,8 @@ import { resolveVisibility } from '../../ee/pieces/filters/piece-filtering-utils
 import { flowService } from '../../flows/flow/flow.service'
 import { sampleDataService } from '../../flows/step-run/sample-data.service'
 import { userInteractionWatcher } from '../../workers/user-interaction-watcher'
-import { connectorSyncService } from '../piece-sync-service'
-import { getPiecePackageWithoutArchive, pieceMetadataService } from './piece-metadata-service'
+import { connectorSyncService } from '../connector-sync-service'
+import { getPiecePackageWithoutArchive, pieceMetadataService } from './connector-metadata-service'
 import { filterActionsByAudience } from './utils'
 
 export const pieceModule: FastifyPluginAsyncZod = async (app) => {

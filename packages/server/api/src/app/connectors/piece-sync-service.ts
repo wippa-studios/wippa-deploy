@@ -14,7 +14,7 @@ import { toolSearchReindexJob } from '../tool-search/tool-search-reindex.job'
 import { connectorCache } from './metadata/piece-cache'
 import { PieceMetadataSchema } from './metadata/piece-metadata-entity'
 import { pieceMetadataService, pieceRepos } from './metadata/piece-metadata-service'
-import { connectorBundle } from './piece-bundle'
+import { connectorBundle } from './connector-bundle'
 
 const CLOUD_API_URL = 'https://cloud.activepieces.com/api/v1/pieces'
 const syncMode = system.get<PieceSyncMode>(AppSystemProp.PIECES_SYNC_MODE)

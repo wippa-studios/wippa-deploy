@@ -5,7 +5,7 @@ import { repoFactory } from '../../core/db/repo-factory'
 import { pubsub } from '../../helper/pubsub'
 import { system } from '../../helper/system/system'
 import { AppSystemProp } from '../../helper/system/system-props'
-import { PieceMetadataEntity, PieceMetadataSchema } from './piece-metadata-entity'
+import { PieceMetadataEntity, PieceMetadataSchema } from './connector-metadata-entity'
 import { loadDevPiecesIfEnabled } from './utils'
 
 const repo = repoFactory(PieceMetadataEntity)

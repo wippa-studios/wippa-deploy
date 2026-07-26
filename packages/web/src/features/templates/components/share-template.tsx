@@ -15,7 +15,7 @@ import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
 import { FROM_QUERY_PARAM } from '@/lib/navigation-utils';
 
-import { ConnectorIconList } from '../../pieces/components/connector-icon-list';
+import { ConnectorIconList } from '../../connectors/components/connector-icon-list';
 
 const TemplateViewer = ({ template }: { template: Template }) => {
   const navigate = useNavigate();

@@ -9,7 +9,7 @@ import { fileService } from '../file/file.service'
 import { flowService } from '../flows/flow/flow.service'
 import { engineRunCallbackService } from '../flows/flow-run/engine-run-callback-service'
 import { flowVersionService } from '../flows/flow-version/flow-version.service'
-import { connectorBundle } from '../pieces/piece-bundle'
+import { connectorBundle } from '../connectors/piece-bundle'
 
 export const flowEngineWorker: FastifyPluginAsyncZod = async (app) => {
 

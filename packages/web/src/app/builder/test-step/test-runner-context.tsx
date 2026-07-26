@@ -17,7 +17,7 @@ import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { ChatDrawerSource } from '@/app/builder/types';
 import { pieceSelectorUtils, piecesHooks } from '@/features/pieces';
 
-import { DynamicPropertiesContext } from '../piece-properties/dynamic-properties-context';
+import { DynamicPropertiesContext } from '../connector-properties/dynamic-properties-context';
 
 import { McpToolTestingDialog } from './custom-test-step/mcp-tool-testing-dialog';
 import TestWebhookDialog from './custom-test-step/test-webhook-dialog';

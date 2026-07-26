@@ -4,13 +4,13 @@ import { AUTHENTICATION_PROPERTY_NAME, EngineGenericError, EventPayload, Execute
 import { isValidCron } from 'cron-validator'
 import { EngineConstants, ResolvedExecuteTriggerOperation } from '../handler/context/engine-constants'
 import { FlowExecutorContext } from '../handler/context/flow-execution-context'
-import { createFileUploader } from '../piece-context/file-uploader'
-import { createFlowsContext } from '../piece-context/flows'
-import { createContextStore } from '../piece-context/store'
+import { createFileUploader } from '../connector-context/file-uploader'
+import { createFlowsContext } from '../connector-context/flows'
+import { createContextStore } from '../connector-context/store'
 import { utils } from '../utils'
 import { propsProcessor } from '../variables/props-processor'
 import { createPropsResolver } from '../variables/props-resolver'
-import { connectorLoader } from './piece-loader'
+import { connectorLoader } from './connector-loader'
 
 type Listener = {
     events: string[]

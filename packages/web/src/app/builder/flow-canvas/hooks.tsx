@@ -20,7 +20,7 @@ import { flowsApi } from '@/features/flows';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 
 import { useBuilderStateContext } from '../builder-hooks';
-import { textMentionUtils } from '../piece-properties/text-input-with-mentions/text-input-utils';
+import { textMentionUtils } from '../connector-properties/text-input-with-mentions/text-input-utils';
 
 import { flowCanvasUtils } from './utils/flow-canvas-utils';
 

@@ -15,8 +15,8 @@ import { AIModelSelector, AgentStructuredOutput } from '@/features/agents';
 import {
   selectGenericFormComponentForProperty,
   SelectGenericFormComponentForPropertyParams,
-} from '../../piece-properties/properties-utils';
-import { PieceNotAvailableAlert } from '../piece-not-available-alert';
+} from '../../connector-properties/properties-utils';
+import { PieceNotAvailableAlert } from '../connector-not-available-alert';
 import { useStepSettingsContext } from '../step-settings-context';
 
 type AgentSettingsProps = {

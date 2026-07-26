@@ -28,7 +28,7 @@ import { EnvironmentSettings } from './environment';
 import { GeneralSettings, FormValues } from './general';
 import { McpServerSettings } from './mcp-server';
 import { MembersSettings } from './members';
-import { PiecesSettings } from './pieces';
+import { PiecesSettings } from './connectors';
 
 type TabId =
   | 'general'

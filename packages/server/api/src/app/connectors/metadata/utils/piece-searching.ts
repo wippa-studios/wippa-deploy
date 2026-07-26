@@ -5,7 +5,7 @@ import {
     SuggestionType,
 } from '@wippa/shared'
 import Fuse from 'fuse.js'
-import { PieceMetadataSchema } from '../piece-metadata-entity'
+import { PieceMetadataSchema } from '../connector-metadata-entity'
 
 export const connectorSearching = {
     search: (params: SearchParams): PieceMetadataSchema[] => {

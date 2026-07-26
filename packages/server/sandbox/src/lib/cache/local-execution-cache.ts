@@ -5,7 +5,7 @@ import { CodeArtifact, SandboxSettings } from '../types'
 import { cacheUtils } from './cache-paths'
 import { engineInstaller } from './engine/engine-installer'
 import { codeBuilder } from './flow/code/code-builder'
-import { pieceInstaller } from './pieces/piece-installer'
+import { pieceInstaller } from './connectors/piece-installer'
 
 export const localExecutionCache = (log: ApLogger, basePath: string, getSettings: () => SandboxSettings) => ({
     async provision({

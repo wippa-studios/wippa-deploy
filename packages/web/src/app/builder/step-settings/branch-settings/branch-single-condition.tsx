@@ -20,7 +20,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '../../../../components/ui/tooltip';
-import { TextInputWithMentions } from '../../piece-properties/text-input-with-mentions';
+import { TextInputWithMentions } from '../../connector-properties/text-input-with-mentions';
 
 const textToBranchOperation: Record<BranchOperator, string> = {
   [BranchOperator.TEXT_CONTAINS]: t('Contains (Text)'),

@@ -5,8 +5,8 @@ import { EntityManager, In, QueryFailedError } from 'typeorm'
 import { repoFactory } from '../../../core/db/repo-factory'
 import { transaction } from '../../../core/db/transaction'
 import { distributedLock } from '../../../database/redis-connections'
-import { pieceSetConfig } from './piece-set-config'
-import { PieceSetEntity } from './piece-set.entity'
+import { pieceSetConfig } from './connector-set-config'
+import { PieceSetEntity } from './connector-set.entity'
 
 export const pieceSetRepo = repoFactory<ConnectorSet>(PieceSetEntity)
 

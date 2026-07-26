@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-import { DynamicPropertiesContext } from '../piece-properties/dynamic-properties-context';
+import { DynamicPropertiesContext } from '../connector-properties/dynamic-properties-context';
 
 type TestButtonTooltipProps = {
   children: React.ReactNode;

@@ -2,7 +2,7 @@ import { ActivepiecesError, ErrorCode, isNil, ProjectId } from '@wippa/core-util
 import { TriggerBase } from '@wippa/connectors-framework'
 import { FlowTriggerType, FlowVersion } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
-import { pieceMetadataService } from '../../pieces/metadata/piece-metadata-service'
+import { pieceMetadataService } from '../../connectors/metadata/piece-metadata-service'
 import { projectService } from '../../project/project-service'
 
 export const triggerUtils = (log: FastifyBaseLogger) => ({

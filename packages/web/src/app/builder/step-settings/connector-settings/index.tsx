@@ -11,8 +11,8 @@ import React from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { flagsHooks } from '@/hooks/flags-hooks';
 
-import { GenericPropertiesForm } from '../../piece-properties/generic-properties-form';
-import { PieceNotAvailableAlert } from '../piece-not-available-alert';
+import { GenericPropertiesForm } from '../../connector-properties/generic-properties-form';
+import { PieceNotAvailableAlert } from '../connector-not-available-alert';
 import { useStepSettingsContext } from '../step-settings-context';
 
 import { ConnectionSelect } from './connection-select';

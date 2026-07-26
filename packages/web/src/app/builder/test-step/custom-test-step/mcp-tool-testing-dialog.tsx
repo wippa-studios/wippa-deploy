@@ -19,7 +19,7 @@ import {
 import { Form } from '@/components/ui/form';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
-import { GenericPropertiesForm } from '../../piece-properties/generic-properties-form';
+import { GenericPropertiesForm } from '../../connector-properties/generic-properties-form';
 import { testStepHooks } from '../utils/test-step-hooks';
 
 type McpToolTestingDialogProps = {

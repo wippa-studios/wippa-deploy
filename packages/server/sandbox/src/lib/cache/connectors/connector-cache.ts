@@ -5,7 +5,7 @@ import { ApEnvironment, EXACT_VERSION_REGEX, PackageType, ConnectorPackage, Conn
 import { SandboxSettings } from '../../types'
 import { cacheUtils } from '../cache-paths'
 import { cacheState, NO_SAVE_GUARD } from '../cache-state'
-import { isValidPackageName } from './piece-installer'
+import { isValidPackageName } from './connector-installer'
 
 export const connectorCache = (log: ApLogger, apiClient: WorkerToApiContract, basePath: string, getSettings: () => SandboxSettings) => ({
     async getConnector({ connectorName, connectorVersion, platformId }: PieceCacheKey): Promise<ConnectorPackage> {

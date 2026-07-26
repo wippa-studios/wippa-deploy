@@ -1,7 +1,7 @@
 import { isNil } from '@wippa/core-utils';
 import type { OutputSchema } from '@wippa/connectors-framework';
 
-import { piecesHooks } from './pieces-hooks';
+import { piecesHooks } from './connectors-hooks';
 
 function usePieceOutputSchema({
   connectorName,

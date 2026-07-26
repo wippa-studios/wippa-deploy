@@ -21,7 +21,7 @@ import {
   KnowledgeBaseSection,
 } from '@/features/agents';
 
-import { AgentPieceDialog } from './piece-tool-dialog';
+import { AgentPieceDialog } from './connector-tool-dialog';
 
 const icons = [
   'https://cdn.activepieces.com/pieces/youtube.png',

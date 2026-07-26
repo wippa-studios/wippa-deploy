@@ -5,7 +5,7 @@ import {
   ParseEventResponse,
   PieceCategory,
 } from '@wippa/core-connector-types';
-import { PieceBase, ConnectorMetadata} from './piece-metadata';
+import { PieceBase, ConnectorMetadata} from './connector-metadata';
 import { PieceAuthProperty } from './property/authentication';
 import { ServerContext } from './context';
 import { ContextVersion, LATEST_CONTEXT_VERSION, MINIMUM_SUPPORTED_RELEASE_AFTER_LATEST_CONTEXT_VERSION } from './context/versioning';

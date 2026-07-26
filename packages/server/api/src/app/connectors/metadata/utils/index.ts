@@ -1,9 +1,9 @@
 import { ActionBase } from '@wippa/connectors-framework'
 import { PieceAudienceFilter, PieceCategory, PieceOrderBy, PieceSortBy, SuggestionType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
-import { PieceMetadataSchema } from '../piece-metadata-entity'
-import { connectorSearching } from './piece-searching'
-import { connectorSorting } from './piece-sorting'
+import { PieceMetadataSchema } from '../connector-metadata-entity'
+import { connectorSearching } from './connector-searching'
+import { connectorSorting } from './connector-sorting'
 
 export const pieceListUtils = (_log: FastifyBaseLogger) => ({
     async sortAndSearchPieces(params: SortAndSearchPiecesParams): Promise<PieceMetadataSchema[]> {
@@ -52,4 +52,4 @@ export type SortAndSearchPiecesParams = {
     suggestionType?: SuggestionType
 }
 
-export * from './piece-cache-utils'
+export * from './connector-cache-utils'

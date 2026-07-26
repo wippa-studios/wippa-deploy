@@ -4,7 +4,7 @@ import path from 'path'
 import { formatPieceError, Result, tryCatch } from '@wippa/core-utils'
 import { ConnectionsManager, ContextVersion, RespondHookParams, StopHookParams } from '@wippa/connectors-framework'
 import { ExecutionError, ExecutionErrorType, RespondResponse } from '@wippa/shared'
-import { createConnectionResolver } from './piece-context/connection-resolver'
+import { createConnectionResolver } from './connector-context/connection-resolver'
 
 export type FileEntry = {
     name: string

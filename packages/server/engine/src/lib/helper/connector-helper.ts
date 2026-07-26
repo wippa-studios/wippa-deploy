@@ -17,11 +17,11 @@ import { EngineConstants } from '../handler/context/engine-constants'
 
 const DEFAULT_REFRESH_EXPIRES_IN_SECONDS = 3300
 import { testExecutionContext } from '../handler/context/test-execution-context'
-import { createFlowsContext } from '../piece-context/flows'
+import { createFlowsContext } from '../connector-context/flows'
 import { utils } from '../utils'
 import { createPropsResolver } from '../variables/props-resolver'
 import { dynamicPropKeys } from './dynamic-prop-keys'
-import { connectorLoader } from './piece-loader'
+import { connectorLoader } from './connector-loader'
 
 export const connectorHelper = {
     async executeProps( operation: ExecutePropsParams): Promise<ExecutePropsResult<PropertyType.DROPDOWN | PropertyType.MULTI_SELECT_DROPDOWN | PropertyType.DYNAMIC>> {

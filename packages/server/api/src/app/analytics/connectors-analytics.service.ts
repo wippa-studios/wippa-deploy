@@ -7,7 +7,7 @@ import { flowVersionService } from '../flows/flow-version/flow-version.service'
 import { SystemJobName } from '../helper/system-jobs/common'
 import { systemJobHandlers } from '../helper/system-jobs/job-handlers'
 import { systemJobsSchedule } from '../helper/system-jobs/system-job'
-import { pieceMetadataService } from '../pieces/metadata/piece-metadata-service'
+import { pieceMetadataService } from '../connectors/metadata/piece-metadata-service'
 import { projectService } from '../project/project-service'
 
 const flowRepo = repoFactory(FlowEntity)

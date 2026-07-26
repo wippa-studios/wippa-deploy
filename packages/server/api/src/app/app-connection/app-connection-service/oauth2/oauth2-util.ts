@@ -6,7 +6,7 @@ import { isAxiosError } from 'axios'
 import { FastifyBaseLogger } from 'fastify'
 import { nanoid } from 'nanoid'
 import { secretManagersService } from '../../../ee/secret-managers/secret-managers.service'
-import { pieceMetadataService } from '../../../pieces/metadata/piece-metadata-service'
+import { pieceMetadataService } from '../../../connectors/metadata/piece-metadata-service'
 
 export const oauth2Util = (log: FastifyBaseLogger) => ({
     formatOAuth2Response: (response: Omit<BaseOAuth2ConnectionValue, 'claimed_at'>): BaseOAuth2ConnectionValue => {

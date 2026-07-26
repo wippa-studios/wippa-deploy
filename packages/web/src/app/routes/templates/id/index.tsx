@@ -27,7 +27,7 @@ import { formatUtils } from '@/lib/format-utils';
 import { FROM_QUERY_PARAM } from '@/lib/navigation-utils';
 
 import { FlowCard } from './flow-card';
-import { ConnectorCard } from './piece-card';
+import { ConnectorCard } from './connector-card';
 
 type TemplateDetailsPageProps = {
   template: Template;

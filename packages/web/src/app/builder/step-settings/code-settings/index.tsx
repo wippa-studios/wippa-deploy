@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 
-import { TextInputWithMentions } from '../../piece-properties/text-input-with-mentions';
+import { TextInputWithMentions } from '../../connector-properties/text-input-with-mentions';
 
 import { CodeEditor } from './code-editor';
 

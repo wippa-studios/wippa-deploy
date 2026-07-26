@@ -26,8 +26,8 @@ import {
 import { projectCollectionUtils } from '@/features/projects';
 import { cn, GAP_SIZE_FOR_STEP_SETTINGS } from '@/lib/utils';
 
-import { ActionErrorHandlingForm } from '../piece-properties/action-error-handling';
-import { DynamicPropertiesProvider } from '../piece-properties/dynamic-properties-context';
+import { ActionErrorHandlingForm } from '../connector-properties/action-error-handling';
+import { DynamicPropertiesProvider } from '../connector-properties/dynamic-properties-context';
 import { SidebarHeader } from '../sidebar-header';
 import { StepDataPanelHost } from '../step-data/step-data-panel-host';
 import {
@@ -40,7 +40,7 @@ import { AgentSettings } from './agent-settings';
 import { CodeSettings } from './code-settings';
 import EditableStepName from './editable-step-name';
 import { LoopsSettings } from './loops-settings';
-import { PieceSettings } from './piece-settings';
+import { PieceSettings } from './connector-settings';
 import { RouterSettings } from './router-settings';
 import { StepNavigationButtons } from './step-navigation-buttons';
 import { useStepSettingsContext } from './step-settings-context';

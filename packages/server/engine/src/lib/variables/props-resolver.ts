@@ -5,8 +5,8 @@ import { FormulaEvaluationError } from '@wippa/shared'
 
 import { initCodeSandbox } from '../core/code/code-sandbox'
 import { FlowExecutorContext } from '../handler/context/flow-execution-context'
-import { createConnectionResolver } from '../piece-context/connection-resolver'
-import { createVariableResolver } from '../piece-context/variable-resolver'
+import { createConnectionResolver } from '../connector-context/connection-resolver'
+import { createVariableResolver } from '../connector-context/variable-resolver'
 import { utils } from '../utils'
 
 const CONNECTIONS = 'connections'

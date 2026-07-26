@@ -2,7 +2,7 @@ import { isNil, LocalesEnum } from '@wippa/core-utils'
 import { McpToolDefinition, PieceAudienceFilter, PieceCategory, ProjectScopedMcpServer, SuggestionType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'
-import { pieceMetadataService } from '../../pieces/metadata/piece-metadata-service'
+import { pieceMetadataService } from '../../connectors/metadata/piece-metadata-service'
 import { ActionCardinality, mcpUtils } from './mcp-utils'
 
 const BULK_LOOKUP_CAP = 20

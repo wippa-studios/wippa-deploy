@@ -35,7 +35,7 @@ import { pieceSetMutations } from '@/features/piece-sets';
 import { ConnectorIcon, piecesHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
-import { PieceComponentVisibilitySheet } from '../piece-component-visibility-sheet';
+import { PieceComponentVisibilitySheet } from '../connector-component-visibility-sheet';
 
 function setPieceVisible(
   pieces: PieceSelection,

@@ -1,6 +1,6 @@
 import { ApId, BaseModelSchema, DateOrString, Nullable } from '@wippa/core-utils'
 import * as z from 'zod/mini'
-import { PackageType, ConnectorType } from './piece'
+import { PackageType, ConnectorType } from './connector'
 import { TriggerStrategy } from './trigger'
 
 // Contracts that the execution layer (@wippa/core-execution) and the engine

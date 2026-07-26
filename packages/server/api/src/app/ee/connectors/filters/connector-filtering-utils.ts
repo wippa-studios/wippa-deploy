@@ -3,9 +3,9 @@ import { PieceMetadataModel, PieceMetadataModelSummary } from '@wippa/connectors
 import { ApEdition, isComponentVisible, isPieceVisible, ConnectorSet, PieceSetConfig } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../helper/system/system'
-import { PieceMetadataSchema } from '../../../pieces/metadata/piece-metadata-entity'
+import { PieceMetadataSchema } from '../../../connectors/metadata/piece-metadata-entity'
 import { projectRepo } from '../../../project/project-repo'
-import { pieceSetRepo, pieceSetService } from '../piece-set/piece-set.service'
+import { pieceSetRepo, pieceSetService } from '../connector-set/piece-set.service'
 
 export async function resolveVisibility({ platformId, projectId, log }: ResolveVisibilityParams): Promise<VisibilityPolicy | null> {
     const edition = system.getEdition()

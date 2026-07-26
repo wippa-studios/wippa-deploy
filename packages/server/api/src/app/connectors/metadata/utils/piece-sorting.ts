@@ -1,6 +1,6 @@
 import { PieceOrderBy, PieceSortBy } from '@wippa/shared'
 import dayjs from 'dayjs'
-import { PieceMetadataSchema } from '../piece-metadata-entity'
+import { PieceMetadataSchema } from '../connector-metadata-entity'
 
 
 export const connectorSorting = {

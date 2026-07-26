@@ -1,7 +1,7 @@
 import { isNil, tryCatch } from '@wippa/core-utils'
 import { FlowActionType, flowStructureUtil, FlowTriggerType, FlowVersion, FlowVersionState } from '@wippa/shared'
 import { system } from '../../../helper/system/system'
-import { pieceMetadataService } from '../../../pieces/metadata/piece-metadata-service'
+import { pieceMetadataService } from '../../../connectors/metadata/piece-metadata-service'
 import { projectService } from '../../../project/project-service'
 import { flowService } from '../../flow/flow.service'
 import { Migration } from '.'

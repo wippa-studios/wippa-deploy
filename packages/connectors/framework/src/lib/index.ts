@@ -2,8 +2,8 @@ export * from './action/action';
 export * from './property';
 export * from './trigger/trigger';
 export * from './context';
-export * from './piece';
-export * from './piece-metadata';
+export * from './connector';
+export * from './connector-metadata';
 export * from './output-schema';
 export * from './i18n'
 export * from './context/versioning'

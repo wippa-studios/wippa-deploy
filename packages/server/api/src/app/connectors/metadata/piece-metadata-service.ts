@@ -10,8 +10,8 @@ import { repoFactory } from '../../core/db/repo-factory'
 import { resolveVisibility } from '../../ee/pieces/filters/piece-filtering-utils'
 import { flowVersionRepo } from '../../flows/flow-version/flow-version.service'
 import { projectService } from '../../project/project-service'
-import { connectorCache, PieceRegistryEntry } from './piece-cache'
-import { PieceMetadataEntity, PieceMetadataSchema } from './piece-metadata-entity'
+import { connectorCache, PieceRegistryEntry } from './connector-cache'
+import { PieceMetadataEntity, PieceMetadataSchema } from './connector-metadata-entity'
 import { filterActionsByAudience, filterPieceBasedOnType, isNewerVersion, isSupportedRelease, lastVersionOfEachPiece, loadDevPiecesIfEnabled, pieceListUtils } from './utils'
 
 export const pieceRepos = repoFactory(PieceMetadataEntity)

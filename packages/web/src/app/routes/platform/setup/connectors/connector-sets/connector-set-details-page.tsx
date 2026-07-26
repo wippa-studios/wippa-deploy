@@ -11,8 +11,8 @@ import { pieceSetMutations, pieceSetQueries } from '@/features/piece-sets';
 import { piecesHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
-import { PieceSetPiecesTab } from './piece-set-pieces-tab';
-import { PieceSetProjectsDialog } from './piece-set-projects-dialog';
+import { PieceSetPiecesTab } from './connector-set-pieces-tab';
+import { PieceSetProjectsDialog } from './connector-set-projects-dialog';
 
 function flipSelectionMode({
   current,

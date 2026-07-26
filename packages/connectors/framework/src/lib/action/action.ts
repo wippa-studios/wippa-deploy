@@ -1,7 +1,7 @@
 import * as z from "zod/mini";
 import { ActionContext } from '../context';
 import type { OutputSchema } from '../output-schema';
-import { ActionBase, Audience, AiMetadata } from '../piece-metadata';
+import { ActionBase, Audience, AiMetadata } from '../connector-metadata';
 import { InputPropertyMap } from '../property';
 import { ExtractPieceAuthPropertyTypeForMethods, PieceAuthProperty } from '../property/authentication';
 

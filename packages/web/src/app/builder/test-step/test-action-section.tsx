@@ -15,7 +15,7 @@ import { piecesHooks } from '@/features/pieces';
 import { useBuilderStateContext } from '../builder-hooks';
 import { stepPropertiesSnapshotUtils } from '../data-display/build-step-properties-snapshot';
 import { ErrorExplanationContext } from '../data-display/explanation-prompt';
-import { DynamicPropertiesContext } from '../piece-properties/dynamic-properties-context';
+import { DynamicPropertiesContext } from '../connector-properties/dynamic-properties-context';
 import { StepDataPanelHeader } from '../step-data/step-data-panel-header';
 import { StepDataPanelViewToggle } from '../step-data/step-data-panel-view-toggle';
 

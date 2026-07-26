@@ -11,7 +11,7 @@ import { EngineConstants, ResolvedExecuteFlowOperation } from './context/engine-
 import { FlowExecutorContext } from './context/flow-execution-context'
 import { loopExecutor } from './loop-executor'
 import { parallelExecutor } from './parallel-executor'
-import { connectorExecutor } from './piece-executor'
+import { connectorExecutor } from './connector-executor'
 import { routerExecuter } from './router-executor'
 
 function getExecuteFunction(): Record<FlowActionType, BaseExecutor<FlowAction>> {

@@ -5,7 +5,7 @@ import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { securityAccess } from '../core/security/authorization/fastify-security'
 import { platformMustHaveFeatureEnabled } from '../ee/authentication/ee-authorization'
 import { userIdentityHelper } from '../helper/user-identity-helper'
-import { piecesAnalyticsService } from './pieces-analytics.service'
+import { piecesAnalyticsService } from './connectors-analytics.service'
 import { platformAnalyticsReportService } from './platform-analytics-report.service'
 
 export const platformAnalyticsModule: FastifyPluginAsyncZod = async (app) => {

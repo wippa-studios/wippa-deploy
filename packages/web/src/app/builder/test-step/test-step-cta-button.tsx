@@ -15,7 +15,7 @@ import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { Button } from '@/components/ui/button';
 import { pieceSelectorUtils } from '@/features/pieces';
 
-import { DynamicPropertiesContext } from '../piece-properties/dynamic-properties-context';
+import { DynamicPropertiesContext } from '../connector-properties/dynamic-properties-context';
 
 import {
   useActionTestRunner,

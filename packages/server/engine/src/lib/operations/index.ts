@@ -4,7 +4,7 @@ import { EngineOperation, EngineOperationType, EngineResponse, EngineResponseSta
 import { authRefreshOperation } from './auth-refresh.operation'
 import { authValidationOperation } from './auth-validation.operation'
 import { flowOperation } from './flow.operation'
-import { pieceMetadataOperation } from './piece-metadata.operation'
+import { pieceMetadataOperation } from './connector-metadata.operation'
 import { propertyOperation } from './property.operation'
 import { triggerHookOperation } from './trigger-hook.operation'
 

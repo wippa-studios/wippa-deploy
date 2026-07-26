@@ -8,7 +8,7 @@ import { userIdentityService } from '../../authentication/user-identity/user-ide
 import { platformService } from '../../platform/platform.service'
 import { projectService } from '../../project/project-service'
 import { userService } from '../../user/user-service'
-import { pieceSetRepo, pieceSetService } from '../pieces/piece-set/piece-set.service'
+import { pieceSetRepo, pieceSetService } from '../connectors/piece-set/piece-set.service'
 import { concurrencyPoolService } from '../platform/concurrency-pool/concurrency-pool.service'
 import { projectMemberService } from '../projects/project-members/project-member.service'
 import { externalTokenExtractor } from './lib/external-token-extractor'

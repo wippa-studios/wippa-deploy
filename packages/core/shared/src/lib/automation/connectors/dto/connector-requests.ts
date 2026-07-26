@@ -1,7 +1,7 @@
 import { ApMultipartFile, OptionalArrayFromQuery, OptionalBooleanFromQuery } from '@wippa/core-utils'
 import { z } from 'zod'
 import { ApEdition } from '../../../core/flag/flag'
-import { PackageType, PieceCategory } from '../piece'
+import { PackageType, PieceCategory } from '../connector'
 
 export const EXACT_VERSION_PATTERN = '^[0-9]+\\.[0-9]+\\.[0-9]+$'
 export const EXACT_VERSION_REGEX = new RegExp(EXACT_VERSION_PATTERN)

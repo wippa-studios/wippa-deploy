@@ -6,10 +6,10 @@ import { z } from 'zod'
 import { appConnectionService } from '../../app-connection/app-connection-service/app-connection-service'
 import { flowService } from '../../flows/flow/flow.service'
 import { sampleDataService } from '../../flows/step-run/sample-data.service'
-import { getPiecePackageWithoutArchive } from '../../pieces/metadata/piece-metadata-service'
+import { getPiecePackageWithoutArchive } from '../../connectors/metadata/piece-metadata-service'
 import { userInteractionWatcher } from '../../workers/user-interaction-watcher'
 import { mcpUtils, PropertyResolutionResult, PropSummary } from './mcp-utils'
-import { connectorExpertise } from './piece-expertise'
+import { connectorExpertise } from './connector-expertise'
 
 export const apGetPiecePropsTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogger): McpToolDefinition => {
     return {

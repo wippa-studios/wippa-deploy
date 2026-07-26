@@ -1,7 +1,7 @@
 import * as z from "zod/mini";
 import { OnStartContext, TestOrRunHookContext, TriggerHookContext } from '../context';
 import type { OutputSchema } from '../output-schema';
-import { AiMetadata, TriggerBase } from '../piece-metadata';
+import { AiMetadata, TriggerBase } from '../connector-metadata';
 import { InputPropertyMap } from '../property';
 import { ExtractPieceAuthPropertyTypeForMethods, PieceAuthProperty } from '../property/authentication';
 import { isNil } from '@wippa/core-utils';

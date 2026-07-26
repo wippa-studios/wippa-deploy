@@ -5,7 +5,7 @@ import {
   type ToolCallContentBlock,
 } from '@wippa/shared';
 
-import { piecesApi } from '../pieces/api/pieces-api';
+import { piecesApi } from '../connectors/api/pieces-api';
 
 type ToolMetadata = {
   displayName?: string | null;
