@@ -151,7 +151,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
                 },
             },
             info: {
-                title: "Wippa API Documentation"',
+                title: "Wippa API Documentation",
                 version: '0.0.0',
             },
             externalDocs: {

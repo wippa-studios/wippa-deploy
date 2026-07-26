@@ -14,14 +14,14 @@ function buildFacade(): FastifyBaseLogger {
 
     return evlogSetup.init({
         params: {
-            serviceName: "wippa-api"',
+            serviceName: 'wippa-api',
             version: apVersionUtil.getCurrentRelease(),
             logLevel,
             logPretty,
             sampleRateInfo,
             keepSlowMs,
             drainConfig: {
-                serviceName: "wippa-api"',
+                serviceName: 'wippa-api',
                 hyperdxToken: environmentVariables.getEnvironment(AppSystemProp.HYPERDX_TOKEN),
                 axiomToken: environmentVariables.getEnvironment(AppSystemProp.AXIOM_TOKEN),
                 axiomDataset: environmentVariables.getEnvironment(AppSystemProp.AXIOM_DATASET),

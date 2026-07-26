@@ -38,7 +38,7 @@ function buildGaugePayload({ queueCounts, timeUnixNano, hostName }: BuildGaugePa
         resourceMetrics: [{
             resource: {
                 attributes: [
-                    { key: 'service.name', value: { stringValue: "wippa-api' } },
+                    { key: 'service.name', value: { stringValue: 'wippa-api' } },
                     { key: 'host.name', value: { stringValue: hostName } },
                 ],
             },
