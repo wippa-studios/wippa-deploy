@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import { join } from 'path'
-import { isNil } from '@activepieces/core-utils'
-import { fileSystemUtils, memoryLock } from '@activepieces/server-utils'
+import { isNil } from '@wippa/core-utils'
+import { fileSystemUtils, memoryLock } from '@wippa/server-utils'
 import writeFileAtomic from 'write-file-atomic'
 
 type CacheMap = Record<string, string>

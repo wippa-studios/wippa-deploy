@@ -1,8 +1,8 @@
 import { rm, writeFile } from 'node:fs/promises'
 import path, { dirname, join } from 'node:path'
-import { ensureTrailingSlash, groupBy, isEmpty, isNil, tryCatch } from '@activepieces/core-utils'
-import { type ApLogger, fileSystemUtils, memoryLock, wideEvent } from '@activepieces/server-utils'
-import { ExecutionMode, getPieceNameFromAlias, PackageType, PiecePackage, PieceType } from '@activepieces/shared'
+import { ensureTrailingSlash, groupBy, isEmpty, isNil, tryCatch } from '@wippa/core-utils'
+import { type ApLogger, fileSystemUtils, memoryLock, wideEvent } from '@wippa/server-utils'
+import { ExecutionMode, getPieceNameFromAlias, PackageType, PiecePackage, PieceType } from '@wippa/shared'
 import writeFileAtomic from 'write-file-atomic'
 import { SandboxSettings } from '../../types'
 import { bunRunner } from '../../utils/bun-runner'
@@ -134,7 +134,7 @@ async function installPieces(rootWorkspace: string, pieces: PiecePackage[], incl
 }
 
 // A workspace member name (and its dependency key) must be a plain npm package name. A relative
-// path such as `../../../common/pieces/@activepieces/piece-x` — fed in via stale `usedPieces` data
+// path such as `../../../common/pieces/@wippa/piece-x` — fed in via stale `usedPieces` data
 // from a since-reverted build — makes bun write an unparseable resolution token into the SHARED
 // bun.lock. That lock then fails to parse on the next install and takes down EVERY piece in the
 // workspace (so cache pre-warm and the deploy fail). Worse, because the install joins the name onto
