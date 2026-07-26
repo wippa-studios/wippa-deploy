@@ -1,5 +1,6 @@
 import { apId } from '@wippa/core-utils'
 import { FlowVersionTemplate, TemplateStatus, TemplateType } from '@wippa/shared'
+import { FlowTriggerType } from '@wippa/core-execution'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../core/db/repo-factory'
 import { templateValidator } from './template-validator'
@@ -11,7 +12,7 @@ type TemplateSeed = {
     name: string
     summary: string
     description: string
-    tags: Array<{ title: string, color: string }>
+    tags: Array<{ title: string; color: string }>
     author: string
     categories: string[]
     pieces: string[]
@@ -48,7 +49,7 @@ const TEMPLATES: TemplateSeed[] = [
                 name: stepName(),
                 valid: true,
                 displayName: 'New Sales Invoice',
-                type: 'PIECE_TRIGGER',
+                        type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
                     pieceName: XERO_PIECE,
@@ -78,10 +79,7 @@ const TEMPLATES: TemplateSeed[] = [
             },
             valid: true,
             schemaVersion: '22',
-            connectionIds: [],
-            agentIds: [],
-            notes: [],
-        }],
+}],
     },
     {
         name: 'Overdue Invoice → Follow-up Sequence',
@@ -97,7 +95,7 @@ const TEMPLATES: TemplateSeed[] = [
                 name: stepName(),
                 valid: true,
                 displayName: 'Updated Sales Invoice',
-                type: 'PIECE_TRIGGER',
+                        type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
                     pieceName: XERO_PIECE,
@@ -127,10 +125,7 @@ const TEMPLATES: TemplateSeed[] = [
             },
             valid: true,
             schemaVersion: '22',
-            connectionIds: [],
-            agentIds: [],
-            notes: [],
-        }],
+}],
     },
     {
         name: 'New Lead → Xero Contact + Slack Notification',
@@ -146,7 +141,7 @@ const TEMPLATES: TemplateSeed[] = [
                 name: stepName(),
                 valid: true,
                 displayName: 'New Contact',
-                type: 'PIECE_TRIGGER',
+                        type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
                     pieceName: XERO_PIECE,
@@ -174,10 +169,7 @@ const TEMPLATES: TemplateSeed[] = [
             },
             valid: true,
             schemaVersion: '22',
-            connectionIds: [],
-            agentIds: [],
-            notes: [],
-        }],
+}],
     },
     {
         name: 'Xero Payment Received → Slack Alert',
@@ -193,7 +185,7 @@ const TEMPLATES: TemplateSeed[] = [
                 name: stepName(),
                 valid: true,
                 displayName: 'New Payment',
-                type: 'PIECE_TRIGGER',
+                        type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
                     pieceName: XERO_PIECE,
@@ -221,10 +213,7 @@ const TEMPLATES: TemplateSeed[] = [
             },
             valid: true,
             schemaVersion: '22',
-            connectionIds: [],
-            agentIds: [],
-            notes: [],
-        }],
+}],
     },
     {
         name: 'New Xero Bill → Email to Accounts',
@@ -240,7 +229,7 @@ const TEMPLATES: TemplateSeed[] = [
                 name: stepName(),
                 valid: true,
                 displayName: 'New Bill',
-                type: 'PIECE_TRIGGER',
+                        type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
                     pieceName: XERO_PIECE,
@@ -270,10 +259,7 @@ const TEMPLATES: TemplateSeed[] = [
             },
             valid: true,
             schemaVersion: '22',
-            connectionIds: [],
-            agentIds: [],
-            notes: [],
-        }],
+}],
     },
     {
         name: 'Xero Invoice Status Change → Customer Alert',
@@ -289,7 +275,7 @@ const TEMPLATES: TemplateSeed[] = [
                 name: stepName(),
                 valid: true,
                 displayName: 'Updated Sales Invoice',
-                type: 'PIECE_TRIGGER',
+                        type: FlowTriggerType.PIECE,
                 lastUpdatedDate: now(),
                 settings: {
                     pieceName: XERO_PIECE,
@@ -319,10 +305,7 @@ const TEMPLATES: TemplateSeed[] = [
             },
             valid: true,
             schemaVersion: '22',
-            connectionIds: [],
-            agentIds: [],
-            notes: [],
-        }],
+}],
     },
 ]
 
