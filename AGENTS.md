@@ -14,7 +14,7 @@ Australian automation platform. Self-hosted or cloud. 700+ integrations. MCP sup
 - **Multi-server**: Use `distributedLock`, BullMQ deduplication, or `FOR UPDATE SKIP LOCKED` for concurrent operations.
 - **Managed PostgreSQL**: No custom extensions. Use `sanitizeObjectForPostgresql()` for external data.
 - **Before modifying a module**: Read its `.agents/features/<name>.md` file for entities, services, and integration details.
-- **Cross-cutting libraries live in `packages/core/*`**, ordered thin → thick: `core-utils`, `core-piece-types`, `core-formula`, `core-execution` (thin, bundleable, framework-agnostic) and `core/shared` (the one thick, app-level member — **keeps the name `@wippa/shared`**, carries DB/EE/management schemas + heavy deps). Pieces and the engine may import the thin members but **never** `@wippa/shared`; pieces get what they need via `@wippa/pieces-framework`. See `.claude/rules/core-packages.md`.
+  - **Cross-cutting libraries live in `packages/core/*`**, ordered thin → thick: `core-utils`, `core-connector-types`, `core-formula`, `core-execution` (thin, bundleable, framework-agnostic) and `core/shared` (the one thick, app-level member — **keeps the name `@wippa/shared`**, carries DB/EE/management schemas + heavy deps). Connectors and the engine may import the thin members but **never** `@wippa/shared`; connectors get what they need via `@wippa/connectors-framework`. See `.claude/rules/core-packages.md`.
 | `.agents/features/*.md` | ~60 lines each | When Claude explores the feature | Entity schemas, services, data flows |
 | `.claude/rules/` | 3-5 lines each | Every session | Critical safety checks (entity registration, data isolation, edition safety) |
 | `.agents/skills/` | 30-65 lines each | When invoked | Step-by-step workflows (`/add-feature`, `/add-entity`, `/add-endpoint`) |
@@ -94,8 +94,8 @@ When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth prov
   - **`🐛 bug`** — bug fix
   - **`skip-changelog`** — changes that should not appear in the changelog (docs, CI tweaks, internal refactors, etc.)
 - If the PR includes any contributions to pieces (integrations under `packages/pieces`), also add the appropriate pieces label (in addition to the primary label above):
-  - **`🧩 area/third-party-pieces`** — for third-party integrations (most pieces under `packages/pieces/community/`)
-  - **`🧩 area/core-pieces`** — for core pieces (under `packages/pieces/core/`)
+  - **`🧩 area/third-party-connectors`** — for third-party integrations (most connectors under `packages/connectors/community/`)
+  - **`🧩 area/core-connectors`** — for core connectors (under `packages/connectors/core/`)
 - **Always fill the "Breaking change?" section of the PR template** — tick exactly one box (the `breaking-change-check` CI job fails if it is left unedited). A change is breaking if a self-hoster or API consumer must take action: removed/renamed API fields or endpoints, dropped columns, new required fields, removed/required env vars, or default/limit/behaviour changes. If it is breaking:
   - also apply the **`⛓️‍💥 breaking-change`** label (in addition to the primary label above), and
   - add an entry to `docs/install/reference/breaking-changes.mdx` describing what changed and the action required. CI enforces that the label and the docs entry travel together.

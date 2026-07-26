@@ -26,9 +26,9 @@
     "check-migrations": "npx turbo run check-migrations --filter=api",
     "rollback": "npm run rollback --workspace=packages/server/api --",
     "lint-core": "turbo run lint --filter=@wippa/shared --filter=@wippa/engine --filter=api --filter=web --filter=@wippa/server-utils --filter=worker --filter=ee-embed-sdk",
-    "lint-pieces": "turbo run lint --filter='@wippa/piece-*'",
+    "lint-pieces": "turbo run lint --filter='@wippa/connector-*'",
     "lint-affected": "turbo run lint --affected",
-    "lint-dev": "turbo run lint --filter='!@wippa/piece-*' --force -- --fix",
+    "lint-dev": "turbo run lint --filter='!@wippa/connector-*' --force -- --fix",
     "test-unit": "turbo run test --filter=@wippa/engine --filter=@wippa/shared --filter=web",
     "test-api": "turbo run check-migrations test-ce test-ee test-cloud --filter=api --concurrency=1",
     "chat-evals": "set -a && . ./.env.dev && set +a && tsx --tsconfig packages/server/worker/test/lib/chat-eval/cli/tsconfig.json packages/server/worker/test/lib/chat-eval/cli/index.ts",
@@ -125,11 +125,11 @@
     "packages/server/worker",
     "packages/ee/embed-sdk",
     "packages/tests-e2e",
-    "packages/pieces/framework",
-    "packages/pieces/common",
-    "packages/pieces/core/*",
-    "packages/pieces/community/*",
-    "packages/pieces/custom/*"
+    "packages/connectors/framework",
+    "packages/connectors/common",
+    "packages/connectors/core/*",
+    "packages/connectors/community/*",
+    "packages/connectors/custom/*"
   ],
   "resolutions": {
     "rollup": "npm:@rollup/wasm-node",
