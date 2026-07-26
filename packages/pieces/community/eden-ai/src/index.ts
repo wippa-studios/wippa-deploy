@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
     import { generateTextAction } from './lib/actions/generate-text';
     import { summarizeTextAction } from './lib/actions/summarize-text';
     import { extractKeywordsAction } from './lib/actions/extract-keywords';

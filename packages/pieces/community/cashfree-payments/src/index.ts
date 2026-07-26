@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
 import { createOrder } from "./lib/actions/create-order"
 import { createPaymentLink } from "./lib/actions/create-payment-link"
 import { createRefund } from "./lib/actions/create-refund"

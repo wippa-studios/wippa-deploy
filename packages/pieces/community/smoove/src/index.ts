@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { smooveAuth } from "./lib/common/auth";
 import { addOrUpdateSubscriber } from "./lib/actions/add-or-update-subscriber";
 import { createAList } from "./lib/actions/create-a-list";

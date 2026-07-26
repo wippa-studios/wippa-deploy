@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { createConversationWithSingleAgent } from "./lib/actions/create-conversation-with-single-agent";
 import { sendMessageToExistingConversation } from "./lib/actions/send-message-to-existing-conversation";
 import { findMessage } from "./lib/actions/find-message";

@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { identifyUser } from "./lib/actions/identify-user";
 
 export const segmentAuth = PieceAuth.SecretText({

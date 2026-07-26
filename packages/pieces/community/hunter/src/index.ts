@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { addRecipientsAction } from "./lib/actions/add-recipients";
 import { countEmailsAction } from "./lib/actions/count-emails";

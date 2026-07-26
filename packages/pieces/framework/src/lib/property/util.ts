@@ -2,8 +2,8 @@ import { PiecePropertyMap } from ".";
 import { PieceAuthProperty } from "./authentication";
 import { PropertyType } from "./input/property-type";
 import * as z from "zod/mini";
-import { isEmpty, isNil } from "@activepieces/core-utils";
-import { AUTHENTICATION_PROPERTY_NAME } from "@activepieces/core-piece-types";
+import { isEmpty, isNil } from "@wippa/core-utils";
+import { AUTHENTICATION_PROPERTY_NAME } from "@wippa/core-piece-types";
 
 function buildSchema(props: PiecePropertyMap, auth: PieceAuthProperty | PieceAuthProperty[] | undefined, requireAuth: boolean | undefined = true) {
     const entries = Object.entries(props);

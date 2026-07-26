@@ -6,10 +6,10 @@ import { isNil } from '@wippa/pieces-framework';
 import { AgentToolType } from '@wippa/pieces-framework';
 import { AgentKnowledgeBaseTool, AgentMcpTool, AgentOutputField, AgentTaskStatus, AgentTool, buildAuthHeaders, isString, KnowledgeBaseSourceType, McpProtocol, mcpToolNameUtils, TASK_COMPLETION_TOOL_NAME } from '@wippa/pieces-framework';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js'
-import { ActionContext } from "@activepieces/pieces-framework";
+import { ActionContext } from "@wippa/pieces-framework";
 import { ProviderOptions } from "@ai-sdk/provider-utils";
 import { experimental_createMCPClient as createMCPClient, MCPClient, MCPTransport } from '@ai-sdk/mcp';
-import { AuthenticationType, httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@wippa/pieces-common";
 
 function createTransportConfig(
     protocol: McpProtocol,

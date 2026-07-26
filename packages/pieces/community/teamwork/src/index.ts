@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { teamworkAuth } from "./lib/common/auth";
 import { createProject } from "./lib/actions/create-project";
 import { createTaskList } from "./lib/actions/create-task-list";

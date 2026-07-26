@@ -1,4 +1,4 @@
-import { BaseModelSchema, Cursor, Nullable, NullableEnum, OptionalArrayFromQuery } from "@activepieces/core-utils";
+import { BaseModelSchema, Cursor, Nullable, NullableEnum, OptionalArrayFromQuery } from "@wippa/core-utils";
 import * as z from "zod/mini";
 
 export enum FieldType {

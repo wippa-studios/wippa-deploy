@@ -1,5 +1,5 @@
 
-    import { createPiece } from "@activepieces/pieces-framework";
+    import { createPiece } from "@wippa/pieces-framework";
     import { extractaAiAuth } from "./lib/common";
     import { extractFileData } from "./lib/actions/extract-file-data";
     import { uploadFile } from "./lib/actions/upload-file";

@@ -1,4 +1,4 @@
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
     import { createCustomApiCallAction, HttpMethod } from '@wippa/pieces-common';
     import { createItemAction } from './lib/actions/create-item';
     import { updateItemAction } from './lib/actions/update-item';

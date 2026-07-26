@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { justInvoiceAuth } from "./lib/common/auth";
 import * as actions from "./lib/actions/index";
 

@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { createChatCompletion } from "./lib/actions/create-chat-completion";
 import { createEmbeddings } from "./lib/actions/create-embeddings";
@@ -7,7 +7,7 @@ import { runOcr } from "./lib/actions/run-ocr";
 import { listModels } from "./lib/actions/list-models";
 import { mistralAuth } from "./lib/common/auth";
 import { mistralRequest } from "./lib/common/request";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 
 export const mistralAi = createPiece({
   displayName: "Mistral AI",

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { sendMessageAction } from "./lib/actions/send-message";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { chatflyAuth } from './lib/auth';

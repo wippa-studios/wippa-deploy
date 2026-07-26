@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { httpClient, HttpMethod } from '@wippa/pieces-common';
 import { deleteContact } from './lib/actions/delete-contact';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
 import { httpOauth2RequestAction } from "./lib/actions/send-oauth2-http-request";
 
 export const httpOauth2Auth = PieceAuth.OAuth2({

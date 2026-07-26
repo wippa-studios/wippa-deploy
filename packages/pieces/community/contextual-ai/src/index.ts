@@ -1,5 +1,5 @@
 
-import { PieceAuth, createPiece, Property } from "@activepieces/pieces-framework";
+import { PieceAuth, createPiece, Property } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { ContextualAI } from 'contextual-client';
 import { queryAgentAction } from './lib/actions/query-agent';

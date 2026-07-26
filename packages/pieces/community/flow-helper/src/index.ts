@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { getRunId } from "./lib/actions/get-run-id";
 import { failFlow } from "./lib/actions/fail-flow";
 import { stopFlow } from "./lib/actions/stop-flow";

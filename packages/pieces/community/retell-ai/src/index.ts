@@ -1,6 +1,6 @@
 
 import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { retellAiAuth } from './lib/common/auth';
 import { makePhoneCall } from './lib/actions/make-phone-call';
 import { createPhoneNumber } from './lib/actions/create-phone-number';

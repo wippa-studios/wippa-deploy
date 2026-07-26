@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth, OAuth2PropertyValue } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth, OAuth2PropertyValue } from "@wippa/pieces-framework";
     import { OAuth2GrantType, PieceCategory } from '@wippa/pieces-framework';
     import { getInvoices } from './lib/actions/get-invoices';
     import { getProjects } from './lib/actions/get-projects';

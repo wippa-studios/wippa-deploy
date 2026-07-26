@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction, httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { PieceAuth, createPiece } from "@wippa/pieces-framework";
+import { createCustomApiCallAction, httpClient, HttpMethod } from "@wippa/pieces-common";
 import { createTextToSound } from "./lib/actions/create-text-to-sound";
 import { createTextToSpeech } from "./lib/actions/create-text-to-speech";
 import { createTranslation } from "./lib/actions/create-translation";

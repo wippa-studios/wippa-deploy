@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { BumpupsAuth } from "./lib/common/auth";
 import { generateCreatorDescription } from "./lib/actions/generate-creator-description";
 import { generateCreatorHashtags } from "./lib/actions/generate-creator-hashtags";
@@ -7,7 +7,7 @@ import { sendChat } from "./lib/actions/send-chat";
 import { generateCreatorTakeaways } from "./lib/actions/generate-creator-takeaways";
 import { generateCreatorTitles } from "./lib/actions/generate-creator-titles";
 import { generateTimestamps } from "./lib/actions/generate-timestamps";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { BASE_URL } from "./lib/common/client";
 
 export const bumpups = createPiece({

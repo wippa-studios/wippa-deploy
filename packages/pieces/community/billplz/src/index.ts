@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { billplzAuth } from "./lib/common/auth";
 import { createBill } from "./lib/actions/create-bill";
 import { getBill } from "./lib/actions/get-bill";

@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { productboardAuth } from "./lib/common/auth";
 import { createFeature } from "./lib/actions/create-feature";
 import { createNote } from "./lib/actions/create-note";

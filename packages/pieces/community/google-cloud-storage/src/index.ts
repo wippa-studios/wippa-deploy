@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { googleCloudStorageAuth } from "./lib/common/auth";
 import { createBucket } from "./lib/actions/create-bucket";

@@ -1,4 +1,4 @@
-import { PieceAuth } from "@activepieces/pieces-framework";
+import { PieceAuth } from "@wippa/pieces-framework";
 
 export const influencersClubAuth = PieceAuth.SecretText({
   displayName: "Influencers Club API Key",

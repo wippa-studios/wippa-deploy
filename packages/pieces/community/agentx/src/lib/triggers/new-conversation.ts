@@ -2,13 +2,13 @@ import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from "@activepieces/pieces-framework";
+} from "@wippa/pieces-framework";
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from "@activepieces/pieces-common";
+} from "@wippa/pieces-common";
 import dayjs from "dayjs";
 import { makeRequest } from "../common/client";
 import { AgentXAuth } from "../common/auth";

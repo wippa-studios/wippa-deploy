@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { systemeIoAuth } from "./lib/common/auth"
 
 import { newContact } from "./lib/triggers/new-contact";

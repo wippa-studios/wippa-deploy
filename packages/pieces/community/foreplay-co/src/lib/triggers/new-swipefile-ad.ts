@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from "@activepieces/pieces-framework";
+import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from "@wippa/pieces-framework";
 import { foreplayCoApiCall } from "../common";
-import { HttpMethod, Polling, DedupeStrategy, pollingHelper } from "@activepieces/pieces-common";
+import { HttpMethod, Polling, DedupeStrategy, pollingHelper } from "@wippa/pieces-common";
 import { newSwipefileAd as newSwipefileAdProperties } from "../properties";
 import { newSwipefileAdSchema } from "../schemas";
 import { foreplayCoAuth } from "../..";

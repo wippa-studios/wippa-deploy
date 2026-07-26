@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { cloudinaryAuth } from "./lib/common/auth";
 import { uploadResource } from "./lib/actions/upload-resource";
 import { deleteResource } from "./lib/actions/delete-resource";

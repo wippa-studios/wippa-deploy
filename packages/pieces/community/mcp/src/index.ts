@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { replyToMcpClient } from "./lib/actions/reply-to-mcp-client";
 import { mcpTool } from "./lib/triggers/mcp-tool";
 import { PieceCategory } from '@wippa/pieces-framework';

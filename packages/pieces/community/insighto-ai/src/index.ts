@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
     import { addTextBlobAction } from "./lib/actions/add-text-blob-action";
     import { upsertContactAction } from "./lib/actions/upsert-contact-action";
     import { makeOutboundCallAction } from "./lib/actions/make-outbound-call-action";

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { downloadView } from './lib/actions/download-view';
 import { runExtractRefreshTask } from './lib/actions/run-extract-refresh-task';

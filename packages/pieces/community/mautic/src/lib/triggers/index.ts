@@ -1,6 +1,6 @@
 import { HttpMethod, HttpRequest, httpClient } from '@wippa/pieces-common';
 import { mauticAuth } from '../auth';
-import { Property, TriggerStrategy, createTrigger } from "@activepieces/pieces-framework";
+import { Property, TriggerStrategy, createTrigger } from "@wippa/pieces-framework";
 
 const contactTestData = {
   "contact": {

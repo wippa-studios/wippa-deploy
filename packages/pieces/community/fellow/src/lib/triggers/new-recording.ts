@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@activepieces/pieces-framework";
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@wippa/pieces-framework";
 import { fellowAuth, getBaseUrl } from "../common/auth";
-import { DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from "@activepieces/pieces-common";
+import { DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from "@wippa/pieces-common";
 import dayjs from 'dayjs';
 import { ListRecordingsResponse } from "../common/types";
 import { isNil } from '@wippa/pieces-framework';

@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { validateEmail } from "./lib/actions/validate-email";
 
 export const zerobounceAuth = PieceAuth.SecretText({

@@ -1,7 +1,7 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { jiraCloudAuth } from "../../auth";
 import { jiraApiCall } from "../common";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@wippa/pieces-common";
 
 export const findUserAction = createAction({
     auth:jiraCloudAuth,

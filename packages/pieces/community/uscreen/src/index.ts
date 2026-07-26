@@ -1,8 +1,8 @@
 
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { uscreenAuth } from "./lib/common/auth";
 import { uscreenPublisherApiUrl } from "./lib/common/client";
 

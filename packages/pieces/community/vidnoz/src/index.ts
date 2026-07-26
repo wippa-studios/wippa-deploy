@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { vidnozClient } from "./lib/common/auth";
 import { generateVideoWithAvatar } from "./lib/actions/generate-video-with-avatar";

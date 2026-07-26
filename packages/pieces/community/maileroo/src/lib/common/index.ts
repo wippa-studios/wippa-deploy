@@ -1,4 +1,4 @@
-import { ApFile } from "@activepieces/pieces-framework";
+import { ApFile } from "@wippa/pieces-framework";
 import { isNil } from '@wippa/pieces-framework';
 
 export function toEmailObjects(addresses: unknown[]) {

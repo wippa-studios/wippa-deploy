@@ -6,8 +6,8 @@ import { OIDCProperty, OIDCAuthProps } from "./oidc-prop";
 import { SecretTextProperty } from "./secret-text-property";
 import { PropertyType } from "../input/property-type";
 import { OAuth2Property, OAuth2Props } from "./oauth2-prop";
-import { isNil } from "@activepieces/core-utils";
-import { AppConnectionType } from "@activepieces/core-piece-types";
+import { isNil } from "@wippa/core-utils";
+import { AppConnectionType } from "@wippa/core-piece-types";
 
 export const PieceAuthProperty = z.union([
   BasicAuthProperty,

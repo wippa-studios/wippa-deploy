@@ -1,5 +1,5 @@
 
-    import { createPiece } from "@activepieces/pieces-framework";
+    import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { phoneValidatorAuth } from './lib/common/auth';
 import { validatePhone } from './lib/actions';

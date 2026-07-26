@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { tinyTalkAiAuth } from "./lib/common/auth";
 import { askBotAction } from "./lib/actions/ask-bot";
 

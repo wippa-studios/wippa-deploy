@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { cursorAuth } from "./lib/common/auth";
 import { addFollowupInstruction } from "./lib/actions/add-followup-instruction";

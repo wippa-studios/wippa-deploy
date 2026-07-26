@@ -1,7 +1,7 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { makeRequest } from "../common/client";
 import { AgentXAuth } from "../common/auth";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@wippa/pieces-common";
 import { AgentIdDropdown, ConversationIdDropdown } from "../common/dropdown";
 
 export const findConversation = createAction({

@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { AppConnectionValueForAuthProperty, PieceAuth } from "@wippa/pieces-framework";
+import { httpClient, HttpMethod } from "@wippa/pieces-common";
 
 // Action imports
 // Customer actions

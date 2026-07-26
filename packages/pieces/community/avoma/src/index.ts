@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { newNote } from "./lib/triggers/new-note";
 import { createCall } from "./lib/actions/create-call";
 import { getMeetingTranscription } from "./lib/actions/get-meeting-transcription";

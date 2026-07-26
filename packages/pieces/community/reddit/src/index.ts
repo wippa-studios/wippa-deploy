@@ -1,5 +1,5 @@
 import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth, OAuth2AuthorizationMethod, Property, OAuth2PropertyValue } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, OAuth2AuthorizationMethod, Property, OAuth2PropertyValue } from "@wippa/pieces-framework";
 import { retrieveRedditPost } from './lib/actions/retrieve-reddit-post';
 import { getRedditPostDetails } from './lib/actions/get-reddit-post-details';
 import { createRedditPost } from './lib/actions/create-reddit-post';

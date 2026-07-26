@@ -1,4 +1,4 @@
-import { Property } from "@activepieces/pieces-framework";
+import { Property } from "@wippa/pieces-framework";
 import { biginApiService } from "./request";
 import { handleDropdownError } from "./helpers";
 import { biginAuth } from '../auth';

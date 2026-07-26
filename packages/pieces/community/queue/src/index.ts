@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { pushToQueue } from "./lib/actions/push-to-queue";
 import { pullFromQueue } from "./lib/actions/pull-from-queue";
 import { clearQueue } from "./lib/actions/clear-queue";

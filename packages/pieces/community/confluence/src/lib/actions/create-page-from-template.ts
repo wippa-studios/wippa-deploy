@@ -1,8 +1,8 @@
 import { confluenceAuth } from '../auth';
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { folderIdProp, spaceIdProp, templateIdProp, templateVariablesProp } from "../common/props";
 import { confluenceApiCall, escapeStorageValue } from "../common";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@wippa/pieces-common";
 
 export const createPageFromTemplateAction = createAction({
     auth:confluenceAuth,

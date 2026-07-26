@@ -3,9 +3,9 @@ import {
     PiecePropValueSchema,
     TriggerStrategy,
     createTrigger,
-} from "@activepieces/pieces-framework";
+} from "@wippa/pieces-framework";
 import { quickbooksAuth } from '../lib/auth';
-import { DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from "@activepieces/pieces-common";
+import { DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper } from "@wippa/pieces-common";
 import { quickbooksCommon, QuickbooksEntityResponse } from "../lib/common";
 import { QuickbooksCustomer } from '../lib/types';
 import dayjs from 'dayjs';

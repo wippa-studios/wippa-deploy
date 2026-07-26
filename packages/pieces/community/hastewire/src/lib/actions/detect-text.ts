@@ -1,6 +1,6 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { hastewireAuth } from "../common/auth";
-import {AuthenticationType, httpClient, HttpMethod} from "@activepieces/pieces-common";
+import {AuthenticationType, httpClient, HttpMethod} from "@wippa/pieces-common";
 
 export const detectTextAction = createAction({
     name:'detect-text',

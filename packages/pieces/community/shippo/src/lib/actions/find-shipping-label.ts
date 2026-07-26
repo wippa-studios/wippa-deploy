@@ -1,4 +1,4 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { shippoAuth } from "../../lib/auth";
 import { ShippoClient } from "../../lib/client";
 

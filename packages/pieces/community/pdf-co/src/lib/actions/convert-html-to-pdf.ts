@@ -1,5 +1,5 @@
-import { Property, createAction } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod, HttpError } from "@activepieces/pieces-common";
+import { Property, createAction } from "@wippa/pieces-framework";
+import { httpClient, HttpMethod, HttpError } from "@wippa/pieces-common";
 import { PdfCoSuccessResponse, PdfCoErrorResponse } from "../common/types";
 import { pdfCoAuth } from '../auth';
 import { BASE_URL } from "../common/props";

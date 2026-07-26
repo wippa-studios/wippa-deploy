@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
     import { startBrowsingTask } from "./lib/actions/start-browsing-task";
     
     export const twinLabsAuth = PieceAuth.SecretText({

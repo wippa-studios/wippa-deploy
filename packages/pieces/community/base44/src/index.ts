@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { createEntity } from "./lib/actions/create-entity";
 import { findOrCreateEntity } from "./lib/actions/find-or-create-entity";

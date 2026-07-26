@@ -5,7 +5,7 @@
       httpClient,
       HttpMethod,
     } from '@wippa/pieces-common';
-    import { PieceAuth, createPiece } from "@activepieces/pieces-framework";
+    import { PieceAuth, createPiece } from "@wippa/pieces-framework";
     import { PieceCategory } from '@wippa/pieces-framework';
     import { listApps } from './lib/actions/list-apps';
     import { runApp } from './lib/actions/run-app';

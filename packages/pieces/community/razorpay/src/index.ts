@@ -1,5 +1,5 @@
-    import { createCustomApiCallAction } from "@activepieces/pieces-common";
-    import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+    import { createCustomApiCallAction } from "@wippa/pieces-common";
+    import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
     import { generateRazorpayAuthHeader, RazorpayCredentials, razorpayURL } from "./lib/common/utils";
     import { createPaymentlink } from "./lib/actions/create-payment-link";
 

@@ -1,6 +1,6 @@
 
 import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { wrikeAuth } from './lib/common/auth';
 import { createTask } from './lib/actions/create-task';

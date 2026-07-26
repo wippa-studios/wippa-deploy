@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { makePhoneCall } from "./lib/actions/make-phone-call";
 import { phoneCallEnded } from "./lib/triggers/phone-call-ended";

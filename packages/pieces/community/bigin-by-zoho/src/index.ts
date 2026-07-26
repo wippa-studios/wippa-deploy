@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
 import { DATA_CENTER_REGIONS } from "./lib/common/constants";
 import { getZohoBiginAccountAuthorizationUrl } from "./lib/common/helpers";
 import { newContactCreated } from "./lib/triggers/new-contact-created";

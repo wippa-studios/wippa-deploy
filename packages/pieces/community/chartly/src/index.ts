@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { chartlyAuth } from "./lib/common/auth";
 import { createChartAction } from "./lib/actions/create-chart";

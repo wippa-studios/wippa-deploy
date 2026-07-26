@@ -1,4 +1,4 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { contextualAiAuth } from '../auth';
 import { ContextualAI } from 'contextual-client';
 import type { Datastore } from 'contextual-client/resources/datastores';

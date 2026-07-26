@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod, HttpRequest } from "@activepieces/pieces-common";
+import { PieceAuth, Property } from "@wippa/pieces-framework";
+import { httpClient, HttpMethod, HttpRequest } from "@wippa/pieces-common";
 
 export const sapAribaAuth = PieceAuth.CustomAuth({
   description: `

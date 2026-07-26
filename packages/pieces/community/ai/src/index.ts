@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { askAI } from './lib/actions/text/ask-ai';
 import { summarizeText } from './lib/actions/text/summarize-text';

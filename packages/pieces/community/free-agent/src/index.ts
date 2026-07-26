@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { AuthenticationType, httpClient, HttpMethod } from '@wippa/pieces-common';
 import { PieceCategory } from '@wippa/pieces-framework';
 import { freeAgentCreateTask } from './lib/actions/create-task';

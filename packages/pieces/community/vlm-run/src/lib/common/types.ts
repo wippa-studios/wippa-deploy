@@ -1,4 +1,4 @@
-import { ApFile } from "@activepieces/pieces-framework";
+import { ApFile } from "@wippa/pieces-framework";
 
 export interface AuthenticationParams {
   apiKey: string;

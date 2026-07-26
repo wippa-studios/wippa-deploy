@@ -1,5 +1,5 @@
 
-    import { createPiece } from "@activepieces/pieces-framework";
+    import { createPiece } from "@wippa/pieces-framework";
     import { capsuleCrmAuth } from "../src/lib/common/auth";
     import { createContactAction } from "../src/lib/actions/create-contact";
     import { updateContactAction } from "../src/lib/actions/update-contact";

@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { parserExpertAuth } from "./lib/common/auth";
 import { uploadDocument } from "./lib/actions/upload-document";

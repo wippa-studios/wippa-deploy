@@ -1,6 +1,6 @@
 
 import { createCustomApiCallAction } from '@wippa/pieces-common';
-import { PieceAuth, createPiece, Property } from "@activepieces/pieces-framework";
+import { PieceAuth, createPiece, Property } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { HttpMethod, httpClient, AuthenticationType } from '@wippa/pieces-common';
 import { converseWithDocumentAction } from './lib/actions/converse-with-document';

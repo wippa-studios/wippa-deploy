@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { lettaAuth } from "./lib/common/auth";
 import { createAgentFromTemplate } from "./lib/actions/create-agent-from-template";

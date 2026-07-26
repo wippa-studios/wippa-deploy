@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
 import { ListQueuesCommand, SQS } from '@aws-sdk/client-sqs';
 import { sendMessage } from "./lib/actions/send-message";
 

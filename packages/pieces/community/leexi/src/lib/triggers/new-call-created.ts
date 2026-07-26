@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@activepieces/pieces-framework";
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from "@wippa/pieces-framework";
 import { leexiAuth } from "../common/auth";
-import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper, QueryParams } from "@activepieces/pieces-common";
+import { AuthenticationType, DedupeStrategy, httpClient, HttpMethod, Polling, pollingHelper, QueryParams } from "@wippa/pieces-common";
 import dayjs from 'dayjs';
 import { BASE_URL } from "../common/constants";
 import { ListCallResponse } from "../common/types";

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { createRecordAction } from "./lib/actions/create-record.action";
 import { updateRecordAction } from "./lib/actions/update-record.action";

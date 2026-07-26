@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { sendEvent } from "./lib/actions/send-event";
 
 export const gameballAuth = PieceAuth.SecretText({

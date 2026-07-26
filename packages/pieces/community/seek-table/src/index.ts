@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { seekTableAuth } from "./lib/common/auth";
 import { newCsvCubeTrigger } from "./lib/triggers/new-csv-cube.trigger";
 import { newReportTrigger } from "./lib/triggers/new-report.trigger";

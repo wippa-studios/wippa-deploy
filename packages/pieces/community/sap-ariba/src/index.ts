@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { sapAribaAuth } from "./lib/auth";
 import { listPurchaseOrders } from "./lib/actions/list-purchase-orders";
 import { listPurchaseOrderItems } from "./lib/actions/list-purchase-order-items";

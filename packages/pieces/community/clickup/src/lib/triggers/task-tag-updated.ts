@@ -6,7 +6,7 @@ import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
-} from "@activepieces/pieces-common";
+} from "@wippa/pieces-common";
 import { callClickupGetTask, clickupCommon } from '../common';
 import { ClickupEventType, ClickupWebhookPayload } from '../common/models';
 import { clickupAuth } from '../auth';

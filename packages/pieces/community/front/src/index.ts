@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { addComment } from "./lib/actions/add-comment";
 import { addContactHandle } from "./lib/actions/add-contact-handle";
 import { addConversationLinks } from "./lib/actions/add-conversation-links";

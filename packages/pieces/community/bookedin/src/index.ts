@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { httpClient, HttpMethod, createCustomApiCallAction } from '@wippa/pieces-common';
 import { BASE_URL, extractApiKey } from './lib/common/props';
 import { getLeads } from "./lib/actions/get-leads";

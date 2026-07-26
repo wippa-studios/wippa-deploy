@@ -1,6 +1,6 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { housecallProAuth, baseUrl } from "../common";
-import { HttpMethod, httpClient } from "@activepieces/pieces-common";
+import { HttpMethod, httpClient } from "@wippa/pieces-common";
 
 export const addJobAttachment = createAction({
   auth: housecallProAuth,

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, OAuth2PropertyValue } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, OAuth2PropertyValue } from "@wippa/pieces-framework";
 import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { refreshSheetsCharts } from "./lib/actions/refresh-charts";
 import { generateFromTemplate } from "./lib/actions/generate-from-template";

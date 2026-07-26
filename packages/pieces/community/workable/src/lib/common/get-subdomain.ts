@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { httpClient, HttpMethod } from "@wippa/pieces-common";
 
 export async function getAccountSubdomain(accessToken: string){
     const response = await httpClient.sendRequest({

@@ -1,5 +1,5 @@
-import { PieceAuth } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { PieceAuth } from "@wippa/pieces-framework";
+import { httpClient, HttpMethod } from "@wippa/pieces-common";
 import { BASE_URL } from "./constants";
 
 export const altTextAiAuth = PieceAuth.SecretText({

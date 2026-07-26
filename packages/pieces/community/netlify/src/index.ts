@@ -1,5 +1,5 @@
 
-    import { createPiece } from "@activepieces/pieces-framework";
+    import { createPiece } from "@wippa/pieces-framework";
     import { netlifyAuth } from "./lib/common/auth";
     import { startDeploy } from "./lib/actions/start-deploy";
     import { getSite } from "./lib/actions/get-site";

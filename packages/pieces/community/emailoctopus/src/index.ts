@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { emailOctopusAuth } from "./lib/common/auth";
 
 
@@ -17,7 +17,7 @@ import { emailOpened } from "./lib/triggers/email-opened";
 import { emailClicked } from "./lib/triggers/email-Clicked";
 import { newContact } from "./lib/triggers/new-Contact";
 import { contactUnsubscribes } from "./lib/triggers/contact-Unsubscribes";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { emailOctopusApiUrl } from "./lib/common/client";
 
 export const emailoctopus = createPiece({

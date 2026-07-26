@@ -1,5 +1,5 @@
-import { FlowTriggerType, isNil, PopulatedFlow } from "@activepieces/pieces-framework";
-import { FlowsContext, ListFlowsContextParams } from "@activepieces/pieces-framework";
+import { FlowTriggerType, isNil, PopulatedFlow } from "@wippa/pieces-framework";
+import { FlowsContext, ListFlowsContextParams } from "@wippa/pieces-framework";
 
 
 export const callableFlowKey = (runId: string) => `callableFlow_${runId}`;

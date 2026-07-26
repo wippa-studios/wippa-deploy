@@ -1,6 +1,6 @@
-import { Property } from "@activepieces/pieces-framework";
+import { Property } from "@wippa/pieces-framework";
 import { giteaAuth } from "../auth";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@wippa/pieces-common";
 import { giteaPaginatedApiCall } from "./client";
 
 export const giteaCommon = {

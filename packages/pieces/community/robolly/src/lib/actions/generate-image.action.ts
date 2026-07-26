@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { HttpMethod, httpClient } from "@activepieces/pieces-common";
-import { DynamicPropsValue, Property, createAction } from "@activepieces/pieces-framework";
+import { HttpMethod, httpClient } from "@wippa/pieces-common";
+import { DynamicPropsValue, Property, createAction } from "@wippa/pieces-framework";
 import { robollyAuth } from "../..";
 
 export  const generateImage = createAction({

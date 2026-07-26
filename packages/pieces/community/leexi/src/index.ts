@@ -1,10 +1,10 @@
 
-import { createPiece} from "@activepieces/pieces-framework";
+import { createPiece} from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { getCallAction } from "./lib/actions/get-call";
 import { newCallCreatedTrigger } from "./lib/triggers/new-call-created";
 import { leexiAuth } from "./lib/common/auth";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { BASE_URL } from "./lib/common/constants";
 
 export const leexi = createPiece({

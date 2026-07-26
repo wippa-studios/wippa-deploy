@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { createPost } from "./lib/actions/create-post";
 import { PieceCategory } from '@wippa/pieces-framework';
 

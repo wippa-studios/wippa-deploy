@@ -1,4 +1,4 @@
-import { AIProviderName, Nullable } from "@activepieces/core-utils";
+import { AIProviderName, Nullable } from "@wippa/core-utils";
 import * as z from "zod/mini";
 
 export const TASK_COMPLETION_TOOL_NAME = 'updateTaskStatus'

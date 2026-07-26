@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { respaidActions } from "./lib/actions";
 import { respaidTriggers } from "./lib/triggers";
 import { respaidAuth } from './lib/auth';

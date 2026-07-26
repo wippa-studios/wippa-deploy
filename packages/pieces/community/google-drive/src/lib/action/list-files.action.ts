@@ -1,6 +1,6 @@
 import { HttpMethod, httpClient } from '@wippa/pieces-common';
 import { googleDriveAuth, getAccessToken } from '../auth';
-import { Property, createAction } from "@activepieces/pieces-framework";
+import { Property, createAction } from "@wippa/pieces-framework";
 import querystring from 'querystring';
 import { common } from '../common';
 import { downloadFileFromDrive } from '../common/get-file-content';

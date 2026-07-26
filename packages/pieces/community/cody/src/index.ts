@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from "@activepieces/pieces-framework";
+import { PieceAuth, createPiece } from "@wippa/pieces-framework";
 import { createDocumentFromText } from "./lib/actions/create-document-from-text";
 import { uploadFileAction } from "./lib/actions/upload-file";
 import { sendMessageAction } from "./lib/actions/send-message";

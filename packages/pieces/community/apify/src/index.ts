@@ -1,6 +1,6 @@
 import { createPiece, PieceAuth } from '@wippa/pieces-framework';
 import { PieceCategory } from '@wippa/pieces-framework';
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { getDatasetItems } from './lib/actions/get-dataset-items';
 import { runActor } from './lib/actions/run-actor';
 import { createApifyClient } from './lib/common';

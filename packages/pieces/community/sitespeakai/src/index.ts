@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { sendQuery } from "./lib/actions/send-query";
 import { createFinetune } from "./lib/actions/create-finetune";
 import { deleteFinetune } from "./lib/actions/delete-finetune";

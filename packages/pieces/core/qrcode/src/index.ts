@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
     import { PieceCategory } from '@wippa/pieces-framework';
     import { outputQrcodeAction } from './lib/actions/output-qrcode-action'
     

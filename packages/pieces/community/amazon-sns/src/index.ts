@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth, Property } from "@wippa/pieces-framework";
 import { createSNS } from './lib/common';
 import { ListTopicsCommand } from '@aws-sdk/client-sns';
 import { sendMessageAction } from './lib/actions/send-message';

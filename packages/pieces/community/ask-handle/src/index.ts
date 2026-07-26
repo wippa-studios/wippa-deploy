@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { askHandleAuth } from "./lib/common/auth";
 import { createMessage } from "./lib/actions/create-message";
 import { createLead } from "./lib/actions/create-lead";

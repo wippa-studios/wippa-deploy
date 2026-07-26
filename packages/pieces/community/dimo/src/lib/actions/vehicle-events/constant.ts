@@ -1,4 +1,4 @@
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@wippa/pieces-common";
 import { VehicleEventsOperation, VehicleEventsBodyType } from "./type";
 
 const vehicleEventsBaseUrl = "https://vehicle-triggers-api.dimo.zone";

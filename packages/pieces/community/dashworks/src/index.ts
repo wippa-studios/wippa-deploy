@@ -1,8 +1,8 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { generateAnswerAction } from "./lib/actions/generate-answer";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { dashworksAuth } from "./lib/common/auth";
 
 export const dashworks = createPiece({

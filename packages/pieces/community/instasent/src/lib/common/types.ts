@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from "@activepieces/pieces-framework";
+import { AppConnectionValueForAuthProperty } from "@wippa/pieces-framework";
 import { instasentAuth } from '../auth';
 
 export type InstasentAuthType = AppConnectionValueForAuthProperty<typeof instasentAuth>;

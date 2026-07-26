@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { createExpenseAction } from './lib/actions/create-expense';
 import { newExpenseTrigger } from './lib/triggers/new-expense';
 import { PieceCategory } from '@wippa/pieces-framework';

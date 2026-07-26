@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from "@activepieces/pieces-common";
-import { AppConnectionValueForAuthProperty } from "@activepieces/pieces-framework";
+import { httpClient, HttpMethod, AuthenticationType } from "@wippa/pieces-common";
+import { AppConnectionValueForAuthProperty } from "@wippa/pieces-framework";
 import { foreplayCoAuth } from "..";
 
 export interface ForeplayCoApiCallProps {

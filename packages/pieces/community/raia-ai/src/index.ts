@@ -1,8 +1,8 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { promptAgentAction } from "./lib/actions/prompt-agent";
 import { uploadAgentFileAction } from "./lib/actions/upload-agent-file";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { raiaAiAuth } from "./lib/common/auth";
 import { BASE_URL } from "./lib/common/constants";
 

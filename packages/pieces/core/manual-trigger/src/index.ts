@@ -1,7 +1,7 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { manualTrigger } from "./lib/triggers/manual-trigger";
-import { PieceCategory } from "@activepieces/pieces-framework";
+import { PieceCategory } from "@wippa/pieces-framework";
 
 export const manualTriggerPiece = createPiece({
       displayName: "Manual Trigger",

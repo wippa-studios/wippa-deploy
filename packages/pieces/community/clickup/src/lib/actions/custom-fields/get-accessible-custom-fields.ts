@@ -1,5 +1,5 @@
-import { createAction } from "@activepieces/pieces-framework";
-import { getAccessTokenOrThrow } from "@activepieces/pieces-common";
+import { createAction } from "@wippa/pieces-framework";
+import { getAccessTokenOrThrow } from "@wippa/pieces-common";
 import { clickupCommon, listAccessibleCustomFields } from "../../common"
 import { clickupAuth } from '../../auth';
 import { accessibleCustomFieldsOutputSchema } from '../../output-schemas';

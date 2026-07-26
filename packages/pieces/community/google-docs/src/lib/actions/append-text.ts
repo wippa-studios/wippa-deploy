@@ -1,6 +1,6 @@
 import { docsCommon } from '../common';
 import { googleDocsAuth, getAccessToken } from '../auth';
-import { Property, createAction } from "@activepieces/pieces-framework";
+import { Property, createAction } from "@wippa/pieces-framework";
 import { appendTextActionOutputSchema } from '../output-schemas';
 
 export const appendText = createAction({

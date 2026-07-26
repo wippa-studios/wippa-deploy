@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient, HttpRequest, QueryParams } from "@activepieces/pieces-common";
+import { HttpMethod, httpClient, HttpRequest, QueryParams } from "@wippa/pieces-common";
 import { sapAribaAuth } from "../auth";
-import { AppConnectionValueForAuthProperty } from "@activepieces/pieces-framework";
+import { AppConnectionValueForAuthProperty } from "@wippa/pieces-framework";
 
 export type SapAribaAuth = AppConnectionValueForAuthProperty<typeof sapAribaAuth>;
 

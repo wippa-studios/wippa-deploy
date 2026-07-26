@@ -1,7 +1,7 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { generateAltTextAction } from "./lib/actions/generate-alt-text";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { altTextAiAuth } from "./lib/common/auth";
 import { BASE_URL } from "./lib/common/constants";
 import { PieceCategory } from '@wippa/pieces-framework';

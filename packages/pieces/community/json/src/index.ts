@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@wippa/pieces-framework";
 import { convertTextToJson } from "./lib/actions/convert-text-to-json";
 import { convertJsonToText } from "./lib/actions/convert-json-to-text";
 import { runJsonataQuery } from "./lib/actions/run-jsonata-query";

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, OAuth2PropertyValue } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod, AuthenticationType } from "@activepieces/pieces-common";
+import { createPiece, PieceAuth, OAuth2PropertyValue } from "@wippa/pieces-framework";
+import { httpClient, HttpMethod, AuthenticationType } from "@wippa/pieces-common";
 import { newRecording } from "./lib/triggers/new-recording";
 import { newCallTranscription } from "./lib/triggers/new-call-transcription";
 import { newCallSummary } from "./lib/triggers/new-call-summary";

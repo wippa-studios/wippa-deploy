@@ -1,5 +1,5 @@
 import { deepseekAuth } from '../auth';
-import { createAction, Property, StoreScope } from "@activepieces/pieces-framework";
+import { createAction, Property, StoreScope } from "@wippa/pieces-framework";
 import OpenAI from 'openai';
 import { baseUrl } from '../common/common';
 import * as z from 'zod/mini'

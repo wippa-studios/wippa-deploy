@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { PieceCategory } from '@wippa/pieces-framework';
 import { tenzoAuth } from "./lib/common/auth";
 import { newDailyForecastTrigger } from "./lib/triggers/new-daily-forecast.trigger";

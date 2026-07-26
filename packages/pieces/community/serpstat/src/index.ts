@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { createCustomApiCallAction } from '@wippa/pieces-common';
 import { serpstatAuth } from "./lib/common/auth";
 import { getKeywords } from "./lib/actions/keyword-analysis/get-keywords";

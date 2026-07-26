@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@wippa/pieces-framework";
 import { pinchPaymentsAuth } from "./lib/common/auth";
 import { createOrUpdatePayerAction } from "./lib/actions/create-or-update-payer";
 import { createRealtimePaymentAction } from "./lib/actions/create-realtime-payment";

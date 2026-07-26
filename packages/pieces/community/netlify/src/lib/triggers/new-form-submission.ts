@@ -1,5 +1,5 @@
-import { createTrigger, Property, TriggerStrategy, OAuth2PropertyValue } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { createTrigger, Property, TriggerStrategy, OAuth2PropertyValue } from "@wippa/pieces-framework";
+import { httpClient, HttpMethod } from "@wippa/pieces-common";
 import { netlifyAuth } from "../common/auth";
 
 export const newFormSubmission = createTrigger({

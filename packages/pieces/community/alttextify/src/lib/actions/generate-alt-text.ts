@@ -1,6 +1,6 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@wippa/pieces-framework";
 import { alttextifyAuth } from "../common/auth";
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { httpClient, HttpMethod } from "@wippa/pieces-common";
 import mime from 'mime-types';
 
 export const generateAltTextAction = createAction({

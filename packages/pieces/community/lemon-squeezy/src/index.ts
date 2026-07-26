@@ -1,5 +1,5 @@
-import { createPiece } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createPiece } from "@wippa/pieces-framework";
+import { createCustomApiCallAction } from "@wippa/pieces-common";
 import { lemonSqueezyAuth } from "./lib/common/auth";
 import { LEMON_SQUEEZY_API_BASE } from "./lib/common/api";
 import { orderCreatedTrigger } from "./lib/triggers/order-created";
