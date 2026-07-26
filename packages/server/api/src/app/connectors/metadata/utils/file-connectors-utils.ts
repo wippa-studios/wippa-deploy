@@ -2,8 +2,8 @@ import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { sep } from 'path'
-import { Piece, ConnectorMetadata, pieceTranslation } from '@wippa/connectors-framework'
-import { extractPieceFromModule } from '@wippa/shared'
+import { Connector, ConnectorMetadata, pieceTranslation } from '@wippa/connectors-framework'
+import { extractConnectorFromModule } from '@wippa/shared'
 import clearModule from 'clear-module'
 import { FastifyBaseLogger } from 'fastify'
 import { AppSystemProp, environmentVariables } from '../../../helper/system/system-props'
@@ -127,7 +127,7 @@ const loadPieceFromFolder = async (
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const module = require(indexPath)
     const { name: connectorName, version: connectorVersion } = packageJson
-    const piece = extractPieceFromModule<Piece>({
+    const piece = extractConnectorFromModule<Piece>({
         module,
         connectorName,
         connectorVersion,

@@ -2,7 +2,7 @@ import { rm, writeFile } from 'node:fs/promises'
 import path, { dirname, join } from 'node:path'
 import { ensureTrailingSlash, groupBy, isEmpty, isNil, tryCatch } from '@wippa/core-utils'
 import { type ApLogger, fileSystemUtils, memoryLock, wideEvent } from '@wippa/server-utils'
-import { ExecutionMode, getPieceNameFromAlias, PackageType, ConnectorPackage, ConnectorType } from '@wippa/shared'
+import { ExecutionMode, getConnectorNameFromAlias, PackageType, ConnectorPackage, ConnectorType } from '@wippa/shared'
 import writeFileAtomic from 'write-file-atomic'
 import { SandboxSettings } from '../../types'
 import { bunRunner } from '../../utils/bun-runner'
@@ -44,7 +44,7 @@ function getCustomPiecesPath(basePath: string, platformId: string, getSettings: 
 
 async function installPieces(rootWorkspace: string, pieces: ConnectorPackage[], includeFilters: boolean, log: ApLogger, bundleSource: BundleSource, getSettings: () => SandboxSettings): Promise<void> {
     const devPieces = getSettings().DEV_PIECES
-    const nonDevPieces = pieces.filter(piece => !devPieces.includes(getPieceNameFromAlias(piece.connectorName)))
+    const nonDevPieces = pieces.filter(piece => !devPieces.includes(getConnectorNameFromAlias(piece.connectorName)))
     const { validPieces, invalidPieces } = partitionValidPieceNames(nonDevPieces)
     if (!isEmpty(invalidPieces)) {
         log.error({

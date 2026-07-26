@@ -2,22 +2,22 @@ import { ActivepiecesError, assertNotNullOrUndefined, ErrorCode } from '@wippa/c
 
 /**
  * @param {string} connectorName - starts with `@wippa/connector-`
- * @param {string} connectorVersion - the version of the piece
- * @returns {string} the package alias for the piece, e.g. `@wippa/connector-activepieces-0.0.1`
+ * @param {string} connectorVersion - the version of the connector
+ * @returns {string} the package alias for the connector, e.g. `@wippa/connector-activepieces-0.0.1`
  */
-export const getPackageAliasForPiece = (params: GetPackageAliasForPieceParams): string => {
+export const getPackageAliasForConnector = (params: GetPackageAliasForConnectorParams): string => {
     const { connectorName, connectorVersion } = params
     return `${connectorName}-${connectorVersion}`
 }
 
 /**
- * @param {string} alias - e.g. piece-activepieces or @publisher/piece-activepieces or activepieces or @publisher/activepieces 
- * @returns {string} the piece name, e.g. activepieces
+ * @param {string} alias - e.g. connector-activepieces or @publisher/connector-activepieces or activepieces or @publisher/activepieces 
+ * @returns {string} the connector name, e.g. activepieces
  */
-export const getPieceNameFromAlias = (alias: string): string => {
+export const getConnectorNameFromAlias = (alias: string): string => {
     const fullPieceName =  alias.startsWith('@') ? alias.split('/').pop() : alias
-    assertNotNullOrUndefined(fullPieceName, 'Full piece name')
-    if (fullPieceName.startsWith('piece-')) {
+    assertNotNullOrUndefined(fullPieceName, 'Full connector name')
+    if (fullPieceName.startsWith('connector-')) {
         return fullPieceName.split('-').slice(1).join('-')
     }
     return fullPieceName
@@ -25,7 +25,7 @@ export const getPieceNameFromAlias = (alias: string): string => {
 
 /**
  * @param {string} alias - e.g. `@wippa/connector-activepieces-0.0.1`
- * @returns {string} the piece name, e.g. `@wippa/connector-activepieces`
+ * @returns {string} the connector name, e.g. `@wippa/connector-activepieces`
  */
 export const trimVersionFromAlias = (alias: string): string => {
     return alias.split('-').slice(0, -1).join('-')
@@ -33,12 +33,12 @@ export const trimVersionFromAlias = (alias: string): string => {
 
 
 
-export const extractPieceFromModule = <T>(params: ExtractPieceFromModuleParams): T => {
+export const extractConnectorFromModule = <T>(params: ExtractConnectorFromModuleParams): T => {
     const { module, connectorName, connectorVersion } = params
     const exports = Object.values(module)
     const constructors = []
     for (const e of exports) {
-        if (e !== null && e !== undefined && e.constructor.name === 'Piece') {
+        if (e !== null && e !== undefined && e.constructor.name === 'Connector') {
             return e as T
         }
         constructors.push(e?.constructor?.name)
@@ -47,22 +47,22 @@ export const extractPieceFromModule = <T>(params: ExtractPieceFromModuleParams):
     throw new ActivepiecesError({
         code: ErrorCode.ENTITY_NOT_FOUND,
         params: {
-            entityType: 'piece',
+            entityType: 'connector',
             entityId: connectorName,
-            message: `Failed to extract piece from module (version: ${connectorVersion}), found constructors: ${constructors.join(', ')}`,
+            message: `Failed to extract connector from module (version: ${connectorVersion}), found constructors: ${constructors.join(', ')}`,
             extra: { connectorName, connectorVersion },
         },
     })
 }
 
-export { getPieceMajorAndMinorVersion } from './version-utils'
+export { getConnectorMajorAndMinorVersion } from './version-utils'
 
-type GetPackageAliasForPieceParams = {
+type GetPackageAliasForConnectorParams = {
     connectorName: string
     connectorVersion: string
 }
 
-type ExtractPieceFromModuleParams = {
+type ExtractConnectorFromModuleParams = {
     module: Record<string, unknown>
     connectorName: string
     connectorVersion: string

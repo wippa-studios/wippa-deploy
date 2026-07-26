@@ -1,5 +1,5 @@
 import { ActivepiecesError, apId, Cursor, ErrorCode, FlowId, ProjectId, SeekPage } from '@wippa/core-utils'
-import { EngineResponse, EngineResponseStatus, ExecuteTriggerResponse, FileCompression, FileType, FlowTrigger, FlowTriggerType, getPieceMajorAndMinorVersion, PieceTrigger, PopulatedFlow, TriggerEventWithPayload, TriggerHookType, WorkerJobType } from '@wippa/shared'
+import { EngineResponse, EngineResponseStatus, ExecuteTriggerResponse, FileCompression, FileType, FlowTrigger, FlowTriggerType, getConnectorMajorAndMinorVersion, PieceTrigger, PopulatedFlow, TriggerEventWithPayload, TriggerHookType, WorkerJobType } from '@wippa/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../../core/db/repo-factory'
 import { fileService } from '../../file/file.service'
@@ -143,7 +143,7 @@ function getSourceName(trigger: FlowTrigger): string {
         case FlowTriggerType.PIECE: {
             const connectorTrigger = trigger as PieceTrigger
             const connectorName = connectorTrigger.settings.connectorName
-            const connectorVersion = getPieceMajorAndMinorVersion(
+            const connectorVersion = getConnectorMajorAndMinorVersion(
                 connectorTrigger.settings.connectorVersion,
             )
             const triggerName = connectorTrigger.settings.triggerName

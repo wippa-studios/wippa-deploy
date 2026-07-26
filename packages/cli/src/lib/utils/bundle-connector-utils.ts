@@ -67,7 +67,7 @@ async function runEsbuild({ entryFile, outfile, repoRoot, inlineAll, inlineList,
         outfile,
         minify: true,
         // The engine extracts a piece by scanning module exports for one whose
-        // `constructor.name === 'Piece'` (see extractPieceFromModule). Minification would
+        // `constructor.name === 'Piece'` (see extractConnectorFromModule). Minification would
         // otherwise mangle the Piece class name and make every bundled piece un-installable.
         keepNames: true,
         treeShaking: true,

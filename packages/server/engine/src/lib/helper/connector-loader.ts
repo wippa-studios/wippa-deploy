@@ -1,14 +1,14 @@
 import fs from 'fs/promises'
 import path from 'path'
 import { ActivepiecesError, ErrorCode, isNil } from '@wippa/core-utils'
-import { Action, Piece, ConnectorPropertyMap, Trigger } from '@wippa/connectors-framework'
-import { EngineGenericError, extractPieceFromModule, getPackageAliasForPiece, getPieceNameFromAlias, trimVersionFromAlias } from '@wippa/shared'
+import { Action, Connector, ConnectorPropertyMap, Trigger } from '@wippa/connectors-framework'
+import { EngineGenericError, extractConnectorFromModule, getPackageAliasForConnector, getConnectorNameFromAlias, trimVersionFromAlias } from '@wippa/shared'
 import { utils } from '../utils'
 
 export const connectorLoader = {
     loadPieceOrThrow: async (
         { connectorName, connectorVersion, devPieces }: LoadPieceParams,
-    ): Promise<Piece> => {
+    ): Promise<Connector> => {
         const { data: piece, error: connectorError } = await utils.tryCatchAndThrowOnEngineError(async () => {
             const packageName = connectorLoader.getPackageAlias({
                 connectorName,
@@ -18,7 +18,7 @@ export const connectorLoader = {
             const piecePath = await connectorLoader.getPiecePath({ packageName, devPieces })
             const module = await import(piecePath)
 
-            const piece = extractPieceFromModule<Piece>({
+            const piece = extractConnectorFromModule<Piece>({
                 module,
                 connectorName,
                 connectorVersion,
@@ -35,7 +35,7 @@ export const connectorLoader = {
         return piece
     },
 
-    getPieceAndTriggerOrThrow: async (params: GetPieceAndTriggerParams): Promise<{ piece: Piece, connectorTrigger: Trigger }> => {
+    getPieceAndTriggerOrThrow: async (params: GetPieceAndTriggerParams): Promise<{ piece: Connector, connectorTrigger: Trigger }> => {
         const { connectorName, connectorVersion, triggerName, devPieces } = params
         const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
         const trigger = piece.getTrigger(triggerName)
@@ -50,7 +50,7 @@ export const connectorLoader = {
         }
     },
 
-    getPieceAndActionOrThrow: async (params: GetPieceAndActionParams): Promise<{ piece: Piece, connectorAction: Action }> => {
+    getPieceAndActionOrThrow: async (params: GetPieceAndActionParams): Promise<{ piece: Connector, connectorAction: Action }> => {
         const { connectorName, connectorVersion, actionName, devPieces } = params
 
         const piece = await connectorLoader.loadPieceOrThrow({ connectorName, connectorVersion, devPieces })
@@ -109,18 +109,18 @@ export const connectorLoader = {
     },
 
     getPackageAlias: ({ connectorName, connectorVersion, devPieces }: GetPackageAliasParams) => {
-        if (devPieces.includes(getPieceNameFromAlias(connectorName))) {
+        if (devPieces.includes(getConnectorNameFromAlias(connectorName))) {
             return connectorName
         }
 
-        return getPackageAliasForPiece({
+        return getPackageAliasForConnector({
             connectorName,
             connectorVersion,
         })
     },
 
     getPiecePath: async ({ packageName, devPieces }: GetPiecePathParams): Promise<string> => {
-        const piecePath = devPieces.includes(getPieceNameFromAlias(packageName))
+        const piecePath = devPieces.includes(getConnectorNameFromAlias(packageName))
             ? await findInDistFolder(packageName)
             : await traverseAllParentFoldersToFindPiece(packageName)
         if (isNil(piecePath)) {

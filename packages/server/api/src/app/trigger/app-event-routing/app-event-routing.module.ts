@@ -1,6 +1,6 @@
 import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, isNil } from '@wippa/core-utils'
 import { slack } from '@wippa/connector-slack'
-import { Piece, PieceAuthProperty } from '@wippa/connectors-framework'
+import { Connector, PieceAuthProperty } from '@wippa/connectors-framework'
 import { FlowStatus, LATEST_JOB_DATA_SCHEMA_VERSION, RunEnvironment, WorkerJobType } from '@wippa/shared'
 import { FastifyRequest } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
@@ -16,7 +16,7 @@ import { payloadOffloader } from '../../workers/payload-offloader'
 import { triggerSourceService } from '../trigger-source/trigger-source-service'
 import { appEventRoutingService } from './app-event-routing.service'
 
-const appWebhooks: Record<string, Piece<PieceAuthProperty | PieceAuthProperty[] | undefined>> = {
+const appWebhooks: Record<string, Connector<PieceAuthProperty | PieceAuthProperty[] | undefined>> = {
     slack,
 }
 const pieceNames: Record<string, string> = {

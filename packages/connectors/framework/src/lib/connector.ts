@@ -12,18 +12,17 @@ import { ContextVersion, LATEST_CONTEXT_VERSION, MINIMUM_SUPPORTED_RELEASE_AFTER
 
 
 
-export class Piece<PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined = PieceAuthProperty>
+export class Connector<PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined = PieceAuthProperty>
   implements Omit<PieceBase, 'version' | 'name'>
 {
   private readonly _actions: Record<string, Action> = {};
   private readonly _triggers: Record<string, Trigger> = {};
-  // this method didn't exist in older version
   public getContextInfo: (() => { version: ContextVersion } )| undefined = () => ({ version: LATEST_CONTEXT_VERSION });
   constructor(
     public readonly displayName: string,
     public readonly logoUrl: string,
     public readonly authors: string[],
-    public readonly events: PieceEventProcessors | undefined,
+    public readonly events: ConnectorEventProcessors | undefined,
     actions: Action[],
     triggers: Trigger[],
     public readonly categories: PieceCategory[],
@@ -41,7 +40,7 @@ export class Piece<PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | u
   }
 
 
-  metadata(): BackwardCompatiblePieceMetadata {
+  metadata(): BackwardCompatibleConnectorMetadata {
     return {
       displayName: this.displayName,
       logoUrl: this.logoUrl,
@@ -76,7 +75,7 @@ export class Piece<PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | u
 }
 
 export const createConnector = <PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined>(
-  params: CreatePieceParams<PieceAuth>
+  params: CreateConnectorParams<PieceAuth>
 ) => {
   if(params.auth && Array.isArray(params.auth)) { 
     const isUnique = params.auth.every((auth, index, self) =>
@@ -86,7 +85,7 @@ export const createConnector = <PieceAuth extends PieceAuthProperty | PieceAuthP
      throw new Error('Auth properties must be unique by type');
     }
   }
-  return new Piece<PieceAuth>(
+  return new Connector<PieceAuth>(
     params.displayName,
     params.logoUrl,
     params.authors ?? [],
@@ -102,7 +101,7 @@ export const createConnector = <PieceAuth extends PieceAuthProperty | PieceAuthP
   );
 };
 
-type CreatePieceParams<
+type CreateConnectorParams<
   PieceAuth extends PieceAuthProperty | PieceAuthProperty[] | undefined = undefined
 > = {
   displayName: string;
@@ -110,7 +109,7 @@ type CreatePieceParams<
   authors: string[];
   description?: string;
   auth: PieceAuth | undefined;
-  events?: PieceEventProcessors;
+  events?: ConnectorEventProcessors;
   minimumSupportedRelease?: string;
   maximumSupportedRelease?: string;
   actions: Action[];
@@ -119,7 +118,7 @@ type CreatePieceParams<
   deprecated?: boolean;
 };
 
-type PieceEventProcessors = {
+type ConnectorEventProcessors = {
   parseAndReply: (ctx: { payload: EventPayload, server: Omit<ServerContext, 'token' | 'apiUrl'> }) => ParseEventResponse;
   verify: (ctx: {
     webhookSecret: string | Record<string, string>;
@@ -128,7 +127,7 @@ type PieceEventProcessors = {
   }) => boolean;
 };
 
-type BackwardCompatiblePieceMetadata = Omit<ConnectorMetadata, 'name' | 'version' | 'authors' | 'i18n' | 'getContextInfo'> & {
+type BackwardCompatibleConnectorMetadata = Omit<ConnectorMetadata, 'name' | 'version' | 'authors' | 'i18n' | 'getContextInfo'> & {
   authors?: ConnectorMetadata['authors']
   i18n?: ConnectorMetadata['i18n']
 }
@@ -144,4 +143,3 @@ function isSemverLessThan(a: string, b: string): boolean {
   if (a2 !== b2) return a2 < b2;
   return a3 < b3;
 }
-
