@@ -229,7 +229,7 @@ const PiecesListTab = () => {
   );
 };
 
-const PlatformPiecesPage = () => {
+const PlatformConnectorsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTab = (searchParams.get('tab') as TabValue) || 'pieces';
 
@@ -286,8 +286,8 @@ const PlatformPiecesPage = () => {
   );
 };
 
-PlatformPiecesPage.displayName = 'PlatformPiecesPage';
-export { PlatformPiecesPage };
+PlatformConnectorsPage.displayName = 'PlatformConnectorsPage';
+export { PlatformConnectorsPage };
 
 function shouldShowOauth2SettingForPiece(piece: PieceMetadataModelSummary) {
   const pieceAuth = Array.isArray(piece.auth)

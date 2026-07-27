@@ -61,14 +61,14 @@ const OAuthAppsPage = React.lazy(() =>
     default: m.default,
   })),
 );
-const PlatformPiecesPage = React.lazy(() =>
+const PlatformConnectorsPage = React.lazy(() =>
   import('./platform/setup/connectors').then((m) => ({
-    default: m.PlatformPiecesPage,
+    default: m.PlatformConnectorsPage,
   })),
 );
-const PieceSetDetailsPage = React.lazy(() =>
-  import('./platform/setup/pieces/piece-sets/piece-set-details-page').then(
-    (m) => ({ default: m.PieceSetDetailsPage }),
+const ConnectorSetDetailsPage = React.lazy(() =>
+  import('./platform/setup/connectors/connector-sets/connector-set-details-page').then(
+    (m) => ({ default: m.ConnectorSetDetailsPage }),
   ),
 );
 const PlatformTemplatesPage = React.lazy(() =>
@@ -182,21 +182,21 @@ export const platformRoutes = [
     path: '/platform/setup/connectors',
     element: (
       <PlatformLayout>
-        <PageTitle title="Pieces">
+        <PageTitle title="Connectors">
           <SuspenseWrapper>
-            <PlatformPiecesPage />
+            <PlatformConnectorsPage />
           </SuspenseWrapper>
         </PageTitle>
       </PlatformLayout>
     ),
   },
   {
-    path: '/platform/setup/pieces/piece-sets/:id',
+    path: '/platform/setup/connectors/connector-sets/:id',
     element: (
       <PlatformLayout>
-        <PageTitle title="Piece Set">
+        <PageTitle title="Connector Set">
           <SuspenseWrapper>
-            <PieceSetDetailsPage />
+            <ConnectorSetDetailsPage />
           </SuspenseWrapper>
         </PageTitle>
       </PlatformLayout>

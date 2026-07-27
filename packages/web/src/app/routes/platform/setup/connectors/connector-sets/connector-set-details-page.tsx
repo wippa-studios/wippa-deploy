@@ -32,7 +32,7 @@ function flipSelectionMode({
   };
 }
 
-const PieceSetDetailsPage = () => {
+const ConnectorSetDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { data: connectorSet, isLoading } = pieceSetQueries.usePieceSet(id ?? '');
@@ -163,5 +163,5 @@ function AutoIncludePill({
   );
 }
 
-PieceSetDetailsPage.displayName = 'PieceSetDetailsPage';
-export { PieceSetDetailsPage };
+ConnectorSetDetailsPage.displayName = 'ConnectorSetDetailsPage';
+export { ConnectorSetDetailsPage };
