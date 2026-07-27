@@ -38,13 +38,11 @@ const setFavicon = (url: string) => {
 
 export function ThemeProvider({
   children,
-  defaultTheme = 'system',
+  defaultTheme = 'dark',
   storageKey = 'ap-ui-theme',
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
-  );
+  const [theme, setTheme] = useState<Theme>('dark');
   const [forceLightMode, setForceLightMode] = useState(false);
   const branding = flagsHooks.useWebsiteBranding();
   useEffect(() => {
@@ -54,11 +52,8 @@ export function ThemeProvider({
     }
     const root = window.document.documentElement;
 
-    const resolvedTheme = forceLightMode
-      ? 'light'
-      : theme === 'system'
-      ? 'light'
-      : theme;
+    // Wippa: always dark — no light mode
+    const resolvedTheme = 'dark';
     root.classList.remove('light', 'dark');
     document.title = branding.websiteName;
     document.documentElement.style.setProperty(
@@ -67,35 +62,17 @@ export function ThemeProvider({
     );
 
     setFavicon(branding.logos.favIconUrl);
-    switch (resolvedTheme) {
-      case 'light': {
-        document.documentElement.style.setProperty(
-          '--primary-100',
-          colorsUtils.hexToHslString(branding.colors.primary.light),
-        );
-        document.documentElement.style.setProperty(
-          '--primary-300',
-          colorsUtils.hexToHslString(branding.colors.primary.dark),
-        );
-        break;
-      }
-      case 'dark': {
-        document.documentElement.style.setProperty(
-          '--primary-100',
-          colorsUtils.hexToHslString(branding.colors.primary.dark),
-        );
-        document.documentElement.style.setProperty(
-          '--primary-300',
-          colorsUtils.hexToHslString(branding.colors.primary.light),
-        );
-        break;
-      }
-      default:
-        break;
-    }
+    document.documentElement.style.setProperty(
+      '--primary-100',
+      colorsUtils.hexToHslString(branding.colors.primary.dark),
+    );
+    document.documentElement.style.setProperty(
+      '--primary-300',
+      colorsUtils.hexToHslString(branding.colors.primary.light),
+    );
 
     root.classList.add(resolvedTheme);
-  }, [theme, branding, forceLightMode]);
+  }, [branding]);
 
   const value = {
     theme,

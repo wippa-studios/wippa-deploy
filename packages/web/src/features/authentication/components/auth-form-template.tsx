@@ -7,7 +7,6 @@ import { t } from 'i18next';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
-import { useTheme } from '@/components/providers/theme-provider';
 import { authenticationSession } from '@/lib/authentication-session';
 import { useRedirectAfterLogin } from '@/lib/navigation-utils';
 
@@ -125,14 +124,8 @@ const AuthLayout = ({
   children: React.ReactNode;
   isSignUp?: boolean;
 }) => {
-  const { setForceLightMode } = useTheme();
-  useEffect(() => {
-    setForceLightMode(true);
-    return () => setForceLightMode(false);
-  }, [setForceLightMode]);
   return (
-    <div className="h-screen w-full overflow-hidden flex bg-white relative">
-      {/* Form — left side */}
+    <div className="h-screen w-full overflow-hidden flex bg-black relative">
       <div className="flex flex-col w-full lg:w-1/2 p-5 lg:px-[100px]">
         <div className="pt-3 flex justify-center">
           <FullLogo />
@@ -147,9 +140,8 @@ const AuthLayout = ({
         )}
       </div>
 
-      {/* Right side — animation for sign-up, image for sign-in */}
       <div className="hidden lg:flex w-1/2 py-5 pr-5">
-        <div className="relative w-full h-full rounded-2xl overflow-hidden bg-muted">
+        <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0a0a0a] border border-[#333]">
           {isSignUp ? <AuthAnimation /> : <AuthImage />}
         </div>
       </div>
@@ -194,7 +186,7 @@ const AuthFormTemplate = React.memo(
       return (
         <AuthLayout isSignUp={isSignUp}>
           <div className="mb-6 text-center">
-            <h1 className="text-2xl font-bold tracking-tight font-sentient">
+            <h1 className="text-2xl font-bold tracking-tight font-display">
               {t('Sign in with SAML')}
             </h1>
           </div>
@@ -207,7 +199,7 @@ const AuthFormTemplate = React.memo(
       <AuthLayout isSignUp={isSignUp}>
         {!showCheckYourEmailNote && (
           <div className="mb-6 text-center">
-            <h1 className="text-2xl font-bold tracking-tight font-sentient">
+            <h1 className="text-2xl font-bold tracking-tight font-display">
               {data.title}
             </h1>
           </div>

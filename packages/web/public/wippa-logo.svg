@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
   <path d="M12 25 L25 10 L38 25 L25 40 Z" fill="#f5e6a3" stroke="#d4c48a" stroke-width="1.5"/>
   <path d="M18 25 L25 15 L32 25 L25 35 Z" fill="#fff3c2" stroke="#d4c48a" stroke-width="1"/>
-  <text x="48" y="32" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="700" fill="#fff" letter-spacing="-0.5">Wippa</text>
+  <text x="48" y="32" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.72"><tspan fill="#d4c48a">W</tspan><tspan fill="#fff">ippa</tspan></text>
 </svg>

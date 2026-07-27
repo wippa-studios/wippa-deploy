@@ -146,7 +146,7 @@ function Greeting({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <h1 className="text-4xl sm:text-5xl font-bold leading-[1.1] text-balance font-sentient">
+      <h1 className="text-4xl sm:text-5xl font-bold leading-[1.1] text-balance font-display">
         {incognito
           ? t('Private Chat')
           : firstName

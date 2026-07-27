@@ -114,7 +114,7 @@ function CreatePlatformPage() {
   return (
     <AuthLayout>
       <div className="mb-6 text-center">
-        <h1 className="text-2xl font-bold tracking-tight font-sentient">
+        <h1 className="text-2xl font-bold tracking-tight font-display">
           {t('Welcome to Wippa')}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">

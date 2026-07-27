@@ -3,6 +3,36 @@
 @import './styles/globals.css';
 @custom-variant dark (&:is(.dark *));
 
+/* Space Grotesk — display/headings (Wippa brand) */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mF71Q-g7oraRU.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF1-g7oraRU.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4-g7oraRU.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF--g7oraRU.woff2') format('woff2');
+}
+
 /* Sentient Variable Font */
 @font-face {
   font-family: 'Sentient';
@@ -174,9 +204,11 @@
   --animate-collapsible-down: collapsible-down 0.2s ease-out;
   --animate-collapsible-up: collapsible-up 0.2s ease-out
     alternate;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif,
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
     'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
-  --font-sentient: 'Sentient', serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --shadow-step-container: 0px 0px 22px hsl(var(--border) / 0.3);
   --shadow-add-button: var(--add-button-shadow);
   --color-builder-background: var(--builder-background);
