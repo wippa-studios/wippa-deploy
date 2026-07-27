@@ -65,7 +65,8 @@ RUN find packages/connectors -name "package.json" -maxdepth 3 ! -path "*/node_mo
         fi'
 
 # Remove source TypeScript from all pieces (only dist/ + package.json needed at runtime)
-RUN find packages/connectors -type d -name src -prune -exec rm -rf {} + 2>/dev/null || true
+# IMPORTANT: -not -path '*/dist/*' prevents deleting dist/src/ (compiled JS output)
+RUN find packages/connectors -type d -name src -not -path '*/dist/*' -prune -exec rm -rf {} + 2>/dev/null || true
 
 # Generate migration manifest for rollback support
 RUN node -e "\
