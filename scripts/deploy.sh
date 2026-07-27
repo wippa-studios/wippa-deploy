@@ -2,63 +2,63 @@
 # Wippa deploy script — run on the VPS
 # Usage: bash scripts/deploy.sh
 #
-# Configure via environment variables:
-#   WIPPA_REPO_URL    Git repository containing compose files and .env.example
-#   WIPPA_IMAGE       Container image to pull (default: ghcr.io/wippa/wippa:latest)
+# First deploy: clones repo, builds Docker image, starts services.
+# Subsequent runs: git pull, rebuild, restart.
 
 set -e
 
-WIPPA_REPO_URL="${WIPPA_REPO_URL:-https://github.com/wippa/wippa-deploy.git}"
-WIPPA_IMAGE="${WIPPA_IMAGE:-ghcr.io/wippa/wippa:latest}"
-
+WIPPA_REPO_URL="${WIPPA_REPO_URL:-https://github.com/wippa-studios/wippa-deploy.git}"
 REPO_DIR="${REPO_DIR:-$HOME/wippa-deploy}"
+COMPOSE_FILE="docker-compose.dev.yml"
 
 echo "=== Wippa Deploy ==="
 
 # --- Docker Compose detection ---
-# Prefer the modern Docker plugin (docker compose) over the standalone binary.
-if docker compose version &>/dev/null; then
-    COMPOSE_CMD="docker compose"
-elif docker compose version 2>&1 | grep -q "Docker Compose"; then
+if docker compose version &>/dev/null 2>&1; then
     COMPOSE_CMD="docker compose"
 elif command -v docker-compose &>/dev/null; then
     COMPOSE_CMD="docker-compose"
 else
     echo "Docker Compose not found. Please install Docker with the Compose plugin."
+    echo "Run: sudo apt update && sudo apt install -y docker.io docker-compose-v2"
     exit 1
 fi
+echo "Using: $COMPOSE_CMD"
 
-echo "Using compose command: $COMPOSE_CMD"
-
-# --- Clone or update the deployment repository ---
+# --- Clone or update repo ---
 if [ -d "$REPO_DIR/.git" ]; then
-    echo "Updating existing deployment repository..."
+    echo "Updating repo..."
     cd "$REPO_DIR"
     git pull
 else
-    echo "Cloning deployment repository from $WIPPA_REPO_URL ..."
+    echo "Cloning $WIPPA_REPO_URL ..."
     git clone "$WIPPA_REPO_URL" "$REPO_DIR"
     cd "$REPO_DIR"
 fi
 
-# --- Copy .env if not present ---
+# --- Create .env if not present ---
 if [ ! -f .env ]; then
     echo "Creating .env from .env.example..."
     cp .env.example .env
-    echo ">>> IMPORTANT: Edit .env with your secrets before continuing! <<<"
-    echo ">>> Required: AP_ENCRYPTION_KEY, AP_JWT_SECRET, AP_POSTGRES_PASSWORD <<<"
+    echo ""
+    echo "=== IMPORTANT ==="
+    echo "Edit .env with your secrets before continuing."
+    echo "Required: AP_ENCRYPTION_KEY, AP_JWT_SECRET, AP_POSTGRES_PASSWORD"
+    echo "Generate keys: openssl rand -hex 32"
+    echo "Then run this script again."
     exit 1
 fi
 
-# --- Pull the prebuilt image (do NOT build on the VPS) ---
-echo "Pulling Wippa image: $WIPPA_IMAGE"
-docker pull "$WIPPA_IMAGE"
+# --- Build Docker image ---
+echo "Building Wippa image (first build ~10-15 min)..."
+$COMPOSE_CMD -f "$COMPOSE_FILE" build --pull
 
 # --- Start services ---
-echo "Starting Wippa services..."
-WIPPA_IMAGE="$WIPPA_IMAGE" $COMPOSE_CMD -f docker-compose.yml up -d
+echo "Starting services..."
+$COMPOSE_CMD -f "$COMPOSE_FILE" up -d
 
+echo ""
 echo "=== Deploy complete ==="
-echo "App URL: http://<vps-ip>:8081"
-echo "Check status: $COMPOSE_CMD -f docker-compose.yml ps"
-echo "View logs: $COMPOSE_CMD -f docker-compose.yml logs -f app"
+echo "App: http://$(curl -s ifconfig.me):8081"
+echo "Logs: $COMPOSE_CMD -f $COMPOSE_FILE logs -f app"
+echo "Stop: $COMPOSE_CMD -f $COMPOSE_FILE down"
