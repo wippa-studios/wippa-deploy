@@ -7,8 +7,8 @@ import { z } from 'zod'
 import { EngineConstants } from '../handler/context/engine-constants'
 import { FlowExecutorContext } from '../handler/context/flow-execution-context'
 import { flowExecutor } from '../handler/flow-executor'
-import { connectorHelper } from '../helper/piece-helper'
-import { connectorLoader } from '../helper/piece-loader'
+import { connectorHelper } from '../helper/connector-helper'
+import { connectorLoader } from '../helper/connector-loader'
 import { tsort } from './tsort'
 
 export const agentTools = {

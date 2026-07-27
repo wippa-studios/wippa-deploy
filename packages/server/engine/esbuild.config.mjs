@@ -68,10 +68,10 @@ function buildOptions({ outfile }) {
     treeShaking: true,
     alias: {
         '@wippa/shared': path.resolve(__dirname, '../../core/shared/src'),
-        '@wippa/connectors-framework': path.resolve(__dirname, '../../pieces/framework/src'),
-        '@wippa/connectors-common': path.resolve(__dirname, '../../pieces/common/src'),
+        '@wippa/connectors-framework': path.resolve(__dirname, '../../connectors/framework/src'),
+        '@wippa/connectors-common': path.resolve(__dirname, '../../connectors/common/src'),
         '@wippa/core-utils': path.resolve(__dirname, '../../core/utils/src'),
-        '@wippa/core-connector-types': path.resolve(__dirname, '../../core/piece-types/src'),
+        '@wippa/core-connector-types': path.resolve(__dirname, '../../core/connector-types/src'),
         '@wippa/core-formula': path.resolve(__dirname, '../../core/formula/src'),
         '@wippa/core-execution': path.resolve(__dirname, '../../core/execution/src'),
     },

@@ -5,7 +5,7 @@ import {
     ExecuteExtractPieceMetadataOperation,
 } from '@wippa/shared'
 import { EngineConstants } from '../handler/context/engine-constants'
-import { connectorHelper } from '../helper/piece-helper'
+import { connectorHelper } from '../helper/connector-helper'
 
 
 export const pieceMetadataOperation = {

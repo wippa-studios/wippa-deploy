@@ -4,7 +4,7 @@ import {
     EngineResponseStatus,
     ExecutePropsOptions,
 } from '@wippa/shared'
-import { connectorHelper } from '../helper/piece-helper'
+import { connectorHelper } from '../helper/connector-helper'
 
 
 export const propertyOperation = {
