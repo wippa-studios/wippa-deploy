@@ -21,7 +21,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { pieceSetMutations } from '@/features/piece-sets';
+import { connectorSetMutations } from '@/features/connector-sets';
 
 type DuplicatePieceSetDialogProps = {
   open: boolean;
@@ -46,7 +46,7 @@ const DuplicatePieceSetForm = ({
   });
 
   const { mutate: duplicateSet, isPending } =
-    pieceSetMutations.useDuplicatePieceSet();
+    connectorSetMutations.useDuplicatePieceSet();
 
   const handleSubmit = (data: z.infer<typeof DuplicatePieceSetRequestBody>) => {
     duplicateSet(

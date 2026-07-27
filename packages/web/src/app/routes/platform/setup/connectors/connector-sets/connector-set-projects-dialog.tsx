@@ -29,7 +29,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { pieceSetMutations } from '@/features/piece-sets';
+import { connectorSetMutations } from '@/features/connector-sets';
 import { projectHooks } from '@/features/projects';
 
 type PieceSetProjectsDialogProps = {
@@ -61,8 +61,8 @@ const AssignProjectsForm = ({
   onOpenChange: (open: boolean) => void;
 }) => {
   const [selected, setSelected] = useState<string[]>(serverAssignedIds);
-  const assignMutation = pieceSetMutations.useAssignProjects();
-  const removeMutation = pieceSetMutations.useBulkRemoveProjects();
+  const assignMutation = connectorSetMutations.useAssignProjects();
+  const removeMutation = connectorSetMutations.useBulkRemoveProjects();
 
   const isSaving = assignMutation.isPending || removeMutation.isPending;
 

@@ -20,7 +20,7 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { pieceSetMutations } from '@/features/piece-sets';
+import { connectorSetMutations } from '@/features/connector-sets';
 import { piecesHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
@@ -132,7 +132,7 @@ function PieceComponentVisibilitySheetContent({
     });
 
   const { mutate: updatePieceSet, isPending: isPieceSetPending } =
-    pieceSetMutations.useUpdatePieceSet();
+    connectorSetMutations.useUpdatePieceSet();
 
   const isMutating = isPieceSetPending;
 

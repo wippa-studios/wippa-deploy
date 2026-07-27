@@ -7,7 +7,7 @@ import { DashboardPageHeader } from '@/app/components/dashboard-page-header';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { pieceSetMutations, pieceSetQueries } from '@/features/piece-sets';
+import { connectorSetMutations, connectorSetQueries } from '@/features/connector-sets';
 import { piecesHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
@@ -35,14 +35,14 @@ function flipSelectionMode({
 const ConnectorSetDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { data: connectorSet, isLoading } = pieceSetQueries.usePieceSet(id ?? '');
+  const { data: connectorSet, isLoading } = connectorSetQueries.usePieceSet(id ?? '');
   const { pieces, isLoading: piecesLoading } = piecesHooks.usePieces({
     includeHidden: true,
     isTableQuery: true,
     skipProjectFilter: true,
   });
   const { mutate: updateSet, isPending } =
-    pieceSetMutations.useUpdatePieceSet();
+    connectorSetMutations.useUpdatePieceSet();
 
   const handleToggle = (value: boolean) => {
     if (!connectorSet || !pieces) return;
@@ -74,7 +74,7 @@ const ConnectorSetDetailsPage = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate('/platform/setup/pieces?tab=piece-sets')}
+              onClick={() => navigate('/platform/setup/connectors?tab=connector-sets')}
               className="p-1 h-auto"
             >
               <ArrowLeft className="size-4" />

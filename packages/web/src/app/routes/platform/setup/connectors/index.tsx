@@ -21,10 +21,10 @@ import { toast } from 'sonner';
 
 import { DashboardPageHeader } from '@/app/components/dashboard-page-header';
 import { RequestTrial } from '@/app/components/request-trial';
-import { CustomizeSelectorDialog } from '@/app/routes/platform/setup/pieces/customize-selector-dialog';
-import { ConnectorActions } from '@/app/routes/platform/setup/pieces/piece-actions';
-import { SyncPiecesButton } from '@/app/routes/platform/setup/pieces/sync-pieces';
-import { ConfigurePieceOAuth2Dialog } from '@/app/routes/platform/setup/pieces/update-oauth2-dialog';
+import { CustomizeSelectorDialog } from '@/app/routes/platform/setup/connectors/customize-selector-dialog';
+import { ConnectorActions } from '@/app/routes/platform/setup/connectors/connector-actions';
+import { SyncPiecesButton } from '@/app/routes/platform/setup/connectors/sync-connectors';
+import { ConfigurePieceOAuth2Dialog } from '@/app/routes/platform/setup/connectors/update-oauth2-dialog';
 import { DataTable, RowDataWithActions } from '@/components/custom/data-table';
 import { DataTableColumnHeader } from '@/components/custom/data-table/data-table-column-header';
 import { ConfirmationDeleteDialog } from '@/components/custom/delete-dialog';
@@ -43,7 +43,7 @@ import { api } from '@/lib/api';
 
 import { PieceSetsTab } from './connector-sets/piece-sets-tab';
 
-type TabValue = 'pieces' | 'piece-sets';
+type TabValue = 'pieces' | 'connector-sets';
 
 const PiecesListTab = () => {
   const { platform } = platformHooks.useCurrentPlatform();
@@ -263,7 +263,7 @@ const PlatformConnectorsPage = () => {
               <Puzzle className="size-4 mr-2" />
               {t('Pieces')}
             </TabsTrigger>
-            <TabsTrigger variant="outline" value="piece-sets">
+            <TabsTrigger variant="outline" value="connector-sets">
               <Layers className="size-4 mr-2" />
               {t('Piece Sets')}
             </TabsTrigger>
@@ -275,7 +275,7 @@ const PlatformConnectorsPage = () => {
             <PiecesListTab />
           </TabsContent>
           <TabsContent
-            value="piece-sets"
+            value="connector-sets"
             className="flex-1 min-h-0 flex flex-col mt-0 min-w-0"
           >
             <PieceSetsTab />

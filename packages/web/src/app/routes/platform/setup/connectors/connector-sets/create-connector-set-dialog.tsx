@@ -24,7 +24,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { pieceSetMutations } from '@/features/piece-sets';
+import { connectorSetMutations } from '@/features/connector-sets';
 
 const formSchema = CreatePieceSetRequestBody;
 
@@ -50,7 +50,7 @@ const CreatePieceSetForm = ({
   });
 
   const { mutate: createSet, isPending } =
-    pieceSetMutations.useCreatePieceSet();
+    connectorSetMutations.useCreatePieceSet();
 
   const handleSubmit = (data: FormValues) => {
     createSet(data, {

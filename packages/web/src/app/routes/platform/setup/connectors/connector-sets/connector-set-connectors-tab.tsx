@@ -31,7 +31,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { pieceSetMutations } from '@/features/piece-sets';
+import { connectorSetMutations } from '@/features/connector-sets';
 import { ConnectorIcon, piecesHooks } from '@/features/pieces';
 import { cn } from '@/lib/utils';
 
@@ -84,7 +84,7 @@ const BulkPieceSetActions = ({
     mutate: updateSet,
     isPending,
     variables,
-  } = pieceSetMutations.useUpdatePieceSet();
+  } = connectorSetMutations.useUpdatePieceSet();
 
   const selectedNames = selectedConnectors.map((p) => p.name);
   const allIncluded = selectedConnectors.every((p) =>
@@ -158,7 +158,7 @@ export const PieceSetPiecesTab = ({ connectorSet }: PieceSetPiecesTabProps) => {
     skipProjectFilter: true,
   });
   const { mutate: updateSet, isPending } =
-    pieceSetMutations.useUpdatePieceSet();
+    connectorSetMutations.useUpdatePieceSet();
   const [selectedStatuses, setSelectedStatuses] = useState(new Set<string>());
   const [managingComponentsPiece, setManagingComponentsPiece] = useState<
     string | null

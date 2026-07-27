@@ -24,7 +24,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { pieceSetMutations, pieceSetQueries } from '@/features/piece-sets';
+import { connectorSetMutations, connectorSetQueries } from '@/features/connector-sets';
 
 import { CreatePieceSetDialog } from './create-piece-set-dialog';
 import { DuplicatePieceSetDialog } from './duplicate-piece-set-dialog';
@@ -39,8 +39,8 @@ export const PieceSetsTab = () => {
     data: pieceSetsPage,
     isLoading,
     refetch,
-  } = pieceSetQueries.usePieceSets();
-  const { mutate: deleteSet } = pieceSetMutations.useDeletePieceSet();
+  } = connectorSetQueries.usePieceSets();
+  const { mutate: deleteSet } = connectorSetMutations.useDeletePieceSet();
 
   const pieceSets = useMemo(() => pieceSetsPage?.data ?? [], [pieceSetsPage]);
 
@@ -59,7 +59,7 @@ export const PieceSetsTab = () => {
           <div
             className="flex items-center gap-2 cursor-pointer"
             onClick={() =>
-              navigate(`/platform/setup/pieces/piece-sets/${row.original.id}`)
+              navigate(`/platform/setup/connectors/connector-sets/${row.original.id}`)
             }
           >
             <span className="font-medium">{row.original.name}</span>
