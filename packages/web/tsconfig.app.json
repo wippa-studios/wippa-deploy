@@ -16,13 +16,13 @@
         "../../packages/core/shared/src"
       ],
       "@wippa/connectors-framework": [
-        "../../packages/pieces/framework/src"
+        "../../packages/connectors/framework/src"
       ],
       "ee-embed-sdk": [
         "../../packages/ee/embed-sdk/src"
       ],
       "@wippa/connector-ai": [
-        "../../packages/pieces/community/ai/src"
+        "../../packages/connectors/community/ai/src"
       ]
     }
   },

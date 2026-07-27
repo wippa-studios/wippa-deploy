@@ -111,7 +111,7 @@ export default defineConfig(({ command, mode }) => {
         ),
         '@wippa/pieces-framework': path.resolve(
           __dirname,
-          '../../packages/pieces/framework/src',
+          '../../packages/connectors/framework/src',
         ),
         '@wippa/core-utils': path.resolve(
           __dirname,
@@ -123,7 +123,7 @@ export default defineConfig(({ command, mode }) => {
         ),
         '@wippa/core-piece-types': path.resolve(
           __dirname,
-          '../../packages/core/piece-types/src',
+          '../../packages/core/connector-types/src',
         ),
         '@wippa/core-execution': path.resolve(
           __dirname,
