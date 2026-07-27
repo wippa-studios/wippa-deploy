@@ -94,7 +94,8 @@ function createChatModel({ provider, auth, config, modelId, webSearchEnabled = f
                 headers: { 'cf-aig-authorization': `Bearer ${apiKey}` },
             }).chatModel(actualModelId)
         }
-        case AIProviderName.CUSTOM: {
+        case AIProviderName.CUSTOM:
+        case AIProviderName.OLLAMA: {
             const { apiKey } = auth as BaseAIProviderAuthConfig
             const { apiKeyHeader, baseUrl, defaultHeaders } = config as OpenAICompatibleProviderConfig
             return createOpenAICompatible({
