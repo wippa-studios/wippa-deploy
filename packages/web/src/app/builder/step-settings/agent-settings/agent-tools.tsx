@@ -24,10 +24,10 @@ import {
 import { AgentPieceDialog } from './connector-tool-dialog';
 
 const icons = [
-  'https://cdn.activepieces.com/pieces/youtube.png',
-  'https://cdn.activepieces.com/pieces/slack.png',
-  'https://cdn.activepieces.com/pieces/github.png',
-  'https://cdn.activepieces.com/pieces/notion.png',
+  'https://cdn.wippa.com.au/pieces/youtube.png',
+  'https://cdn.wippa.com.au/pieces/slack.png',
+  'https://cdn.wippa.com.au/pieces/github.png',
+  'https://cdn.wippa.com.au/pieces/notion.png',
 ];
 
 interface AgentToolsProps {

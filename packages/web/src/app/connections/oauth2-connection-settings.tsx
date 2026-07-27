@@ -76,7 +76,7 @@ function OAuth2ConnectionSettings({
   );
   const redirectUrl =
     oauth2App.oauth2Type === AppConnectionType.CLOUD_OAUTH2
-      ? 'https://secrets.activepieces.com/redirect'
+      ? 'https://secrets.wippa.com.au/redirect'
       : thirdPartyUrl ?? 'no_redirect_url_found';
 
   const showRedirectUrlInput =

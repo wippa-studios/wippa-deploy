@@ -31,7 +31,7 @@ export function WorkerAssignmentsTab() {
             'Worker groups reserve a dedicated queue for the projects you assign. Defined in your deployment with AP_WORKER_GROUP_ID.',
           )}{' '}
           <a
-            href="https://www.activepieces.com/docs/install/configure-operate/worker-groups"
+            href="https://www.wippa.com.au/docs/install/configure-operate/worker-groups"
             target="_blank"
             rel="noreferrer"
             className="text-primary underline"

@@ -53,7 +53,7 @@ const ProjectRolePage = () => {
       lockDescription={t(
         'Define custom roles and permissions to control what your team members can access and modify',
       )}
-      lockVideoUrl="https://cdn.activepieces.com/videos/showcase/roles.mp4"
+      lockVideoUrl="https://cdn.wippa.com.au/videos/showcase/roles.mp4"
     >
       <CenteredPage
         title={t('Project Role Management')}

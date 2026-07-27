@@ -54,7 +54,7 @@ const TelemetryProvider = ({ children }: TelemetryProviderProps) => {
       // Same-origin reverse proxy (/ingest) so ad blockers don't drop ingestion.
       api_host: '/ingest',
       ui_host: 'https://us.posthog.com',
-      // Adopt the identity cookie the marketing site sets on `.activepieces.com`.
+      // Adopt the identity cookie the marketing site sets on `.wippa.com.au`.
       cross_subdomain_cookie: true,
       // Limit autocapture to the auth funnel; the rest of the app doesn't need it.
       autocapture: isCloud

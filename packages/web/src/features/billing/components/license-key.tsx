@@ -59,7 +59,7 @@ export const LicenseKey = ({
         <ItemActions className="gap-4">
           <Button variant="ghost" size="sm" asChild>
             <a
-              href="https://www.activepieces.com/pricing"
+              href="https://www.wippa.com.au/pricing"
               target="_blank"
               rel="noopener noreferrer"
             >

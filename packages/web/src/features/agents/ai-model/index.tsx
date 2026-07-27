@@ -42,7 +42,7 @@ const ACTIVEPIECES_PROVIDER_CONFIG = {
   provider: AIProviderName.ACTIVEPIECES,
   name: 'Wippa',
   markdown: '',
-  logoUrl: 'https://cdn.activepieces.com/pieces/activepieces.png',
+  logoUrl: 'https://cdn.wippa.com.au/pieces/activepieces.png',
 };
 
 const ALL_PROVIDERS = [...SUPPORTED_AI_PROVIDERS, ACTIVEPIECES_PROVIDER_CONFIG];

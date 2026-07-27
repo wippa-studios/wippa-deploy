@@ -64,7 +64,7 @@ export const RequestTrial = ({
 
   const handleClick = () =>
     window.open(
-      `https://www.activepieces.com/sales?${createQueryParams()}`,
+      `https://www.wippa.com.au/sales?${createQueryParams()}`,
       '_blank',
       'noopener noreferrer',
     );

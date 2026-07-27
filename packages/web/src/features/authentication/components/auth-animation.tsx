@@ -9,7 +9,7 @@ const TICKS_PER_SCENE = SCENE_DURATION_MS / TICK_INTERVAL_MS;
 const TYPING_INTERVAL_MS = 20;
 const MORPHING_DURATION_MS = 800;
 
-const CDN = 'https://cdn.activepieces.com/pieces';
+const CDN = 'https://cdn.wippa.com.au/pieces';
 
 const FULL_PROMPT =
   'When a new lead arrives, research their company and role. Score them 1-10 based on fit. If score > 7, ask me on Slack before sending a discount.';
@@ -1191,7 +1191,7 @@ function AuthAnimation() {
         style={{
           height: '100%',
           backgroundImage:
-            'url(https://cdn.activepieces.com/assets/auth-anim-bg.webp)',
+            'url(https://cdn.wippa.com.au/assets/auth-anim-bg.webp)',
         }}
       >
         {/* Scene Title - top center */}

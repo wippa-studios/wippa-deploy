@@ -25,13 +25,13 @@ type AIPieceActionsListProps = {
 };
 
 const ACTION_ICON_MAP: Record<string, string> = {
-  run_agent: 'https://cdn.activepieces.com/pieces/new-core/agent.svg',
-  generateImage: 'https://cdn.activepieces.com/pieces/new-core/image-ai.svg',
-  askAi: 'https://cdn.activepieces.com/pieces/new-core/text-ai.svg',
-  summarizeText: 'https://cdn.activepieces.com/pieces/new-core/text-ai.svg',
-  classifyText: 'https://cdn.activepieces.com/pieces/new-core/text-ai.svg',
+  run_agent: 'https://cdn.wippa.com.au/pieces/new-core/agent.svg',
+  generateImage: 'https://cdn.wippa.com.au/pieces/new-core/image-ai.svg',
+  askAi: 'https://cdn.wippa.com.au/pieces/new-core/text-ai.svg',
+  summarizeText: 'https://cdn.wippa.com.au/pieces/new-core/text-ai.svg',
+  classifyText: 'https://cdn.wippa.com.au/pieces/new-core/text-ai.svg',
   extractStructuredData:
-    'https://cdn.activepieces.com/pieces/new-core/utility-ai.svg',
+    'https://cdn.wippa.com.au/pieces/new-core/utility-ai.svg',
 };
 
 export const AIPieceActionsList: React.FC<AIPieceActionsListProps> = ({
@@ -60,7 +60,7 @@ export const AIPieceActionsList: React.FC<AIPieceActionsListProps> = ({
           const actionIcon =
             item.type === FlowActionType.PIECE
               ? ACTION_ICON_MAP[item.actionOrTrigger.name]
-              : 'https://cdn.activepieces.com/pieces/new-core/image-ai.svg';
+              : 'https://cdn.wippa.com.au/pieces/new-core/image-ai.svg';
           return (
             <AIActionItem
               key={index}

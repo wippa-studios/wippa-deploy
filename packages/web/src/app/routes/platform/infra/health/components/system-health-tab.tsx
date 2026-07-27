@@ -24,10 +24,10 @@ import { cn } from '@/lib/utils';
 import { DailyHealthStrip } from './daily-health-strip';
 
 const HARDWARE_DOCS_LINK =
-  'https://www.activepieces.com/docs/install/configuration/hardware#technical-specifications';
+  'https://www.wippa.com.au/docs/install/configuration/hardware#technical-specifications';
 
 const PRODUCTION_SETUP_LINK =
-  'https://www.activepieces.com/docs/install/configure-operate/production-setup#what-it-looks-like';
+  'https://www.wippa.com.au/docs/install/configure-operate/production-setup#what-it-looks-like';
 
 // Matches UNKNOWN_VERSION in @wippa/server-utils: the sentinel the backend reports when
 // it could not read its release from package.json. Not importable here (server-only package).
@@ -103,7 +103,7 @@ export function SystemHealthTab({ onSeeRuns }: SystemHealthTabProps) {
       title: t('Release Integrity'),
       icon: <GitCompareArrows className="size-4" />,
       status: releaseIntegrityOk ? 'passed' : 'failed',
-      link: 'https://www.activepieces.com/docs/install/configuration/overview',
+      link: 'https://www.wippa.com.au/docs/install/configuration/overview',
       message: releaseIntegrityMessage,
     },
     {

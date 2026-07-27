@@ -138,7 +138,7 @@ const EmbedPage = () => {
               asChild
             >
               <a
-                href="https://www.activepieces.com/docs/embedding/overview"
+                href="https://www.wippa.com.au/docs/embedding/overview"
                 target="_blank"
                 rel="noopener noreferrer"
               >

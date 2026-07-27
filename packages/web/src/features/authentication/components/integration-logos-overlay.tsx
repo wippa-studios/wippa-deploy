@@ -1,27 +1,27 @@
 const CLIENTS = [
   {
     name: 'MoneyGram',
-    src: 'https://www.activepieces.com/logos/moneygram.svg',
+    src: 'https://www.wippa.com.au/logos/moneygram.svg',
   },
-  { name: 'Red Bull', src: 'https://www.activepieces.com/logos/redbull.svg' },
-  { name: 'Rakuten', src: 'https://www.activepieces.com/logos/rakuten.svg' },
-  { name: 'DocuSign', src: 'https://www.activepieces.com/logos/docusign.svg' },
+  { name: 'Red Bull', src: 'https://www.wippa.com.au/logos/redbull.svg' },
+  { name: 'Rakuten', src: 'https://www.wippa.com.au/logos/rakuten.svg' },
+  { name: 'DocuSign', src: 'https://www.wippa.com.au/logos/docusign.svg' },
   {
     name: 'Contentful',
-    src: 'https://www.activepieces.com/logos/contentful.svg',
+    src: 'https://www.wippa.com.au/logos/contentful.svg',
   },
-  { name: 'PostHog', src: 'https://www.activepieces.com/logos/posthog.svg' },
-  { name: 'Roblox', src: 'https://www.activepieces.com/logos/roblox.svg' },
-  { name: 'Alan', src: 'https://www.activepieces.com/logos/alan.svg' },
+  { name: 'PostHog', src: 'https://www.wippa.com.au/logos/posthog.svg' },
+  { name: 'Roblox', src: 'https://www.wippa.com.au/logos/roblox.svg' },
+  { name: 'Alan', src: 'https://www.wippa.com.au/logos/alan.svg' },
   {
     name: 'Funding Societies',
-    src: 'https://www.activepieces.com/logos/fundingsocieties-sales.png',
+    src: 'https://www.wippa.com.au/logos/fundingsocieties-sales.png',
   },
-  { name: 'Plivo', src: 'https://www.activepieces.com/logos/plivo.svg' },
-  { name: 'Nedap', src: 'https://www.activepieces.com/logos/nedap.svg' },
+  { name: 'Plivo', src: 'https://www.wippa.com.au/logos/plivo.svg' },
+  { name: 'Nedap', src: 'https://www.wippa.com.au/logos/nedap.svg' },
   {
     name: 'Experience.com',
-    src: 'https://www.activepieces.com/logos/experience.com.svg',
+    src: 'https://www.wippa.com.au/logos/experience.com.svg',
   },
 ] as const;
 

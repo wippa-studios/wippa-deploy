@@ -13,7 +13,7 @@ import { chatDebug } from '@/lib/chat-debug-logger';
 export const isRunningCloudInDevMode = import.meta.env.MODE === 'cloud';
 
 export const API_BASE_URL = isRunningCloudInDevMode
-  ? 'https://cloud.activepieces.com'
+  ? 'https://cloud.wippa.com.au'
   : typeof window !== 'undefined'
   ? window.location.origin
   : '';

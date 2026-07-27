@@ -30,31 +30,31 @@ export const CORE_STEP_METADATA: Record<
 > = {
   [FlowActionType.CODE]: {
     displayName: t('Code'),
-    logoUrl: 'https://cdn.activepieces.com/pieces/new-core/code.svg',
+    logoUrl: 'https://cdn.wippa.com.au/pieces/new-core/code.svg',
     description: t('Powerful Node.js & TypeScript code with npm'),
     type: FlowActionType.CODE as const,
   },
   [FlowActionType.LOOP_ON_ITEMS]: {
     displayName: t('Loop on Items'),
-    logoUrl: 'https://cdn.activepieces.com/pieces/new-core/loop.svg',
+    logoUrl: 'https://cdn.wippa.com.au/pieces/new-core/loop.svg',
     description: 'Iterate over a list of items',
     type: FlowActionType.LOOP_ON_ITEMS as const,
   },
   [FlowActionType.ROUTER]: {
     displayName: t('Router'),
-    logoUrl: 'https://cdn.activepieces.com/pieces/new-core/router.svg',
+    logoUrl: 'https://cdn.wippa.com.au/pieces/new-core/router.svg',
     description: t('Split your flow into branches depending on condition(s)'),
     type: FlowActionType.ROUTER as const,
   },
   [FlowActionType.PARALLEL]: {
     displayName: t('Parallel'),
-    logoUrl: 'https://cdn.activepieces.com/pieces/new-core/parallel.svg',
+    logoUrl: 'https://cdn.wippa.com.au/pieces/new-core/parallel.svg',
     description: t('Run multiple branches concurrently'),
     type: FlowActionType.PARALLEL as const,
   },
   [FlowTriggerType.EMPTY]: {
     displayName: t('Empty Trigger'),
-    logoUrl: 'https://cdn.activepieces.com/pieces/new-core/empty-trigger.svg',
+    logoUrl: 'https://cdn.wippa.com.au/pieces/new-core/empty-trigger.svg',
     description: t('Empty Trigger'),
     type: FlowTriggerType.EMPTY as const,
   },

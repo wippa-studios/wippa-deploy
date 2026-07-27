@@ -33,7 +33,7 @@ export default function Billing() {
       lockDescription={t(
         'Switch to the Enterprise edition to access billing and usage management.',
       )}
-      lockDocumentationUrl="https://www.activepieces.com/docs/install/configuration/overview#enterprise-edition-optional"
+      lockDocumentationUrl="https://www.wippa.com.au/docs/install/configuration/overview#enterprise-edition-optional"
       showContactSales={false}
     >
       <BillingPageDetails />

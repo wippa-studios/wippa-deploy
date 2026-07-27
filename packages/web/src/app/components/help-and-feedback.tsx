@@ -25,7 +25,7 @@ export const HelpAndFeedback = () => {
       <DropdownMenuSubContent className="w-[220px]">
         <DropdownMenuItem asChild>
           <Link
-            to="https://activepieces.com/docs"
+            to="https://wippa.com.au/docs"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-between w-full"

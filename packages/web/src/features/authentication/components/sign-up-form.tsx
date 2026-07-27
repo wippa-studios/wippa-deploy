@@ -73,7 +73,7 @@ const SignUpForm = ({
       case ApEdition.CLOUD: {
         if (
           typeof websiteName === 'string' &&
-          websiteName.toLowerCase() === 'activepieces'
+          websiteName.toLowerCase() === 'wippa'
         ) {
           form.setValue('newsLetter', true);
           return true;

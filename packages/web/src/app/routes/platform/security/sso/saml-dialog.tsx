@@ -406,7 +406,7 @@ const SamlStep = ({
             markdown={t(
               `
 **Setup Instructions**:
-Please check the following documentation: [SAML SSO](https://activepieces.com/docs/security/sso)
+Please check the following documentation: [SAML SSO](https://wippa.com.au/docs/security/sso)
 
 **Single sign-on URL**:
 \`\`\`text

@@ -24,7 +24,7 @@ import LockedFeatureGuard from '../../../../components/locked-feature-guard';
 import { AIProviderCard } from './universal-connectors/ai-provider-card';
 
 const ACTIVEPIECES_LOGO_URL =
-  'https://cdn.activepieces.com/pieces/activepieces.png';
+  'https://cdn.wippa.com.au/pieces/activepieces.png';
 
 export default function AIProvidersPage() {
   const { data: providers, refetch } = aiProviderQueries.useAiProviders();
