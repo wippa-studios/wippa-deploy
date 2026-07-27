@@ -22,6 +22,7 @@ export const OAuthAppEntity = new EntitySchema<OAuthAppSchema>({
         ...BaseColumnSchemaPart,
         connectorName: {
             type: String,
+            name: 'pieceName',
         },
         platformId: ApIdSchema,
         clientId: {

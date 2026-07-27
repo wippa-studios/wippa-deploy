@@ -42,10 +42,12 @@ export const TriggerSourceEntity = new EntitySchema<TriggerSourceSchema>({
         },
         connectorName: {
             type: String,
+            name: 'pieceName',
             nullable: false,
         },
         connectorVersion: {
             type: String,
+            name: 'pieceVersion',
             nullable: false,
         },
         simulate: {

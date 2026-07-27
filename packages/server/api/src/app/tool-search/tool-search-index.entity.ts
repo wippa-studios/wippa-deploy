@@ -30,10 +30,12 @@ export const ToolSearchIndexEntity = new EntitySchema<ToolSearchIndexSchema>({
         },
         connectorName: {
             type: String,
+            name: 'pieceName',
             nullable: false,
         },
         connectorVersion: {
             type: String,
+            name: 'pieceVersion',
             nullable: false,
         },
         objectName: {
