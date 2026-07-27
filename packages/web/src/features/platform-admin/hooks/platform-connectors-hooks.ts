@@ -4,7 +4,7 @@ import { t } from 'i18next';
 import { toast } from 'sonner';
 
 import { platformApi } from '@/api/platforms-api';
-import { pieceCacheUtils, piecesApi } from '@/features/pieces';
+import { pieceCacheUtils, piecesApi } from '@/features/connectors';
 
 export const platformPiecesMutations = {
   useTogglePiecePin: ({

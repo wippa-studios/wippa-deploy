@@ -21,7 +21,7 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { triggerRunHooks } from '@/features/flows';
-import { ConnectorDisplayName, PieceIconWithPieceName } from '@/features/pieces';
+import { ConnectorDisplayName, PieceIconWithPieceName } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 import { StatusProgressBar, type DayStatus } from './status-progress-bar';

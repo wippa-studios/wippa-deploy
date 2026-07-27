@@ -19,7 +19,7 @@ import {
   PieceSelectorItem,
   PieceSelectorOperation,
   pieceSelectorUtils,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { PromiseQueue } from '@/lib/promise-queue';
 
 import { BuilderState } from '../builder-hooks';

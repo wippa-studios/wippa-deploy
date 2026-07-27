@@ -56,7 +56,7 @@ import {
 } from 'lucide-react';
 import React from 'react';
 
-import { PieceSelectorTabType } from '@/features/pieces/stores/connector-selector-tabs-provider';
+import { PieceSelectorTabType } from '@/features/connectors/stores/connector-selector-tabs-provider';
 
 type DefaultBuiltinTab = {
   value: PieceSelectorTabType;

@@ -14,8 +14,8 @@ import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { chatApi } from '@/features/chat/lib/chat-api';
 import { appConnectionsApi } from '@/features/connections/api/app-connections';
-import { piecesHooks } from '@/features/pieces';
-import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
+import { piecesHooks } from '@/features/connectors';
+import { PieceIconWithPieceName } from '@/features/connectors/components/connector-icon-from-name';
 import { authenticationSession } from '@/lib/authentication-session';
 import { cn } from '@/lib/utils';
 

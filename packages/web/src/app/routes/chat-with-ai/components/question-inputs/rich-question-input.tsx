@@ -13,7 +13,7 @@ import {
   MultiQuestion,
   RichOption,
 } from '@/features/chat/lib/chat-store-types';
-import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/connectors/components/connector-icon-from-name';
 import { cn } from '@/lib/utils';
 
 import { normalizePieceName } from '../../lib/message-parsers';

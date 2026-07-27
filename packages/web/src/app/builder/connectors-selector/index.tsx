@@ -28,7 +28,7 @@ import {
   pieceSelectorCustomization,
   PieceSearchProvider,
   usePieceSearchContext,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { aiProviderQueries } from '@/features/platform-admin';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { useIsMobile } from '@/hooks/use-mobile';

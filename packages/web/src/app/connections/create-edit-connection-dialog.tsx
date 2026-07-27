@@ -52,7 +52,7 @@ import {
   PiecesOAuth2AppsMap,
   newConnectionUtils,
 } from '@/features/connections';
-import { formUtils } from '@/features/pieces';
+import { formUtils } from '@/features/connectors';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
 

@@ -21,7 +21,7 @@ import {
 } from '@/components/ui/sheet';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { connectorSetMutations } from '@/features/connector-sets';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 type PieceComponentVisibilitySheetProps = {

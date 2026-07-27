@@ -7,9 +7,9 @@ import {
 } from '@wippa/shared';
 import { useMemo } from 'react';
 
-import { piecesHooks } from '@/features/pieces/hooks/pieces-hooks';
-import { StepMetadata } from '@/features/pieces/types';
-import { extractPieceNamesAndCoreMetadata } from '@/features/pieces/utils/step-utils';
+import { piecesHooks } from '@/features/connectors/hooks/connectors-hooks';
+import { StepMetadata } from '@/features/connectors/types';
+import { extractPieceNamesAndCoreMetadata } from '@/features/connectors/utils/step-utils';
 import { colorsUtils } from '@/lib/color-utils';
 
 const rgbToHex = (r: number, g: number, b: number): string => {

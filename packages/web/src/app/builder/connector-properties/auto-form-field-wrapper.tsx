@@ -21,7 +21,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { formUtils } from '@/features/pieces';
+import { formUtils } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 import { ArrayPiecePropertyInInlineItemMode } from './array-property-in-inline-item-mode';

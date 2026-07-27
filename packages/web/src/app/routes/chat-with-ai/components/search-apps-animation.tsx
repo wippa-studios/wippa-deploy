@@ -2,7 +2,7 @@ import { Search } from 'lucide-react';
 import { memo, useMemo } from 'react';
 
 import { TextShimmer } from '@/components/ui/text-shimmer';
-import { piecesHooks } from '@/features/pieces/hooks/pieces-hooks';
+import { piecesHooks } from '@/features/connectors/hooks/connectors-hooks';
 import { cn } from '@/lib/utils';
 
 const MAX_LOGOS = 24;

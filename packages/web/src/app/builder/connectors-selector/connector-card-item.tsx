@@ -6,7 +6,7 @@ import {
   PieceSelectorOperation,
   StepMetadataWithSuggestions,
   PIECE_SELECTOR_ELEMENTS_HEIGHTS,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { wait } from '@/lib/dom-utils';
 import { cn } from '@/lib/utils';

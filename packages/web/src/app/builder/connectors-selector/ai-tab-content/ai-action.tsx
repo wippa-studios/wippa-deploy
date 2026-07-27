@@ -5,7 +5,7 @@ import {
   ConnectorIcon,
   PieceSelectorItem,
   StepMetadataWithSuggestions,
-} from '@/features/pieces';
+} from '@/features/connectors';
 
 type AIActionItemProps = {
   item: PieceSelectorItem;

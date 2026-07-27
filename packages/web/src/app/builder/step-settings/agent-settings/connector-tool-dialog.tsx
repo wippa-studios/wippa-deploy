@@ -28,7 +28,7 @@ import {
 import {
   stepsHooks,
   PieceStepMetadataWithSuggestions,
-} from '@/features/pieces';
+} from '@/features/connectors';
 
 import { PredefinedInputsForm } from './predefined-inputs-form';
 

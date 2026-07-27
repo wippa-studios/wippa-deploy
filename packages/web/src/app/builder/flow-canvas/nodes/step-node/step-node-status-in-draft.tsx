@@ -16,7 +16,7 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { StepStatusIcon, flowRunUtils } from '@/features/flow-runs';
-import { pieceSelectorUtils } from '@/features/pieces';
+import { pieceSelectorUtils } from '@/features/connectors';
 
 import { useBuilderStateContext } from '../../../builder-hooks';
 import { flowCanvasUtils } from '../../utils/flow-canvas-utils';

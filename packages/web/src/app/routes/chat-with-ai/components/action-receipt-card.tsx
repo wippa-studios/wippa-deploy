@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import { SimpleJsonViewer } from '@/components/custom/simple-json-viewer';
 import { Collapsible, CollapsibleContent } from '@/components/ui/collapsible';
-import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/connectors/components/connector-icon-from-name';
 
 import { normalizePieceName } from '../lib/message-parsers';
 

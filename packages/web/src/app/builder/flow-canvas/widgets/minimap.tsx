@@ -3,7 +3,7 @@ import { flowStructureUtil, Step } from '@wippa/shared';
 import { MiniMap, MiniMapNodeProps } from '@xyflow/react';
 
 import { useTheme } from '@/components/providers/theme-provider';
-import { stepsHooks, StepMetadata } from '@/features/pieces';
+import { stepsHooks, StepMetadata } from '@/features/connectors';
 import { colorsUtils } from '@/lib/color-utils';
 
 import { useBuilderStateContext } from '../../builder-hooks';

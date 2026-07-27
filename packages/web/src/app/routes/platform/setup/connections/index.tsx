@@ -48,7 +48,7 @@ import {
   globalConnectionsQueries,
   appConnectionUtils,
 } from '@/features/connections';
-import { PieceIconWithPieceName } from '@/features/pieces';
+import { PieceIconWithPieceName } from '@/features/connectors';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { formatUtils } from '@/lib/format-utils';

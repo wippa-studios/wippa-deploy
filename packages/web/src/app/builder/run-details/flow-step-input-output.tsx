@@ -25,7 +25,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AgentTimeline } from '@/features/agents';
 import { flowRunUtils } from '@/features/flow-runs';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { formatUtils } from '@/lib/format-utils';
 

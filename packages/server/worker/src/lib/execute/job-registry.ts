@@ -7,7 +7,7 @@ import { executeTokenRefreshJob } from './jobs/execute-token-refresh'
 import { executeTriggerHookJob } from './jobs/execute-trigger-hook'
 import { executeValidationJob } from './jobs/execute-validation'
 import { executeWebhookJob } from './jobs/execute-webhook'
-import { extractPieceInfoJob } from './jobs/extract-piece-info'
+import { extractPieceInfoJob } from './jobs/extract-connector-info'
 import { renewWebhookJob } from './jobs/renew-webhook'
 import { JobHandler } from './types'
 

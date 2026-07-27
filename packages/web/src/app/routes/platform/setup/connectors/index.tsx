@@ -37,11 +37,11 @@ import {
   ConnectorIcon,
   piecesApi,
   piecesHooks,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { api } from '@/lib/api';
 
-import { PieceSetsTab } from './connector-sets/piece-sets-tab';
+import { PieceSetsTab } from './connector-sets/connector-sets-tab';
 
 type TabValue = 'pieces' | 'connector-sets';
 

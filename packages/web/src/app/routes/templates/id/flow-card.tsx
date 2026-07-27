@@ -2,7 +2,7 @@ import { FlowVersionTemplate } from '@wippa/shared';
 import { Workflow } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
-import { ConnectorIconList } from '@/features/pieces';
+import { ConnectorIconList } from '@/features/connectors';
 
 type FlowCardProps = {
   flow: FlowVersionTemplate;

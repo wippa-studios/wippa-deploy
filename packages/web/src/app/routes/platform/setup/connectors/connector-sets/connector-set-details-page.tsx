@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { connectorSetMutations, connectorSetQueries } from '@/features/connector-sets';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 import { PieceSetPiecesTab } from './connector-set-pieces-tab';

@@ -8,7 +8,7 @@ import { UseFormReturn, useWatch } from 'react-hook-form';
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { SearchableSelect } from '@/components/custom/searchable-select';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 import { authenticationSession } from '@/lib/authentication-session';
 
 import { MultiSelectConnectorProperty } from '../../../components/custom/multi-select-piece-property';

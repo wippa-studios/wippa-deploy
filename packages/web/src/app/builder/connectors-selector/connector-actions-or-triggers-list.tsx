@@ -18,7 +18,7 @@ import {
   pieceSelectorUtils,
   CORE_ACTIONS_METADATA,
   usePieceSearchContext,
-} from '@/features/pieces';
+} from '@/features/connectors';
 
 import { useBuilderStateContext } from '../builder-hooks';
 

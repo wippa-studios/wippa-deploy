@@ -4,7 +4,7 @@ import {
   PieceSelectorOperation,
   PieceSelectorPieceItem,
   pieceSelectorUtils,
-} from '@/features/pieces';
+} from '@/features/connectors';
 
 import { BuilderState } from '../builder-hooks';
 

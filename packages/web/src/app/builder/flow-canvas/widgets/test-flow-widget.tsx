@@ -12,7 +12,7 @@ import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { ChatDrawerSource } from '@/app/builder/types';
 import { flowRunUtils } from '@/features/flow-runs';
 import { flowHooks } from '@/features/flows';
-import { pieceSelectorUtils } from '@/features/pieces';
+import { pieceSelectorUtils } from '@/features/connectors';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 
 import { AboveTriggerButton } from './above-trigger-button';

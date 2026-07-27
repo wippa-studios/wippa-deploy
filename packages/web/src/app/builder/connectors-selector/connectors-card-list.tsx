@@ -17,7 +17,7 @@ import {
   CategorizedStepMetadataWithSuggestions,
   PIECE_SELECTOR_ELEMENTS_HEIGHTS,
   pieceSelectorUtils,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 import { cn } from '../../../lib/utils';

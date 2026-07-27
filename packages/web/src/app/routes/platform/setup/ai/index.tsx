@@ -21,7 +21,7 @@ import { userHooks } from '@/hooks/user-hooks';
 
 import LockedFeatureGuard from '../../../../components/locked-feature-guard';
 
-import { AIProviderCard } from './universal-pieces/ai-provider-card';
+import { AIProviderCard } from './universal-connectors/ai-provider-card';
 
 const ACTIVEPIECES_LOGO_URL =
   'https://cdn.activepieces.com/pieces/activepieces.png';

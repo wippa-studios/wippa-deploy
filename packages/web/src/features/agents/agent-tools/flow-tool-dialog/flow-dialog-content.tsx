@@ -10,7 +10,7 @@ import { useMemo } from 'react';
 import { useDebounce } from 'use-debounce';
 
 import { Checkbox } from '@/components/ui/checkbox';
-import { ConnectorIconList } from '@/features/pieces/components/connector-icon-list';
+import { ConnectorIconList } from '@/features/connectors/components/connector-icon-list';
 
 import { CreateMcpFlowButton } from './create-mcp-flow-button';
 import { flowDialogUtils } from './flow-dialog-utils';

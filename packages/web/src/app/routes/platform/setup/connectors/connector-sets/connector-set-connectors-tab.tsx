@@ -32,7 +32,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { connectorSetMutations } from '@/features/connector-sets';
-import { ConnectorIcon, piecesHooks } from '@/features/pieces';
+import { ConnectorIcon, piecesHooks } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 import { PieceComponentVisibilitySheet } from '../connector-component-visibility-sheet';

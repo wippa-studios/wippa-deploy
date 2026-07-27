@@ -1,7 +1,7 @@
 import { TriggerBase, TriggerStrategy } from '@wippa/connectors-framework';
 import { TriggerTestStrategy } from '@wippa/shared';
 
-import { pieceSelectorUtils } from '@/features/pieces';
+import { pieceSelectorUtils } from '@/features/connectors';
 
 export type TestType =
   | 'mcp-tool'

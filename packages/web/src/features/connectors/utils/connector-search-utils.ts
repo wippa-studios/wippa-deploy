@@ -11,7 +11,7 @@ import {
   PieceStepMetadataWithSuggestions,
   StepMetadata,
   StepMetadataWithSuggestions,
-} from '@/features/pieces/types';
+} from '@/features/connectors/types';
 
 const isFlowController = (stepMetadata: StepMetadata) => {
   if (

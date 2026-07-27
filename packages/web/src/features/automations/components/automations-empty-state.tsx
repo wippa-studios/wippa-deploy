@@ -19,7 +19,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ImportFlowDialog } from '@/features/flows/components/import-flow-dialog';
 import { flowHooks } from '@/features/flows/hooks/flow-hooks';
-import { ConnectorIconList } from '@/features/pieces/components/connector-icon-list';
+import { ConnectorIconList } from '@/features/connectors/components/connector-icon-list';
 import { ImportTableDialog } from '@/features/tables/components/import-table-dialog';
 import { tableHooks } from '@/features/tables/hooks/table-hooks';
 import { TemplatesBrowseDialog } from '@/features/templates';

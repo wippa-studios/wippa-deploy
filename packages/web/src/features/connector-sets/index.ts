@@ -1,6 +1,6 @@
-export { pieceSetsApi } from './api/piece-sets-api';
+export { connectorSetsApi } from './api/connector-sets-api';
 export {
-  pieceSetKeys,
-  pieceSetMutations,
-  pieceSetQueries,
-} from './hooks/piece-sets-hooks';
+  connectorSetKeys,
+  connectorSetMutations,
+  connectorSetQueries,
+} from './hooks/connector-sets-hooks';

@@ -12,8 +12,8 @@ import { DataTableInputPopover } from '@/components/custom/data-table/data-table
 import { LockedAlert } from '@/components/custom/locked-alert';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { pieceSetQueries } from '@/features/piece-sets';
-import { ConnectorIcon, piecesHooks } from '@/features/pieces';
+import { connectorSetQueries } from '@/features/connector-sets';
+import { ConnectorIcon, piecesHooks } from '@/features/connectors';
 import { projectCollectionUtils } from '@/features/projects';
 import { platformHooks } from '@/hooks/platform-hooks';
 
@@ -87,7 +87,7 @@ const PiecesSettings = () => {
     isTableQuery: true,
   });
 
-  const { data: connectorSet } = pieceSetQueries.usePieceSet(
+  const { data: connectorSet } = connectorSetQueries.usePieceSet(
     project.pieceSetId ?? '',
   );
 

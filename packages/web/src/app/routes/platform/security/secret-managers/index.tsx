@@ -30,7 +30,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { ConnectorIcon } from '@/features/pieces';
+import { ConnectorIcon } from '@/features/connectors';
 import { secretManagersHooks } from '@/features/secret-managers';
 import { platformHooks } from '@/hooks/platform-hooks';
 

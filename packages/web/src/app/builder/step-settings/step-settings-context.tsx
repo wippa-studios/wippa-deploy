@@ -16,7 +16,7 @@ import {
 import { UseFormReturn } from 'react-hook-form';
 import { z, ZodObject } from 'zod';
 
-import { formUtils } from '@/features/pieces';
+import { formUtils } from '@/features/connectors';
 const numberReplacement = 'def.options.0.element';
 const stringReplacement = 'shape.';
 const createUpdatedSchemaKey = (propertyKey: string) => {

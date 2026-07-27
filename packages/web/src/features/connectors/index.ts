@@ -1,4 +1,4 @@
-export { piecesApi } from './api/pieces-api';
+export { piecesApi } from './api/connectors-api';
 export { InstallPieceDialog } from './components/install-connector-dialog';
 export { ConnectorDisplayName } from './components/connector-display-name';
 export { ConnectorIcon } from './components/connector-icon';
@@ -10,13 +10,13 @@ export {
   piecesHooks,
   piecesMutations,
   pieceCacheUtils,
-} from './hooks/pieces-hooks';
+} from './hooks/connectors-hooks';
 export { stepsHooks } from './hooks/steps-hooks';
-export { usePieceOutputSchema } from './hooks/use-piece-output-schema';
+export { usePieceOutputSchema } from './hooks/use-connector-output-schema';
 export {
   usePieceSearchContext,
   PieceSearchProvider,
-} from './stores/piece-search-context';
+} from './stores/connector-search-context';
 export {
   PieceSelectorTabsProvider,
   PieceSelectorTabType,

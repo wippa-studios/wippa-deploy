@@ -8,7 +8,7 @@ import {
   usePieceSelectorTabs,
   PieceSelectorOperation,
   stepUtils,
-} from '@/features/pieces';
+} from '@/features/connectors';
 
 import { useBuilderStateContext } from '../builder-hooks';
 

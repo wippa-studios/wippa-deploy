@@ -10,7 +10,7 @@ import {
   PieceSelectorOperation,
   StepMetadataWithSuggestions,
   usePieceSearchContext,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { flagsHooks } from '@/hooks/flags-hooks';
 
 import { useBuilderStateContext } from '../../builder-hooks';

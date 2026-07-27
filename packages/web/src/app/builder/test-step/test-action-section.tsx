@@ -10,7 +10,7 @@ import { FlaskConical, Play } from 'lucide-react';
 import React, { useContext } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 
 import { useBuilderStateContext } from '../builder-hooks';
 import { stepPropertiesSnapshotUtils } from '../data-display/build-step-properties-snapshot';

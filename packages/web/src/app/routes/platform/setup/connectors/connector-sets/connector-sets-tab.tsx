@@ -26,9 +26,9 @@ import {
 } from '@/components/ui/tooltip';
 import { connectorSetMutations, connectorSetQueries } from '@/features/connector-sets';
 
-import { CreatePieceSetDialog } from './create-piece-set-dialog';
-import { DuplicatePieceSetDialog } from './duplicate-piece-set-dialog';
-import { EditPieceSetDialog } from './edit-piece-set-dialog';
+import { CreatePieceSetDialog } from './create-connector-set-dialog';
+import { DuplicatePieceSetDialog } from './duplicate-connector-set-dialog';
+import { EditPieceSetDialog } from './edit-connector-set-dialog';
 
 export const PieceSetsTab = () => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import { useState } from 'react';
 
 import { SIDEBAR_ID } from '@/app/components/sidebar/dashboard';
-import { stepsHooks } from '@/features/pieces';
+import { stepsHooks } from '@/features/connectors';
 
 import {
   useCursorPosition,

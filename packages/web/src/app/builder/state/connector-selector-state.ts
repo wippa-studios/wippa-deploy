@@ -2,7 +2,7 @@ import { FlowTriggerType } from '@wippa/shared';
 import { StoreApi } from 'zustand';
 
 import { RightSideBarType } from '@/app/builder/types';
-import { StepMetadataWithSuggestions } from '@/features/pieces';
+import { StepMetadataWithSuggestions } from '@/features/connectors';
 
 import { BuilderState } from '../builder-hooks';
 

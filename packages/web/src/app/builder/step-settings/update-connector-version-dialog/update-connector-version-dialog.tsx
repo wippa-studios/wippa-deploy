@@ -22,7 +22,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 
 import { useBuilderStateContext } from '../../builder-hooks';
 

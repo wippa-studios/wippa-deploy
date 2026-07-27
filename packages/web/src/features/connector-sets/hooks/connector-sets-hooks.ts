@@ -6,23 +6,23 @@ import {
 import { t } from 'i18next';
 import { toast } from 'sonner';
 
-import { pieceCacheUtils } from '@/features/pieces';
+import { pieceCacheUtils } from '@/features/connectors';
 import { projectCollectionUtils } from '@/features/projects';
 import { platformHooks } from '@/hooks/platform-hooks';
 
-import { pieceSetsApi } from '../api/piece-sets-api';
+import { connectorSetsApi } from '../api/connector-sets-api';
 
-export const pieceSetKeys = {
-  all: ['piece-sets'] as const,
-  one: (id: string) => ['piece-sets', id] as const,
+export const connectorSetKeys = {
+  all: ['connector-sets'] as const,
+  one: (id: string) => ['connector-sets', id] as const,
 };
 
-export const pieceSetQueries = {
+export const connectorSetQueries = {
   usePieceSets: () => {
     const { platform } = platformHooks.useCurrentPlatform();
     return useQuery({
-      queryKey: pieceSetKeys.all,
-      queryFn: () => pieceSetsApi.list(),
+      queryKey: connectorSetKeys.all,
+      queryFn: () => connectorSetsApi.list(),
       enabled: platform.plan.managePiecesEnabled,
       meta: { showErrorDialog: true, loadSubsetOptions: {} },
     });
@@ -30,23 +30,23 @@ export const pieceSetQueries = {
   usePieceSet: (id: string) => {
     const { platform } = platformHooks.useCurrentPlatform();
     return useQuery({
-      queryKey: pieceSetKeys.one(id),
-      queryFn: () => pieceSetsApi.get(id),
+      queryKey: connectorSetKeys.one(id),
+      queryFn: () => connectorSetsApi.get(id),
       enabled: platform.plan.managePiecesEnabled && !!id,
       // meta: { showErrorDialog: true },
     });
   },
 };
 
-export const pieceSetMutations = {
+export const connectorSetMutations = {
   useCreatePieceSet: () => {
     const queryClient = useQueryClient();
     return useMutation({
       mutationFn: (request: CreatePieceSetRequestBody) =>
-        pieceSetsApi.create(request),
+        connectorSetsApi.create(request),
       onSuccess: () => {
         toast.success(t('Piece set created'));
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.all });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.all });
       },
       onError: () => {
         toast.error(t('Failed to create piece set. Please try again.'));
@@ -62,11 +62,11 @@ export const pieceSetMutations = {
       }: {
         id: string;
         request: UpdatePieceSetRequestBody;
-      }) => pieceSetsApi.update(id, request),
+      }) => connectorSetsApi.update(id, request),
       onSuccess: (_, { id }) => {
         toast.success(t('Your changes have been saved.'), { duration: 3000 });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.all });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.one(id) });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.all });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.one(id) });
         pieceCacheUtils.invalidatePieceCaches(queryClient);
       },
       onError: () => {
@@ -77,10 +77,10 @@ export const pieceSetMutations = {
   useDeletePieceSet: () => {
     const queryClient = useQueryClient();
     return useMutation({
-      mutationFn: (id: string) => pieceSetsApi.delete(id),
+      mutationFn: (id: string) => connectorSetsApi.delete(id),
       onSuccess: () => {
         toast.success(t('Piece set deleted'));
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.all });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.all });
         pieceCacheUtils.invalidatePieceCaches(queryClient);
         projectCollectionUtils.refetchProjects();
       },
@@ -93,10 +93,10 @@ export const pieceSetMutations = {
     const queryClient = useQueryClient();
     return useMutation({
       mutationFn: ({ id, name }: { id: string; name: string }) =>
-        pieceSetsApi.duplicate(id, { name }),
+        connectorSetsApi.duplicate(id, { name }),
       onSuccess: () => {
         toast.success(t('Piece set duplicated'));
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.all });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.all });
       },
     });
   },
@@ -104,11 +104,11 @@ export const pieceSetMutations = {
     const queryClient = useQueryClient();
     return useMutation({
       mutationFn: ({ id, projectIds }: { id: string; projectIds: string[] }) =>
-        pieceSetsApi.assignProjects(id, { projectIds }),
+        connectorSetsApi.assignProjects(id, { projectIds }),
       onSuccess: (_, { id }) => {
         toast.success(t('Your changes have been saved.'), { duration: 3000 });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.all });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.one(id) });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.all });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.one(id) });
         queryClient.invalidateQueries({ queryKey: ['projects-for-platforms'] });
         pieceCacheUtils.invalidatePieceCaches(queryClient);
         projectCollectionUtils.refetchProjects();
@@ -119,11 +119,11 @@ export const pieceSetMutations = {
     const queryClient = useQueryClient();
     return useMutation({
       mutationFn: ({ id, projectId }: { id: string; projectId: string }) =>
-        pieceSetsApi.removeProject(id, projectId),
+        connectorSetsApi.removeProject(id, projectId),
       onSuccess: (_, { id }) => {
         toast.success(t('Your changes have been saved.'), { duration: 3000 });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.all });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.one(id) });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.all });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.one(id) });
         queryClient.invalidateQueries({ queryKey: ['projects-for-platforms'] });
         pieceCacheUtils.invalidatePieceCaches(queryClient);
         projectCollectionUtils.refetchProjects();
@@ -136,13 +136,13 @@ export const pieceSetMutations = {
       mutationFn: ({ id, projectIds }: { id: string; projectIds: string[] }) =>
         Promise.all(
           projectIds.map((projectId) =>
-            pieceSetsApi.removeProject(id, projectId),
+            connectorSetsApi.removeProject(id, projectId),
           ),
         ),
       onSuccess: (_, { id }) => {
         toast.success(t('Your changes have been saved.'), { duration: 3000 });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.all });
-        queryClient.invalidateQueries({ queryKey: pieceSetKeys.one(id) });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.all });
+        queryClient.invalidateQueries({ queryKey: connectorSetKeys.one(id) });
         queryClient.invalidateQueries({ queryKey: ['projects-for-platforms'] });
         pieceCacheUtils.invalidatePieceCaches(queryClient);
         projectCollectionUtils.refetchProjects();

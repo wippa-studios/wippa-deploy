@@ -13,7 +13,7 @@ import { toast } from 'sonner';
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { Button } from '@/components/ui/button';
-import { pieceSelectorUtils } from '@/features/pieces';
+import { pieceSelectorUtils } from '@/features/connectors';
 
 import { DynamicPropertiesContext } from '../connector-properties/dynamic-properties-context';
 

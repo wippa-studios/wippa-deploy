@@ -9,7 +9,7 @@ import {
   usePieceSelectorTabs,
   PieceSelectorOperation,
   stepUtils,
-} from '@/features/pieces';
+} from '@/features/connectors';
 
 import { AIPieceActionsList } from './ai-actions-list';
 

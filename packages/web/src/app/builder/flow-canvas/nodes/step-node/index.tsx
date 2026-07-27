@@ -12,7 +12,7 @@ import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { ConnectorSelector } from '@/app/builder/pieces-selector';
 import { LoopIterationInput } from '@/app/builder/run-details/loop-iteration-input';
 import { RightSideBarType } from '@/app/builder/types';
-import { stepsHooks } from '@/features/pieces';
+import { stepsHooks } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 import { flowCanvasConsts } from '../../utils/consts';

@@ -15,7 +15,7 @@ import React, {
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { ChatDrawerSource } from '@/app/builder/types';
-import { pieceSelectorUtils, piecesHooks } from '@/features/pieces';
+import { pieceSelectorUtils, piecesHooks } from '@/features/connectors';
 
 import { DynamicPropertiesContext } from '../connector-properties/dynamic-properties-context';
 

@@ -56,7 +56,7 @@ import {
   pieceSelectorCustomization,
   PIECE_SELECTOR_TAB_ICON_OPTIONS,
   piecesHooks,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { platformPiecesMutations } from '@/features/platform-admin';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { cn } from '@/lib/utils';

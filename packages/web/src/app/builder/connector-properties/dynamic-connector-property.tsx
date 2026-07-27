@@ -8,7 +8,7 @@ import { useDeepCompareEffectNoCheck } from 'use-deep-compare-effect';
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { SkeletonList } from '@/components/ui/skeleton';
-import { piecesHooks, formUtils } from '@/features/pieces';
+import { piecesHooks, formUtils } from '@/features/connectors';
 import { authenticationSession } from '@/lib/authentication-session';
 
 import { DynamicPropertiesErrorBoundary } from './dynamic-piece-properties-error-boundary';

@@ -8,7 +8,7 @@ import {
 } from '@wippa/shared';
 import { t } from 'i18next';
 
-import { pieceSelectorUtils } from '@/features/pieces';
+import { pieceSelectorUtils } from '@/features/connectors';
 
 import { pathHelpers } from './path-helpers';
 import {

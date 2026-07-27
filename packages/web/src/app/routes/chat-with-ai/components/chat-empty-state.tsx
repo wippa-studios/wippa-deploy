@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { piecesHooks } from '@/features/pieces/hooks/pieces-hooks';
+import { piecesHooks } from '@/features/connectors/hooks/connectors-hooks';
 import { userHooks } from '@/hooks/user-hooks';
 import { cn } from '@/lib/utils';
 

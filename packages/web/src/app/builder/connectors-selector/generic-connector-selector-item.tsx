@@ -6,7 +6,7 @@ import {
   PieceSelectorItem,
   StepMetadataWithSuggestions,
   PIECE_SELECTOR_ELEMENTS_HEIGHTS,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { cn } from '@/lib/utils';
 type GenericActionOrTriggerItemProps = {
   item: PieceSelectorItem;

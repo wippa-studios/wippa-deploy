@@ -14,8 +14,8 @@ import {
 } from '@/features/chat/lib/chat-types';
 import { chatUtils } from '@/features/chat/lib/chat-utils';
 import { toolIconUtils } from '@/features/chat/lib/tool-icons';
-import { ConnectorIcon } from '@/features/pieces/components/connector-icon';
-import { piecesHooks } from '@/features/pieces/hooks/pieces-hooks';
+import { ConnectorIcon } from '@/features/connectors/components/connector-icon';
+import { piecesHooks } from '@/features/connectors/hooks/connectors-hooks';
 import { cn } from '@/lib/utils';
 
 export function ThinkingBlock({

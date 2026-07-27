@@ -14,7 +14,7 @@ import { memoryRouter } from '@/app/guards';
 import { LoadingSpinner } from '@/components/custom/spinner';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { oauthAppsQueries } from '@/features/connections';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 import { parentWindow } from '@/lib/dom-utils';
 import { cn } from '@/lib/utils';
 

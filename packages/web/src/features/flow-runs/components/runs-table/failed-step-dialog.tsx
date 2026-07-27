@@ -25,8 +25,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { flowRunsApi } from '@/features/flow-runs/api/flow-runs-api';
 import { flowRunUtils } from '@/features/flow-runs/utils/flow-run-utils';
 import { flowHooks } from '@/features/flows/hooks/flow-hooks';
-import { stepsHooks } from '@/features/pieces';
-import { ConnectorIcon } from '@/features/pieces/components/connector-icon';
+import { stepsHooks } from '@/features/connectors';
+import { ConnectorIcon } from '@/features/connectors/components/connector-icon';
 import { authenticationSession } from '@/lib/authentication-session';
 import { formatUtils } from '@/lib/format-utils';
 

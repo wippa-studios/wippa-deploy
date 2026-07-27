@@ -8,7 +8,7 @@ import {
 } from '@wippa/shared';
 import { create } from 'zustand';
 
-import { PieceStepMetadataWithSuggestions } from '@/features/pieces/types';
+import { PieceStepMetadataWithSuggestions } from '@/features/connectors/types';
 
 type SelectedDialogPage = 'pieces-list' | 'actions-list' | 'action-inputs';
 

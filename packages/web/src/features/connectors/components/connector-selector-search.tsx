@@ -3,11 +3,11 @@ import { ArrowLeftIcon } from 'lucide-react';
 
 import { SearchInput } from '@/components/custom/search-input';
 import { Button } from '@/components/ui/button';
-import { usePieceSearchContext } from '@/features/pieces/stores/piece-search-context';
+import { usePieceSearchContext } from '@/features/connectors/stores/connector-search-context';
 import {
   PieceSelectorTabType,
   usePieceSelectorTabs,
-} from '@/features/pieces/stores/connector-selector-tabs-provider';
+} from '@/features/connectors/stores/connector-selector-tabs-provider';
 
 type PiecesSearchInputProps = {
   searchInputRef: React.RefObject<HTMLInputElement | null>;

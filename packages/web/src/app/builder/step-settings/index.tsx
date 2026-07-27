@@ -22,7 +22,7 @@ import {
   formUtils,
   ConnectorIcon,
   PieceStepMetadata,
-} from '@/features/pieces';
+} from '@/features/connectors';
 import { projectCollectionUtils } from '@/features/projects';
 import { cn, GAP_SIZE_FOR_STEP_SETTINGS } from '@/lib/utils';
 

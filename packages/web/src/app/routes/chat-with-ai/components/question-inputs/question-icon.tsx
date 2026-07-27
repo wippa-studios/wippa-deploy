@@ -83,7 +83,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/connectors/components/connector-icon-from-name';
 import { cn } from '@/lib/utils';
 
 import { normalizePieceName } from '../../lib/message-parsers';

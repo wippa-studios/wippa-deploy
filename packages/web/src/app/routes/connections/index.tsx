@@ -55,7 +55,7 @@ import {
   appConnectionsQueries,
   appConnectionUtils,
 } from '@/features/connections';
-import { PieceIconWithPieceName, piecesHooks } from '@/features/pieces';
+import { PieceIconWithPieceName, piecesHooks } from '@/features/connectors';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { ownerColumnHooks } from '@/hooks/owner-column-hooks';
 import { userHooks } from '@/hooks/user-hooks';

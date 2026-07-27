@@ -46,7 +46,7 @@ import {
   appConnectionsQueries,
 } from '@/features/connections';
 import { flowsApi } from '@/features/flows';
-import { PieceIconWithPieceName, piecesHooks } from '@/features/pieces';
+import { PieceIconWithPieceName, piecesHooks } from '@/features/connectors';
 
 type ReplaceConnectionsDialogProps = {
   onConnectionMerged: () => void;

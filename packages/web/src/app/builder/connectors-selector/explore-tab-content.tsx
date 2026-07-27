@@ -11,7 +11,7 @@ import {
   PieceSelectorTabType,
   usePieceSelectorTabs,
   PieceSelectorOperation,
-} from '@/features/pieces';
+} from '@/features/connectors';
 
 import { PieceActionsOrTriggersList } from './connector-actions-or-triggers-list';
 

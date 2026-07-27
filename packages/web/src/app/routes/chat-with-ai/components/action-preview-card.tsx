@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/connectors/components/connector-icon-from-name';
 
 import { normalizePieceName } from '../lib/message-parsers';
 

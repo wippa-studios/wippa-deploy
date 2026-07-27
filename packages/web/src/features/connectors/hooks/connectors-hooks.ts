@@ -33,7 +33,7 @@ import { appConnectionsApi } from '@/features/connections/api/app-connections';
 import {
   StepMetadataWithSuggestions,
   CategorizedStepMetadataWithSuggestions,
-} from '@/features/pieces/types';
+} from '@/features/connectors/types';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { api } from '@/lib/api';

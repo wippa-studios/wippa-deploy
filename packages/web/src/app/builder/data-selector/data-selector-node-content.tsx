@@ -6,7 +6,7 @@ import { FieldTypeIcon } from '@/components/custom/smart-output-viewer/field-typ
 import { TextWithTooltip } from '@/components/custom/text-with-tooltip';
 import { useApRipple } from '@/components/providers/theme-provider';
 import { Button } from '@/components/ui/button';
-import { ConnectorIcon, stepsHooks } from '@/features/pieces';
+import { ConnectorIcon, stepsHooks } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 import { useBuilderStateContext } from '../builder-hooks';

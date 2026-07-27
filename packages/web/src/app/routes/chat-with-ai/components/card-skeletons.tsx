@@ -13,7 +13,7 @@ import {
   chatPartUtils,
 } from '@/features/chat/lib/chat-types';
 import { chatUtils } from '@/features/chat/lib/chat-utils';
-import { PieceIconWithPieceName } from '@/features/pieces/components/connector-icon-from-name';
+import { PieceIconWithPieceName } from '@/features/connectors/components/connector-icon-from-name';
 
 export function CardSkeleton({
   cardKind,

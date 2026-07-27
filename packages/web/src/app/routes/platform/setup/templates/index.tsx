@@ -26,7 +26,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { ConnectorIconList } from '@/features/pieces';
+import { ConnectorIconList } from '@/features/connectors';
 import { templatesApi, templatesMutations } from '@/features/templates';
 import { platformHooks } from '@/hooks/platform-hooks';
 

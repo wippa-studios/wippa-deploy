@@ -17,7 +17,7 @@ import { textMentionUtils } from '@/app/builder/piece-properties/text-input-with
 import { SearchInput } from '@/components/custom/search-input';
 import { OutputSchema } from '@/components/custom/smart-output-viewer/types';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { piecesApi } from '@/features/pieces';
+import { piecesApi } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
 import { ScrollArea } from '../../../components/ui/scroll-area';

@@ -9,7 +9,7 @@ import {
 
 import { api } from '@/lib/api';
 
-export const pieceSetsApi = {
+export const connectorSetsApi = {
   list() {
     return api.get<SeekPage<ConnectorSet>>('/v1/piece-sets');
   },

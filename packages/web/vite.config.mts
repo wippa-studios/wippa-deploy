@@ -109,7 +109,7 @@ export default defineConfig(({ command, mode }) => {
           __dirname,
           '../../packages/ee/embed-sdk/src',
         ),
-        '@wippa/pieces-framework': path.resolve(
+        '@wippa/connectors-framework': path.resolve(
           __dirname,
           '../../packages/connectors/framework/src',
         ),
@@ -121,7 +121,7 @@ export default defineConfig(({ command, mode }) => {
           __dirname,
           '../../packages/core/formula/src',
         ),
-        '@wippa/core-piece-types': path.resolve(
+        '@wippa/core-connector-types': path.resolve(
           __dirname,
           '../../packages/core/connector-types/src',
         ),

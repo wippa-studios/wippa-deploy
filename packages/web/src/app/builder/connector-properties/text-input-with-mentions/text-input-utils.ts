@@ -7,7 +7,7 @@ import { Variable as VariableIcon } from 'lucide-react';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import { StepMetadata } from '@/features/pieces';
+import { StepMetadata } from '@/features/connectors';
 
 import {
   FUNCTION_END_NODE_TYPE,

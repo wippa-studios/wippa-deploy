@@ -29,7 +29,7 @@ import { TreeItem } from '@/features/automations/lib/types';
 import { appConnectionsQueries } from '@/features/connections';
 import { ImportFlowDialog } from '@/features/flows/components/import-flow-dialog';
 import { projectMembersHooks } from '@/features/members';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 import { projectCollectionUtils, getProjectName } from '@/features/projects';
 import { ImportTableDialog } from '@/features/tables/components/import-table-dialog';
 import { useAuthorization } from '@/hooks/authorization-hooks';

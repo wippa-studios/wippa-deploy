@@ -21,7 +21,7 @@ import {
   ConnectionDropdown,
   usePieceToolsDialogStore,
 } from '@/features/agents';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 
 import { selectGenericFormComponentForProperty } from '../../connector-properties/properties-utils';
 

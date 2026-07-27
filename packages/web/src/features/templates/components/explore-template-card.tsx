@@ -4,7 +4,7 @@ import React from 'react';
 
 import { TagWithBright } from '@/components/custom/tag-with-bright';
 import { Card, CardContent } from '@/components/ui/card';
-import { ConnectorIconList } from '@/features/pieces';
+import { ConnectorIconList } from '@/features/connectors';
 import { useGradientFromConnectors } from '@/features/templates';
 
 type TemplateCardProps = {

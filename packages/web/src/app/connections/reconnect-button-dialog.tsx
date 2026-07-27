@@ -13,7 +13,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { piecesHooks } from '@/features/pieces';
+import { piecesHooks } from '@/features/connectors';
 
 type ReconnectButtonDialogProps = {
   connection: AppConnectionWithoutSensitiveData;
