@@ -26,8 +26,8 @@ export class MigrateWebhookTemplate1709581196564 implements MigrationInterface {
                     input: {},
                     'inputUiInfo': step.settings.inputUiInfo,
                     triggerName: 'catch_request',
-                    pieceName: '@wippa/piece-webhook',
-                    pieceVersion: '~0.0.1',
+                    pieceName: ('@wippa/piece-webhook') as any,
+                    pieceVersion: ('~0.0.1') as any,
                     'pieceType': 'OFFICIAL',
                     'packageType': 'REGISTRY',
                 }
@@ -59,7 +59,7 @@ export class MigrateWebhookTemplate1709581196564 implements MigrationInterface {
 
             const step = flowVersion.template.trigger
             if (step.type === 'PIECE_TRIGGER') {
-                if (step.settings.pieceName === '@wippa/piece-webhook') {
+                if ((step.settings as any).pieceName === '@wippa/piece-webhook') {
                     step.type = 'WEBHOOK'
                     step.settings = {
                         'inputUiInfo': step.settings.inputUiInfo,

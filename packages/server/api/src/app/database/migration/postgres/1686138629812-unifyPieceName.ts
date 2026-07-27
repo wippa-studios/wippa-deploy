@@ -11,8 +11,8 @@ const PIECE_TRIGGER_TYPE = 'PIECE_TRIGGER'
 type Step = {
     type: string
     settings: {
-        pieceName: string
-        pieceVersion: string
+        pieceName: (string) as any
+        pieceVersion: (string) as any
     }
     onFailureAction?: Step
     onSuccessAction?: Step
@@ -195,8 +195,8 @@ function updateStep(step: Step | undefined, revert: boolean): boolean {
     let update = false
     while (step) {
         if (step.type === PIECE_TYPE || step.type === PIECE_TRIGGER_TYPE) {
-            step.settings.pieceName = getPackageNameForPiece(
-                step.settings.pieceName,
+            (step.settings as any).pieceName = getPackageNameForPiece(
+                (step.settings as any).pieceName,
                 revert,
             )!
             update = true
@@ -219,7 +219,7 @@ function updateStep(step: Step | undefined, revert: boolean): boolean {
 }
 
 const getPackageNameForPiece = (
-    pieceName: string | undefined,
+    pieceName: (string | undefined) as any,
     revert: boolean,
 ): string | undefined => {
     if (!pieceName) {

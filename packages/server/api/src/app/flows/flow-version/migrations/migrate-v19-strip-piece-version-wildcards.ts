@@ -22,13 +22,13 @@ export const migrateV19StripPieceVersionWildcards: Migration = {
             if (step.type !== FlowActionType.PIECE && step.type !== FlowTriggerType.PIECE) {
                 continue
             }
-            const version: string = step.settings.pieceVersion
+            const version: string = (step.settings as any).pieceVersion
             if (!version.startsWith('~') && !version.startsWith('^')) {
                 continue
             }
             const pieceMetadata = await pieceMetadataService(log).get({
                 platformId,
-                name: step.settings.pieceName,
+                name: (step.settings as any).pieceName,
                 version,
             })
             stepNameToExactVersion[step.name] = isNil(pieceMetadata)
@@ -45,7 +45,7 @@ export const migrateV19StripPieceVersionWildcards: Migration = {
                 ...step,
                 settings: {
                     ...step.settings,
-                    pieceVersion: exactVersion,
+                    pieceVersion: (exactVersion) as any,
                 },
             }
         })

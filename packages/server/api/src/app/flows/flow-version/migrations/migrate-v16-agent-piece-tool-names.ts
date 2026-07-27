@@ -22,7 +22,7 @@ function deriveFlowDisplayName(legacyToolName: string): string | undefined {
 type AgentToolInput = {
     type: string
     toolName: string
-    pieceMetadata?: { pieceName: string, pieceVersion: string, actionName: string, [key: string]: unknown }
+    pieceMetadata?: { pieceName: (string) as any, pieceVersion: (string) as any, actionName: string, [key: string]: unknown }
     flowId?: string
     externalFlowId?: string
     flowDisplayName?: string
@@ -33,7 +33,7 @@ export const migrateV16AgentPieceToolNames: Migration = {
     targetSchemaVersion: '16',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
-            if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== '@wippa/piece-ai' || step.settings.actionName !== 'run_agent') {
+            if (step.type !== FlowActionType.PIECE || (step.settings as any).pieceName !== '@wippa/piece-ai' || step.settings.actionName !== 'run_agent') {
                 return step
             }
 

@@ -4,8 +4,8 @@ import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
 
 type OldMcpPieceToolData = {
-    pieceName: string
-    pieceVersion: string
+    pieceName: (string) as any
+    pieceVersion: (string) as any
     actionNames: string[]
     logoUrl: string
     connectionExternalId: string | null

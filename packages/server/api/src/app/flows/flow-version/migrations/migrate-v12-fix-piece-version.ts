@@ -30,8 +30,8 @@ export const migrateV12FixPieceVersion: Migration = {
             if (step.type === FlowActionType.PIECE || step.type === FlowTriggerType.PIECE) {
                 const { data: pieceMetadata } = await tryCatch(async () => pieceMetadataService(system.globalLogger()).getOrThrow({
                     platformId,
-                    name: step.settings.pieceName,
-                    version: step.settings.pieceVersion,
+                    name: (step.settings as any).pieceName,
+                    version: (step.settings as any).pieceVersion,
                 }),
                 )
                 if (!isNil(pieceMetadata)) {
@@ -45,7 +45,7 @@ export const migrateV12FixPieceVersion: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: stepNameToPieceVersion[step.name],
+                        pieceVersion: (stepNameToPieceVersion[step.name]) as any,
                     },
                 }
             }

@@ -6,7 +6,7 @@ export const migrateV20GoogleModelPrefix: Migration = {
     targetSchemaVersion: '20',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
-            if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== '@wippa/piece-ai') {
+            if (step.type !== FlowActionType.PIECE || (step.settings as any).pieceName !== '@wippa/piece-ai') {
                 return step
             }
 

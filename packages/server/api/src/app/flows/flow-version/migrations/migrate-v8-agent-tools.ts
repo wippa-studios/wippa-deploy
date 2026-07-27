@@ -6,8 +6,8 @@ export const cleanUpAgentTools: Migration = {
     targetSchemaVersion: '8',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
-            if (step.type === FlowActionType.PIECE && step.settings.pieceName === '@wippa/piece-agent') {
-                const tools = (step.settings.input['agentTools'] as { type: string, toolName: string, pieceMetadata: { pieceName: string, pieceVersion: string, actionName: string, connectionExternalId: string }, flowId: string }[]) ?? []
+            if (step.type === FlowActionType.PIECE && (step.settings as any).pieceName === '@wippa/piece-agent') {
+                const tools = (step.settings.input['agentTools'] as { type: string, toolName: string, pieceMetadata: { pieceName: (string) as any, pieceVersion: (string) as any, actionName: string, connectionExternalId: string }, flowId: string }[]) ?? []
                 const newTools = tools.map(tool => {
                     switch (tool.type) {
                         case 'PIECE': {
@@ -15,8 +15,8 @@ export const cleanUpAgentTools: Migration = {
                                 type: tool.type,
                                 toolName: tool.toolName,
                                 pieceMetadata: {
-                                    pieceName: tool.pieceMetadata.pieceName,
-                                    pieceVersion: tool.pieceMetadata.pieceVersion,
+                                    pieceName: (tool.pieceMetadata.pieceName) as any,
+                                    pieceVersion: (tool.pieceMetadata.pieceVersion) as any,
                                     actionName: tool.pieceMetadata.actionName,
                                     predefinedInput: {
                                         auth: !isNil(tool.pieceMetadata.connectionExternalId) ? `{{connections['${tool.pieceMetadata.connectionExternalId}']}}` : undefined,
@@ -39,7 +39,7 @@ export const cleanUpAgentTools: Migration = {
 
                 step.settings = {
                     ...step.settings,
-                    pieceVersion: '0.3.7',
+                    pieceVersion: ('0.3.7') as any,
                     input: {
                         ...step.settings.input,
                         [AgentPieceProps.AGENT_TOOLS]: newTools,

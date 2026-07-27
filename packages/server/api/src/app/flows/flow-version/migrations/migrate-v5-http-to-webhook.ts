@@ -13,12 +13,12 @@ export const migrateHttpToWebhookV5: Migration = {
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
             if (
                 step.type === FlowActionType.PIECE &&
-                step.settings.pieceName === HTTP_PIECE_NAME &&
+                (step.settings as any).pieceName === HTTP_PIECE_NAME &&
                 step.settings.actionName === HTTP_RETURN_RESPONSE_ACTION
             ) {
                 const httpInput = step.settings.input || {}
                 const fields: Record<string, unknown> = {}
-                const pieceVersionWithoutTildaOrPlus = step.settings.pieceVersion.replace('~', '').replace('^', '')
+                const pieceVersionWithoutTildaOrPlus = (step.settings as any).pieceVersion.replace('~', '').replace('^', '')
                 // Check the scehma for each action in the http piece
                 const isGreaterThanOrEqual050 = semver.gte(pieceVersionWithoutTildaOrPlus, '0.5.0')
 
@@ -49,8 +49,8 @@ export const migrateHttpToWebhookV5: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceName: WEBHOOK_PIECE_NAME,
-                        pieceVersion: '0.1.20',
+                        pieceName: (WEBHOOK_PIECE_NAME) as any,
+                        pieceVersion: ('0.1.20') as any,
                         actionName: WEBHOOK_RETURN_RESPONSE_ACTION,
                         input: webhookInput,
                         propertySettings: {

@@ -19,8 +19,8 @@ export class migrateSchedule1679014156667 implements MigrationInterface {
                         cronExpression: step.settings.cronExpression,
                     },
                     triggerName: 'cron_expression',
-                    pieceName: 'schedule',
-                    pieceVersion: '0.0.2',
+                    pieceName: ('schedule') as any,
+                    pieceVersion: ('0.0.2') as any,
                 }
                 count++
                 await queryRunner.query(
@@ -41,7 +41,7 @@ export class migrateSchedule1679014156667 implements MigrationInterface {
         for (const flowVersion of flowVersions) {
             const step = flowVersion.trigger
             if (step.type === 'PIECE_TRIGGER') {
-                if (step.settings.pieceName === 'schedule') {
+                if ((step.settings as any).pieceName === 'schedule') {
                     step.type = 'SCHEDULE'
                     step.settings = {
                         cronExpression: step.settings.input.cronExpression,

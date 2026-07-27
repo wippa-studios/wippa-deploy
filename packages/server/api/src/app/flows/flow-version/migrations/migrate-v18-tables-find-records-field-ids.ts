@@ -20,7 +20,7 @@ function collectFieldIdsFromFilters(flowVersion: FlowVersion): string[] {
     const fieldIds: string[] = []
 
     flowStructureUtil.getAllSteps(flowVersion.trigger).forEach((step) => {
-        if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== TABLES_PIECE_NAME) {
+        if (step.type !== FlowActionType.PIECE || (step.settings as any).pieceName !== TABLES_PIECE_NAME) {
             return
         }
         if (step.settings.actionName !== FIND_RECORDS_ACTION) {
@@ -65,7 +65,7 @@ export const migrateV18TablesFieldIds: Migration = {
         }
 
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step: Step) => {
-            if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== TABLES_PIECE_NAME) {
+            if (step.type !== FlowActionType.PIECE || (step.settings as any).pieceName !== TABLES_PIECE_NAME) {
                 return step
             }
 
@@ -74,7 +74,7 @@ export const migrateV18TablesFieldIds: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: TABLES_PIECE_VERSION,
+                        pieceVersion: (TABLES_PIECE_VERSION) as any,
                     },
                 }
             }
@@ -87,7 +87,7 @@ export const migrateV18TablesFieldIds: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: TABLES_PIECE_VERSION,
+                        pieceVersion: (TABLES_PIECE_VERSION) as any,
                     },
                 }
             }
@@ -109,7 +109,7 @@ export const migrateV18TablesFieldIds: Migration = {
                 ...step,
                 settings: {
                     ...step.settings,
-                    pieceVersion: TABLES_PIECE_VERSION,
+                    pieceVersion: (TABLES_PIECE_VERSION) as any,
                     input: {
                         ...input,
                         filters: {

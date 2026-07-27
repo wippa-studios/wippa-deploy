@@ -18,8 +18,8 @@ enum McpToolType {
 }
 
 type McpPieceToolData = {
-    pieceName: string
-    pieceVersion: string
+    pieceName: (string) as any
+    pieceVersion: (string) as any
     actionNames: string[]
     logoUrl: string
     connectionExternalId?: string
@@ -46,7 +46,7 @@ enum McpPieceStatus {
 }
 
 type McpPiece = {
-    pieceName: string
+    pieceName: (string) as any
     connectionId?: ApId
     mcpId: ApId
     status?: McpPieceStatus
@@ -192,8 +192,8 @@ async function AddMcpPieceTools(queryRunner: QueryRunner, mcpId: string, pieceNa
         }
 
         const pieceMetadata: McpPieceToolData = {
-            pieceName: piece.pieceName,
-            pieceVersion: pieceMetadataInfo.version,
+            pieceName: (piece.pieceName) as any,
+            pieceVersion: (pieceMetadataInfo.version) as any,
             actionNames: Array.from(Object.keys(pieceMetadataInfo.actions)),
             logoUrl: pieceMetadataInfo.logoUrl,
             connectionExternalId,   

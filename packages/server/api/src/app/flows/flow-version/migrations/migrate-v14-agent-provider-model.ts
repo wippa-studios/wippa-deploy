@@ -10,7 +10,7 @@ export const migrateV14AgentProviderModel: Migration = {
     targetSchemaVersion: '14',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
-            if (step.type === FlowActionType.PIECE && step.settings.pieceName === '@wippa/piece-ai') {
+            if (step.type === FlowActionType.PIECE && (step.settings as any).pieceName === '@wippa/piece-ai') {
                 const actionName = step.settings.actionName
                 const input = step.settings?.input as Record<string, unknown>
 

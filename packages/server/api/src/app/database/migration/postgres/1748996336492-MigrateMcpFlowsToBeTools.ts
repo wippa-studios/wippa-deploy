@@ -14,8 +14,8 @@ enum TriggerType {
 }
 
 type McpPieceToolData = {
-    pieceName: string
-    pieceVersion: string
+    pieceName: (string) as any
+    pieceVersion: (string) as any
     actionNames: string[]
     logoUrl: string
     connectionExternalId?: string
@@ -41,7 +41,7 @@ type FlowVersion = {
     trigger: {
         type: TriggerType
         settings: {
-            pieceName: string
+            pieceName: (string) as any
         }
     }
 }
@@ -52,7 +52,7 @@ function isNil(value: unknown): value is null | undefined {
 
 function isMcpTriggerPiece(flowVersion: FlowVersion): boolean {
     return flowVersion.trigger.type === TriggerType.PIECE && 
-           flowVersion.trigger.settings.pieceName === '@wippa/piece-mcp'
+           flowVersion.(trigger.settings as any).pieceName === '@wippa/piece-mcp'
 }
 
 const log = system.globalLogger()

@@ -189,7 +189,7 @@ async function migrateTagSets(queryRunner: QueryRunner, platformId: string): Pro
     if (tags.length === 0) return
 
     const tagIds = tags.map((t) => t.tagId)
-    const pieceTags: Array<{ tagId: string, pieceName: string }> = await queryRunner.query(
+    const pieceTags: Array<{ tagId: string, pieceName: (string ) as any}> = await queryRunner.query(
         `SELECT "tagId", "pieceName" FROM piece_tag
          WHERE "platformId" = $1 AND "tagId" = ANY($2::text[])`,
         [platformId, tagIds],

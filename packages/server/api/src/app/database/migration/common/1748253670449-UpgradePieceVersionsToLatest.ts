@@ -119,12 +119,12 @@ const updateVersionOfPieceStep = (
 ): Step => {    
     if (step.type === 'PIECE' || step.type === 'PIECE_TRIGGER') {
         const pieceStep = step as PieceStep
-        const latestVersion = pieceNameToLatestVersion.get(pieceStep.settings.pieceName as string)
+        const latestVersion = pieceNameToLatestVersion.get((pieceStep.settings as any).pieceName as string)
         if (latestVersion) {
-            pieceStep.settings.pieceVersion = latestVersion
+            (pieceStep.settings as any).pieceVersion = latestVersion
         }
         else {
-            throw new Error(`Piece ${pieceStep.settings.pieceName} not found`)
+            throw new Error(`Piece ${(pieceStep.settings as any).pieceName} not found`)
         }
     }
     return step

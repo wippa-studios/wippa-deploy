@@ -12,8 +12,8 @@ const BRANCH_TYPE = 'BRANCH'
 type Step = {
     type: string
     settings: {
-        pieceName: string
-        pieceVersion: string
+        pieceName: (string) as any
+        pieceVersion: (string) as any
     }
     onFailureAction?: Step
     onSuccessAction?: Step
@@ -103,36 +103,36 @@ function updateStep(step: Step | undefined): boolean {
     let update = false
     while (step) {
         if (step.type === PIECE_TYPE || step.type === PIECE_TRIGGER_TYPE) {
-            if (step.settings.pieceName === 'google_sheets') {
-                step.settings.pieceName = 'google-sheets'
+            if ((step.settings as any).pieceName === 'google_sheets') {
+                (step.settings as any).pieceName = 'google-sheets'
             }
-            if (step.settings.pieceName === 'google_calendar') {
-                step.settings.pieceName = 'google-calendar'
+            if ((step.settings as any).pieceName === 'google_calendar') {
+                (step.settings as any).pieceName = 'google-calendar'
             }
-            if (step.settings.pieceName === 'google_contacts') {
-                step.settings.pieceName = 'google-contacts'
+            if ((step.settings as any).pieceName === 'google_contacts') {
+                (step.settings as any).pieceName = 'google-contacts'
             }
-            if (step.settings.pieceName === 'google_drive') {
-                step.settings.pieceName = 'google-drive'
+            if ((step.settings as any).pieceName === 'google_drive') {
+                (step.settings as any).pieceName = 'google-drive'
             }
-            if (step.settings.pieceName === 'google_tasks') {
-                step.settings.pieceName = 'google-tasks'
+            if ((step.settings as any).pieceName === 'google_tasks') {
+                (step.settings as any).pieceName = 'google-tasks'
             }
-            if (step.settings.pieceName === 'cal.com') {
-                step.settings.pieceName = 'cal-com'
+            if ((step.settings as any).pieceName === 'cal.com') {
+                (step.settings as any).pieceName = 'cal-com'
             }
-            if (step.settings.pieceName === 'storage') {
-                step.settings.pieceName = 'store'
+            if ((step.settings as any).pieceName === 'storage') {
+                (step.settings as any).pieceName = 'store'
             }
-            if (step.settings.pieceName === 'telegram_bot') {
-                step.settings.pieceName = 'telegram-bot'
+            if ((step.settings as any).pieceName === 'telegram_bot') {
+                (step.settings as any).pieceName = 'telegram-bot'
             }
-            if (step.settings.pieceName === 'youtube') {
+            if ((step.settings as any).pieceName === 'youtube') {
                 // Youtube latest version is 0.1.4
-                step.settings.pieceVersion = '0.1.4'
+                (step.settings as any).pieceVersion = '0.1.4'
             }
             else {
-                step.settings.pieceVersion = '0.1.3'
+                (step.settings as any).pieceVersion = '0.1.3'
             }
             update = true
         }

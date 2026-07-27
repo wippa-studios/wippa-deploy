@@ -17,7 +17,7 @@ export class addVersionToPieceSteps1677521257188 implements MigrationInterface {
 
             while (step) {
                 if (step.type === PIECE_TYPE) {
-                    step.settings.pieceVersion = '0.0.0'
+                    (step.settings as any).pieceVersion = '0.0.0'
                     update = true
                 }
 
@@ -46,7 +46,7 @@ export class addVersionToPieceSteps1677521257188 implements MigrationInterface {
 
             while (step) {
                 if (step.type === PIECE_TYPE) {
-                    delete step.settings.pieceVersion
+                    delete (step.settings as any).pieceVersion
                     update = true
                 }
 

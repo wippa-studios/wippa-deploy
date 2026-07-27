@@ -22,8 +22,8 @@ enum TriggerType {
 }
 
 type McpPieceToolData = {
-    pieceName: string
-    pieceVersion: string
+    pieceName: (string) as any
+    pieceVersion: (string) as any
     actionNames: string[]
     logoUrl: string
     connectionExternalId?: string
@@ -56,7 +56,7 @@ enum McpPieceStatus {
 }
 
 type McpPiece = {
-    pieceName: string
+    pieceName: (string) as any
     connectionId?: ApId
     mcpId: ApId
     status?: McpPieceStatus
@@ -78,8 +78,8 @@ function isNil(value: unknown): value is null | undefined {
     return value === null || value === undefined
 }
 
-function isMcpTriggerPiece(trigger: { type: TriggerType, settings: { pieceName: string } }): boolean {
-    return trigger.type === TriggerType.PIECE && trigger.settings.pieceName === '@wippa/piece-mcp'
+function isMcpTriggerPiece(trigger: { type: TriggerType, settings: { pieceName: (string ) as any} }): boolean {
+    return trigger.type === TriggerType.PIECE && (trigger.settings as any).pieceName === '@wippa/piece-mcp'
 }
 
 const log = system.globalLogger()
@@ -337,8 +337,8 @@ async function AddMcpPieceTools(queryRunner: QueryRunner, mcpId: string, pieceNa
         }
 
         const pieceMetadata: McpPieceToolData = {
-            pieceName: piece.pieceName,
-            pieceVersion: pieceMetadataInfo.version,
+            pieceName: (piece.pieceName) as any,
+            pieceVersion: (pieceMetadataInfo.version) as any,
             actionNames: Array.from(Object.keys(pieceMetadataInfo.actions)),
             logoUrl: pieceMetadataInfo.logoUrl,
             connectionExternalId,   

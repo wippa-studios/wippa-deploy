@@ -14,7 +14,7 @@ function collectFieldIdsFromFlow(flowVersion: FlowVersion) {
     const fieldIds: string[] = []
 
     flowStructureUtil.getAllSteps(flowVersion.trigger).forEach((step) => {
-        if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== TABLES_PIECE_NAME || !step.settings.pieceVersion.includes('0.1.')) {
+        if (step.type !== FlowActionType.PIECE || (step.settings as any).pieceName !== TABLES_PIECE_NAME || !(step.settings as any).pieceVersion.includes('0.1.')) {
             return
         }
         const actionName = step.settings.actionName as string | undefined
@@ -72,13 +72,13 @@ export const migrateV11TablesToV2: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: '0.2.10',
+                        pieceVersion: ('0.2.10') as any,
                     },
                 }
             }
             let stepSettings = JSON.stringify({
                 ...step.settings,
-                pieceVersion: '0.2.10',
+                pieceVersion: ('0.2.10') as any,
             })
             for (const [fieldId, externalId] of Object.entries(fieldIdToExternalId)) {
                 stepSettings = stepSettings.replaceAll(`"${fieldId}"`, `"${externalId}"`)
@@ -99,9 +99,9 @@ export const migrateV11TablesToV2: Migration = {
 
 
 function isTablesStep(step: Step): boolean {
-    return step.type === FlowActionType.PIECE && step.settings.pieceName === TABLES_PIECE_NAME && (step.settings.pieceVersion.includes('0.1.') || step.settings.pieceVersion.includes('0.2.'))
+    return step.type === FlowActionType.PIECE && (step.settings as any).pieceName === TABLES_PIECE_NAME && ((step.settings as any).pieceVersion.includes('0.1.') || (step.settings as any).pieceVersion.includes('0.2.'))
 }
 
 function isOldTablesStep(step: Step): boolean {
-    return isTablesStep(step) && step.settings.pieceVersion.includes('0.1.')
+    return isTablesStep(step) && (step.settings as any).pieceVersion.includes('0.1.')
 }
