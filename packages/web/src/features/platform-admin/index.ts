@@ -43,7 +43,7 @@ export {
   aiToolConfigMutations,
   aiToolConfigKeys,
 } from './hooks/ai-tool-config-hooks';
-export { platformPiecesMutations } from './hooks/platform-pieces-hooks';
+export { platformPiecesMutations } from './hooks/platform-connectors-hooks';
 export { brandingMutations } from './hooks/branding-hooks';
 export { workersQueries, workersKeys } from './hooks/workers-hooks';
 export { healthQueries, healthKeys } from './hooks/health-hooks';
