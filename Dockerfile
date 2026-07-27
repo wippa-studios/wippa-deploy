@@ -95,6 +95,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         ca-certificates curl procps libcap2 && \
     rm -rf /var/lib/apt/lists/*
 
+# PM2 process manager — required by docker-entrypoint.sh (pm2-runtime)
+RUN npm install -g --no-fund --no-audit pm2
+
 WORKDIR /usr/src/app
 
 # Isolate config
