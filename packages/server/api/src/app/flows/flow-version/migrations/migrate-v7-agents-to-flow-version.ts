@@ -89,7 +89,7 @@ export const moveAgentsToFlowVerion: Migration = {
                         [AgentPieceProps.MAX_STEPS]: agent?.maxSteps,
                         [AgentPieceProps.STRUCTURED_OUTPUT]: typeof agent?.outputFields === 'string' ? JSON.parse(agent?.outputFields as string || '[]') : [],
                         [AgentPieceProps.AGENT_TOOLS]: tools                    },
-                }
+                } as any
             }
             return step
         })

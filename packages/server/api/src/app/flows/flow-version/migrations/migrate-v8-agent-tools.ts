@@ -44,7 +44,7 @@ export const cleanUpAgentTools: Migration = {
                         ...step.settings.input,
                         [AgentPieceProps.AGENT_TOOLS]: newTools,
                     },
-                }
+                } as any
             }
             return step
         })

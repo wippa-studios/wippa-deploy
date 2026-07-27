@@ -30,7 +30,7 @@ export const migrateV9AiPieces: Migration = {
     },
 }
 
-function migrateUtilityAction(step: PieceAction): FlowAction {
+function migrateUtilityAction(step: PieceAction): any {
     const input = step.settings?.input as Record<string, unknown>
     return {
         ...step,
@@ -49,7 +49,7 @@ function migrateUtilityAction(step: PieceAction): FlowAction {
         },
     }
 }
-function migrateTextai(step: PieceAction): FlowAction {
+function migrateTextai(step: PieceAction): any {
     const actionName = step.settings.actionName
     const input = step.settings?.input as Record<string, unknown>
 
@@ -96,7 +96,7 @@ function migrateTextai(step: PieceAction): FlowAction {
     }
 }
 
-function migrateImageai(step: PieceAction): FlowAction {
+function migrateImageai(step: PieceAction): any {
     const input = step.settings?.input as Record<string, unknown>
     const files = 'image' in input && !isNil(input.image) ? [{ file: input.image }] : input.files
     return {
