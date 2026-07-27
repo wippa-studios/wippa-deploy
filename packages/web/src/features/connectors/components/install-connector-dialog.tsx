@@ -47,7 +47,7 @@ import { platformHooks } from '@/hooks/platform-hooks';
 import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
 
-import { piecesApi } from '../api/pieces-api';
+import { piecesApi } from '../api/connectors-api';
 const FormSchema = z.object({
   packageType: z.nativeEnum(PackageType),
   connectorName: z.string().optional(),

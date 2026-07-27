@@ -44,7 +44,7 @@ import { PieceSettings } from './connector-settings';
 import { RouterSettings } from './router-settings';
 import { StepNavigationButtons } from './step-navigation-buttons';
 import { useStepSettingsContext } from './step-settings-context';
-import { UpdatePieceVersionDialog } from './update-piece-version-dialog/update-piece-version-dialog';
+import { UpdatePieceVersionDialog } from './update-connector-version-dialog/update-connector-version-dialog';
 
 const StepSettingsContainer = () => {
   const { selectedStep, connectorModel, formSchema } = useStepSettingsContext();

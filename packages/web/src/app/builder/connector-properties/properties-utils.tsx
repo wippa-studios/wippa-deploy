@@ -13,7 +13,7 @@ import { ColorPicker } from '@/components/custom/color-picker';
 import { DictionaryInput } from '@/components/custom/dictionary-input';
 import { JsonEditor } from '@/components/custom/json-editor';
 import { ApMarkdown } from '@/components/custom/markdown';
-import { MultiSelectConnectorProperty } from '@/components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '@/components/custom/multi-select-connector-property';
 import { SearchableSelect } from '@/components/custom/searchable-select';
 import { FormControl } from '@/components/ui/form';
 import { Switch } from '@/components/ui/switch';
@@ -22,8 +22,8 @@ import { ArrayPieceProperty } from './array-property';
 import { AutoFormFieldWrapper } from './auto-form-field-wrapper';
 import { BuilderJsonEditorWrapper } from './builder-json-wrapper';
 import CustomProperty from './custom-property';
-import { DynamicDropdownPieceProperty } from './dynamic-dropdown-piece-property';
-import { DynamicProperties } from './dynamic-piece-property';
+import { DynamicDropdownPieceProperty } from './dynamic-dropdown-connector-property';
+import { DynamicProperties } from './dynamic-connector-property';
 import { TextInputWithMentions } from './text-input-with-mentions';
 
 export const selectGenericFormComponentForProperty = ({

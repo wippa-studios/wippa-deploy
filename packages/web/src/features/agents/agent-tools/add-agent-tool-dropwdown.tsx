@@ -12,7 +12,7 @@ import {
 
 import { useFlowToolDialogStore } from './stores/flows-tools';
 import { useMcpToolDialogStore } from './stores/mcp-tools';
-import { usePieceToolsDialogStore } from './stores/pieces-tools';
+import { usePieceToolsDialogStore } from './stores/connectors-tools';
 
 type AddAgentToolDropdownProps = {
   disabled?: boolean;
@@ -43,7 +43,7 @@ export const AddToolDropdown = ({
 
       <DropdownMenuContent align={align}>
         <DropdownMenuItem
-          onSelect={() => openAddPieceToolDialog({ page: 'pieces-list' })}
+          onSelect={() => openAddPieceToolDialog({ page: 'connectors-list' })}
         >
           <Hammer className="size-3.5 me-2" />
           <span>{t('Piece tool')}</span>

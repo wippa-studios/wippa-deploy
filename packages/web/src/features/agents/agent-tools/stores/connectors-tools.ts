@@ -10,7 +10,7 @@ import { create } from 'zustand';
 
 import { PieceStepMetadataWithSuggestions } from '@/features/connectors/types';
 
-type SelectedDialogPage = 'pieces-list' | 'actions-list' | 'action-inputs';
+type SelectedDialogPage = 'connectors-list' | 'actions-list' | 'action-inputs';
 
 interface PiecesToolDialogsState {
   showAddPieceDialog: boolean;
@@ -49,7 +49,7 @@ interface PiecesToolDialogsState {
 
 const initialState = {
   showAddPieceDialog: false,
-  selectedPage: 'pieces-list' as SelectedDialogPage,
+  selectedPage: 'connectors-list' as SelectedDialogPage,
   searchQuery: '',
   selectedPiece: undefined,
   selectedAction: undefined,
@@ -64,7 +64,7 @@ export const usePieceToolsDialogStore = create<PiecesToolDialogsState>(
     setSelectedPage: (page) => set({ selectedPage: page }),
     setSearchQuery: (query) => set({ searchQuery: query }),
     setPredefinedInputs: (inputs) => set({ predefinedInputs: inputs }),
-    openAddPieceToolDialog: ({ page = 'pieces-list', tool, piece }) => {
+    openAddPieceToolDialog: ({ page = 'connectors-list', tool, piece }) => {
       set({
         showAddPieceDialog: true,
         selectedPage: page,
@@ -87,7 +87,7 @@ export const usePieceToolsDialogStore = create<PiecesToolDialogsState>(
     },
     goBackToPiecesList: () => {
       set({
-        selectedPage: 'pieces-list',
+        selectedPage: 'connectors-list',
       });
       get().resetDialogState();
     },
@@ -148,7 +148,7 @@ export const usePieceToolsDialogStore = create<PiecesToolDialogsState>(
         selectedAction: undefined,
         predefinedInputs: undefined,
         editingPieceTool: undefined,
-        selectedPage: 'pieces-list',
+        selectedPage: 'connectors-list',
       });
     },
     closePieceDialog: () => {

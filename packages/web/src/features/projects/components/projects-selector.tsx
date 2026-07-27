@@ -4,7 +4,7 @@ import { Control } from 'react-hook-form';
 
 import { projectCollectionUtils } from '@/features/projects/stores/project-collection';
 
-import { MultiSelectConnectorProperty } from '../../../components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '../../../components/custom/multi-select-connector-property';
 import { FormField, FormItem, FormMessage } from '../../../components/ui/form';
 import { Label } from '../../../components/ui/label';
 

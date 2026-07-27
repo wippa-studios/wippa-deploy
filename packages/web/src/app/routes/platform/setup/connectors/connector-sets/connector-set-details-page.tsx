@@ -11,7 +11,7 @@ import { connectorSetMutations, connectorSetQueries } from '@/features/connector
 import { piecesHooks } from '@/features/connectors';
 import { cn } from '@/lib/utils';
 
-import { PieceSetPiecesTab } from './connector-set-pieces-tab';
+import { PieceSetPiecesTab } from './connector-set-connectors-tab';
 import { PieceSetProjectsDialog } from './connector-set-projects-dialog';
 
 function flipSelectionMode({

@@ -11,7 +11,7 @@ import { SkeletonList } from '@/components/ui/skeleton';
 import { piecesHooks, formUtils } from '@/features/connectors';
 import { authenticationSession } from '@/lib/authentication-session';
 
-import { DynamicPropertiesErrorBoundary } from './dynamic-piece-properties-error-boundary';
+import { DynamicPropertiesErrorBoundary } from './dynamic-connector-properties-error-boundary';
 import { DynamicPropertiesContext } from './dynamic-properties-context';
 import { GenericPropertiesForm } from './generic-properties-form';
 

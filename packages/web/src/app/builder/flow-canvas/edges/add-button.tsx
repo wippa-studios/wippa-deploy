@@ -3,7 +3,7 @@ import { isNil } from '@wippa/core-utils';
 import { Plus } from 'lucide-react';
 import React, { useState } from 'react';
 
-import { ConnectorSelector } from '@/app/builder/pieces-selector';
+import { ConnectorSelector } from '@/app/builder/connectors-selector';
 import { cn } from '@/lib/utils';
 
 import { useBuilderStateContext } from '../../builder-hooks';

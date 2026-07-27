@@ -1,7 +1,7 @@
 import { CustomAuthProperty } from '@wippa/connectors-framework';
 import React from 'react';
 
-import { GenericPropertiesForm } from '@/app/builder/piece-properties/generic-properties-form';
+import { GenericPropertiesForm } from '@/app/builder/connector-properties/generic-properties-form';
 
 type CustomAuthConnectionSettingsProps = {
   authProperty: CustomAuthProperty<any>;

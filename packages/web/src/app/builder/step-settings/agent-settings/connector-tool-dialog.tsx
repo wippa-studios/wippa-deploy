@@ -135,7 +135,7 @@ export function AgentPieceDialog({
 
   const renderDialogMainContent = () => {
     switch (selectedPage) {
-      case 'pieces-list': {
+      case 'connectors-list': {
         return (
           <PiecesList
             isPiecesLoading={isPiecesLoading}
@@ -154,7 +154,7 @@ export function AgentPieceDialog({
 
   const renderDialogHeaderContent = () => {
     switch (selectedPage) {
-      case 'pieces-list': {
+      case 'connectors-list': {
         return t('Connect apps with the agent');
       }
       case 'actions-list': {

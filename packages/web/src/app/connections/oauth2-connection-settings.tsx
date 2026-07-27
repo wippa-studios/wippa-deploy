@@ -41,7 +41,7 @@ import { appConnectionsApi } from '@/features/connections/api/app-connections';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { cn } from '@/lib/utils';
 
-import { GenericPropertiesForm } from '../builder/piece-properties/generic-properties-form';
+import { GenericPropertiesForm } from '../builder/connector-properties/generic-properties-form';
 
 import { SecretInput } from './secret-input';
 

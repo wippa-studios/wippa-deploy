@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { DataTable } from '@/components/ui/data-table';
+import { DataTable } from '@/components/custom/data-table';
 import {
   Dialog,
   DialogContent,

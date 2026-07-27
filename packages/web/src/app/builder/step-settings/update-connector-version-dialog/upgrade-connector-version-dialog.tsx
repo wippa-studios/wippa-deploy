@@ -11,7 +11,7 @@ import { useBuilderStateContext } from '../../builder-hooks';
 import {
   changeVersionUtils,
   LatestVersionAvailableAlert,
-} from './update-piece-version-utils';
+} from './update-connector-version-utils';
 
 export const UpgradePieceVersionContent: React.FC<
   UpgradePieceVersionContentProps

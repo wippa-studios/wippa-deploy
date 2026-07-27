@@ -9,4 +9,4 @@ export {
   templatesMutations,
   templateKeys,
 } from './hooks/templates-hook';
-export { useGradientFromConnectors } from './hooks/use-gradient-from-pieces';
+export { useGradientFromConnectors } from './hooks/use-gradient-from-connectors';

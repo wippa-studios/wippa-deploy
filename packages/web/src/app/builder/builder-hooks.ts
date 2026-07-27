@@ -10,7 +10,7 @@ import { createNotesState, NotesState } from './state/notes-state';
 import {
   createPieceSelectorState,
   PieceSelectorState,
-} from './state/piece-selector-state';
+} from './state/connector-selector-state';
 import { createRunState, RunState } from './state/run-state';
 import { createStepFormState, StepFormState } from './state/step-form-state';
 

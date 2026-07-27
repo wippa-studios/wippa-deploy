@@ -18,7 +18,7 @@ import {
 import { stepsHooks } from '@/features/connectors/hooks/steps-hooks';
 import { PieceStepMetadataWithSuggestions } from '@/features/connectors/types';
 
-import { usePieceToolsDialogStore } from '../stores/pieces-tools';
+import { usePieceToolsDialogStore } from '../stores/connectors-tools';
 
 type AgentPieceToolProps = {
   disabled?: boolean;

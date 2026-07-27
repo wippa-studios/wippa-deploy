@@ -9,7 +9,7 @@ import { Handle, NodeProps, Position } from '@xyflow/react';
 import React, { useMemo } from 'react';
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';
-import { ConnectorSelector } from '@/app/builder/pieces-selector';
+import { ConnectorSelector } from '@/app/builder/connectors-selector';
 import { LoopIterationInput } from '@/app/builder/run-details/loop-iteration-input';
 import { RightSideBarType } from '@/app/builder/types';
 import { stepsHooks } from '@/features/connectors';

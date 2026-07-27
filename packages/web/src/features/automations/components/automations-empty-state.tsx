@@ -25,7 +25,7 @@ import { tableHooks } from '@/features/tables/hooks/table-hooks';
 import { TemplatesBrowseDialog } from '@/features/templates';
 import { UseTemplateDialog } from '@/features/templates/components/use-template-dialog';
 import { templatesHooks } from '@/features/templates/hooks/templates-hook';
-import { useGradientFromConnectors } from '@/features/templates/hooks/use-gradient-from-pieces';
+import { useGradientFromConnectors } from '@/features/templates/hooks/use-gradient-from-connectors';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';

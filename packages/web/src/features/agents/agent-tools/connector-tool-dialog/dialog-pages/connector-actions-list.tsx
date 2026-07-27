@@ -9,7 +9,7 @@ import { useDebounce } from 'use-debounce';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
-import { usePieceToolsDialogStore } from '../../stores/pieces-tools';
+import { usePieceToolsDialogStore } from '../../stores/connectors-tools';
 
 interface PieceActionsDialogProps {
   tools: AgentTool[];

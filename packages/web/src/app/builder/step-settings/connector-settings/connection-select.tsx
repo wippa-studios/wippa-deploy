@@ -25,7 +25,7 @@ import {
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { AutoFormFieldWrapper } from '@/app/builder/piece-properties/auto-form-field-wrapper';
+import { AutoFormFieldWrapper } from '@/app/builder/connector-properties/auto-form-field-wrapper';
 import { CreateOrEditConnectionDialog } from '@/app/connections/create-edit-connection-dialog';
 import { PermissionNeededTooltip } from '@/components/custom/permission-needed-tooltip';
 import { SearchableSelect } from '@/components/custom/searchable-select';

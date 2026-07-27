@@ -32,8 +32,8 @@ import {
   PatchDowngradeInfoAlert,
   PatchUpgradeInfoAlert,
   VersionChangeType,
-} from './update-piece-version-utils';
-import { UpgradePieceVersionContent } from './upgrade-piece-version-dialog';
+} from './update-connector-version-utils';
+import { UpgradePieceVersionContent } from './upgrade-connector-version-dialog';
 
 type DialogView = 'upgrade' | 'advanced';
 

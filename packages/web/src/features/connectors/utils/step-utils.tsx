@@ -16,7 +16,7 @@ import {
 } from '@wippa/shared';
 import { t } from 'i18next';
 
-import { piecesApi } from '../api/pieces-api';
+import { piecesApi } from '../api/connectors-api';
 import {
   PieceStepMetadata,
   PrimitiveStepMetadata,

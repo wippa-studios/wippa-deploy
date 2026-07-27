@@ -11,7 +11,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { DefaultTag } from '@/components/custom/global-connection-utils';
-import { MultiSelectConnectorProperty } from '@/components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '@/components/custom/multi-select-connector-property';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,

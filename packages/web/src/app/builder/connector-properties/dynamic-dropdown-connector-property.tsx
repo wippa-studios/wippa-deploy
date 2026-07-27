@@ -11,9 +11,9 @@ import { SearchableSelect } from '@/components/custom/searchable-select';
 import { piecesHooks } from '@/features/connectors';
 import { authenticationSession } from '@/lib/authentication-session';
 
-import { MultiSelectConnectorProperty } from '../../../components/custom/multi-select-piece-property';
+import { MultiSelectConnectorProperty } from '../../../components/custom/multi-select-connector-property';
 
-import { DynamicPropertiesErrorBoundary } from './dynamic-piece-properties-error-boundary';
+import { DynamicPropertiesErrorBoundary } from './dynamic-connector-properties-error-boundary';
 import { DynamicPropertiesContext } from './dynamic-properties-context';
 
 const DynamicDropdownPiecePropertyImplementation = React.memo(

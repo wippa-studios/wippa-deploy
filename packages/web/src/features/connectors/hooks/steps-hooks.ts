@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import { authenticationSession } from '@/lib/authentication-session';
 
-import { piecesApi } from '../api/pieces-api';
+import { piecesApi } from '../api/connectors-api';
 import {
   StepMetadataWithActionOrTriggerOrAgentDisplayName,
   StepMetadataWithSuggestions,

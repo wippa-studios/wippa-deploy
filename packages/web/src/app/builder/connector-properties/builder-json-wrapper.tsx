@@ -1,7 +1,7 @@
 import { ControllerRenderProps } from 'react-hook-form';
 
 import { useBuilderStateContext } from '@/app/builder/builder-hooks';
-import { textMentionUtils } from '@/app/builder/piece-properties/text-input-with-mentions/text-input-utils';
+import { textMentionUtils } from '@/app/builder/connector-properties/text-input-with-mentions/text-input-utils';
 import { JsonEditor } from '@/components/custom/json-editor';
 
 interface BuilderJsonEditorWrapperProps {

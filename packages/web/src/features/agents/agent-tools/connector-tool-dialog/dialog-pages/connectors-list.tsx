@@ -7,7 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Skeleton } from '@/components/ui/skeleton';
 import { PieceStepMetadataWithSuggestions } from '@/features/connectors/types';
 
-import { usePieceToolsDialogStore } from '../../stores/pieces-tools';
+import { usePieceToolsDialogStore } from '../../stores/connectors-tools';
 
 interface PiecesContentProps {
   isPiecesLoading: boolean;
