@@ -123,6 +123,19 @@ COPY --from=builder /usr/src/app/dist/packages/engine/ ./dist/packages/engine/
 # Full node_modules (already trimmed of dev-only packages in build stage)
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 
+# Recreate @wippa workspace package symlinks (Docker COPY doesn't preserve bun's symlinks)
+# The connectors and server API require('@wippa/connectors-framework') etc at runtime;
+# without these symlinks Node.js can't resolve the workspace packages.
+RUN mkdir -p /usr/src/app/node_modules/@wippa && \
+    ln -s ../../packages/connectors/framework node_modules/@wippa/connectors-framework && \
+    ln -s ../../packages/connectors/common node_modules/@wippa/connectors-common && \
+    ln -s ../../packages/core/utils node_modules/@wippa/core-utils && \
+    ln -s ../../packages/core/connector-types node_modules/@wippa/core-connector-types && \
+    ln -s ../../packages/core/execution node_modules/@wippa/core-execution && \
+    ln -s ../../packages/core/shared node_modules/@wippa/shared && \
+    ln -s ../../packages/server/utils node_modules/@wippa/server-utils && \
+    ln -s ../../packages/server/sandbox node_modules/@wippa/sandbox
+
 # Frontend built files
 COPY --from=builder /usr/src/app/dist/packages/web ./dist/packages/web/
 
