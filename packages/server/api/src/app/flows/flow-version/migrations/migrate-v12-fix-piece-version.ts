@@ -45,7 +45,7 @@ export const migrateV12FixPieceVersion: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: (stepNameToPieceVersion[step.name]) as any,
+                        pieceVersion: stepNameToPieceVersion[step.name],
                     },
                 }
             }

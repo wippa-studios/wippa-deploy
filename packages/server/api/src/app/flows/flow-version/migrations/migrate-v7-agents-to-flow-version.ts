@@ -9,7 +9,7 @@ export const moveAgentsToFlowVerion: Migration = {
         const db = databaseConnection()
 
         const agentsAndMcpPromises = await Promise.all(
-            flowStructureUtil.getAllSteps(flowVersion.trigger).map(async (step): Promise<{ agent: Record<string, unknown>, tools: { type: string, toolName: string, pieceMetadata: { pieceName: (string) as any, pieceVersion: (string) as any, actionName: string, connectionExternalId: string }, flowId: string }[] } | null> => {
+            flowStructureUtil.getAllSteps(flowVersion.trigger).map(async (step): Promise<{ agent: Record<string, unknown>, tools: { type: string, toolName: string, pieceMetadata: { pieceName: string, pieceVersion: string, actionName: string, connectionExternalId: string }, flowId: string }[] } | null> => {
                 if (step.type === FlowActionType.PIECE && (step.settings as any).pieceName === '@wippa/piece-agent') {
                     const agentResults = await db.query('SELECT * FROM agent WHERE "externalId" = $1', [step.settings.input['agentId']])
                     if (isNil(agentResults) || agentResults.length === 0) {

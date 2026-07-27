@@ -45,7 +45,7 @@ export const migrateV19StripPieceVersionWildcards: Migration = {
                 ...step,
                 settings: {
                     ...step.settings,
-                    pieceVersion: (exactVersion) as any,
+                    pieceVersion: exactVersion,
                 },
             }
         })

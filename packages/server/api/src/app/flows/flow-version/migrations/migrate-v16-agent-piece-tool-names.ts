@@ -22,7 +22,7 @@ function deriveFlowDisplayName(legacyToolName: string): string | undefined {
 type AgentToolInput = {
     type: string
     toolName: string
-    pieceMetadata?: { pieceName: (string) as any, pieceVersion: (string) as any, actionName: string, [key: string]: unknown }
+    pieceMetadata?: { pieceName: string, pieceVersion: string, actionName: string, [key: string]: unknown }
     flowId?: string
     externalFlowId?: string
     flowDisplayName?: string

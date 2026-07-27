@@ -19,8 +19,8 @@ export class migrateSchedule1679014156667 implements MigrationInterface {
                         cronExpression: step.settings.cronExpression,
                     },
                     triggerName: 'cron_expression',
-                    pieceName: ('schedule') as any,
-                    pieceVersion: ('0.0.2') as any,
+                    pieceName: 'schedule',
+                    pieceVersion: '0.0.2',
                 }
                 count++
                 await queryRunner.query(

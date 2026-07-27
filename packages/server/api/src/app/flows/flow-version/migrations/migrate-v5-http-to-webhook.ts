@@ -49,8 +49,8 @@ export const migrateHttpToWebhookV5: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceName: (WEBHOOK_PIECE_NAME) as any,
-                        pieceVersion: ('0.1.20') as any,
+                        pieceName: WEBHOOK_PIECE_NAME,
+                        pieceVersion: '0.1.20',
                         actionName: WEBHOOK_RETURN_RESPONSE_ACTION,
                         input: webhookInput,
                         propertySettings: {

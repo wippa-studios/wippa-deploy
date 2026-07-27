@@ -72,13 +72,13 @@ export const migrateV11TablesToV2: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: ('0.2.10') as any,
+                        pieceVersion: '0.2.10',
                     },
                 }
             }
             let stepSettings = JSON.stringify({
                 ...step.settings,
-                pieceVersion: ('0.2.10') as any,
+                pieceVersion: '0.2.10',
             })
             for (const [fieldId, externalId] of Object.entries(fieldIdToExternalId)) {
                 stepSettings = stepSettings.replaceAll(`"${fieldId}"`, `"${externalId}"`)

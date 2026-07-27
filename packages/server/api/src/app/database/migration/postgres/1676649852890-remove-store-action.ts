@@ -20,7 +20,7 @@ export class removeStoreAction1676649852890 implements MigrationInterface {
                     const value = action.settings.value
                     count++
                     action.settings = {
-                        pieceName: ('storage') as any,
+                        pieceName: 'storage',
                         actionName: operation,
                         input: {
                             key,

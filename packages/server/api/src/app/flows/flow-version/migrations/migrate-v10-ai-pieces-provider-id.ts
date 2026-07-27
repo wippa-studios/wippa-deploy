@@ -23,8 +23,8 @@ export const migrateV10AiPiecesProviderId: Migration = {
                 ...step,
                 settings: {
                     ...step.settings,
-                    pieceName: ('@wippa/piece-ai') as any,
-                    pieceVersion: ('0.0.4') as any,
+                    pieceName: '@wippa/piece-ai',
+                    pieceVersion: '0.0.4',
                     input,
                 },
             }

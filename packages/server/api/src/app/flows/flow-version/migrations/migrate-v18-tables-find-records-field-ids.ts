@@ -74,7 +74,7 @@ export const migrateV18TablesFieldIds: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: (TABLES_PIECE_VERSION) as any,
+                        pieceVersion: TABLES_PIECE_VERSION,
                     },
                 }
             }
@@ -87,7 +87,7 @@ export const migrateV18TablesFieldIds: Migration = {
                     ...step,
                     settings: {
                         ...step.settings,
-                        pieceVersion: (TABLES_PIECE_VERSION) as any,
+                        pieceVersion: TABLES_PIECE_VERSION,
                     },
                 }
             }
@@ -109,7 +109,7 @@ export const migrateV18TablesFieldIds: Migration = {
                 ...step,
                 settings: {
                     ...step.settings,
-                    pieceVersion: (TABLES_PIECE_VERSION) as any,
+                    pieceVersion: TABLES_PIECE_VERSION,
                     input: {
                         ...input,
                         filters: {
