@@ -79,8 +79,9 @@ RUN node -e "\
 RUN rm -rf packages/web packages/cli packages/tests-e2e packages/ee && \
     node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))"
 
-# Remove per-piece node_modules (if any exist — bun links root-level when possible)
-RUN rm -rf packages/connectors/*/*/node_modules 2>/dev/null || true
+# Keep per-connector node_modules — connectors use --external:* in esbuild,
+# so they need their npm deps (dayjs, axios, etc.) resolvable at runtime.
+# bun's isolated linker uses hard links, so disk overhead is minimal.
 
 ### STAGE 2: Runtime ###
 FROM node:24.14.0-bullseye-slim
