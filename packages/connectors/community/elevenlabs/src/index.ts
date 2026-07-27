@@ -79,7 +79,7 @@ export const elevenlabs = createConnector({
       // it would be more useful to have hint for URL
       description: customApiCallDescription,
       // missing propsValue to not override url when credentials are changed
-      // @see packages/pieces/common/src/lib/helpers/index.ts:65
+      // @see packages/connectors/common/src/lib/helpers/index.ts:65
       baseUrl: (auth) => {
         return getRegionApiUrl(auth?.props.region)
       },

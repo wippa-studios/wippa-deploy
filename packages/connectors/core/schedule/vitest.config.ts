@@ -10,7 +10,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@wippa/connectors-framework': path.resolve(repoRoot, 'packages/pieces/framework/src/index.ts'),
+      '@wippa/connectors-framework': path.resolve(repoRoot, 'packages/connectors/framework/src/index.ts'),
     },
   },
 })

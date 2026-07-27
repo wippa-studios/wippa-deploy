@@ -4,7 +4,7 @@ import { createGraphClient, getAppOnlyToken, GRAPH_DEFAULT_SCOPE, withGraphRetry
 const authDesc = `
 Register a **single-tenant** Azure Bot in your own Microsoft tenant, then paste its credentials below. Microsoft deprecated multi-tenant bots, so the bot must live in the **same tenant** you use Microsoft Teams from — sign in to the [Azure Portal](https://portal.azure.com) with an admin of that tenant.
 
-📖 **[Full step-by-step guide (bot setup + packaging the Teams app)](https://github.com/activepieces/activepieces/blob/main/packages/pieces/community/microsoft-teams-bot/teams-app/README.md)** — the steps below are the short version.
+📖 **[Full step-by-step guide (bot setup + packaging the Teams app)](https://github.com/activepieces/activepieces/blob/main/packages/connectors/community/microsoft-teams-bot/teams-app/README.md)** — the steps below are the short version.
 
 **1. Create the Azure Bot**
 - Create an **Azure Bot** resource → **Pricing tier: Free (F0)** → **Type of App: Single Tenant** → **Create new Microsoft App ID**. This creates the App Registration.

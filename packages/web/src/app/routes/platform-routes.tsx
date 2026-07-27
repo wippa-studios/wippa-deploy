@@ -62,7 +62,7 @@ const OAuthAppsPage = React.lazy(() =>
   })),
 );
 const PlatformPiecesPage = React.lazy(() =>
-  import('./platform/setup/pieces').then((m) => ({
+  import('./platform/setup/connectors').then((m) => ({
     default: m.PlatformPiecesPage,
   })),
 );
@@ -179,7 +179,7 @@ export const platformRoutes = [
     ),
   },
   {
-    path: '/platform/setup/pieces',
+    path: '/platform/setup/connectors',
     element: (
       <PlatformLayout>
         <PageTitle title="Pieces">
