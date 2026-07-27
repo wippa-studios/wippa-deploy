@@ -391,15 +391,12 @@ export async function getAdapter() {
 
 export async function appPostBoot(app: FastifyInstance): Promise<void> {
 
-    app.log.info(`
- _      _      _
-(_) ___| |__    __ _ _   _  __ _| | |_ ___  _ __
-| |/ __| '_ \\  / _\` | | | |/ _\` | | __/ _ \\| '__|
-| | (__| | | || (_| | |_| | (_| | | |_ (_) | |
-|_|\\___|_| |_| \\__, |\\__,_|\\__,_|_|\\___\\___/|_|
-                   |_|   · Australian Automation Platform`);
-
-The application started on ${await domainHelper.getPublicApiUrl({ path: '' })}, as specified by the AP_FRONTEND_URL variables.`)
+    app.log.info('Wippa — Australian Automation Platform')
+    app.log.info(
+        'The application started on ' +
+            (await domainHelper.getPublicApiUrl({ path: '' })) +
+            ', as specified by the AP_FRONTEND_URL variables.',
+    )
 
     const environment = system.get(AppSystemProp.ENVIRONMENT)
     const pieces = process.env.AP_DEV_PIECES
