@@ -24,8 +24,8 @@ export class MigrateWebhook1709581196563 implements MigrationInterface {
                     input: {},
                     'inputUiInfo': step.settings.inputUiInfo,
                     triggerName: 'catch_request',
-                    pieceName: ('@wippa/piece-webhook') as any,
-                    pieceVersion: ('0.0.1') as any,
+                    pieceName: '@wippa/piece-webhook',
+                    pieceVersion: '0.0.1',
                     'pieceType': 'OFFICIAL',
                     'packageType': 'REGISTRY',
                 }

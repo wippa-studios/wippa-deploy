@@ -14,8 +14,8 @@ enum TriggerType {
 }
 
 type McpPieceToolData = {
-    pieceName: (string) as any
-    pieceVersion: (string) as any
+    pieceName: string
+    pieceVersion: string
     actionNames: string[]
     logoUrl: string
     connectionExternalId?: string
@@ -41,7 +41,7 @@ type FlowVersion = {
     trigger: {
         type: TriggerType
         settings: {
-            pieceName: (string) as any
+            pieceName: string
         }
     }
 }

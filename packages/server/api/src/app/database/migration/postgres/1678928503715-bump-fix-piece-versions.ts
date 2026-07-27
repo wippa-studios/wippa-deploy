@@ -12,8 +12,8 @@ const BRANCH_TYPE = 'BRANCH'
 type Step = {
     type: string
     settings: {
-        pieceName: (string) as any
-        pieceVersion: (string) as any
+        pieceName: string
+        pieceVersion: string
     }
     onFailureAction?: Step
     onSuccessAction?: Step
