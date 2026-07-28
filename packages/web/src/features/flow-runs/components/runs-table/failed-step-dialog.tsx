@@ -8,7 +8,7 @@ import {
   flowStructureUtil,
 } from '@wippa/shared';
 import { t } from 'i18next';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Bug } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 import { JsonViewer } from '@/components/custom/json-viewer';
@@ -27,6 +27,7 @@ import { flowRunUtils } from '@/features/flow-runs/utils/flow-run-utils';
 import { flowHooks } from '@/features/flows/hooks/flow-hooks';
 import { stepsHooks } from '@/features/connectors';
 import { ConnectorIcon } from '@/features/connectors/components/connector-icon';
+import { useAiSidebarStore } from '@/features/local-ai';
 import { authenticationSession } from '@/lib/authentication-session';
 import { formatUtils } from '@/lib/format-utils';
 
@@ -187,7 +188,22 @@ export const FailedStepDialog = ({
             {t('No error message available')}
           </div>
         )}
-        <DialogFooter>
+        <DialogFooter className="flex-row gap-2">
+          <Button
+            variant="outline"
+            onClick={() => {
+              useAiSidebarStore.getState().setDiagnosisContext({
+                stepName: failedStep.displayName || failedStep.name,
+                errorMessage: failedStep.message || 'Unknown error',
+                flowName: flowName || 'Untitled Flow',
+              });
+              onOpenChange(false);
+            }}
+            className="gap-2"
+          >
+            <Bug className="size-4" />
+            Diagnose with AI
+          </Button>
           <Button
             onClick={() =>
               navigate(

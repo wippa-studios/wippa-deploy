@@ -138,6 +138,7 @@ export enum AppSystemProp {
     CONSOLE_API_SECRET_KEY = 'CONSOLE_API_SECRET_KEY',
     LOG_SAMPLE_RATE_INFO = 'LOG_SAMPLE_RATE_INFO',
     LOG_KEEP_SLOW_MS = 'LOG_KEEP_SLOW_MS',
+    OLLAMA_BASE_URL = 'OLLAMA_BASE_URL',
 }
 
 export enum ContainerType {

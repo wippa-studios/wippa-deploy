@@ -46,6 +46,7 @@ import { flowRunTrackingModule } from './ee/flow-run-tracking/flow-run-tracking-
 import { globalConnectionModule } from './ee/global-connections/global-connection-module'
 import { appearanceHelper } from './ee/helper/appearance-helper'
 import { licenseKeysModule } from './ee/license-keys/license-keys-module'
+import { localAiModule } from './local-ai/local-ai-module'
 import { managedAuthnModule } from './ee/managed-authn/managed-authn-module'
 import { oauthAppModule } from './ee/oauth-apps/oauth-app.module'
 import { connectorSetModule } from './ee/connectors/connector-set/connector-set.module'
@@ -331,6 +332,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
     await app.register(embedSubdomainModule)
     await app.register(chatModule)
     await app.register(chatEvalModule)
+    await app.register(localAiModule)
     await app.register(aiToolConfigModule)
 
     // Cloud-only modules

@@ -21,6 +21,7 @@ import {
 import { ProjectDashboardSidebar } from '../sidebar/dashboard';
 
 import { ProjectDashboardLayoutHeader } from './project-dashboard-layout-header';
+import { AiSidebar, AiSidebarToggle } from '@/features/local-ai';
 
 export type ProjectDashboardLayoutHeaderTab = {
   to: string;
@@ -138,6 +139,8 @@ function ProjectDashboardLayoutInner({
             <div className="flex-1 overflow-auto">{children}</div>
           </div>
         </div>
+        <AiSidebar />
+        <AiSidebarToggle />
       </SidebarInset>
     </SidebarProvider>
   );

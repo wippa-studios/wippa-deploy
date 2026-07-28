@@ -14,6 +14,7 @@ services:
     env_file: .env
     environment:
       - AP_CONTAINER_TYPE=APP
+      - OLLAMA_BASE_URL=http://ollama:11434
     volumes:
       - ./cache:/usr/src/app/cache
     networks:
@@ -26,6 +27,7 @@ services:
     env_file: .env
     environment:
       - AP_CONTAINER_TYPE=WORKER
+      - OLLAMA_BASE_URL=http://ollama:11434
     deploy:
       replicas: 1
     volumes:
@@ -53,8 +55,33 @@ services:
       - 'redis_data:/data'
     networks:
       - wippa
+  ollama:
+    image: ollama/ollama:latest
+    container_name: wippa-ollama
+    restart: unless-stopped
+    ports:
+      - '11434:11434'
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - wippa
+    healthcheck:
+      test: ['CMD', 'ollama', 'list']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    entrypoint: >
+      sh -c "
+      ollama serve &
+      sleep 3 &&
+      ollama pull gemma3:1b &&
+      echo 'Ollama ready with gemma3:1b' &&
+      wait
+      "
 volumes:
   postgres_data:
   redis_data:
+  ollama_data:
 networks:
   wippa:

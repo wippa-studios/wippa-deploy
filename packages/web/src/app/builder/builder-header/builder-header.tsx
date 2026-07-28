@@ -8,7 +8,7 @@ import {
   UncategorizedFolderId,
 } from '@wippa/shared';
 import { t } from 'i18next';
-import { ChevronDown, CircleHelp, HistoryIcon } from 'lucide-react';
+import { ChevronDown, CircleHelp, HistoryIcon, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import {
   createSearchParams,
@@ -45,6 +45,7 @@ import { cn } from '@/lib/utils';
 
 import FlowActionMenu from '../../components/flow-actions-menu';
 import { flowCanvasConsts } from '../flow-canvas/utils/consts';
+import { NlToFlowDialog } from '@/features/local-ai';
 
 import { BuilderFlowStatusSection } from './flow-status';
 
@@ -177,6 +178,26 @@ export const BuilderHeader = () => {
 
   const rightContent = (
     <div className="flex items-center justify-center gap-4">
+      <NlToFlowDialog
+        onFlowGenerated={(result) => {
+          applyOperation(
+            {
+              type: FlowOperationType.CHANGE_NAME,
+              request: { displayName: result.flowName },
+            },
+            () => {
+              import('@tanstack/react-query').then(({ useQueryClient }) => {
+                useQueryClient().invalidateQueries({ queryKey: ['flows'] });
+              });
+            },
+          );
+        }}
+      >
+        <Button variant="ghost" className="gap-2 px-2">
+          <Sparkles className="w-4 h-4" />
+          AI Flow
+        </Button>
+      </NlToFlowDialog>
       {showSupport && (
         <Button
           variant="ghost"
