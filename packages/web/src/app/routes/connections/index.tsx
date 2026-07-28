@@ -432,7 +432,7 @@ function AppConnectionsPage() {
       <DataTable
         emptyStateTextTitle={t('No connections found')}
         emptyStateTextDescription={t(
-          'Come back later when you create a automation to manage your connections',
+          'Connect Xero, Slack, Gmail and more to start automating. Add your first connection to get started.',
         )}
         emptyStateIcon={<Globe className="size-14" />}
         columns={columns}

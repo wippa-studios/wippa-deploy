@@ -585,7 +585,7 @@ export const RunsTable = () => {
       <DataTable
         emptyStateTextTitle={t('No flow runs found')}
         emptyStateTextDescription={t(
-          'Come back later when your automations start running',
+          'Your automation runs will appear here once your flows start executing.',
         )}
         emptyStateIcon={<History className="size-14" />}
         columns={columns}

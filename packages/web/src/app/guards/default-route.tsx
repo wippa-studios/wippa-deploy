@@ -4,18 +4,13 @@ import { platformHooks } from '@/hooks/platform-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
 import { determineDefaultRoute } from '@/lib/route-utils';
 
+import { LandingPage } from '../routes/landing/landing-page';
+
 export const DefaultRoute = () => {
   const token = authenticationSession.getToken();
   const location = useLocation();
   if (!token) {
-    const searchParams = new URLSearchParams();
-    searchParams.set('from', location.pathname + location.search);
-    return (
-      <Navigate
-        to={`/sign-in?${searchParams.toString()}`}
-        replace={true}
-      ></Navigate>
-    );
+    return <LandingPage />;
   }
   if (authenticationSession.isOnboarding()) {
     return <Navigate to="/create-platform" replace />;

@@ -18,7 +18,7 @@ export const AutomationsNoResultsState = ({
       <h3 className="text-lg font-semibold mb-2">{t('No results found')}</h3>
       <p className="text-sm text-muted-foreground text-center max-w-md mb-4">
         {t(
-          "We couldn't find any automations matching your search or filters. Try adjusting your criteria.",
+          "We couldn't find any automations matching your filters. Try adjusting your search.",
         )}
       </p>
       <Button variant="outline" onClick={onClearFilters}>

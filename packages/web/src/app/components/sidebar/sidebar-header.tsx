@@ -1,8 +1,10 @@
 import { ApEdition, ApFlagId } from '@wippa/shared';
 import { t } from 'i18next';
-import { ChevronsUpDown } from 'lucide-react';
+import { ChevronsUpDown, Sparkles } from 'lucide-react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { OnboardingWizard } from '@/app/components/onboarding-wizard';
 import { useEmbedding } from '@/components/providers/embed-provider';
 import { Button } from '@/components/ui/button';
 import {
@@ -48,41 +50,45 @@ export const AppSidebarHeader = () => {
     chatEnabled: currentPlatform.plan.chatEnabled,
   });
   const branding = flagsHooks.useWebsiteBranding();
+  const [wizardOpen, setWizardOpen] = useState(false);
 
-  if (!showSwitcher) {
-    return (
-      <SidebarHeader className="pb-0">
-        <div className="w-full flex items-center gap-2">
-          <SidebarLogoCollapsed linkTo={defaultRoute} />
-          {state !== 'collapsed' && (
-            <h1 className="truncate text-sm font-medium">
-              {branding.websiteName}
-            </h1>
-          )}
-        </div>
-      </SidebarHeader>
-    );
-  }
+  const wizardButton = state !== 'collapsed' && (
+    <button
+      onClick={() => setWizardOpen(true)}
+      className="w-full flex items-center gap-2 px-3 py-2 text-xs font-medium text-[#f5e6a3] border border-[#f5e6a3]/20 rounded-lg hover:bg-[#f5e6a3]/5 transition-colors"
+    >
+      <Sparkles className="w-3.5 h-3.5" />
+      {t('Start the wizard')}
+    </button>
+  );
 
   return (
-    <SidebarHeader>
-      <SidebarMenu>
-        <SidebarMenuItem className="flex items-center">
-          <SidebarLogoCollapsed linkTo={defaultRoute} />
-          {state !== 'collapsed' && (
-            <div className="flex-1 min-w-0">
-              <PlatformSwitcher>
-                <SidebarMenuButton className="h-10! w-full">
-                  <span className="truncate font-medium flex-1 text-left text-sm">
-                    {currentPlatform?.name ?? t('platform')}
-                  </span>
-                  <ChevronsUpDown className="ml-auto size-3! shrink-0" />
-                </SidebarMenuButton>
-              </PlatformSwitcher>
-            </div>
+    <>
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem className="flex items-center">
+            <SidebarLogoCollapsed linkTo={defaultRoute} />
+            {state !== 'collapsed' && (
+              <div className="flex-1 min-w-0">
+                <PlatformSwitcher>
+                  <SidebarMenuButton className="h-10! w-full">
+                    <span className="truncate font-medium flex-1 text-left text-sm">
+                      {currentPlatform?.name ?? branding.websiteName}
+                    </span>
+                    <ChevronsUpDown className="ml-auto size-3! shrink-0" />
+                  </SidebarMenuButton>
+                </PlatformSwitcher>
+              </div>
+            )}
+          </SidebarMenuItem>
+          {wizardButton && (
+            <SidebarMenuItem>
+              {wizardButton}
+            </SidebarMenuItem>
           )}
-        </SidebarMenuItem>
-      </SidebarMenu>
-    </SidebarHeader>
+        </SidebarMenu>
+      </SidebarHeader>
+      <OnboardingWizard open={wizardOpen} onOpenChange={setWizardOpen} />
+    </>
   );
-};
+};;

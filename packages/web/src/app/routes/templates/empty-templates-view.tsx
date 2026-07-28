@@ -19,7 +19,7 @@ export const EmptyTemplatesView = () => {
         <EmptyTitle>{t('No templates found')}</EmptyTitle>
         <EmptyDescription>
           {t(
-            'No templates match your search criteria. Try adjusting your search terms.',
+            'No templates match your search. Try different keywords or browse all categories.',
           )}
         </EmptyDescription>
       </EmptyHeader>
