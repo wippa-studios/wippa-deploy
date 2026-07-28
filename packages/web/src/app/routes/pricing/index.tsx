@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 const plans = [
   {
     name: 'Starter',
-    price: '$15',
+    price: '$19',
     description: 'For small businesses getting started with automation.',
     features: [
       '5,000 tasks per month',
@@ -24,7 +24,7 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '$39',
+    price: '$69',
     description: 'For growing teams that need more power.',
     features: [
       '25,000 tasks per month',
@@ -33,7 +33,7 @@ const plans = [
       'Priority support',
       'Team collaboration',
       'Australian data hosting',
-      '5-team members',
+      '5 team members',
     ],
     cta: 'Start Free Trial',
     popular: true,
@@ -58,7 +58,8 @@ const plans = [
 
 const competitorComparison = [
   { feature: 'Tasks per month', zapier: '750', make: '1,000', wippa: '5,000' },
-  { feature: 'Monthly price (AUD)', zapier: '$30', make: '$11', wippa: '$15' },
+  { feature: 'Monthly price (AUD)', zapier: '$30', make: '$11', wippa: '$19' },
+  { feature: 'GST included', zapier: '❌', make: '❌', wippa: '✅' },
   { feature: 'Australian hosting', zapier: '❌', make: '❌', wippa: '✅' },
   { feature: 'Data sovereignty', zapier: '❌', make: '❌', wippa: '✅' },
   { feature: 'Xero integration', zapier: '✅', make: '✅', wippa: '✅' },
@@ -138,9 +139,12 @@ export const PricingPage = () => {
               <h3 className="text-lg font-semibold mb-1">{plan.name}</h3>
               <p className="text-sm text-white/40 mb-6">{plan.description}</p>
               <div className="mb-6">
-                <span className="text-4xl font-bold">{plan.price}</span>
+                <span className="text-4xl font-bold">AUD {plan.price}</span>
                 {plan.price !== 'Custom' && (
-                  <span className="text-white/40 ml-1">/month</span>
+                  <>
+                    <span className="text-white/40 ml-1">/month</span>
+                    <p className="text-[11px] text-white/30 mt-1">GST included</p>
+                  </>
                 )}
               </div>
               <ul className="space-y-3 mb-8">

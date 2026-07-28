@@ -5,6 +5,7 @@ import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../core/db/repo-factory'
 import { templateValidator } from './template-validator'
 import { TemplateEntity } from './template.entity'
+import { seedMoreTemplates } from './seed-more-templates'
 
 const templateRepo = repoFactory(TemplateEntity)
 
@@ -312,7 +313,8 @@ const TEMPLATES: TemplateSeed[] = [
 export async function seedTemplates(log: FastifyBaseLogger): Promise<void> {
     const existing = await templateRepo().find({ where: { type: TemplateType.OFFICIAL }, take: 1 })
     if (existing.length > 0) {
-        log.info('Templates already seeded, skipping')
+        log.info('Official templates already seeded, updating with any new templates...')
+        await seedMoreTemplates(log)
         return
     }
 
@@ -345,4 +347,5 @@ export async function seedTemplates(log: FastifyBaseLogger): Promise<void> {
         log.info(`  ✓ Seeded: ${tpl.name}`)
     }
     log.info(`Seeded ${TEMPLATES.length} templates`)
+    await seedMoreTemplates(log)
 }

@@ -1,6 +1,7 @@
 export enum LocalesEnum {
     DUTCH = 'nl',
     ENGLISH = 'en',
+    ENGLISH_AU = 'en-AU',
     GERMAN = 'de',
     FRENCH = 'fr',
     SPANISH = 'es',

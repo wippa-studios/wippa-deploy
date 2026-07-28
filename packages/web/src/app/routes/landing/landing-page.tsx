@@ -22,6 +22,12 @@ const LandingPage = () => {
           <WippaWordmark />
           <div className="flex items-center gap-3">
             <Link
+              to="/pricing"
+              className="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >
+              {t('Pricing')}
+            </Link>
+            <Link
               to="/sign-in"
               className="text-sm font-medium text-white/60 hover:text-white transition-colors"
             >

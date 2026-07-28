@@ -26,6 +26,14 @@ export const formatUtils = {
   formatNumber(number: number) {
     return new Intl.NumberFormat(i18next.language).format(number);
   },
+  formatCurrencyAUD(amount: number) {
+    return new Intl.NumberFormat('en-AU', {
+      style: 'currency',
+      currency: 'AUD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+    }).format(amount);
+  },
   formatNumberCompact(number: number) {
     return new Intl.NumberFormat(i18next.language, {
       notation: 'compact',
