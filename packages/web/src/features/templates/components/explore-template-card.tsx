@@ -1,8 +1,10 @@
 import { Template } from '@wippa/shared';
 import { t } from 'i18next';
+import { FolderOpen } from 'lucide-react';
 import React from 'react';
 
 import { TagWithBright } from '@/components/custom/tag-with-bright';
+import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ConnectorIconList } from '@/features/connectors';
 import { useGradientFromConnectors } from '@/features/templates';
@@ -19,6 +21,7 @@ export const ExploreTemplateCard = React.memo(
     const { gradient } = useGradientFromConnectors(
       hasFlows ? template.flows![0]?.trigger : undefined,
     );
+    const primaryCategory = template.categories?.[0];
 
     return (
       <Card
@@ -41,22 +44,24 @@ export const ExploreTemplateCard = React.memo(
             )}
           </p>
 
-          <div className="h-8 flex gap-2 flex-wrap overflow-hidden mt-1 flex-shrink-0">
-            {displayTags.length > 0 ? (
-              displayTags
-                .slice(0, 1)
-                .map((tag, index) => (
-                  <TagWithBright
-                    key={index}
-                    index={index}
-                    prefix={t('Save')}
-                    title={tag.title}
-                    color={tag.color}
-                    size="sm"
-                  />
-                ))
-            ) : (
-              <div />
+          <div className="h-8 flex items-center gap-2 flex-wrap overflow-hidden mt-1 flex-shrink-0">
+            {primaryCategory && (
+              <Badge
+                variant="outline"
+                className="text-[10px] px-1.5 py-0 h-5 gap-1 border-white/10 text-white/60 font-normal"
+              >
+                <FolderOpen className="h-3 w-3" />
+                {primaryCategory}
+              </Badge>
+            )}
+            {displayTags.length > 0 && (
+              <TagWithBright
+                index={0}
+                prefix={t('Save')}
+                title={displayTags[0].title}
+                color={displayTags[0].color}
+                size="sm"
+              />
             )}
           </div>
         </CardContent>
