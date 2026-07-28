@@ -1,4 +1,5 @@
 import { t } from 'i18next';
+import { AlertTriangle } from 'lucide-react';
 
 import { CenteredPage } from '@/app/components/centered-page';
 import LockedFeatureGuard from '@/app/components/locked-feature-guard';
@@ -21,6 +22,19 @@ export const BrandingPage = () => {
         title={t('Branding')}
         description={t('Configure the appearance for your platform.')}
       >
+        {/* Enterprise Users Notification */}
+        {platform.plan.customAppearanceEnabled && (
+          <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-start gap-3">
+            <AlertTriangle className="size-5 text-blue-600 mt-0.5" />
+            <div>
+              <h3 className="font-semibold text-blue-800">Enterprise Branding</h3>
+              <p className="text-blue-700">
+                {t('Custom appearance is enabled for your enterprise platform.')}
+              </p>
+            </div>
+          </div>
+        )}
+        
         <AppearanceSection />
       </CenteredPage>
     </LockedFeatureGuard>

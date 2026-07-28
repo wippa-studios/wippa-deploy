@@ -19,6 +19,9 @@ import {
   FileText,
   User,
   Clock,
+  ShieldAlert,
+  Server,
+  Database,
 } from 'lucide-react';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -100,6 +103,9 @@ export default function AuditLogsPage() {
   ];
 
   const { data: auditLogsData, isLoading } = auditLogQueries.useAuditLogs();
+  
+  // Add a summary section for key insights
+  const { data: recentEvents } = auditLogQueries.useRecentAuditEvents();
 
   const isEnabled = platform.plan.auditLogEnabled;
   return (
@@ -116,6 +122,37 @@ export default function AuditLogsPage() {
           description={t('Track activities done within your platform')}
           title={t('Audit Logs')}
         />
+        
+        {/* Summary Section */}
+        {recentEvents && recentEvents.length > 0 && (
+          <div className="mb-6 p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-3 flex items-center gap-2">
+              <ShieldAlert className="size-5" />
+              Recent Security Activity
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {recentEvents.slice(0, 3).map((event, index) => (
+                <div key={index} className="bg-background p-3 rounded-md border">
+                  <div className="flex items-start gap-2">
+                    <div className="mt-1">
+                      {convertToIcon(event)?.icon}
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm">
+                        {formatUtils.convertEnumToHumanReadable(event.action)}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {event.userEmail || 'Unknown user'} • 
+                        <FormattedDate date={new Date(event.created)} />  
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <DataTable
           emptyStateTextTitle={t('No audit logs found')}
           emptyStateTextDescription={t(

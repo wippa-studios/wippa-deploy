@@ -1,6 +1,6 @@
 import { SsoDomainVerificationStatus } from '@wippa/shared';
 import { t } from 'i18next';
-import { CheckCircle, LockIcon, MailIcon, Earth } from 'lucide-react';
+import { CheckCircle, LockIcon, MailIcon, Earth, Shield } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { CenteredPage } from '@/app/components/centered-page';
@@ -114,7 +114,7 @@ const SSOPage = () => {
 
           <Item variant="outline">
             <ItemMedia variant="icon">
-              <LockIcon />
+              <Shield />
             </ItemMedia>
             <ItemContent>
               <ItemTitle>{t('SAML 2.0')}</ItemTitle>
@@ -138,6 +138,9 @@ const SSOPage = () => {
                   )}
                 </div>
               )}
+              <p className="mt-2 text-sm text-muted-foreground">
+                {t('Enterprise-grade authentication for your organization.')} 
+              </p>
             </ItemContent>
             <ItemActions>
               <ConfigureSamlDialog

@@ -6,6 +6,7 @@ import {
   ApFlagId,
 } from '@wippa/shared';
 import { t } from 'i18next';
+import { ShieldCheck } from 'lucide-react';
 
 import { CenteredPage } from '@/app/components/centered-page';
 import LockedFeatureGuard from '@/app/components/locked-feature-guard';
@@ -80,6 +81,17 @@ function BillingPageDetails() {
       )}
     >
       <div className="flex flex-col gap-6">
+        {/* Data Residency Badge */}
+        <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+          <ShieldCheck className="size-5 text-green-600 mt-0.5" />
+          <div>
+            <h3 className="font-semibold text-green-800">Data Residency</h3>
+            <p className="text-green-700">
+              {t('Your data is stored in Australia, ensuring compliance with local regulations.')}
+            </p>
+          </div>
+        </div>
+
         {isSubscriptionActive && <SubscriptionInfo info={platformPlanInfo} />}
 
         {(isSubscriptionActive ||
